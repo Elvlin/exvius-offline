@@ -52,6 +52,7 @@ def prepare():
 __pycache__/
 *.pyc
 *.apk
+!/release/*.apk
 *.zip
 *.jks
 *.keystore
@@ -89,14 +90,17 @@ def publish(version, upload, allow_public=False):
                              capture_output=True, text=True)
     if release.returncode:
         run('gh', 'release', 'create', tag, '--repo', REPO, '--target', 'main', '--prerelease',
-            '--title', 'Exvius Offline ' + tag + ' Preview', '--notes-file', str(ROOT / 'release/notes-v0.1.0.md'))
+            '--title', 'Exvius Offline ' + tag + ' Preview', '--notes-file', str(ROOT / f'release/notes-v{version}.md'))
         assets = []
     else:
         assets = json.loads(release.stdout)['assets']
     if upload:
         present = {asset['name']: asset for asset in assets}
-        paths = sorted((ROOT / 'source/build/distribution/assets').glob('*.zip'))
-        paths += sorted((ROOT / 'source/build/distribution/assets').glob('*.apk'))
+        directory = ROOT / 'source/build/distribution/assets'
+        manifest = json.loads((ROOT / 'data/latest.json').read_text())
+        paths = [directory / pack['url'].rsplit('/', 1)[-1] for pack in manifest['packs']
+                 if '/v' + version + '/' in pack['url']]
+        paths.append(directory / f'exvius-offline-v{version}.apk')
         missing = []
         for path in paths:
             if path.name in present:
@@ -112,7 +116,7 @@ def publish(version, upload, allow_public=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--version', default='0.1.0')
+    parser.add_argument('--version', default='0.1.1')
     parser.add_argument('--upload', action='store_true')
     parser.add_argument('--stage-only', action='store_true')
     parser.add_argument('--allow-public', action='store_true', help='Allow uploads to an already public repository. Does not change visibility.')

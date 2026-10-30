@@ -1,7 +1,7 @@
 param(
-    [string]$Version = '0.1.0',
-    [string]$ClientVersion = '9.0.0-offline.1',
-    [int]$VersionCode = 9001,
+    [string]$Version = '0.1.1',
+    [string]$ClientVersion = '9.0.0-offline.2',
+    [int]$VersionCode = 9002,
     [string]$KeyStore = 'tools/vendor/exvius-test.jks',
     [string]$KeyAlias = 'exvius-test'
 )

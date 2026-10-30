@@ -1,69 +1,100 @@
 # Exvius Offline
 
-A fan-made preservation project for **Final Fantasy Brave Exvius** .
+**Play Final Fantasy Brave Exvius offline on Android.**
 
-Download the game data once, then play on your device fully offline. Your progress is saved locally. An internet connection is only needed for the initial download.
+**[Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.1.apk)**
 
-**This is an unofficial fan project. It is not affiliated with or endorsed by Square Enix or gumi.**
+This is a fan project built from the original Global game. Download the game data once, then play without the old servers. Your save stays on your phone.
 
-## A look inside
+Replay quests to farm Lapis, pick the summon season you want, and revisit events without waiting for them to return.
 
-| Home | Summons | Esper training |
+This project is still being worked on. It is unofficial and is not affiliated with Square Enix or gumi.
+
+## Screenshots
+
+| Home | Choose a summon season | Choose an event season |
 | :---: | :---: | :---: |
-| ![The original Home screen adapted for offline play](release/screenshots/home.png) | ![A summon banner with featured units and summon options](release/screenshots/summons.png) | ![Siren's training board with a learned ability](release/screenshots/espers.png) |
+| ![Home screen](release/screenshots/home.png) | ![Summon dropdown showing Standard, Seasons 1 to 4 and Collab](release/screenshots/summon-seasons.png) | ![Vortex dropdown showing All Events, Permanent, Seasons 1 to 4, Collab and Other Events](release/screenshots/vortex-seasons.png) |
 
-## What this project changes
+## What changed from the online game?
 
-- Saves your campaign, units, inventory and progress locally.
-- Lets you browse preserved summon and event content outside its original calendar dates.
-- Farm stage to keep getting more lapis.
-- 
+### You can farm Lapis by replaying quests
 
-This is an active preservation project, not a finished replacement for every feature of the online service. Some advanced systems and event interactions are still being completed. Official accounts, purchases and online services are not restored.
+Quest objectives that award Lapis can pay out again when you replay the stage and meet those objectives again. For example, if a quest gives Lapis for clearing it without using an item, you can earn that Lapis again on another successful run.
 
-## Install and play
+Other first-clear rewards, such as equipment, units and tickets, stay one-time. Normal battle drops still work as usual. This gives you a way to keep earning Lapis for summons without a cash shop.
 
-1. Open [Releases](https://github.com/Elvlin/exvius-offline/releases) and download the latest **Exvius Offline APK**.
-2. Install it on an **Android 7.0 or newer, 64-bit ARM device**.
-3. Open the app while connected to the internet. It downloads and installs the complete game data automatically. The current download is about **14.4 GB**; allow around **18 GB of free space** for installation.
-4. Once setup finishes, play offline. There is no chapter-by-chapter download or separate data selection to manage.
+### You choose which summon banners to browse
 
-If a download is interrupted, reopen the app to continue. Completed data parts are retained. Your save is kept when installing an app update over the existing installation. **Uninstalling the app can erase your local save.**
+The dropdown at the top of **Summon** lets you pick **Standard, Season 1, Season 2, Season 3, Season 4 or Collab**. Choose a group, then use the Rare Summon, Standard Summon and Limited Time tabs to find its banners.
 
-## Updates
+Seasons group banners by when they came out. Collab groups crossover banners by series. Changing this selection does not reset your story progress or start a new save.
 
-When you open the app with an internet connection, it checks a small version file on GitHub. If nothing changed, it continues using the installed data. Without a connection, it uses the data already on your device.
+Banner prices, featured units, tickets, step-ups and guarantees are kept where their original details are known. Some missing campaign details use replacements. You can check the current pool and rates through the banner's **Drop Rates** button.
 
-New data downloads in the background and is installed when the app next starts after being closed. It does not replace files while you are playing. Only changed data parts need to be downloaded again. App updates use Android's normal installation confirmation. No GitHub account is needed once the downloads are publicly available.
+### Events are available outside their old dates
 
-## Current limitations
+Open **Vortex** and use **Filter** to choose **All Events, Permanent, Season 1, Season 2, Season 3, Season 4, Collab or Other Events**. You can browse different eras without waiting for an event to return on the calendar.
 
-- This preview is still in development. Some advanced upgrades and archived event interactions need more work.
-- Loading can be slow on some devices.
-- Content is limited to the game files that have been preserved and restored.
-- Local saves do not sync with an official account or another device.
+The summon dropdown and Vortex filter are separate. You can browse one season's summons and another season's events on the same save.
 
-Found a problem? Please [open an issue](https://github.com/Elvlin/exvius-offline/issues) with the screen or quest name, what you did, and what happened. Screenshots help.
+### Raids are adjusted for solo play
 
-## Support and project requests
+You no longer need a whole server of players to push the raid forward. The shared raid progress is adjusted for one player. The original bosses, battle stats and personal point reward targets are kept; this change is to the shared progress, rather than a blanket reduction in enemy difficulty.
 
-If you enjoy the project and would like to support its development, you can find me here:
+### Former cash bundles cost Lapis
 
-- **[Support me on Ko-fi](https://ko-fi.com/elvlin)**
-- **[Support me on Patreon](https://www.patreon.com/c/ElvlinGame)**
+Bundles that used to cost real money are bought with Lapis. There is also a **2,000 Friend Points** bundle for **100 Lapis**.
 
-Have a project request or an idea you would like to discuss? You can also contact me through Ko-fi or Patreon. Support is optional and helps me keep working on this project and other mods.
+Daily login rewards use your local save and date. You do not need to sign into an online account to collect them.
 
-## Repository contents
+### What about balance?
 
-| Folder | Contents |
-| --- | --- |
-| [`source/`](source/) | Offline adaptation source code and build instructions. |
-| [`release/`](release/) | Release information, screenshots and APK download links. |
-| [`data/`](data/) | Data version information and links to the complete downloadable data set. |
+The main changes are repeatable Lapis rewards, Lapis prices for former cash bundles, and raid progress that one player can complete. Units, enemies and summon prices have not all been given a blanket buff or discount. Original values are used where they are known, with replacements where details could not be recovered.
 
-The APK and large data files are attached to GitHub Releases. They are kept outside Git history so the source repository stays manageable.
+You still build a party, earn rewards, spend currency and upgrade units through the game's menus.
+
+## Install
+
+1. [Download the APK](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.1.apk) from the [release folder](release/).
+2. Install it on an **Android 7.0 or newer phone with 64-bit ARM support**.
+3. Open it with an internet connection. The app downloads all the game data automatically, about **14.5 GB**. Allow about **18 GB of free space** for setup.
+4. Once setup is done, you can play offline.
+
+If the download stops, reopen the app to continue. You do not have to choose or download chapters separately.
+
+To update, install the newer APK over the existing app. **Uninstalling the app can erase your save.**
+
+## Updates and offline play
+
+When you open the app online, it checks GitHub for updates. If there is nothing new, it uses the files already on your phone. If you are offline, it skips the check and uses your downloaded data.
+
+Changed data downloads in the background and is installed after you close and reopen the app. Existing data is reused across app updates. Android will ask you to confirm an APK update.
+
+The repository is currently private for review. Downloads will be available without a GitHub login once it is made public.
+
+## Still being worked on
+
+Some advanced upgrades and event interactions still need fixes. Loading can also be slow on some devices. Restored text, artwork and events may have mistakes, so please report anything you find.
+
+Saves are local. They do not connect to an official account or sync between devices. Real-money purchases and live multiplayer services are not available.
+
+To report a problem, [open an issue](https://github.com/Elvlin/exvius-offline/issues). Tell me which screen or quest you were on, what you tried and what happened. A screenshot helps.
+
+## Support or get in touch
+
+If you would like to support the project, you can find me on [Ko-fi](https://ko-fi.com/elvlin) or [Patreon](https://www.patreon.com/c/ElvlinGame).
+
+You can also contact me there if you have a project request or an idea you want to discuss. Donations are optional.
+
+## Files in this repository
+
+- [source/](source/): the code and build instructions.
+- [release/](release/): the APK, screenshots and release notes.
+- [data/](data/): information about the downloadable game data.
+
+The APK is in the release folder. The large game data packs are in GitHub Releases and download automatically when you first open the app.
 
 ## Credits
 
-Final Fantasy Brave Exvius, its characters, artwork, music and other original game content belong to their respective owners, including Square Enix and gumi. This project is a fan-made offline adaptation for preservation. It does not grant rights to the original game content.
+Final Fantasy Brave Exvius and its original characters, artwork, music and other game content belong to their respective owners, including Square Enix and gumi. This is an unofficial fan project.

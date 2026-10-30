@@ -62,6 +62,10 @@ public final class LocalGameBridge {
         return context != null && context.getFilesDir().isDirectory() ? 1 : 0;
     }
 
+    public static void installAssets(Context owner) { GameAssets.attach(owner); }
+
+    public static String gameAssetsPath() { return GameAssets.archive(context).getAbsolutePath(); }
+
     public static void setLocalMediaSource(android.media.MediaPlayer player, Context owner,
                                             android.net.Uri address) throws IOException {
         String scheme = address.getScheme();

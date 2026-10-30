@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
+import shutil
 from build_release_data import sha256
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -14,6 +15,8 @@ def finalize(version, client_version, version_code):
     manifest_path = ROOT / 'data/latest.json'
     manifest = json.loads(manifest_path.read_text())
     with zipfile.ZipFile(apk) as archive:
+        assert all(not name.startswith('assets/') or name.startswith('assets/chaquopy/')
+                   for name in archive.namelist()), 'Original resources remain bundled'
         assert not any(name.startswith('assets/chaquopy/exvius_pack') for name in archive.namelist())
         with zipfile.ZipFile(ROOT / 'source/build/android/client/assets/chaquopy/app.imy') as python:
             assert not any(name.startswith('exvius_pack/') for name in python.namelist()), 'Game data is still inside the APK'
@@ -35,6 +38,9 @@ def finalize(version, client_version, version_code):
     manifest['app'] = app
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
     (ROOT / 'release/app.json').write_text(json.dumps(app, indent=2) + '\n')
+    if apk.stat().st_size >= 100 * 1024 * 1024:
+        raise ValueError('APK still exceeds the GitHub repository file limit')
+    shutil.copyfile(apk, ROOT / 'release' / apk.name)
     proof = {'apk': app, 'original_game_library_sha256': game_hash,
              'bundled_data_removed': True, 'data_parts': len(manifest['packs']),
              'download_bytes': manifest['downloadBytes'], 'installed_bytes': manifest['installedBytes']}
@@ -44,8 +50,8 @@ def finalize(version, client_version, version_code):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--version', default='0.1.0')
-    parser.add_argument('--client-version', default='9.0.0-offline.1')
-    parser.add_argument('--version-code', type=int, default=9001)
+    parser.add_argument('--version', default='0.1.1')
+    parser.add_argument('--client-version', default='9.0.0-offline.2')
+    parser.add_argument('--version-code', type=int, default=9002)
     args = parser.parse_args()
     finalize(args.version, args.client_version, args.version_code)

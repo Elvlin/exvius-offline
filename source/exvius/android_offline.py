@@ -160,6 +160,11 @@ def prepare_offline_code(client):
     if activity_start is None:
         raise ValueError('Original activity startup method is missing.')
     startup = activity_start.group()
+    startup, asset_calls = re.subn(r'(?m)^(    \.locals \d+\n)',
+        r'\1\n    invoke-static {p0}, Lcom/exvius/local/LocalGameBridge;->installAssets(Landroid/content/Context;)V\n',
+        startup, count=1)
+    if asset_calls != 1:
+        raise ValueError('Original activity register declaration is missing.')
     for target in ('AppsFlyerWrapper;->init(', 'Lapis;->initializeBacktrace(',
                    'HelpshiftBridge;->install(', 'FirebaseWrapper;->init('):
         pattern = r'(?m)^    invoke-static [^\n]*' + re.escape(target) + r'[^\n]*$'
@@ -345,6 +350,8 @@ def prepare_offline_code(client):
         }),
         (original_third / 'org/cocos2dx/lib/Cocos2dxHelper.smali', third / 'org/cocos2dx/lib/Cocos2dxHelper.smali', {
             'public static openURL(Ljava/lang/String;)Z': '    .locals 1\n    const/4 v0, 0x0\n    return v0',
+            'public static getAssetsPath()Ljava/lang/String;':
+                '    .locals 1\n    invoke-static {}, Lcom/exvius/local/LocalGameBridge;->gameAssetsPath()Ljava/lang/String;\n    move-result-object v0\n    return-object v0',
         }),
     ]:
         body = source.read_text(encoding='utf-8')

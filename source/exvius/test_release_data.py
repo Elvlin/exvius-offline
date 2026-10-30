@@ -111,6 +111,29 @@ public class Os {
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.strip(), hashlib.sha256(path.read_bytes()).hexdigest())
 
+    def test_downloaded_original_assets_keep_repairs_and_preserve_save(self):
+        project = self.folder / 'project'
+        original = project / 'repository snapshots/FFBE-Global-v9.0.0-original.apk'
+        original.parent.mkdir(parents=True)
+        with zipfile.ZipFile(original, 'w') as archive:
+            archive.writestr('assets/cpk/en/boot.cpk', b'original art')
+            archive.writestr('assets/font/font.ttf', b'original font')
+            archive.writestr('assets/audience_network.dex', b'obsolete advertising')
+        repair = project / 'data/apk_overlay/assets/cpk/en/boot.cpk'
+        repair.parent.mkdir(parents=True)
+        repair.write_bytes(b'accepted repair')
+        with patch.object(self.builder, 'ROOT', project):
+            pack, count = self.builder.client_assets(self.folder / 'packs', 'v0.1.1')
+        self.assertEqual(count, 2)
+        path = self.folder / 'packs/exvius-client-assets.zip'
+        result = self.java('extract', path, self.files, pack['unpackedSize'])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        with zipfile.ZipFile(self.files / 'exvius/data/static/client/game-assets.apk') as archive:
+            self.assertEqual(archive.read('assets/cpk/en/boot.cpk'), b'accepted repair')
+            self.assertEqual(archive.read('assets/font/font.ttf'), b'original font')
+            self.assertNotIn('assets/audience_network.dex', archive.namelist())
+        self.assertEqual(self.save.read_bytes(), b'keep this campaign')
+
     def test_builder_uses_accepted_override_and_excludes_private_data(self):
         project = self.folder / 'project'
         for directory, body in [('memorial_fill', 'recovered'), ('client/files', 'original'), ('overlay', 'repaired')]:

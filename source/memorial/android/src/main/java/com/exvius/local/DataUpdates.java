@@ -71,6 +71,7 @@ public final class DataUpdates {
     public static boolean hasPending(Context context) { return state(context, "pending.json").isFile(); }
     public static boolean ready(Context context) {
         return state(context, "installed.json").isFile() &&
+            GameAssets.archive(context).isFile() &&
             new File(dataRoot(context), "mst_decoded/F_UNIT_MST.ndjson").isFile() &&
             new File(context.getFilesDir(), "mst").isDirectory();
     }
@@ -232,7 +233,7 @@ public final class DataUpdates {
     private static void installPending(Context context) throws Exception {
         JSONObject manifest = new JSONObject(read(state(context, "pending.json")));
         validate(manifest);
-        JSONObject current = ready(context) ? installed(context) : new JSONObject();
+        JSONObject current = installed(context);
         JSONArray packs = manifest.getJSONArray("packs");
         File journalFile = state(context, "install-progress.json");
         JSONObject journal = journalFile.isFile() ? new JSONObject(read(journalFile)) : new JSONObject();
@@ -310,7 +311,7 @@ public final class DataUpdates {
                     JSONObject manifest = new JSONObject(read(latest));
                     validate(manifest);
                     clearDownload(context, "latest", ".json");
-                    JSONObject current = ready(context) ? installed(context) : new JSONObject();
+                    JSONObject current = installed(context);
                     if (manifest.getInt("minAppVersionCode") <= appVersion(context) &&
                         (!ready(context) || manifest.getLong("revision") > current.optLong("revision"))) {
                         if (mandatory) {

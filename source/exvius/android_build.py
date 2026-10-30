@@ -92,6 +92,20 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
             print('Applied asset overlay:', source.relative_to(overlay).as_posix(), flush=True)
+    # Original game assets are installed by the existing first-launch download.
+    # Keep only the embedded Python/runtime assets in the APK.
+    assets_root = (client / 'assets').resolve()
+    if not assets_root.is_relative_to(PROJECT.resolve()):
+        raise ValueError('Unexpected APK asset directory')
+    for path in list(assets_root.iterdir()):
+        if path.name == 'chaquopy':
+            continue
+        if path.is_symlink() or not path.resolve().is_relative_to(assets_root):
+            raise ValueError('Unexpected APK asset path')
+        if path.is_dir():
+            shutil.rmtree(path)
+        else:
+            path.unlink()
     with zipfile.ZipFile(original) as archive:
         original_game = archive.read('lib/arm64-v8a/libgame.so')
     native = client / 'lib/arm64-v8a'

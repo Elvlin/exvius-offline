@@ -52,6 +52,7 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
     }
 
     private void openGame() {
+        GameAssets.attach(getApplicationContext());
         Intent game = new Intent();
         game.setClassName(getPackageName(), "com.square_enix.android_googleplay.FFBEWW.Lapis");
         startActivity(game);

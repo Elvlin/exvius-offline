@@ -11,6 +11,33 @@ CONTENT = {'mst', 'en', 'common_lang', 'localized_texts', 'homeMarquee'}
 ASSETS = 'https://github.com/Elvlin/exvius-offline/releases/download'
 
 
+def client_assets(output, tag):
+    """Pack original APK resources for Android's standard resource loader."""
+    output.mkdir(parents=True, exist_ok=True)
+    source = ROOT / 'repository snapshots/FFBE-Global-v9.0.0-original.apk'
+    archive_path = output / 'game-assets.apk'
+    ignored = {'audience_network.dex', 'helpshift', 'hs__data', 'api_key.txt', 'sdkbox_config.json'}
+    count = 0
+    with zipfile.ZipFile(source) as original, zipfile.ZipFile(archive_path, 'w') as archive:
+        for entry in sorted(original.infolist(), key=lambda row: row.filename):
+            name = entry.filename
+            if not name.startswith('assets/') or entry.is_dir() or name.split('/')[1] in ignored:
+                continue
+            overlay = ROOT / 'data/apk_overlay' / name
+            body = overlay.read_bytes() if overlay.is_file() else original.read(name)
+            info = zipfile.ZipInfo(name, date_time=(2000, 1, 1, 0, 0, 0))
+            info.compress_type = entry.compress_type
+            archive.writestr(info, body)
+            count += 1
+    target = output / 'exvius-client-assets.zip'
+    with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_STORED) as pack:
+        pack.write(archive_path, 'static/client/game-assets.apk')
+    row = {'id': 'client-assets', 'url': ASSETS + '/' + tag + '/' + target.name,
+           'size': target.stat().st_size, 'unpackedSize': archive_path.stat().st_size,
+           'sha256': sha256(target)}
+    return row, count
+
+
 def sha256(path):
     digest = hashlib.sha256()
     with path.open('rb') as stream:
@@ -99,12 +126,33 @@ def build(output, tag, revision, limit):
         raw += size
     if archive is not None:
         finish()
+    asset_pack, _ = client_assets(output, tag)
+    manifest['packs'].insert(0, asset_pack)
+    manifest['minAppVersionCode'] = 9002
     manifest['downloadBytes'] = sum(p['size'] for p in manifest['packs'])
     manifest['installedBytes'] = sum(p['unpackedSize'] for p in manifest['packs'])
-    manifest['files'] = len(files)
+    manifest['files'] = len(files) + 1
     destination = ROOT / 'data/latest.json'
     destination.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print(f'Complete: {len(files)} files, {len(manifest["packs"])} parts, {manifest["downloadBytes"] / 1e9:.2f} GB', flush=True)
+    return manifest
+
+
+def add_client_assets(output, tag, revision):
+    """Add the small resource pack without rebuilding unchanged 14 GB parts."""
+    path = ROOT / 'data/latest.json'
+    manifest = json.loads(path.read_text(encoding='utf-8'))
+    row, count = client_assets(output, tag)
+    manifest['packs'] = [row] + [p for p in manifest['packs'] if p['id'] != row['id']]
+    manifest.update(revision=revision, version='2026.10.30.' + str(revision), minAppVersionCode=9002)
+    manifest['downloadBytes'] = sum(p['size'] for p in manifest['packs'])
+    manifest['installedBytes'] = sum(p['unpackedSize'] for p in manifest['packs'])
+    manifest['files'] = 0
+    for pack in manifest['packs']:
+        with zipfile.ZipFile(output / pack['url'].rsplit('/', 1)[-1]) as archive:
+            manifest['files'] += len(archive.infolist())
+    path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    print(f'Added {count} original APK resources: {row["size"] / 1e6:.1f} MB. Existing data parts reused.', flush=True)
     return manifest
 
 
@@ -114,5 +162,9 @@ if __name__ == '__main__':
     parser.add_argument('--tag', default='v0.1.0')
     parser.add_argument('--revision', type=int, default=1)
     parser.add_argument('--pack-mib', type=int, default=1400)
+    parser.add_argument('--add-client-assets', action='store_true')
     args = parser.parse_args()
-    build(args.output, args.tag, args.revision, args.pack_mib * 1024 * 1024)
+    if args.add_client_assets:
+        add_client_assets(args.output, args.tag, args.revision)
+    else:
+        build(args.output, args.tag, args.revision, args.pack_mib * 1024 * 1024)
