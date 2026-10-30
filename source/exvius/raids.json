@@ -1,0 +1,5 @@
+{
+  "version":1,
+  "events":[],
+  "_notice":"Optional legacy shared-milestone configuration. King Mog personal rewards and local raid levels are configured in source/server/raid_rewards.json. This empty list does not disable that adapter. Never invent historical shared reward goals."
+}

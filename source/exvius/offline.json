@@ -1,0 +1,11 @@
+{
+  "banners": {
+    "mode": "all"
+  },
+  "standard_banners": false,
+  "event_areas": [
+    970,
+    888
+  ],
+  "_notice": "Only original Lapis rewards repeat per completed run; other first-clear rewards are one-time; existing banner/event selectors retained. Event coverage is unverified."
+}

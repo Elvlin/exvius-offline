@@ -1,0 +1,10 @@
+{
+  "description": "Synthetic 100 HP test dummy; NOT historical boss HP. Break parameters match community Bahamut 407031103 reference; all submitted damage/BP are authored test inputs.",
+  "hp": 100,
+  "break_gauge": {"base_bp": 10000, "delta_after_first": 20000, "duration_turns": 3},
+  "turns": [
+    {"damage": 10, "bp_damage": 10000},
+    {"damage": 20}, {"damage": 20}, {"damage": 20},
+    {"damage": 10, "bp_damage": 30000}, {"damage": 20}
+  ]
+}

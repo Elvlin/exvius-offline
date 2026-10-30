@@ -1,0 +1,118 @@
+{
+ "sources": [
+  "https://exvius.fandom.com/wiki/Trust_Coin_Exchange_Shop"
+ ],
+ "note": "Published Global shop rewards, prices and limits, resolved to shipped native master IDs. Service product keys are stable local keys because the original server-only table is absent. The unusual 25,000 Star Quartz price is independently corroborated by contemporary player reports. Historical prisms ended on 2023-01-05 and are excluded from this final catalogue.",
+ "rows": [
+  {
+   "d9gKeu0T": "900001",
+   "7iJpH5zZ": "10:904000115:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "10000",
+   "Hp54A9JM": "10",
+   "Z0EN6jSh": "1",
+   "T7aEx3Mj": "Empty Prism Moogle",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900002",
+   "7iJpH5zZ": "23:260:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "5000",
+   "Hp54A9JM": "120",
+   "Z0EN6jSh": "2",
+   "T7aEx3Mj": "5-star Select Summon Ticket",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900003",
+   "7iJpH5zZ": "23:110180:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "15000",
+   "Hp54A9JM": "40",
+   "Z0EN6jSh": "3",
+   "T7aEx3Mj": "NV EX Ticket (5-star/NV)",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900004",
+   "7iJpH5zZ": "20:106211340:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "1000",
+   "Hp54A9JM": "180",
+   "Z0EN6jSh": "4",
+   "T7aEx3Mj": "Super Trust Moogle Exchange Ticket",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900005",
+   "7iJpH5zZ": "20:900000001:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "25000",
+   "Hp54A9JM": "-1",
+   "Z0EN6jSh": "5",
+   "T7aEx3Mj": "Omniprism",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900006",
+   "7iJpH5zZ": "20:1209002041:10",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "400",
+   "Hp54A9JM": "30",
+   "Z0EN6jSh": "6",
+   "T7aEx3Mj": "Azure Pearl x10",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900007",
+   "7iJpH5zZ": "20:106200100:5",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "25000",
+   "Hp54A9JM": "200",
+   "Z0EN6jSh": "7",
+   "T7aEx3Mj": "Star Quartz x5",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900008",
+   "7iJpH5zZ": "10:900010501:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "100",
+   "Hp54A9JM": "-1",
+   "Z0EN6jSh": "8",
+   "T7aEx3Mj": "Gil Snapper Tower",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900009",
+   "7iJpH5zZ": "10:900020401:1:100:60",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "150",
+   "Hp54A9JM": "-1",
+   "Z0EN6jSh": "9",
+   "T7aEx3Mj": "King Metal Minituar (Max level)",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "d9gKeu0T": "900010",
+   "7iJpH5zZ": "20:1209001294:1",
+   "5Fix0IX9": "1",
+   "Yc8Mm6y7": "100",
+   "Hp54A9JM": "-1",
+   "Z0EN6jSh": "10",
+   "T7aEx3Mj": "Brave Insignia (Joined Forces)",
+   "VjJQ51uG": "2019-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+  "component": "offline-raid-workload-and-encounter-audit",
+  "version": "0.1",
+  "runtime_integration": false,
+  "client_acceptance": false,
+  "upstream_execution": false,
+  "files": {
+    "raid_model.py": {
+      "sha256": "e48b96f63494b2dcf1e7dc5b4ff57e90060d69db1811df7ad06762b092608254",
+      "bytes": 3049
+    },
+    "audit_source.py": {
+      "sha256": "b3caaa0ecbfc67b84e2dd4a10c6c646944cb7ac478adca37c47627c67a7960e8",
+      "bytes": 4932
+    },
+    "test_raid_model.py": {
+      "sha256": "5989dc2d40c1e2dbfabf15da0f8a983bc8c2b7ea82c89714ad2884bf370f6bf6",
+      "bytes": 2055
+    },
+    "scenario.schema.json": {
+      "sha256": "8b324a973d7516e0aae69049d7d7e18d5ea3666750847ebdefde65788cda338d",
+      "bytes": 979
+    },
+    "example_workload.json": {
+      "sha256": "959596b82a096b12ff5d9b94336b49fa1043da6d09443e81fe697364a996e0e0",
+      "bytes": 452
+    },
+    "example_result.json": {
+      "sha256": "8320a76c09dd6c0471890b0e6b44fa62dec8b4679d79d23a3eb801a40251946f",
+      "bytes": 1305
+    },
+    "source_audit.json": {
+      "sha256": "bfac41cdfe9ab7a3f34a84e199b4d510b7680b1ca8d6b10268cf01d7e02e6eaa",
+      "bytes": 34072
+    },
+    "test_results.txt": {
+      "sha256": "28ff974b73d0af3580679857449233640648baab660de75858babdfa424a2692",
+      "bytes": 773
+    },
+    "execution_metrics.json": {
+      "sha256": "377d43354e063e8e754758b145c9d535e2c192f7817b152e6a2c9cb6ee05ffd7",
+      "bytes": 665
+    },
+    "README.md": {
+      "sha256": "1aadd2b3ef5382f09f71d4d5938aa7ec5d142671815cdf2d81b5f562e5b6593b",
+      "bytes": 4968
+    },
+    "COVERAGE_REPORT.md": {
+      "sha256": "eff4eda546a383d7fad92874c7453b405d8c320f6f7b62bcb4db70c97ad58efc",
+      "bytes": 3315
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "what": "Global Premium Bundles, transcribed from the FFBE wiki's Premium Bundle page. Cash prices become Lapis at the game's own base-pack rate (serve_lapis_shop); gil and Lapis prices are kept.",
+    "source": "https://exvius.fandom.com/wiki/Premium_Bundle",
+    "source_revision": 329372,
+    "fetched": "2026-10-24",
+    "kinds": "contents rows are kind:id:count -- 10 unit, 20 item, 21 equipment, 23 important item, 30 gil, 50 lapis",
+    "art": "Shop art from the client's own cache, files/en/sd/static_banner/bundle/ (the 600x120 promos named on the image); Early Bird's (details_banner_earlybird.png) is the 2016 Global datamine image, https://i.imgur.com/8yhkdjc.png, sha256 913efeee22a3b009dc8d9a14b29180425b9422b739c7dff30f6642cb0ff56837 (logs/reference/bundles/sources.md); Iron Chest's was not found. The list tile is a separate 200x200 icon from common_lang/sd/static_banner/bundle/ (same file name as the banner); Early Bird has none, so its `icon` is the game's own lapis chest icon; Iron Chest's is the official 2021 news icon IronChestofAbundanceUpdatedicon.png (400x400, sha256 aa9bcfee..., resized to 200x200; logs/reference/bundles/sources.md).",
+    "local_tickets": "990000107-990000112 sell the JP special summons' own ticket items (F_ITEM_MST 106213030-080) for Lapis, prices AUTHORED (Elv 2026-10-24: a local SP ticket source); 990000113 is the JP Super Premium Box (fixed bundle, 10000 Lapis, once), contents from the 2020-05 JP art (research logs/reference/jp_specials/) minus its 3 Vision Cards (no bundle reward kind for cards).",
+    "omitted": [
+      "Energy rows (Early Bird has none; Iron Chest Energy x70, Bundle of Replenishment Energy x100): stamina refill is not an item the client grants",
+      "Iron Chest 'All 5-star awakening materials x20': the wiki does not name which items",
+      "Mythril/Gold/Silver Chest of Abundance: the wiki lists prices but no contents",
+      "Monthly Special and Today's Special: contents change daily on the server",
+      "Unit's Special, event daily specials and past bundles: tied to events that are not running"
+    ]
+  },
+  "bundles": [
+    {"id": "990000101", "name": "Early Bird Offer", "art": "details_banner_earlybird.png", "icon": "3197_20230905013503.png", "usd": "1.99", "limit": "once",
+     "contents": ["50:1:5000", "30:1:3000000", "20:1209001319:1", "23:260:10", "10:900020401:35"]},
+    {"id": "990000102", "name": "Iron Chest of Abundance", "icon": "IronChestofAbundanceUpdatedicon.png", "usd": "0.99", "limit": "once",
+     "contents": ["23:50:1", "10:900020401:15", "30:1:500000"]},
+    {"id": "990000103", "name": "Knight Training Package", "art": "edc81ebfd5095c3b049b5a3f3ff67e60.png", "gil": 20000, "limit": "daily",
+     "contents": ["21:303001300:1", "21:406000800:1", "21:403020200:1", "21:409000300:1"]},
+    {"id": "990000104", "name": "Bundle of Enhancement", "art": "283_20201102051012.png", "gil": 30000, "limit": "daily",
+     "contents": ["10:900020401:1"]},
+    {"id": "990000105", "name": "Bundle of Riches", "art": "439c24261bed48dd44a2ea605faa9fcf.png", "lapis": 100, "limit": "daily",
+     "contents": ["30:1:1000000"]},
+    {"id": "990000106", "name": "Bundle of Replenishment", "art": "0c855c16012a2e67899dd28fd2a28c3e.png", "lapis": 100, "limit": "daily",
+     "contents": ["23:100:2"]},
+    {"id": "990000107", "name": "SP Summon Ticket", "lapis": 300, "limit": null,
+     "contents": ["20:106213040:1"]},
+    {"id": "990000108", "name": "4★/5★/NV SP Summon Ticket", "lapis": 1000, "limit": null,
+     "contents": ["20:106213050:1"]},
+    {"id": "990000109", "name": "5★/NV SP Summon Ticket", "lapis": 3000, "limit": null,
+     "contents": ["20:106213030:1"]},
+    {"id": "990000110", "name": "Bonus Summon Ticket", "lapis": 500, "limit": null,
+     "contents": ["20:106213060:1"]},
+    {"id": "990000111", "name": "Boss Rush Summon Ticket x10", "lapis": 300, "limit": null,
+     "contents": ["20:106213070:10"]},
+    {"id": "990000112", "name": "Brave Ability Box Ticket x10", "lapis": 300, "limit": null,
+     "contents": ["20:106213080:10"]},
+    {"id": "990000113", "name": "Super Premium Box", "lapis": 10000, "limit": "once",
+     "contents": ["10:900020401:45", "10:900010501:45", "23:300:2000", "10:905000104:20", "10:900000301:1", "10:900001301:1", "10:900002301:1", "10:900003301:1", "10:900004301:1", "10:900005301:1", "20:270000500:3", "20:270001000:3", "20:270001500:3", "20:270003000:3", "20:270003500:3", "20:270004000:3", "20:270004500:3", "20:270005000:3"]}
+  ]
+}

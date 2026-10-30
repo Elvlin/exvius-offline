@@ -1,0 +1,218 @@
+{
+ "sources": [
+  "https://exvius.fandom.com/wiki/Town_of_Mitra#Treasures",
+  "https://exvius.fandom.com/wiki/The_Egg_Seekers",
+  "https://exvius.fandom.com/wiki/Earth_Shrine/Exploration",
+  "https://archive.org/details/ffbe-eos-contentserver-archive"
+ ],
+ "note": "Previously verified Global map ownership and retail reward overrides. These take precedence over the preserved database.",
+ "treasures": [
+  {
+   "id": 111010401,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002001,
+   "rewards": "21:302000100:1",
+   "description": "Broadsword at x1334 y4234 (Earth Shrine wiki chest 2)"
+  },
+  {
+   "id": 111010402,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002002,
+   "rewards": "20:101000100:1",
+   "description": "Potion at x1624 y928 (Earth Shrine wiki chest 6)"
+  },
+  {
+   "id": 111010403,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002003,
+   "rewards": "20:101000100:1",
+   "description": "Potion at x406 y4582 (Earth Shrine wiki chest 1)"
+  },
+  {
+   "id": 111010404,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002004,
+   "rewards": "21:406000100:1",
+   "description": "Leather Plate at x638 y1856 (Earth Shrine wiki chest 5)"
+  },
+  {
+   "id": 111010405,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002005,
+   "rewards": "20:102000100:1",
+   "description": "Antidote at x1566 y2668 (Earth Shrine wiki chest 3)"
+  },
+  {
+   "id": 111010406,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 40002006,
+   "rewards": "60:905000740:1",
+   "description": "Barstone recipe at x2610 y1798 (Earth Shrine silver chest 1)"
+  },
+  {
+   "id": 111010407,
+   "mission": 1110104,
+   "resource": "111010100",
+   "map": 70,
+   "switch": 51010001,
+   "rewards": "20:106200100:1",
+   "description": "Star Quartz at x2204 y870 (Earth Shrine wiki chest 4)"
+  },
+  {
+   "id": 1101001,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 56,
+   "switch": 40004001,
+   "rewards": "21:309020200:1",
+   "description": "Bronze Knuckles in the northwest of Mitra (wiki chest 5)"
+  },
+  {
+   "id": 1101002,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 56,
+   "switch": 40004002,
+   "rewards": "20:102001100:1",
+   "description": "Eye Drops in southern Mitra (wiki chest 9)"
+  },
+  {
+   "id": 1101003,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 56,
+   "switch": 40004003,
+   "rewards": "21:409001100:1",
+   "description": "Silver Glasses in eastern Mitra (wiki chest 8)"
+  },
+  {
+   "id": 1101004,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 56,
+   "switch": 40004004,
+   "rewards": "20:102000100:1",
+   "description": "Antidote near the central house (wiki chest 3)"
+  },
+  {
+   "id": 1101006,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 63,
+   "switch": 40004006,
+   "rewards": "20:109201050:1",
+   "description": "Earth Key #6 in the inn back room (wiki chest 1)"
+  },
+  {
+   "id": 1101007,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 65,
+   "switch": 40004007,
+   "rewards": "21:403000400:1",
+   "description": "Feathered Cap in the northeast house (wiki chest 7)"
+  },
+  {
+   "id": 1101008,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 60,
+   "switch": 40004008,
+   "rewards": "20:101000100:1",
+   "description": "Potion in the Mitra item shop"
+  },
+  {
+   "id": 1101009,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 64,
+   "switch": 40004009,
+   "rewards": "21:407000200:1",
+   "description": "Bronze Armor in the central house (wiki chest 2)"
+  },
+  {
+   "id": 1101011,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 62,
+   "switch": 40004011,
+   "rewards": "60:905200510:1",
+   "description": "Fire Blade recipe in the inn, accessed through its back door (silver chest 1)"
+  },
+  {
+   "id": 1101012,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 61,
+   "switch": 40004012,
+   "rewards": "60:905000690:1",
+   "description": "Barfire recipe in the Alcryst shop (silver chest 2)"
+  },
+  {
+   "id": 1101014,
+   "town": 1101,
+   "resource": "111020100",
+   "map": 56,
+   "switch": 51010004,
+   "rewards": "20:106200100:1",
+   "description": "Star Quartz hidden behind the tree (wiki chest 4)"
+  },
+  {
+   "id": 610000058,
+   "mission": 9001101,
+   "resource": "900003",
+   "map": 68,
+   "switch": 90001204,
+   "rewards": "60:1000000020:1",
+   "description": "Chocolate Egg recipe"
+  },
+  {
+   "id": 610000059,
+   "mission": 9001101,
+   "resource": "900003",
+   "map": 69,
+   "switch": 90001205,
+   "rewards": "60:1000000021:1",
+   "description": "Great Egg recipe"
+  },
+  {
+   "id": 610000060,
+   "mission": 9001101,
+   "resource": "900003",
+   "map": 69,
+   "switch": 90001211,
+   "rewards": "20:1209000815:5000",
+   "description": "Aiden's Staff of Wrath quest reward"
+  }
+ ],
+ "legacy_reward_replacements": {
+  "60:903000740:1": {
+   "reward": "60:905000740:1",
+   "note": "Obsolete recipe ID has no master. Local Barstone recipe replacement uses the existing Global book."
+  },
+  "60:903000260:1": {
+   "reward": "60:905000260:1",
+   "note": "Obsolete recipe ID has no master. Local Water recipe replacement uses the existing Global book."
+  },
+  "22:501000100:1": {
+   "reward": "22:504020010:1",
+   "note": "Prototype materia ID is absent from both recovered database and Global masters. Local Fire materia replacement."
+  },
+  "60:10000:1": {
+   "reward": "60:901000010:1",
+   "note": "Prototype recipe ID is absent from both recovered database and Global masters. Local Potion recipe replacement."
+  }
+ }
+}

@@ -1,0 +1,1987 @@
+{
+  "source": "docs/analysis/FFBE_SERVER_CONTRACT.md; inert authored conversion",
+  "source_sha256": "77dc11d96651b2d9c265ccb9a947776a5918849f10d0389af7232af7596897c4",
+  "source_commit": "7707880725637ece42dbc42820c29db424f6f4cc",
+  "classes": 222,
+  "distinct_urls": 211,
+  "by_class": {
+    "AllianceDeckEditRequest": {
+      "request_id": "P76LYXow",
+      "encode_key": "2E3UinsJ",
+      "url": "/actionSymbol/7gAGFC4I.php",
+      "url_token": "7gAGFC4I"
+    },
+    "AllianceEntryRequest": {
+      "request_id": "HtR8XF4e",
+      "encode_key": "zS4tPgi7",
+      "url": "/actionSymbol/EzfT0wX6.php",
+      "url_token": "EzfT0wX6"
+    },
+    "AllianceUndercoverStrengthenRequest": {
+      "request_id": "qj63QmHE",
+      "encode_key": "75pZA8tv",
+      "url": "/actionSymbol/UR1OtKJS.php",
+      "url_token": "UR1OtKJS"
+    },
+    "ArchiveUpdateRequest": {
+      "request_id": "cVTxW0K3",
+      "encode_key": "IFLW9H4M",
+      "url": "/actionSymbol/2bCcKx0D.php",
+      "url_token": "2bCcKx0D"
+    },
+    "BeastBoardPieceOpenRequest": {
+      "request_id": "0gk3Tfbz",
+      "encode_key": "7uxYTm3k",
+      "url": "/actionSymbol/Y2Zvnad9.php",
+      "url_token": "Y2Zvnad9"
+    },
+    "BeastMixRequest": {
+      "request_id": "C8X1KUpV",
+      "encode_key": "WfNSmy98",
+      "url": "/actionSymbol/7vHqNPF0.php",
+      "url_token": "7vHqNPF0"
+    },
+    "BundlePurchaseRequest": {
+      "request_id": "w6Z9a6tD",
+      "encode_key": "NE3Pp4K8",
+      "url": "/actionSymbol/tPc64qmn.php",
+      "url_token": "tPc64qmn"
+    },
+    "BundleStatusRequest": {
+      "request_id": "uLXAMvCT",
+      "encode_key": "PrSPuc8c",
+      "url": "/actionSymbol/tPc64qmn.php",
+      "url_token": "tPc64qmn"
+    },
+    "CampaignTieupRequest": {
+      "request_id": "mI0Q2YhW",
+      "encode_key": "72d5UTNC",
+      "url": "/actionSymbol/2u30vqfY.php",
+      "url_token": "2u30vqfY"
+    },
+    "ChallengeClearRequest": {
+      "request_id": "D9xphQ8X",
+      "encode_key": "UD5QCa2s",
+      "url": "/actionSymbol/dEvLKchl.php",
+      "url_token": "dEvLKchl"
+    },
+    "ClientReportRequest": {
+      "request_id": "Uq4gcH1s",
+      "encode_key": "jw84xYPr",
+      "url": "/actionSymbol/RntCZywQ.php",
+      "url_token": "RntCZywQ"
+    },
+    "ClsmEndRequest": {
+      "request_id": "3zgbapQ7",
+      "encode_key": "6aBHXGv4",
+      "url": "/actionSymbol/7vHqNPF0.php",
+      "url_token": "7vHqNPF0"
+    },
+    "ClsmEntryRequest": {
+      "request_id": "5g0vWZFq",
+      "encode_key": "8bmHF3Cz",
+      "url": "/actionSymbol/UmLwv56W.php",
+      "url_token": "UmLwv56W"
+    },
+    "ClsmLotteryRequest": {
+      "request_id": "Un16HuNI",
+      "encode_key": "pU62SkhJ",
+      "url": "/actionSymbol/4uj3NhUQ.php",
+      "url_token": "4uj3NhUQ"
+    },
+    "ClsmStartRequest": {
+      "request_id": "4uCSA3ko",
+      "encode_key": "wdSs23yW",
+      "url": "/actionSymbol/rncR9js8.php",
+      "url_token": "rncR9js8"
+    },
+    "CraftAddRequest": {
+      "request_id": "QkN1Sp64",
+      "encode_key": "qz0SG1Ay",
+      "url": "/actionSymbol/iQ7R4CFB.php",
+      "url_token": "iQ7R4CFB"
+    },
+    "CraftCancelRequest": {
+      "request_id": "79xDN1Mw",
+      "encode_key": "68zcUF3E",
+      "url": "/actionSymbol/7WdDLIE4.php",
+      "url_token": "7WdDLIE4"
+    },
+    "CraftEndRequest": {
+      "request_id": "WIuvh09n",
+      "encode_key": "yD97t8kB",
+      "url": "/actionSymbol/9G7Vc8Ny.php",
+      "url_token": "9G7Vc8Ny"
+    },
+    "CraftExeRequest": {
+      "request_id": "PKDhIN34",
+      "encode_key": "ZbHEB15J",
+      "url": "/actionSymbol/UyHLjV60.php",
+      "url_token": "UyHLjV60"
+    },
+    "CraftStartRequest": {
+      "request_id": "Gr9zxXk5",
+      "encode_key": "K92H8wkY",
+      "url": "/actionSymbol/w71MZ0Gg.php",
+      "url_token": "w71MZ0Gg"
+    },
+    "CreateUserRequest": {
+      "request_id": "P6pTz4WA",
+      "encode_key": "73BUnZEr",
+      "url": "/actionSymbol/0FK8NJRX.php",
+      "url_token": "0FK8NJRX"
+    },
+    "DailyDungeonSelectRequest": {
+      "request_id": "JyfxY2e0",
+      "encode_key": "ioC6zqG1",
+      "url": "/actionSymbol/9LgmdR0v.php",
+      "url_token": "9LgmdR0v"
+    },
+    "DailyQuestClaimAllRewardRequest": {
+      "request_id": "DCmya9WD",
+      "encode_key": "KHx6JdrT",
+      "url": "/actionSymbol/Br9PwJ6A.php",
+      "url_token": "Br9PwJ6A"
+    },
+    "DailyQuestClaimRewardRequest": {
+      "request_id": "Zy8fYJ5e",
+      "encode_key": "jwYGF3sY",
+      "url": "/actionSymbol/Br9PwJ6A.php",
+      "url_token": "Br9PwJ6A"
+    },
+    "DailyQuestShareRequest": {
+      "request_id": "3sTwRcpq",
+      "encode_key": "PMyGMdUa",
+      "url": "/actionSymbol/3sTwRcpq.php",
+      "url_token": "3sTwRcpq"
+    },
+    "DailyQuestUpdateRequest": {
+      "request_id": "6QYd5Hym",
+      "encode_key": "9QtGVCWg",
+      "url": "/actionSymbol/QWDn5epF.php",
+      "url_token": "QWDn5epF"
+    },
+    "DmgRankEndRequest": {
+      "request_id": "s98cw1WA",
+      "encode_key": "7pGj8hSW",
+      "url": "/actionSymbol/zd5KJ3jn.php",
+      "url_token": "zd5KJ3jn"
+    },
+    "DmgRankRetireRequest": {
+      "request_id": "W3Z4VF1X",
+      "encode_key": "5fkWyeE6",
+      "url": "/actionSymbol/8wdmR9yG.php",
+      "url_token": "8wdmR9yG"
+    },
+    "DmgRankStartRequest": {
+      "request_id": "5P6ULvjg",
+      "encode_key": "1d5AP9p6",
+      "url": "/actionSymbol/j37Vk5xe.php",
+      "url_token": "j37Vk5xe"
+    },
+    "DungeonLiberationRequest": {
+      "request_id": "nQMb2L4h",
+      "encode_key": "0xDA4Cr9",
+      "url": "/actionSymbol/0vc6irBY.php",
+      "url_token": "0vc6irBY"
+    },
+    "DungeonResourceLoadMstListRequest": {
+      "request_id": "jnw49dUq",
+      "encode_key": "3PVu6ReZ",
+      "url": "/actionSymbol/Sl8UgmP4.php",
+      "url_token": "Sl8UgmP4"
+    },
+    "EquipGrowAbilityFixRequest": {
+      "request_id": "k8ew94DN",
+      "encode_key": "58dS0DZN",
+      "url": "/actionSymbol/CnPyXkUV.php",
+      "url_token": "CnPyXkUV"
+    },
+    "EquipGrowAbilitySelectResumeRequest": {
+      "request_id": "80R6BXUw",
+      "encode_key": "7YxgkK1V",
+      "url": "/actionSymbol/Ke7YG3xW.php",
+      "url_token": "Ke7YG3xW"
+    },
+    "EquipGrowEntryRequest": {
+      "request_id": "U8F0Q25i",
+      "encode_key": "6fTy3HRM",
+      "url": "/actionSymbol/UiSOVXT2.php",
+      "url_token": "UiSOVXT2"
+    },
+    "EquipItemFavoriteRequest": {
+      "request_id": "cVRHU84e",
+      "encode_key": "dRBYF8Q0",
+      "url": "/actionSymbol/fZ4jONfh.php",
+      "url_token": "fZ4jONfh"
+    },
+    "ExbonusExeRequest": {
+      "request_id": "68RQ9GwN",
+      "encode_key": "FvL0AP1U",
+      "url": "/actionSymbol/u843ypX2.php",
+      "url_token": "u843ypX2"
+    },
+    "ExbonusUpdateRequest": {
+      "request_id": "HaJp14F6",
+      "encode_key": "a3BP2MRo",
+      "url": "/actionSymbol/lNJqXG3D.php",
+      "url_token": "lNJqXG3D"
+    },
+    "ExchangeShopRequest": {
+      "request_id": "I7fmVX3R",
+      "encode_key": "qoRP87Fw",
+      "url": "/actionSymbol/1bf0HF4w.php",
+      "url_token": "1bf0HF4w"
+    },
+    "FacebookAddFriendRequest": {
+      "request_id": "NAW9vJnm",
+      "encode_key": "532vAYUy",
+      "url": "/actionSymbol/NAW9vJnm.php",
+      "url_token": "NAW9vJnm"
+    },
+    "FacebookLogoutRequest": {
+      "request_id": "xHTo4BZp",
+      "encode_key": "wwHxtAy6",
+      "url": "/actionSymbol/xHTo4BZp.php",
+      "url_token": "xHTo4BZp"
+    },
+    "FacebookRewardClaimRequest": {
+      "request_id": "47R9pLGq",
+      "encode_key": "Rja82ZUK",
+      "url": "/actionSymbol/47R9pLGq.php",
+      "url_token": "47R9pLGq"
+    },
+    "FacebookRewardListRequest": {
+      "request_id": "8YZsGLED",
+      "encode_key": "85YBRzZg",
+      "url": "/actionSymbol/8YZsGLED.php",
+      "url_token": "8YZsGLED"
+    },
+    "FriendAgreeRequest": {
+      "request_id": "kx13SLUY",
+      "encode_key": "9FjK0zM3",
+      "url": "/actionSymbol/1DYp5Nqm.php",
+      "url_token": "1DYp5Nqm"
+    },
+    "FriendDeleteRequest": {
+      "request_id": "a2d6omAy",
+      "encode_key": "d0VP5ia6",
+      "url": "/actionSymbol/8R4fQbYh.php",
+      "url_token": "8R4fQbYh"
+    },
+    "FriendDetailRequest": {
+      "request_id": "7kG0JAvE",
+      "encode_key": "aKvkU6Y4",
+      "url": "/actionSymbol/QBiJEyUt.php",
+      "url_token": "QBiJEyUt"
+    },
+    "FriendFavoriteRequest": {
+      "request_id": "1oE3Fwn4",
+      "encode_key": "3EBXbj1d",
+      "url": "/actionSymbol/8IYSJ5H1.php",
+      "url_token": "8IYSJ5H1"
+    },
+    "FriendListRequest": {
+      "request_id": "u7Id4bMg",
+      "encode_key": "1iV2oN9r",
+      "url": "/actionSymbol/p3hwqW5U.php",
+      "url_token": "p3hwqW5U"
+    },
+    "FriendRefuseRequest": {
+      "request_id": "1nbWRV9w",
+      "encode_key": "RYdX9h2A",
+      "url": "/actionSymbol/Vw0a4I3i.php",
+      "url_token": "Vw0a4I3i"
+    },
+    "FriendRequest": {
+      "request_id": "j0A5vQd8",
+      "encode_key": "6WAkj0IH",
+      "url": "/actionSymbol/8drhF2mG.php",
+      "url_token": "8drhF2mG"
+    },
+    "FriendSearchRequest": {
+      "request_id": "3siZRSU4",
+      "encode_key": "VCL5oj6u",
+      "url": "/actionSymbol/6Y1jM3Wp.php",
+      "url_token": "6Y1jM3Wp"
+    },
+    "FriendSuggestRequest": {
+      "request_id": "iAs67PhJ",
+      "encode_key": "j2P3uqRC",
+      "url": "/actionSymbol/6TCn0BFh.php",
+      "url_token": "6TCn0BFh"
+    },
+    "GachaBoxNextRequest": {
+      "request_id": "xa9uR3pI",
+      "encode_key": "U2Lm8vcS",
+      "url": "/actionSymbol/tULiKh5j.php",
+      "url_token": "tULiKh5j"
+    },
+    "GachaEntryRequest": {
+      "request_id": "rj6dxU9w",
+      "encode_key": "39cFjtId",
+      "url": "/actionSymbol/tUJxSQz7.php",
+      "url_token": "tUJxSQz7"
+    },
+    "GachaExeRequest": {
+      "request_id": "9fVIioy1",
+      "encode_key": "oaEJ9y1Z",
+      "url": "/actionSymbol/oC30VTFp.php",
+      "url_token": "oC30VTFp"
+    },
+    "GachaInfoRequest": {
+      "request_id": "UNP1GR5n",
+      "encode_key": "VA8QR57X",
+      "url": "/actionSymbol/3nhWq25K.php",
+      "url_token": "3nhWq25K"
+    },
+    "GachaPanelNextRequest": {
+      "request_id": "32YLaEmn",
+      "encode_key": "qbHn0E2L",
+      "url": "/actionSymbol/7WGJtJwo.php",
+      "url_token": "7WGJtJwo"
+    },
+    "GachaSelectEntryRequest": {
+      "request_id": "6nTcSp4R",
+      "encode_key": "uG1jRky6",
+      "url": "/actionSymbol/6RI813OP.php",
+      "url_token": "6RI813OP"
+    },
+    "GachaSelectExchangeExeRequest": {
+      "request_id": "W58vo4Hp",
+      "encode_key": "98yAYp5c",
+      "url": "/actionSymbol/ROLuCfi2.php",
+      "url_token": "ROLuCfi2"
+    },
+    "GachaSelectExeRequest": {
+      "request_id": "xio14KrL",
+      "encode_key": "BuJqHc41",
+      "url": "/actionSymbol/eB0VYGMt.php",
+      "url_token": "eB0VYGMt"
+    },
+    "GameSettingRequest": {
+      "request_id": "OTX6Fmvu",
+      "encode_key": "4foXVwWd",
+      "url": "/actionSymbol/OTX6Fmvu.php",
+      "url_token": "OTX6Fmvu"
+    },
+    "GetBackgroundDownloadInfoRequest": {
+      "request_id": "lEHBdOEf",
+      "encode_key": "Z1krd75o",
+      "url": "/actionSymbol/action.php",
+      "url_token": "action"
+    },
+    "GetReinforcementInfoRequest": {
+      "request_id": "AJhnI37s",
+      "encode_key": "87khNMou",
+      "url": "/actionSymbol/hXMoLwgE.php",
+      "url_token": "hXMoLwgE"
+    },
+    "GetTitleInfoRequest": {
+      "request_id": "ocP3A1FI",
+      "encode_key": "Mw56RNZ2",
+      "url": "/actionSymbol/BbIeq31M.php",
+      "url_token": "BbIeq31M"
+    },
+    "GetUserInfo2Request": {
+      "request_id": "2eK5Vkr8",
+      "encode_key": "7VNRi6Dk",
+      "url": "/actionSymbol/7KZ4Wvuw.php",
+      "url_token": "7KZ4Wvuw"
+    },
+    "GetUserInfo3Request": {
+      "request_id": "4rjw5pnv",
+      "encode_key": "0Dn4hbWC",
+      "url": "/actionSymbol/lZXr14iy.php",
+      "url_token": "lZXr14iy"
+    },
+    "GetUserInfoRequest": {
+      "request_id": "X07iYtp5",
+      "encode_key": "rcsq2eG7",
+      "url": "/actionSymbol/u7sHDCg4.php",
+      "url_token": "u7sHDCg4"
+    },
+    "GiftUpdateRequest": {
+      "request_id": "9KN5rcwj",
+      "encode_key": "xLEtf78b",
+      "url": "/actionSymbol/noN8I0UK.php",
+      "url_token": "noN8I0UK"
+    },
+    "GloryConfirmedGimmickRequest": {
+      "request_id": "7Bt6HTw0",
+      "encode_key": "4nik5jwd",
+      "url": "/actionSymbol/F86LHcMO.php",
+      "url_token": "F86LHcMO"
+    },
+    "GloryEntryRequest": {
+      "request_id": "UDb5Je1j",
+      "encode_key": "FtD9IGj7",
+      "url": "/actionSymbol/nEZ9twZH.php",
+      "url_token": "nEZ9twZH"
+    },
+    "GloryMissionEndRequest": {
+      "request_id": "BQG1rm3y",
+      "encode_key": "5xvUq9Gm",
+      "url": "/actionSymbol/F86LHcMO.php",
+      "url_token": "F86LHcMO"
+    },
+    "GloryMissionReStartRequest": {
+      "request_id": "YAF1wt9J",
+      "encode_key": "fxCuP4k3",
+      "url": "/actionSymbol/DHpM2abg.php",
+      "url_token": "DHpM2abg"
+    },
+    "GloryMissionStartRequest": {
+      "request_id": "oj76TPS2",
+      "encode_key": "5hqtxF36",
+      "url": "/actionSymbol/hZ4GFCAH.php",
+      "url_token": "hZ4GFCAH"
+    },
+    "GooglePromotionRewardRequest": {
+      "request_id": "6PDhpa5T",
+      "encode_key": "F7AMb1u2",
+      "url": "/actionSymbol/jSxaKcr0.php",
+      "url_token": "jSxaKcr0"
+    },
+    "GrandMissionEntryRequest": {
+      "request_id": "MTf2j9aK",
+      "encode_key": "Uey5jW2G",
+      "url": "/actionSymbol/8DermCsY.php",
+      "url_token": "8DermCsY"
+    },
+    "InitializeRequest": {
+      "request_id": "75fYdNxq",
+      "encode_key": "rVG09Xnt",
+      "url": "/actionSymbol/fSG1eXI9.php",
+      "url_token": "fSG1eXI9"
+    },
+    "IsNeedValidateRequest": {
+      "request_id": "er5xMIj6",
+      "encode_key": "djhiU6x8",
+      "url": "/actionSymbol/gk3Wtr8A.php",
+      "url_token": "gk3Wtr8A"
+    },
+    "ItemBuyRequest": {
+      "request_id": "sxK2HG6T",
+      "encode_key": "InN5PUR0",
+      "url": "/actionSymbol/oQrAys71.php",
+      "url_token": "oQrAys71"
+    },
+    "ItemCarryEditRequest": {
+      "request_id": "UM7hA0Zd",
+      "encode_key": "04opy1kf",
+      "url": "/actionSymbol/8BE6tJbf.php",
+      "url_token": "8BE6tJbf"
+    },
+    "ItemSellRequest": {
+      "request_id": "d9Si7TYm",
+      "encode_key": "E8H3UerF",
+      "url": "/actionSymbol/hQRf8D6r.php",
+      "url_token": "hQRf8D6r"
+    },
+    "LibraryVisionCardEntryRequest": {
+      "request_id": "Lx8F2iU0",
+      "encode_key": "63ucryZ7",
+      "url": "/actionSymbol/lIUfgWYj.php",
+      "url_token": "lIUfgWYj"
+    },
+    "LoginBonusRequest": {
+      "request_id": "vw9RP3i4",
+      "encode_key": "Vi6vd9zG",
+      "url": "/actionSymbol/iP9ogKy6.php",
+      "url_token": "iP9ogKy6"
+    },
+    "MailListRequest": {
+      "request_id": "KQHpi0D7",
+      "encode_key": "7kgsrGQ1",
+      "url": "/actionSymbol/u3E8hpad.php",
+      "url_token": "u3E8hpad"
+    },
+    "MailReceiptRequest": {
+      "request_id": "XK7efER9",
+      "encode_key": "P2YFr7N9",
+      "url": "/actionSymbol/M2fHBe9d.php",
+      "url_token": "M2fHBe9d"
+    },
+    "MasterCardReleaseRequest": {
+      "request_id": "23fbcXt4",
+      "encode_key": "7JE6MzkC",
+      "url": "/actionSymbol/sC1oeYeD.php",
+      "url_token": "sC1oeYeD"
+    },
+    "MateriaFavoriteRequest": {
+      "request_id": "k5v0hMd8",
+      "encode_key": "La3si8kz",
+      "url": "/actionSymbol/lW4xfpvS.php",
+      "url_token": "lW4xfpvS"
+    },
+    "MedalExchangeRequest": {
+      "request_id": "LiM9Had2",
+      "encode_key": "dCja1E54",
+      "url": "/actionSymbol/0X8Fpjhb.php",
+      "url_token": "0X8Fpjhb"
+    },
+    "MissionBreakRequest": {
+      "request_id": "17LFJD0b",
+      "encode_key": "Z2oPiE6p",
+      "url": "/actionSymbol/P4oIeVf0.php",
+      "url_token": "P4oIeVf0"
+    },
+    "MissionContinueRequest": {
+      "request_id": "LuCN4tU5",
+      "encode_key": "34n2iv7z",
+      "url": "/actionSymbol/ZzCXI6E7.php",
+      "url_token": "ZzCXI6E7"
+    },
+    "MissionContinueRetireRequest": {
+      "request_id": "V3CiWT0r",
+      "encode_key": "F1QRxT5m",
+      "url": "/actionSymbol/cQU1D9Nx.php",
+      "url_token": "cQU1D9Nx"
+    },
+    "MissionEndRequest": {
+      "request_id": "x5Unqg2d",
+      "encode_key": "1tg0Lsqj",
+      "url": "/actionSymbol/0ydjM5sU.php",
+      "url_token": "0ydjM5sU"
+    },
+    "MissionReStartRequest": {
+      "request_id": "GfI4LaU3",
+      "encode_key": "Vw6bP0rN",
+      "url": "/actionSymbol/r5vfM1Y3.php",
+      "url_token": "r5vfM1Y3"
+    },
+    "MissionRetireRequest": {
+      "request_id": "v51PM7wj",
+      "encode_key": "oUh1grm8",
+      "url": "/actionSymbol/gbZ64SQ2.php",
+      "url_token": "gbZ64SQ2"
+    },
+    "MissionStartRequest": {
+      "request_id": "29JRaDbd",
+      "encode_key": "i48eAVL6",
+      "url": "/actionSymbol/63VqtzbQ.php",
+      "url_token": "63VqtzbQ"
+    },
+    "MissionSwitchUpdateRequest": {
+      "request_id": "Tvq54dx6",
+      "encode_key": "bZezA63a",
+      "url": "/actionSymbol/1Xz8kJLr.php",
+      "url_token": "1Xz8kJLr"
+    },
+    "MissionUpdateRequest": {
+      "request_id": "j5JHKq6S",
+      "encode_key": "Nq9uKGP7",
+      "url": "/actionSymbol/fRDUy3E2.php",
+      "url_token": "fRDUy3E2"
+    },
+    "MissionWaveReStartRequest": {
+      "request_id": "e9RP8Cto",
+      "encode_key": "M3bYZoU5",
+      "url": "/actionSymbol/8m7KNezI.php",
+      "url_token": "8m7KNezI"
+    },
+    "MissionWaveStartRequest": {
+      "request_id": "BSq28mwY",
+      "encode_key": "d2mqJ6pT",
+      "url": "/actionSymbol/Mn15zmDZ.php",
+      "url_token": "Mn15zmDZ"
+    },
+    "MyCardInitializeRequest": {
+      "request_id": "BruItbuW",
+      "encode_key": "q54ajlRb",
+      "url": "/actionSymbol/d6f9LSI7.php",
+      "url_token": "d6f9LSI7"
+    },
+    "NoticeReadUpdateRequest": {
+      "request_id": "pC3a2JWU",
+      "encode_key": "iLdaq6j2",
+      "url": "/actionSymbol/j6kSWR3q.php",
+      "url_token": "j6kSWR3q"
+    },
+    "NoticeUpdateRequest": {
+      "request_id": "CQ4jTm2F",
+      "encode_key": "9t68YyjT",
+      "url": "/actionSymbol/TqtzK84R.php",
+      "url_token": "TqtzK84R"
+    },
+    "NvSacrificeRequest": {
+      "request_id": "x94MnujU",
+      "encode_key": "KXcC8A1o",
+      "url": "/actionSymbol/VliYfNhr.php",
+      "url_token": "VliYfNhr"
+    },
+    "OptionUpdateRequest": {
+      "request_id": "otgXV79T",
+      "encode_key": "B9mAa7rp",
+      "url": "/actionSymbol/0Xh2ri5E.php",
+      "url_token": "0Xh2ri5E"
+    },
+    "ParadeEntryRequest": {
+      "request_id": "Q46YTgWo",
+      "encode_key": "kF7Z5vCK",
+      "url": "/actionSymbol/9i4b61rU.php",
+      "url_token": "9i4b61rU"
+    },
+    "ParadeMissionEndRequest": {
+      "request_id": "4cACW7y3",
+      "encode_key": "Pv08w12y",
+      "url": "/actionSymbol/hC8r9p81.php",
+      "url_token": "hC8r9p81"
+    },
+    "PartyDeckEditRequest": {
+      "request_id": "TS5Dx9aZ",
+      "encode_key": "34qFNPf7",
+      "url": "/actionSymbol/6xkK4eDG.php",
+      "url_token": "6xkK4eDG"
+    },
+    "PartyRegisterSlotLoadRequest": {
+      "request_id": "Q7jV6pno",
+      "encode_key": "7zcaE16T",
+      "url": "/actionSymbol/2y4BVhyj.php",
+      "url_token": "2y4BVhyj"
+    },
+    "PartyRegisterSlotSaveRequest": {
+      "request_id": "CE98eghN",
+      "encode_key": "0S9Uzr42",
+      "url": "/actionSymbol/QjDQEMYc.php",
+      "url_token": "QjDQEMYc"
+    },
+    "PartyRegisterSlotUpdateRequest": {
+      "request_id": "RQ5BjDE0",
+      "encode_key": "CpZH8rY0",
+      "url": "/actionSymbol/HgSTAzd2.php",
+      "url_token": "HgSTAzd2"
+    },
+    "PlaybackMissionStartRequest": {
+      "request_id": "1YnQM4iB",
+      "encode_key": "YC20v1Uj",
+      "url": "/actionSymbol/zm2ip59f.php",
+      "url_token": "zm2ip59f"
+    },
+    "PlaybackMissionWaveStartRequest": {
+      "request_id": "1BpXP3Fs",
+      "encode_key": "NdkX15vE",
+      "url": "/actionSymbol/scyPYa81.php",
+      "url_token": "scyPYa81"
+    },
+    "PlayerEmblemEntryRequest": {
+      "request_id": "Z7J9H6TK",
+      "encode_key": "F7A2MJoE",
+      "url": "/actionSymbol/huKNdci6.php",
+      "url_token": "huKNdci6"
+    },
+    "PlayerEmblemSettingRequest": {
+      "request_id": "19YwqU2T",
+      "encode_key": "76kGLIgN",
+      "url": "/actionSymbol/cswGxj8F.php",
+      "url_token": "cswGxj8F"
+    },
+    "PurchaseCancelRequest": {
+      "request_id": "L7K0ezU2",
+      "encode_key": "Z1mojg9a",
+      "url": "/actionSymbol/y71uBCER.php",
+      "url_token": "y71uBCER"
+    },
+    "PurchaseCurrentStateRequest": {
+      "request_id": "9mM3eXgi",
+      "encode_key": "X9k5vFdu",
+      "url": "/actionSymbol/bAR4k7Qd.php",
+      "url_token": "bAR4k7Qd"
+    },
+    "PurchaseFailedRequest": {
+      "request_id": "jSe80Gx7",
+      "encode_key": "sW0vf3ZM",
+      "url": "/actionSymbol/2TCis0R6.php",
+      "url_token": "2TCis0R6"
+    },
+    "PurchaseGiveUpRequest": {
+      "request_id": "BFf1nwh6",
+      "encode_key": "xoZ62QWy",
+      "url": "/actionSymbol/C2w0f3go.php",
+      "url_token": "C2w0f3go"
+    },
+    "PurchaseHoldRequest": {
+      "request_id": "79EVRjeM",
+      "encode_key": "5Mwfq90Z",
+      "url": "/actionSymbol/dCxtMZ27.php",
+      "url_token": "dCxtMZ27"
+    },
+    "PurchaseListRequest": {
+      "request_id": "BT28S96F",
+      "encode_key": "X3Csghu0",
+      "url": "/actionSymbol/YqZ6Qc1z.php",
+      "url_token": "YqZ6Qc1z"
+    },
+    "PurchaseSettingRequest": {
+      "request_id": "QkwU4aD9",
+      "encode_key": "ePFcMX53",
+      "url": "/actionSymbol/9hUtW0F8.php",
+      "url_token": "9hUtW0F8"
+    },
+    "PurchaseSettlementRequest": {
+      "request_id": "JsFd4b7j",
+      "encode_key": "jmh7xID8",
+      "url": "/actionSymbol/yt82BRwk.php",
+      "url_token": "yt82BRwk"
+    },
+    "PurchaseStartRequest": {
+      "request_id": "qAUzP3R6",
+      "encode_key": "9Kf4gYvm",
+      "url": "/actionSymbol/tPc64qmn.php",
+      "url_token": "tPc64qmn"
+    },
+    "RateAppRewardRequest": {
+      "request_id": "L0OsxMaT",
+      "encode_key": "m1pPBwC3",
+      "url": "/actionSymbol/L0OsxMaT.php",
+      "url_token": "L0OsxMaT"
+    },
+    "RbBoardPieceOpenRequest": {
+      "request_id": "hqzU9Qc5",
+      "encode_key": "g68FW4k1",
+      "url": "/actionSymbol/iXKfI4v1.php",
+      "url_token": "iXKfI4v1"
+    },
+    "RbEndRequest": {
+      "request_id": "os4k7C0b",
+      "encode_key": "MVA3Te2i",
+      "url": "/actionSymbol/e8AHNiT7.php",
+      "url_token": "e8AHNiT7"
+    },
+    "RbEntryRequest": {
+      "request_id": "f8kXGWy0",
+      "encode_key": "EA5amS29",
+      "url": "/actionSymbol/30inL7I6.php",
+      "url_token": "30inL7I6"
+    },
+    "RbMatchingRequest": {
+      "request_id": "DgG4Cy0F",
+      "encode_key": "4GSMn0qb",
+      "url": "/actionSymbol/mn5cHaJ0.php",
+      "url_token": "mn5cHaJ0"
+    },
+    "RbRankingRequest": {
+      "request_id": "kcW85SfU",
+      "encode_key": "SR6PoLM3",
+      "url": "/actionSymbol/3fd8y7W1.php",
+      "url_token": "3fd8y7W1"
+    },
+    "RbReStartRequest": {
+      "request_id": "6ZNY3zAm",
+      "encode_key": "PRzAL3V2",
+      "url": "/actionSymbol/DQ49vsGL.php",
+      "url_token": "DQ49vsGL"
+    },
+    "RbStartRequest": {
+      "request_id": "eHY7X8Nn",
+      "encode_key": "P1w8BKLI",
+      "url": "/actionSymbol/dR20sWwE.php",
+      "url_token": "dR20sWwE"
+    },
+    "ReinforcementSettingRequest": {
+      "request_id": "ZSq2y7EX",
+      "encode_key": "jUreV31B",
+      "url": "/actionSymbol/I1g4ezbP.php",
+      "url_token": "I1g4ezbP"
+    },
+    "ResourceAllDownloadRequest": {
+      "request_id": "i0d5n1Dp",
+      "encode_key": "fL07ojUc",
+      "url": "/actionSymbol/Vtx9kFg0.php",
+      "url_token": "Vtx9kFg0"
+    },
+    "RmDungeonEndRequest": {
+      "request_id": "WaPC2T6i",
+      "encode_key": "dEnsQ75t",
+      "url": "/actionSymbol/CH9fWn8K.php",
+      "url_token": "CH9fWn8K"
+    },
+    "RmDungeonStartRequest": {
+      "request_id": "R5mWbQ3M",
+      "encode_key": "A7V1zkyc",
+      "url": "/actionSymbol/NC8Ie07P.php",
+      "url_token": "NC8Ie07P"
+    },
+    "RmEndRequest": {
+      "request_id": "fyp10Rrc",
+      "encode_key": "FX5L3Sfv",
+      "url": "/actionSymbol/I9p3n48A.php",
+      "url_token": "I9p3n48A"
+    },
+    "RmEntryRequest": {
+      "request_id": "wx5sg9ye",
+      "encode_key": "p2tqP7Ng",
+      "url": "/actionSymbol/fBn58ApV.php",
+      "url_token": "fBn58ApV"
+    },
+    "RmRestartRequest": {
+      "request_id": "yh21MTaG",
+      "encode_key": "R1VjnNx0",
+      "url": "/actionSymbol/NC8Ie07P.php",
+      "url_token": "NC8Ie07P"
+    },
+    "RmRetireRequest": {
+      "request_id": "e0R3iDm1",
+      "encode_key": "T4Undsr6",
+      "url": "/actionSymbol/fBn58ApV.php",
+      "url_token": "fBn58ApV"
+    },
+    "RmStartRequest": {
+      "request_id": "7FyJS3Zn",
+      "encode_key": "iu67waph",
+      "url": "/actionSymbol/8BJSL7g0.php",
+      "url_token": "8BJSL7g0"
+    },
+    "RoutineEventUpdateRequest": {
+      "request_id": "4kA1Ne05",
+      "encode_key": "V0TGwId5",
+      "url": "/actionSymbol/WCK5tvr0.php",
+      "url_token": "WCK5tvr0"
+    },
+    "RoutineGachaUpdateRequest": {
+      "request_id": "t60dQP49",
+      "encode_key": "Q6ZGJj0h",
+      "url": "/actionSymbol/qS0YW57G.php",
+      "url_token": "qS0YW57G"
+    },
+    "RoutineHomeUpdateRequest": {
+      "request_id": "Daud71Hn",
+      "encode_key": "aw0syG7H",
+      "url": "/actionSymbol/1YWTzU9h.php",
+      "url_token": "1YWTzU9h"
+    },
+    "RoutineRaidMenuUpdateRequest": {
+      "request_id": "g0BjrU5D",
+      "encode_key": "z80swWd9",
+      "url": "/actionSymbol/Sv85kcPQ.php",
+      "url_token": "Sv85kcPQ"
+    },
+    "RoutineWorldUpdateRequest": {
+      "request_id": "6H1R9WID",
+      "encode_key": "XDIL4E7j",
+      "url": "/actionSymbol/oR1psQ5B.php",
+      "url_token": "oR1psQ5B"
+    },
+    "SacrificeRequest": {
+      "request_id": "7tWdn9zH",
+      "encode_key": "U80FYThX",
+      "url": "/actionSymbol/QBiJEyUt.php",
+      "url_token": "QBiJEyUt"
+    },
+    "SearchGetItemInfoRequest": {
+      "request_id": "0D9mpGUR",
+      "encode_key": "vK2V8mZM",
+      "url": "/actionSymbol/e4Gjkf0x.php",
+      "url_token": "e4Gjkf0x"
+    },
+    "ShopExchangeItemListRequest": {
+      "request_id": "syKz34cE",
+      "encode_key": "h69WSu02",
+      "url": "/actionSymbol/7KJjJiIh.php",
+      "url_token": "7KJjJiIh"
+    },
+    "ShopExchangeItemRequest": {
+      "request_id": "xD5b6PqQ",
+      "encode_key": "vaDW85R2",
+      "url": "/actionSymbol/qhP5wSXV.php",
+      "url_token": "qhP5wSXV"
+    },
+    "ShopExchangeUnitRequest": {
+      "request_id": "Vgi7j68T",
+      "encode_key": "x6rSuK0J",
+      "url": "/actionSymbol/lnXYChmF.php",
+      "url_token": "lnXYChmF"
+    },
+    "ShopUseRequest": {
+      "request_id": "73SD2aMR",
+      "encode_key": "ZT0Ua4wL",
+      "url": "/actionSymbol/w76ThDMm.php",
+      "url_token": "w76ThDMm"
+    },
+    "SignInCheckRequest": {
+      "request_id": "ufKRrNc7",
+      "encode_key": "F83wNKFt",
+      "url": "/actionSymbol/Qfpa24mZ.php",
+      "url_token": "Qfpa24mZ"
+    },
+    "SignInRequest": {
+      "request_id": "FckReppg",
+      "encode_key": "g8iv4P8I",
+      "url": "/actionSymbol/8DRAiBXE.php",
+      "url_token": "8DRAiBXE"
+    },
+    "SignOutRequest": {
+      "request_id": "o96pHAp3",
+      "encode_key": "UtE1qMv3",
+      "url": "/actionSymbol/KwChAfkX.php",
+      "url_token": "KwChAfkX"
+    },
+    "SpChallengeEntryRequest": {
+      "request_id": "MTf2j9aK",
+      "encode_key": "Uey5jW2G",
+      "url": "/actionSymbol/8DermCsY.php",
+      "url_token": "8DermCsY"
+    },
+    "SpChallengeRewardGetRequest": {
+      "request_id": "2G7ZVs4A",
+      "encode_key": "mG25PIUn",
+      "url": "/actionSymbol/9inGHyqC.php",
+      "url_token": "9inGHyqC"
+    },
+    "StrongBoxOpenRequest": {
+      "request_id": "PIv7u8jU",
+      "encode_key": "sgc30nRh",
+      "url": "/actionSymbol/48ktHf13.php",
+      "url_token": "48ktHf13"
+    },
+    "SublimationSkillRequest": {
+      "request_id": "s48Qzvhd",
+      "encode_key": "97Uvrdz3",
+      "url": "/actionSymbol/xG3jBbw5.php",
+      "url_token": "xG3jBbw5"
+    },
+    "SurvivalMissionEndRequest": {
+      "request_id": "3cuPF20R",
+      "encode_key": "VNj9J3Bg",
+      "url": "/actionSymbol/HBIJ1BxB.php",
+      "url_token": "HBIJ1BxB"
+    },
+    "SurvivalMissionEntryRequest": {
+      "request_id": "cH9DnW03",
+      "encode_key": "nUfp8v2y",
+      "url": "/actionSymbol/iAL25ka3.php",
+      "url_token": "iAL25ka3"
+    },
+    "SurvivalMissionRestartRequest": {
+      "request_id": "p02YN1JA",
+      "encode_key": "70HoeuUR",
+      "url": "/actionSymbol/9R2VNtZV.php",
+      "url_token": "9R2VNtZV"
+    },
+    "SurvivalMissionRetireRequest": {
+      "request_id": "yW35iC40",
+      "encode_key": "YKfeAw01",
+      "url": "/actionSymbol/T1MnS9pf.php",
+      "url_token": "T1MnS9pf"
+    },
+    "SurvivalMissionReturnRequest": {
+      "request_id": "Ge2ZLDC1",
+      "encode_key": "0X67saPi",
+      "url": "/actionSymbol/cGQ3zDn8.php",
+      "url_token": "cGQ3zDn8"
+    },
+    "SurvivalMissionStartRequest": {
+      "request_id": "67tFRKyo",
+      "encode_key": "DT3UHBu1",
+      "url": "/actionSymbol/RXwRAXmX.php",
+      "url_token": "RXwRAXmX"
+    },
+    "TfaBonusRewardInfoRequest": {
+      "request_id": "fcPxKx8M",
+      "encode_key": "fga9Awck",
+      "url": "/actionSymbol/fcPxKx8M.php",
+      "url_token": "fcPxKx8M"
+    },
+    "TfaEntryRequest": {
+      "request_id": "C0Lne0I7",
+      "encode_key": "OVmfEPwl",
+      "url": "/actionSymbol/C0Lne0I7.php",
+      "url_token": "C0Lne0I7"
+    },
+    "TfaMissionEndRequest": {
+      "request_id": "JiglLZx6",
+      "encode_key": "c4d1b068",
+      "url": "/actionSymbol/JiglLZx6.php",
+      "url_token": "JiglLZx6"
+    },
+    "TfaMissionStartRequest": {
+      "request_id": "BSq28mwY",
+      "encode_key": "d2mqJ6pT",
+      "url": "/actionSymbol/Mn15zmDZ.php",
+      "url_token": "Mn15zmDZ"
+    },
+    "TfaRankingDetailRequest": {
+      "request_id": "Bg1cbQV7",
+      "encode_key": "apV7aUzj",
+      "url": "/actionSymbol/Bg1cbQV7.php",
+      "url_token": "Bg1cbQV7"
+    },
+    "TfaResultRewardFixRequest": {
+      "request_id": "JO2zA1Jy",
+      "encode_key": "bv2RPd1G",
+      "url": "/actionSymbol/JO2zA1Jy.php",
+      "url_token": "JO2zA1Jy"
+    },
+    "TfaResultRewardSelectResumeRequest": {
+      "request_id": "4qVA8LFK",
+      "encode_key": "hqwHhgPE",
+      "url": "/actionSymbol/4qVA8LFK.php",
+      "url_token": "4qVA8LFK"
+    },
+    "TowerEndRequest": {
+      "request_id": "fBN47X2b",
+      "encode_key": "kzFy73L9",
+      "url": "/actionSymbol/TZXbYd9b.php",
+      "url_token": "TZXbYd9b"
+    },
+    "TowerEntryRequest": {
+      "request_id": "VfEh2wD0",
+      "encode_key": "L9d1gYAm",
+      "url": "/actionSymbol/scI7HnwD.php",
+      "url_token": "scI7HnwD"
+    },
+    "TowerRestartRequest": {
+      "request_id": "9Z3jCWfF",
+      "encode_key": "04HMuYV1",
+      "url": "/actionSymbol/iqxK7alu.php",
+      "url_token": "iqxK7alu"
+    },
+    "TowerRetireRequest": {
+      "request_id": "MTuX7ai2",
+      "encode_key": "5dqrT8Mi",
+      "url": "/actionSymbol/sn4mo4gN.php",
+      "url_token": "sn4mo4gN"
+    },
+    "TowerStartRequest": {
+      "request_id": "dZA90j5s",
+      "encode_key": "M3dCmDW8",
+      "url": "/actionSymbol/1ch0bfGj.php",
+      "url_token": "1ch0bfGj"
+    },
+    "TownInRequest": {
+      "request_id": "8EYGrg76",
+      "encode_key": "JI8zU5rC",
+      "url": "/actionSymbol/isHfQm09.php",
+      "url_token": "isHfQm09"
+    },
+    "TownOutRequest": {
+      "request_id": "sJcMPy04",
+      "encode_key": "Kc2PXd9D",
+      "url": "/actionSymbol/0EF3JPjL.php",
+      "url_token": "0EF3JPjL"
+    },
+    "TownUpdateRequest": {
+      "request_id": "G1hQM8Dr",
+      "encode_key": "37nH21zE",
+      "url": "/actionSymbol/0ZJzH2qY.php",
+      "url_token": "0ZJzH2qY"
+    },
+    "TransferCodeCheckRequest": {
+      "request_id": "CY89mIdz",
+      "encode_key": "c5aNjK9J",
+      "url": "/actionSymbol/C9LoeYJ8.php",
+      "url_token": "C9LoeYJ8"
+    },
+    "TransferCodeIssueRequest": {
+      "request_id": "crzI2bA5",
+      "encode_key": "T0y6ij47",
+      "url": "/actionSymbol/hF0yCKc1.php",
+      "url_token": "hF0yCKc1"
+    },
+    "TransferRequest": {
+      "request_id": "oE5fmZN9",
+      "encode_key": "C6eHo3wU",
+      "url": "/actionSymbol/v6Jba7pX.php",
+      "url_token": "v6Jba7pX"
+    },
+    "TrophyRewardRequest": {
+      "request_id": "wukWY4t2",
+      "encode_key": "2o7kErn1",
+      "url": "/actionSymbol/05vJDxg9.php",
+      "url_token": "05vJDxg9"
+    },
+    "UnitClassUpRequest": {
+      "request_id": "zf49XKg8",
+      "encode_key": "L2sTK0GM",
+      "url": "/actionSymbol/8z4Z0DUY.php",
+      "url_token": "8z4Z0DUY"
+    },
+    "UnitEquipRequest": {
+      "request_id": "pB3st6Tg",
+      "encode_key": "45VZgFYv",
+      "url": "/actionSymbol/nIk9z5pT.php",
+      "url_token": "nIk9z5pT"
+    },
+    "UnitExClassUpRequest": {
+      "request_id": "k6NI9Tm1",
+      "encode_key": "3xNEuAJ0",
+      "url": "/actionSymbol/P19pJnPf.php",
+      "url_token": "P19pJnPf"
+    },
+    "UnitExchangeRequest": {
+      "request_id": "3ekgi8bh",
+      "encode_key": "up94SLAv",
+      "url": "/actionSymbol/YVZlW2gN.php",
+      "url_token": "YVZlW2gN"
+    },
+    "UnitFavoriteRequest": {
+      "request_id": "tBDi10Ay",
+      "encode_key": "w9mWkGX0",
+      "url": "/actionSymbol/sqeRg12M.php",
+      "url_token": "sqeRg12M"
+    },
+    "UnitMixRequest": {
+      "request_id": "UiSC9y8R",
+      "encode_key": "4zCuj2hK",
+      "url": "/actionSymbol/6aLHwhJ8.php",
+      "url_token": "6aLHwhJ8"
+    },
+    "UnitNvClassUpRequest": {
+      "request_id": "Pf5C8xjJ",
+      "encode_key": "2tJE0Ijo",
+      "url": "/actionSymbol/ukNsKIEo.php",
+      "url_token": "ukNsKIEo"
+    },
+    "UnitNvpClassUpRequest": {
+      "request_id": "V8GtMQ2q",
+      "encode_key": "m23Etnuz",
+      "url": "/actionSymbol/5kOVOj0a.php",
+      "url_token": "5kOVOj0a"
+    },
+    "UnitSellRequest": {
+      "request_id": "9itzg1jc",
+      "encode_key": "DJ43wmds",
+      "url": "/actionSymbol/0qmzs2gA.php",
+      "url_token": "0qmzs2gA"
+    },
+    "UnitStorageUpdateRequest": {
+      "request_id": "5ik69cuw",
+      "encode_key": "3HDUxoG5",
+      "url": "/actionSymbol/HkfCn09z.php",
+      "url_token": "HkfCn09z"
+    },
+    "UnitSublimationRequest": {
+      "request_id": "a54L9CKY",
+      "encode_key": "B7iQjmz5",
+      "url": "/actionSymbol/PiQObNT2.php",
+      "url_token": "PiQObNT2"
+    },
+    "UnitUsePointRequest": {
+      "request_id": "nsxUW3Y7",
+      "encode_key": "1iPZp3kJ",
+      "url": "/actionSymbol/Why4WO1r.php",
+      "url_token": "Why4WO1r"
+    },
+    "UpdateDeviceIdRequest": {
+      "request_id": "aQm3zP2c",
+      "encode_key": "mvRSdn8f",
+      "url": "/actionSymbol/action.php",
+      "url_token": "action"
+    },
+    "UpdateSwitchInfoRequest": {
+      "request_id": "mRPo5n2j",
+      "encode_key": "4Z5UNaIW",
+      "url": "/actionSymbol/SqoB3a1T.php",
+      "url_token": "SqoB3a1T"
+    },
+    "UpdateUserInfoRequest": {
+      "request_id": "ey8mupb4",
+      "encode_key": "6v5ykfpr",
+      "url": "/actionSymbol/v3RD1CUB.php",
+      "url_token": "v3RD1CUB"
+    },
+    "VariableStoreCheckRequest": {
+      "request_id": "i0woEP4B",
+      "encode_key": "Hi0FJU3c",
+      "url": "/actionSymbol/Nhn93ukW.php",
+      "url_token": "Nhn93ukW"
+    },
+    "VisionCardDisplayRequest": {
+      "request_id": "TmS3EjZ8",
+      "encode_key": "e3LTk8ti",
+      "url": "/actionSymbol/mCy1T1hc.php",
+      "url_token": "mCy1T1hc"
+    },
+    "VisionCardFavoriteRequest": {
+      "request_id": "VTbX14dD",
+      "encode_key": "YkRC3A9U",
+      "url": "/actionSymbol/PEIMihWu.php",
+      "url_token": "PEIMihWu"
+    },
+    "VisionCardMixRequest": {
+      "request_id": "5J14x3Qz",
+      "encode_key": "NVMk7Qr1",
+      "url": "/actionSymbol/aeBv64rU.php",
+      "url_token": "aeBv64rU"
+    },
+    "sgAdsGachaMilestoneRequest": {
+      "request_id": "PkSzb2TM",
+      "encode_key": "Jp4Fz3qb",
+      "url": "/actionSymbol/PkSzb2TM.php",
+      "url_token": "PkSzb2TM"
+    },
+    "sgComebackQuestClaimRewardRequest": {
+      "request_id": "1IOdaWOW",
+      "encode_key": "4NO3PIyU",
+      "url": "/actionSymbol/I7RzrQ3J.php",
+      "url_token": "I7RzrQ3J"
+    },
+    "sgEmblemEventRequest": {
+      "request_id": "wMWvnYDR",
+      "encode_key": "U9QMZrFq",
+      "url": "/actionSymbol/wMWvnYDR.php",
+      "url_token": "wMWvnYDR"
+    },
+    "sgExpdAccelerateRequest": {
+      "request_id": "Ik142Ff6",
+      "encode_key": "d3D4l8b4",
+      "url": "/actionSymbol/Ik142Ff6.php",
+      "url_token": "Ik142Ff6"
+    },
+    "sgExpdEndRequest": {
+      "request_id": "2pe3Xa8b",
+      "encode_key": "cjHumZ2J",
+      "url": "/actionSymbol/2pe3Xa8b.php",
+      "url_token": "2pe3Xa8b"
+    },
+    "sgExpdMileStoneClaimRequest": {
+      "request_id": "r4A791RF",
+      "encode_key": "t04N07LQ",
+      "url": "/actionSymbol/r4A791RF.php",
+      "url_token": "r4A791RF"
+    },
+    "sgExpdQuestInfoRequest": {
+      "request_id": "hW0804Q9",
+      "encode_key": "4Bn7d973",
+      "url": "/actionSymbol/hW0804Q9.php",
+      "url_token": "hW0804Q9"
+    },
+    "sgExpdQuestRefreshRequest": {
+      "request_id": "vTgYyHM6",
+      "encode_key": "vceNlSf3",
+      "url": "/actionSymbol/vTgYyHM6.php",
+      "url_token": "vTgYyHM6"
+    },
+    "sgExpdQuestStartRequest": {
+      "request_id": "I8uq68c3",
+      "encode_key": "60Os29Mg",
+      "url": "/actionSymbol/I8uq68c3.php",
+      "url_token": "I8uq68c3"
+    },
+    "sgExpdRecallRequest": {
+      "request_id": "0Fb87D0F",
+      "encode_key": "9J02K0lX",
+      "url": "/actionSymbol/0Fb87D0F.php",
+      "url_token": "0Fb87D0F"
+    },
+    "sgGachaRerollExeRequest": {
+      "request_id": "Dll4rncD",
+      "encode_key": "KJ13DlZz",
+      "url": "/actionSymbol/QQVXslxB.php",
+      "url_token": "QQVXslxB"
+    },
+    "sgGachaSelectPrismExeRequest": {
+      "request_id": "bgast6dR",
+      "encode_key": "7mDIdVEI",
+      "url": "/actionSymbol/pXAIaMKW.php",
+      "url_token": "pXAIaMKW"
+    },
+    "sgHiddenSkillUpgrade": {
+      "request_id": "qxUUaS8s",
+      "encode_key": "rXDvnsv8",
+      "url": "/actionSymbol/qxUUaS8s.php",
+      "url_token": "qxUUaS8s"
+    },
+    "sgHomeMarqueeInfoRequest": {
+      "request_id": "PBSP9qn5",
+      "encode_key": "d3GDS9X8",
+      "url": "/actionSymbol/PBSP9qn5.php",
+      "url_token": "PBSP9qn5"
+    },
+    "sgMissionUnlockRequest": {
+      "request_id": "LJhqu0x6",
+      "encode_key": "ZcBV06K4",
+      "url": "/actionSymbol/LJhqu0x6.php",
+      "url_token": "LJhqu0x6"
+    },
+    "sgOfferwallInfoRequest": {
+      "request_id": "uO1w9ggv",
+      "encode_key": "QgNR0HvE",
+      "url": "/actionSymbol/NmNB96p8.php",
+      "url_token": "NmNB96p8"
+    },
+    "sgPanelQuestEntryRequest": {
+      "request_id": "GVyjSq16",
+      "encode_key": "T3g6EPOp",
+      "url": "/actionSymbol/GVyjSq16.php",
+      "url_token": "GVyjSq16"
+    },
+    "sgPanelQuestExtraRewardRequest": {
+      "request_id": "AOY6npa3",
+      "encode_key": "vZWKUHhY",
+      "url": "/actionSymbol/AOY6npa3.php",
+      "url_token": "AOY6npa3"
+    },
+    "sgPanelQuestRewardRequest": {
+      "request_id": "6uue8aKx",
+      "encode_key": "bjtzvZ5X",
+      "url": "/actionSymbol/6uue8aKx.php",
+      "url_token": "6uue8aKx"
+    },
+    "sgPanelQuestStatusGetRequest": {
+      "request_id": "egJpaGtk",
+      "encode_key": "uzEklRfc",
+      "url": "/actionSymbol/egJpaGtk.php",
+      "url_token": "egJpaGtk"
+    },
+    "sgStoreLogReportRequest": {
+      "request_id": "6611dc2f",
+      "encode_key": "af7a56a0",
+      "url": "/actionSymbol/6611dc2f.php",
+      "url_token": "6611dc2f"
+    },
+    "sgUserExtraChallengeInfoRequest": {
+      "request_id": "dzU2t3HA",
+      "encode_key": "Qu6RHqbb",
+      "url": "/actionSymbol/zgry2aNV.php",
+      "url_token": "zgry2aNV"
+    }
+  },
+  "by_url_token": {
+    "7gAGFC4I": [
+      "AllianceDeckEditRequest"
+    ],
+    "EzfT0wX6": [
+      "AllianceEntryRequest"
+    ],
+    "UR1OtKJS": [
+      "AllianceUndercoverStrengthenRequest"
+    ],
+    "2bCcKx0D": [
+      "ArchiveUpdateRequest"
+    ],
+    "Y2Zvnad9": [
+      "BeastBoardPieceOpenRequest"
+    ],
+    "7vHqNPF0": [
+      "BeastMixRequest",
+      "ClsmEndRequest"
+    ],
+    "tPc64qmn": [
+      "BundlePurchaseRequest",
+      "BundleStatusRequest",
+      "PurchaseStartRequest"
+    ],
+    "2u30vqfY": [
+      "CampaignTieupRequest"
+    ],
+    "dEvLKchl": [
+      "ChallengeClearRequest"
+    ],
+    "RntCZywQ": [
+      "ClientReportRequest"
+    ],
+    "UmLwv56W": [
+      "ClsmEntryRequest"
+    ],
+    "4uj3NhUQ": [
+      "ClsmLotteryRequest"
+    ],
+    "rncR9js8": [
+      "ClsmStartRequest"
+    ],
+    "iQ7R4CFB": [
+      "CraftAddRequest"
+    ],
+    "7WdDLIE4": [
+      "CraftCancelRequest"
+    ],
+    "9G7Vc8Ny": [
+      "CraftEndRequest"
+    ],
+    "UyHLjV60": [
+      "CraftExeRequest"
+    ],
+    "w71MZ0Gg": [
+      "CraftStartRequest"
+    ],
+    "0FK8NJRX": [
+      "CreateUserRequest"
+    ],
+    "9LgmdR0v": [
+      "DailyDungeonSelectRequest"
+    ],
+    "Br9PwJ6A": [
+      "DailyQuestClaimAllRewardRequest",
+      "DailyQuestClaimRewardRequest"
+    ],
+    "3sTwRcpq": [
+      "DailyQuestShareRequest"
+    ],
+    "QWDn5epF": [
+      "DailyQuestUpdateRequest"
+    ],
+    "zd5KJ3jn": [
+      "DmgRankEndRequest"
+    ],
+    "8wdmR9yG": [
+      "DmgRankRetireRequest"
+    ],
+    "j37Vk5xe": [
+      "DmgRankStartRequest"
+    ],
+    "0vc6irBY": [
+      "DungeonLiberationRequest"
+    ],
+    "Sl8UgmP4": [
+      "DungeonResourceLoadMstListRequest"
+    ],
+    "CnPyXkUV": [
+      "EquipGrowAbilityFixRequest"
+    ],
+    "Ke7YG3xW": [
+      "EquipGrowAbilitySelectResumeRequest"
+    ],
+    "UiSOVXT2": [
+      "EquipGrowEntryRequest"
+    ],
+    "fZ4jONfh": [
+      "EquipItemFavoriteRequest"
+    ],
+    "u843ypX2": [
+      "ExbonusExeRequest"
+    ],
+    "lNJqXG3D": [
+      "ExbonusUpdateRequest"
+    ],
+    "1bf0HF4w": [
+      "ExchangeShopRequest"
+    ],
+    "NAW9vJnm": [
+      "FacebookAddFriendRequest"
+    ],
+    "xHTo4BZp": [
+      "FacebookLogoutRequest"
+    ],
+    "47R9pLGq": [
+      "FacebookRewardClaimRequest"
+    ],
+    "8YZsGLED": [
+      "FacebookRewardListRequest"
+    ],
+    "1DYp5Nqm": [
+      "FriendAgreeRequest"
+    ],
+    "8R4fQbYh": [
+      "FriendDeleteRequest"
+    ],
+    "QBiJEyUt": [
+      "FriendDetailRequest",
+      "SacrificeRequest"
+    ],
+    "8IYSJ5H1": [
+      "FriendFavoriteRequest"
+    ],
+    "p3hwqW5U": [
+      "FriendListRequest"
+    ],
+    "Vw0a4I3i": [
+      "FriendRefuseRequest"
+    ],
+    "8drhF2mG": [
+      "FriendRequest"
+    ],
+    "6Y1jM3Wp": [
+      "FriendSearchRequest"
+    ],
+    "6TCn0BFh": [
+      "FriendSuggestRequest"
+    ],
+    "tULiKh5j": [
+      "GachaBoxNextRequest"
+    ],
+    "tUJxSQz7": [
+      "GachaEntryRequest"
+    ],
+    "oC30VTFp": [
+      "GachaExeRequest"
+    ],
+    "3nhWq25K": [
+      "GachaInfoRequest"
+    ],
+    "7WGJtJwo": [
+      "GachaPanelNextRequest"
+    ],
+    "6RI813OP": [
+      "GachaSelectEntryRequest"
+    ],
+    "ROLuCfi2": [
+      "GachaSelectExchangeExeRequest"
+    ],
+    "eB0VYGMt": [
+      "GachaSelectExeRequest"
+    ],
+    "OTX6Fmvu": [
+      "GameSettingRequest"
+    ],
+    "action": [
+      "GetBackgroundDownloadInfoRequest",
+      "UpdateDeviceIdRequest"
+    ],
+    "hXMoLwgE": [
+      "GetReinforcementInfoRequest"
+    ],
+    "BbIeq31M": [
+      "GetTitleInfoRequest"
+    ],
+    "7KZ4Wvuw": [
+      "GetUserInfo2Request"
+    ],
+    "lZXr14iy": [
+      "GetUserInfo3Request"
+    ],
+    "u7sHDCg4": [
+      "GetUserInfoRequest"
+    ],
+    "noN8I0UK": [
+      "GiftUpdateRequest"
+    ],
+    "F86LHcMO": [
+      "GloryConfirmedGimmickRequest",
+      "GloryMissionEndRequest"
+    ],
+    "nEZ9twZH": [
+      "GloryEntryRequest"
+    ],
+    "DHpM2abg": [
+      "GloryMissionReStartRequest"
+    ],
+    "hZ4GFCAH": [
+      "GloryMissionStartRequest"
+    ],
+    "jSxaKcr0": [
+      "GooglePromotionRewardRequest"
+    ],
+    "8DermCsY": [
+      "GrandMissionEntryRequest",
+      "SpChallengeEntryRequest"
+    ],
+    "fSG1eXI9": [
+      "InitializeRequest"
+    ],
+    "gk3Wtr8A": [
+      "IsNeedValidateRequest"
+    ],
+    "oQrAys71": [
+      "ItemBuyRequest"
+    ],
+    "8BE6tJbf": [
+      "ItemCarryEditRequest"
+    ],
+    "hQRf8D6r": [
+      "ItemSellRequest"
+    ],
+    "lIUfgWYj": [
+      "LibraryVisionCardEntryRequest"
+    ],
+    "iP9ogKy6": [
+      "LoginBonusRequest"
+    ],
+    "u3E8hpad": [
+      "MailListRequest"
+    ],
+    "M2fHBe9d": [
+      "MailReceiptRequest"
+    ],
+    "sC1oeYeD": [
+      "MasterCardReleaseRequest"
+    ],
+    "lW4xfpvS": [
+      "MateriaFavoriteRequest"
+    ],
+    "0X8Fpjhb": [
+      "MedalExchangeRequest"
+    ],
+    "P4oIeVf0": [
+      "MissionBreakRequest"
+    ],
+    "ZzCXI6E7": [
+      "MissionContinueRequest"
+    ],
+    "cQU1D9Nx": [
+      "MissionContinueRetireRequest"
+    ],
+    "0ydjM5sU": [
+      "MissionEndRequest"
+    ],
+    "r5vfM1Y3": [
+      "MissionReStartRequest"
+    ],
+    "gbZ64SQ2": [
+      "MissionRetireRequest"
+    ],
+    "63VqtzbQ": [
+      "MissionStartRequest"
+    ],
+    "1Xz8kJLr": [
+      "MissionSwitchUpdateRequest"
+    ],
+    "fRDUy3E2": [
+      "MissionUpdateRequest"
+    ],
+    "8m7KNezI": [
+      "MissionWaveReStartRequest"
+    ],
+    "Mn15zmDZ": [
+      "MissionWaveStartRequest",
+      "TfaMissionStartRequest"
+    ],
+    "d6f9LSI7": [
+      "MyCardInitializeRequest"
+    ],
+    "j6kSWR3q": [
+      "NoticeReadUpdateRequest"
+    ],
+    "TqtzK84R": [
+      "NoticeUpdateRequest"
+    ],
+    "VliYfNhr": [
+      "NvSacrificeRequest"
+    ],
+    "0Xh2ri5E": [
+      "OptionUpdateRequest"
+    ],
+    "9i4b61rU": [
+      "ParadeEntryRequest"
+    ],
+    "hC8r9p81": [
+      "ParadeMissionEndRequest"
+    ],
+    "6xkK4eDG": [
+      "PartyDeckEditRequest"
+    ],
+    "2y4BVhyj": [
+      "PartyRegisterSlotLoadRequest"
+    ],
+    "QjDQEMYc": [
+      "PartyRegisterSlotSaveRequest"
+    ],
+    "HgSTAzd2": [
+      "PartyRegisterSlotUpdateRequest"
+    ],
+    "zm2ip59f": [
+      "PlaybackMissionStartRequest"
+    ],
+    "scyPYa81": [
+      "PlaybackMissionWaveStartRequest"
+    ],
+    "huKNdci6": [
+      "PlayerEmblemEntryRequest"
+    ],
+    "cswGxj8F": [
+      "PlayerEmblemSettingRequest"
+    ],
+    "y71uBCER": [
+      "PurchaseCancelRequest"
+    ],
+    "bAR4k7Qd": [
+      "PurchaseCurrentStateRequest"
+    ],
+    "2TCis0R6": [
+      "PurchaseFailedRequest"
+    ],
+    "C2w0f3go": [
+      "PurchaseGiveUpRequest"
+    ],
+    "dCxtMZ27": [
+      "PurchaseHoldRequest"
+    ],
+    "YqZ6Qc1z": [
+      "PurchaseListRequest"
+    ],
+    "9hUtW0F8": [
+      "PurchaseSettingRequest"
+    ],
+    "yt82BRwk": [
+      "PurchaseSettlementRequest"
+    ],
+    "L0OsxMaT": [
+      "RateAppRewardRequest"
+    ],
+    "iXKfI4v1": [
+      "RbBoardPieceOpenRequest"
+    ],
+    "e8AHNiT7": [
+      "RbEndRequest"
+    ],
+    "30inL7I6": [
+      "RbEntryRequest"
+    ],
+    "mn5cHaJ0": [
+      "RbMatchingRequest"
+    ],
+    "3fd8y7W1": [
+      "RbRankingRequest"
+    ],
+    "DQ49vsGL": [
+      "RbReStartRequest"
+    ],
+    "dR20sWwE": [
+      "RbStartRequest"
+    ],
+    "I1g4ezbP": [
+      "ReinforcementSettingRequest"
+    ],
+    "Vtx9kFg0": [
+      "ResourceAllDownloadRequest"
+    ],
+    "CH9fWn8K": [
+      "RmDungeonEndRequest"
+    ],
+    "NC8Ie07P": [
+      "RmDungeonStartRequest",
+      "RmRestartRequest"
+    ],
+    "I9p3n48A": [
+      "RmEndRequest"
+    ],
+    "fBn58ApV": [
+      "RmEntryRequest",
+      "RmRetireRequest"
+    ],
+    "8BJSL7g0": [
+      "RmStartRequest"
+    ],
+    "WCK5tvr0": [
+      "RoutineEventUpdateRequest"
+    ],
+    "qS0YW57G": [
+      "RoutineGachaUpdateRequest"
+    ],
+    "1YWTzU9h": [
+      "RoutineHomeUpdateRequest"
+    ],
+    "Sv85kcPQ": [
+      "RoutineRaidMenuUpdateRequest"
+    ],
+    "oR1psQ5B": [
+      "RoutineWorldUpdateRequest"
+    ],
+    "e4Gjkf0x": [
+      "SearchGetItemInfoRequest"
+    ],
+    "7KJjJiIh": [
+      "ShopExchangeItemListRequest"
+    ],
+    "qhP5wSXV": [
+      "ShopExchangeItemRequest"
+    ],
+    "lnXYChmF": [
+      "ShopExchangeUnitRequest"
+    ],
+    "w76ThDMm": [
+      "ShopUseRequest"
+    ],
+    "Qfpa24mZ": [
+      "SignInCheckRequest"
+    ],
+    "8DRAiBXE": [
+      "SignInRequest"
+    ],
+    "KwChAfkX": [
+      "SignOutRequest"
+    ],
+    "9inGHyqC": [
+      "SpChallengeRewardGetRequest"
+    ],
+    "48ktHf13": [
+      "StrongBoxOpenRequest"
+    ],
+    "xG3jBbw5": [
+      "SublimationSkillRequest"
+    ],
+    "HBIJ1BxB": [
+      "SurvivalMissionEndRequest"
+    ],
+    "iAL25ka3": [
+      "SurvivalMissionEntryRequest"
+    ],
+    "9R2VNtZV": [
+      "SurvivalMissionRestartRequest"
+    ],
+    "T1MnS9pf": [
+      "SurvivalMissionRetireRequest"
+    ],
+    "cGQ3zDn8": [
+      "SurvivalMissionReturnRequest"
+    ],
+    "RXwRAXmX": [
+      "SurvivalMissionStartRequest"
+    ],
+    "fcPxKx8M": [
+      "TfaBonusRewardInfoRequest"
+    ],
+    "C0Lne0I7": [
+      "TfaEntryRequest"
+    ],
+    "JiglLZx6": [
+      "TfaMissionEndRequest"
+    ],
+    "Bg1cbQV7": [
+      "TfaRankingDetailRequest"
+    ],
+    "JO2zA1Jy": [
+      "TfaResultRewardFixRequest"
+    ],
+    "4qVA8LFK": [
+      "TfaResultRewardSelectResumeRequest"
+    ],
+    "TZXbYd9b": [
+      "TowerEndRequest"
+    ],
+    "scI7HnwD": [
+      "TowerEntryRequest"
+    ],
+    "iqxK7alu": [
+      "TowerRestartRequest"
+    ],
+    "sn4mo4gN": [
+      "TowerRetireRequest"
+    ],
+    "1ch0bfGj": [
+      "TowerStartRequest"
+    ],
+    "isHfQm09": [
+      "TownInRequest"
+    ],
+    "0EF3JPjL": [
+      "TownOutRequest"
+    ],
+    "0ZJzH2qY": [
+      "TownUpdateRequest"
+    ],
+    "C9LoeYJ8": [
+      "TransferCodeCheckRequest"
+    ],
+    "hF0yCKc1": [
+      "TransferCodeIssueRequest"
+    ],
+    "v6Jba7pX": [
+      "TransferRequest"
+    ],
+    "05vJDxg9": [
+      "TrophyRewardRequest"
+    ],
+    "8z4Z0DUY": [
+      "UnitClassUpRequest"
+    ],
+    "nIk9z5pT": [
+      "UnitEquipRequest"
+    ],
+    "P19pJnPf": [
+      "UnitExClassUpRequest"
+    ],
+    "YVZlW2gN": [
+      "UnitExchangeRequest"
+    ],
+    "sqeRg12M": [
+      "UnitFavoriteRequest"
+    ],
+    "6aLHwhJ8": [
+      "UnitMixRequest"
+    ],
+    "ukNsKIEo": [
+      "UnitNvClassUpRequest"
+    ],
+    "5kOVOj0a": [
+      "UnitNvpClassUpRequest"
+    ],
+    "0qmzs2gA": [
+      "UnitSellRequest"
+    ],
+    "HkfCn09z": [
+      "UnitStorageUpdateRequest"
+    ],
+    "PiQObNT2": [
+      "UnitSublimationRequest"
+    ],
+    "Why4WO1r": [
+      "UnitUsePointRequest"
+    ],
+    "SqoB3a1T": [
+      "UpdateSwitchInfoRequest"
+    ],
+    "v3RD1CUB": [
+      "UpdateUserInfoRequest"
+    ],
+    "Nhn93ukW": [
+      "VariableStoreCheckRequest"
+    ],
+    "mCy1T1hc": [
+      "VisionCardDisplayRequest"
+    ],
+    "PEIMihWu": [
+      "VisionCardFavoriteRequest"
+    ],
+    "aeBv64rU": [
+      "VisionCardMixRequest"
+    ],
+    "PkSzb2TM": [
+      "sgAdsGachaMilestoneRequest"
+    ],
+    "I7RzrQ3J": [
+      "sgComebackQuestClaimRewardRequest"
+    ],
+    "wMWvnYDR": [
+      "sgEmblemEventRequest"
+    ],
+    "Ik142Ff6": [
+      "sgExpdAccelerateRequest"
+    ],
+    "2pe3Xa8b": [
+      "sgExpdEndRequest"
+    ],
+    "r4A791RF": [
+      "sgExpdMileStoneClaimRequest"
+    ],
+    "hW0804Q9": [
+      "sgExpdQuestInfoRequest"
+    ],
+    "vTgYyHM6": [
+      "sgExpdQuestRefreshRequest"
+    ],
+    "I8uq68c3": [
+      "sgExpdQuestStartRequest"
+    ],
+    "0Fb87D0F": [
+      "sgExpdRecallRequest"
+    ],
+    "QQVXslxB": [
+      "sgGachaRerollExeRequest"
+    ],
+    "pXAIaMKW": [
+      "sgGachaSelectPrismExeRequest"
+    ],
+    "qxUUaS8s": [
+      "sgHiddenSkillUpgrade"
+    ],
+    "PBSP9qn5": [
+      "sgHomeMarqueeInfoRequest"
+    ],
+    "LJhqu0x6": [
+      "sgMissionUnlockRequest"
+    ],
+    "NmNB96p8": [
+      "sgOfferwallInfoRequest"
+    ],
+    "GVyjSq16": [
+      "sgPanelQuestEntryRequest"
+    ],
+    "AOY6npa3": [
+      "sgPanelQuestExtraRewardRequest"
+    ],
+    "6uue8aKx": [
+      "sgPanelQuestRewardRequest"
+    ],
+    "egJpaGtk": [
+      "sgPanelQuestStatusGetRequest"
+    ],
+    "6611dc2f": [
+      "sgStoreLogReportRequest"
+    ],
+    "zgry2aNV": [
+      "sgUserExtraChallengeInfoRequest"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="Exvius local runtime">
+        <provider android:name="com.exvius.local.LocalGameProvider"
+            android:authorities="${applicationId}.localgame"
+            android:exported="false" android:initOrder="2147483647" />
+    </application>
+</manifest>

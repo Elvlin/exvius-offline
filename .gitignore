@@ -1,0 +1,15 @@
+/logs/
+/tools/vendor/
+/repository snapshots/
+/source/build/
+/source/out/
+.gradle/
+__pycache__/
+*.pyc
+*.apk
+*.zip
+*.jks
+*.keystore
+*.part
+.env
+local.properties

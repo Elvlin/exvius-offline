@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.application' version '7.4.2'
+    id 'com.chaquo.python' version '16.1.0'
+}
+
+buildDir = file('../../build/android/local-runtime')
+
+android {
+    namespace 'com.exvius.local'
+    compileSdk 33
+    buildToolsVersion '36.0.0'
+    defaultConfig {
+        applicationId 'com.exvius.local.runtime'
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName '1'
+        ndk { abiFilters 'arm64-v8a' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+chaquopy {
+    defaultConfig {
+        version '3.10'
+        buildPython 'python'
+        pip {
+            install 'PyYAML==6.0.1'
+            install 'cryptography==42.0.8'
+        }
+    }
+    sourceSets {
+        main {
+            srcDir '../../server'
+            srcDir 'src/main/python'
+        }
+    }
+}
+

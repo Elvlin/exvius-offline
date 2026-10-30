@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Offline workload scenario, not full combat simulation",
+  "type": "object",
+  "required": ["hp", "turns"],
+  "additionalProperties": false,
+  "properties": {
+    "description": {"type": "string"},
+    "hp": {"type": "integer", "minimum": 1},
+    "break_gauge": {
+      "type": "object", "required": ["base_bp", "delta_after_first", "duration_turns"],
+      "additionalProperties": false,
+      "properties": {
+        "base_bp": {"type": "integer", "minimum": 1},
+        "delta_after_first": {"type": "integer", "minimum": 0},
+        "duration_turns": {"type": "integer", "minimum": 1}
+      }
+    },
+    "turns": {"type": "array", "minItems": 1, "maxItems": 10000,
+      "items": {"type": "object", "required": ["damage"], "additionalProperties": false,
+        "properties": {"damage": {"type": "integer", "minimum": 0},
+                       "bp_damage": {"type": "integer", "minimum": 0}}}}
+  }
+}

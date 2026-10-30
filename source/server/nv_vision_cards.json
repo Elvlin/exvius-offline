@@ -1,0 +1,4653 @@
+{
+ "_meta": {
+  "what": "The Vision Card each NV unit came with when summoned (generator docstring).",
+  "generator": "source/exvius/build_nv_vision_cards.py",
+  "nv_units": 711,
+  "matched": 543,
+  "unmatched": [
+   {
+    "unit": "401013807",
+    "unit_name": "2B -Neo Vision-",
+    "reason": "no page"
+   },
+   {
+    "unit": "401013817",
+    "unit_name": "2B -Neo Vision-",
+    "reason": "no page"
+   },
+   {
+    "unit": "401013907",
+    "unit_name": "A2 -Neo Vision-",
+    "reason": "no page"
+   },
+   {
+    "unit": "401013917",
+    "unit_name": "A2 -Neo Vision-",
+    "reason": "no page"
+   },
+   {
+    "unit": "210002417",
+    "unit_name": "Ace Striker Tidus",
+    "reason": "no page"
+   },
+   {
+    "unit": "207001517",
+    "unit_name": "Aerith & Red XIII",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001117",
+    "unit_name": "Alpha Weltall",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001817",
+    "unit_name": "Andvari",
+    "reason": "no page"
+   },
+   {
+    "unit": "401013017",
+    "unit_name": "Aurora Swordmaster Fryevia",
+    "reason": "no page"
+   },
+   {
+    "unit": "204003217",
+    "unit_name": "Awakened Paladin Cecil",
+    "reason": "no page"
+   },
+   {
+    "unit": "205001917",
+    "unit_name": "Berserker Krile",
+    "reason": "no page"
+   },
+   {
+    "unit": "401002627",
+    "unit_name": "Christine",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001617",
+    "unit_name": "Crescens",
+    "reason": "no page"
+   },
+   {
+    "unit": "100005927",
+    "unit_name": "Aileen",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "209000827",
+    "unit_name": "Amarant",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215000627",
+    "unit_name": "Aranea",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "206002327",
+    "unit_name": "Archmage Kefka",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "206002427",
+    "unit_name": "Assassin Shadow",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "212000527",
+    "unit_name": "Balthier",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401001427",
+    "unit_name": "Barbariccia",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207002127",
+    "unit_name": "Barret (FFVII REMAKE)",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "209001127",
+    "unit_name": "Beatrix",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "254001627",
+    "unit_name": "Benevolent Beauty Rem",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "204001727",
+    "unit_name": "Black Mage Golbez",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401014407",
+    "unit_name": "Blade of Vengeance Ibara",
+    "reason": "name not in F_VISION_CARD_MST: 人の心に寄り添う鬼"
+   },
+   {
+    "unit": "401014417",
+    "unit_name": "Blade of Vengeance Ibara",
+    "reason": "name not in F_VISION_CARD_MST: 人の心に寄り添う鬼"
+   },
+   {
+    "unit": "100012427",
+    "unit_name": "Blossom Sage Sakura",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100025727",
+    "unit_name": "Blue Mage Fina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "212001727",
+    "unit_name": "Blue Sky Belle Fran",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100019527",
+    "unit_name": "Cid",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100016927",
+    "unit_name": "Citra",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100030727",
+    "unit_name": "Cleome",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207000127",
+    "unit_name": "Cloud",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401012917",
+    "unit_name": "Crimson Death Reberta",
+    "reason": "no page"
+   },
+   {
+    "unit": "205001617",
+    "unit_name": "Dancer Lenna",
+    "reason": "no page"
+   },
+   {
+    "unit": "306001517",
+    "unit_name": "Destroyer of All Zoma",
+    "reason": "no page"
+   },
+   {
+    "unit": "344000117",
+    "unit_name": "Dragon Knight Dai",
+    "reason": "no page"
+   },
+   {
+    "unit": "344000517",
+    "unit_name": "Dragonoid Baran",
+    "reason": "no page"
+   },
+   {
+    "unit": "344001117",
+    "unit_name": "Dragonoid Dai",
+    "reason": "no page"
+   },
+   {
+    "unit": "202002417",
+    "unit_name": "Dragoon Ricard",
+    "reason": "no page"
+   },
+   {
+    "unit": "312000527",
+    "unit_name": "Duelist Duran",
+    "reason": "no page"
+   },
+   {
+    "unit": "401016507",
+    "unit_name": "Eithne",
+    "reason": "no page"
+   },
+   {
+    "unit": "401016517",
+    "unit_name": "Eithne",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001417",
+    "unit_name": "Fenrir",
+    "reason": "no page"
+   },
+   {
+    "unit": "249000417",
+    "unit_name": "Floral Fallal Yuna",
+    "reason": "no page"
+   },
+   {
+    "unit": "211000827",
+    "unit_name": "Former Orastery Minister Shantotto",
+    "reason": "no page"
+   },
+   {
+    "unit": "249000617",
+    "unit_name": "Full Throttle Paine",
+    "reason": "no page"
+   },
+   {
+    "unit": "203004417",
+    "unit_name": "Geomancer Ingus",
+    "reason": "no page"
+   },
+   {
+    "unit": "100041817",
+    "unit_name": "Giant of Babel",
+    "reason": "no page"
+   },
+   {
+    "unit": "100028327",
+    "unit_name": "Daisy",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100000337",
+    "unit_name": "Dark Fina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "202001727",
+    "unit_name": "Dark Knight Leon",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "203001427",
+    "unit_name": "Dark Knight Luneth",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "253000237",
+    "unit_name": "Delita",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100027227",
+    "unit_name": "Draconian Princess Fina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "209001827",
+    "unit_name": "Dragon Knight Freya",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401008427",
+    "unit_name": "Elena",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "202000527",
+    "unit_name": "Emperor",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401012417",
+    "unit_name": "Fenrir Knight Riesz",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100024827",
+    "unit_name": "Fina & Dark Fina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100006827",
+    "unit_name": "Fohlen",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100018327",
+    "unit_name": "Folka",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "209002227",
+    "unit_name": "Garland (FFIX)",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "206001127",
+    "unit_name": "Gau",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "204002917",
+    "unit_name": "Holy Dragoon Kain",
+    "reason": "no page"
+   },
+   {
+    "unit": "401016607",
+    "unit_name": "Imperial Shield Wilhelm",
+    "reason": "no page"
+   },
+   {
+    "unit": "339000327",
+    "unit_name": "Knight of Ruin Sterne",
+    "reason": "no page"
+   },
+   {
+    "unit": "401002727",
+    "unit_name": "Kryla",
+    "reason": "no page"
+   },
+   {
+    "unit": "342000217",
+    "unit_name": "Lady Blackpearl",
+    "reason": "no page"
+   },
+   {
+    "unit": "401006027",
+    "unit_name": "Lucius",
+    "reason": "no page"
+   },
+   {
+    "unit": "249000517",
+    "unit_name": "Machina Maw Rikku",
+    "reason": "no page"
+   },
+   {
+    "unit": "312000627",
+    "unit_name": "Magus Angela",
+    "reason": "no page"
+   },
+   {
+    "unit": "205001027",
+    "unit_name": "Monk Galuf",
+    "reason": "no page"
+   },
+   {
+    "unit": "205000827",
+    "unit_name": "Gilgamesh (FFV)",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "339000127",
+    "unit_name": "Gilgamesh (WOTV FFBE)",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215000227",
+    "unit_name": "Gladiolus",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "213001327",
+    "unit_name": "Graceful Champion Fang",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401002027",
+    "unit_name": "Grim Lord Sakura",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "202000327",
+    "unit_name": "Guy",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401015607",
+    "unit_name": "Hyoh & Panthera Ultimus",
+    "reason": "name not in F_VISION_CARD_MST: 決戦！氷刃のヴェリアス"
+   },
+   {
+    "unit": "100018727",
+    "unit_name": "Ignacio",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215000527",
+    "unit_name": "Ignis",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "201000527",
+    "unit_name": "Immortal Knight Garland",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100027127",
+    "unit_name": "Infernal Fire Rain",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "210001027",
+    "unit_name": "Jecht",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100028727",
+    "unit_name": "Kalmia",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100019927",
+    "unit_name": "Karlette",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "206001927",
+    "unit_name": "King Edgar of Figaro",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100012627",
+    "unit_name": "Kunshira",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207002407",
+    "unit_name": "Legendary Hero Sephiroth",
+    "reason": "name not in F_VISION_CARD_MST: 感動の再会だ"
+   },
+   {
+    "unit": "213000127",
+    "unit_name": "Lightning",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "208001527",
+    "unit_name": "Lone Lion Squall",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100009127",
+    "unit_name": "Loren",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100011827",
+    "unit_name": "Lotus Mage Fina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "254001827",
+    "unit_name": "Machina",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100014027",
+    "unit_name": "Mediena",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "205001817",
+    "unit_name": "Mystic Knight Bartz",
+    "reason": "no page"
+   },
+   {
+    "unit": "312001017",
+    "unit_name": "Nightblade Hawkeye",
+    "reason": "no page"
+   },
+   {
+    "unit": "401012117",
+    "unit_name": "Olivera & Rivera",
+    "reason": "no page"
+   },
+   {
+    "unit": "207002417",
+    "unit_name": "One-Winged Angel Sephiroth",
+    "reason": "no page"
+   },
+   {
+    "unit": "401016307",
+    "unit_name": "Phantom Thief Xon",
+    "reason": "no page"
+   },
+   {
+    "unit": "401016317",
+    "unit_name": "Phantom Thief Xon",
+    "reason": "no page"
+   },
+   {
+    "unit": "401014707",
+    "unit_name": "Radiant Smile Addison Rae",
+    "reason": "no page"
+   },
+   {
+    "unit": "401014717",
+    "unit_name": "Radiant Smile Addison Rae",
+    "reason": "no page"
+   },
+   {
+    "unit": "207001327",
+    "unit_name": "Reno & Rude (FFVII REMAKE)",
+    "reason": "no page"
+   },
+   {
+    "unit": "204003017",
+    "unit_name": "Rydia & Mist Dragon",
+    "reason": "no page"
+   },
+   {
+    "unit": "203001627",
+    "unit_name": "Sage",
+    "reason": "no page"
+   },
+   {
+    "unit": "205002217",
+    "unit_name": "Samurai Galuf",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001517",
+    "unit_name": "Seibzehn",
+    "reason": "no page"
+   },
+   {
+    "unit": "206002027",
+    "unit_name": "Monk Sabin of Kolts",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100027627",
+    "unit_name": "Mystical Ice Lasswell",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100015427",
+    "unit_name": "Nalu",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100030227",
+    "unit_name": "Nerine",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215001127",
+    "unit_name": "Nyx",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "203001327",
+    "unit_name": "Onion Knight Refia",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100029327",
+    "unit_name": "Poppy",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215000727",
+    "unit_name": "Prompto",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100011727",
+    "unit_name": "Pyro Glacial Lasswell",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "254000227",
+    "unit_name": "Queen",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "213001027",
+    "unit_name": "Radiant Lightning",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100010027",
+    "unit_name": "Raegen",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207000527",
+    "unit_name": "Red XIII",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "215002727",
+    "unit_name": "Regis",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401014907",
+    "unit_name": "Richt",
+    "reason": "name not in F_VISION_CARD_MST: 闇へと堕ちゆく友"
+   },
+   {
+    "unit": "401014917",
+    "unit_name": "Richt",
+    "reason": "name not in F_VISION_CARD_MST: 闇へと堕ちゆく友"
+   },
+   {
+    "unit": "338000327",
+    "unit_name": "Roy Mustang",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401001527",
+    "unit_name": "Rubicante",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207001227",
+    "unit_name": "Rufus Shinra (FFVII REMAKE)",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100021727",
+    "unit_name": "Sacred Shield Charlotte",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "208000527",
+    "unit_name": "Selphie",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "250000127",
+    "unit_name": "Serah",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "210000827",
+    "unit_name": "Seymour",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "211000927",
+    "unit_name": "Shadow Lord",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "401015707",
+    "unit_name": "Solitary Warrior Veritas of the Frost",
+    "reason": "no page"
+   },
+   {
+    "unit": "401015717",
+    "unit_name": "Solitary Warrior Veritas of the Frost",
+    "reason": "no page"
+   },
+   {
+    "unit": "344001217",
+    "unit_name": "Sovereign Supreme Vearn",
+    "reason": "no page"
+   },
+   {
+    "unit": "208002117",
+    "unit_name": "Successor Sorceress Rinoa",
+    "reason": "no page"
+   },
+   {
+    "unit": "203004517",
+    "unit_name": "Summoner",
+    "reason": "no page"
+   },
+   {
+    "unit": "306000127",
+    "unit_name": "The Dragonlord's True Form",
+    "reason": "no page"
+   },
+   {
+    "unit": "209003217",
+    "unit_name": "Trance Kuja",
+    "reason": "no page"
+   },
+   {
+    "unit": "401015617",
+    "unit_name": "Ultimate Power Hyoh",
+    "reason": "no page"
+   },
+   {
+    "unit": "100041117",
+    "unit_name": "Veritas of the Bolt",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001317",
+    "unit_name": "Vierge",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001717",
+    "unit_name": "Weltall-2",
+    "reason": "no page"
+   },
+   {
+    "unit": "331001017",
+    "unit_name": "Weltall-Id",
+    "reason": "no page"
+   },
+   {
+    "unit": "254001427",
+    "unit_name": "Sice",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100017927",
+    "unit_name": "Sieghard",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "306000627",
+    "unit_name": "Slime",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "210001827",
+    "unit_name": "Star Player Tidus",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100020527",
+    "unit_name": "Summer Fina & Lid",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100020927",
+    "unit_name": "Summer Folka & Citra",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100027427",
+    "unit_name": "Supreme Deva Akstar",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "207000327",
+    "unit_name": "Tifa",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100040007",
+    "unit_name": "Ultimate Regina",
+    "reason": "name not in F_VISION_CARD_MST: はじまりの物語"
+   },
+   {
+    "unit": "100040017",
+    "unit_name": "Ultimate Regina",
+    "reason": "name not in F_VISION_CARD_MST: はじまりの物語"
+   },
+   {
+    "unit": "100027827",
+    "unit_name": "Untamed Wolf Edel",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "212001227",
+    "unit_name": "Vayne",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100007727",
+    "unit_name": "Veritas of the Dark",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "210000327",
+    "unit_name": "Wakka",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "205001127",
+    "unit_name": "Warrior of Light Bartz",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "339000907",
+    "unit_name": "Wing of Destiny Sterne",
+    "reason": "name not in F_VISION_CARD_MST: ダリオ様の傍に"
+   },
+   {
+    "unit": "339000917",
+    "unit_name": "Wing of Destiny Sterne",
+    "reason": "name not in F_VISION_CARD_MST: ダリオ様の傍に"
+   },
+   {
+    "unit": "331000127",
+    "unit_name": "Xenogears",
+    "reason": "no page"
+   },
+   {
+    "unit": "210002117",
+    "unit_name": "Yuna & Valefor",
+    "reason": "no page"
+   },
+   {
+    "unit": "100019227",
+    "unit_name": "Yego",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "210000927",
+    "unit_name": "Yunalesca",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "100017627",
+    "unit_name": "Yuraisha",
+    "reason": "no [Vision Card]"
+   },
+   {
+    "unit": "208000427",
+    "unit_name": "Zell",
+    "reason": "no [Vision Card]"
+   }
+  ]
+ },
+ "units": {
+  "100031007": {
+   "vision_card": "100000501",
+   "card_name": "In Order to Change the World",
+   "unit_name": "Rain -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/In_Order_to_Change_the_World",
+   "revision": 368144
+  },
+  "100031017": {
+   "vision_card": "100000501",
+   "card_name": "In Order to Change the World",
+   "unit_name": "Rain -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/In_Order_to_Change_the_World",
+   "revision": 368144
+  },
+  "100031507": {
+   "vision_card": "100000601",
+   "card_name": "Guiding the Youth",
+   "unit_name": "Awakened Dragon Akstar",
+   "source": "https://exvius.fandom.com/wiki/Guiding_the_Youth",
+   "revision": 368145
+  },
+  "100031517": {
+   "vision_card": "100000601",
+   "card_name": "Guiding the Youth",
+   "unit_name": "Awakened Dragon Akstar",
+   "source": "https://exvius.fandom.com/wiki/Guiding_the_Youth",
+   "revision": 368145
+  },
+  "100031607": {
+   "vision_card": "100000701",
+   "card_name": "The Heartless Sage",
+   "unit_name": "Sol -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/The_Heartless_Sage",
+   "revision": 368146
+  },
+  "100031617": {
+   "vision_card": "100000701",
+   "card_name": "The Heartless Sage",
+   "unit_name": "Sol -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/The_Heartless_Sage",
+   "revision": 368146
+  },
+  "100031707": {
+   "vision_card": "100001501",
+   "card_name": "Too Cool for the Summer",
+   "unit_name": "Shoreline Fina & Daisy",
+   "source": "https://exvius.fandom.com/wiki/Too_Cool_for_the_Summer",
+   "revision": 368150
+  },
+  "100031717": {
+   "vision_card": "100001501",
+   "card_name": "Too Cool for the Summer",
+   "unit_name": "Shoreline Fina & Daisy",
+   "source": "https://exvius.fandom.com/wiki/Too_Cool_for_the_Summer",
+   "revision": 368150
+  },
+  "100031907": {
+   "vision_card": "100001101",
+   "card_name": "Madam and the Giant Bird, Bennu",
+   "unit_name": "Madam Edel -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Madam_and_the_Giant_Bird%2C_Bennu",
+   "revision": 368152
+  },
+  "100031917": {
+   "vision_card": "100001101",
+   "card_name": "Madam and the Giant Bird, Bennu",
+   "unit_name": "Madam Edel -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Madam_and_the_Giant_Bird%2C_Bennu",
+   "revision": 368152
+  },
+  "100032207": {
+   "vision_card": "100000901",
+   "card_name": "A Day in the Life of Physalis",
+   "unit_name": "Physalis -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/A_Day_in_the_Life_of_Physalis",
+   "revision": 368148
+  },
+  "100032217": {
+   "vision_card": "100000901",
+   "card_name": "A Day in the Life of Physalis",
+   "unit_name": "Physalis -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/A_Day_in_the_Life_of_Physalis",
+   "revision": 368148
+  },
+  "100032607": {
+   "vision_card": "100002201",
+   "card_name": "The Heir to Purple Lightning",
+   "unit_name": "Lasswell -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/The_Heir_to_Purple_Lightning",
+   "revision": 368159
+  },
+  "100032617": {
+   "vision_card": "100002201",
+   "card_name": "The Heir to Purple Lightning",
+   "unit_name": "Lasswell -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/The_Heir_to_Purple_Lightning",
+   "revision": 368159
+  },
+  "100032707": {
+   "vision_card": "100002301",
+   "card_name": "Thanks for Everything!",
+   "unit_name": "Rain & Fina",
+   "source": "https://exvius.fandom.com/wiki/Thanks_for_Everything%21",
+   "revision": 368160
+  },
+  "100032717": {
+   "vision_card": "100002301",
+   "card_name": "Thanks for Everything!",
+   "unit_name": "Rain & Fina",
+   "source": "https://exvius.fandom.com/wiki/Thanks_for_Everything%21",
+   "revision": 368160
+  },
+  "100032807": {
+   "vision_card": "100001801",
+   "card_name": "Festive Preparations - Team Lasswell",
+   "unit_name": "Lasswell & Raegen",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Lasswell",
+   "revision": 368155
+  },
+  "100032817": {
+   "vision_card": "100001801",
+   "card_name": "Festive Preparations - Team Lasswell",
+   "unit_name": "Lasswell & Raegen",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Lasswell",
+   "revision": 368155
+  },
+  "100032907": {
+   "vision_card": "100001901",
+   "card_name": "祝！ 5周年記念",
+   "unit_name": "Charlotte & Physalis",
+   "source": "https://exvius.fandom.com/wiki/Charlotte_%26_Physalis/JP",
+   "revision": 401317
+  },
+  "100032917": {
+   "vision_card": "100001901",
+   "card_name": "祝！ 5周年記念",
+   "unit_name": "Charlotte & Physalis",
+   "source": "https://exvius.fandom.com/wiki/Charlotte_%26_Physalis/JP",
+   "revision": 401317
+  },
+  "100033007": {
+   "vision_card": "100002001",
+   "card_name": "Festive Preparations - Team Sages",
+   "unit_name": "Dark Fina & Sol",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Sages",
+   "revision": 368156
+  },
+  "100033017": {
+   "vision_card": "100002001",
+   "card_name": "Festive Preparations - Team Sages",
+   "unit_name": "Dark Fina & Sol",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Sages",
+   "revision": 368156
+  },
+  "100033107": {
+   "vision_card": "100002101",
+   "card_name": "Festive Preparations - Team Akstar",
+   "unit_name": "Akstar & Cleome",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Akstar",
+   "revision": 368158
+  },
+  "100033117": {
+   "vision_card": "100002101",
+   "card_name": "Festive Preparations - Team Akstar",
+   "unit_name": "Akstar & Cleome",
+   "source": "https://exvius.fandom.com/wiki/Festive_Preparations_-_Team_Akstar",
+   "revision": 368158
+  },
+  "100033207": {
+   "vision_card": "100002501",
+   "card_name": "Friends from Today!",
+   "unit_name": "Mazurka",
+   "source": "https://exvius.fandom.com/wiki/Friends_from_Today%21",
+   "revision": 368161
+  },
+  "100033217": {
+   "vision_card": "100002501",
+   "card_name": "Friends from Today!",
+   "unit_name": "Mazurka",
+   "source": "https://exvius.fandom.com/wiki/Friends_from_Today%21",
+   "revision": 368161
+  },
+  "100033407": {
+   "vision_card": "100002601",
+   "card_name": "Face My Full Power!",
+   "unit_name": "Melo",
+   "source": "https://exvius.fandom.com/wiki/Face_My_Full_Power%21",
+   "revision": 368162
+  },
+  "100033417": {
+   "vision_card": "100002601",
+   "card_name": "Face My Full Power!",
+   "unit_name": "Melo",
+   "source": "https://exvius.fandom.com/wiki/Face_My_Full_Power%21",
+   "revision": 368162
+  },
+  "100033907": {
+   "vision_card": "100003001",
+   "card_name": "The One I've Loved...",
+   "unit_name": "Chorale",
+   "source": "https://exvius.fandom.com/wiki/The_One_I%27ve_Loved...",
+   "revision": 368166
+  },
+  "100033917": {
+   "vision_card": "100003001",
+   "card_name": "The One I've Loved...",
+   "unit_name": "Chorale",
+   "source": "https://exvius.fandom.com/wiki/The_One_I%27ve_Loved...",
+   "revision": 368166
+  },
+  "100034107": {
+   "vision_card": "100003001",
+   "card_name": "The One I've Loved...",
+   "unit_name": "Diverti",
+   "source": "https://exvius.fandom.com/wiki/The_One_I%27ve_Loved...",
+   "revision": 368166
+  },
+  "100034117": {
+   "vision_card": "100003001",
+   "card_name": "The One I've Loved...",
+   "unit_name": "Diverti",
+   "source": "https://exvius.fandom.com/wiki/The_One_I%27ve_Loved...",
+   "revision": 368166
+  },
+  "100034307": {
+   "vision_card": "100003401",
+   "card_name": "A World United",
+   "unit_name": "Guardian Blade Charlotte",
+   "source": "https://exvius.fandom.com/wiki/A_World_United_%28Vision_Card%29",
+   "revision": 373846
+  },
+  "100034317": {
+   "vision_card": "100003401",
+   "card_name": "A World United",
+   "unit_name": "Guardian Blade Charlotte",
+   "source": "https://exvius.fandom.com/wiki/A_World_United_%28Vision_Card%29",
+   "revision": 373846
+  },
+  "100034407": {
+   "vision_card": "100003401",
+   "card_name": "A World United",
+   "unit_name": "Emperor Vlad",
+   "source": "https://exvius.fandom.com/wiki/A_World_United_%28Vision_Card%29",
+   "revision": 373846
+  },
+  "100034417": {
+   "vision_card": "100003401",
+   "card_name": "A World United",
+   "unit_name": "Emperor Vlad",
+   "source": "https://exvius.fandom.com/wiki/A_World_United_%28Vision_Card%29",
+   "revision": 373846
+  },
+  "100034707": {
+   "vision_card": "100003501",
+   "card_name": "Memories Below the Surface",
+   "unit_name": "Lord of the Seas Nichol",
+   "source": "https://exvius.fandom.com/wiki/Memories_Below_the_Surface",
+   "revision": 368172
+  },
+  "100034717": {
+   "vision_card": "100003501",
+   "card_name": "Memories Below the Surface",
+   "unit_name": "Lord of the Seas Nichol",
+   "source": "https://exvius.fandom.com/wiki/Memories_Below_the_Surface",
+   "revision": 368172
+  },
+  "100035107": {
+   "vision_card": "100004101",
+   "card_name": "La Vida Roca",
+   "unit_name": "Roca",
+   "source": "https://exvius.fandom.com/wiki/La_Vida_Roca",
+   "revision": 368177
+  },
+  "100035117": {
+   "vision_card": "100004101",
+   "card_name": "La Vida Roca",
+   "unit_name": "Roca",
+   "source": "https://exvius.fandom.com/wiki/La_Vida_Roca",
+   "revision": 368177
+  },
+  "100035307": {
+   "vision_card": "100004101",
+   "card_name": "La Vida Roca",
+   "unit_name": "Paus",
+   "source": "https://exvius.fandom.com/wiki/La_Vida_Roca",
+   "revision": 368177
+  },
+  "100035317": {
+   "vision_card": "100004101",
+   "card_name": "La Vida Roca",
+   "unit_name": "Paus",
+   "source": "https://exvius.fandom.com/wiki/La_Vida_Roca",
+   "revision": 368177
+  },
+  "100035507": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Summer Sniper Physalis",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100035517": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Summer Sniper Physalis",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100035807": {
+   "vision_card": "100004001",
+   "card_name": "Duo in Disguise",
+   "unit_name": "Sage of Thunder Sakura",
+   "source": "https://exvius.fandom.com/wiki/Duo_in_Disguise",
+   "revision": 368176
+  },
+  "100035817": {
+   "vision_card": "100004001",
+   "card_name": "Duo in Disguise",
+   "unit_name": "Sage of Thunder Sakura",
+   "source": "https://exvius.fandom.com/wiki/Duo_in_Disguise",
+   "revision": 368176
+  },
+  "100035907": {
+   "vision_card": "100004401",
+   "card_name": "わけありの任務",
+   "unit_name": "Taivas",
+   "source": "https://exvius.fandom.com/wiki/Taivas/JP",
+   "revision": 401142
+  },
+  "100035917": {
+   "vision_card": "100004401",
+   "card_name": "わけありの任務",
+   "unit_name": "Taivas",
+   "source": "https://exvius.fandom.com/wiki/Taivas/JP",
+   "revision": 401142
+  },
+  "100037107": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Magic Mermaid Freesia",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100037117": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Magic Mermaid Freesia",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100037207": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Beach Buoy Shinju",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100037217": {
+   "vision_card": "100004301",
+   "card_name": "Vacation, All I Ever Wanted",
+   "unit_name": "Beach Buoy Shinju",
+   "source": "https://exvius.fandom.com/wiki/Vacation%2C_All_I_Ever_Wanted",
+   "revision": 368178
+  },
+  "100037307": {
+   "vision_card": "100004501",
+   "card_name": "A Hero Arrives!",
+   "unit_name": "Tulien",
+   "source": "https://exvius.fandom.com/wiki/A_Hero_Arrives%21",
+   "revision": 368179
+  },
+  "100037317": {
+   "vision_card": "100004501",
+   "card_name": "A Hero Arrives!",
+   "unit_name": "Tulien",
+   "source": "https://exvius.fandom.com/wiki/A_Hero_Arrives%21",
+   "revision": 368179
+  },
+  "100037407": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Runda",
+   "source": "https://exvius.fandom.com/wiki/Runda/JP",
+   "revision": 398753
+  },
+  "100037417": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Runda",
+   "source": "https://exvius.fandom.com/wiki/Runda/JP",
+   "revision": 398753
+  },
+  "100037507": {
+   "vision_card": "100004801",
+   "card_name": "Thank You, Taivas",
+   "unit_name": "Lehftia",
+   "source": "https://exvius.fandom.com/wiki/Thank_You%2C_Taivas",
+   "revision": 375472
+  },
+  "100037517": {
+   "vision_card": "100004801",
+   "card_name": "Thank You, Taivas",
+   "unit_name": "Lehftia",
+   "source": "https://exvius.fandom.com/wiki/Thank_You%2C_Taivas",
+   "revision": 375472
+  },
+  "100037607": {
+   "vision_card": "100004901",
+   "card_name": "Meeting with a Girl",
+   "unit_name": "Haveh",
+   "source": "https://exvius.fandom.com/wiki/Meeting_with_a_Girl",
+   "revision": 368181
+  },
+  "100037617": {
+   "vision_card": "100004901",
+   "card_name": "Meeting with a Girl",
+   "unit_name": "Haveh",
+   "source": "https://exvius.fandom.com/wiki/Meeting_with_a_Girl",
+   "revision": 368181
+  },
+  "100037707": {
+   "vision_card": "100002401",
+   "card_name": "この命をかけて",
+   "unit_name": "Golden Rizer",
+   "source": "https://exvius.fandom.com/wiki/Golden_Rizer/JP",
+   "revision": 398750
+  },
+  "100037717": {
+   "vision_card": "100002401",
+   "card_name": "この命をかけて",
+   "unit_name": "Golden Rizer",
+   "source": "https://exvius.fandom.com/wiki/Golden_Rizer/JP",
+   "revision": 398750
+  },
+  "100037807": {
+   "vision_card": "100005001",
+   "card_name": "強襲！ダークレイン",
+   "unit_name": "Dark Rain",
+   "source": "https://exvius.fandom.com/wiki/Dark_Rain/JP",
+   "revision": 403592
+  },
+  "100037817": {
+   "vision_card": "100005001",
+   "card_name": "強襲！ダークレイン",
+   "unit_name": "Dark Rain",
+   "source": "https://exvius.fandom.com/wiki/Dark_Rain/JP",
+   "revision": 403592
+  },
+  "100037907": {
+   "vision_card": "100005101",
+   "card_name": "Moments Before the Address",
+   "unit_name": "Raegen -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Moments_Before_the_Address",
+   "revision": 368184
+  },
+  "100037917": {
+   "vision_card": "100005101",
+   "card_name": "Moments Before the Address",
+   "unit_name": "Raegen -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Moments_Before_the_Address",
+   "revision": 368184
+  },
+  "100038007": {
+   "vision_card": "100005101",
+   "card_name": "Moments Before the Address",
+   "unit_name": "Akstar -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Moments_Before_the_Address",
+   "revision": 368184
+  },
+  "100038017": {
+   "vision_card": "100005101",
+   "card_name": "Moments Before the Address",
+   "unit_name": "Akstar -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Moments_Before_the_Address",
+   "revision": 368184
+  },
+  "100038107": {
+   "vision_card": "100005301",
+   "card_name": "大地が起こした奇跡",
+   "unit_name": "Fina -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Fina_-The_Return-/JP",
+   "revision": 403591
+  },
+  "100038117": {
+   "vision_card": "100005301",
+   "card_name": "大地が起こした奇跡",
+   "unit_name": "Fina -The Return-",
+   "source": "https://exvius.fandom.com/wiki/Fina_-The_Return-/JP",
+   "revision": 403591
+  },
+  "100038207": {
+   "vision_card": "100005401",
+   "card_name": "With a Little Help",
+   "unit_name": "Nichol -The Return-",
+   "source": "https://exvius.fandom.com/wiki/With_a_Little_Help",
+   "revision": 368186
+  },
+  "100038217": {
+   "vision_card": "100005401",
+   "card_name": "With a Little Help",
+   "unit_name": "Nichol -The Return-",
+   "source": "https://exvius.fandom.com/wiki/With_a_Little_Help",
+   "revision": 368186
+  },
+  "100038307": {
+   "vision_card": "100005401",
+   "card_name": "With a Little Help",
+   "unit_name": "Sakura -The Return-",
+   "source": "https://exvius.fandom.com/wiki/With_a_Little_Help",
+   "revision": 368186
+  },
+  "100038317": {
+   "vision_card": "100005401",
+   "card_name": "With a Little Help",
+   "unit_name": "Sakura -The Return-",
+   "source": "https://exvius.fandom.com/wiki/With_a_Little_Help",
+   "revision": 368186
+  },
+  "100038407": {
+   "vision_card": "100002201",
+   "card_name": "The Heir to Purple Lightning",
+   "unit_name": "Lasswell -FFIV Form-",
+   "source": "https://exvius.fandom.com/wiki/The_Heir_to_Purple_Lightning",
+   "revision": 368159
+  },
+  "100038417": {
+   "vision_card": "100002201",
+   "card_name": "The Heir to Purple Lightning",
+   "unit_name": "Lasswell -FFIV Form-",
+   "source": "https://exvius.fandom.com/wiki/The_Heir_to_Purple_Lightning",
+   "revision": 368159
+  },
+  "100038507": {
+   "vision_card": "100000501",
+   "card_name": "In Order to Change the World",
+   "unit_name": "Rain -FFI Form-",
+   "source": "https://exvius.fandom.com/wiki/In_Order_to_Change_the_World",
+   "revision": 368144
+  },
+  "100038517": {
+   "vision_card": "100000501",
+   "card_name": "In Order to Change the World",
+   "unit_name": "Rain -FFI Form-",
+   "source": "https://exvius.fandom.com/wiki/In_Order_to_Change_the_World",
+   "revision": 368144
+  },
+  "100038607": {
+   "vision_card": "100005501",
+   "card_name": "最強の戦士の誕生",
+   "unit_name": "Knights of Grandshelt",
+   "source": "https://exvius.fandom.com/wiki/Knights_of_Grandshelt/JP",
+   "revision": 403590
+  },
+  "100038617": {
+   "vision_card": "100005501",
+   "card_name": "最強の戦士の誕生",
+   "unit_name": "Knights of Grandshelt",
+   "source": "https://exvius.fandom.com/wiki/Knights_of_Grandshelt/JP",
+   "revision": 403590
+  },
+  "100038807": {
+   "vision_card": "100005601",
+   "card_name": "The Grief-Stricken Rival",
+   "unit_name": "Yshe",
+   "source": "https://exvius.fandom.com/wiki/The_Grief-Stricken_Rival",
+   "revision": 368188
+  },
+  "100038817": {
+   "vision_card": "100005601",
+   "card_name": "The Grief-Stricken Rival",
+   "unit_name": "Yshe",
+   "source": "https://exvius.fandom.com/wiki/The_Grief-Stricken_Rival",
+   "revision": 368188
+  },
+  "100038907": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Kall",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100038917": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Kall",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100039007": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Ilmatalle",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100039017": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Ilmatalle",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100039107": {
+   "vision_card": "100005801",
+   "card_name": "A Gift from the Knights",
+   "unit_name": "Silent Knight Charlotte",
+   "source": "https://exvius.fandom.com/wiki/A_Gift_from_the_Knights",
+   "revision": 368190
+  },
+  "100039117": {
+   "vision_card": "100005801",
+   "card_name": "A Gift from the Knights",
+   "unit_name": "Silent Knight Charlotte",
+   "source": "https://exvius.fandom.com/wiki/A_Gift_from_the_Knights",
+   "revision": 368190
+  },
+  "100039307": {
+   "vision_card": "100006001",
+   "card_name": "A Dynamic Demonstration",
+   "unit_name": "Rain -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/A_Dynamic_Demonstration",
+   "revision": 375475
+  },
+  "100039317": {
+   "vision_card": "100006001",
+   "card_name": "A Dynamic Demonstration",
+   "unit_name": "Rain -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/A_Dynamic_Demonstration",
+   "revision": 375475
+  },
+  "100039407": {
+   "vision_card": "100006101",
+   "card_name": "蛇と魔人と",
+   "unit_name": "Dark Fina -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Dark_Fina_-Warrior%27s_Prayer-/JP",
+   "revision": 404073
+  },
+  "100039417": {
+   "vision_card": "100006101",
+   "card_name": "蛇と魔人と",
+   "unit_name": "Dark Fina -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Dark_Fina_-Warrior%27s_Prayer-/JP",
+   "revision": 404073
+  },
+  "100039507": {
+   "vision_card": "100006201",
+   "card_name": "Let Demons Be Slain!",
+   "unit_name": "Poppy -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Let_Demons_Be_Slain%21",
+   "revision": 368193
+  },
+  "100039517": {
+   "vision_card": "100006201",
+   "card_name": "Let Demons Be Slain!",
+   "unit_name": "Poppy -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Let_Demons_Be_Slain%21",
+   "revision": 368193
+  },
+  "100039607": {
+   "vision_card": "100006201",
+   "card_name": "Let Demons Be Slain!",
+   "unit_name": "Lehftia -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Let_Demons_Be_Slain%21",
+   "revision": 368193
+  },
+  "100039617": {
+   "vision_card": "100006201",
+   "card_name": "Let Demons Be Slain!",
+   "unit_name": "Lehftia -Warrior's Prayer-",
+   "source": "https://exvius.fandom.com/wiki/Let_Demons_Be_Slain%21",
+   "revision": 368193
+  },
+  "100039807": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Rhus",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100039817": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Rhus",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100039907": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Neilikka",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100039917": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Neilikka",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100040107": {
+   "vision_card": "100006601",
+   "card_name": "A Meeting of Convictions",
+   "unit_name": "Vanharma",
+   "source": "https://exvius.fandom.com/wiki/A_Meeting_of_Convictions",
+   "revision": 368197
+  },
+  "100040117": {
+   "vision_card": "100006601",
+   "card_name": "A Meeting of Convictions",
+   "unit_name": "Vanharma",
+   "source": "https://exvius.fandom.com/wiki/A_Meeting_of_Convictions",
+   "revision": 368197
+  },
+  "100040207": {
+   "vision_card": "100006601",
+   "card_name": "A Meeting of Convictions",
+   "unit_name": "Ihana",
+   "source": "https://exvius.fandom.com/wiki/A_Meeting_of_Convictions",
+   "revision": 368197
+  },
+  "100040217": {
+   "vision_card": "100006601",
+   "card_name": "A Meeting of Convictions",
+   "unit_name": "Ihana",
+   "source": "https://exvius.fandom.com/wiki/A_Meeting_of_Convictions",
+   "revision": 368197
+  },
+  "100040307": {
+   "vision_card": "100006701",
+   "card_name": "Omnibus Unleashed!",
+   "unit_name": "Taivas & Yshe",
+   "source": "https://exvius.fandom.com/wiki/Omnibus_Unleashed%21",
+   "revision": 368194
+  },
+  "100040317": {
+   "vision_card": "100006701",
+   "card_name": "Omnibus Unleashed!",
+   "unit_name": "Taivas & Yshe",
+   "source": "https://exvius.fandom.com/wiki/Omnibus_Unleashed%21",
+   "revision": 368194
+  },
+  "100040407": {
+   "vision_card": "100006801",
+   "card_name": "Coral Forest Getaway",
+   "unit_name": "Vacation Voyager Fina",
+   "source": "https://exvius.fandom.com/wiki/Coral_Forest_Getaway",
+   "revision": 368196
+  },
+  "100040417": {
+   "vision_card": "100006801",
+   "card_name": "Coral Forest Getaway",
+   "unit_name": "Vacation Voyager Fina",
+   "source": "https://exvius.fandom.com/wiki/Coral_Forest_Getaway",
+   "revision": 368196
+  },
+  "100040507": {
+   "vision_card": "100006801",
+   "card_name": "Coral Forest Getaway",
+   "unit_name": "Marine-Type Runda",
+   "source": "https://exvius.fandom.com/wiki/Coral_Forest_Getaway",
+   "revision": 368196
+  },
+  "100040517": {
+   "vision_card": "100006801",
+   "card_name": "Coral Forest Getaway",
+   "unit_name": "Marine-Type Runda",
+   "source": "https://exvius.fandom.com/wiki/Coral_Forest_Getaway",
+   "revision": 368196
+  },
+  "100040607": {
+   "vision_card": "100007001",
+   "card_name": "復讐の時は来た！",
+   "unit_name": "Dioxus",
+   "source": "https://exvius.fandom.com/wiki/Dioxus/JP",
+   "revision": 404714
+  },
+  "100040617": {
+   "vision_card": "100007001",
+   "card_name": "復讐の時は来た！",
+   "unit_name": "Dioxus",
+   "source": "https://exvius.fandom.com/wiki/Dioxus/JP",
+   "revision": 404714
+  },
+  "100040707": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Raegen -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Raegen_-Dark_Lineage-/JP",
+   "revision": 401136
+  },
+  "100040717": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Raegen -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Raegen_-Dark_Lineage-/JP",
+   "revision": 401136
+  },
+  "100040807": {
+   "vision_card": "100007201",
+   "card_name": "出陣！パラデイア魔導兵器軍",
+   "unit_name": "Lasswell -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Lasswell_-Dark_Lineage-/JP",
+   "revision": 401135
+  },
+  "100040817": {
+   "vision_card": "100007201",
+   "card_name": "出陣！パラデイア魔導兵器軍",
+   "unit_name": "Lasswell -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Lasswell_-Dark_Lineage-/JP",
+   "revision": 401135
+  },
+  "100040907": {
+   "vision_card": "100007101",
+   "card_name": "Testing the Prototype",
+   "unit_name": "Roca -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Testing_the_Prototype",
+   "revision": 368200
+  },
+  "100040917": {
+   "vision_card": "100007101",
+   "card_name": "Testing the Prototype",
+   "unit_name": "Roca -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Testing_the_Prototype",
+   "revision": 368200
+  },
+  "100041007": {
+   "vision_card": "100007301",
+   "card_name": "Sworn Eight, Sworn Enemies",
+   "unit_name": "Veritas of the Frost",
+   "source": "https://exvius.fandom.com/wiki/Sworn_Eight%2C_Sworn_Enemies",
+   "revision": 368201
+  },
+  "100041017": {
+   "vision_card": "100007301",
+   "card_name": "Sworn Eight, Sworn Enemies",
+   "unit_name": "Veritas of the Frost",
+   "source": "https://exvius.fandom.com/wiki/Sworn_Eight%2C_Sworn_Enemies",
+   "revision": 368201
+  },
+  "100041107": {
+   "vision_card": "100007101",
+   "card_name": "Testing the Prototype",
+   "unit_name": "Sakura -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/Testing_the_Prototype",
+   "revision": 368200
+  },
+  "100041207": {
+   "vision_card": "100007401",
+   "card_name": "黒気VS緋炎",
+   "unit_name": "Flaring Aether Rain",
+   "source": "https://exvius.fandom.com/wiki/Flaring_Aether_Rain/JP",
+   "revision": 402985
+  },
+  "100041217": {
+   "vision_card": "100007401",
+   "card_name": "黒気VS緋炎",
+   "unit_name": "Flaring Aether Rain",
+   "source": "https://exvius.fandom.com/wiki/Flaring_Aether_Rain/JP",
+   "revision": 402985
+  },
+  "100041307": {
+   "vision_card": "100007501",
+   "card_name": "The Battle for Aldore Tower",
+   "unit_name": "Fina -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/The_Battle_for_Aldore_Tower",
+   "revision": 368204
+  },
+  "100041317": {
+   "vision_card": "100007501",
+   "card_name": "The Battle for Aldore Tower",
+   "unit_name": "Fina -Dark Lineage-",
+   "source": "https://exvius.fandom.com/wiki/The_Battle_for_Aldore_Tower",
+   "revision": 368204
+  },
+  "100041407": {
+   "vision_card": "100006901",
+   "card_name": "Found Family",
+   "unit_name": "Mid",
+   "source": "https://exvius.fandom.com/wiki/Found_Family",
+   "revision": 368198
+  },
+  "100041417": {
+   "vision_card": "100006901",
+   "card_name": "Found Family",
+   "unit_name": "Mid",
+   "source": "https://exvius.fandom.com/wiki/Found_Family",
+   "revision": 368198
+  },
+  "100041607": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sheratan",
+   "source": "https://exvius.fandom.com/wiki/Sheratan/JP",
+   "revision": 402983
+  },
+  "100041617": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sheratan",
+   "source": "https://exvius.fandom.com/wiki/Sheratan/JP",
+   "revision": 402983
+  },
+  "100041707": {
+   "vision_card": "100007801",
+   "card_name": "To Bring an End to This War",
+   "unit_name": "Blades of Black Flame Raegen",
+   "source": "https://exvius.fandom.com/wiki/To_Bring_an_End_to_This_War",
+   "revision": 368205
+  },
+  "100041717": {
+   "vision_card": "100007801",
+   "card_name": "To Bring an End to This War",
+   "unit_name": "Blades of Black Flame Raegen",
+   "source": "https://exvius.fandom.com/wiki/To_Bring_an_End_to_This_War",
+   "revision": 368205
+  },
+  "100041807": {
+   "vision_card": "100007801",
+   "card_name": "To Bring an End to This War",
+   "unit_name": "Red-Eyed Sage Sol",
+   "source": "https://exvius.fandom.com/wiki/To_Bring_an_End_to_This_War",
+   "revision": 368205
+  },
+  "100041907": {
+   "vision_card": "100007901",
+   "card_name": "Rain Before a Wedding",
+   "unit_name": "Snovlinka",
+   "source": "https://exvius.fandom.com/wiki/Rain_Before_a_Wedding",
+   "revision": 369929
+  },
+  "100041917": {
+   "vision_card": "100007901",
+   "card_name": "Rain Before a Wedding",
+   "unit_name": "Snovlinka",
+   "source": "https://exvius.fandom.com/wiki/Rain_Before_a_Wedding",
+   "revision": 369929
+  },
+  "100042007": {
+   "vision_card": "100007901",
+   "card_name": "Rain Before a Wedding",
+   "unit_name": "Riddar",
+   "source": "https://exvius.fandom.com/wiki/Rain_Before_a_Wedding",
+   "revision": 369929
+  },
+  "100042017": {
+   "vision_card": "100007901",
+   "card_name": "Rain Before a Wedding",
+   "unit_name": "Riddar",
+   "source": "https://exvius.fandom.com/wiki/Rain_Before_a_Wedding",
+   "revision": 369929
+  },
+  "100042107": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Dark Dragon Buffon",
+   "source": "https://exvius.fandom.com/wiki/Dark_Dragon_Buffon/JP",
+   "revision": 404712
+  },
+  "100042117": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Dark Dragon Buffon",
+   "source": "https://exvius.fandom.com/wiki/Dark_Dragon_Buffon/JP",
+   "revision": 404712
+  },
+  "100042307": {
+   "vision_card": "100008101",
+   "card_name": "Dressed for a Stroll",
+   "unit_name": "Grand Couture Ayaka",
+   "source": "https://exvius.fandom.com/wiki/Dressed_for_a_Stroll",
+   "revision": 372941
+  },
+  "100042317": {
+   "vision_card": "100008101",
+   "card_name": "Dressed for a Stroll",
+   "unit_name": "Grand Couture Ayaka",
+   "source": "https://exvius.fandom.com/wiki/Dressed_for_a_Stroll",
+   "revision": 372941
+  },
+  "100042407": {
+   "vision_card": "100008401",
+   "card_name": "融合せし英雄たち",
+   "unit_name": "Deity of War Taivas",
+   "source": "https://exvius.fandom.com/wiki/Deity_of_War_Taivas/JP",
+   "revision": 403586
+  },
+  "100042417": {
+   "vision_card": "100008401",
+   "card_name": "融合せし英雄たち",
+   "unit_name": "Deity of War Taivas",
+   "source": "https://exvius.fandom.com/wiki/Deity_of_War_Taivas/JP",
+   "revision": 403586
+  },
+  "100042507": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Cursebringer Neilikka",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100042517": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Cursebringer Neilikka",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100042607": {
+   "vision_card": "100004801",
+   "card_name": "Thank You, Taivas",
+   "unit_name": "Petite Jewel Lehftia",
+   "source": "https://exvius.fandom.com/wiki/Thank_You%2C_Taivas",
+   "revision": 375472
+  },
+  "100042617": {
+   "vision_card": "100004801",
+   "card_name": "Thank You, Taivas",
+   "unit_name": "Petite Jewel Lehftia",
+   "source": "https://exvius.fandom.com/wiki/Thank_You%2C_Taivas",
+   "revision": 375472
+  },
+  "100042707": {
+   "vision_card": "100008601",
+   "card_name": "時魔道士と時空の幻獣",
+   "unit_name": "Voidmage Roca",
+   "source": "https://exvius.fandom.com/wiki/Voidmage_Roca/JP",
+   "revision": 403585
+  },
+  "100042717": {
+   "vision_card": "100008601",
+   "card_name": "時魔道士と時空の幻獣",
+   "unit_name": "Voidmage Roca",
+   "source": "https://exvius.fandom.com/wiki/Voidmage_Roca/JP",
+   "revision": 403585
+  },
+  "100042807": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Dragonlord Rhus",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100042817": {
+   "vision_card": "100006401",
+   "card_name": "Wygars Approved!",
+   "unit_name": "Dragonlord Rhus",
+   "source": "https://exvius.fandom.com/wiki/Wygars_Approved%21",
+   "revision": 375474
+  },
+  "100042907": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Bewitching Warrior Yshe",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100042917": {
+   "vision_card": "100005701",
+   "card_name": "In the Name of Yshe's Elites",
+   "unit_name": "Bewitching Warrior Yshe",
+   "source": "https://exvius.fandom.com/wiki/In_the_Name_of_Yshe%27s_Elites",
+   "revision": 375473
+  },
+  "100043007": {
+   "vision_card": "100008901",
+   "card_name": "水神の力宿る一撃",
+   "unit_name": "Rain -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Rain_-Esper_of_Destruction-/JP",
+   "revision": 404711
+  },
+  "100043017": {
+   "vision_card": "100008901",
+   "card_name": "水神の力宿る一撃",
+   "unit_name": "Rain -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Rain_-Esper_of_Destruction-/JP",
+   "revision": 404711
+  },
+  "100043107": {
+   "vision_card": "100009001",
+   "card_name": "Esper Against Esper",
+   "unit_name": "Lasswell -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Esper_Against_Esper",
+   "revision": 395415
+  },
+  "100043117": {
+   "vision_card": "100009001",
+   "card_name": "Esper Against Esper",
+   "unit_name": "Lasswell -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Esper_Against_Esper",
+   "revision": 395415
+  },
+  "100043207": {
+   "vision_card": "100009101",
+   "card_name": "ルートクリスタルを巡る死闘",
+   "unit_name": "Fina -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Fina_-Esper_of_Destruction-/JP",
+   "revision": 401296
+  },
+  "100043217": {
+   "vision_card": "100009101",
+   "card_name": "ルートクリスタルを巡る死闘",
+   "unit_name": "Fina -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Fina_-Esper_of_Destruction-/JP",
+   "revision": 401296
+  },
+  "100043507": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Charlotte -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Charlotte_-Esper_of_Destruction-/JP",
+   "revision": 401293
+  },
+  "100043517": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Charlotte -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Charlotte_-Esper_of_Destruction-/JP",
+   "revision": 401293
+  },
+  "100043607": {
+   "vision_card": "100009201",
+   "card_name": "Deliverance from Despair",
+   "unit_name": "Dark Fina -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Deliverance_from_Despair",
+   "revision": 395641
+  },
+  "100043617": {
+   "vision_card": "100009201",
+   "card_name": "Deliverance from Despair",
+   "unit_name": "Dark Fina -Esper of Destruction-",
+   "source": "https://exvius.fandom.com/wiki/Deliverance_from_Despair",
+   "revision": 395641
+  },
+  "100043807": {
+   "vision_card": "100009301",
+   "card_name": "「想い」を司る幻獣",
+   "unit_name": "Sophie",
+   "source": "https://exvius.fandom.com/wiki/Sophie/JP",
+   "revision": 404748
+  },
+  "100043817": {
+   "vision_card": "100009301",
+   "card_name": "「想い」を司る幻獣",
+   "unit_name": "Sophie",
+   "source": "https://exvius.fandom.com/wiki/Sophie/JP",
+   "revision": 404748
+  },
+  "100044107": {
+   "vision_card": "100008801",
+   "card_name": "The Oracle's Grace",
+   "unit_name": "Magic Markswoman Physalis",
+   "source": "https://exvius.fandom.com/wiki/The_Oracle%27s_Grace",
+   "revision": 391826
+  },
+  "100044117": {
+   "vision_card": "100008801",
+   "card_name": "The Oracle's Grace",
+   "unit_name": "Magic Markswoman Physalis",
+   "source": "https://exvius.fandom.com/wiki/The_Oracle%27s_Grace",
+   "revision": 391826
+  },
+  "100044207": {
+   "vision_card": "100008801",
+   "card_name": "The Oracle's Grace",
+   "unit_name": "Metze",
+   "source": "https://exvius.fandom.com/wiki/The_Oracle%27s_Grace",
+   "revision": 391826
+  },
+  "100044217": {
+   "vision_card": "100008801",
+   "card_name": "The Oracle's Grace",
+   "unit_name": "Metze",
+   "source": "https://exvius.fandom.com/wiki/The_Oracle%27s_Grace",
+   "revision": 391826
+  },
+  "100044807": {
+   "vision_card": "100009901",
+   "card_name": "Wish to Change the World",
+   "unit_name": "Crimson Knight Rain",
+   "source": "https://exvius.fandom.com/wiki/Wish_to_Change_the_World",
+   "revision": 402091
+  },
+  "100044817": {
+   "vision_card": "100009901",
+   "card_name": "Wish to Change the World",
+   "unit_name": "Crimson Knight Rain",
+   "source": "https://exvius.fandom.com/wiki/Wish_to_Change_the_World",
+   "revision": 402091
+  },
+  "100044907": {
+   "vision_card": "100010001",
+   "card_name": "Entrusted to Rhus",
+   "unit_name": "Azure Knight Lasswell",
+   "source": "https://exvius.fandom.com/wiki/Entrusted_to_Rhus",
+   "revision": 402221
+  },
+  "100044917": {
+   "vision_card": "100010001",
+   "card_name": "Entrusted to Rhus",
+   "unit_name": "Azure Knight Lasswell",
+   "source": "https://exvius.fandom.com/wiki/Entrusted_to_Rhus",
+   "revision": 402221
+  },
+  "100045007": {
+   "vision_card": "100009901",
+   "card_name": "Wish to Change the World",
+   "unit_name": "Hero Resurrected Taivas",
+   "source": "https://exvius.fandom.com/wiki/Wish_to_Change_the_World",
+   "revision": 402091
+  },
+  "100045107": {
+   "vision_card": "100010001",
+   "card_name": "Entrusted to Rhus",
+   "unit_name": "Azure and Crimson Blades Rhus",
+   "source": "https://exvius.fandom.com/wiki/Entrusted_to_Rhus",
+   "revision": 402221
+  },
+  "100045117": {
+   "vision_card": "100010001",
+   "card_name": "Entrusted to Rhus",
+   "unit_name": "Azure and Crimson Blades Rhus",
+   "source": "https://exvius.fandom.com/wiki/Entrusted_to_Rhus",
+   "revision": 402221
+  },
+  "201000607": {
+   "vision_card": "201000101",
+   "card_name": "And So Their Quest Began",
+   "unit_name": "Fledgling Warrior",
+   "source": "https://exvius.fandom.com/wiki/And_So_Their_Quest_Began",
+   "revision": 368206
+  },
+  "201000617": {
+   "vision_card": "201000101",
+   "card_name": "And So Their Quest Began",
+   "unit_name": "Fledgling Warrior",
+   "source": "https://exvius.fandom.com/wiki/And_So_Their_Quest_Began",
+   "revision": 368206
+  },
+  "201000707": {
+   "vision_card": "201000201",
+   "card_name": "Battle with Marilith",
+   "unit_name": "Marilith",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Marilith",
+   "revision": 368207
+  },
+  "201000717": {
+   "vision_card": "201000201",
+   "card_name": "Battle with Marilith",
+   "unit_name": "Marilith",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Marilith",
+   "revision": 368207
+  },
+  "201000807": {
+   "vision_card": "201000301",
+   "card_name": "Battle with Garland",
+   "unit_name": "Princess of Cornelia Sarah",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Garland",
+   "revision": 385630
+  },
+  "201000817": {
+   "vision_card": "201000301",
+   "card_name": "Battle with Garland",
+   "unit_name": "Princess of Cornelia Sarah",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Garland",
+   "revision": 385630
+  },
+  "202001907": {
+   "vision_card": "202000101",
+   "card_name": "Battle with the Black Knights",
+   "unit_name": "Firion -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_the_Black_Knights",
+   "revision": 368209
+  },
+  "202001917": {
+   "vision_card": "202000101",
+   "card_name": "Battle with the Black Knights",
+   "unit_name": "Firion -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_the_Black_Knights",
+   "revision": 368209
+  },
+  "202002307": {
+   "vision_card": "202000201",
+   "card_name": "The Emperor Reborn",
+   "unit_name": "Emperor of Palamecia",
+   "source": "https://exvius.fandom.com/wiki/The_Emperor_Reborn",
+   "revision": 368211
+  },
+  "202002317": {
+   "vision_card": "202000201",
+   "card_name": "The Emperor Reborn",
+   "unit_name": "Emperor of Palamecia",
+   "source": "https://exvius.fandom.com/wiki/The_Emperor_Reborn",
+   "revision": 368211
+  },
+  "202002407": {
+   "vision_card": "202000301",
+   "card_name": "VS Roundworm",
+   "unit_name": "Ricard & Wyvern",
+   "source": "https://exvius.fandom.com/wiki/VS_Roundworm",
+   "revision": 368208
+  },
+  "203004207": {
+   "vision_card": "203000101",
+   "card_name": "Crystal's Revelation",
+   "unit_name": "Onion Knight -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Crystal%27s_Revelation",
+   "revision": 368210
+  },
+  "203004217": {
+   "vision_card": "203000101",
+   "card_name": "Crystal's Revelation",
+   "unit_name": "Onion Knight -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Crystal%27s_Revelation",
+   "revision": 368210
+  },
+  "203004407": {
+   "vision_card": "203000201",
+   "card_name": "Bahamut! Run Away&#33; Run Away&#33;",
+   "unit_name": "Red Mage Ingus",
+   "source": "https://exvius.fandom.com/wiki/Bahamut%21_Run_Away%21_Run_Away%21",
+   "revision": 368212
+  },
+  "203004507": {
+   "vision_card": "203000301",
+   "card_name": "Battle with Xande",
+   "unit_name": "Evoker",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Xande",
+   "revision": 385633
+  },
+  "204002907": {
+   "vision_card": "204000101",
+   "card_name": "Battle with Barbariccia",
+   "unit_name": "Dragoon Kain",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Barbariccia",
+   "revision": 368213
+  },
+  "204003007": {
+   "vision_card": "204000301",
+   "card_name": "Return from the Feymarch",
+   "unit_name": "Summoner Rydia",
+   "source": "https://exvius.fandom.com/wiki/Return_from_the_Feymarch",
+   "revision": 368215
+  },
+  "204003107": {
+   "vision_card": "204000201",
+   "card_name": "Battle with Rubicante",
+   "unit_name": "Ninja Edge",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Rubicante",
+   "revision": 368214
+  },
+  "204003117": {
+   "vision_card": "204000201",
+   "card_name": "Battle with Rubicante",
+   "unit_name": "Ninja Edge",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Rubicante",
+   "revision": 368214
+  },
+  "204003207": {
+   "vision_card": "204000401",
+   "card_name": "Birth of a Paladin",
+   "unit_name": "The Red Wings's Cecil",
+   "source": "https://exvius.fandom.com/wiki/Birth_of_a_Paladin",
+   "revision": 368216
+  },
+  "204003307": {
+   "vision_card": "204000401",
+   "card_name": "Birth of a Paladin",
+   "unit_name": "White Mage of Benediction Rosa",
+   "source": "https://exvius.fandom.com/wiki/Birth_of_a_Paladin",
+   "revision": 368216
+  },
+  "204003317": {
+   "vision_card": "204000401",
+   "card_name": "Birth of a Paladin",
+   "unit_name": "White Mage of Benediction Rosa",
+   "source": "https://exvius.fandom.com/wiki/Birth_of_a_Paladin",
+   "revision": 368216
+  },
+  "205001407": {
+   "vision_card": "205000101",
+   "card_name": "Syldra! Come Up and Say Hello&#33;",
+   "unit_name": "Faris -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Syldra%21_Come_Up_and_Say_Hello%21",
+   "revision": 368217
+  },
+  "205001417": {
+   "vision_card": "205000101",
+   "card_name": "Syldra! Come Up and Say Hello&#33;",
+   "unit_name": "Faris -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Syldra%21_Come_Up_and_Say_Hello%21",
+   "revision": 368217
+  },
+  "205001607": {
+   "vision_card": "205000301",
+   "card_name": "Lenna's Bond with Hiryu",
+   "unit_name": "Summoner Lenna",
+   "source": "https://exvius.fandom.com/wiki/Lenna%27s_Bond_with_Hiryu",
+   "revision": 368218
+  },
+  "205001707": {
+   "vision_card": "205000301",
+   "card_name": "Lenna's Bond with Hiryu",
+   "unit_name": "Warrior of Dawn Dorgann",
+   "source": "https://exvius.fandom.com/wiki/Lenna%27s_Bond_with_Hiryu",
+   "revision": 368218
+  },
+  "205001717": {
+   "vision_card": "205000301",
+   "card_name": "Lenna's Bond with Hiryu",
+   "unit_name": "Warrior of Dawn Dorgann",
+   "source": "https://exvius.fandom.com/wiki/Lenna%27s_Bond_with_Hiryu",
+   "revision": 368218
+  },
+  "205001807": {
+   "vision_card": "205000401",
+   "card_name": "The Cusp of a New Journey",
+   "unit_name": "World Wayfarer Bartz",
+   "source": "https://exvius.fandom.com/wiki/The_Cusp_of_a_New_Journey",
+   "revision": 368221
+  },
+  "205001907": {
+   "vision_card": "205000501",
+   "card_name": "A Vow of Destruction",
+   "unit_name": "White Mage Krile",
+   "source": "https://exvius.fandom.com/wiki/A_Vow_of_Destruction",
+   "revision": 368220
+  },
+  "205002007": {
+   "vision_card": "205000601",
+   "card_name": "Battle at the Big Bridge",
+   "unit_name": "World's Hero Gilgamesh",
+   "source": "https://exvius.fandom.com/wiki/Battle_at_the_Big_Bridge",
+   "revision": 368219
+  },
+  "205002017": {
+   "vision_card": "205000601",
+   "card_name": "Battle at the Big Bridge",
+   "unit_name": "World's Hero Gilgamesh",
+   "source": "https://exvius.fandom.com/wiki/Battle_at_the_Big_Bridge",
+   "revision": 368219
+  },
+  "205002107": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Kelger",
+   "source": "https://exvius.fandom.com/wiki/Kelger/JP",
+   "revision": 401084
+  },
+  "205002117": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Kelger",
+   "source": "https://exvius.fandom.com/wiki/Kelger/JP",
+   "revision": 401084
+  },
+  "205002207": {
+   "vision_card": "205000701",
+   "card_name": "Battling the Wing Raptor",
+   "unit_name": "King of Bal Galuf",
+   "source": "https://exvius.fandom.com/wiki/Battling_the_Wing_Raptor",
+   "revision": 385665
+  },
+  "206002507": {
+   "vision_card": "206000101",
+   "card_name": "Search for the Esper",
+   "unit_name": "Terra -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Search_for_the_Esper",
+   "revision": 368222
+  },
+  "206002517": {
+   "vision_card": "206000101",
+   "card_name": "Search for the Esper",
+   "unit_name": "Terra -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Search_for_the_Esper",
+   "revision": 368222
+  },
+  "206002607": {
+   "vision_card": "206000201",
+   "card_name": "Separation and Restoration",
+   "unit_name": "Locke -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Separation_and_Restoration",
+   "revision": 368224
+  },
+  "206002617": {
+   "vision_card": "206000201",
+   "card_name": "Separation and Restoration",
+   "unit_name": "Locke -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Separation_and_Restoration",
+   "revision": 368224
+  },
+  "206002807": {
+   "vision_card": "206000301",
+   "card_name": "A Love for All Time",
+   "unit_name": "Triumphant General Celes",
+   "source": "https://exvius.fandom.com/wiki/A_Love_for_All_Time",
+   "revision": 368223
+  },
+  "206002817": {
+   "vision_card": "206000301",
+   "card_name": "A Love for All Time",
+   "unit_name": "Triumphant General Celes",
+   "source": "https://exvius.fandom.com/wiki/A_Love_for_All_Time",
+   "revision": 368223
+  },
+  "206002907": {
+   "vision_card": "206000301",
+   "card_name": "A Love for All Time",
+   "unit_name": "Doma Samurai Cyan",
+   "source": "https://exvius.fandom.com/wiki/A_Love_for_All_Time",
+   "revision": 368223
+  },
+  "206002917": {
+   "vision_card": "206000301",
+   "card_name": "A Love for All Time",
+   "unit_name": "Doma Samurai Cyan",
+   "source": "https://exvius.fandom.com/wiki/A_Love_for_All_Time",
+   "revision": 368223
+  },
+  "206003207": {
+   "vision_card": "206000401",
+   "card_name": "Coin of Fate",
+   "unit_name": "Embracer of Duty Edgar",
+   "source": "https://exvius.fandom.com/wiki/Coin_of_Fate",
+   "revision": 368226
+  },
+  "206003217": {
+   "vision_card": "206000401",
+   "card_name": "Coin of Fate",
+   "unit_name": "Embracer of Duty Edgar",
+   "source": "https://exvius.fandom.com/wiki/Coin_of_Fate",
+   "revision": 368226
+  },
+  "206003307": {
+   "vision_card": "206000401",
+   "card_name": "Coin of Fate",
+   "unit_name": "Embracer of Freedom Sabin",
+   "source": "https://exvius.fandom.com/wiki/Coin_of_Fate",
+   "revision": 368226
+  },
+  "206003317": {
+   "vision_card": "206000401",
+   "card_name": "Coin of Fate",
+   "unit_name": "Embracer of Freedom Sabin",
+   "source": "https://exvius.fandom.com/wiki/Coin_of_Fate",
+   "revision": 368226
+  },
+  "206003407": {
+   "vision_card": "206000501",
+   "card_name": "オルトロス再び",
+   "unit_name": "Treasure Hunter Locke",
+   "source": "https://exvius.fandom.com/wiki/Treasure_Hunter_Locke/JP",
+   "revision": 404692
+  },
+  "206003417": {
+   "vision_card": "206000501",
+   "card_name": "オルトロス再び",
+   "unit_name": "Treasure Hunter Locke",
+   "source": "https://exvius.fandom.com/wiki/Treasure_Hunter_Locke/JP",
+   "revision": 404692
+  },
+  "206003507": {
+   "vision_card": "206000601",
+   "card_name": "Searching for Friends",
+   "unit_name": "Fastest in the Skies Setzer",
+   "source": "https://exvius.fandom.com/wiki/Searching_for_Friends",
+   "revision": 391517
+  },
+  "206003517": {
+   "vision_card": "206000601",
+   "card_name": "Searching for Friends",
+   "unit_name": "Fastest in the Skies Setzer",
+   "source": "https://exvius.fandom.com/wiki/Searching_for_Friends",
+   "revision": 391517
+  },
+  "207001507": {
+   "vision_card": "207000501",
+   "card_name": "VSハンドレッドガンナー",
+   "unit_name": "Cetra Descendant Aerith",
+   "source": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith/JP",
+   "revision": 401254
+  },
+  "207002007": {
+   "vision_card": "207000101",
+   "card_name": "Mad Dash",
+   "unit_name": "Cloud (FFVII REMAKE)",
+   "source": "https://exvius.fandom.com/wiki/Mad_Dash",
+   "revision": 368225
+  },
+  "207002017": {
+   "vision_card": "207000101",
+   "card_name": "Mad Dash",
+   "unit_name": "Cloud (FFVII REMAKE)",
+   "source": "https://exvius.fandom.com/wiki/Mad_Dash",
+   "revision": 368225
+  },
+  "207002207": {
+   "vision_card": "207000301",
+   "card_name": "Planet's Whisper",
+   "unit_name": "Aerith (FFVII REMAKE)",
+   "source": "https://exvius.fandom.com/wiki/Planet%27s_Whisper",
+   "revision": 368229
+  },
+  "207002217": {
+   "vision_card": "207000301",
+   "card_name": "Planet's Whisper",
+   "unit_name": "Aerith (FFVII REMAKE)",
+   "source": "https://exvius.fandom.com/wiki/Planet%27s_Whisper",
+   "revision": 368229
+  },
+  "207002307": {
+   "vision_card": "207000401",
+   "card_name": "セブンスヘブンの看板娘",
+   "unit_name": "Avalanche's Tifa",
+   "source": "https://exvius.fandom.com/wiki/Avalanche%27s_Tifa/JP",
+   "revision": 404122
+  },
+  "207002317": {
+   "vision_card": "207000401",
+   "card_name": "セブンスヘブンの看板娘",
+   "unit_name": "Avalanche's Tifa",
+   "source": "https://exvius.fandom.com/wiki/Avalanche%27s_Tifa/JP",
+   "revision": 404122
+  },
+  "207002607": {
+   "vision_card": "207000701",
+   "card_name": "出会いの記念",
+   "unit_name": "Young Hero Zack",
+   "source": "https://exvius.fandom.com/wiki/Young_Hero_Zack/JP",
+   "revision": 404690
+  },
+  "207002617": {
+   "vision_card": "207000701",
+   "card_name": "出会いの記念",
+   "unit_name": "Young Hero Zack",
+   "source": "https://exvius.fandom.com/wiki/Young_Hero_Zack/JP",
+   "revision": 404690
+  },
+  "207002707": {
+   "vision_card": "207000801",
+   "card_name": "A Little More Important",
+   "unit_name": "Angeal",
+   "source": "https://exvius.fandom.com/wiki/A_Little_More_Important",
+   "revision": 368233
+  },
+  "207002717": {
+   "vision_card": "207000801",
+   "card_name": "A Little More Important",
+   "unit_name": "Angeal",
+   "source": "https://exvius.fandom.com/wiki/A_Little_More_Important",
+   "revision": 368233
+  },
+  "207002807": {
+   "vision_card": "207000901",
+   "card_name": "The World Needs a New Hero",
+   "unit_name": "Genesis",
+   "source": "https://exvius.fandom.com/wiki/The_World_Needs_a_New_Hero",
+   "revision": 368234
+  },
+  "207002817": {
+   "vision_card": "207000901",
+   "card_name": "The World Needs a New Hero",
+   "unit_name": "Genesis",
+   "source": "https://exvius.fandom.com/wiki/The_World_Needs_a_New_Hero",
+   "revision": 368234
+  },
+  "207002907": {
+   "vision_card": "207001001",
+   "card_name": "ユフィ参上！",
+   "unit_name": "Materia Hunter Yuffie",
+   "source": "https://exvius.fandom.com/wiki/Materia_Hunter_Yuffie/JP",
+   "revision": 404899
+  },
+  "207002917": {
+   "vision_card": "207001001",
+   "card_name": "ユフィ参上！",
+   "unit_name": "Materia Hunter Yuffie",
+   "source": "https://exvius.fandom.com/wiki/Materia_Hunter_Yuffie/JP",
+   "revision": 404899
+  },
+  "207003007": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sonon",
+   "source": "https://exvius.fandom.com/wiki/Sonon/JP",
+   "revision": 404083
+  },
+  "207003017": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sonon",
+   "source": "https://exvius.fandom.com/wiki/Sonon/JP",
+   "revision": 404083
+  },
+  "207003107": {
+   "vision_card": "207001201",
+   "card_name": "VSルーファウス神羅",
+   "unit_name": "Cloud Strife",
+   "source": "https://exvius.fandom.com/wiki/Cloud_Strife/JP",
+   "revision": 404688
+  },
+  "207003117": {
+   "vision_card": "207001201",
+   "card_name": "VSルーファウス神羅",
+   "unit_name": "Cloud Strife",
+   "source": "https://exvius.fandom.com/wiki/Cloud_Strife/JP",
+   "revision": 404688
+  },
+  "207003207": {
+   "vision_card": "207001301",
+   "card_name": "Avalanche's Fight for Survival",
+   "unit_name": "Avalanche's Barret",
+   "source": "https://exvius.fandom.com/wiki/Avalanche%27s_Fight_for_Survival",
+   "revision": 368240
+  },
+  "207003217": {
+   "vision_card": "207001301",
+   "card_name": "Avalanche's Fight for Survival",
+   "unit_name": "Avalanche's Barret",
+   "source": "https://exvius.fandom.com/wiki/Avalanche%27s_Fight_for_Survival",
+   "revision": 368240
+  },
+  "207003307": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Cissnei",
+   "source": "https://exvius.fandom.com/wiki/Cissnei/JP",
+   "revision": 398516
+  },
+  "207003317": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Cissnei",
+   "source": "https://exvius.fandom.com/wiki/Cissnei/JP",
+   "revision": 398516
+  },
+  "208002107": {
+   "vision_card": "208000101",
+   "card_name": "True Feelings",
+   "unit_name": "Rinoa & Angelo",
+   "source": "https://exvius.fandom.com/wiki/True_Feelings",
+   "revision": 368238
+  },
+  "208002207": {
+   "vision_card": "208000201",
+   "card_name": "Acting Debut!",
+   "unit_name": "Laguna",
+   "source": "https://exvius.fandom.com/wiki/Acting_Debut%21",
+   "revision": 368243
+  },
+  "208002217": {
+   "vision_card": "208000201",
+   "card_name": "Acting Debut!",
+   "unit_name": "Laguna",
+   "source": "https://exvius.fandom.com/wiki/Acting_Debut%21",
+   "revision": 368243
+  },
+  "208002307": {
+   "vision_card": "208000201",
+   "card_name": "Acting Debut!",
+   "unit_name": "Kiros & Ward",
+   "source": "https://exvius.fandom.com/wiki/Acting_Debut%21",
+   "revision": 368243
+  },
+  "208002317": {
+   "vision_card": "208000201",
+   "card_name": "Acting Debut!",
+   "unit_name": "Kiros & Ward",
+   "source": "https://exvius.fandom.com/wiki/Acting_Debut%21",
+   "revision": 368243
+  },
+  "208002507": {
+   "vision_card": "208000301",
+   "card_name": "スコールVSサイファー",
+   "unit_name": "Sorceress's Knight Squall",
+   "source": "https://exvius.fandom.com/wiki/Sorceress%27s_Knight_Squall/JP",
+   "revision": 404685
+  },
+  "208002517": {
+   "vision_card": "208000301",
+   "card_name": "スコールVSサイファー",
+   "unit_name": "Sorceress's Knight Squall",
+   "source": "https://exvius.fandom.com/wiki/Sorceress%27s_Knight_Squall/JP",
+   "revision": 404685
+  },
+  "208002607": {
+   "vision_card": "208000401",
+   "card_name": "The Nick of Time",
+   "unit_name": "SeeD's Blue Mage Quistis",
+   "source": "https://exvius.fandom.com/wiki/The_Nick_of_Time",
+   "revision": 368239
+  },
+  "208002617": {
+   "vision_card": "208000401",
+   "card_name": "The Nick of Time",
+   "unit_name": "SeeD's Blue Mage Quistis",
+   "source": "https://exvius.fandom.com/wiki/The_Nick_of_Time",
+   "revision": 368239
+  },
+  "208002707": {
+   "vision_card": "208000501",
+   "card_name": "Sniper's Block",
+   "unit_name": "Expert Sharpshooter Irvine",
+   "source": "https://exvius.fandom.com/wiki/Sniper%27s_Block",
+   "revision": 369121
+  },
+  "208002717": {
+   "vision_card": "208000501",
+   "card_name": "Sniper's Block",
+   "unit_name": "Expert Sharpshooter Irvine",
+   "source": "https://exvius.fandom.com/wiki/Sniper%27s_Block",
+   "revision": 369121
+  },
+  "208002807": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sorceress of the Present Edea",
+   "source": "https://exvius.fandom.com/wiki/Sorceress_of_the_Present_Edea/JP",
+   "revision": 398496
+  },
+  "208002817": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Sorceress of the Present Edea",
+   "source": "https://exvius.fandom.com/wiki/Sorceress_of_the_Present_Edea/JP",
+   "revision": 398496
+  },
+  "209002807": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Lightning-Fast Zidane",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209002817": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Lightning-Fast Zidane",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209002907": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Pure-Hearted Vivi",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209002917": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Pure-Hearted Vivi",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209003107": {
+   "vision_card": "209000201",
+   "card_name": "Divine Judgment",
+   "unit_name": "Determined Dagger",
+   "source": "https://exvius.fandom.com/wiki/Divine_Judgment",
+   "revision": 368244
+  },
+  "209003117": {
+   "vision_card": "209000201",
+   "card_name": "Divine Judgment",
+   "unit_name": "Determined Dagger",
+   "source": "https://exvius.fandom.com/wiki/Divine_Judgment",
+   "revision": 368244
+  },
+  "209003207": {
+   "vision_card": "209000201",
+   "card_name": "Divine Judgment",
+   "unit_name": "Planet Destroyer Kuja",
+   "source": "https://exvius.fandom.com/wiki/Divine_Judgment",
+   "revision": 368244
+  },
+  "209003407": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Thief of Tantalus Zidane",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209003417": {
+   "vision_card": "209000101",
+   "card_name": "Swords of Fury",
+   "unit_name": "Thief of Tantalus Zidane",
+   "source": "https://exvius.fandom.com/wiki/Swords_of_Fury",
+   "revision": 370224
+  },
+  "209003507": {
+   "vision_card": "209000401",
+   "card_name": "Something to Protect",
+   "unit_name": "Knights of Pluto Captain Steiner",
+   "source": "https://exvius.fandom.com/wiki/Something_to_Protect_%28Vision_Card%29",
+   "revision": 373849
+  },
+  "209003517": {
+   "vision_card": "209000401",
+   "card_name": "Something to Protect",
+   "unit_name": "Knights of Pluto Captain Steiner",
+   "source": "https://exvius.fandom.com/wiki/Something_to_Protect_%28Vision_Card%29",
+   "revision": 373849
+  },
+  "209003607": {
+   "vision_card": "209000501",
+   "card_name": "Use Terra Homing, Kupo!",
+   "unit_name": "Little Summoner Eiko",
+   "source": "https://exvius.fandom.com/wiki/Use_Terra_Homing%2C_Kupo%21",
+   "revision": 372969
+  },
+  "209003617": {
+   "vision_card": "209000501",
+   "card_name": "Use Terra Homing, Kupo!",
+   "unit_name": "Little Summoner Eiko",
+   "source": "https://exvius.fandom.com/wiki/Use_Terra_Homing%2C_Kupo%21",
+   "revision": 372969
+  },
+  "209003707": {
+   "vision_card": "209000401",
+   "card_name": "Something to Protect",
+   "unit_name": "Gastronomist Quina",
+   "source": "https://exvius.fandom.com/wiki/Something_to_Protect_%28Vision_Card%29",
+   "revision": 373849
+  },
+  "209003717": {
+   "vision_card": "209000401",
+   "card_name": "Something to Protect",
+   "unit_name": "Gastronomist Quina",
+   "source": "https://exvius.fandom.com/wiki/Something_to_Protect_%28Vision_Card%29",
+   "revision": 373849
+  },
+  "210002107": {
+   "vision_card": "210000101",
+   "card_name": "異界送り",
+   "unit_name": "Summoner Yuna",
+   "source": "https://exvius.fandom.com/wiki/Summoner_Yuna/JP",
+   "revision": 404684
+  },
+  "210002207": {
+   "vision_card": "210000301",
+   "card_name": "Thunder Plains",
+   "unit_name": "Al Bhed Girl Rikku",
+   "source": "https://exvius.fandom.com/wiki/Thunder_Plains",
+   "revision": 368248
+  },
+  "210002217": {
+   "vision_card": "210000301",
+   "card_name": "Thunder Plains",
+   "unit_name": "Al Bhed Girl Rikku",
+   "source": "https://exvius.fandom.com/wiki/Thunder_Plains",
+   "revision": 368248
+  },
+  "210002307": {
+   "vision_card": "210000201",
+   "card_name": "これはおまえの物語だ",
+   "unit_name": "Legendary Guardian Auron",
+   "source": "https://exvius.fandom.com/wiki/Legendary_Guardian_Auron/JP",
+   "revision": 401047
+  },
+  "210002317": {
+   "vision_card": "210000201",
+   "card_name": "これはおまえの物語だ",
+   "unit_name": "Legendary Guardian Auron",
+   "source": "https://exvius.fandom.com/wiki/Legendary_Guardian_Auron/JP",
+   "revision": 401047
+  },
+  "210002407": {
+   "vision_card": "210000401",
+   "card_name": "最後じゃなくて……ずっと",
+   "unit_name": "New Guardian Tidus",
+   "source": "https://exvius.fandom.com/wiki/New_Guardian_Tidus/JP",
+   "revision": 404897
+  },
+  "210002507": {
+   "vision_card": "210000501",
+   "card_name": "Storming Bevelle",
+   "unit_name": "Besaid Mage Lulu",
+   "source": "https://exvius.fandom.com/wiki/Storming_Bevelle",
+   "revision": 400054
+  },
+  "210002517": {
+   "vision_card": "210000501",
+   "card_name": "Storming Bevelle",
+   "unit_name": "Besaid Mage Lulu",
+   "source": "https://exvius.fandom.com/wiki/Storming_Bevelle",
+   "revision": 400054
+  },
+  "210002607": {
+   "vision_card": "210000601",
+   "card_name": "ジェクトシュート",
+   "unit_name": "Fabled Guardian Jecht",
+   "source": "https://exvius.fandom.com/wiki/Fabled_Guardian_Jecht/JP",
+   "revision": 404895
+  },
+  "210002617": {
+   "vision_card": "210000601",
+   "card_name": "ジェクトシュート",
+   "unit_name": "Fabled Guardian Jecht",
+   "source": "https://exvius.fandom.com/wiki/Fabled_Guardian_Jecht/JP",
+   "revision": 404895
+  },
+  "210002707": {
+   "vision_card": "210000701",
+   "card_name": "Kimahri not pass!",
+   "unit_name": "Ronso Warrior Kimahri",
+   "source": "https://exvius.fandom.com/wiki/Kimahri_not_pass%21",
+   "revision": 397158
+  },
+  "210002717": {
+   "vision_card": "210000701",
+   "card_name": "Kimahri not pass!",
+   "unit_name": "Ronso Warrior Kimahri",
+   "source": "https://exvius.fandom.com/wiki/Kimahri_not_pass%21",
+   "revision": 397158
+  },
+  "210002807": {
+   "vision_card": "210000801",
+   "card_name": "ジェクトの旅の始まり",
+   "unit_name": "Blitzball Legend Jecht",
+   "source": "https://exvius.fandom.com/wiki/Blitzball_Legend_Jecht/JP",
+   "revision": 404683
+  },
+  "210002817": {
+   "vision_card": "210000801",
+   "card_name": "ジェクトの旅の始まり",
+   "unit_name": "Blitzball Legend Jecht",
+   "source": "https://exvius.fandom.com/wiki/Blitzball_Legend_Jecht/JP",
+   "revision": 404683
+  },
+  "210002907": {
+   "vision_card": "210000901",
+   "card_name": "思い出してください",
+   "unit_name": "Devoted Summoner Yuna",
+   "source": "https://exvius.fandom.com/wiki/Devoted_Summoner_Yuna/JP",
+   "revision": 404149
+  },
+  "210002917": {
+   "vision_card": "210000901",
+   "card_name": "思い出してください",
+   "unit_name": "Devoted Summoner Yuna",
+   "source": "https://exvius.fandom.com/wiki/Devoted_Summoner_Yuna/JP",
+   "revision": 404149
+  },
+  "210003007": {
+   "vision_card": "210000501",
+   "card_name": "Storming Bevelle",
+   "unit_name": "Bewitching Black Mage Lulu",
+   "source": "https://exvius.fandom.com/wiki/Storming_Bevelle",
+   "revision": 400054
+  },
+  "210003017": {
+   "vision_card": "210000501",
+   "card_name": "Storming Bevelle",
+   "unit_name": "Bewitching Black Mage Lulu",
+   "source": "https://exvius.fandom.com/wiki/Storming_Bevelle",
+   "revision": 400054
+  },
+  "211001507": {
+   "vision_card": "211000101",
+   "card_name": "Ragnarok",
+   "unit_name": "Royal Puppeteer Aphmau",
+   "source": "https://exvius.fandom.com/wiki/Ragnarok",
+   "revision": 368253
+  },
+  "211001517": {
+   "vision_card": "211000101",
+   "card_name": "Ragnarok",
+   "unit_name": "Royal Puppeteer Aphmau",
+   "source": "https://exvius.fandom.com/wiki/Ragnarok",
+   "revision": 368253
+  },
+  "211001607": {
+   "vision_card": "211000201",
+   "card_name": "A Feast for Gnats",
+   "unit_name": "Lady Shantotto",
+   "source": "https://exvius.fandom.com/wiki/A_Feast_for_Gnats",
+   "revision": 368255
+  },
+  "211001617": {
+   "vision_card": "211000201",
+   "card_name": "A Feast for Gnats",
+   "unit_name": "Lady Shantotto",
+   "source": "https://exvius.fandom.com/wiki/A_Feast_for_Gnats",
+   "revision": 368255
+  },
+  "211001707": {
+   "vision_card": "211000201",
+   "card_name": "A Feast for Gnats",
+   "unit_name": "Lion",
+   "source": "https://exvius.fandom.com/wiki/A_Feast_for_Gnats",
+   "revision": 368255
+  },
+  "211001717": {
+   "vision_card": "211000201",
+   "card_name": "A Feast for Gnats",
+   "unit_name": "Lion",
+   "source": "https://exvius.fandom.com/wiki/A_Feast_for_Gnats",
+   "revision": 368255
+  },
+  "212002207": {
+   "vision_card": "212000101",
+   "card_name": "Judge Magister",
+   "unit_name": "Gabranth -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Judge_Magister",
+   "revision": 368254
+  },
+  "212002217": {
+   "vision_card": "212000101",
+   "card_name": "Judge Magister",
+   "unit_name": "Gabranth -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/Judge_Magister",
+   "revision": 368254
+  },
+  "212002407": {
+   "vision_card": "212000301",
+   "card_name": "I Play the Leading Man, Who Else?",
+   "unit_name": "Fleetfooted Sky Pirate Balthier",
+   "source": "https://exvius.fandom.com/wiki/I_Play_the_Leading_Man%2C_Who_Else%3F",
+   "revision": 368257
+  },
+  "212002417": {
+   "vision_card": "212000301",
+   "card_name": "I Play the Leading Man, Who Else?",
+   "unit_name": "Fleetfooted Sky Pirate Balthier",
+   "source": "https://exvius.fandom.com/wiki/I_Play_the_Leading_Man%2C_Who_Else%3F",
+   "revision": 368257
+  },
+  "212002507": {
+   "vision_card": "212000401",
+   "card_name": "Treaty with the Old Gods",
+   "unit_name": "Dynast-King's Scion Ashe",
+   "source": "https://exvius.fandom.com/wiki/Treaty_with_the_Old_Gods",
+   "revision": 368256
+  },
+  "212002517": {
+   "vision_card": "212000401",
+   "card_name": "Treaty with the Old Gods",
+   "unit_name": "Dynast-King's Scion Ashe",
+   "source": "https://exvius.fandom.com/wiki/Treaty_with_the_Old_Gods",
+   "revision": 368256
+  },
+  "212002607": {
+   "vision_card": "212000501",
+   "card_name": "A New Sky",
+   "unit_name": "Youth from Rabanastre Vaan",
+   "source": "https://exvius.fandom.com/wiki/A_New_Sky",
+   "revision": 368259
+  },
+  "212002617": {
+   "vision_card": "212000501",
+   "card_name": "A New Sky",
+   "unit_name": "Youth from Rabanastre Vaan",
+   "source": "https://exvius.fandom.com/wiki/A_New_Sky",
+   "revision": 368259
+  },
+  "212002807": {
+   "vision_card": "212000601",
+   "card_name": "Destruction of the Sun-Cryst",
+   "unit_name": "Spirited Friend Penelo",
+   "source": "https://exvius.fandom.com/wiki/Destruction_of_the_Sun-Cryst",
+   "revision": 400483
+  },
+  "212002817": {
+   "vision_card": "212000601",
+   "card_name": "Destruction of the Sun-Cryst",
+   "unit_name": "Spirited Friend Penelo",
+   "source": "https://exvius.fandom.com/wiki/Destruction_of_the_Sun-Cryst",
+   "revision": 400483
+  },
+  "212002907": {
+   "vision_card": "212000601",
+   "card_name": "Destruction of the Sun-Cryst",
+   "unit_name": "Princess of Liberty Ashe",
+   "source": "https://exvius.fandom.com/wiki/Destruction_of_the_Sun-Cryst",
+   "revision": 400483
+  },
+  "212002917": {
+   "vision_card": "212000601",
+   "card_name": "Destruction of the Sun-Cryst",
+   "unit_name": "Princess of Liberty Ashe",
+   "source": "https://exvius.fandom.com/wiki/Destruction_of_the_Sun-Cryst",
+   "revision": 400483
+  },
+  "213001407": {
+   "vision_card": "213000301",
+   "card_name": "祝賀祭",
+   "unit_name": "Wondrous Flash Lightning",
+   "source": "https://exvius.fandom.com/wiki/Wondrous_Flash_Lightning/JP",
+   "revision": 404678
+  },
+  "213001417": {
+   "vision_card": "213000301",
+   "card_name": "祝賀祭",
+   "unit_name": "Wondrous Flash Lightning",
+   "source": "https://exvius.fandom.com/wiki/Wondrous_Flash_Lightning/JP",
+   "revision": 404678
+  },
+  "213001507": {
+   "vision_card": "213000401",
+   "card_name": "Battling a Behemoth King",
+   "unit_name": "Challenger of Fate Hope",
+   "source": "https://exvius.fandom.com/wiki/Battling_a_Behemoth_King",
+   "revision": 372976
+  },
+  "213001517": {
+   "vision_card": "213000401",
+   "card_name": "Battling a Behemoth King",
+   "unit_name": "Challenger of Fate Hope",
+   "source": "https://exvius.fandom.com/wiki/Battling_a_Behemoth_King",
+   "revision": 372976
+  },
+  "213001707": {
+   "vision_card": "213000501",
+   "card_name": "The Sunleth Waterscape Reserve",
+   "unit_name": "Denial of Focus Vanille",
+   "source": "https://exvius.fandom.com/wiki/The_Sunleth_Waterscape_Reserve",
+   "revision": 372936
+  },
+  "213001717": {
+   "vision_card": "213000501",
+   "card_name": "The Sunleth Waterscape Reserve",
+   "unit_name": "Denial of Focus Vanille",
+   "source": "https://exvius.fandom.com/wiki/The_Sunleth_Waterscape_Reserve",
+   "revision": 372936
+  },
+  "213001807": {
+   "vision_card": "213000501",
+   "card_name": "The Sunleth Waterscape Reserve",
+   "unit_name": "Loving Father Sazh",
+   "source": "https://exvius.fandom.com/wiki/The_Sunleth_Waterscape_Reserve",
+   "revision": 372936
+  },
+  "213001817": {
+   "vision_card": "213000501",
+   "card_name": "The Sunleth Waterscape Reserve",
+   "unit_name": "Loving Father Sazh",
+   "source": "https://exvius.fandom.com/wiki/The_Sunleth_Waterscape_Reserve",
+   "revision": 372936
+  },
+  "213001907": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Cid Raines",
+   "source": "https://exvius.fandom.com/wiki/Cid_Raines/JP",
+   "revision": 402912
+  },
+  "213001917": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Cid Raines",
+   "source": "https://exvius.fandom.com/wiki/Cid_Raines/JP",
+   "revision": 402912
+  },
+  "215002407": {
+   "vision_card": "215000301",
+   "card_name": "Duty as the Oracle",
+   "unit_name": "Oracle Maiden Lunafreya",
+   "source": "https://exvius.fandom.com/wiki/Duty_as_the_Oracle",
+   "revision": 368262
+  },
+  "215002417": {
+   "vision_card": "215000301",
+   "card_name": "Duty as the Oracle",
+   "unit_name": "Oracle Maiden Lunafreya",
+   "source": "https://exvius.fandom.com/wiki/Duty_as_the_Oracle",
+   "revision": 368262
+  },
+  "215002907": {
+   "vision_card": "215000101",
+   "card_name": "The Cure for Insomnia",
+   "unit_name": "Cobalt Blade Noctis",
+   "source": "https://exvius.fandom.com/wiki/The_Cure_for_Insomnia",
+   "revision": 368261
+  },
+  "215002917": {
+   "vision_card": "215000101",
+   "card_name": "The Cure for Insomnia",
+   "unit_name": "Cobalt Blade Noctis",
+   "source": "https://exvius.fandom.com/wiki/The_Cure_for_Insomnia",
+   "revision": 368261
+  },
+  "215003007": {
+   "vision_card": "215000201",
+   "card_name": "Onward to the Disc",
+   "unit_name": "Vermilion Blade Ardyn",
+   "source": "https://exvius.fandom.com/wiki/Onward_to_the_Disc",
+   "revision": 368260
+  },
+  "215003017": {
+   "vision_card": "215000201",
+   "card_name": "Onward to the Disc",
+   "unit_name": "Vermilion Blade Ardyn",
+   "source": "https://exvius.fandom.com/wiki/Onward_to_the_Disc",
+   "revision": 368260
+  },
+  "215003107": {
+   "vision_card": "215000401",
+   "card_name": "常に胸を張れ",
+   "unit_name": "True King Noctis",
+   "source": "https://exvius.fandom.com/wiki/True_King_Noctis/JP",
+   "revision": 404674
+  },
+  "215003117": {
+   "vision_card": "215000401",
+   "card_name": "常に胸を張れ",
+   "unit_name": "True King Noctis",
+   "source": "https://exvius.fandom.com/wiki/True_King_Noctis/JP",
+   "revision": 404674
+  },
+  "215003207": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Shield Gladiolus",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "215003217": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Shield Gladiolus",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "215003307": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Tactician Ignis",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "215003317": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Tactician Ignis",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "215003407": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Friend Prompto",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "215003417": {
+   "vision_card": "215000501",
+   "card_name": "Fight of the Draconian and the Infernian",
+   "unit_name": "Chosen King's Friend Prompto",
+   "source": "https://exvius.fandom.com/wiki/Fight_of_the_Draconian_and_the_Infernian",
+   "revision": 387601
+  },
+  "216000107": {
+   "vision_card": "216000101",
+   "card_name": "Beyond a Shadow of the Self",
+   "unit_name": "Clive Rosfield",
+   "source": "https://exvius.fandom.com/wiki/Beyond_a_Shadow_of_the_Self",
+   "revision": 401526
+  },
+  "216000117": {
+   "vision_card": "216000101",
+   "card_name": "Beyond a Shadow of the Self",
+   "unit_name": "Clive Rosfield",
+   "source": "https://exvius.fandom.com/wiki/Beyond_a_Shadow_of_the_Self",
+   "revision": 401526
+  },
+  "216000207": {
+   "vision_card": "216000201",
+   "card_name": "Shiva vs. Titan",
+   "unit_name": "Jill Warrick",
+   "source": "https://exvius.fandom.com/wiki/Shiva_vs._Titan",
+   "revision": 401525
+  },
+  "216000217": {
+   "vision_card": "216000201",
+   "card_name": "Shiva vs. Titan",
+   "unit_name": "Jill Warrick",
+   "source": "https://exvius.fandom.com/wiki/Shiva_vs._Titan",
+   "revision": 401525
+  },
+  "216000307": {
+   "vision_card": "216000301",
+   "card_name": "Roaring Thunder, Howling Wind",
+   "unit_name": "Cidolfus Telamon",
+   "source": "https://exvius.fandom.com/wiki/Roaring_Thunder%2C_Howling_Wind",
+   "revision": 401707
+  },
+  "216000317": {
+   "vision_card": "216000301",
+   "card_name": "Roaring Thunder, Howling Wind",
+   "unit_name": "Cidolfus Telamon",
+   "source": "https://exvius.fandom.com/wiki/Roaring_Thunder%2C_Howling_Wind",
+   "revision": 401707
+  },
+  "216000407": {
+   "vision_card": "216000301",
+   "card_name": "Roaring Thunder, Howling Wind",
+   "unit_name": "Benedikta Harman",
+   "source": "https://exvius.fandom.com/wiki/Roaring_Thunder%2C_Howling_Wind",
+   "revision": 401707
+  },
+  "216000417": {
+   "vision_card": "216000301",
+   "card_name": "Roaring Thunder, Howling Wind",
+   "unit_name": "Benedikta Harman",
+   "source": "https://exvius.fandom.com/wiki/Roaring_Thunder%2C_Howling_Wind",
+   "revision": 401707
+  },
+  "249000407": {
+   "vision_card": "249000101",
+   "card_name": "Y, R, P. - It's showtime, girls.",
+   "unit_name": "Songstress Yuna",
+   "source": "https://exvius.fandom.com/wiki/Y%2C_R%2C_P._-_It%27s_showtime%2C_girls.",
+   "revision": 368263
+  },
+  "249000507": {
+   "vision_card": "249000101",
+   "card_name": "Y, R, P. - It's showtime, girls.",
+   "unit_name": "Berserker Rikku",
+   "source": "https://exvius.fandom.com/wiki/Y%2C_R%2C_P._-_It%27s_showtime%2C_girls.",
+   "revision": 368263
+  },
+  "249000607": {
+   "vision_card": "249000101",
+   "card_name": "Y, R, P. - It's showtime, girls.",
+   "unit_name": "Dark Knight Paine",
+   "source": "https://exvius.fandom.com/wiki/Y%2C_R%2C_P._-_It%27s_showtime%2C_girls.",
+   "revision": 368263
+  },
+  "253001807": {
+   "vision_card": "253000101",
+   "card_name": "亡き父の草笛",
+   "unit_name": "Unsung Hero Ramza",
+   "source": "https://exvius.fandom.com/wiki/Unsung_Hero_Ramza/JP",
+   "revision": 404965
+  },
+  "253001817": {
+   "vision_card": "253000101",
+   "card_name": "亡き父の草笛",
+   "unit_name": "Unsung Hero Ramza",
+   "source": "https://exvius.fandom.com/wiki/Unsung_Hero_Ramza/JP",
+   "revision": 404965
+  },
+  "253001907": {
+   "vision_card": "253000201",
+   "card_name": "雷神シドの猛攻",
+   "unit_name": "Sword Saint Orlandeau",
+   "source": "https://exvius.fandom.com/wiki/Sword_Saint_Orlandeau/JP",
+   "revision": 402686
+  },
+  "253001917": {
+   "vision_card": "253000201",
+   "card_name": "雷神シドの猛攻",
+   "unit_name": "Sword Saint Orlandeau",
+   "source": "https://exvius.fandom.com/wiki/Sword_Saint_Orlandeau/JP",
+   "revision": 402686
+  },
+  "253002007": {
+   "vision_card": "253000301",
+   "card_name": "Abduction at Orbonne Monastery",
+   "unit_name": "Steadfast Knight Agrias",
+   "source": "https://exvius.fandom.com/wiki/Abduction_at_Orbonne_Monastery",
+   "revision": 385699
+  },
+  "253002017": {
+   "vision_card": "253000301",
+   "card_name": "Abduction at Orbonne Monastery",
+   "unit_name": "Steadfast Knight Agrias",
+   "source": "https://exvius.fandom.com/wiki/Abduction_at_Orbonne_Monastery",
+   "revision": 385699
+  },
+  "253002107": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Argath",
+   "source": "https://exvius.fandom.com/wiki/Argath/JP",
+   "revision": 398315
+  },
+  "253002117": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Argath",
+   "source": "https://exvius.fandom.com/wiki/Argath/JP",
+   "revision": 398315
+  },
+  "254002207": {
+   "vision_card": "254000101",
+   "card_name": "We Have Arrived",
+   "unit_name": "Ice Reaper Kurasame",
+   "source": "https://exvius.fandom.com/wiki/We_Have_Arrived",
+   "revision": 368268
+  },
+  "254002217": {
+   "vision_card": "254000101",
+   "card_name": "We Have Arrived",
+   "unit_name": "Ice Reaper Kurasame",
+   "source": "https://exvius.fandom.com/wiki/We_Have_Arrived",
+   "revision": 368268
+  },
+  "254002307": {
+   "vision_card": "254000201",
+   "card_name": "Now Unto Me, Your Innocence You Must Prove",
+   "unit_name": "Vermilion Class Zero Ace",
+   "source": "https://exvius.fandom.com/wiki/Now_Unto_Me%2C_Your_Innocence_You_Must_Prove",
+   "revision": 368665
+  },
+  "254002317": {
+   "vision_card": "254000201",
+   "card_name": "Now Unto Me, Your Innocence You Must Prove",
+   "unit_name": "Vermilion Class Zero Ace",
+   "source": "https://exvius.fandom.com/wiki/Now_Unto_Me%2C_Your_Innocence_You_Must_Prove",
+   "revision": 368665
+  },
+  "254002507": {
+   "vision_card": "254000301",
+   "card_name": "Besting Qator Bashtar",
+   "unit_name": "Vermilion Class Zero Trey",
+   "source": "https://exvius.fandom.com/wiki/Besting_Qator_Bashtar",
+   "revision": 368838
+  },
+  "254002517": {
+   "vision_card": "254000301",
+   "card_name": "Besting Qator Bashtar",
+   "unit_name": "Vermilion Class Zero Trey",
+   "source": "https://exvius.fandom.com/wiki/Besting_Qator_Bashtar",
+   "revision": 368838
+  },
+  "254002607": {
+   "vision_card": "254000201",
+   "card_name": "Now Unto Me, Your Innocence You Must Prove",
+   "unit_name": "Vermilion Class Zero Deuce",
+   "source": "https://exvius.fandom.com/wiki/Now_Unto_Me%2C_Your_Innocence_You_Must_Prove",
+   "revision": 368665
+  },
+  "254002617": {
+   "vision_card": "254000201",
+   "card_name": "Now Unto Me, Your Innocence You Must Prove",
+   "unit_name": "Vermilion Class Zero Deuce",
+   "source": "https://exvius.fandom.com/wiki/Now_Unto_Me%2C_Your_Innocence_You_Must_Prove",
+   "revision": 368665
+  },
+  "254002707": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Qator",
+   "source": "https://exvius.fandom.com/wiki/Qator/JP",
+   "revision": 398291
+  },
+  "254002717": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Qator",
+   "source": "https://exvius.fandom.com/wiki/Qator/JP",
+   "revision": 398291
+  },
+  "258000107": {
+   "vision_card": "213000201",
+   "card_name": "Five Hundred Years of Grief",
+   "unit_name": "Solitary Patron Snow",
+   "source": "https://exvius.fandom.com/wiki/Five_Hundred_Years_of_Grief",
+   "revision": 368265
+  },
+  "258000117": {
+   "vision_card": "213000201",
+   "card_name": "Five Hundred Years of Grief",
+   "unit_name": "Solitary Patron Snow",
+   "source": "https://exvius.fandom.com/wiki/Five_Hundred_Years_of_Grief",
+   "revision": 368265
+  },
+  "258000207": {
+   "vision_card": "213000101",
+   "card_name": "The Savior's Descent",
+   "unit_name": "Savior of Souls Lightning",
+   "source": "https://exvius.fandom.com/wiki/The_Savior%27s_Descent",
+   "revision": 372431
+  },
+  "258000217": {
+   "vision_card": "213000101",
+   "card_name": "The Savior's Descent",
+   "unit_name": "Savior of Souls Lightning",
+   "source": "https://exvius.fandom.com/wiki/The_Savior%27s_Descent",
+   "revision": 372431
+  },
+  "304000607": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Mana Sword Hero Randi",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "304000617": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Mana Sword Hero Randi",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "304000707": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Spirited Heart Primm",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "304000717": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Spirited Heart Primm",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "304000807": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Little Great Mage Popoi",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "304000817": {
+   "vision_card": "304000101",
+   "card_name": "The Beginning of a Legend",
+   "unit_name": "Little Great Mage Popoi",
+   "source": "https://exvius.fandom.com/wiki/The_Beginning_of_a_Legend",
+   "revision": 392994
+  },
+  "306001407": {
+   "vision_card": "306000101",
+   "card_name": "Alena vs. the Abominable Showmen",
+   "unit_name": "Alena & Marquis de Léon",
+   "source": "https://exvius.fandom.com/wiki/Alena_vs._the_Abominable_Showmen",
+   "revision": 368264
+  },
+  "306001417": {
+   "vision_card": "306000101",
+   "card_name": "Alena vs. the Abominable Showmen",
+   "unit_name": "Alena & Marquis de Léon",
+   "source": "https://exvius.fandom.com/wiki/Alena_vs._the_Abominable_Showmen",
+   "revision": 368264
+  },
+  "306001507": {
+   "vision_card": "306000101",
+   "card_name": "Alena vs. the Abominable Showmen",
+   "unit_name": "King of Destruction Zoma",
+   "source": "https://exvius.fandom.com/wiki/Alena_vs._the_Abominable_Showmen",
+   "revision": 368264
+  },
+  "312000517": {
+   "vision_card": "312000101",
+   "card_name": "I Could Kiss You!",
+   "unit_name": "Duran",
+   "source": "https://exvius.fandom.com/wiki/I_Could_Kiss_You%21",
+   "revision": 392510
+  },
+  "312000617": {
+   "vision_card": "312000101",
+   "card_name": "I Could Kiss You!",
+   "unit_name": "Angela",
+   "source": "https://exvius.fandom.com/wiki/I_Could_Kiss_You%21",
+   "revision": 392510
+  },
+  "312001007": {
+   "vision_card": "312000101",
+   "card_name": "I Could Kiss You!",
+   "unit_name": "Ninja Master Hawkeye",
+   "source": "https://exvius.fandom.com/wiki/I_Could_Kiss_You%21",
+   "revision": 392510
+  },
+  "331001007": {
+   "vision_card": "331000101",
+   "card_name": "A Part Is Better than Zero",
+   "unit_name": "Id",
+   "source": "https://exvius.fandom.com/wiki/A_Part_Is_Better_than_Zero",
+   "revision": 397161
+  },
+  "331001107": {
+   "vision_card": "331000101",
+   "card_name": "A Part Is Better than Zero",
+   "unit_name": "Grahf",
+   "source": "https://exvius.fandom.com/wiki/A_Part_Is_Better_than_Zero",
+   "revision": 397161
+  },
+  "331001307": {
+   "vision_card": "331000201",
+   "card_name": "Memories of the Soul",
+   "unit_name": "Holy Mother Reborn Elly",
+   "source": "https://exvius.fandom.com/wiki/Memories_of_the_Soul",
+   "revision": 396645
+  },
+  "331001407": {
+   "vision_card": "331000301",
+   "card_name": "Citan's Resolve",
+   "unit_name": "The Emperor's Emissary Citan",
+   "source": "https://exvius.fandom.com/wiki/Citan%27s_Resolve",
+   "revision": 396646
+  },
+  "331001507": {
+   "vision_card": "331000201",
+   "card_name": "Memories of the Soul",
+   "unit_name": "Steel Wings of Bonds Maria",
+   "source": "https://exvius.fandom.com/wiki/Memories_of_the_Soul",
+   "revision": 396645
+  },
+  "331001607": {
+   "vision_card": "331000101",
+   "card_name": "A Part Is Better than Zero",
+   "unit_name": "Distant Promise Emeralda",
+   "source": "https://exvius.fandom.com/wiki/A_Part_Is_Better_than_Zero",
+   "revision": 397161
+  },
+  "331001707": {
+   "vision_card": "331000101",
+   "card_name": "A Part Is Better than Zero",
+   "unit_name": "Slayer of God Fei",
+   "source": "https://exvius.fandom.com/wiki/A_Part_Is_Better_than_Zero",
+   "revision": 397161
+  },
+  "331001807": {
+   "vision_card": "331000301",
+   "card_name": "Citan's Resolve",
+   "unit_name": "Dunefaring King Bart",
+   "source": "https://exvius.fandom.com/wiki/Citan%27s_Resolve",
+   "revision": 396646
+  },
+  "338000607": {
+   "vision_card": "338000101",
+   "card_name": "The Portal of Truth",
+   "unit_name": "Edward & Alphonse Elric",
+   "source": "https://exvius.fandom.com/wiki/The_Portal_of_Truth",
+   "revision": 368273
+  },
+  "338000617": {
+   "vision_card": "338000101",
+   "card_name": "The Portal of Truth",
+   "unit_name": "Edward & Alphonse Elric",
+   "source": "https://exvius.fandom.com/wiki/The_Portal_of_Truth",
+   "revision": 368273
+  },
+  "339000607": {
+   "vision_card": "339000101",
+   "card_name": "Gigantic Crystal of Mystery",
+   "unit_name": "King of Leonis Mont",
+   "source": "https://exvius.fandom.com/wiki/Gigantic_Crystal_of_Mystery",
+   "revision": 368275
+  },
+  "339000617": {
+   "vision_card": "339000101",
+   "card_name": "Gigantic Crystal of Mystery",
+   "unit_name": "King of Leonis Mont",
+   "source": "https://exvius.fandom.com/wiki/Gigantic_Crystal_of_Mystery",
+   "revision": 368275
+  },
+  "339000707": {
+   "vision_card": "339000201",
+   "card_name": "I summon thee, Veritas of the Light!",
+   "unit_name": "Jayden Rundall",
+   "source": "https://exvius.fandom.com/wiki/I_summon_thee%2C_Veritas_of_the_Light%21",
+   "revision": 372973
+  },
+  "339000717": {
+   "vision_card": "339000201",
+   "card_name": "I summon thee, Veritas of the Light!",
+   "unit_name": "Jayden Rundall",
+   "source": "https://exvius.fandom.com/wiki/I_summon_thee%2C_Veritas_of_the_Light%21",
+   "revision": 372973
+  },
+  "339000807": {
+   "vision_card": "339000201",
+   "card_name": "I summon thee, Veritas of the Light!",
+   "unit_name": "Flagbearer of Reform Glaciela",
+   "source": "https://exvius.fandom.com/wiki/I_summon_thee%2C_Veritas_of_the_Light%21",
+   "revision": 372973
+  },
+  "339000817": {
+   "vision_card": "339000201",
+   "card_name": "I summon thee, Veritas of the Light!",
+   "unit_name": "Flagbearer of Reform Glaciela",
+   "source": "https://exvius.fandom.com/wiki/I_summon_thee%2C_Veritas_of_the_Light%21",
+   "revision": 372973
+  },
+  "340000107": {
+   "vision_card": "335000101",
+   "card_name": "The Keyblade Graveyard Battle",
+   "unit_name": "Sora (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/The_Keyblade_Graveyard_Battle",
+   "revision": 392511
+  },
+  "340000117": {
+   "vision_card": "335000101",
+   "card_name": "The Keyblade Graveyard Battle",
+   "unit_name": "Sora (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/The_Keyblade_Graveyard_Battle",
+   "revision": 392511
+  },
+  "340000207": {
+   "vision_card": "335000201",
+   "card_name": "Facing the Demon Tower",
+   "unit_name": "Riku (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/Facing_the_Demon_Tower",
+   "revision": 392512
+  },
+  "340000217": {
+   "vision_card": "335000201",
+   "card_name": "Facing the Demon Tower",
+   "unit_name": "Riku (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/Facing_the_Demon_Tower",
+   "revision": 392512
+  },
+  "340000307": {
+   "vision_card": "335000301",
+   "card_name": "The Paopu Fruit's Bond",
+   "unit_name": "Kairi (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/The_Paopu_Fruit%27s_Bond",
+   "revision": 392513
+  },
+  "340000317": {
+   "vision_card": "335000301",
+   "card_name": "The Paopu Fruit's Bond",
+   "unit_name": "Kairi (KHIII)",
+   "source": "https://exvius.fandom.com/wiki/The_Paopu_Fruit%27s_Bond",
+   "revision": 392513
+  },
+  "342000107": {
+   "vision_card": "342000101",
+   "card_name": "I'm Back!&#33;",
+   "unit_name": "Elazul",
+   "source": "https://exvius.fandom.com/wiki/I%27m_Back%21%21",
+   "revision": 392514
+  },
+  "342000117": {
+   "vision_card": "342000101",
+   "card_name": "I'm Back!&#33;",
+   "unit_name": "Elazul",
+   "source": "https://exvius.fandom.com/wiki/I%27m_Back%21%21",
+   "revision": 392514
+  },
+  "342000207": {
+   "vision_card": "342000101",
+   "card_name": "I'm Back!&#33;",
+   "unit_name": "Pearl",
+   "source": "https://exvius.fandom.com/wiki/I%27m_Back%21%21",
+   "revision": 392514
+  },
+  "342000307": {
+   "vision_card": "342000201",
+   "card_name": "Saving the Jumi",
+   "unit_name": "Shiloh",
+   "source": "https://exvius.fandom.com/wiki/Saving_the_Jumi_%28Vision_Card%29",
+   "revision": 373850
+  },
+  "342000317": {
+   "vision_card": "342000201",
+   "card_name": "Saving the Jumi",
+   "unit_name": "Shiloh",
+   "source": "https://exvius.fandom.com/wiki/Saving_the_Jumi_%28Vision_Card%29",
+   "revision": 373850
+  },
+  "342000407": {
+   "vision_card": "342000201",
+   "card_name": "Saving the Jumi",
+   "unit_name": "Serafina",
+   "source": "https://exvius.fandom.com/wiki/Saving_the_Jumi_%28Vision_Card%29",
+   "revision": 373850
+  },
+  "342000417": {
+   "vision_card": "342000201",
+   "card_name": "Saving the Jumi",
+   "unit_name": "Serafina",
+   "source": "https://exvius.fandom.com/wiki/Saving_the_Jumi_%28Vision_Card%29",
+   "revision": 373850
+  },
+  "343000107": {
+   "vision_card": "343000101",
+   "card_name": "神様の降臨",
+   "unit_name": "Lord of Light",
+   "source": "https://exvius.fandom.com/wiki/Lord_of_Light/JP",
+   "revision": 398131
+  },
+  "343000117": {
+   "vision_card": "343000101",
+   "card_name": "神様の降臨",
+   "unit_name": "Lord of Light",
+   "source": "https://exvius.fandom.com/wiki/Lord_of_Light/JP",
+   "revision": 398131
+  },
+  "344000107": {
+   "vision_card": "344000101",
+   "card_name": "Father and Son Dragons Set Out",
+   "unit_name": "Hero Dai",
+   "source": "https://exvius.fandom.com/wiki/Father_and_Son_Dragons_Set_Out",
+   "revision": 368277
+  },
+  "344000207": {
+   "vision_card": "344000201",
+   "card_name": "Assemble, Disciples of Avan!",
+   "unit_name": "Mage Popp",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Disciples_of_Avan%21",
+   "revision": 377045
+  },
+  "344000217": {
+   "vision_card": "344000201",
+   "card_name": "Assemble, Disciples of Avan!",
+   "unit_name": "Mage Popp",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Disciples_of_Avan%21",
+   "revision": 377045
+  },
+  "344000307": {
+   "vision_card": "344000201",
+   "card_name": "Assemble, Disciples of Avan!",
+   "unit_name": "Martial Artist Maam",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Disciples_of_Avan%21",
+   "revision": 377045
+  },
+  "344000317": {
+   "vision_card": "344000201",
+   "card_name": "Assemble, Disciples of Avan!",
+   "unit_name": "Martial Artist Maam",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Disciples_of_Avan%21",
+   "revision": 377045
+  },
+  "344000407": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Beast King Crocodine",
+   "source": "https://exvius.fandom.com/wiki/Beast_King_Crocodine/JP",
+   "revision": 398133
+  },
+  "344000417": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Beast King Crocodine",
+   "source": "https://exvius.fandom.com/wiki/Beast_King_Crocodine/JP",
+   "revision": 398133
+  },
+  "344000507": {
+   "vision_card": "344000101",
+   "card_name": "Father and Son Dragons Set Out",
+   "unit_name": "Dragon Knight Baran",
+   "source": "https://exvius.fandom.com/wiki/Father_and_Son_Dragons_Set_Out",
+   "revision": 368277
+  },
+  "344000607": {
+   "vision_card": "344000401",
+   "card_name": "Assemble, Six Legion Commanders!",
+   "unit_name": "Immortal Hyunckel",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Six_Legion_Commanders%21",
+   "revision": 377047
+  },
+  "344000617": {
+   "vision_card": "344000401",
+   "card_name": "Assemble, Six Legion Commanders!",
+   "unit_name": "Immortal Hyunckel",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Six_Legion_Commanders%21",
+   "revision": 377047
+  },
+  "344000707": {
+   "vision_card": "344000401",
+   "card_name": "Assemble, Six Legion Commanders!",
+   "unit_name": "Superior Being Hadlar",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Six_Legion_Commanders%21",
+   "revision": 377047
+  },
+  "344000717": {
+   "vision_card": "344000401",
+   "card_name": "Assemble, Six Legion Commanders!",
+   "unit_name": "Superior Being Hadlar",
+   "source": "https://exvius.fandom.com/wiki/Assemble%2C_Six_Legion_Commanders%21",
+   "revision": 377047
+  },
+  "344000807": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Legendary Hero Avan",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344000817": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Legendary Hero Avan",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344000907": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Soul Heritor Hym",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344000917": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Soul Heritor Hym",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344001007": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Land Rider Larhart",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344001017": {
+   "vision_card": "344000501",
+   "card_name": "Demonic Guard of Heaven and Earth",
+   "unit_name": "Land Rider Larhart",
+   "source": "https://exvius.fandom.com/wiki/Demonic_Guard_of_Heaven_and_Earth",
+   "revision": 385641
+  },
+  "344001107": {
+   "vision_card": "344000601",
+   "card_name": "Double Doruora!",
+   "unit_name": "Twin Dragon Crests Dai",
+   "source": "https://exvius.fandom.com/wiki/Double_Doruora%21",
+   "revision": 385646
+  },
+  "344001207": {
+   "vision_card": "344000701",
+   "card_name": "Dragonoid vs. Sovereign Supreme",
+   "unit_name": "True Dark King Vearn",
+   "source": "https://exvius.fandom.com/wiki/Dragonoid_vs._Sovereign_Supreme",
+   "revision": 385643
+  },
+  "344001307": {
+   "vision_card": "344000601",
+   "card_name": "Double Doruora!",
+   "unit_name": "Disciple of Avan Leona",
+   "source": "https://exvius.fandom.com/wiki/Double_Doruora%21",
+   "revision": 385646
+  },
+  "344001317": {
+   "vision_card": "344000601",
+   "card_name": "Double Doruora!",
+   "unit_name": "Disciple of Avan Leona",
+   "source": "https://exvius.fandom.com/wiki/Double_Doruora%21",
+   "revision": 385646
+  },
+  "345000107": {
+   "vision_card": "345000101",
+   "card_name": "A Calling From Beyond Time",
+   "unit_name": "Serge",
+   "source": "https://exvius.fandom.com/wiki/A_Calling_From_Beyond_Time",
+   "revision": 368282
+  },
+  "345000117": {
+   "vision_card": "345000101",
+   "card_name": "A Calling From Beyond Time",
+   "unit_name": "Serge",
+   "source": "https://exvius.fandom.com/wiki/A_Calling_From_Beyond_Time",
+   "revision": 368282
+  },
+  "345000207": {
+   "vision_card": "345000201",
+   "card_name": "Kid Makes Her Entrance!",
+   "unit_name": "Kid",
+   "source": "https://exvius.fandom.com/wiki/Kid_Makes_Her_Entrance%21",
+   "revision": 368283
+  },
+  "345000217": {
+   "vision_card": "345000201",
+   "card_name": "Kid Makes Her Entrance!",
+   "unit_name": "Kid",
+   "source": "https://exvius.fandom.com/wiki/Kid_Makes_Her_Entrance%21",
+   "revision": 368283
+  },
+  "345000307": {
+   "vision_card": "345000301",
+   "card_name": "Dragon Tear",
+   "unit_name": "Lynx",
+   "source": "https://exvius.fandom.com/wiki/Dragon_Tear",
+   "revision": 368281
+  },
+  "345000317": {
+   "vision_card": "345000301",
+   "card_name": "Dragon Tear",
+   "unit_name": "Lynx",
+   "source": "https://exvius.fandom.com/wiki/Dragon_Tear",
+   "revision": 368281
+  },
+  "401009127": {
+   "vision_card": "338000101",
+   "card_name": "真理の扉",
+   "unit_name": "King Bradley",
+   "source": "https://exvius.fandom.com/wiki/King_Bradley/JP",
+   "revision": 398156
+  },
+  "401009907": {
+   "vision_card": "401000401",
+   "card_name": "Azure Successor",
+   "unit_name": "Starlight Elena",
+   "source": "https://exvius.fandom.com/wiki/Azure_Successor",
+   "revision": 368290
+  },
+  "401009917": {
+   "vision_card": "401000401",
+   "card_name": "Azure Successor",
+   "unit_name": "Starlight Elena",
+   "source": "https://exvius.fandom.com/wiki/Azure_Successor",
+   "revision": 368290
+  },
+  "401010007": {
+   "vision_card": "401000101",
+   "card_name": "Virtual Training",
+   "unit_name": "Yoshikiri",
+   "source": "https://exvius.fandom.com/wiki/Virtual_Training",
+   "revision": 368285
+  },
+  "401010017": {
+   "vision_card": "401000101",
+   "card_name": "Virtual Training",
+   "unit_name": "Yoshikiri",
+   "source": "https://exvius.fandom.com/wiki/Virtual_Training",
+   "revision": 368285
+  },
+  "401010107": {
+   "vision_card": "401000201",
+   "card_name": "Demon Who Learned Humanity",
+   "unit_name": "Ibara",
+   "source": "https://exvius.fandom.com/wiki/Demon_Who_Learned_Humanity",
+   "revision": 368288
+  },
+  "401010117": {
+   "vision_card": "401000201",
+   "card_name": "Demon Who Learned Humanity",
+   "unit_name": "Ibara",
+   "source": "https://exvius.fandom.com/wiki/Demon_Who_Learned_Humanity",
+   "revision": 368288
+  },
+  "401010207": {
+   "vision_card": "401000501",
+   "card_name": "Sharp Student",
+   "unit_name": "Eldryn",
+   "source": "https://exvius.fandom.com/wiki/Sharp_Student",
+   "revision": 368286
+  },
+  "401010217": {
+   "vision_card": "401000501",
+   "card_name": "Sharp Student",
+   "unit_name": "Eldryn",
+   "source": "https://exvius.fandom.com/wiki/Sharp_Student",
+   "revision": 368286
+  },
+  "401010407": {
+   "vision_card": "401000701",
+   "card_name": "Even Heroes Need a Break",
+   "unit_name": "Noppy",
+   "source": "https://exvius.fandom.com/wiki/Even_Heroes_Need_a_Break",
+   "revision": 368293
+  },
+  "401010417": {
+   "vision_card": "401000701",
+   "card_name": "Even Heroes Need a Break",
+   "unit_name": "Noppy",
+   "source": "https://exvius.fandom.com/wiki/Even_Heroes_Need_a_Break",
+   "revision": 368293
+  },
+  "401010507": {
+   "vision_card": "401000801",
+   "card_name": "Toil and Trouble",
+   "unit_name": "Ygni",
+   "source": "https://exvius.fandom.com/wiki/Toil_and_Trouble",
+   "revision": 368292
+  },
+  "401010517": {
+   "vision_card": "401000801",
+   "card_name": "Toil and Trouble",
+   "unit_name": "Ygni",
+   "source": "https://exvius.fandom.com/wiki/Toil_and_Trouble",
+   "revision": 368292
+  },
+  "401010607": {
+   "vision_card": "401000901",
+   "card_name": "Ruin to Remedy",
+   "unit_name": "Cressnik",
+   "source": "https://exvius.fandom.com/wiki/Ruin_to_Remedy",
+   "revision": 368294
+  },
+  "401010617": {
+   "vision_card": "401000901",
+   "card_name": "Ruin to Remedy",
+   "unit_name": "Cressnik",
+   "source": "https://exvius.fandom.com/wiki/Ruin_to_Remedy",
+   "revision": 368294
+  },
+  "401010707": {
+   "vision_card": "401001001",
+   "card_name": "The Most Merry of Melodies",
+   "unit_name": "Bulwark & the Melodic Mascots",
+   "source": "https://exvius.fandom.com/wiki/The_Most_Merry_of_Melodies",
+   "revision": 368289
+  },
+  "401010717": {
+   "vision_card": "401001001",
+   "card_name": "The Most Merry of Melodies",
+   "unit_name": "Bulwark & the Melodic Mascots",
+   "source": "https://exvius.fandom.com/wiki/The_Most_Merry_of_Melodies",
+   "revision": 368289
+  },
+  "401010807": {
+   "vision_card": "401001101",
+   "card_name": "A Family Reunited",
+   "unit_name": "Kaktiria",
+   "source": "https://exvius.fandom.com/wiki/A_Family_Reunited",
+   "revision": 368296
+  },
+  "401010817": {
+   "vision_card": "401001101",
+   "card_name": "A Family Reunited",
+   "unit_name": "Kaktiria",
+   "source": "https://exvius.fandom.com/wiki/A_Family_Reunited",
+   "revision": 368296
+  },
+  "401010907": {
+   "vision_card": "401001201",
+   "card_name": "A King's Dominion",
+   "unit_name": "King Behemy",
+   "source": "https://exvius.fandom.com/wiki/A_King%27s_Dominion",
+   "revision": 368297
+  },
+  "401010917": {
+   "vision_card": "401001201",
+   "card_name": "A King's Dominion",
+   "unit_name": "King Behemy",
+   "source": "https://exvius.fandom.com/wiki/A_King%27s_Dominion",
+   "revision": 368297
+  },
+  "401011207": {
+   "vision_card": "401000601",
+   "card_name": "Delicate Lotus",
+   "unit_name": "Shui Yu",
+   "source": "https://exvius.fandom.com/wiki/Delicate_Lotus",
+   "revision": 368291
+  },
+  "401011217": {
+   "vision_card": "401000601",
+   "card_name": "Delicate Lotus",
+   "unit_name": "Shui Yu",
+   "source": "https://exvius.fandom.com/wiki/Delicate_Lotus",
+   "revision": 368291
+  },
+  "401011307": {
+   "vision_card": "401001301",
+   "card_name": "Egg Painting",
+   "unit_name": "Melia",
+   "source": "https://exvius.fandom.com/wiki/Egg_Painting",
+   "revision": 368295
+  },
+  "401011317": {
+   "vision_card": "401001301",
+   "card_name": "Egg Painting",
+   "unit_name": "Melia",
+   "source": "https://exvius.fandom.com/wiki/Egg_Painting",
+   "revision": 368295
+  },
+  "401011407": {
+   "vision_card": "401001401",
+   "card_name": "By Lord Dario's Side",
+   "unit_name": "Vinera Fennes",
+   "source": "https://exvius.fandom.com/wiki/By_Lord_Dario%27s_Side",
+   "revision": 392515
+  },
+  "401011417": {
+   "vision_card": "401001401",
+   "card_name": "By Lord Dario's Side",
+   "unit_name": "Vinera Fennes",
+   "source": "https://exvius.fandom.com/wiki/By_Lord_Dario%27s_Side",
+   "revision": 392515
+  },
+  "401011607": {
+   "vision_card": "401002201",
+   "card_name": "A Crimson-Colored Light",
+   "unit_name": "Louise",
+   "source": "https://exvius.fandom.com/wiki/A_Crimson-Colored_Light",
+   "revision": 368305
+  },
+  "401011617": {
+   "vision_card": "401002201",
+   "card_name": "A Crimson-Colored Light",
+   "unit_name": "Louise",
+   "source": "https://exvius.fandom.com/wiki/A_Crimson-Colored_Light",
+   "revision": 368305
+  },
+  "401011707": {
+   "vision_card": "401002301",
+   "card_name": "Dramatic Costume Change",
+   "unit_name": "White Dragon Ling",
+   "source": "https://exvius.fandom.com/wiki/Dramatic_Costume_Change",
+   "revision": 368306
+  },
+  "401011717": {
+   "vision_card": "401002301",
+   "card_name": "Dramatic Costume Change",
+   "unit_name": "White Dragon Ling",
+   "source": "https://exvius.fandom.com/wiki/Dramatic_Costume_Change",
+   "revision": 368306
+  },
+  "401011907": {
+   "vision_card": "401001601",
+   "card_name": "Flighted Friends",
+   "unit_name": "Skye",
+   "source": "https://exvius.fandom.com/wiki/Flighted_Friends",
+   "revision": 368300
+  },
+  "401011917": {
+   "vision_card": "401001601",
+   "card_name": "Flighted Friends",
+   "unit_name": "Skye",
+   "source": "https://exvius.fandom.com/wiki/Flighted_Friends",
+   "revision": 368300
+  },
+  "401012007": {
+   "vision_card": "401001701",
+   "card_name": "A Dino-Mite Battle",
+   "unit_name": "Lara Croft -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/A_Dino-Mite_Battle",
+   "revision": 368301
+  },
+  "401012017": {
+   "vision_card": "401001701",
+   "card_name": "A Dino-Mite Battle",
+   "unit_name": "Lara Croft -Neo Vision-",
+   "source": "https://exvius.fandom.com/wiki/A_Dino-Mite_Battle",
+   "revision": 368301
+  },
+  "401012107": {
+   "vision_card": "401001801",
+   "card_name": "Practice Session",
+   "unit_name": "Olivera",
+   "source": "https://exvius.fandom.com/wiki/Practice_Session",
+   "revision": 368302
+  },
+  "401012207": {
+   "vision_card": "401001901",
+   "card_name": "A Home in Ruins",
+   "unit_name": "Full Moon Karten",
+   "source": "https://exvius.fandom.com/wiki/A_Home_in_Ruins",
+   "revision": 368304
+  },
+  "401012217": {
+   "vision_card": "401001901",
+   "card_name": "A Home in Ruins",
+   "unit_name": "Full Moon Karten",
+   "source": "https://exvius.fandom.com/wiki/A_Home_in_Ruins",
+   "revision": 368304
+  },
+  "401012307": {
+   "vision_card": "401002001",
+   "card_name": "Bringing Home the Bacon",
+   "unit_name": "Maeve",
+   "source": "https://exvius.fandom.com/wiki/Bringing_Home_the_Bacon",
+   "revision": 368303
+  },
+  "401012317": {
+   "vision_card": "401002001",
+   "card_name": "Bringing Home the Bacon",
+   "unit_name": "Maeve",
+   "source": "https://exvius.fandom.com/wiki/Bringing_Home_the_Bacon",
+   "revision": 368303
+  },
+  "401012407": {
+   "vision_card": "312000101",
+   "card_name": "I Could Kiss You!",
+   "unit_name": "Riesz",
+   "source": "https://exvius.fandom.com/wiki/I_Could_Kiss_You%21",
+   "revision": 392510
+  },
+  "401012507": {
+   "vision_card": "401002401",
+   "card_name": "Try, Try Again",
+   "unit_name": "Whimsical Winter Tiana",
+   "source": "https://exvius.fandom.com/wiki/Try%2C_Try_Again",
+   "revision": 368308
+  },
+  "401012517": {
+   "vision_card": "401002401",
+   "card_name": "Try, Try Again",
+   "unit_name": "Whimsical Winter Tiana",
+   "source": "https://exvius.fandom.com/wiki/Try%2C_Try_Again",
+   "revision": 368308
+  },
+  "401012707": {
+   "vision_card": "401002501",
+   "card_name": "Best Boi",
+   "unit_name": "Divine Beast Chow",
+   "source": "https://exvius.fandom.com/wiki/Best_Boi",
+   "revision": 368307
+  },
+  "401012717": {
+   "vision_card": "401002501",
+   "card_name": "Best Boi",
+   "unit_name": "Divine Beast Chow",
+   "source": "https://exvius.fandom.com/wiki/Best_Boi",
+   "revision": 368307
+  },
+  "401012807": {
+   "vision_card": "401002101",
+   "card_name": "私が生んだ最強の敵",
+   "unit_name": "Storm Seeker Esther",
+   "source": "https://exvius.fandom.com/wiki/Storm_Seeker_Esther/JP",
+   "revision": 404658
+  },
+  "401012817": {
+   "vision_card": "401002101",
+   "card_name": "私が生んだ最強の敵",
+   "unit_name": "Storm Seeker Esther",
+   "source": "https://exvius.fandom.com/wiki/Storm_Seeker_Esther/JP",
+   "revision": 404658
+  },
+  "401012907": {
+   "vision_card": "401002901",
+   "card_name": "The Girl with the Dragon",
+   "unit_name": "Reberta & Ignitos",
+   "source": "https://exvius.fandom.com/wiki/The_Girl_with_the_Dragon",
+   "revision": 368312
+  },
+  "401013007": {
+   "vision_card": "401003001",
+   "card_name": "A Master in Disguise",
+   "unit_name": "Frostblade Fryevia",
+   "source": "https://exvius.fandom.com/wiki/A_Master_in_Disguise",
+   "revision": 368315
+  },
+  "401013107": {
+   "vision_card": "401003301",
+   "card_name": "Be Like Water",
+   "unit_name": "Tide Bringer Kaito",
+   "source": "https://exvius.fandom.com/wiki/Be_Like_Water",
+   "revision": 368316
+  },
+  "401013117": {
+   "vision_card": "401003301",
+   "card_name": "Be Like Water",
+   "unit_name": "Tide Bringer Kaito",
+   "source": "https://exvius.fandom.com/wiki/Be_Like_Water",
+   "revision": 368316
+  },
+  "401013207": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Wylk",
+   "source": "https://exvius.fandom.com/wiki/Wylk/JP",
+   "revision": 404659
+  },
+  "401013217": {
+   "vision_card": "900020101",
+   "card_name": "メタルジャボテン見参！",
+   "unit_name": "Wylk",
+   "source": "https://exvius.fandom.com/wiki/Wylk/JP",
+   "revision": 404659
+  },
+  "401013307": {
+   "vision_card": "401003601",
+   "card_name": "Always Watching Over Me",
+   "unit_name": "Paladin Sylvie",
+   "source": "https://exvius.fandom.com/wiki/Always_Watching_Over_Me",
+   "revision": 368318
+  },
+  "401013317": {
+   "vision_card": "401003601",
+   "card_name": "Always Watching Over Me",
+   "unit_name": "Paladin Sylvie",
+   "source": "https://exvius.fandom.com/wiki/Always_Watching_Over_Me",
+   "revision": 368318
+  },
+  "401013407": {
+   "vision_card": "401003901",
+   "card_name": "A Happy Family",
+   "unit_name": "Samurai Chizuru",
+   "source": "https://exvius.fandom.com/wiki/A_Happy_Family",
+   "revision": 368322
+  },
+  "401013417": {
+   "vision_card": "401003901",
+   "card_name": "A Happy Family",
+   "unit_name": "Samurai Chizuru",
+   "source": "https://exvius.fandom.com/wiki/A_Happy_Family",
+   "revision": 368322
+  },
+  "401013507": {
+   "vision_card": "401004101",
+   "card_name": "Summertime Savior",
+   "unit_name": "Beach Blaster Olive",
+   "source": "https://exvius.fandom.com/wiki/Summertime_Savior",
+   "revision": 368324
+  },
+  "401013517": {
+   "vision_card": "401004101",
+   "card_name": "Summertime Savior",
+   "unit_name": "Beach Blaster Olive",
+   "source": "https://exvius.fandom.com/wiki/Summertime_Savior",
+   "revision": 368324
+  },
+  "401013607": {
+   "vision_card": "401004401",
+   "card_name": "Offerings for the Maiden",
+   "unit_name": "Shrine Maiden Tsukiko",
+   "source": "https://exvius.fandom.com/wiki/Offerings_for_the_Maiden",
+   "revision": 368326
+  },
+  "401013617": {
+   "vision_card": "401004401",
+   "card_name": "Offerings for the Maiden",
+   "unit_name": "Shrine Maiden Tsukiko",
+   "source": "https://exvius.fandom.com/wiki/Offerings_for_the_Maiden",
+   "revision": 368326
+  },
+  "401013707": {
+   "vision_card": "401004501",
+   "card_name": "A Seductress and Her Servants",
+   "unit_name": "Elegant Temptress Lilith",
+   "source": "https://exvius.fandom.com/wiki/A_Seductress_and_Her_Servants",
+   "revision": 368328
+  },
+  "401013717": {
+   "vision_card": "401004501",
+   "card_name": "A Seductress and Her Servants",
+   "unit_name": "Elegant Temptress Lilith",
+   "source": "https://exvius.fandom.com/wiki/A_Seductress_and_Her_Servants",
+   "revision": 368328
+  },
+  "401014007": {
+   "vision_card": "401005001",
+   "card_name": "Sweet Friendship",
+   "unit_name": "Cheerful Caroler Ayaka",
+   "source": "https://exvius.fandom.com/wiki/Sweet_Friendship",
+   "revision": 368333
+  },
+  "401014017": {
+   "vision_card": "401005001",
+   "card_name": "Sweet Friendship",
+   "unit_name": "Cheerful Caroler Ayaka",
+   "source": "https://exvius.fandom.com/wiki/Sweet_Friendship",
+   "revision": 368333
+  },
+  "401014107": {
+   "vision_card": "401005201",
+   "card_name": "Instrumental Inspiration",
+   "unit_name": "Lunar Festival Cleome",
+   "source": "https://exvius.fandom.com/wiki/Instrumental_Inspiration",
+   "revision": 368335
+  },
+  "401014117": {
+   "vision_card": "401005201",
+   "card_name": "Instrumental Inspiration",
+   "unit_name": "Lunar Festival Cleome",
+   "source": "https://exvius.fandom.com/wiki/Instrumental_Inspiration",
+   "revision": 368335
+  },
+  "401014207": {
+   "vision_card": "401005501",
+   "card_name": "Dance of the Drone",
+   "unit_name": "Master Machinist Abigail",
+   "source": "https://exvius.fandom.com/wiki/Dance_of_the_Drone",
+   "revision": 368337
+  },
+  "401014217": {
+   "vision_card": "401005501",
+   "card_name": "Dance of the Drone",
+   "unit_name": "Master Machinist Abigail",
+   "source": "https://exvius.fandom.com/wiki/Dance_of_the_Drone",
+   "revision": 368337
+  },
+  "401014307": {
+   "vision_card": "401005701",
+   "card_name": "Open Heart, Open Home",
+   "unit_name": "Curse of Immunity Melissa",
+   "source": "https://exvius.fandom.com/wiki/Open_Heart%2C_Open_Home",
+   "revision": 368339
+  },
+  "401014317": {
+   "vision_card": "401005701",
+   "card_name": "Open Heart, Open Home",
+   "unit_name": "Curse of Immunity Melissa",
+   "source": "https://exvius.fandom.com/wiki/Open_Heart%2C_Open_Home",
+   "revision": 368339
+  },
+  "401014507": {
+   "vision_card": "401006201",
+   "card_name": "Heart Stronger than Darkness",
+   "unit_name": "Dark Knight Duane",
+   "source": "https://exvius.fandom.com/wiki/Heart_Stronger_than_Darkness",
+   "revision": 368346
+  },
+  "401014517": {
+   "vision_card": "401006201",
+   "card_name": "Heart Stronger than Darkness",
+   "unit_name": "Dark Knight Duane",
+   "source": "https://exvius.fandom.com/wiki/Heart_Stronger_than_Darkness",
+   "revision": 368346
+  },
+  "401014607": {
+   "vision_card": "401006501",
+   "card_name": "The Cost of Power",
+   "unit_name": "Ruin Explorer Nora",
+   "source": "https://exvius.fandom.com/wiki/The_Cost_of_Power",
+   "revision": 369126
+  },
+  "401014617": {
+   "vision_card": "401006501",
+   "card_name": "The Cost of Power",
+   "unit_name": "Ruin Explorer Nora",
+   "source": "https://exvius.fandom.com/wiki/The_Cost_of_Power",
+   "revision": 369126
+  },
+  "401014807": {
+   "vision_card": "401006901",
+   "card_name": "Battle with Eithne",
+   "unit_name": "Eternal Radiance Elena",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Eithne",
+   "revision": 372704
+  },
+  "401014817": {
+   "vision_card": "401006901",
+   "card_name": "Battle with Eithne",
+   "unit_name": "Eternal Radiance Elena",
+   "source": "https://exvius.fandom.com/wiki/Battle_with_Eithne",
+   "revision": 372704
+  },
+  "401015007": {
+   "vision_card": "401007301",
+   "card_name": "A Home Destroyed",
+   "unit_name": "Wings of Midnight Malphasie",
+   "source": "https://exvius.fandom.com/wiki/A_Home_Destroyed",
+   "revision": 372960
+  },
+  "401015017": {
+   "vision_card": "401007301",
+   "card_name": "A Home Destroyed",
+   "unit_name": "Wings of Midnight Malphasie",
+   "source": "https://exvius.fandom.com/wiki/A_Home_Destroyed",
+   "revision": 372960
+  },
+  "401015107": {
+   "vision_card": "401007801",
+   "card_name": "The Book Burning",
+   "unit_name": "Arcane Scholar Kir",
+   "source": "https://exvius.fandom.com/wiki/The_Book_Burning",
+   "revision": 372962
+  },
+  "401015117": {
+   "vision_card": "401007801",
+   "card_name": "The Book Burning",
+   "unit_name": "Arcane Scholar Kir",
+   "source": "https://exvius.fandom.com/wiki/The_Book_Burning",
+   "revision": 372962
+  },
+  "401015207": {
+   "vision_card": "401007901",
+   "card_name": "Blood is Thicker than Water",
+   "unit_name": "Blood Dancer Ellesperis",
+   "source": "https://exvius.fandom.com/wiki/Blood_is_Thicker_than_Water",
+   "revision": 372946
+  },
+  "401015217": {
+   "vision_card": "401007901",
+   "card_name": "Blood is Thicker than Water",
+   "unit_name": "Blood Dancer Ellesperis",
+   "source": "https://exvius.fandom.com/wiki/Blood_is_Thicker_than_Water",
+   "revision": 372946
+  },
+  "401015307": {
+   "vision_card": "401008201",
+   "card_name": "Mitochondria Eve",
+   "unit_name": "Aya Brea",
+   "source": "https://exvius.fandom.com/wiki/Mitochondria_Eve",
+   "revision": 372926
+  },
+  "401015317": {
+   "vision_card": "401008201",
+   "card_name": "Mitochondria Eve",
+   "unit_name": "Aya Brea",
+   "source": "https://exvius.fandom.com/wiki/Mitochondria_Eve",
+   "revision": 372926
+  },
+  "401015407": {
+   "vision_card": "401008301",
+   "card_name": "Fashion Leaders",
+   "unit_name": "Cool Moves Addison Rae",
+   "source": "https://exvius.fandom.com/wiki/Fashion_Leaders",
+   "revision": 372939
+  },
+  "401015417": {
+   "vision_card": "401008301",
+   "card_name": "Fashion Leaders",
+   "unit_name": "Cool Moves Addison Rae",
+   "source": "https://exvius.fandom.com/wiki/Fashion_Leaders",
+   "revision": 372939
+  },
+  "401015507": {
+   "vision_card": "401008601",
+   "card_name": "Tricks and Treats",
+   "unit_name": "Guardian of the Underworld Chow",
+   "source": "https://exvius.fandom.com/wiki/Tricks_and_Treats",
+   "revision": 385637
+  },
+  "401015517": {
+   "vision_card": "401008601",
+   "card_name": "Tricks and Treats",
+   "unit_name": "Guardian of the Underworld Chow",
+   "source": "https://exvius.fandom.com/wiki/Tricks_and_Treats",
+   "revision": 385637
+  },
+  "401015807": {
+   "vision_card": "401008901",
+   "card_name": "Merry Tonberry",
+   "unit_name": "Ghost of Winter Past Beryl",
+   "source": "https://exvius.fandom.com/wiki/Merry_Tonberry",
+   "revision": 385652
+  },
+  "401015817": {
+   "vision_card": "401008901",
+   "card_name": "Merry Tonberry",
+   "unit_name": "Ghost of Winter Past Beryl",
+   "source": "https://exvius.fandom.com/wiki/Merry_Tonberry",
+   "revision": 385652
+  },
+  "401015907": {
+   "vision_card": "401009501",
+   "card_name": "The Swallow's Flight",
+   "unit_name": "Chains of Fate Mirei",
+   "source": "https://exvius.fandom.com/wiki/The_Swallow%27s_Flight",
+   "revision": 390118
+  },
+  "401015917": {
+   "vision_card": "401009501",
+   "card_name": "The Swallow's Flight",
+   "unit_name": "Chains of Fate Mirei",
+   "source": "https://exvius.fandom.com/wiki/The_Swallow%27s_Flight",
+   "revision": 390118
+  },
+  "401016007": {
+   "vision_card": "401009801",
+   "card_name": "Archer's Legacy",
+   "unit_name": "Divine Archer Ang",
+   "source": "https://exvius.fandom.com/wiki/Archer%27s_Legacy",
+   "revision": 392527
+  },
+  "401016017": {
+   "vision_card": "401009801",
+   "card_name": "Archer's Legacy",
+   "unit_name": "Divine Archer Ang",
+   "source": "https://exvius.fandom.com/wiki/Archer%27s_Legacy",
+   "revision": 392527
+  },
+  "401016107": {
+   "vision_card": "401010101",
+   "card_name": "Magic Wrecking Ball",
+   "unit_name": "Blood Mage Zyrus",
+   "source": "https://exvius.fandom.com/wiki/Magic_Wrecking_Ball",
+   "revision": 395487
+  },
+  "401016117": {
+   "vision_card": "401010101",
+   "card_name": "Magic Wrecking Ball",
+   "unit_name": "Blood Mage Zyrus",
+   "source": "https://exvius.fandom.com/wiki/Magic_Wrecking_Ball",
+   "revision": 395487
+  },
+  "401016207": {
+   "vision_card": "401010401",
+   "card_name": "Searching Among the Flames",
+   "unit_name": "Winged Officer Celeste",
+   "source": "https://exvius.fandom.com/wiki/Searching_Among_the_Flames",
+   "revision": 396590
+  },
+  "401016217": {
+   "vision_card": "401010401",
+   "card_name": "Searching Among the Flames",
+   "unit_name": "Winged Officer Celeste",
+   "source": "https://exvius.fandom.com/wiki/Searching_Among_the_Flames",
+   "revision": 396590
+  },
+  "401016407": {
+   "vision_card": "401011001",
+   "card_name": "Warrior of the Rainbow Crystal",
+   "unit_name": "Fundamental Force",
+   "source": "https://exvius.fandom.com/wiki/Warrior_of_the_Rainbow_Crystal",
+   "revision": 400649
+  },
+  "401016417": {
+   "vision_card": "401011001",
+   "card_name": "Warrior of the Rainbow Crystal",
+   "unit_name": "Fundamental Force",
+   "source": "https://exvius.fandom.com/wiki/Warrior_of_the_Rainbow_Crystal",
+   "revision": 400649
+  },
+  "401016707": {
+   "vision_card": "401011701",
+   "card_name": "A Breather for Esther",
+   "unit_name": "Blade Breaker Esther",
+   "source": "https://exvius.fandom.com/wiki/A_Breather_for_Esther",
+   "revision": 402283
+  },
+  "401016717": {
+   "vision_card": "401011701",
+   "card_name": "A Breather for Esther",
+   "unit_name": "Blade Breaker Esther",
+   "source": "https://exvius.fandom.com/wiki/A_Breather_for_Esther",
+   "revision": 402283
+  }
+ }
+}

@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "version": "2026.10.30.1",
+  "minAppVersionCode": 9001,
+  "packs": [
+    {
+      "id": "data-001",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-001.zip",
+      "size": 1215128698,
+      "unpackedSize": 1458655297,
+      "sha256": "6063469eb90e52d3512e9176c5fdb9435db322004130d989e0d587a0b58d170c"
+    },
+    {
+      "id": "data-002",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-002.zip",
+      "size": 1461366379,
+      "unpackedSize": 1460778051,
+      "sha256": "2a4e6f19d285cf9ea408c120b445a0a899d46a7080d4f3bab074d059c480efef"
+    },
+    {
+      "id": "data-003",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-003.zip",
+      "size": 1458598428,
+      "unpackedSize": 1458407264,
+      "sha256": "f7b0b84082827f80e106ecaa0f197b0fd5a1a4c7c853f75cd9fcd136d5b1035c"
+    },
+    {
+      "id": "data-004",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-004.zip",
+      "size": 1461737065,
+      "unpackedSize": 1461680191,
+      "sha256": "5becc95cffbb37cce94aa6495888c0462be8916a23adfc95e52fbbee6e4f54c9"
+    },
+    {
+      "id": "data-005",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-005.zip",
+      "size": 1462323274,
+      "unpackedSize": 1462269064,
+      "sha256": "cbb27daae0284190cb5a4ccd08f441d62425805d1e0a60653ebed110990d64b8"
+    },
+    {
+      "id": "data-006",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-006.zip",
+      "size": 1452236957,
+      "unpackedSize": 1452210037,
+      "sha256": "c71bdb3c539a2654f3ac9c59268935edf5447402a287741df7c342a5c3a713d9"
+    },
+    {
+      "id": "data-007",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-007.zip",
+      "size": 1454004696,
+      "unpackedSize": 1453991192,
+      "sha256": "c98c348fa95978beffbc5efff1749d532288d9dc3ee1c255af70689ffbd1ce8e"
+    },
+    {
+      "id": "data-008",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-008.zip",
+      "size": 1462913449,
+      "unpackedSize": 1462861757,
+      "sha256": "b8aed747faab4f6565bb62dce14ee013f95c35ae8426b5c990b929f577415480"
+    },
+    {
+      "id": "data-009",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-009.zip",
+      "size": 1462867356,
+      "unpackedSize": 1462753792,
+      "sha256": "629153e99f1268fb005d4367dd692dc8e5e242994bc7569021a4e081c41ac5c8"
+    },
+    {
+      "id": "data-010",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-010.zip",
+      "size": 1456323327,
+      "unpackedSize": 1456072919,
+      "sha256": "a787dfa06e6cf9ffa1216970b6fc6674a93b80e7dbb3675ec482eefd5983d94a"
+    },
+    {
+      "id": "data-011",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-011.zip",
+      "size": 94280406,
+      "unpackedSize": 94273880,
+      "sha256": "0d4f5ab31b686e8690b5f8d04e7249efe3f0938ed3db66783723bef4c1b01a18"
+    }
+  ],
+  "downloadBytes": 14441780035,
+  "installedBytes": 14683953444,
+  "files": 12481,
+  "app": {
+    "version": "0.1.0",
+    "versionName": "9.0.0-offline.1",
+    "versionCode": 9001,
+    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-offline-v0.1.0.apk",
+    "size": 147921186,
+    "sha256": "176d4a851c9fda25e9a170752e74a1e57ff1c4da0bac45cd4b89183ca38b58e2"
+  }
+}

@@ -1,0 +1,98 @@
+{
+ "sources": [
+  "https://www.reddit.com/r/FFBraveExvius/comments/9ze2ac/some_kind_of_guide_friends_gifts/"
+ ],
+ "note": "Documented retail gifts: 20 gil, 10 friend points, or one elemental cryst. Stable local service IDs retain native INITIAL_GIFT_ID=10. Local companion sends and reciprocal receipts are limited to one per friend per UTC day.",
+ "rows": [
+  {
+   "Utx8P1Qo": "10",
+   "YWF08vZS": "30",
+   "6uIYE15X": "0",
+   "Qy5EvcK1": "20",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "20",
+   "YWF08vZS": "51",
+   "6uIYE15X": "0",
+   "Qy5EvcK1": "10",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "30",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000100",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "40",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000200",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "50",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000300",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "60",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000400",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "70",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000500",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "80",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000600",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "90",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000700",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  },
+  {
+   "Utx8P1Qo": "100",
+   "YWF08vZS": "20",
+   "6uIYE15X": "201000800",
+   "Qy5EvcK1": "1",
+   "8DZfvju4": "1",
+   "VjJQ51uG": "2016-01-01 00:00:00",
+   "m8ivD4NX": "2099-12-31 23:59:59"
+  }
+ ]
+}

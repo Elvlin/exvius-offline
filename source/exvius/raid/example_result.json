@@ -1,0 +1,60 @@
+{
+  "model_only": true,
+  "client_acceptance": false,
+  "cleared_in_trace": true,
+  "turns_used": 6,
+  "hp_removed": 100,
+  "submitted_damage": 100,
+  "overkill_damage": 0,
+  "breaks_triggered": 2,
+  "turns": [
+    {
+      "turn": 1,
+      "hp_remaining": 90,
+      "broken_during_turn": false,
+      "break_triggered": true,
+      "broken_turns_remaining": 3,
+      "bp_remaining": 0
+    },
+    {
+      "turn": 2,
+      "hp_remaining": 70,
+      "broken_during_turn": true,
+      "break_triggered": false,
+      "broken_turns_remaining": 2,
+      "bp_remaining": 0
+    },
+    {
+      "turn": 3,
+      "hp_remaining": 50,
+      "broken_during_turn": true,
+      "break_triggered": false,
+      "broken_turns_remaining": 1,
+      "bp_remaining": 0
+    },
+    {
+      "turn": 4,
+      "hp_remaining": 30,
+      "broken_during_turn": true,
+      "break_triggered": false,
+      "broken_turns_remaining": 0,
+      "bp_remaining": 30000
+    },
+    {
+      "turn": 5,
+      "hp_remaining": 20,
+      "broken_during_turn": false,
+      "break_triggered": true,
+      "broken_turns_remaining": 3,
+      "bp_remaining": 0
+    },
+    {
+      "turn": 6,
+      "hp_remaining": 0,
+      "broken_during_turn": true,
+      "break_triggered": false,
+      "broken_turns_remaining": 2,
+      "bp_remaining": 0
+    }
+  ]
+}
