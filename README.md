@@ -1,8 +1,8 @@
 # Exvius Offline
 
-A fan-made preservation project that brings **Final Fantasy Brave Exvius** to offline play using the original Global game client.
+A fan-made preservation project for **Final Fantasy Brave Exvius** .
 
-Download the game data once, then play on your device without the retired game servers. Your progress is saved locally. An internet connection is only needed for the initial download and to receive updates.
+Download the game data once, then play on your device fully offline. Your progress is saved locally. An internet connection is only needed for the initial download.
 
 **This is an unofficial fan project. It is not affiliated with or endorsed by Square Enix or gumi.**
 
@@ -14,13 +14,10 @@ Download the game data once, then play on your device without the retired game s
 
 ## What this project changes
 
-- Replaces the retired server connection with game logic running on your device.
 - Saves your campaign, units, inventory and progress locally.
-- Makes the preserved story, explorations, towns and event content available through the original game interface.
-- Adapts summons, shops, crafting, raids and other supported systems for local play.
 - Lets you browse preserved summon and event content outside its original calendar dates.
-- Repairs missing artwork, text, menu interactions and compatibility problems as development continues.
-- Separates the app from the game data, so an app update does not require downloading every game file again.
+- Farm stage to keep getting more lapis.
+- 
 
 This is an active preservation project, not a finished replacement for every feature of the online service. Some advanced systems and event interactions are still being completed. Official accounts, purchases and online services are not restored.
 
