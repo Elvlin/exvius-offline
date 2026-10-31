@@ -33,14 +33,6 @@
       "sha256": "bfac41cdfe9ab7a3f34a84e199b4d510b7680b1ca8d6b10268cf01d7e02e6eaa",
       "bytes": 34072
     },
-    "test_results.txt": {
-      "sha256": "28ff974b73d0af3580679857449233640648baab660de75858babdfa424a2692",
-      "bytes": 773
-    },
-    "execution_metrics.json": {
-      "sha256": "377d43354e063e8e754758b145c9d535e2c192f7817b152e6a2c9cb6ee05ffd7",
-      "bytes": 665
-    },
     "README.md": {
       "sha256": "1aadd2b3ef5382f09f71d4d5938aa7ec5d142671815cdf2d81b5f562e5b6593b",
       "bytes": 4968

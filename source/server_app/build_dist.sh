@@ -50,11 +50,8 @@ say "checking the two AES backends agree (openssl CLI vs the bundled cryptograph
 say "checking the cert generator (in-process CA + leaf; subject hash vs openssl)"
 "$BUILD/venv/bin/python" "$WORK/harness/cert_check.py"
 
-# The dispatch table is generated, engine-side data: ALWAYS rebuild it (a stale one ships silently
-# otherwise), and add it beside the frozen modules (the engine resolves HERE/endpoints.json when out/
-# is absent).
-say "generating the dispatch table (harness/build_endpoints.py)"
-( cd "$WORK" && "$PY" harness/build_endpoints.py >/dev/null )
+# The dispatch table is the committed source/server/endpoints.json; the *.json glob below already
+# adds it beside the frozen modules, where the engine resolves HERE/endpoints.json.
 
 # 2. the frozen engine. Data files land beside the frozen modules, which is where the engine reads
 # them (HERE-relative), including the break table and this table.
@@ -66,8 +63,7 @@ done
 DATA_ARGS+=(--add-data "$ENGINE_SRC/content:content"
             --add-data "$ENGINE_SRC/assets:assets"
             --add-data "$ENGINE_SRC/webcontent:webcontent"
-            --add-data "$HARNESS/break_status_community.json:."
-            --add-data "$WORK/out/endpoints.json:.")
+            --add-data "$HARNESS/break_status_community.json:.")
 "$BUILD/venv/bin/pyinstaller" --noconfirm --clean --onefile \
   --name ffbe-engine \
   --distpath "$BUILD/pyi-dist" --workpath "$BUILD/pyi-work" --specpath "$BUILD/pyi-spec" \
@@ -125,7 +121,7 @@ if [ -d "$WORK/../mst_decoded" ] && [ -d "$WORK/out" ]; then
   # One real encrypted request/response. The in-process goldens cannot see the wire cipher, so without this
   # a request-time crypto regression in the FROZEN engine would ship (audit F1, 2026-10-16).
   PATH="$SMOKE_BIN" "$BUILD/venv/bin/python" "$WORK/harness/wire_probe.py" --port "$SMOKE_PORT" \
-      --ca "$SMOKE_ROOT/certs/ca.pem" --endpoints "$WORK/out/endpoints.json" \
+      --ca "$SMOKE_ROOT/certs/ca.pem" --endpoints "$ENGINE_SRC/endpoints.json" \
     || { echo "wire probe failed: the frozen engine did not answer an encrypted request" >&2; \
          "$STAGE/ffbe-server-app" stop --data "$SMOKE_ROOT" >/dev/null || true; exit 1; }
   "$STAGE/ffbe-server-app" stop --data "$SMOKE_ROOT" >/dev/null || true
