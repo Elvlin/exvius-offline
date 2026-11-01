@@ -95,12 +95,15 @@ export function clampMapScroll(x, y, columns, rows, width, height) {
   };
 }
 
-export function cutsceneScrollFloor(resource, mapId, referenceHeight, viewportHeight) {
+export function cutsceneScrollFloor(resource, mapId, referenceHeight, viewportHeight, eventResource = '') {
   // Earth Shrine Exit, event 111010102, map 65: the original camera is
   // (406,2146), followed by a horizontal pan of 580. Preserve that shot's
   // authored upper edge. Its original 432px dialogue panel leaves 704px
   // of the 1136px reference canvas for the shot above the panel.
+  // The opening (111010105) shares this map, but its shrine camera is at
+  // y=840. Applying the later airship shot's floor hides both characters.
   if (!/(^|[/_])111010100(?:[._/]|$)/.test(resource) || mapId !== 65 ||
+      !/(^|[/_])111010102(?:[._/]|$)/.test(eventResource) ||
       !Number.isFinite(referenceHeight) || referenceHeight <= 0 ||
       !Number.isFinite(viewportHeight) || viewportHeight <= referenceHeight) return 0;
   return Math.max(0, 2146 - Math.max(0, referenceHeight - 432) / 2);
@@ -432,6 +435,10 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
   // larger than a map. Clamp to the actual nonnegative map-scroll interval.
   const reportedMaps = new Set();
   const mapResources = new Map();
+  const mapEvents = new Map();
+  retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager10initializeEP9GameSceneN7cocos2d4Vec2E'), {
+    onEnter(args) { mapEvents.delete(args[0].toString()); }
+  }));
   let airshipPanel = null;
   let panelSearch = '';
   let panelSearchFrames = 0;
@@ -581,6 +588,16 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       }
     }
   }));
+  // GL9 returns a borrowed std::string reference at AppendEventData + 0x30.
+  // Read the package while the original loader owns it; retain only its ID.
+  const appendCpkName = native('_ZNK15AppendEventData10getCpkNameEv', 'pointer', ['pointer']);
+  retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager14loadAppendDataEP15AppendEventDatai'), {
+    onEnter(args) {
+      const event = args[1].isNull() ? '' : readMapResource(appendCpkName(args[1]));
+      mapEvents.set(args[0].toString(), event);
+      note('MAP_EVENT_PACKAGE resource=' + event);
+    }
+  }));
   retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager11updateLayerEv'), {
     onEnter(args) {
       const manager = this.manager = args[0];
@@ -588,7 +605,8 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       if (data.isNull()) return;
       const height = manager.add(0x256c).readFloat();
       const resource = mapResources.get(manager.toString()) || '';
-      const floor = cutsceneScrollFloor(resource, mapId(data), reference.height, height);
+      const floor = cutsceneScrollFloor(resource, mapId(data), reference.height, height,
+        mapEvents.get(manager.toString()) || '');
       if (floor <= 0) return;
       // Adjust the actual camera before native layout, so scenery and actors
       // share the same transform during the pan and dialogue transitions.
@@ -609,7 +627,8 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       if (!scroll) return;
       manager.add(0x2558).writeFloat(scroll.x);
       manager.add(0x255c).writeFloat(scroll.y);
-      if (cutsceneScrollFloor(resource, mapId(data), reference.height, height) > 0) {
+      if (cutsceneScrollFloor(resource, mapId(data), reference.height, height,
+        mapEvents.get(manager.toString()) || '') > 0) {
         // The original forest was authored above the message panel. During
         // its text-free pan keep that same native background below the map;
         // expanding the exposed map instead reveals unpainted cells.

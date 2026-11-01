@@ -116,7 +116,12 @@ console.log('Bottom menu seated on the screen edge with constant button proporti
 assert.deepEqual(clampMapScroll(-20, -40, 14, 14, 640, 1358), {x:0,y:0});
 assert.deepEqual(clampMapScroll(9999, 9999, 32, 40, 640, 1358), {x:1216,y:962});
 assert.equal(clampMapScroll(0, 0, 0, 40, 640, 1358), null);
-assert.equal(cutsceneScrollFloor('Ver36_111010100.cpk', 65, 1136, 1358), 1794);
+assert.equal(cutsceneScrollFloor('Ver36_111010100.cpk', 65, 1136, 1358, 'Ver34_111010102.cpk'), 1794);
+for (const event of ['', '111010105', 'Ver36_111010105.cpk', '111010101', '211010102'])
+  assert.equal(cutsceneScrollFloor('111010100', 65, 1136, 1358, event), 0);
+assert.equal(cutsceneScrollFloor('111010100', 61, 1136, 1358, '111010102'), 0);
+assert.equal(cutsceneScrollFloor('211010100', 65, 1136, 1358, '111010102'), 0);
+assert.equal(cutsceneScrollFloor('111010100', 65, 1136, 1136, '111010102'), 0);
 assert.equal(cutsceneScrollFloor('111010100', 65, 1136, 1136), 0);
 assert.equal(cutsceneScrollFloor('111010100', 61, 1136, 1358), 0);
 assert.equal(cutsceneScrollFloor('211010100', 65, 1136, 1358), 0);
