@@ -64,6 +64,35 @@ class LocalGameIntegration(unittest.TestCase):
         from player_state import PlayerState
         return PlayerState.load(str(self.state_file))
 
+    def test_fresh_campaign_does_not_skip_opening_or_clear_first_stage(self):
+        from ffbe_config import SWITCH_BASE_INDICES
+        self.assertEqual(SWITCH_BASE_INDICES, ())
+        player = self.game.server.State.player
+        reply = self.exchange('InitializeRequest', {})
+        row = next(r for rows in reply.values() if isinstance(rows, list)
+                   for r in rows if isinstance(r, dict) and r.get('5opcUT9t') == '101')
+        login = self.exchange('GetUserInfoRequest', {})
+        self.assertEqual(login['8J1R5PXG'], reply['8J1R5PXG'])
+        for index in (0, 117):
+            digit, bit = divmod(index, 4)
+            self.assertFalse(int(row['juA0Z4m7'][digit], 16) & (8 >> bit))
+        self.assertEqual(player.data['progress']['cleared_missions'], [])
+        self.load_mission('1110100')
+        self.assertEqual(player.data['progress']['cleared_missions'], [])
+        self.assertNotIn(0, player.switches['101'])
+        self.assertNotIn(117, player.switches['101'])
+
+    def test_login_preserves_existing_opening_and_story_progress(self):
+        player = self.game.server.State.player
+        player.grant_switch('101', 0)
+        player.grant_switch('101', 117)
+        player.data['progress']['cleared_missions'] = ['1110100', '1110101']
+        player.save(str(self.state_file), force=True)
+        self.game.server.State.player = player = self.restored_player()
+        self.exchange('GetUserInfoRequest', {})
+        self.assertTrue({0, 117}.issubset(player.switches['101']))
+        self.assertEqual(player.data['progress']['cleared_missions'], ['1110100', '1110101'])
+
     def test_friend_pages_use_local_profiles_and_search_without_state_changes(self):
         from ffbe_friends import load_friends
         friend = str(load_friends()[0]['friend_id'])

@@ -763,7 +763,7 @@ def echo_client_group(spec, plaintext, group: str):
     out = dict(spec)
     out[group] = rows
     return out
-def serve_switches(spec):
+def serve_switches(spec, reply_id=None):
     """Rewrite every TRACKED switch type's container in this reply from the one tracked state.
 
     Two things this fixes at once. (a) The container replaces the whole type, so two replies carrying
@@ -775,11 +775,13 @@ def serve_switches(spec):
     group. This is what makes the client's "seen this hint" flags stick: they are switch type 10, and no
     payload row ever declared type 10, so before this they were recorded (`record_pushed_switches`) and
     then never served -- every session re-popped every first-visit hint. A reply with no switch group is
-    left exactly as it is (the flags ride the login reply, which carries `8J1R5PXG`).
+    left exactly as it is, except the login replies publish the authoritative
+    containers before the native client can reuse an earlier campaign's flags.
     """
     if not isinstance(spec, dict):
         return spec
-    # Type 101 keeps the historical baseline indices; see SWITCH_BASE_INDICES.
+    # Track an empty mission container for a fresh campaign. Never inherit the
+    # captured response's tutorial and first-stage completion flags.
     if SWITCH_TYPE_MISSION not in State.player.switches:
         State.player.switches[SWITCH_TYPE_MISSION] = set(SWITCH_BASE_INDICES)
     # The offline event archive is available from Home. Use its original
@@ -798,6 +800,11 @@ def serve_switches(spec):
     switch_groups = [key for key, rows in spec.items()
                      if isinstance(rows, list)
                      and any(isinstance(r, dict) and SWITCH_TYPE_FIELD in r for r in rows)]
+    if not switch_groups and wanted and reply_id in ('75fYdNxq', 'X07iYtp5'):
+        out = dict(spec)
+        out['8J1R5PXG'] = [{SWITCH_TYPE_FIELD: stype, SWITCH_BITS_FIELD: bits}
+                            for stype, bits in sorted(wanted.items())]
+        return out
     if not switch_groups and wanted and RESULT_TAG in spec:
         attempt = State.player.data.get('exvius_repeat', {}).get('attempt', {})
         if attempt.get('status') == 'completed':

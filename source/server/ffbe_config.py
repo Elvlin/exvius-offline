@@ -540,17 +540,12 @@ SWITCH_BITS_FIELD = "juA0Z4m7"    # the bit container
 SWITCH_TYPE_MISSION = "101"       # the mission switch type
 PUSHED_SWITCH_GROUP = "0jqUZuT1"  # update_switch_info_response: the client's granted-switch report
 PUSHED_SWITCH_FIELD = "dIPkNn61"  # lexicon: GrantedSwitchId
-# Baseline indices, i.e. exactly what the static payload served: 0 = `10002100` (1110101's clear flag, which
-# is also 1110103's requirement) and 117 = `10001100` (the deliberate 1110100/FMV skip -- dropping it brings
-# the pretutorial movie back). Mission flags accrue on top as missions actually clear.
-#
-# `SWITCH_BASE_INDICES=0` is the ONE variable that re-exposes the pretutorial FMV (`docs/notes/fmv_pretutorial_brief.md`,
-# SW-35): 117 is 1110100's own clear switch (`F_MISSION_MST.dIPkNn61`), and with it unset `HomeScene::getTutoState()`
-# (`0x1e48fa4`) returns 0, so `HomeScene::initialize` (`0x1e49988`) auto-starts `MissionStartScene(1110100)` and
-# `changeNextScene` (`0x1e622a4`) constructs `CreateUserSpecificMovieScene` -> `op_clip.usm`. The default keeps the
-# skip: a fresh account still must not wedge on the movie until it plays.
+# New campaigns have no cleared missions. The old captured baseline set index
+# 0 (Earth Shrine Entrance, 1110101) and 117 (opening tutorial, 1110100), which
+# skipped the opening movie and made the first stage appear completed.
+# Keep explicit baseline overrides for focused development runs only.
 SWITCH_BASE_INDICES = tuple(
-    int(x) for x in os.environ.get("SWITCH_BASE_INDICES", "0,117").split(",") if x.strip()
+    int(x) for x in os.environ.get("SWITCH_BASE_INDICES", "").split(",") if x.strip()
 )
 SWITCH_CONTAINER_MIN = 30
 
