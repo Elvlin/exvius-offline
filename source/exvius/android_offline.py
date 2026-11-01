@@ -426,6 +426,25 @@ def prepare_offline_code(client):
                 line = '^'.join([fields[0]] + [OFFLINE_TEXT[fields[0]]] * (len(fields) - 1)) + ending
             lines.append(line)
         write_changed(path, ''.join(lines))
+    # Platform and billing diagnostics can run before Cocos has an Activity.
+    # Their native rlog bridge then aborts on a null Java object, notably on
+    # the first launch from Android's package installer. Keep these messages
+    # in Android's logger without depending on the game's native UI lifecycle.
+    report_call = re.compile(
+        r'(?m)^(\s*)invoke-static \{([^}]+)\}, '
+        r'Lcom/square_enix/android_googleplay/FFBEWW/LapisJNI;->rlogs?'
+        r'\(Ljava/lang/String;Ljava/lang/String;Z\)V$')
+    for relative in (PACKAGE / 'PlatformUtils.smali', PACKAGE / 'PlatformUtilsGoogle.smali',
+                     PACKAGE / 'webview/LapisWebView.smali',
+                     Path('com/sg/gumi/GooglePlayBilling.smali'),
+                     Path('com/soomla/billing/BillingServiceV3.smali')):
+        target = destination / relative
+        body = target.read_text(encoding='utf-8')
+        def android_log(match):
+            message, tag, _ = (part.strip() for part in match[2].split(','))
+            return (match[1] + f'invoke-static {{{tag}, {message}}}, '
+                    'Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I')
+        write_changed(target, report_call.sub(android_log, body))
     # Apktool assembles this source tree instead of copying the original first DEX.
     (client / 'classes.dex').unlink(missing_ok=True)
     (client / 'classes3.dex').unlink(missing_ok=True)
