@@ -683,3 +683,74 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
     }
   }));
 }
+
+// Movie geometry only. Metadata arrives once when the existing CRI renderer opens a movie.
+export function fitMovie(bounds, sourceWidth, sourceHeight) {
+  if (![bounds.width, bounds.height, sourceWidth, sourceHeight].every(v => Number.isFinite(v) && v > 0))
+    return null;
+  const scale = Math.min(bounds.width / sourceWidth, bounds.height / sourceHeight);
+  return {...bounds, width: sourceWidth * scale, height: sourceHeight * scale};
+}
+
+export function installMovieAspectFit(module, retained, note) {
+  const native = (name, result, args) => new NativeFunction(module.getExportByName(name), result, args);
+  const handle = native('_ZN10cricocos2d4mana6Sprite15getManaPlayerHnEv', 'pointer', ['pointer']);
+  const quadName = '_ZN10cricocos2d4mana6Sprite15setQuadVerticesERKN7cocos2d4RectE';
+  const setQuad = native(quadName, 'void', ['pointer', 'pointer']);
+  const movies = new Map();
+  let applying = false;
+  function rectangle(value) {
+    const result = Memory.alloc(16);
+    [value.x, value.y, value.width, value.height].forEach((v, i) => result.add(i * 4).writeFloat(v));
+    return result;
+  }
+  function fitted(movie) {
+    return movie.bounds && movie.source && fitMovie(movie.bounds, movie.source.width, movie.source.height);
+  }
+  retained.push(Interceptor.attach(module.getExportByName('_ZN10cricocos2d4mana6Sprite16createWithPlayerEv'), {
+    onLeave(sprite) {
+      if (sprite.isNull()) return;
+      const node = ptr(sprite.toString());
+      const player = handle(node);
+      if (player.isNull()) return;
+      const movie = {sprite: node, player, bounds: null, source: null};
+      movies.set('sprite:' + node, movie);
+      movies.set('player:' + player, movie);
+    }
+  }));
+  retained.push(Interceptor.attach(module.getExportByName(quadName), {
+    onEnter(args) {
+      if (applying) return;
+      const movie = movies.get('sprite:' + args[0]);
+      if (!movie) return;
+      movie.bounds = {x: args[1].readFloat(), y: args[1].add(4).readFloat(),
+        width: args[1].add(8).readFloat(), height: args[1].add(12).readFloat()};
+      const fit = fitted(movie);
+      if (fit) { this.rectangle = rectangle(fit); args[1] = this.rectangle; }
+    }
+  }));
+  retained.push(Interceptor.attach(module.getExportByName(
+    '_ZN10cricocos2d4mana6detail26RendererResourceFactorySet20createRenderResourceERK16CriManaMovieInfoP16CriManaPlayerTag'), {
+    onEnter(args) {
+      const movie = movies.get('player:' + args[2]);
+      if (!movie) return;
+      // First video stream width/height in the pinned GL9 CriManaMovieInfo layout.
+      movie.source = {width: args[1].add(20).readU32(), height: args[1].add(24).readU32()};
+      const fit = fitted(movie);
+      if (!fit) return;
+      applying = true;
+      try { setQuad(movie.sprite, rectangle(fit)); }
+      finally { applying = false; }
+      note('MOVIE_ASPECT_FIT source=' + movie.source.width + 'x' + movie.source.height +
+        ' viewport=' + movie.bounds.width + 'x' + movie.bounds.height + ' fitted=' + fit.width + 'x' + fit.height);
+    }
+  }));
+  retained.push(Interceptor.attach(module.getExportByName('_ZN10cricocos2d4mana6SpriteD1Ev'), {
+    onEnter(args) {
+      const movie = movies.get('sprite:' + args[0]);
+      if (!movie) return;
+      movies.delete('sprite:' + movie.sprite);
+      movies.delete('player:' + movie.player);
+    }
+  }));
+}

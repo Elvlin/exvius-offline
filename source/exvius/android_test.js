@@ -5,7 +5,7 @@ import { createNativeBridge } from './native_bridge.js';
 // replacement ArtMethods in frida-java-bridge 7.0.13 crash Android 16 GC walks.
 import { installSummonMenu } from './summon_menu.js';
 import { installSummonArt } from './summon_art.js';
-import { installAdaptiveDisplay } from './android_display.js';
+import { installAdaptiveDisplay, installMovieAspectFit } from './android_display.js';
 import { installTitleMenu } from './title_menu.js';
 import { installRaidMenu } from './raid_menu.js';
 import { installMenuAssets } from './menu_assets.js';
@@ -131,6 +131,7 @@ rpc.exports = {
         }
         installing = 'display';
         installAdaptiveDisplay(module, retained, note, bridge);
+        installMovieAspectFit(module, retained, note);
         function text(p) {
           const flag = p.readU8();
           const length = (flag & 1) ? p.add(8).readU64().toNumber() : flag >>> 1;

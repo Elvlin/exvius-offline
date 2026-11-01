@@ -271,6 +271,19 @@ def prepare_offline_code(client):
         source.read_text(encoding='utf-8'))
     if count != 1:
         raise ValueError('Expected one original URI video loader.')
+    # Keep the existing Android movie player's centered aspect-fit path enabled.
+    size_pattern = r'(?ms)^\.method public fixSize\(IIII\)V\n(.*?)^\.end method'
+    match = re.search(size_pattern, body)
+    if not match:
+        raise ValueError('Original Android movie sizing method is missing.')
+    sizing = match.group(1)
+    sizing, count = re.subn(
+        r'    iget-boolean v2, p0, Lorg/cocos2dx/lib/Cocos2dxVideoView;->mKeepRatio:Z',
+        '    const/4 v2, 0x1\n    iput-boolean v2, p0, Lorg/cocos2dx/lib/Cocos2dxVideoView;->mKeepRatio:Z', sizing)
+    if count != 1:
+        raise ValueError('Expected one Android movie aspect-ratio branch.')
+    sizing = sizing.replace('if-ge v2, v3, :cond_2', 'if-gt v2, v3, :cond_2')
+    body = body[:match.start(1)] + sizing + body[match.end(1):]
     write_changed(third / source.relative_to(original_third), body)
     source = original_third / 'org/cocos2dx/lib/Cocos2dxDownloader$4.smali'
     body = replace_method(source.read_text(encoding='utf-8'), 'public run()V', '''    .locals 1

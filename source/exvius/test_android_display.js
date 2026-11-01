@@ -3,8 +3,18 @@ const fs = require('node:fs');
 
 (async () => {
 const source = fs.readFileSync(require('node:path').join(__dirname, 'android_display.js'), 'utf8');
-const { chooseResolution, anchorLayout, collapseCampaignBanner, clampMapScroll, cutsceneScrollFloor, clampAnimationFrame } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+const { fitMovie, chooseResolution, anchorLayout, collapseCampaignBanner, clampMapScroll, cutsceneScrollFloor, clampAnimationFrame } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
 
+// Movies retain their source proportions within portrait, landscape and square viewports.
+for (const [sw, sh] of [[640, 1136], [720, 1280], [1920, 1080], [1280, 720], [720, 480]]) {
+  for (const [width, height] of [[640, 1358], [1080, 2400], [2400, 1080], [800, 800]]) {
+    const fit = fitMovie({x:0, y:0, width, height}, sw, sh);
+    assert.ok(Math.abs(fit.width / fit.height - sw / sh) < 1e-9);
+    assert.ok(fit.width <= width + 1e-9 && fit.height <= height + 1e-9);
+    assert.ok(Math.abs(fit.width - width) < 1e-9 || Math.abs(fit.height - height) < 1e-9);
+  }
+}
+assert.equal(fitMovie({x:0,y:0,width:640,height:1136}, 0, 720), null);
 assert.equal(clampAnimationFrame(60, 60), 59);
 assert.equal(clampAnimationFrame(59, 60), 59);
 assert.equal(clampAnimationFrame(0, 60), 0);
