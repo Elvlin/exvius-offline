@@ -124,6 +124,33 @@ export function installHomeCarousel(module, note, retained) {
   const expeditionManager = native('_ZN13sgExpdManager6sharedEv', 'pointer', []);
   const expeditionFlag = native('_ZNK13sgExpdManager14getFeatureFlagEv', 'int', ['pointer']);
   const arenaOpen = native('_ZN9HomeScene13isOpenedArenaEv', 'bool', ['pointer']);
+  // Home needs the permanent Item World entry, not a scan of every archived
+  // story/event mission. 7860101 is the shipped subtype-6 first floor. Keep
+  // the native borrowed master pointer and all non-Home lookups unchanged.
+  const missions = native('_ZN14MissionMstList6sharedEv', 'pointer', []);
+  const mission = native('_ZN14MissionMstList13getMissionMstEi', 'pointer', ['pointer', 'int']);
+  let homeMissionThread = null;
+  for (const symbol of ['_ZN9HomeScene10initializeEv', '_ZN9HomeScene18updateMainMenuIconEv',
+                        '_ZN9HomeScene10touchEndedEPN7cocos2d5TouchEPNS0_5EventE'])
+    retained.push(Interceptor.attach(module.getExportByName(symbol), {
+      onEnter() { this.previous = homeMissionThread; homeMissionThread = this.threadId; this.started = Date.now(); },
+      onLeave() {
+        homeMissionThread = this.previous;
+        if (Date.now() - this.started > 100) note('HOME_NATIVE_LAYOUT method=' + symbol + ' ms=' + (Date.now() - this.started));
+      }
+    }));
+  let originalMission;
+  const homeMission = new NativeCallback(function (kind) {
+    if (kind === 6 && homeMissionThread === Process.getCurrentThreadId()) return mission(missions(), 7860101);
+    const started = Date.now(), result = originalMission(kind);
+    if (Date.now() - started > 100) note('HOME_MISSION_LOOKUP kind=' + kind + ' scope=' + homeMissionThread +
+      ' thread=' + Process.getCurrentThreadId() + ' ms=' + (Date.now() - started));
+    return result;
+  }, 'pointer', ['int']);
+  originalMission = new NativeFunction(Interceptor.replaceFast(
+    module.getExportByName('_ZN8GateUtil22getInSessionMissionMstEi'), homeMission),
+    'pointer', ['int'], {exceptions: 'propagate'});
+  retained.push(homeMission);
   const expeditionCtor = native('_ZN18sgExpdConnectSceneC1Ev', 'void', ['pointer']);
   const expeditionRequestCtor = native('_ZN22sgExpdQuestInfoRequestC1Ev', 'void', ['pointer']);
   const expeditionParam = native('_ZN18sgExpdConnectScene8setParamEP11RequestDatai',
@@ -179,22 +206,31 @@ export function installHomeCarousel(module, note, retained) {
       if (!frame.isNull()) spriteFrame(card.art.node, frame);
     });
   }
-  // These are the two v9 unit-detail panels behind the main menu. They do
-  // not belong to the legacy carousel. Preserve their native construction
-  // and ownership, but hide just those two background sprites.
-  const detailScopes = [];
+  // The v9 party-detail panels sit behind the restored carousel. Hide their
+  // complete contents, including labels and gauges, not just the backdrop.
   retained.push(Interceptor.attach(module.getExportByName('_ZN9HomeScene25setMainMenuBackInfoLayoutEv'), {
-    onEnter() { detailScopes.push({thread: this.threadId, remaining: 2}); },
-    onLeave() { detailScopes.pop(); }
-  }));
-  retained.push(Interceptor.attach(module.getExportByName(
-    '_ZN11LayoutUtils39createGameScale9SpriteBySpriteFrameNameERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERKN7cocos2d4RectEiffffiRKNS9_4Vec2E'), {
-    onLeave(result) {
-      const scope = detailScopes[detailScopes.length - 1];
-      if (!scope || scope.thread !== this.threadId || scope.remaining-- <= 0 || result.isNull()) return;
-      const sprite = cast(result, nodeType, spriteType, 0);
-      if (sprite.isNull()) nodeVisible(result, 0); else spriteVisible(sprite, 0);
+    onEnter() {
+      const thread = this.threadId, nodes = this.nodes = new Map();
+      // Collect only while this Home layout is constructed. Global addChild
+      // callbacks otherwise run for every node on every screen.
+      this.collectors = [
+        ['_ZN9GameLayer8addChildEiiPN7cocos2d4NodeE', 3],
+        ['_ZN9GameLayer8addChildEiPN7cocos2d4NodeE', 2]
+      ].map(([symbol, argument]) => Interceptor.attach(module.getExportByName(symbol), {
+        onEnter(args) {
+          const node = args[argument];
+          if (this.threadId === thread && !node.isNull()) nodes.set(node.toString(), node);
+        }
+      }));
+    },
+    onLeave() {
+      for (const collector of this.collectors) collector.detach();
+      for (const node of this.nodes.values()) visible(node, 0);
     }
+  }));
+  retained.push(Interceptor.attach(module.getExportByName('_ZN15sgHomeIconUtils10isDispIconEi'), {
+    onEnter(args) { this.hidden = [16, 19].includes(args[1].toInt32()); },
+    onLeave(result) { if (this.hidden) result.replace(0); }
   }));
   function labelText(label) {
     // BitmapLabelEx::setString starts with add x0,x0,#0x548 in the pinned
@@ -302,6 +338,13 @@ export function installHomeCarousel(module, note, retained) {
   const nativeEnd = native('_ZN9HomeScene10touchEndedEPN7cocos2d5TouchEPNS0_5EventE',
     'bool', ['pointer', 'pointer', 'pointer']);
   const scenes = new Map();
+  retained.push(Interceptor.attach(module.getExportByName('_ZN16HomeMainMenuIcon23setVisibleIconTapSpriteEb'), {
+    onEnter(args) {
+      for (const ui of scenes.values()) {
+        if (ui.cards.some(card => card.owner?.equals(args[0]))) { args[1] = ptr(0); break; }
+      }
+    }
+  }));
   function dispose(ui) {
     for (const player of ui.players.splice(0)) {
       ssRemove(ssList(), player);
@@ -421,7 +464,17 @@ export function installHomeCarousel(module, note, retained) {
       visible(card.icon.node, 0);
       hideOrbs(card.owner, 0, 0);
       hideTap(card.owner, 0);
-      if (card.event) visible(card.event, 0);
+      if (card.event) {
+        // HomeMainMenuIcon +0x58 owns a cocos2d::__Array of event images,
+        // not a Node. setEventIcon allocates 0x38 bytes and fills that array.
+        const data = card.event.add(0x30).readPointer();
+        const count = data.readU64().toNumber(), items = data.add(0x10).readPointer();
+        for (let index = 0; index < count; index++) {
+          const image = items.add(index * Process.pointerSize).readPointer();
+          stopActions(image);
+          visible(image, 0);
+        }
+      }
       if (card.bg) visible(card.bg.node, 0);
     }
     const state = homeMenuState(beasts().add(0x30).readPointer().readS32(), expeditionFlag(expeditionManager()));
@@ -433,7 +486,8 @@ export function installHomeCarousel(module, note, retained) {
     ui.cards[5].open = true;
     // The original Home touch handler checks event availability on entry.
     ui.cards[6].open = true;
-    const carousel = ui.cards.slice(0, 5).filter(c => c.name !== 'Expedition' || state.expedition.visible);
+    const carousel = [0, 1, 5, 2, 3, 4].map(i => ui.cards[i])
+      .filter(c => c.name !== 'Expedition' || state.expedition.visible);
     if (!ui.carousel || carousel.length !== ui.carousel.length) {
       ui.position = 1; ui.snap = null; ui.carousel = carousel;
     }
@@ -451,9 +505,6 @@ export function installHomeCarousel(module, note, retained) {
     // Equipment Enhancement is the separate small Home command in the
     // original layout, not a fourth item fabricated for the sliding strip.
     const vortex = ui.cards[5];
-    ssPosition(vortex.animation, Math.round(170 * w / 640), 536);
-    ssAlpha(vortex.animation, 255);
-    vortex.box = {x: 170 * w / 640, y: 536, w: 240, h: 240};
     const now = Date.now();
     if (!ui.animationSamples || (ui.animationSamples === 1 && now - ui.animationStarted >= 1000)) {
       if (!ui.animationSamples) ui.animationStarted = now;
@@ -493,9 +544,25 @@ export function installHomeCarousel(module, note, retained) {
       const front = Math.cos(angle) >= 0;
       const rawX = carousel.length > 3 ? w / 2 + Math.sin(angle) * w * 344 / 640 /
         Math.sin(2 * Math.PI / carousel.length) : item.x;
-      rotateUpdate(card.renderer, rawX, ui.cy, front ? 2000 : 1800);
       const order = (front ? 2000 : 1800) - Math.round(Math.abs(item.distance) * 50);
       card.order = order;
+      if (card.animation) {
+        // Match HomeRotateMenuList::updatePosition's scale and centre
+        // transform. Using its input X directly put the side portal offscreen.
+        const distance = Math.abs(rawX - w / 2), ratio = Math.min(1, distance / 344);
+        const factor = front ? 1 - 0.25 * ratio : 0.5 + 0.25 * ratio;
+        const px = w / 2 + (rawX - w / 2) * factor;
+        ssPosition(card.animation, Math.round(px), Math.round(ui.cy));
+        const edge = ui.cards[1].renderer.add(0x430).readFloat();
+        const alpha = front ? 255 - 102 * ratio :
+          51 + 102 * Math.min(1, Math.abs((distance - edge) / (344 - edge)));
+        ssAlpha(card.animation, Math.trunc(alpha));
+        nodeScale(card.animation, 0.75 * factor, 0.75 * factor);
+        nodeOrder(card.animation, order);
+        card.box = {x: px, y: ui.cy, w: 240 * factor, h: 240 * factor};
+        continue;
+      }
+      rotateUpdate(card.renderer, rawX, ui.cy, front ? 2000 : 1800);
       nodeOrder(card.art.node, order);
       nodeOrder(card.pressed, order + 1);
       if (card.orbNodes) for (const node of card.orbNodes) nodeOrder(node, order + 1);
@@ -643,7 +710,7 @@ export function installHomeCarousel(module, note, retained) {
     begin(scene, touch) {
       const ui = scenes.get(scene.toString()), p = point(touch);
       if (!ui || !touchEnabled(scene) || !routeAllowed(scene)) return false;
-      const direct = ui.cards.slice(5).find(c => hit(c.box, p));
+      const direct = ui.cards.slice(6).find(c => hit(c.box, p));
       if (!direct && (p.y < ui.top || p.y > ui.bottomEdge)) return false;
       // All-at-once CANCEL may bypass the single-touch callback. Every
       // accepted DOWN starts fresh, even when Android reuses its Touch pointer.

@@ -80,6 +80,11 @@ def event_archive(game, selection=''):
         return json.dumps(result)
 
 
+def shop_archive(game, selection=''):
+    from exvius_shop_catalogue import labels
+    return json.dumps(labels())
+
+
 def raid_action(game, actor, skill, party):
     from exvius_raid_progress import record_party_action
     with game.server.STATE_LOCK:

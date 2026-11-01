@@ -8,7 +8,8 @@ from ffbe_state import State, _note
 
 def entry(spec, req):
     # Unit and prism choices are in the original cached F_GACHA_SELECT_* tables.
-    return _refresh(spec)
+    from exvius_shop_catalogue import entry as shop_entry
+    return shop_entry(spec, req)
 
 
 def _execute(spec, req, prism=False):
@@ -74,4 +75,6 @@ def select_prism(spec, req):
     return _execute(spec, req, prism=True)
 
 
-HANDLERS = {'6nTcSp4R': entry, 'xio14KrL': select_unit, 'bgast6dR': select_prism}
+from exvius_shop_catalogue import purchase as shop_purchase
+HANDLERS = {'6nTcSp4R': entry, 'xio14KrL': select_unit, 'bgast6dR': select_prism,
+            'W58vo4Hp': shop_purchase}

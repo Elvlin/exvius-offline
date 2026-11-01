@@ -502,7 +502,32 @@ def variable_store_check(spec, req):
              "I would gladly exchange items from my collection for auracite shards, kupo!",
              "Come back and see me once you have collected some auracite shards, kupo!"))
         if stores.get(iid, {}).get("kaG4xf3I") == "5"]
+    out['3VS1Bhmf'].extend(dict(row) for row in archived_store_schedules())
     return out
+
+
+@lru_cache(maxsize=1)
+def archived_store_schedules():
+    """Open recovered exchange stock through the native store schedule format."""
+    products = {}
+    medals = _table('F_MEDAL_EXCHANGE_MST', 'S21FT3L8')
+    for row in _rows('F_STORE_ITEM_MST'):
+        if str(row.get('YWF08vZS')) == '50':
+            product = medals.get(str(row.get('6uIYE15X')))
+            if product:
+                products.setdefault(str(row['Z20mNDvL']), product)
+    result, seen = [], set()
+    for row in _rows('F_GACHA_STORE_MST'):
+        iid = str(row['Z20mNDvL'])
+        product = products.get(iid)
+        if not product or iid in seen:
+            continue
+        seen.add(iid)
+        result.append({'Z20mNDvL': iid, 'za2xsDj5': iid, 'w7VR6ypY': '0',
+                       'VjJQ51uG': '2020-01-01 00:00:00', 'm8ivD4NX': '2099-12-31 23:59:59',
+                       'suR36Jpm': '20:' + str(product['ak2dhKm3']),
+                       '89YmCAzo': '', '0euar5mZ': ''})
+    return result
 
 
 @_action
@@ -535,14 +560,9 @@ def medal_exchange(spec, req):
         currency = _int(row["ak2dhKm3"], 1)
         _product(20, currency)
         costs.append({"kind": 20, "id": currency, "count": _int(row["Qy5EvcK1"]) * quantity})
-        for raw in str(row.get("7iJpH5zZ") or "").split(","):
-            fields = raw.split(":")
-            _require(len(fields) in (3, 4, 5), "unsupported medal reward metadata")
-            _require(len(fields) < 4 or fields[3] == "100", "non-guaranteed medal reward")
-            _require(len(fields) < 5 or (fields[0] == "10" and fields[4] == "1"),
-                     "unsupported medal unit level/metadata")
-            reward = {"kind": _int(fields[0], 1), "id": _int(fields[1], 1),
-                      "count": _int(fields[2], 1) * quantity}
+        from exvius_rewards import parse
+        for reward in parse(row.get('7iJpH5zZ')):
+            reward['count'] *= quantity
             rewards.append(reward)
         counts[iid] = bought + quantity
     _require(seen and rewards, "empty medal purchase")

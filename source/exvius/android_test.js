@@ -86,6 +86,28 @@ rpc.exports = {
         let installing = 'summon menu';
         try {
         const bridge = createNativeBridge(module);
+        // Android 16's Region parcel reader can pass a null AParcel during
+        // screenshot/accessibility requests. Its array reader dereferences
+        // that pointer before returning a status (the device crash is at
+        // ReadArray+0x34). Reject only that invalid input in this process.
+        // Valid parcels keep Android's original implementation and ABI.
+        const binder = Process.findModuleByName('libbinder_ndk.so');
+        const readArrayAddress = binder?.findExportByName('AParcel_readInt32Array');
+        if (readArrayAddress) {
+          let readArray;
+          let rejectedParcel = false;
+          const guardedArray = new NativeCallback(function (parcel, array, allocator) {
+            if (parcel.isNull()) {
+              if (!rejectedParcel) { note('ANDROID_INVALID_REGION_PARCEL_REJECTED'); rejectedParcel = true; }
+              return -22; // STATUS_BAD_VALUE
+            }
+            return readArray(parcel, array, allocator);
+          }, 'int', ['pointer', 'pointer', 'pointer']);
+          readArray = new NativeFunction(Interceptor.replaceFast(readArrayAddress, guardedArray),
+            'int', ['pointer', 'pointer', 'pointer'], {exceptions: 'propagate'});
+          retained.push(guardedArray);
+          note('ANDROID_REGION_PARCEL_GUARD_READY');
+        }
         if (parameters.mapInteractionAudit) installMapInteractionAudit(module, note, retained);
         installing = 'Home carousel';
         const homeCarousel = installHomeCarousel(module, note, retained);

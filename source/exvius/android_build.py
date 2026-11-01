@@ -238,6 +238,9 @@ def main():
         if activity.get(ANDROID + 'name') == original_package + '.Lapis':
             activity.set(ANDROID + 'label', label)
             activity.set(ANDROID + 'resizeableActivity', 'true')
+            # Reopening the download launcher must resume the running game.
+            # A second Lapis instance tears down Cocos when it finishes.
+            activity.set(ANDROID + 'launchMode', 'singleTask')
     app.set(ANDROID + 'debuggable', 'false' if args.release_code else 'true')
     if args.release_version:
         tree.getroot().set(ANDROID + 'versionName', args.release_version)

@@ -339,6 +339,8 @@ def prepare_offline_code(client):
 
     for source, target, methods in [
         (original / PACKAGE / 'LapisJNI.smali', destination / PACKAGE / 'LapisJNI.smali', {
+            'public static decodeFileForBase64WithNewCrypto(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;':
+                '    .locals 1\n    invoke-static {p0, p1, p2}, Lcom/exvius/local/LocalGameBridge;->decodeGameTable(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v0\n    return-object v0',
             'public static SendInvite(Ljava/lang/String;)Z': '    .locals 1\n    const/4 v0, 0x0\n    return v0',
             'public static shareUrl(Ljava/lang/String;Ljava/lang/String;)V': '    .locals 0\n    return-void',
             'public static oneStoreIapRequest(Ljava/lang/String;)V': '    .locals 0\n    return-void',

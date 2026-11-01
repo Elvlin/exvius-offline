@@ -77,6 +77,11 @@ def serve_lapis_shop(spec, reply_id, plaintext=None):
     base = diamonds.get('100', {})
     rate = Decimal(str(base.get('FBjo93gK') or '120')) / Decimal(str(base.get('AOHRcCC2') or '0.99'))
     out = copy.deepcopy(spec) if isinstance(spec, dict) else {}
+    if reply_id == user_info_id:
+        from exvius_actions_shops import archived_store_schedules
+        existing = {str(row.get('Z20mNDvL')): dict(row) for row in out.get('3VS1Bhmf', [])}
+        existing.update({row['Z20mNDvL']: dict(row) for row in archived_store_schedules()})
+        out['3VS1Bhmf'] = list(existing.values())
     definitions, items = {}, {}
     for payload in list(State.replies.values()) + [out]:
         if not isinstance(payload, dict):
@@ -114,6 +119,7 @@ def serve_lapis_shop(spec, reply_id, plaintext=None):
         'yZxOduZT': '0', 'pRYHbNN5': '50', 'AOHRcCC2': '100',
         'VjJQ51uG': '2016-01-01 00:00:00', 'm8ivD4NX': '2099-12-31 23:59:59', 'QvqubbO7': '0',
         'gzWIBU0I': '99999', 'fW193id7': '0', 'TzvJwA60': '',
+        'cSUSxGZA': 'IronChestofAbundanceUpdatedicon.png', 'hJs2B3X5': '',
     }
     items[(friend_id, friend_id)] = {
         'EzXXHtTY': friend_id, '4FF0gz8P': friend_id,
@@ -776,6 +782,13 @@ def serve_switches(spec):
     # Type 101 keeps the historical baseline indices; see SWITCH_BASE_INDICES.
     if SWITCH_TYPE_MISSION not in State.player.switches:
         State.player.switches[SWITCH_TYPE_MISSION] = set(SWITCH_BASE_INDICES)
+    # The offline event archive is available from Home. Use its original
+    # feature switch so the displayed Vortex button and native handler agree.
+    from player_state import _load_ndjson, switch_position
+    vortex = _load_ndjson('F_FUNCTION_MST.ndjson', 'G1nfeht7').get('FUNCTION_REEL_DIMENSION', {})
+    unlock = switch_position(vortex.get('juA0Z4m7'))
+    if unlock:
+        State.player.grant_switch(*unlock)
     wanted = {}
     for stype in list(State.player.switches):
         c = _switch_container(spec, stype)
@@ -1492,7 +1505,7 @@ def claim_panel_quest(spec, reply_id, plaintext=None):
             continue
         qid = str(c.get(PQ_QUEST_ID, ""))
         meta = index.get(qid)
-        if not meta:
+        if not meta or meta['family'] != 'panelquest':
             refused.append(f"{qid}: not a shipped quest")
             continue
         key = _progress_key(meta["family"], meta["schedule"], qid)
@@ -1508,6 +1521,9 @@ def claim_panel_quest(spec, reply_id, plaintext=None):
             out.append(row)
             continue                                    # already claimed: echo, do not pay again
         reward = _quest_reward(qid)
+        if not reward or not all(player._can_credit(item) for item in reward):
+            refused.append(f"{qid}: reward cannot be credited")
+            continue
         credited = player._grant_items(reward)
         if len(credited) != len(reward):
             # Never report a payment that did not happen: the count is the CREDITED rows, not the parsed
@@ -1550,7 +1566,15 @@ def _quest_reward(quest_id: str) -> list:
                         # DICTS, not the tuples `_parse_reward` returns: `_grant_items` skips anything
                         # without a "kind" key, and a tuple row is skipped SILENTLY -- which is how the
                         # first claim test reported "paid" while the reward went nowhere.
-                        return [{"kind": k, "id": i, "count": c} for k, i, c in _parse_reward(row.get("dX6cor8j", ""))]
+                        from exvius_rewards import parse
+                        rewards = []
+                        for entry in str(row.get('dX6cor8j') or '').split(','):
+                            if len(entry.split(':')) == 2:
+                                rewards.extend({'kind': k, 'id': i, 'count': c}
+                                               for k, i, c in _parse_reward(entry))
+                            elif entry:
+                                rewards.extend(parse(entry))
+                        return rewards
         except (OSError, ValueError):
             continue
     return []
@@ -2049,6 +2073,9 @@ def claim_daily_quest(spec, reply_id, plaintext=None):
             echoed.append(qid)                    # already paid: echo the state, pay nothing
             continue
         reward = [{"kind": k, "id": i, "count": c} for k, i, c in _parse_reward(quest.get("reward_info", ""))]
+        if reward and not all(player._can_credit(item) for item in reward):
+            refused.append(f"{qid}: reward cannot be credited")
+            continue
         credited = player._grant_items(reward) if reward else []
         if reward and len(credited) != len(reward):
             refused.append(f"{qid}: only {len(credited)}/{len(reward)} reward row(s) creditable")
@@ -3067,14 +3094,19 @@ def claim_sp_challenge(spec, reply_id, plaintext=None):
         if not isinstance(node, dict):
             refused.append("a claim node that is not an object")
             continue
-        vals = {str(v) for v in node.values() if str(v or "").strip()}
-        known = [q for q in vals if q in index]
-        if len(known) != 1:
-            refused.append(f"{sorted(vals)}: not exactly one shipped quest id in the triple")
+        # GL9 onButtonTouched passes the selected schedule's id and group,
+        # followed by the challenge id. Schedule 10011 is also a panel quest
+        # id, so searching all three values rejects real Rookie claims.
+        qid = str(node.get(SP_CHALLENGE_ID, ""))
+        meta = index.get(qid)
+        if not meta or meta["family"] != "spchallenge":
+            refused.append(f"{qid}: unknown SP challenge")
             continue
-        qid = known[0]
-        meta = index[qid]
         gid = meta["schedule"]
+        if (str(node.get(SP_GROUP_ID, "")) != gid or
+                str(node.get(SP_SCHEDULE_ID, "")) != sp_schedule_id(gid)):
+            refused.append(f"{qid}: schedule or group does not match the challenge")
+            continue
         done = player_progress(qid, meta)
         if not (meta["max"] and done >= meta["max"]):
             refused.append(f"{qid}: not cleared ({done}/{meta['max']})")
@@ -3087,6 +3119,9 @@ def claim_sp_challenge(spec, reply_id, plaintext=None):
                         SP_PROGRESS: str(done), SP_CLEAR: "1", SP_REWARD_FLAG: "1"})
             continue
         reward = _quest_reward(qid)
+        if not reward or not all(player._can_credit(item) for item in reward):
+            refused.append(f"{qid}: reward cannot be credited")
+            continue
         credited = player._grant_items(reward)
         if not reward or len(credited) != len(reward):
             # Never report a payment that did not happen: the count is the CREDITED rows, not the parsed
@@ -3110,8 +3145,12 @@ def claim_sp_challenge(spec, reply_id, plaintext=None):
     claimed_ids = {str(c.get(SP_CHALLENGE_ID, "")) for c in (out or [])}
     picked = sp_challenge_picked()
     if picked:
-        infos, _ = sp_challenge_info_rows(picked)
+        infos, claimable = sp_challenge_info_rows(picked)
         spec[SP_CHALLENGE_INFO_TAG] = infos
+        spec[SP_CHALLENGE_STATUS_TAG] = [
+            {SP_SCHEDULE_ID: sp_schedule_id(gid), SP_GROUP_ID: gid,
+             SP_REWARD_COUNT: str(claimable[gid]), SP_IS_NEW: "0"}
+            for gid, _rows in picked]
     elif out:
         spec[SP_CHALLENGE_INFO_TAG] = out
     # (2) a USER-STATE group, so `apply_to_reply` runs and the reward's count is fresh in the SAME reply.

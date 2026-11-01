@@ -23,7 +23,7 @@ const path = require('node:path');
   assert.deepEqual(carouselRelease(1, -70, 640), {position: 2, dragged: true}, 'A deliberate left drag advances one entry without opening it');
   assert.equal(carouselRelease(2, 180, 640).position, 1, 'Right drag returns to World');
   assert.equal(carouselRelease(1, -700, 640).position, 3, 'Long drags can cross two entries');
-  for (const count of [4, 5]) {
+  for (const count of [4, 5, 6]) {
     for (const focus of [-8, -1, 0, 4, 7, 12]) {
       const selected = ((focus % count) + count) % count;
       const layout = carouselItems(focus, count, 640);

@@ -45,6 +45,23 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   const inModeChooser = () => !enteringModeDepth && (gateTouchDepth > 0 || dungeonMenuDepth > 0);
   const assignModeTitle = fn('_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKcm',
     'pointer', ['pointer', 'pointer', 'uint64']);
+  let shopLabels = null;
+  retained.push(Interceptor.attach(module.getExportByName('_ZN22NVShopItemListScene_sg10initializeEv'), {
+      onEnter() {
+        if (!shopLabels) shopLabels = archiveData('shopArchive', '');
+      }
+  }));
+  for (const [method, field] of [['14getProductName', 'name'], ['7getDesc', 'description'], ['13getRewardText', 'name']])
+    retained.push(Interceptor.attach(module.getExportByName('_ZNK21GachaSelectProductMst' + method + 'Ev'), {
+      onEnter(args) {
+        this.text = shopLabels?.[String(args[0].add(0x24).readS32())]?.[field];
+        this.output = this.context.x8;
+      },
+      onLeave() {
+        if (this.text) assignModeTitle(this.output, Memory.allocUtf8String(this.text),
+                                      unescape(encodeURIComponent(this.text)).length);
+      }
+    }));
   let compactModeHeader = null;
   for (const [symbol, title] of [
     ['_ZN11TfaTopScene13initSubHeaderEv', 'Clash of Wills'],
@@ -290,6 +307,37 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   const bannerLayout = module.getExportByName('_ZN12ShopTopScene15setBannerLayoutEv');
   const makeArray = fn('_ZN7cocos2d7__Array6createEv', 'pointer', []);
   const appendObject = fn('_ZN7cocos2d7__Array9addObjectEPNS_3RefE', 'void', ['pointer', 'pointer']);
+  // The offline archive already lists its available areas. The original
+  // online top menu walks every dungeon and mission to check their dates.
+  // Build this one menu from those existing masters instead. Keep all areas
+  // here so changing seasons can reuse the scene-owned list normally.
+  const areaMasters = fn('_ZN11AreaMstList6sharedEv', 'pointer', []);
+  const worldAreas = fn('_ZN11AreaMstList22getAreaListWithWorldIdEi', 'pointer', ['pointer', 'int']);
+  const sortAreas = fn('_ZNSt6__ndk16__sortIRPFiPKvS2_EPPN7cocos2d3RefEEEvT0_SA_T_',
+    'void', ['pointer', 'pointer', 'pointer']);
+  const areaComparator = Memory.alloc(Process.pointerSize)
+    .writePointer(module.getExportByName('_ZN8SortUtil11compAreaMstEPKvS1_'));
+  let gateInitializeThread = null;
+  let originalAreas;
+  const archiveAreas = new NativeCallback(function (display) {
+    if (gateInitializeThread !== Process.getCurrentThreadId() || !eventAreas.size) return originalAreas(display);
+    const started = Date.now(), all = worldAreas(areaMasters(), 2);
+    const data = all.add(0x30).readPointer(), count = data.readU32();
+    const entries = data.add(0x10).readPointer(), result = makeArray();
+    for (let i = 0; i < count; i++) {
+      const area = entries.add(i * Process.pointerSize).readPointer();
+      if (!area.isNull() && eventAreas.has(area.add(0x88).readS32())) appendObject(result, area);
+    }
+    const items = result.add(0x30).readPointer(), size = items.readU32();
+    const begin = items.add(0x10).readPointer();
+    if (size > 1) sortAreas(begin, begin.add(size * Process.pointerSize), areaComparator);
+    note('LOCAL_EVENT_ARCHIVE_AREAS count=' + size + ' ms=' + (Date.now() - started));
+    return result;
+  }, 'pointer', ['bool']);
+  originalAreas = new NativeFunction(Interceptor.replaceFast(
+    module.getExportByName('_ZN8GateUtil20getInSessionAreaListEb'), archiveAreas),
+    'pointer', ['bool'], {exceptions: 'propagate'});
+  retained.push(archiveAreas);
   const retainObject = fn('_ZN7cocos2d3Ref6retainEv', 'void', ['pointer']);
   const releaseObject = fn('_ZN7cocos2d3Ref7releaseEv', 'void', ['pointer']);
   // Factory results own one Ref, as in the original response reader. Each
@@ -693,9 +741,12 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   // The original master lists and mission availability remain intact.
   retained.push(Interceptor.attach(module.getExportByName('_ZN9GateScene10initializeEv'), {
     onEnter() {
+      this.previous = gateInitializeThread;
+      gateInitializeThread = this.threadId;
       try { readMenu('', 'event'); }
       catch (error) { note('LOCAL_EVENT_GROUP_DATA_ERROR ' + error); }
-    }
+    },
+    onLeave() { gateInitializeThread = this.previous; }
   }));
   function restoreEventList(scene) {
     const key = scene.toString(), saved = eventLists.get(key);

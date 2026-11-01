@@ -165,6 +165,116 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertIsInstance(reply, dict)
         self.assertTrue(reply)
 
+    def test_rookie_equipment_claims_pay_once_and_survive_reload(self):
+        import ffbe_player as quests
+        player = self.game.server.State.player
+        gil = player.currencies['gil']
+        units = len(player.data['roster'])
+        for qid in ('100101', '100102', '100103'):
+            meta = quests._quest_index()[qid]
+            player.bump_progress(quests._progress_key('spchallenge', '1001', qid), meta['max'])
+        for qid in ('100101', '100102', '100103'):
+            request = {'Dtw7GU1j': [{'fK3W9qYA': 10011, 'zF6QIY2r': 1001, 'V36ygRYs': int(qid)}]}
+            reply = self.exchange('SpChallengeRewardGetRequest', request)
+            row = next(r for r in reply['3KLU4mSD'] if r['V36ygRYs'] == qid)
+            self.assertEqual(row['QCLs6SV8'], '1')
+            self.assertEqual(self.restored_player().progress_value('claimed/1001/' + qid), 1)
+            paid = copy.deepcopy(player.data)
+            self.exchange('SpChallengeRewardGetRequest', request)
+            self.assertEqual(player.data, paid, 'Retrying the same claim must not pay twice')
+        self.assertEqual(player.currencies['gil'], gil + 30000)
+        self.assertEqual(len(player.data['roster']), units + 20)
+        status = next(r for r in reply['WS1g0ECn'] if r['zF6QIY2r'] == '1001')
+        self.assertEqual(status['es0Yun3Z'], '0')
+
+    def test_rookie_claim_rejects_a_different_schedule_without_paying(self):
+        self.exchange('GetUserInfoRequest', {})
+        player = self.game.server.State.player
+        player.bump_progress('spchallenge/1001/100101', 1)
+        before = copy.deepcopy(player.data)
+        self.exchange('SpChallengeRewardGetRequest', {'Dtw7GU1j': [
+            {'fK3W9qYA': 11011, 'zF6QIY2r': 1101, 'V36ygRYs': 100101}]})
+        self.assertEqual(player.data, before)
+
+    def test_all_permanent_challenge_rewards_are_claimable_through_native_requests(self):
+        import ffbe_player as quests
+        player = self.game.server.State.player
+        picked = quests.sp_challenge_picked()
+        count = 0
+        for gid, rows in picked:
+            for row in rows:
+                qid = str(row['V36ygRYs'])
+                meta = quests._quest_index()[qid]
+                player.bump_progress(quests._progress_key('spchallenge', gid, qid), meta['max'])
+                request = {'Dtw7GU1j': [{'fK3W9qYA': int(quests.sp_schedule_id(gid)),
+                                        'zF6QIY2r': int(gid), 'V36ygRYs': int(qid)}]}
+                reply = self.exchange('SpChallengeRewardGetRequest', request)
+                with self.subTest(quest=qid, reward=row['dX6cor8j']):
+                    info = next(r for r in reply['3KLU4mSD'] if r['V36ygRYs'] == qid)
+                    self.assertEqual(info['QCLs6SV8'], '1')
+                    self.assertEqual(self.restored_player().progress_value('claimed/' + gid + '/' + qid), 1)
+                count += 1
+        self.assertEqual(count, 49)
+
+    def test_all_visible_panel_quest_rewards_pay_and_keep_other_panels(self):
+        import ffbe_player as quests
+        player = self.game.server.State.player
+        table = quests.panel_quest_tables()
+        for gid, group in quests.panel_quest_picked():
+            rows = table['quests'][gid]
+            for row in rows:
+                qid = str(row['V36ygRYs'])
+                player.bump_progress('panelquest/' + gid + '/' + qid, int(row['oz5Vt6AR']))
+            for row in rows:
+                qid = str(row['V36ygRYs'])
+                request = {'QxrSeO56': [{'fK3W9qYA': group['fK3W9qYA'],
+                                         'zF6QIY2r': gid, 'V36ygRYs': qid}]}
+                reply = self.exchange('sgPanelQuestRewardRequest', request)
+                with self.subTest(quest=qid):
+                    info = next(r for r in reply['ELPwhZj0'] if r['V36ygRYs'] == qid)
+                    self.assertEqual(info['QCLs6SV8'], '1')
+                    self.assertEqual(len(reply['ELPwhZj0']), len(rows))
+                    paid = copy.deepcopy(player.data)
+                    self.exchange('sgPanelQuestRewardRequest', request)
+                    self.assertEqual(player.data, paid)
+
+    def test_every_bundle_tile_has_a_downloaded_icon(self):
+        reply = self.exchange('BundleStatusRequest', {})
+        for row in reply['fMohhKK8']:
+            with self.subTest(bundle=row['EzXXHtTY']):
+                self.assertTrue(row.get('cSUSxGZA'))
+                icon = PROJECT / 'data/client/files/common_lang/sd/static_banner/bundle' / row['cSUSxGZA']
+                self.assertTrue(icon.is_file(), str(icon))
+
+    def test_home_vortex_archive_is_available_without_granting_story_espers(self):
+        from player_state import _load_ndjson, switch_position
+        player = self.game.server.State.player
+        before = copy.deepcopy(player.data.get('beasts'))
+        self.exchange('GetUserInfoRequest', {})
+        feature = _load_ndjson('F_FUNCTION_MST.ndjson', 'G1nfeht7')['FUNCTION_REEL_DIMENSION']
+        kind, bit = switch_position(feature['juA0Z4m7'])
+        self.assertIn(bit, player.switches[kind])
+        self.assertEqual(player.data.get('beasts'), before)
+
+    def test_daily_claim_and_claim_all_pay_once(self):
+        import ffbe_player as quests
+        self.exchange('SpChallengeEntryRequest', {})
+        player = self.game.server.State.player
+        day = player.daily_quest_day()
+        ids = player.daily_quest_ids()
+        self.assertTrue(ids)
+        for qid in ids:
+            target = int(quests.daily_quest_by_id()[qid]['target'])
+            player.bump_progress(player.daily_progress_key(qid, day), target)
+        self.exchange('DailyQuestClaimRewardRequest', {'vj87UqEd': [{'nYD7LvSG': ids[0]}]})
+        self.assertEqual(player.progress_value(player.daily_claim_key(ids[0], day)), 1)
+        reply = self.exchange('DailyQuestClaimAllRewardRequest', {})
+        self.assertTrue(all(player.progress_value(player.daily_claim_key(qid, day)) == 1 for qid in ids))
+        self.assertTrue(all(int(row['ZLuw4DLa']) == 2 for row in reply['Hqdgx83H']))
+        paid = copy.deepcopy(player.data)
+        self.exchange('DailyQuestClaimAllRewardRequest', {})
+        self.assertEqual(player.data, paid)
+
     def test_medal_purchase_encrypted_roundtrip_and_reloaded_limits(self):
         state = self.game.server.State
         state.player.grant_item(20, 106200100, 40)
@@ -586,10 +696,102 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertEqual(player.currencies['lapis_free'], before + 50)
         self.assertEqual(player.data['quest_progress']['counters'], first_progress)
         self.load_mission('1110101')
-        self.finish_mission('1110101')
+        replay = self.finish_mission('1110101')
         self.assertEqual(player.currencies['lapis_free'], before + 100)
+        self.assertIn('0@50:1:50@0', replay['09HRWXDf'][0]['REB5tAL9'])
+        self.assertNotIn('50:1:50', replay['09HRWXDf'][0].get('xF9Sr1a6', ''))
         self.assertEqual(self.restored_player().currencies['lapis_free'], before + 100)
         self.assertNotEqual(player.data['quest_progress']['counters'], first_progress)
+
+    def test_recovered_exchange_shops_are_available_at_login(self):
+        from exvius_actions_shops import archived_store_schedules
+        reply = self.exchange('GetUserInfoRequest', {})
+        expected = {row['Z20mNDvL'] for row in archived_store_schedules()}
+        self.assertEqual(len(expected), 699)
+        self.assertTrue(expected <= {row['Z20mNDvL'] for row in reply['3VS1Bhmf']})
+
+    def test_recovered_exchange_unit_keeps_its_authored_level(self):
+        player = self.game.server.State.player
+        player.grant_item(20, '106213390', 1)
+        before = len(player.data['roster'])
+        request = {'2d6RAkvh': [{'Z20mNDvL': '7000152', 'L2gHC5ta': '200101:1'}]}
+        self.exchange('MedalExchangeRequest', request)
+        self.assertEqual(player.item_count(20, '106213390'), 0)
+        self.assertEqual(len(player.data['roster']), before + 1)
+        unit = player.data['roster'][-1]
+        self.assertEqual(str(unit['master_id']), '207002007')
+        self.assertEqual(unit['level'], 120)
+        saved = copy.deepcopy(player.data)
+        self.exchange('MedalExchangeRequest', request)
+        self.assertEqual(player.data, saved)
+
+    def test_native_fragment_and_permanent_shops_receive_products(self):
+        reply = self.exchange('GachaSelectEntryRequest', {})
+        self.assertEqual({r['JV8AIH3n'] for r in reply['F2rNo6qf']}, {'4', '5', '6'})
+        self.assertGreater(len(reply['TPrh6Ay3']), 1500)
+        self.assertTrue(all(r['uYcL8IQ1'] == '-1' for r in reply['F2rNo6qf']))
+        self.assertNotIn('2147483647', {r['uYcL8IQ1'] for r in reply['TPrh6Ay3']})
+        self.assertIn('20:293000100:1', {r['P4puB2ch'] for r in reply['TPrh6Ay3']})
+        coin_shops = [r for r in reply['F2rNo6qf'] if r['JV8AIH3n'] == '6']
+        self.assertEqual(len(coin_shops), 3)
+        self.assertTrue(all(r['0GgK6ytT'] == '50:1' for r in coin_shops))
+        self.assertTrue(all(r['0GgK6ytT'] != '50:1' for r in reply['F2rNo6qf']
+                            if r['JV8AIH3n'] in ('4', '5')))
+
+    def test_every_native_shop_offer_has_a_name_and_can_grant_its_reward(self):
+        from exvius_shop_catalogue import catalogue, labels
+        from exvius_actions_shops import _rewards, _grant
+        player = self.game.server.State.player
+        offers = catalogue()[2]
+        self.assertEqual(set(offers), set(labels()))
+        for pid, offer in offers.items():
+            _rewards(offer['rewards'])
+            for row in offer['rewards']:
+                kind, iid, count = row['kind'], str(row['id']), row['count']
+                if kind == 10:
+                    before = len(player.data['roster'])
+                    _grant([row])
+                    self.assertEqual(len(player.data['roster']), before + count, pid)
+                elif kind == 27:
+                    before = len(player.data.get('vision_cards', []))
+                    _grant([row])
+                    self.assertEqual(len(player.data['vision_cards']), before + count, pid)
+                elif kind == 60:
+                    _grant([row])
+                    self.assertTrue(player.data['exvius_craft']['books'][iid], pid)
+                elif kind == 21:
+                    owned = lambda: sum(int(r['Qy5EvcK1']) for r in player.equip_item_rows()
+                                        if str(r['J1YX9kmM']) == iid)
+                    before = owned()
+                    _grant([row])
+                    self.assertEqual(owned(), before + count, pid)
+                else:
+                    before = player.item_count(kind, iid)
+                    _grant([row])
+                    self.assertEqual(player.item_count(kind, iid), before + count, pid)
+
+    def test_vip_shop_spends_lapis_and_persists_stock(self):
+        player = self.game.server.State.player
+        player.add_currency('lapis_free', 5000)
+        player.grant_item(23, 110003, 1000)
+        before = player.item_count(20, 293000100)
+        self.exchange('GachaSelectExchangeExeRequest',
+                      {'4mrD6JuA': [{'jPV7Xc4N': '940000009', 'Qy5EvcK1': '1'}]})
+        self.assertEqual(player.currencies['lapis_free'], 4000)
+        self.assertEqual(player.item_count(23, 110003), 1000)
+        self.assertEqual(player.item_count(20, 293000100), before + 1)
+        restored = self.restored_player()
+        self.assertEqual(restored.item_count(20, 293000100), before + 1)
+        self.assertEqual(restored.currencies['lapis_free'], 4000)
+        self.game.server.State.player = player = restored
+        self.exchange('GachaSelectExchangeExeRequest',
+                      {'4mrD6JuA': [{'jPV7Xc4N': '940000009', 'Qy5EvcK1': '1'}]})
+        self.assertEqual(player.currencies['lapis_free'], 3000)
+        self.assertEqual(player.item_count(20, 293000100), before + 2)
+        saved = copy.deepcopy(player.data)
+        self.exchange('GachaSelectExchangeExeRequest',
+                      {'4mrD6JuA': [{'jPV7Xc4N': '940000009', 'Qy5EvcK1': '1'}]})
+        self.assertEqual(player.data, saved)
 
     def test_real_stage_other_challenge_rewards_stay_one_time(self):
         player = self.game.server.State.player

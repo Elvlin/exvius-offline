@@ -2,7 +2,7 @@
   "schema": 1,
   "revision": 2,
   "version": "2026.10.30.2",
-  "minAppVersionCode": 9002,
+  "minAppVersionCode": 9003,
   "packs": [
     {
       "id": "client-assets",
@@ -93,11 +93,11 @@
   "installedBytes": 14755950588,
   "files": 12482,
   "app": {
-    "version": "0.1.1",
-    "versionName": "9.0.0-offline.2",
-    "versionCode": 9002,
-    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.1/exvius-offline-v0.1.1.apk",
-    "size": 74259170,
-    "sha256": "ca09ff08bec8e45ed8409fb5d6e3054722cff9d3d45f4bdefd9580971557688a"
+    "version": "0.1.2",
+    "versionName": "9.0.0-offline.3",
+    "versionCode": 9003,
+    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.2/exvius-offline-v0.1.2.apk",
+    "size": 74267362,
+    "sha256": "e5b250fa2bab13e1357bef564f93aed2e73b346e0110a15687446a4b81927f2a"
   }
 }

@@ -192,16 +192,18 @@ def repeat_challenge_rewards(spec, mid, plaintext):
         except (OSError, ValueError) as exc:
             _note('local shared raid progress withheld: ' + str(exc))
     # A replay's Lapis is paid but no result screen announces it (the challenge stars animate only on a
-    # first clear). List it in the results' own reward list, as a Lapis row in the reply's drop group;
-    # the drops are credited from the REQUEST, so this row is display only.
+    # first clear). Use the native reward CSV, not the item-drop CSV: that
+    # parser fixes the category to items and treats 50 as an item identifier.
+    # REB5tAL9 entries are source@kind:id:count@state. State 0 is the normal
+    # reward row. Payment above remains the only currency transaction.
     replay_lapis = sum(row['count'] for paid in result['paid'] if str(paid['id']) in already
                        for row in paid['rewards'] if row['kind'] == 50)
     if replay_lapis:
         spec = copy.deepcopy(spec)
         for row in spec.get(RESULT_TAG, []):
             if isinstance(row, dict):
-                drops = str(row.get('xF9Sr1a6') or '')
-                row['xF9Sr1a6'] = (drops + ',' if drops else '') + '50:1:%d' % replay_lapis
+                rewards = str(row.get('REB5tAL9') or '')
+                row['REB5tAL9'] = (rewards + ',' if rewards else '') + '0@50:1:%d@0' % replay_lapis
         _note('replay lapis %d listed in the results for mission %s' % (replay_lapis, mid))
     for blocked in result['blocked']:
         _note('repeat challenge %s withheld: %s' % (blocked['id'], blocked['reason']))

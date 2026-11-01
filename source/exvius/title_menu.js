@@ -4,6 +4,25 @@
 // Delete Account, Support and Login Options buttons are not created: their
 // builders take their own early exits. No native calls.
 export function installTitleMenu(module, note, retained, bridge) {
+  // Keep the original publisher cards, but shorten only their introductory
+  // waits and fades. No gameplay or story actions use these temporary hooks.
+  const actionDuration = new NativeFunction(module.getExportByName(
+    '_ZN7cocos2d14ActionInterval16initWithDurationEf'), 'bool', ['pointer', 'float'], {exceptions: 'propagate'});
+  for (const name of ['_ZN12StartupScene11setSqexLogoEv', '_ZN12StartupScene11setAlimLogoEb',
+                      '_ZN12StartupScene17setMiddlewareLogoEv'])
+    retained.push(Interceptor.attach(module.getExportByName(name), {
+      onEnter() {
+        const thread = this.threadId;
+        this.actions = ['_ZN7cocos2d9DelayTime6createEf', '_ZN7cocos2d6FadeIn6createEf',
+                        '_ZN7cocos2d7FadeOut6createEf'].map(symbol =>
+          Interceptor.attach(module.getExportByName(symbol), {
+            onLeave(action) {
+              if (this.threadId === thread && !action.isNull()) actionDuration(action, 0.15);
+            }
+          }));
+      },
+      onLeave() { for (const action of this.actions) action.detach(); }
+    }));
   const str = 'NSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE';
   const exports = {
     setBtn: '_ZN10TitleScene16setBtnWithLocKeyEPN7cocos2d15SpriteBatchNodeEiiRK' +

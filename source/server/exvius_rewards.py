@@ -5,7 +5,7 @@ from player_state import unit_mst
 def parse(raw):
     result = []
     for entry in filter(None, str(raw or '').split(',')):
-        fields = entry.split(':')
+        fields = [field.strip() for field in entry.split(':')]
         if len(fields) not in (3, 4, 5, 7, 9, 10) or not all(f.isascii() and f.isdigit() for f in fields):
             raise ValueError('invalid native reward tuple: ' + entry)
         kind, iid, count = map(int, fields[:3])
