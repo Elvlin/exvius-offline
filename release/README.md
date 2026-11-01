@@ -1,8 +1,8 @@
 # Download Exvius Offline
 
-## [Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.5.apk)
+## [Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.6.apk)
 
-The APK file is **[exvius-offline-v0.1.5.apk](exvius-offline-v0.1.5.apk)** in this folder.
+The APK file is **[exvius-offline-v0.1.6.apk](exvius-offline-v0.1.6.apk)** in this folder.
 
 Install it, then open it with an internet connection. It downloads all the game data automatically, about **14.5 GB**. After setup, you can play offline.
 
@@ -10,6 +10,6 @@ Allow about **18 GB of free space** for setup. If the download stops, reopen the
 
 Install future APKs over the existing app to keep your save. Uninstalling the app can erase it.
 
-[What changed in v0.1.5](notes-v0.1.5.md) | [Game features and screenshots](../README.md)
+[What changed in v0.1.6](notes-v0.1.6.md) | [Game features and screenshots](../README.md)
 
 Downloads do not require a GitHub account.

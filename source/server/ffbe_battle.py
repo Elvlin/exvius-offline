@@ -708,6 +708,13 @@ def mission_result_from(plaintext: str | None) -> dict:
             ctx["continue_count"] = int(tail["6q35TL07"])
         except (TypeError, ValueError):
             pass
+    # Story-only scenes report MissionEnd without a combat victory log.
+    # Their loaded attempt still supplies the existing one-completion boundary.
+    if ctx['cleared'] is not True and mission_wave_count(ctx['mission_id']) == 0:
+        from player_state import mission_row
+        mission = mission_row(ctx['mission_id']) or {}
+        if str(mission.get('gQR24kST')) == '5' and str(mission.get('Y4VoF8yu')) == '1':
+            ctx['cleared'] = True
     return ctx
 def _cond_clear(ctx, _param):
     return ctx["cleared"]

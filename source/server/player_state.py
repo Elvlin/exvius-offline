@@ -3717,7 +3717,7 @@ class PlayerState:
         `switch_position` miss on a field no table has a row for, so **every one of those missions granted
         nothing** — including the beat that opens the Esper screen. Found 2026-10-07, before a run.
 
-        Grants every member of type `MISSION_SWITCH_TYPE` and prints the members this op does not track
+        Grants mission flags and Global story-event flags (type 9004), and prints other switch types.
         (a type-820/200/201/720/9002/103 bit is a separate decision — 57 of the 75 pairs name a type-820
         switch, which nothing serves yet). Returns the granted ids, or None when nothing was granted.
         `frozen` refuses before recording anything, like every op.
@@ -3740,7 +3740,7 @@ class PlayerState:
                 print(f"    switch: mission {mid} opens {sid}, which has no F_SWITCH_MST row — not granted",
                       flush=True)
                 continue
-            if pos[0] != MISSION_SWITCH_TYPE:
+            if pos[0] not in (MISSION_SWITCH_TYPE, '9004'):
                 print(f"    switch: mission {mid} opens {sid} (type {pos[0]} index {pos[1]}) — type not "
                       f"tracked by this op, not granted", flush=True)
                 continue

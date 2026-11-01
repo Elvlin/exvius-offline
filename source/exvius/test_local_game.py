@@ -1248,6 +1248,23 @@ class LocalGameIntegration(unittest.TestCase):
                 self.assertEqual({r['6uIYE15X'] for r in reply['1IfDqR4n']}, {mid})
                 self.assertNotIn(mid, self.restored_player().data['progress']['cleared_missions'])
 
+    def test_story_completion_without_combat_log_grants_global_progress_once(self):
+        from player_state import switch_position
+        mid = '32820208'
+        self.load_mission(mid)
+        report = {'jQsE54Iz': [{'qo3PECw6': mid}]}
+        self.exchange('MissionEndRequest', report)
+        player = self.restored_player()
+        self.assertIn(mid, player.data['progress']['cleared_missions'])
+        stype, bit = switch_position('1083')
+        self.assertIn(bit, player.switches[stype])
+        attempt = player.data['exvius_repeat']['attempt']
+        self.assertTrue(attempt['cleared'])
+        self.assertTrue(attempt['quest_progress_recorded'])
+        before = copy.deepcopy(player.data)
+        self.exchange('MissionEndRequest', report)
+        self.assertEqual(self.restored_player().data, before)
+
     def test_story_resource_progress_keeps_the_two_scene_parts_separate(self):
         reply = self.load_mission('4021804')
         parts = {}
