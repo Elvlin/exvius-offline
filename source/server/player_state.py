@@ -190,6 +190,7 @@ BEAST_MAXLV = "aU3o2D4t"
 BEAST_GROWTH_TYPE = "uk6Wh8mw"
 BEAST_EXP_PATTERN = "0W7g6YXS"
 BEAST_CP_KEY = "5hqFc4ey"
+BEAST_LEVEL_CAP_SWITCH = "W2hq4UaG"
 BEAST_CP_ADD = "hbm8t3uK"
 # The wire tokens for the six esper stats, in the same HP/MP/ATK/DEF/MAG/SPR order as STAT_TOKENS.
 BEAST_WIRE_STAT_TOKENS = ("fh31sk7B", "PC97pWQj", "9NBV1XCS", "Pn5w9dfh", "84FJM3PD", "41fbhtj2")
@@ -916,7 +917,7 @@ def story_beast_stats(esper_id) -> tuple[int, int]:
     return STORY_BEAST_STATS.get(str(int(esper_id)), STORY_BEAST_DEFAULT)
 
 
-def story_beast_for_mission(mission_id) -> int | None:
+def story_beast_for_mission(mission_id, rarity=1) -> int | None:
     """The ESPER a story beat grants, DERIVED from the beat's own switch list -- never hand-listed.
 
     `F_MISSION_MST.dIPkNn61` names every switch a clear grants, and 19 shipped missions carry one of the form
@@ -935,12 +936,12 @@ def story_beast_for_mission(mission_id) -> int | None:
         return None
     for raw in str(sw).split(","):
         sid = raw.strip()
-        if len(sid) != 8 or not sid.startswith("820") or not sid.endswith("100"):
+        if len(sid) != 8 or not sid.startswith("820") or not sid.endswith(str(int(rarity)) + "00"):
             continue
         ee = sid[3:5]
         if not ee.isdigit():
             continue
-        if beast_status(str(int(ee)), 1) is not None:
+        if beast_status(str(int(ee)), rarity) is not None:
             return int(ee)
     return None
 
@@ -2311,7 +2312,33 @@ class PlayerState:
                 row["board"] = str(board)
         if link_deck is not None:
             self.link_beast(link_deck, 0, eid)
+        self._sync_beast_switches(row)
         return row
+
+    def _sync_beast_switches(self, entry) -> None:
+        status = beast_status(entry.get('esper_id'), entry.get('rarity')) or {}
+        flags = [f"820{int(entry['esper_id']):02d}{int(entry['rarity'])}00"]
+        if int(entry.get('level', 1)) >= int(status.get(BEAST_MAXLV) or 1):
+            flags.append(status.get(BEAST_LEVEL_CAP_SWITCH))
+        for flag in flags:
+            pos = switch_position(flag)
+            if pos and pos[1] not in self.switches.get(pos[0], set()):
+                self.grant_switch(*pos)
+
+    def awaken_beast(self, esper_id, rarity) -> bool:
+        """Apply a cleared awakening trial while retaining its board and unspent SP."""
+        entry = self.beast_entry(esper_id)
+        if entry is None or int(rarity) != int(entry['rarity']) + 1:
+            return False
+        current = beast_status(esper_id, entry['rarity']) or {}
+        if (beast_status(esper_id, rarity) is None
+                or int(entry['level']) < int(current.get(BEAST_MAXLV) or 1)):
+            return False
+        if not self._mutate():
+            return False
+        entry.update(rarity=int(rarity), level=1, exp=0)
+        self._sync_beast_switches(entry)
+        return True
 
     def link_beast(self, deck_id, slot, esper_id) -> None:
         """Set one slot of a party deck's beast party (`XZ4Kh7Ic` = `<slot>:<esperId>,…`, 0-based, 5 slots)."""
@@ -2492,6 +2519,7 @@ class PlayerState:
                     exp = 0
                 cp += beast_cp_add(cp_key, level)
         entry["level"], entry["exp"], entry["cp"] = level, exp, cp
+        self._sync_beast_switches(entry)
         out["level"] = level
         self.dirty = True
         return out
@@ -3431,6 +3459,10 @@ class PlayerState:
                     self._apply_unit_reward_metadata(unit, it)
                     if it.get('reward_target_master'):
                         unit['reward_target_master'] = int(it['reward_target_master'])
+            elif str(kind) == '26':
+                if not self._can_credit(it):
+                    continue
+                self.grant_emblem(iid)
             elif str(kind) in {'22', '60'}:
                 if not self._can_credit(it):
                     continue
@@ -3585,6 +3617,8 @@ class PlayerState:
             return unit_mst(iid) is not None
         if str(kind) == '22':
             return str(iid) in _load_ndjson('F_MATERIA_MST.ndjson', 'H5jBL0Vf')
+        if str(kind) == '26':
+            return iid != self.EMBLEM_NONE_ID and emblem_mst(iid) is not None
         if str(kind) == '60':
             row = _load_ndjson('F_RECIPE_BOOK_MST.ndjson', 'staFu8U1').get(str(iid))
             return bool(row and str(row.get('gJf3zp8a', '')).isdigit())
@@ -4705,6 +4739,7 @@ class PlayerState:
         """
         rows = []
         for b in self.data.get("beasts") or []:
+            self._sync_beast_switches(b)
             row = beast_status(b.get("esper_id"), b.get("rarity")) or {}
             level = int(b.get("level", 1))
             out = {"Iwfx42Wo": str(b.get("esper_id")), BEAST_RARE: str(b.get("rarity", 3)),

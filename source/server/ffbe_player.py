@@ -565,7 +565,7 @@ def serve_beast_board(spec, plaintext: str | None):
 
 
 def serve_beast_mix(spec, plaintext: str | None):
-    """BeastMixRequest (`C8X1KUpV`): apply the magicite, then ack.
+    """BeastMixRequest (`C8X1KUpV`): apply magicite and publish new trial unlocks.
 
     The group `Simv74We` carries `Iwfx42Wo` (EsperId) and `MgAVu3X6` (`ItemInfo`, `20:<itemId>:<count>,…`).
     The rule is the client's own two functions, read in the binary: `BeastUtil::giveBeastBait` `0x1a557cc`
@@ -574,9 +574,9 @@ def serve_beast_mix(spec, plaintext: str | None):
     `exp >= need(level+1)`: `exp -= need`, `level++`, exp zeroed AT max level, `cp += getAddCp(newLevel)`).
     The magicite is kind 20 and is consumed (`GameUtils::subItemNum`), so the bag is part of the state.
 
-    Nothing reads the reply, so `{}` is enough — sent rather than left empty so the server log says
-    "served" rather than `reply:EMPTY` for a request that did real work. An ABSENT group means this is not
-    our request and the spec is left untouched; a present-but-malformed one still gets the `{}` ack."""
+    The native feed already applies the level and SP. A newly opened trial must also be sent through
+    the shared switch response; otherwise the mission menu stays locked until the next login.
+    An absent group leaves the spec untouched; a malformed group receives an empty ack."""
     req = _request_json(plaintext)
     rows = req.get(BEAST_MIX_GROUP) if req else None
     if rows is None:
@@ -598,11 +598,15 @@ def serve_beast_mix(spec, plaintext: str | None):
     if not entries:
         print(f"beast: mix esper {esper_id} carried no materials", flush=True)
         return out
+    trials_before = set(State.player.switches.get("821", ()))
     result = State.player.mix_beast(esper_id, entries)
     for why in result["refused"]:
         _note(f"beast-mix: refused {why}")
     print(f"beast: mix esper {esper_id} exp+{result['exp']} cp+{result['cp']} -> level {result['level']} "
           f"(+{result['levels']}) magicite={result['consumed']}", flush=True)
+    if State.player.switches.get("821", set()) != trials_before:
+        out["8J1R5PXG"] = [{SWITCH_TYPE_FIELD: "821",
+                            SWITCH_BITS_FIELD: _switch_container(out, "821")}]
     return out
 
 

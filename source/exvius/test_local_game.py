@@ -869,6 +869,80 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertTrue(player.owns_beast(beast))
         self.assertIn(mid, self.restored_player().data['progress']['cleared_missions'])
 
+    def test_esper_awakening_trial_preserves_board_sp_and_party(self):
+        from player_state import beast_status, switch_position
+        player = self.game.server.State.player
+        entry = player.grant_beast(1, rarity=1, level=30, board='c', cp=17, link_deck=0)
+        self.assertIn(switch_position('82001110')[1], player.switches['820'])
+        self.load_mission('1110405')
+        self.finish_mission('1110405')
+        entry = self.restored_player().beast_entry(1)
+        self.assertEqual((entry['rarity'], entry['level'], entry['exp']), (2, 1, 0))
+        self.assertEqual((entry['board'], entry['cp']), ('c', 17))
+        self.assertEqual(self.restored_player().data['beast_decks']['0'][0], 1)
+        before = copy.deepcopy(entry)
+        self.finish_mission('1110405')
+        self.assertEqual(self.restored_player().beast_entry(1), before)
+
+    def test_all_original_esper_awakening_trial_rewards(self):
+        from player_state import _load_ndjson, beast_status, story_beast_for_mission
+        checked = set()
+        for mission in _load_ndjson('F_MISSION_MST.ndjson')['__rows__']:
+            for rarity in (2, 3):
+                eid = story_beast_for_mission(mission['qo3PECw6'], rarity)
+                if eid is None:
+                    continue
+                with self.subTest(esper=eid, rarity=rarity):
+                    self.setUp()
+                    old = beast_status(eid, rarity - 1)
+                    self.game.server.State.player.grant_beast(
+                        eid, rarity=rarity - 1, level=int(old['aU3o2D4t']), board='c', cp=17)
+                    self.load_mission(mission['qo3PECw6'])
+                    self.finish_mission(mission['qo3PECw6'])
+                    entry = self.restored_player().beast_entry(eid)
+                    self.assertEqual((entry['rarity'], entry['level'], entry['board'], entry['cp']),
+                                     (rarity, 1, 'c', 17))
+                    if eid == 18 and rarity == 3:
+                        self.assertIn(4000005, self.restored_player().owned_emblem_ids())
+                    checked.add((eid, rarity))
+        self.assertEqual(len(checked), 38)
+
+    def test_all_esper_ranks_level_up_and_open_their_trial(self):
+        from player_state import (_load_ndjson, beast_total_exp,
+                                  switch_position, BEAST_EXP_PATTERN, BEAST_MAXLV)
+        item = next(row for row in _load_ndjson('F_ITEM_EXT_BEAST_MST.ndjson')['__rows__']
+                    if int(row.get('B6H34Mea') or 0) > 0 and not row.get('Mnm4UZT9'))
+        for status in _load_ndjson('F_BEAST_STATUS_MST.ndjson')['__rows__']:
+            with self.subTest(esper=status['Iwfx42Wo'], rarity=status['9fW0TePj']):
+                self.setUp()
+                player = self.game.server.State.player
+                eid, rarity = status['Iwfx42Wo'], int(status['9fW0TePj'])
+                player.grant_beast(eid, rarity=rarity, level=1, cp=0)
+                maximum = int(status[BEAST_MAXLV])
+                count = beast_total_exp(status[BEAST_EXP_PATTERN], maximum) // int(item['B6H34Mea']) + 1
+                iid = int(item['tL6G9egd'])
+                player._grant_items([{'kind': 20, 'id': iid, 'count': count}])
+                reply = self.exchange('BeastMixRequest', {'Simv74We': [{
+                    'Iwfx42Wo': str(eid), 'MgAVu3X6': f'20:{iid}:{count}'}]})
+                entry = player.beast_entry(eid)
+                self.assertEqual((entry['level'], entry['exp']), (maximum, 0))
+                self.assertEqual(player.item_count(20, iid), 0)
+                pos = switch_position(status['W2hq4UaG'])
+                self.assertIn(pos[1], player.switches[pos[0]])
+                published = next(row for row in reply['8J1R5PXG'] if row['5opcUT9t'] == pos[0])
+                digit, bit = divmod(pos[1], 4)
+                self.assertTrue(int(published['juA0Z4m7'][digit], 16) & (8 >> bit))
+                player.save(str(self.state_file), force=True)
+                self.assertEqual(self.restored_player().beast_entry(eid), entry)
+
+    def test_failed_awakening_trial_does_not_raise_star_rank(self):
+        player = self.game.server.State.player
+        player.grant_beast(1, rarity=1, level=30, cp=17)
+        self.load_mission('1110405')
+        self.finish_mission('1110405', cleared=False)
+        self.finish_mission('1110405')
+        self.assertEqual(self.restored_player().beast_entry(1)['rarity'], 1)
+
     def test_noncombat_story_end_keeps_original_clear_without_battle_victory_log(self):
         from player_state import mission_wave_count
         mid = '9700101'

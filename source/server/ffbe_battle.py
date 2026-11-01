@@ -1079,6 +1079,11 @@ def grant_cleared_mission(spec, mid: str | None, plaintext: str | None = None):
         State.player.grant_beast(beast, rarity=rarity, level=level)
         State.state_dirty = True
         print(f"    beast: mission {mid} cleared -> granted esper {beast} at R{rarity} L{level}", flush=True)
+    for next_rarity in (2, 3):
+        awakening = story_beast_for_mission(mid, next_rarity)
+        if awakening is not None and State.player.awaken_beast(awakening, next_rarity):
+            State.state_dirty = True
+            print(f"    beast: mission {mid} cleared -> awakened esper {awakening} to R{next_rarity}", flush=True)
     had = set(State.player.switches.get(SWITCH_TYPE_MISSION, set()))
     sw = State.player.clear_mission(mid)
     if sw is None:
