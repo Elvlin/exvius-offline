@@ -12,6 +12,15 @@ from PIL import Image
 from build_event_archive import normal
 
 
+def runtime_banner(source, target):
+    with Image.open(source) as picture:
+        original_size = list(picture.size)
+        picture = picture.convert('RGBA')
+        picture.thumbnail((640, 240), Image.Resampling.LANCZOS)
+        picture.save(target, optimize=True)
+        return original_size, list(picture.size)
+
+
 def dungeon_banners(archive, metadata):
     names = {row['key'].rsplit('_', 1)[1]: row['v'][0]
              for line in (ROOT / 'data/text_decoded/F_TEXT_DUNGEON_NAME.ndjson').read_text(encoding='utf-8').splitlines()
@@ -83,9 +92,7 @@ def main():
             continue
         filename = metadata['events'].get(aid, {}).get('filename', 'event_' + aid + '.png')
         target = overlay / filename
-        with Image.open(source) as picture:
-            picture.convert('RGBA').save(target, optimize=True)
-            size = list(picture.size)
+        original_size, size = runtime_banner(source, target)
         image = images[normal(event['banner_title'])]
         entry = metadata['events'].setdefault(aid, {})
         entry.update({'name': event['name'], 'filename': filename,
@@ -94,8 +101,10 @@ def main():
                       'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                       'runtime_file': target.relative_to(ROOT).as_posix(),
                       'runtime_sha256': hashlib.sha256(target.read_bytes()).hexdigest(),
-                      'size': size,
-                      'conversion': 'Original pixels and dimensions retained. PNG encoding only.'})
+                      'source_size': original_size, 'size': size,
+                      'conversion': ('Original pixels and dimensions retained. PNG encoding only.'
+                                     if original_size == size else
+                                     'Fit within the native 640 x 240 banner size without cropping or changing proportions.')})
         event['filename'] = filename
     metadata['dungeons'] = dungeon_banners(archive, metadata)
     output.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

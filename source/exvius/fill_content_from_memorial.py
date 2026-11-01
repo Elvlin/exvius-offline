@@ -39,6 +39,16 @@ SCENE_TELLER_SOURCES = {'855010101': '855010701'}
 # of the Dragon King mission. The entry downloads eight maps at once.
 SCENE_MAP_SOURCES = {'1830301': '183010800', '1610202': '161020100',
                      '1520202': '152020100'}
+# These original movies are external files in the preserved Memorial cache,
+# but have no resource row in the Global client. Bind them with the scene
+# that requests them, using the existing native CRI archive reader.
+SCENE_MOVIE_ATTACHMENTS = {
+    '402220105': {'7th_story1-3.usm': 'ff56eda1cde7a8873eba7d9390f6f149b21b4ffb2fa45bd3413b034a0a1b019d'},
+    '429404204': {'8th_story2-4.usm': '33f47c5f057502560f6cf8d68a25adee5d41195542834dcd36840191d123058b'},
+    '5000010702': {'LB_LBE_jp_lapis3.usm': '032294faac1bc22b4dfaaf3eb0ef59da02852b45883a5bddc7ade888ca53b375'},
+    '5000200803': {'LB_LBG_jp_lapis3.usm': '0aa124691dfc1d67d961afe49ec7a04af36376bf8d2d933ccd3895ff9c25ef2e'},
+    '5000900602': {'LB_LBL_JP_lapis3.usm': 'c0806c13f9753dc00746882870bb4188a2a25238de8c575a372d4aa25ef53f53'},
+}
 # These unused retail English name cells are empty. Translate their exact
 # Japanese map captions, scoped to the original map rather than a shared id.
 MAP_ENGLISH_NAMES = {
@@ -577,7 +587,25 @@ def localized_package(source, memorial=None, scene_alias=None):
             added += 1
     members = {entry.full_path: index for index, entry in enumerate(archive.file_infos())}
     added += apply_english_dialogue(archive, members)
-    if not added and not scene_alias:
+    scene_id = re.sub(r'^Ver\d+_', '', source.stem)
+    for name, expected_hash in SCENE_MOVIE_ATTACHMENTS.get(scene_id, {}).items():
+        if name in members:
+            if hashlib.sha256(archive.file_bytes(members[name])).hexdigest() != expected_hash:
+                raise ValueError('Scene movie differs from its preserved original: ' + name)
+            continue
+        originals = (memorial or {}).get(name, [])
+        movie = next((p for p in originals
+                      if hashlib.sha256(p.read_bytes()).hexdigest() == expected_hash), None)
+        if movie is None:
+            raise ValueError('Missing preserved scene movie: ' + name)
+        body = movie.read_bytes()
+        if body[:4] != b'CRID':
+            raise ValueError('Scene movie is not a CRI movie: ' + name)
+        next_id = max((entry.id for entry in archive.file_infos()), default=-1) + 1
+        archive.add_bytes(body, name, id=next_id)
+        added += 1
+    needs_native_index = bool(SCENE_MOVIE_ATTACHMENTS.get(scene_id)) and not archive.has_itoc
+    if not added and not scene_alias and not needs_native_index:
         return source.read_bytes(), 0
     if scene_alias:
         original, requested = scene_alias
@@ -586,8 +614,8 @@ def localized_package(source, memorial=None, scene_alias=None):
                 next_id = max((item.id for item in archive.file_infos()), default=-1) + 1
                 archive.add_bytes(archive.file_bytes(index), requested + entry.full_path[len(original):], id=next_id)
                 added += 1
-        # The Global 9 reader requires the ID index when binding this scene.
-        # Memorial's filename-only container otherwise crashes in CRI's ITOC reader.
+    if scene_alias or needs_native_index:
+        # Use the same native-compatible ID index as the existing scene aliases.
         compatible = cpk.create(cpk.CpkPreset.FILENAME_ID, align=archive.alignment)
         for index, entry in enumerate(archive.file_infos()):
             compatible.add_bytes(archive.file_bytes(index), entry.full_path, id=index)

@@ -604,7 +604,7 @@ FORCE_TABLE_VERSIONS = os.environ.get(
     # is a ONE-TIME fetch per client (the version is then cached), and against a first-run asset download in
     # the GB range it is noise -- but if it ever bites, this list is where to cut it, not the table itself.
     "F_MISSION_MST=527,F_TEXT_MISSION=241,F_WORLD_MST=35,F_AREA_MST=611,F_MISSION_INCREASE_MST=19,"
-    "F_MISSION_SKILL_POINT_MST=5,F_AREA_POS_OVERRIDE_MST=4,F_BANNER_MST=595,F_MAP_EVENT_MST=146,"
+    "F_MISSION_SKILL_POINT_MST=5,F_AREA_POS_OVERRIDE_MST=4,F_BANNER_MST=595,F_MAP_EVENT_MST=146,F_STORY_EVENT_MST=9001,"
     # ...and F_DEFINE_MST, because the GL table SHIPS WITHOUT the three BREAK_THROUGH_* rows the survival
     # page reads. Captured live 2026-09-29: `GateScene::setListLayout` -> `DefineMst::getIntValue
     # ("BREAK_THROUGH_POSSIBLE_CNT")` -> a null+0x28 deref (the first fault, seen by gdb before libndk's

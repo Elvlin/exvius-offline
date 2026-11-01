@@ -97,6 +97,48 @@ def story_mission_bundle(carrier: dict, mission: dict) -> dict:
     return {"1IfDqR4n": [mission], "LhVz6aD2": carrier.get("LhVz6aD2", [])}
 
 
+def story_mission_phases(mission: str) -> list[dict]:
+    """Retain original non-combat phases that enter story scenes."""
+    from player_state import _load_ndjson
+    rows = [row for row in _default_index_source().load('F_MISSION_PHASE_MST')
+            if str(row.get('qo3PECw6')) == str(mission) and str(row.get('gou39JeI')) != '2']
+    if not rows:
+        scenes = [row for row in _load_ndjson('F_STORY_EVENT_MST.ndjson')['__rows__']
+                  if str(row.get('6uIYE15X')) == str(mission) and str(row.get('Lxj5u3WB')) == '1']
+        rows = [{'qo3PECw6': str(mission), '6v7y3QcJ': str(i + 1), 'gou39JeI': '1',
+                 '6uIYE15X': str(scene['4SWuwc0M']), 'T03qgLWA': '1', 'J9gafF0t': '1',
+                 'YS9kfCX7': '400005', 'i2ar9yXM': '0', '5LZN8C9I': '0'}
+                for i, scene in enumerate(scenes)]
+    return [{**{key: row[key] for key in PHASE_TOKENS if key in row}, '2fY1IomW': ''}
+            for row in sorted(rows, key=lambda row: int(row['6v7y3QcJ']))]
+
+
+def story_mission_resources(mission: dict) -> list[dict]:
+    """Select each story part's map and scene using the native progress field."""
+    from pathlib import PurePosixPath
+    from player_state import _load_ndjson
+    resources = {**_load_ndjson('F_RESOURCE_MST.ndjson', '9ZCEWn0z'),
+                 **_load_ndjson('F_RESOURCE_MAP_MST.ndjson', 'Nnb20keZ')}
+    assets = [resources[rid] for rid in str(mission.get('q4f9IdMs') or '').split(',')
+              if rid in resources]
+    maps = [row for row in assets if str(row['dX0SkK3j']) == '200']
+    scenes = [row for row in assets if str(row['dX0SkK3j']) == '300']
+    common = [row for row in assets if row not in maps and row not in scenes]
+    groups = []
+    for scene in scenes:
+        stem = PurePosixPath(scene['pJ56sAEo']).stem
+        preceding = [row for row in maps if stem.isdecimal()
+                     and PurePosixPath(row['pJ56sAEo']).stem.isdecimal()
+                     and int(PurePosixPath(row['pJ56sAEo']).stem) <= int(stem)]
+        base = max(preceding, key=lambda row: int(PurePosixPath(row['pJ56sAEo']).stem)) if preceding else (maps[0] if maps else None)
+        groups.append(([base] if base else []) + [scene] + common)
+    if not groups:
+        groups = [[base] + common for base in maps]
+    return [{'6uIYE15X': str(mission['qo3PECw6']), '0G7J2vfD': str(progress),
+             'dX0SkK3j': str(row['dX0SkK3j']), 'pJ56sAEo': row['pJ56sAEo']}
+            for progress, group in enumerate(groups) for row in group]
+
+
 def story_event_bundle(carrier: dict) -> dict:
     """The battle-bundle reply for a story map event: the carrier, no encounter."""
     bundle = dict(carrier)

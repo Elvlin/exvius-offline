@@ -970,12 +970,16 @@
       "source_file": "data/state/backups/originals/events/48e2901115a4a5c0106b7d1925df477094a457a3.image",
       "source_sha256": "d8e986e6db70fad72ae837a0ed24c5f62c73ccff65b9301b355ba0b768e63f7b",
       "runtime_file": "data/overlay/en/sd/area/event_3264.png",
-      "runtime_sha256": "659ded42bc378e5f6be357b61e04f6d33dfff02353e620c193cb6663b27deffc",
+      "runtime_sha256": "05f27399fb238683a38bdf10c5f3d807a3316ce7ecc7f84c2eb1b793393eec34",
       "size": [
+        640,
+        240
+      ],
+      "conversion": "Fit within the native 640 x 240 banner size without cropping or changing proportions.",
+      "source_size": [
         1280,
         480
-      ],
-      "conversion": "Original pixels and dimensions retained. PNG encoding only."
+      ]
     },
     "401": {
       "name": "Training the Soul",

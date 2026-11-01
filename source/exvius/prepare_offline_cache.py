@@ -48,6 +48,34 @@ def raid_reward_banners(source, target, key):
     target.write_text('\n'.join(lines) + '\n', encoding='ascii')
 
 
+def story_event_entries(source, target, key):
+    """Restore scene links while retaining every existing retail story entry."""
+    repairs = json.loads((PROJECT / 'source/server/content/story_event_repairs.json').read_text(encoding='utf-8'))
+    pending = {row['4SWuwc0M']: row for row in repairs['rows']}
+    lines = source.read_text(encoding='ascii').splitlines()
+    sample = cbc_decrypt(key16(key), next(line for line in lines if line))
+    pad = sample[-1]
+    double = 1 <= pad <= 16 and sample[-pad:] == bytes([pad]) * pad
+    output = []
+    for line in lines:
+        if not line:
+            continue
+        row = json_record(cbc_decrypt(key16(key), line))
+        replacement = pending.pop(row['4SWuwc0M'], None)
+        if replacement is not None:
+            line = cbc_encrypt(key16(key), json.dumps(replacement, ensure_ascii=False,
+                               separators=(',', ':')).encode('utf-8'), double_pad=double)
+        output.append(line)
+    for row in pending.values():
+        output.append(cbc_encrypt(key16(key), json.dumps(row, ensure_ascii=False,
+                                  separators=(',', ':')).encode('utf-8'), double_pad=double))
+    target.write_bytes(('\n'.join(output) + '\n').encode('ascii'))
+    _, rows = decode(target.read_bytes(), key)
+    runtime = DATA / 'mst_decoded/F_STORY_EVENT_MST.ndjson'
+    runtime.write_bytes(''.join(json.dumps(row, ensure_ascii=False, separators=(',', ':')) + '\n'
+                               for row in rows).encode('utf-8'))
+
+
 def arena_entry_events(source, target, key):
     """Use the client's normal direct entry when the optional foyer is absent."""
     roots = [DATA / folder for folder in ('client/files', 'overlay', 'memorial_fill')]
@@ -254,6 +282,8 @@ def main():
             raid_reward_banners(source, target, key)
         elif table == 'F_MAP_EVENT_MST':
             arena_entry_events(source, target, key)
+        elif table == 'F_STORY_EVENT_MST':
+            story_event_entries(source, target, key)
         elif table == 'F_TEXT_TEXT_EN':
             loading_text(source, target, key, append_missing=True)
         elif table == 'F_TEXT_NPC_NAME':

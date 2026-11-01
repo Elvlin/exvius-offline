@@ -2,7 +2,7 @@
 
 **Play Final Fantasy Brave Exvius offline on Android.**
 
-**[Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.4.apk)**
+**[Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.5.apk)**
 
 This is a fan project built from the original Global game. Download the game data once, then play it offline.
 
@@ -50,7 +50,7 @@ Daily login rewards use your local save and date. Yo
 
 ## Install
 
-1. [Download the APK](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.4.apk) from the [release folder](release/).
+1. [Download the APK](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.5.apk) from the [release folder](release/).
 2. Install it on an **Android 7.0 or newer phone with 64-bit ARM support**.
 3. Open it with an internet connection. The app downloads all the game data automatically, about **14.5 GB**. Allow about **18 GB of free space** for setup.
 4. Once setup is done, you can play offline.

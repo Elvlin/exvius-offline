@@ -223,15 +223,20 @@ class Handler(BaseHTTPRequestHandler):
             if row is not None:
                 spec = battle_content.field_mission_bundle(State.replies[reply_id], row)
                 spec_key, bundle_source = f"{reply_id}@{mid}", 'exploration'
-        # An original zero-wave mission is a story-only beat: no encounter to
-        # derive. Serve its own F_MISSION_MST row, the shape of the verified
-        # authored story replies. Keyed as the mission's load, so its clear and
-        # attempt bookkeeping run as for any other mission.
-        if (spec is None and mid and reply_id == BATTLE_BUNDLE_REPLY_ID
+        # Story-only missions still need their original non-combat phases.
+        # Omitting those phases makes the client immediately finish the mission
+        # without entering its story scene.
+        row = mission_row(mid) if mid else None
+        story_only = (row is not None and not menu_resource
+                      and str(row.get('gQR24kST')) == '5'
+                      and str(row.get('Y4VoF8yu')) == '1' and mission_wave_count(mid) == 0)
+        if ((spec is None or story_only) and mid and reply_id == BATTLE_BUNDLE_REPLY_ID
                 and reply_id in State.replies and mission_wave_count(mid) == 0):
-            row = mission_row(mid)
             if row is not None:
-                spec = battle_content.field_mission_bundle(State.replies[reply_id], row)
+                spec = dict(spec) if isinstance(spec, dict) else battle_content.field_mission_bundle(State.replies[reply_id], row)
+                if story_only:
+                    spec['an6TB4WS'] = battle_content.story_mission_phases(mid)
+                    spec['1IfDqR4n'] = battle_content.story_mission_resources(row)
                 spec_key, bundle_source = f"{reply_id}@{mid}", "story"
         if (spec is None and mid and reply_id == BATTLE_BUNDLE_REPLY_ID
                 and battle_content.derive_mode() != "off"):

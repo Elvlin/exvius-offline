@@ -73,7 +73,7 @@ public final class DataUpdates {
         return state(context, "installed.json").isFile() &&
             GameAssets.archive(context).isFile() &&
             new File(dataRoot(context), "mst_decoded/F_UNIT_MST.ndjson").isFile() &&
-            new File(context.getFilesDir(), "mst").isDirectory();
+            new File(context.getFilesDir(), "mst/Ver9001_YW9MUm2H.dat").isFile();
     }
     private static SharedPreferences preferences(Context context) {
         return context.getSharedPreferences("offline_updates", Context.MODE_PRIVATE);

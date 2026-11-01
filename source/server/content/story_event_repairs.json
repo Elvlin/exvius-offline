@@ -1,0 +1,526 @@
+{
+  "rows": [
+    {
+      "4SWuwc0M": "4009001",
+      "G4L0YIB2": "chara9-1",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020901",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009002",
+      "G4L0YIB2": "chara9-2",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020903",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009003",
+      "G4L0YIB2": "chara9-3",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020906",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009004",
+      "G4L0YIB2": "chara9-4",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020909",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009005",
+      "G4L0YIB2": "chara9-5",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020910",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009006",
+      "G4L0YIB2": "chara9-6",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020913",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009007",
+      "G4L0YIB2": "chara9-7",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020914",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009008",
+      "G4L0YIB2": "chara9-8",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020917",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009009",
+      "G4L0YIB2": "chara9-9",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020920",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009010",
+      "G4L0YIB2": "chara9-10",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020924",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009011",
+      "G4L0YIB2": "chara9-11",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020925",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4009012",
+      "G4L0YIB2": "chara9-12",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4020928",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4012001",
+      "G4L0YIB2": "chara12-1",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4021201",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4012002",
+      "G4L0YIB2": "chara12-2",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4021203",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4012003",
+      "G4L0YIB2": "chara12-3",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4021204",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "4012004",
+      "G4L0YIB2": "chara12-4",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4021206",
+      "25oxcKwN": "",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "10480101",
+      "G4L0YIB2": "Warriors Who Bear The Light",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "10480101",
+      "25oxcKwN": "map@0",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "10480103",
+      "G4L0YIB2": "A Frightful Mutation",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "10480103",
+      "25oxcKwN": "map@0",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "10480105",
+      "G4L0YIB2": "Endings and Beginnings",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "10480105",
+      "25oxcKwN": "map@2",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "99470503",
+      "G4L0YIB2": "The Cold Truth",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99470503",
+      "25oxcKwN": "map@1",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99470803",
+      "G4L0YIB2": "A Partner Lost",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99470803",
+      "25oxcKwN": "map@7",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99470804",
+      "G4L0YIB2": "Bonds Severed",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99470804",
+      "25oxcKwN": "map@8",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550101",
+      "G4L0YIB2": "The Final Chapter",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550101",
+      "25oxcKwN": "map@0",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550104",
+      "G4L0YIB2": "A Major Setback",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550104",
+      "25oxcKwN": "map@2",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550105",
+      "G4L0YIB2": "Heroes Call",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550105",
+      "25oxcKwN": "map@2",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550108",
+      "G4L0YIB2": "To The Skies",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550108",
+      "25oxcKwN": "map@3",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550109",
+      "G4L0YIB2": "All Hands On Deck",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550109",
+      "25oxcKwN": "map@4",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550112",
+      "G4L0YIB2": "Conflicts",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550112",
+      "25oxcKwN": "map@5",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550113",
+      "G4L0YIB2": "Dark Anomaly",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550113",
+      "25oxcKwN": "map@6",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550117",
+      "G4L0YIB2": "Into the Jaws of Death",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550117",
+      "25oxcKwN": "map@7",
+      "8aVAUgN5": "19100010:1"
+    },
+    {
+      "4SWuwc0M": "99550118",
+      "G4L0YIB2": "Fight of Our Lives",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550118",
+      "25oxcKwN": "map@0",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550119",
+      "G4L0YIB2": "The Final Battle",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550119",
+      "25oxcKwN": "map@1",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550120",
+      "G4L0YIB2": "Louise VS Colin",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550120",
+      "25oxcKwN": "map@2",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550123",
+      "G4L0YIB2": "Back to Senses",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550123",
+      "25oxcKwN": "map@3",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550124",
+      "G4L0YIB2": "Richt VS Efne",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550124",
+      "25oxcKwN": "map@4",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550126",
+      "G4L0YIB2": "Darkness Manifest",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550126",
+      "25oxcKwN": "map@5",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550127",
+      "G4L0YIB2": "The Fundamental Forces",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550127",
+      "25oxcKwN": "map@6",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550128",
+      "G4L0YIB2": "A New Dawn",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550128",
+      "25oxcKwN": "map@6",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "99550129",
+      "G4L0YIB2": "The End, For Now",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "99550129",
+      "25oxcKwN": "map@8",
+      "8aVAUgN5": ""
+    },
+    {
+      "4SWuwc0M": "4018003",
+      "G4L0YIB2": "chara13-1-3",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4021804",
+      "25oxcKwN": "map@4",
+      "8aVAUgN5": "19100020:1"
+    },
+    {
+      "4SWuwc0M": "4023009",
+      "G4L0YIB2": "chara14__2-4",
+      "Lxj5u3WB": "1",
+      "6uIYE15X": "4023109",
+      "25oxcKwN": "map@5",
+      "8aVAUgN5": "19100010:1"
+    }
+  ],
+  "sources": {
+    "4009001": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009002": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009003": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009004": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009005": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009006": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009007": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009008": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009009": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009010": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009011": {
+      "kind": "preserved Memorial story table"
+    },
+    "4009012": {
+      "kind": "preserved Memorial story table"
+    },
+    "4012001": {
+      "kind": "preserved Memorial story table"
+    },
+    "4012002": {
+      "kind": "preserved Memorial story table"
+    },
+    "4012003": {
+      "kind": "preserved Memorial story table"
+    },
+    "4012004": {
+      "kind": "preserved Memorial story table"
+    },
+    "10480101": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "10480101",
+      "package": "data/memorial_fill/common_lang/sd/event/SG/Ver3_90001301.cpk",
+      "scene_sha256": "4c35ae65bb9d1e97c009f1bce4f1c6f3a452cdc958ec3d490fbe297e6ff7f494"
+    },
+    "10480103": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "10480103",
+      "package": "data/memorial_fill/common_lang/sd/event/SG/Ver1_90001302.cpk",
+      "scene_sha256": "42dceab3bf8b8cbea0e4088087d33a63e6c508b2b5b282af0a7a4c941787291e"
+    },
+    "10480105": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "10480105",
+      "package": "data/memorial_fill/common_lang/sd/event/SG/Ver1_90001303.cpk",
+      "scene_sha256": "d23e3a642379191360ca2655a5876c2990dab1df5ecf110ac0414c8d223a2294"
+    },
+    "99470503": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99470503",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR65/Ver1_5001900202.cpk",
+      "scene_sha256": "348a9ec1311a98e6062cb34f18bb988437b57a52adcdd49c6591ea583591504b"
+    },
+    "99470803": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99470803",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR65/Ver1_5001900208.cpk",
+      "scene_sha256": "545ae6972f9cd8a144af956fa8c88dda2c96f3d1af13c19a7a2bec8e16cc6bc1"
+    },
+    "99470804": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99470804",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR65/Ver1_5001900209.cpk",
+      "scene_sha256": "6a90849d7b309be52b6e8deff2104708c1b71870619059549b1283b46ba9a2a8"
+    },
+    "99550101": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550101",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000101.cpk",
+      "scene_sha256": "fb9cb238f3c708f3e3dd4a595a2a185696ce50df19f199d860800b6f75556d6b"
+    },
+    "99550104": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550104",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000102.cpk",
+      "scene_sha256": "5d33d8ba8e82fad8ed7f0b280506f39f3606834d9cab4165a838f28f3174b0ed"
+    },
+    "99550105": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550105",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000103.cpk",
+      "scene_sha256": "1d4352bb6e6d8636f332b2612dd0d60c1a57985f6aa6088d04f8d5f39c5b26c4"
+    },
+    "99550108": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550108",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000104.cpk",
+      "scene_sha256": "724f51cbc3a0f55a2f1da602d40b1ac929209eb9029bd6cfda389020d3a2dc34"
+    },
+    "99550109": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550109",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000105.cpk",
+      "scene_sha256": "d65564417c5af0795243810f87df8d7b21083c760b46c7e1b41d50c5ebbe738e"
+    },
+    "99550112": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550112",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000106.cpk",
+      "scene_sha256": "0c3ac77e738b3906a874010bea6f3a43ac0cb2f9f30f625c490143e0e9aa31a3"
+    },
+    "99550113": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550113",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000107.cpk",
+      "scene_sha256": "6ba795b4765a0ad3c8628e50cf69fb6a235bce1ab61d18d25d7d3e82cbbf0a01"
+    },
+    "99550117": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550117",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000108.cpk",
+      "scene_sha256": "e68fa8caa0c5d014f548e5b5d7b9cb567ee01a68bc16f962096e42d24c302e48"
+    },
+    "99550118": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550118",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000201.cpk",
+      "scene_sha256": "63e7fc23c189b72fc80d1c551677b51ebc63463b99ed6c4f4162f564abadecd1"
+    },
+    "99550119": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550119",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000202.cpk",
+      "scene_sha256": "25b763f991a22560da9f56e81410cfd9c10ee961950b15fd72f1625d2c2061fb"
+    },
+    "99550120": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550120",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000203.cpk",
+      "scene_sha256": "6d53d01f0ec473782ee33b265c6952459c2fa139120b9fbddb40e71f5743923f"
+    },
+    "99550123": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550123",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000204.cpk",
+      "scene_sha256": "dfa92136594277bac61a80b941227248e8b8403db096d9c1b3256a09ffb9fe62"
+    },
+    "99550124": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550124",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000205.cpk",
+      "scene_sha256": "bde0279521dcc24290b1cb6f1c1c52d80b794c508c8fb5b54541b81ab97541d9"
+    },
+    "99550126": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550126",
+      "package": "data/overlay/common_lang/sd/event4/SPR66/Ver1_5002000206.cpk",
+      "scene_sha256": "a81d38cfaa274829dd95cd54d3c1d12c31c6fe0c953ae15b6e6b008190297541"
+    },
+    "99550127": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550127",
+      "package": "data/overlay/common_lang/sd/event4/SPR66/Ver1_5002000207.cpk",
+      "scene_sha256": "32bc81bba531fad5b4d29f2e9773e3a5d5f20670d849ac716876677cce6692ab"
+    },
+    "99550128": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550128",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000208.cpk",
+      "scene_sha256": "acfcc15f7a3572f6819267576df4e95f20717812eafc2a638f61724f167d40f7"
+    },
+    "99550129": {
+      "kind": "scene link restored from mission and compiled scene",
+      "mission": "99550129",
+      "package": "data/memorial_fill/common_lang/sd/event4/SPR66/Ver1_5002000209.cpk",
+      "scene_sha256": "6e51eb459106c9ff043039e9c03e55bb65e05a219e6abb20c65a6296bc1839eb"
+    },
+    "4018003": {
+      "kind": "starting map from the compiled scene header"
+    },
+    "4023009": {
+      "kind": "starting map from the compiled scene header"
+    }
+  }
+}

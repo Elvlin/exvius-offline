@@ -1227,9 +1227,10 @@ class LocalGameIntegration(unittest.TestCase):
         with patch.dict(self.game.server.State.replies):
             self.game.server.State.replies.pop('jnw49dUq@9700101', None)
             reply = self.load_mission('9700101')
-        self.assertEqual(reply['1IfDqR4n'], [mission_row('9700101')])
-        for group in ('an6TB4WS', 'y35YvQjZ'):
-            self.assertEqual(reply.get(group, []), [], group)
+        self.assertEqual({row['6uIYE15X'] for row in reply['1IfDqR4n']}, {'9700101'})
+        self.assertEqual([(row['gou39JeI'], row['6uIYE15X']) for row in reply['an6TB4WS']],
+                         [('1', '9002727')])
+        self.assertEqual(reply.get('y35YvQjZ', []), [])
         self.assertEqual({r['2fY1IomW'] for r in reply['Bi6hVv34']}, {'970010101'})
         self.assertEqual({r['xqartN26'] for r in reply['bV34YIJQ']}, {'308161005'})
         # Loading a mission opens its attempt; nothing else in the save changes.
@@ -1237,6 +1238,38 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertEqual(after.pop('exvius_repeat')['attempt']['mid'], '9700101')
         before.pop('exvius_repeat', None)
         self.assertEqual(after, before)
+
+    def test_story_movie_missions_keep_the_original_scene_entry_phases(self):
+        for mid, event in [('4021804', '4018003'), ('32820208', '4023009')]:
+            with self.subTest(mission=mid):
+                reply = self.load_mission(mid)
+                self.assertEqual([(r['gou39JeI'], r['6uIYE15X'])
+                                  for r in reply['an6TB4WS']], [('1', event)])
+                self.assertEqual({r['6uIYE15X'] for r in reply['1IfDqR4n']}, {mid})
+                self.assertNotIn(mid, self.restored_player().data['progress']['cleared_missions'])
+
+    def test_story_resource_progress_keeps_the_two_scene_parts_separate(self):
+        reply = self.load_mission('4021804')
+        parts = {}
+        for row in reply['1IfDqR4n']:
+            parts.setdefault(row['0G7J2vfD'], set()).add(row['pJ56sAEo'])
+        self.assertIn('402220100.cpk', parts['0'])
+        self.assertIn('402220105.cpk', parts['0'])
+        self.assertNotIn('402220156.cpk', parts['0'])
+        self.assertIn('402220150.cpk', parts['1'])
+        self.assertIn('402220156.cpk', parts['1'])
+        self.assertNotIn('402220105.cpk', parts['1'])
+
+    def test_global_story_scenes_have_playable_entry_phases(self):
+        for mid, scene, filename in [('9700101', '9002727', '90001001.cpk'),
+                                      ('10480101', '10480101', '90001301.cpk'),
+                                      ('99550101', '99550101', '5002000101.cpk')]:
+            with self.subTest(mission=mid):
+                reply = self.load_mission(mid)
+                self.assertEqual([(r['gou39JeI'], r['6uIYE15X'])
+                                  for r in reply['an6TB4WS']], [('1', scene)])
+                self.assertIn(filename, {r['pJ56sAEo'] for r in reply['1IfDqR4n']})
+                self.assertNotIn(mid, self.restored_player().data['progress']['cleared_missions'])
 
     def test_equipment_enhancement_notice_loads_without_changing_the_save(self):
         before = copy.deepcopy(self.game.server.State.player.data)
