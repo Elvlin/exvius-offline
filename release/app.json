@@ -1,8 +1,8 @@
 {
-  "version": "0.1.9",
-  "versionName": "9.0.0-offline.10",
-  "versionCode": 9010,
-  "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.9/exvius-offline-v0.1.9.apk",
-  "size": 74275554,
-  "sha256": "4c32a1a3fa799f88f1a79e810c525a65af3380ea5964b4d8be9824b3d4bdf9bc"
+  "version": "0.1.10",
+  "versionName": "9.0.0-offline.11",
+  "versionCode": 9011,
+  "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.10/exvius-offline-v0.1.10.apk",
+  "size": 74271458,
+  "sha256": "04b748af9aea4abba1d180394470b4143abbb1ea6b57fcc0598d3036a425bbbf"
 }

@@ -95,20 +95,6 @@ export function clampMapScroll(x, y, columns, rows, width, height) {
   };
 }
 
-export function cutsceneScrollFloor(resource, mapId, referenceHeight, viewportHeight, eventResource = '') {
-  // Earth Shrine Exit, event 111010102, map 65: the original camera is
-  // (406,2146), followed by a horizontal pan of 580. Preserve that shot's
-  // authored upper edge. Its original 432px dialogue panel leaves 704px
-  // of the 1136px reference canvas for the shot above the panel.
-  // The opening (111010105) shares this map, but its shrine camera is at
-  // y=840. Applying the later airship shot's floor hides both characters.
-  if (!/(^|[/_])111010100(?:[._/]|$)/.test(resource) || mapId !== 65 ||
-      !/(^|[/_])111010102(?:[._/]|$)/.test(eventResource) ||
-      !Number.isFinite(referenceHeight) || referenceHeight <= 0 ||
-      !Number.isFinite(viewportHeight) || viewportHeight <= referenceHeight) return 0;
-  return Math.max(0, 2146 - Math.max(0, referenceHeight - 432) / 2);
-}
-
 export function installAdaptiveDisplay(module, retained, note, bridge) {
   const native = (name, result, args) => new NativeFunction(module.getExportByName(name), result, args, {exceptions: 'propagate'});
   // GL9 getMaxFrame returns the frame count. Its chest idle code passes that
@@ -144,27 +130,6 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
   const mapColumns = native('_ZNK7MapData11getMapWidthEv', 'int', ['pointer']);
   const mapRows = native('_ZNK7MapData12getMapHeightEv', 'int', ['pointer']);
   const mapId = native('_ZNK7MapData8getMapIdEv', 'int', ['pointer']);
-  const showNode = native('_ZN7cocos2d4Node10setVisibleEb', 'void', ['pointer', 'bool']);
-  const setOpacity = native('_ZN7cocos2d4Node10setOpacityEh', 'void', ['pointer', 'uchar']);
-  const nodeVisible = native('_ZNK7cocos2d4Node9isVisibleEv', 'bool', ['pointer']);
-  const nodeOpacity = native('_ZNK7cocos2d4Node19getDisplayedOpacityEv', 'uchar', ['pointer']);
-  const nodeColor = native('_ZNK7cocos2d4Node8getColorEv', 'pointer', ['pointer']);
-  const nodeParent = native('_ZNK7cocos2d4Node9getParentEv', 'pointer', ['pointer']);
-  const nodeChildren = native('_ZN7cocos2d4Node11getChildrenEv', 'pointer', ['pointer']);
-  const nodeTransform = native('_ZNK7cocos2d4Node24getNodeToParentTransformEv', 'pointer', ['pointer']);
-  const spriteFrame = native('_ZNK7cocos2d6Sprite14getSpriteFrameEv', 'pointer', ['pointer']);
-  const makeSprite = native('_ZN7cocos2d6Sprite21createWithSpriteFrameEPNS_11SpriteFrameE', 'pointer', ['pointer']);
-  const makePanel = native('_ZN7cocos2d2ui12Scale9Sprite21createWithSpriteFrameEPNS_11SpriteFrameERKNS_4RectE',
-    'pointer', ['pointer', 'pointer']);
-  const addNode = native('_ZN7cocos2d4Node8addChildEPS0_ii', 'void', ['pointer', 'pointer', 'int', 'int']);
-  const removeNode = native('_ZN7cocos2d4Node26removeFromParentAndCleanupEb', 'void', ['pointer', 'bool']);
-  const holdNode = native('_ZN7cocos2d3Ref6retainEv', 'void', ['pointer']);
-  const dropNode = native('_ZN7cocos2d3Ref7releaseEv', 'void', ['pointer']);
-  const castNode = new NativeFunction(Module.getGlobalExportByName('__dynamic_cast'), 'pointer',
-    ['pointer', 'pointer', 'pointer', 'long'], {exceptions: 'propagate'});
-  const nodeType = module.getExportByName('_ZTIN7cocos2d4NodeE');
-  const spriteType = module.getExportByName('_ZTIN7cocos2d6SpriteE');
-  const panelType = module.getExportByName('_ZTIN7cocos2d2ui12Scale9SpriteE');
   const aliasTexture = native('_ZN7cocos2d9Texture2D21setAliasTexParametersEv', 'void', ['pointer']);
   let view = null;
   let layoutReady = false;
@@ -435,127 +400,6 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
   // larger than a map. Clamp to the actual nonnegative map-scroll interval.
   const reportedMaps = new Set();
   const mapResources = new Map();
-  const mapEvents = new Map();
-  retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager10initializeEP9GameSceneN7cocos2d4Vec2E'), {
-    onEnter(args) { mapEvents.delete(args[0].toString()); }
-  }));
-  let airshipPanel = null;
-  let panelSearch = '';
-  let panelSearchFrames = 0;
-  let panelSearchAttempts = 0;
-  function clearAirshipPanel() {
-    const previous = airshipPanel;
-    airshipPanel = null;
-    panelSearch = '';
-    panelSearchFrames = 0;
-    panelSearchAttempts = 0;
-    if (!previous) return;
-    removeNode(previous.copy, 1);
-    dropNode(previous.copy);
-    dropNode(previous.original);
-  }
-  function panelGeometry(node, root) {
-    const size = nodeSize(node), anchor = nodeAnchor(node);
-    let x = size.readFloat() * anchor.readFloat();
-    let y = size.add(4).readFloat() * anchor.add(4).readFloat();
-    let sx = 1, sy = 1, visible = true;
-    let cursor = node;
-    for (let depth = 0; !cursor.isNull() && !cursor.equals(root) && depth < 20;
-         cursor = nodeParent(cursor), depth++) {
-      const matrix = nodeTransform(cursor);
-      const nextX = matrix.readFloat() * x + matrix.add(16).readFloat() * y + matrix.add(48).readFloat();
-      y = matrix.add(4).readFloat() * x + matrix.add(20).readFloat() * y + matrix.add(52).readFloat();
-      x = nextX;
-      sx *= nodeScaleX(cursor); sy *= nodeScaleY(cursor);
-      visible = visible && nodeVisible(cursor) && nodeOpacity(cursor) > 0;
-    }
-    return { x, y, sx, sy, visible: visible && cursor.equals(root), width: size.readFloat() * Math.abs(sx),
-      height: size.add(4).readFloat() * Math.abs(sy) };
-  }
-  function keepAirshipBackdrop(manager) {
-    // GameScene derives from BaseScene, then cocos Scene. It is already
-    // the root, so Node::getScene (which begins at its parent) returns null.
-    const root = manager.add(0x2530).readPointer();
-    if (root.isNull()) return;
-    if (panelSearch !== root.toString()) {
-      clearAirshipPanel();
-      panelSearch = root.toString();
-    }
-    // The message window can still be hidden during the map's fade-in.
-    // Search only during that bounded startup interval, once per 15 frames.
-    if (!airshipPanel && panelSearchAttempts < 40 && panelSearchFrames++ % 15 === 0) {
-      panelSearchAttempts++;
-      const pending = [root];
-      let best = null, visited = 0;
-      while (pending.length && visited++ < 3000) {
-        const node = pending.pop();
-        const size = nodeSize(node);
-        if (size.readFloat() > 0 && size.add(4).readFloat() > 0) {
-          const geometry = panelGeometry(node, root);
-          if (Math.abs(geometry.width - canvas.width) < 32 && geometry.height >= 350 &&
-              geometry.height <= 500 && geometry.y < 600) {
-            const sprite = castNode(node, nodeType, spriteType, 0);
-            if (!sprite.isNull()) {
-              const score = Math.abs(geometry.height - 432) + Math.abs(geometry.width - canvas.width);
-              if (!best || score < best.score) best = { node, sprite, geometry, score };
-            }
-          }
-        }
-        if (best && best.score < 0.1) break;
-        const children = nodeChildren(node), begin = children.readPointer(), end = children.add(8).readPointer();
-        const count = end.sub(begin).toInt32() / Process.pointerSize;
-        if (count >= 0 && count <= 1000)
-          for (let i = 0; i < count; i++) pending.push(begin.add(i * Process.pointerSize).readPointer());
-      }
-      if (best) {
-        const frame = spriteFrame(best.sprite);
-        if (frame.isNull()) { note('AIRSHIP_PANEL original_frame_missing'); return; }
-        const nine = castNode(best.node, nodeType, panelType, 0);
-        let copy;
-        if (!nine.isNull()) {
-          // Same cap insets as GL9 Scale9Sprite::getCapInsets, without a
-          // C++ by-value Rect return. Reuse the complete original UI frame.
-          const rect = Memory.alloc(16);
-          rect.writeFloat(nine.add(0x530).readFloat());
-          rect.add(4).writeFloat(nine.add(0x538).readFloat());
-          rect.add(8).writeFloat(nine.add(0x438).readFloat() - rect.readFloat() - nine.add(0x534).readFloat());
-          rect.add(12).writeFloat(nine.add(0x43c).readFloat() - rect.add(4).readFloat() - nine.add(0x53c).readFloat());
-          copy = makePanel(frame, rect);
-        } else copy = makeSprite(frame);
-        if (!copy.isNull()) {
-          const resize = new NativeFunction(copy.readPointer().add(0x160).readPointer(), 'void', ['pointer', 'pointer'], {exceptions: 'propagate'});
-          const anchor = new NativeFunction(copy.readPointer().add(0x148).readPointer(), 'void', ['pointer', 'pointer'], {exceptions: 'propagate'});
-          const color = new NativeFunction(copy.readPointer().add(0x4c0).readPointer(), 'void', ['pointer', 'pointer'], {exceptions: 'propagate'});
-          resize(copy, nodeSize(best.node)); anchor(copy, nodeAnchor(best.node));
-          color(copy, nodeColor(best.node));
-          setScale(copy, best.geometry.sx, best.geometry.sy);
-          const panelAnchor = nodeAnchor(best.node);
-          const panelX = (canvas.width - best.geometry.width) / 2 +
-            best.geometry.width * panelAnchor.readFloat();
-          const panelY = visibleEdges().bottom +
-            best.geometry.height * panelAnchor.add(4).readFloat();
-          // The original window is already present during the opening pan,
-          // but can be hidden or translated below the screen. Seat its copy
-          // at the normal bottom position before the first line appears.
-          setX(copy, panelX); setY(copy, panelY);
-          setOpacity(copy, 255);
-          showNode(copy, 0);
-          addNode(root, copy, 100000, -1);
-          holdNode(copy);
-          holdNode(best.node);
-          airshipPanel = { original: best.node, copy, root, y: panelY };
-          note('AIRSHIP_PANEL original_background=' + best.geometry.width + 'x' + best.geometry.height);
-        }
-      } else if (panelSearchAttempts === 40) note('AIRSHIP_PANEL original_background_missing nodes=' + visited);
-    }
-    if (airshipPanel) {
-      const geometry = panelGeometry(airshipPanel.original, airshipPanel.root);
-      showNode(airshipPanel.copy, !geometry.visible || Math.abs(geometry.y - airshipPanel.y) > 20 ? 1 : 0);
-    }
-  }
-  retained.push(Interceptor.attach(module.getExportByName('_ZN8MapScene16onSceneInvisibleEv'), {
-    onEnter() { clearAirshipPanel(); }
-  }));
   let currentMapResource = '';
   const readMapResource = text => {
     const flag = text.readU8();
@@ -588,32 +432,8 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       }
     }
   }));
-  // GL9 returns a borrowed std::string reference at AppendEventData + 0x30.
-  // Read the package while the original loader owns it; retain only its ID.
-  const appendCpkName = native('_ZNK15AppendEventData10getCpkNameEv', 'pointer', ['pointer']);
-  retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager14loadAppendDataEP15AppendEventDatai'), {
-    onEnter(args) {
-      const event = args[1].isNull() ? '' : readMapResource(appendCpkName(args[1]));
-      mapEvents.set(args[0].toString(), event);
-      note('MAP_EVENT_PACKAGE resource=' + event);
-    }
-  }));
   retained.push(Interceptor.attach(module.getExportByName('_ZN14MapDrawManager11updateLayerEv'), {
-    onEnter(args) {
-      const manager = this.manager = args[0];
-      const data = manager.add(0x2540).readPointer();
-      if (data.isNull()) return;
-      const height = manager.add(0x256c).readFloat();
-      const resource = mapResources.get(manager.toString()) || '';
-      const floor = cutsceneScrollFloor(resource, mapId(data), reference.height, height,
-        mapEvents.get(manager.toString()) || '');
-      if (floor <= 0) return;
-      // Adjust the actual camera before native layout, so scenery and actors
-      // share the same transform during the pan and dialogue transitions.
-      const camera = manager.add(0x2554);
-      const y = camera.readFloat();
-      if (Number.isFinite(y)) camera.writeFloat(Math.max(y, floor + height / 2));
-    },
+    onEnter(args) { this.manager = args[0]; },
     onLeave() {
       const manager = this.manager;
       const data = manager.add(0x2540).readPointer();
@@ -627,13 +447,6 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       if (!scroll) return;
       manager.add(0x2558).writeFloat(scroll.x);
       manager.add(0x255c).writeFloat(scroll.y);
-      if (cutsceneScrollFloor(resource, mapId(data), reference.height, height,
-        mapEvents.get(manager.toString()) || '') > 0) {
-        // The original forest was authored above the message panel. During
-        // its text-free pan keep that same native background below the map;
-        // expanding the exposed map instead reveals unpainted cells.
-        keepAirshipBackdrop(manager);
-      } else if (airshipPanel) clearAirshipPanel();
       const key = [data, mapId(data), columns, rows, width, height].join(':');
       if (!reportedMaps.has(key)) {
         reportedMaps.add(key);
