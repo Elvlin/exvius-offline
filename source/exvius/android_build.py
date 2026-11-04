@@ -172,6 +172,9 @@ def main():
         if authority:
             provider.set(ANDROID + 'authorities', authority.replace(original_package, test_package))
     app = tree.getroot().find('application')
+    # The original game library has 4 KB ELF segments. Android 16 can
+    # load it through its compatibility mode on devices with 16 KB pages.
+    app.set(ANDROID + 'pageSizeCompat', 'enabled')
     # Permit the game surface to use modern portrait displays. Cocos handles
     # proportional canvas expansion in android_display.js.
     app.set(ANDROID + 'resizeableActivity', 'true')

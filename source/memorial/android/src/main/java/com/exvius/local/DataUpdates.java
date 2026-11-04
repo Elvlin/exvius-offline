@@ -69,6 +69,9 @@ public final class DataUpdates {
     public static File dataRoot(Context context) { return state(context, "static"); }
     public static boolean gameOpened() { return gameOpened; }
     public static boolean hasPending(Context context) { return state(context, "pending.json").isFile(); }
+    public static boolean clientAssetsMissing(Context context) {
+        return state(context, "installed.json").isFile() && !GameAssets.archive(context).isFile();
+    }
     public static boolean ready(Context context) {
         return state(context, "installed.json").isFile() &&
             GameAssets.archive(context).isFile() &&
@@ -230,7 +233,7 @@ public final class DataUpdates {
         downloadFile(context, key, suffix).delete();
         downloadFile(context, key, ".verified").delete();
     }
-    private static void installPending(Context context) throws Exception {
+    private static void installPending(Context context, boolean repairAssets) throws Exception {
         JSONObject manifest = new JSONObject(read(state(context, "pending.json")));
         validate(manifest);
         JSONObject current = installed(context);
@@ -246,7 +249,8 @@ public final class DataUpdates {
         for (int i = 0; i < packs.length(); i++) total += packs.getJSONObject(i).getLong("size");
         for (int i = 0; i < packs.length(); i++) {
             JSONObject pack = packs.getJSONObject(i);
-            if (installedPack(current, pack) || installedHashes.contains(pack.getString("sha256"))) {
+            boolean forcePack = repairAssets && pack.getString("id").equals("client-assets");
+            if (!forcePack && (installedPack(current, pack) || installedHashes.contains(pack.getString("sha256")))) {
                 transferred += pack.getLong("size");
                 continue;
             }
@@ -289,22 +293,33 @@ public final class DataUpdates {
         for (int i = 0; i < packs.length(); i++)
             clearDownload(context, "data_" + packs.getJSONObject(i).getString("sha256"), ".zip");
     }
-    public static void prepare(Context context, Progress progress) {
+    public static void prepare(Context context, Progress progress, boolean repairAssets) {
         listener = progress;
-        begin(context.getApplicationContext(), true);
+        begin(context.getApplicationContext(), true, repairAssets);
     }
     public static void detach(Progress progress) { if (listener == progress) listener = null; }
     public static synchronized void checkInBackground(Context context) {
         listener = null;
-        begin(context.getApplicationContext(), false);
+        begin(context.getApplicationContext(), false, false);
     }
-    private static void begin(Context context, boolean mandatory) {
+    private static void begin(Context context, boolean mandatory, boolean repairAssets) {
         if (!working.compareAndSet(false, true)) return;
         new Thread(() -> {
             try {
-                if (hasPending(context)) {
+                if (repairAssets) {
+                    if (gameOpened) throw new IOException("Close and reopen Exvius to repair the game assets.");
+                    if (!online(context)) throw new IOException("Connect to the internet to repair the game assets.");
+                    if (!hasPending(context)) {
+                        File current = state(context, "installed.json");
+                        File latest = current.isFile() ? current :
+                            download(context, "latest", LATEST, ".json", 0, 0, true);
+                        write(state(context, "pending.json"), read(latest));
+                        if (!current.isFile()) clearDownload(context, "latest", ".json");
+                    }
+                    installPending(context, true);
+                } else if (hasPending(context)) {
                     if (!mandatory || gameOpened) return;
-                    installPending(context);
+                    installPending(context, false);
                 } else {
                     if (!online(context)) throw new IOException("Connect to the internet for the first game data download.");
                     File latest = download(context, "latest", LATEST, ".json", 0, 0, true);
@@ -317,7 +332,7 @@ public final class DataUpdates {
                         if (mandatory) {
                             // First installation needs space for only one downloaded part at a time.
                             write(state(context, "pending.json"), manifest.toString());
-                            installPending(context);
+                            installPending(context, false);
                         } else {
                         JSONArray packs = manifest.getJSONArray("packs");
                         long total = 0, done = 0;

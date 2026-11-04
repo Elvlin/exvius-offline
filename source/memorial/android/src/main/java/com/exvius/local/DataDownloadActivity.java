@@ -15,14 +15,21 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
     private TextView status;
     private ProgressBar progress;
     private Button retry;
+    private boolean repairAssets;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         if (DataUpdates.ready(this) && (!DataUpdates.hasPending(this) || DataUpdates.gameOpened())) {
-            DataUpdates.checkInBackground(this);
-            openGame();
+            openGame(true);
             return;
         }
+        repairAssets = DataUpdates.clientAssetsMissing(this);
+        showDownloadPage();
+        DataUpdates.prepare(this, this, repairAssets);
+    }
+
+    private void showDownloadPage() {
+        if (status != null) return;
         LinearLayout page = new LinearLayout(this);
         page.setOrientation(LinearLayout.VERTICAL);
         page.setGravity(Gravity.CENTER);
@@ -45,14 +52,25 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
         retry = new Button(this);
         retry.setText("Retry");
         retry.setVisibility(View.GONE);
-        retry.setOnClickListener(view -> { retry.setVisibility(View.GONE); DataUpdates.prepare(this, this); });
+        retry.setOnClickListener(view -> {
+            retry.setVisibility(View.GONE);
+            DataUpdates.prepare(this, this, repairAssets);
+        });
         page.addView(retry);
         setContentView(page);
-        DataUpdates.prepare(this, this);
     }
 
-    private void openGame() {
-        GameAssets.attach(getApplicationContext());
+    private void openGame(boolean checkForUpdates) {
+        try {
+            GameAssets.attach(getApplicationContext());
+        } catch (IllegalStateException error) {
+            android.util.Log.e("ExviusUpdates", "Could not open downloaded client assets", error);
+            repairAssets = true;
+            showDownloadPage();
+            failed("The game assets could not be opened. Connect to the internet and tap Retry to repair them.");
+            return;
+        }
+        if (checkForUpdates) DataUpdates.checkInBackground(this);
         Intent game = new Intent();
         game.setClassName(getPackageName(), "com.square_enix.android_googleplay.FFBEWW.Lapis");
         startActivity(game);
@@ -71,7 +89,7 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
             if (total > 0) progress.setProgress((int) Math.min(1000, done * 1000 / total));
         });
     }
-    @Override public void complete() { runOnUiThread(() -> { if (!isFinishing()) openGame(); }); }
+    @Override public void complete() { runOnUiThread(() -> { if (!isFinishing()) openGame(false); }); }
     @Override public void failed(String message) {
         runOnUiThread(() -> {
             if (isFinishing()) return;
