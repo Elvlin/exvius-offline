@@ -569,7 +569,12 @@ def medal_exchange(spec, req):
         _product(20, currency)
         costs.append({"kind": 20, "id": currency, "count": _int(row["Qy5EvcK1"]) * quantity})
         from exvius_rewards import parse
-        for reward in parse(row.get('7iJpH5zZ')):
+        reward_text = row.get('7iJpH5zZ')
+        # These two fixed comeback-shop offers use a zero in the rate slot
+        # of an otherwise complete level-60 unit reward.
+        if iid in ('226406', '228606') and reward_text == '10:900020401:1:0:60':
+            reward_text = '10:900020401:1:100:60'
+        for reward in parse(reward_text):
             reward['count'] *= quantity
             rewards.append(reward)
         counts[iid] = bought + quantity

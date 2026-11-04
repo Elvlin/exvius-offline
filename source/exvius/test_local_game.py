@@ -137,9 +137,9 @@ class LocalGameIntegration(unittest.TestCase):
 
     def test_cactuar_dunes_captures_appear_in_results_and_persist_once_per_clear(self):
         from collections import Counter
-        from ffbe_battle import CACTUAR_CAPTURE_UNITS
+        from ffbe_battle import CAPTURE_UNITS
         player = self.game.server.State.player
-        experience = dict(zip(CACTUAR_CAPTURE_UNITS.values(), (5000, 10000, 30000, 100000)))
+        experience = {'900020101': 5000, '900020201': 10000, '900020301': 30000, '900020401': 100000}
 
         def points(current):
             return current.data.get('exvius_unit_points', {}).get('banks', {}).get('0', {}).get('XeRVw3s2', 0)
@@ -149,7 +149,7 @@ class LocalGameIntegration(unittest.TestCase):
             stages = Counter(phase['2fY1IomW'] for phase in battle['an6TB4WS'])
             expected = Counter()
             for slot in battle['Bi6hVv34']:
-                expected[CACTUAR_CAPTURE_UNITS[slot['xqartN26']]] += stages[slot['2fY1IomW']]
+                expected[CAPTURE_UNITS[slot['xqartN26']]] += stages[slot['2fY1IomW']]
             before = points(player)
             report = {'jQsE54Iz': [{'qo3PECw6': mission}],
                       '2urzfX6d': [{'69ieJGhD': '1:1:3', 'Z1p0j9uF': '0'}],
@@ -170,6 +170,92 @@ class LocalGameIntegration(unittest.TestCase):
         self.load_mission('2111204')
         report['2urzfX6d'][0]['69ieJGhD'] = '1:1:3'
         self.assertIn('2U05aV9Z', self.exchange('MissionEndRequest', report)['09HRWXDf'][0])
+
+    def test_gil_snapper_cave_captures_sell_for_gil(self):
+        from collections import Counter
+        from ffbe_battle import CAPTURE_UNITS
+        player = self.game.server.State.player
+        missions = ('2111301', '2111302', '2111303', '2111304', '10380101')
+        for mission, value in zip(missions, (1000, 2500, 5000, 30000, 30000)):
+            battle = self.load_mission(mission)
+            groups = Counter(phase['2fY1IomW'] for phase in battle['an6TB4WS'])
+            expected = Counter()
+            for slot in battle['Bi6hVv34']:
+                expected[CAPTURE_UNITS[slot['xqartN26']]] += groups[slot['2fY1IomW']]
+            if mission == '10380101':
+                self.assertEqual(expected, {'900010401': 5})
+            before = {unit['instance_id'] for unit in player.data['roster']}
+            report = {'jQsE54Iz': [{'qo3PECw6': mission}],
+                      '2urzfX6d': [{'69ieJGhD': '1:1:3', 'Z1p0j9uF': '0'}],
+                      '09HRWXDf': [{'Wdi3MAs2': '20'}]}
+            result = self.exchange('MissionEndRequest', report)['09HRWXDf'][0]
+            self.assertNotIn('xF9Sr1a6', result)
+            self.assertEqual({unit: int(count) for _, unit, count in
+                              (entry.split(':') for entry in result['2U05aV9Z'].split(','))}, expected)
+            self.assertNotIn('2U05aV9Z', self.exchange('MissionEndRequest', report)['09HRWXDf'][0])
+            saved = self.restored_player()
+            captures = [unit for unit in saved.data['roster'] if unit['instance_id'] not in before]
+            self.assertEqual(Counter(str(unit['master_id']) for unit in captures), expected)
+            balance = saved.currencies['gil']
+            self.exchange('UnitExchangeRequest', {'g6sVon0N': [{'og2GHy49': str(unit['instance_id'])}
+                                                               for unit in captures]})
+            self.assertEqual(self.restored_player().currencies['gil'], balance + len(captures) * value)
+
+    def test_farming_chambers_pay_their_authored_gil_and_points(self):
+        player = self.game.server.State.player
+        def finish(mission):
+            return self.exchange('MissionEndRequest', {
+                'jQsE54Iz': [{'qo3PECw6': mission}],
+                '2urzfX6d': [{'69ieJGhD': '1:1:3'}],
+                '09HRWXDf': [{'Wdi3MAs2': '20', 'S4U09svH': '100'}]})['09HRWXDf'][0]
+
+        for stage, gil in enumerate((1500, 3200, 5000, 10000, 85000), 1):
+            mid = '211100' + str(stage)
+            self.load_mission(mid)
+            before = player.currencies['gil']
+            self.assertEqual(finish(mid)['16LQuC5r'], str(gil))
+            self.assertEqual(self.restored_player().currencies['gil'], before + gil)
+        for stage, points in enumerate((350, 10000, 3000, 1000, 300), 1):
+            mid = '969010' + str(stage)
+            bundle = self.load_mission(mid)
+            self.assertTrue(any(f'20:1209001000:{points}:100' in row['9BetM2Ds']
+                                for row in bundle['y35YvQjZ']))
+            before = player.item_count(20, 1209001000)
+            self.assertEqual(finish(mid)['xF9Sr1a6'], f'20:1209001000:{points}')
+            self.assertNotIn('xF9Sr1a6', finish(mid))
+            self.assertEqual(self.restored_player().item_count(20, 1209001000), before + points)
+
+    def test_typed_stage_drops_credit_equipment_and_unit_points(self):
+        from exvius_actions_shops import series_point_award
+        mid = '1110101'
+        self.load_mission(mid)
+        result = self.exchange('MissionEndRequest', {
+            'jQsE54Iz': [{'qo3PECw6': mid}],
+            '2urzfX6d': [{'69ieJGhD': '1:1:3'}],
+            '09HRWXDf': [{'xF9Sr1a6': '21:301000200:1,28:999999:2',
+                          '81fnjKLw': '21:301000200:1'}]})
+        saved = self.restored_player()
+        self.assertEqual(result['09HRWXDf'][0]['81fnjKLw'], '21:301000200:1')
+        self.assertEqual(saved.item_count(21, 301000200), 0)
+        self.assertTrue(any(row['J1YX9kmM'] == '301000200' and row['Qy5EvcK1'] == '1'
+                            for row in saved.equip_item_rows()))
+        series, token, amount = series_point_award('999999')
+        self.assertEqual(saved.data['exvius_unit_points']['banks'][series][token], amount * 2)
+        self.assertTrue(any(row['woghJa61'] == series and row[token] == str(amount * 2)
+                            for row in result['z36FApms']))
+
+    def test_fixed_unit_challenge_rewards_follow_native_field_layout(self):
+        from exvius_repeat import begin_attempt, complete_attempt
+        player = self.game.server.State.player
+        self.assertTrue(begin_attempt(player, '99130101'))
+        challenges = [{'id': '991301012', 'condition': '33', 'rewards': '10:310000105:1:1:1'},
+                      {'id': '991301013', 'condition': '33', 'rewards': '10:905000103:1:0:1'}]
+        report = complete_attempt(player, '99130101', True, challenges, {'33': lambda *_: True}, {})
+        self.assertFalse(report['blocked'])
+        self.assertEqual([str(unit['master_id']) for unit in player.data['roster'][-2:]],
+                         ['310000105', '905000103'])
+        self.assertFalse(complete_attempt(player, '99130101', True, challenges,
+                                          {'33': lambda *_: True}, {})['paid'])
 
     def test_pure_nv_conversion_grants_original_fragments_once(self):
         player = self.game.server.State.player
@@ -1054,6 +1140,20 @@ class LocalGameIntegration(unittest.TestCase):
         saved = copy.deepcopy(player.data)
         self.exchange('MedalExchangeRequest', request)
         self.assertEqual(player.data, saved)
+
+    def test_comeback_exchange_level_60_minituars_can_be_purchased(self):
+        from exvius_actions_shops import _table
+        player = self.game.server.State.player
+        products = _table('F_MEDAL_EXCHANGE_MST', 'S21FT3L8')
+        for store, product in (('7000433', '226406'), ('7000453', '228606')):
+            row = products[product]
+            currency, price = row['ak2dhKm3'], int(row['Qy5EvcK1'])
+            player.grant_item(20, currency, price)
+            self.exchange('MedalExchangeRequest', {
+                '2d6RAkvh': [{'Z20mNDvL': store, 'L2gHC5ta': product + ':1'}]})
+            saved = self.restored_player()
+            self.assertEqual(saved.item_count(20, currency), 0)
+            self.assertEqual(saved.data['exvius_medal_exchange']['counts'][product], 1)
 
     def test_native_fragment_and_permanent_shops_receive_products(self):
         reply = self.exchange('GachaSelectEntryRequest', {})

@@ -18,7 +18,7 @@ from collections import Counter
 from ffbe_config import *          # noqa: F401,F403 -- constants; the table has no behaviour
 import ffbe_state as st           # the REBOUND runtime state; see ffbe_state's docstring
 from ffbe_state import State, _note
-from player_state import (credit_exp, mission_open_switch, mission_wave_count, story_beast_for_mission, story_beast_stats,
+from player_state import (credit_exp, mission_open_switch, mission_row, mission_wave_count, story_beast_for_mission, story_beast_stats,
                           switch_position, unit_stats, _load_ndjson)
 
 
@@ -47,13 +47,53 @@ __all__ = [
 
 _CHALLENGE_INFO_LOGGED: set = set()   # reply ids already announced by serve_challenge_clear_all
 CACTUAR_DUNES = frozenset(('2111201', '2111202', '2111203', '2111204'))
-CACTUAR_CAPTURE_UNITS = {
+GIL_SNAPPER_CAVE = frozenset(('2111301', '2111302', '2111303', '2111304'))
+CAPTURE_MISSIONS = CACTUAR_DUNES | GIL_SNAPPER_CAVE | {'10380101'}
+CAPTURE_UNITS = {
     '111051000': '900020101',
     '111061000': '900020201',
     '211011000': '900020301',
     '111091000': '900020401',
+    '103041000': '900010101',
+    '103051000': '900010201',
+    '103061000': '900010301',
+    '103061001': '900010301',
+    '103111000': '900010401',
+    '900010442': '900010401',
+    '1800000341': '900010401',  # Daily Gil Hunt's recovered Family encounter
+}
+CHAMBER_OF_RICHES = frozenset(('2111001', '2111002', '2111003', '2111004', '2111005'))
+ENLIGHTENMENT_DROPS = {
+    '9690101': '20:1209001000:350',
+    '9690102': '20:1209001000:10000',
+    '9690103': '20:1209001000:3000',
+    '9690104': '20:1209001000:1000',
+    '9690105': '20:1209001000:300',
 }
 RESULT_CAPTURE_TOKEN = '2U05aV9Z'
+TYPED_RESULT_DROPS = {
+    '10': RESULT_CAPTURE_TOKEN,
+    '21': '81fnjKLw',
+    '22': '34pqHBIC',
+    '23': 'Z6yB9eYd',
+}
+
+
+def _set_result_drops(row, drops):
+    columns = {}
+    for entry in drops.split(','):
+        if entry:
+            token = TYPED_RESULT_DROPS.get(entry.split(':', 1)[0], RESULT_DROP_TOKEN)
+            columns.setdefault(token, []).append(entry)
+    row.update({token: ','.join(entries) for token, entries in columns.items()})
+
+
+def _reported_drops(row):
+    typed = {kind: row[token] for kind, token in TYPED_RESULT_DROPS.items()
+             if isinstance(row.get(token), str) and row[token]}
+    generic = [entry for entry in str(row.get(RESULT_DROP_TOKEN) or '').split(',')
+               if entry and entry.split(':', 1)[0] not in typed]
+    return ','.join(generic + list(typed.values()))
 
 
 def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
@@ -87,10 +127,10 @@ def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
     spec = dict(spec)
     out = []
     captures = {}
-    if is_battle_bundle and mid in CACTUAR_DUNES:
+    if is_battle_bundle and mid in CAPTURE_MISSIONS:
         groups = {}
         for slot in spec.get('Bi6hVv34', []):
-            unit = CACTUAR_CAPTURE_UNITS.get(slot.get('xqartN26'))
+            unit = CAPTURE_UNITS.get(slot.get('xqartN26'))
             if unit:
                 groups.setdefault(slot['2fY1IomW'], Counter())[unit] += 1
         captures = {phase['6v7y3QcJ']: groups.get(phase.get('2fY1IomW'), {})
@@ -103,7 +143,9 @@ def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
         # `dropInfo` (per-monster pool, e.g. Steel Bat's differs from Dire Rat's), and the DB is the oracle
         # for it -- so the pool belongs in the served `9BetM2Ds`, and the server only rolls it. `DROP_TABLE`
         # remains as the fallback for a row that has none.
-        if row.get('6v7y3QcJ') in captures:
+        if mid in ENLIGHTENMENT_DROPS:
+            src = ENLIGHTENMENT_DROPS[mid] + ':100'
+        elif row.get('6v7y3QcJ') in captures:
             src = ','.join(f'10:{unit}:{count}:100'
                            for unit, count in captures[row['6v7y3QcJ']].items())
         else:
@@ -182,7 +224,7 @@ def apply_result_drops(spec, mid: str | None = None):
     "should be empty", and empty is a SHAPE this parser reads unguarded. It produced a black screen after
     the battle with no result scene entered at all.)
     """
-    if not isinstance(spec, dict) or mid in CACTUAR_DUNES:
+    if not isinstance(spec, dict) or mid in CAPTURE_MISSIONS or mid in ENLIGHTENMENT_DROPS:
         return spec
     if not MIRROR_DROPS:
         return spec            # control: serve the payload verbatim (last known-good). The format for this
@@ -212,7 +254,7 @@ def apply_result_drops(spec, mid: str | None = None):
             out.append(row)
             continue
         row = dict(row)
-        row[RESULT_DROP_TOKEN] = ",".join(mirror)
+        _set_result_drops(row, ','.join(mirror))
         out.append(row)
     spec[RESULT_TAG] = out
     return spec
@@ -399,7 +441,7 @@ def mission_end_echo(spec, plaintext: str | None):
     if not isinstance(rows, list) or not rows or not isinstance(rows[0], dict):
         return spec
     src = rows[0]
-    exp, gil, drops = src.get("S4U09svH"), src.get("Wdi3MAs2"), src.get("xF9Sr1a6")
+    exp, gil, drops = src.get("S4U09svH"), src.get("Wdi3MAs2"), _reported_drops(src)
     if exp is None and gil is None and not drops:
         return spec
     per_unit = per_unit_exp(exp)[0] if exp is not None else None
@@ -420,7 +462,7 @@ def mission_end_echo(spec, plaintext: str | None):
             for token in RESULT_ITEM_TOKENS:
                 row.pop(token, None)
         if drops:
-            row["xF9Sr1a6"] = drops
+            _set_result_drops(row, drops)
         # NOTE: `Qic38SuC` is NOT set here any more. It must carry the party's REAL instance ids and their
         # real before/after params, so it is built from the player state in `credit_mission_rewards` (once
         # the exp has been credited). See mission_lv_info.
@@ -439,7 +481,7 @@ def credit_mission_rewards(plaintext: str | None, spec=None):
     from exvius_repeat import claim_mission_rewards
     player = State.player
     mid = mission_id_from(plaintext)
-    if mid in CACTUAR_DUNES:
+    if mid in CAPTURE_MISSIONS or mid in ENLIGHTENMENT_DROPS:
         spec = copy.deepcopy(spec)
         for row in spec[RESULT_TAG]:
             row.pop(RESULT_DROP_TOKEN, None)
@@ -505,21 +547,41 @@ def _credit_mission_rewards(plaintext: str | None, spec=None, mid=None):
     paid: list[str] = []          # only what ACTUALLY changed -- `frozen` refuses and must log nothing
     lvl_before = int(State.player.data["rank"].get("level", 1))
     gil = src.get("Wdi3MAs2")
+    farming_stage = mid in CAPTURE_MISSIONS or mid in CHAMBER_OF_RICHES or mid in ENLIGHTENMENT_DROPS
+    cleared = farming_stage and mission_result_from(plaintext)['cleared'] is True
+    if mid in CHAMBER_OF_RICHES and cleared:
+        original_gil = int(mission_row(mid)['7UR4J2SE'])
+        gil = max(original_gil, int(gil) if str(gil).isdigit() else 0)
+        for row in spec[RESULT_TAG]:
+            row['16LQuC5r'] = str(gil)
     if gil is not None and str(gil).isdigit() and int(gil) > 0:
         before = int(State.player.currencies.get("gil", 0))
         if State.player.add_currency("gil", int(gil)) != before:
             paid.append(f"{int(gil)}gil")
-    drops = '' if mid in CACTUAR_DUNES else str(src.get(RESULT_DROP_TOKEN) or '')
+    if mid in ENLIGHTENMENT_DROPS:
+        drops = ENLIGHTENMENT_DROPS[mid] if cleared else ''
+        if drops:
+            for row in spec[RESULT_TAG]:
+                row[RESULT_DROP_TOKEN] = drops
+    else:
+        drops = '' if mid in CAPTURE_MISSIONS else _reported_drops(src)
+    projected_kinds = set()
     for entry in drops.split(","):
         f = entry.split(":")
         if len(f) < 3 or not f[0].isdigit() or not f[1].isdigit() or not f[2].isdigit():
             continue
-        before = State.player.item_count(int(f[0]), f[1])
-        if State.player.grant_item(int(f[0]), f[1], int(f[2])) != before:
+        reward = {'kind': int(f[0]), 'id': int(f[1]), 'count': int(f[2])}
+        if State.player._can_credit(reward) and State.player._grant_items([reward]):
             paid.append(f"{f[0]}:{f[1]}x{f[2]}")
-    if mid in CACTUAR_DUNES and mission_result_from(plaintext)['cleared'] is True:
+            projected_kinds.add(reward['kind'])
+    if 28 in projected_kinds:
+        from exvius_actions_shops import _point_rows
+        spec['z36FApms'] = _point_rows()
+    if projected_kinds.intersection((10, 21, 22, 23)):
+        spec.setdefault('B71MekS8', [])
+    if mid in CAPTURE_MISSIONS and cleared:
         attempt = State.player.data['exvius_repeat']['attempt']
-        captures = State.player._grant_items(attempt.get('cactuar_captures', []))
+        captures = State.player._grant_items(attempt.get('captures', attempt.get('cactuar_captures', [])))
         if captures:
             capture_csv = ','.join(f"10:{row['id']}:{row['count']}" for row in captures)
             for row in spec[RESULT_TAG]:

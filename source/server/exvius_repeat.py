@@ -10,7 +10,7 @@ import threading
 _LOCK = threading.RLock()
 
 
-def begin_attempt(player, mid, cactuar_captures=None):
+def begin_attempt(player, mid, captures=None):
     if player.mode == 'frozen' or not mid:
         return False
     with _LOCK:
@@ -20,15 +20,20 @@ def begin_attempt(player, mid, cactuar_captures=None):
             return False  # repeated load while this mission is active
         state['attempt'] = {'mid': str(mid), 'sequence': current.get('sequence', 0) + 1,
                             'status': 'pending'}
-        if cactuar_captures:
-            state['attempt']['cactuar_captures'] = cactuar_captures
+        if captures:
+            state['attempt']['captures'] = captures
         player.dirty = True
         return True
 
 
 def parse_rewards(raw):
     from exvius_rewards import parse
-    return parse(raw)
+    fields = raw.split(':')
+    # GL9's fixed mission reward reader takes unit level from field five
+    # and skips field four. Drop rates on enemy rewards use a separate reader.
+    if len(fields) == 5 and fields[0].strip() == '10' and fields[3] in ('0', '1'):
+        fields[3] = '100'
+    return parse(':'.join(fields))
 
 
 def complete_attempt(player, mid, cleared, challenges, checks, context, lapis_enabled=True):
@@ -147,14 +152,14 @@ def observe_load(spec, mid, is_battle_bundle):
     from ffbe_state import State, LAST_DROPS
     from ffbe_config import RESULT_TAG
     if is_battle_bundle and isinstance(spec, dict) and RESULT_TAG not in spec:
-        from ffbe_battle import CACTUAR_DUNES
+        from ffbe_battle import CAPTURE_MISSIONS
         captures = []
-        if mid in CACTUAR_DUNES:
+        if mid in CAPTURE_MISSIONS:
             for entry in LAST_DROPS.get(str(mid), []):
                 kind, unit, count = entry.split(':')
                 if kind == '10':
                     captures.append({'kind': 10, 'id': int(unit), 'count': int(count)})
-        if begin_attempt(State.player, mid, cactuar_captures=captures):
+        if begin_attempt(State.player, mid, captures=captures):
             from exvius_raid_progress import observe_personal_raid
             observe_personal_raid(State.player, mid, spec)
             State.state_dirty = True
