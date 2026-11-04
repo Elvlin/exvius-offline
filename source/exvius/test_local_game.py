@@ -124,6 +124,53 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertEqual(restored.roster_row(target['instance_id'])['total_exp'], 100)
         self.assertEqual(restored.data['exvius_unit_points']['banks']['0']['XeRVw3s2'], 29900)
 
+    def test_native_settings_save_and_reload_offline(self):
+        request = {'Dqx0MA42': [{
+            '9Tbns0eI': '1', '27RyqAGe': 'UNIT_LOCK_RANK', 'ayUH8g4q': '0',
+            '0NBjrDw4': '1', 'p0bM2ZNi': '0', 'bH1T4FLK': '1', 'b70zaGxK': 0}]}
+        saved = self.exchange('OptionUpdateRequest', request)['Dqx0MA42'][0]
+        self.assertEqual(saved, {key: str(value) for key, value in request['Dqx0MA42'][0].items()
+                                 if key != '9Tbns0eI'})
+        self.game.server.State.player = self.restored_player()
+        self.assertEqual(self.exchange('GetUserInfoRequest', {})['Dqx0MA42'], [saved])
+        self.assertEqual(self.exchange('InitializeRequest', {})['Dqx0MA42'], [saved])
+
+    def test_cactuar_dunes_captures_appear_in_results_and_persist_once_per_clear(self):
+        from collections import Counter
+        from ffbe_battle import CACTUAR_CAPTURE_UNITS
+        player = self.game.server.State.player
+        experience = dict(zip(CACTUAR_CAPTURE_UNITS.values(), (5000, 10000, 30000, 100000)))
+
+        def points(current):
+            return current.data.get('exvius_unit_points', {}).get('banks', {}).get('0', {}).get('XeRVw3s2', 0)
+
+        for mission in ('2111201', '2111202', '2111203', '2111204'):
+            battle = self.load_mission(mission)
+            stages = Counter(phase['2fY1IomW'] for phase in battle['an6TB4WS'])
+            expected = Counter()
+            for slot in battle['Bi6hVv34']:
+                expected[CACTUAR_CAPTURE_UNITS[slot['xqartN26']]] += stages[slot['2fY1IomW']]
+            before = points(player)
+            report = {'jQsE54Iz': [{'qo3PECw6': mission}],
+                      '2urzfX6d': [{'69ieJGhD': '1:1:3', 'Z1p0j9uF': '0'}],
+                      '09HRWXDf': [{'xF9Sr1a6': '20:202000100:1'}]}
+            result = self.exchange('MissionEndRequest', report)['09HRWXDf'][0]
+            self.assertNotIn('xF9Sr1a6', result)
+            captures = dict((unit, int(count)) for _, unit, count in
+                            (entry.split(':') for entry in result['2U05aV9Z'].split(',')))
+            self.assertEqual(captures, expected)
+            self.assertNotIn('2U05aV9Z', self.exchange('MissionEndRequest', report)['09HRWXDf'][0])
+            self.assertEqual(points(self.restored_player()) - before,
+                             sum(experience[unit] * count for unit, count in expected.items()))
+        self.load_mission('2111204')
+        before = points(player)
+        report['2urzfX6d'][0]['69ieJGhD'] = ''
+        self.assertNotIn('2U05aV9Z', self.exchange('MissionEndRequest', report)['09HRWXDf'][0])
+        self.assertEqual(points(self.restored_player()), before)
+        self.load_mission('2111204')
+        report['2urzfX6d'][0]['69ieJGhD'] = '1:1:3'
+        self.assertIn('2U05aV9Z', self.exchange('MissionEndRequest', report)['09HRWXDf'][0])
+
     def test_pure_nv_conversion_grants_original_fragments_once(self):
         player = self.game.server.State.player
         player._grant_items([{'kind': 10, 'id': 100044807, 'count': 1}])

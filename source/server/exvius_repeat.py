@@ -10,7 +10,7 @@ import threading
 _LOCK = threading.RLock()
 
 
-def begin_attempt(player, mid):
+def begin_attempt(player, mid, cactuar_captures=None):
     if player.mode == 'frozen' or not mid:
         return False
     with _LOCK:
@@ -20,6 +20,8 @@ def begin_attempt(player, mid):
             return False  # repeated load while this mission is active
         state['attempt'] = {'mid': str(mid), 'sequence': current.get('sequence', 0) + 1,
                             'status': 'pending'}
+        if cactuar_captures:
+            state['attempt']['cactuar_captures'] = cactuar_captures
         player.dirty = True
         return True
 
@@ -142,10 +144,17 @@ def claim_quest_progress(player, mid):
 
 
 def observe_load(spec, mid, is_battle_bundle):
-    from ffbe_state import State
+    from ffbe_state import State, LAST_DROPS
     from ffbe_config import RESULT_TAG
     if is_battle_bundle and isinstance(spec, dict) and RESULT_TAG not in spec:
-        if begin_attempt(State.player, mid):
+        from ffbe_battle import CACTUAR_DUNES
+        captures = []
+        if mid in CACTUAR_DUNES:
+            for entry in LAST_DROPS.get(str(mid), []):
+                kind, unit, count = entry.split(':')
+                if kind == '10':
+                    captures.append({'kind': 10, 'id': int(unit), 'count': int(count)})
+        if begin_attempt(State.player, mid, cactuar_captures=captures):
             from exvius_raid_progress import observe_personal_raid
             observe_personal_raid(State.player, mid, spec)
             State.state_dirty = True

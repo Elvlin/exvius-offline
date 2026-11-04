@@ -14,6 +14,8 @@ from ffbe_friends import local_friend_action
 from ffbe_state import State, _note
 
 UNIT_GROUP = "B71MekS8"        # UserUnitInfoResponse; its presence makes apply_to_reply project all groups
+OPTION_GROUP = 'Dqx0MA42'
+OPTION_FIELDS = ('ayUH8g4q', '0NBjrDw4', 'p0bM2ZNi', 'bH1T4FLK', 'b70zaGxK')
 
 
 def _request(plaintext):
@@ -34,6 +36,29 @@ def _node(req, group):
 def _refresh(spec):
     out = dict(spec) if isinstance(spec, dict) else {}
     out.setdefault(UNIT_GROUP, [])
+    return out
+
+
+def option_update(spec, req):
+    """Save the fields shared by the native option request and response."""
+    node = _node(req, OPTION_GROUP) or {}
+    player = State.player
+    options = dict(player.data.get('user_options', {}))
+    for key in OPTION_FIELDS:
+        value = node.get(key)
+        if type(value) in (str, int) and len(str(value)) <= 4096 and '\x00' not in str(value):
+            options[key] = str(value)
+    if options != player.data.get('user_options', {}) and player.mode != 'frozen':
+        player.data['user_options'] = options
+        player.dirty = True
+    return option_reply(spec)
+
+
+def option_reply(spec):
+    out = dict(spec) if isinstance(spec, dict) else {}
+    options = State.player.data.get('user_options')
+    if options:
+        out[OPTION_GROUP] = [dict(options, **{'27RyqAGe': 'UNIT_LOCK_RANK'})]
     return out
 
 
@@ -297,6 +322,7 @@ def notice_state(spec, req, reply_id):
 
 HANDLERS = {
     'ey8mupb4': update_profile,
+    'otgXV79T': option_update,    # OptionUpdateRequest
     'cVRHU84e': lambda s, r: inventory_favourite(s, r, 'K8pR0Fvb', ('I3FUD4Mt', 'DWJ3P8cg'), ('aME25KS0', 'Exp2A1u7')),
     'k5v0hMd8': lambda s, r: inventory_favourite(s, r, 'pJ9Eo6cn', ('8UJhyb4u',), ('85HUgcbK',)),
     'VTbX14dD': lambda s, r: inventory_favourite(s, r, '4I71fGzq', ('E0zptv3J',), ('N4ikBXn9',)),
@@ -341,6 +367,8 @@ def serve_actions(spec, reply_id, plaintext):
     handler = _all_handlers().get(str(reply_id))
     if State.player is None:
         return spec
+    if reply_id in ('75fYdNxq', 'X07iYtp5') and State.player.data.get('user_options'):
+        spec = option_reply(spec)
     from exvius_colosseum import project
     if (reply_id in ('pC3a2JWU', 'CQ4jTm2F') or isinstance(spec, dict)
             and ('LhVz6aD2' in spec or any(group in spec for group in NOTICE_GROUPS))):

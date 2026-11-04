@@ -13,6 +13,7 @@ Extracted 2026-09-26 from `capture_server.py` (docs/SERVER_REFACTOR_PLAN.md, Pha
 from __future__ import annotations
 
 import copy, json, os, random, re
+from collections import Counter
 
 from ffbe_config import *          # noqa: F401,F403 -- constants; the table has no behaviour
 import ffbe_state as st           # the REBOUND runtime state; see ffbe_state's docstring
@@ -45,6 +46,16 @@ __all__ = [
 ]
 
 _CHALLENGE_INFO_LOGGED: set = set()   # reply ids already announced by serve_challenge_clear_all
+CACTUAR_DUNES = frozenset(('2111201', '2111202', '2111203', '2111204'))
+CACTUAR_CAPTURE_UNITS = {
+    '111051000': '900020101',
+    '111061000': '900020201',
+    '211011000': '900020301',
+    '111091000': '900020401',
+}
+RESULT_CAPTURE_TOKEN = '2U05aV9Z'
+
+
 def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
     """Turn each served drop list into a ROLL of itself, so drops vary per battle.
 
@@ -75,6 +86,15 @@ def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
         return spec
     spec = dict(spec)
     out = []
+    captures = {}
+    if is_battle_bundle and mid in CACTUAR_DUNES:
+        groups = {}
+        for slot in spec.get('Bi6hVv34', []):
+            unit = CACTUAR_CAPTURE_UNITS.get(slot.get('xqartN26'))
+            if unit:
+                groups.setdefault(slot['2fY1IomW'], Counter())[unit] += 1
+        captures = {phase['6v7y3QcJ']: groups.get(phase.get('2fY1IomW'), {})
+                    for phase in spec.get(PHASE_TAG, [])}
     for row in rows:
         if not isinstance(row, dict) or DROP_TOKEN not in row:
             out.append(row)
@@ -83,7 +103,11 @@ def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
         # `dropInfo` (per-monster pool, e.g. Steel Bat's differs from Dire Rat's), and the DB is the oracle
         # for it -- so the pool belongs in the served `9BetM2Ds`, and the server only rolls it. `DROP_TABLE`
         # remains as the fallback for a row that has none.
-        src = row.get(DROP_TOKEN) or ",".join(DROP_TABLE.split(","))
+        if row.get('6v7y3QcJ') in captures:
+            src = ','.join(f'10:{unit}:{count}:100'
+                           for unit, count in captures[row['6v7y3QcJ']].items())
+        else:
+            src = row.get(DROP_TOKEN) or ",".join(DROP_TABLE.split(","))
         items = [it for it in src.split(",") if it]
         rolled = []
         for it in items:
@@ -102,7 +126,10 @@ def roll_drops(spec, mid: str | None = None, is_battle_bundle: bool = False):
         # direction the 2026-09-19 note reaches (battle_authoring_data.md S5.3: "comma-separated elements,
         # `:`-separated ints, >=4 fields"). Do NOT strip it. The result-screen mirror strips separately
         # (addItem is arity-tolerant), so this stays the WAVE-format shape only.
-        row[DROP_TOKEN] = ",".join(rolled)
+        if rolled:
+            row[DROP_TOKEN] = ",".join(rolled)
+        else:
+            row.pop(DROP_TOKEN, None)
         out.append(row)
     # The legacy authored fragment belongs to Fundamental Forces alone. Gate
     # selection must never add it to King Mog or another unrelated event.
@@ -155,7 +182,7 @@ def apply_result_drops(spec, mid: str | None = None):
     "should be empty", and empty is a SHAPE this parser reads unguarded. It produced a black screen after
     the battle with no result scene entered at all.)
     """
-    if not isinstance(spec, dict):
+    if not isinstance(spec, dict) or mid in CACTUAR_DUNES:
         return spec
     if not MIRROR_DROPS:
         return spec            # control: serve the payload verbatim (last known-good). The format for this
@@ -411,18 +438,24 @@ def credit_mission_rewards(plaintext: str | None, spec=None):
         return spec
     from exvius_repeat import claim_mission_rewards
     player = State.player
+    mid = mission_id_from(plaintext)
+    if mid in CACTUAR_DUNES:
+        spec = copy.deepcopy(spec)
+        for row in spec[RESULT_TAG]:
+            row.pop(RESULT_DROP_TOKEN, None)
+            row.pop(RESULT_CAPTURE_TOKEN, None)
     before, dirty_before = copy.deepcopy(player.data), player.dirty
-    if not claim_mission_rewards(player, mission_id_from(plaintext)):
+    if not claim_mission_rewards(player, mid):
         _note('normal mission rewards withheld: no unpaid loaded attempt')
         return spec
     try:
-        return _credit_mission_rewards(plaintext, spec)
+        return _credit_mission_rewards(plaintext, spec, mid)
     except Exception:
         player.data, player.dirty = before, dirty_before
         raise
 
 
-def _credit_mission_rewards(plaintext: str | None, spec=None):
+def _credit_mission_rewards(plaintext: str | None, spec=None, mid=None):
     """Make the battle's gil, loot and RANK POINTS real in the player state (schema §2.3).
 
     Until now the MissionEnd reply was only ECHOED back by `mission_end_echo`, so the result screen showed
@@ -476,13 +509,22 @@ def _credit_mission_rewards(plaintext: str | None, spec=None):
         before = int(State.player.currencies.get("gil", 0))
         if State.player.add_currency("gil", int(gil)) != before:
             paid.append(f"{int(gil)}gil")
-    for entry in str(src.get("xF9Sr1a6") or "").split(","):
+    drops = '' if mid in CACTUAR_DUNES else str(src.get(RESULT_DROP_TOKEN) or '')
+    for entry in drops.split(","):
         f = entry.split(":")
         if len(f) < 3 or not f[0].isdigit() or not f[1].isdigit() or not f[2].isdigit():
             continue
         before = State.player.item_count(int(f[0]), f[1])
         if State.player.grant_item(int(f[0]), f[1], int(f[2])) != before:
             paid.append(f"{f[0]}:{f[1]}x{f[2]}")
+    if mid in CACTUAR_DUNES and mission_result_from(plaintext)['cleared'] is True:
+        attempt = State.player.data['exvius_repeat']['attempt']
+        captures = State.player._grant_items(attempt.get('cactuar_captures', []))
+        if captures:
+            capture_csv = ','.join(f"10:{row['id']}:{row['count']}" for row in captures)
+            for row in spec[RESULT_TAG]:
+                row[RESULT_CAPTURE_TOKEN] = capture_csv
+            spec.setdefault('B71MekS8', [])
     # Rank points come from the REPLY (the request never carries them): `wuUakq71` is the delta granted
     # for this battle. Credit the total into `rank.exp` so the next `3oU9Ktb7` agrees with the client.
     if isinstance(spec, dict):
