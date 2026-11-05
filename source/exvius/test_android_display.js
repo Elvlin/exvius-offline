@@ -3,7 +3,7 @@ const fs = require('node:fs');
 
 (async () => {
 const source = fs.readFileSync(require('node:path').join(__dirname, 'android_display.js'), 'utf8');
-const { fitMovie, chooseResolution, anchorLayout, collapseCampaignBanner, clampMapScroll, clampAnimationFrame } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+const { fitMovie, chooseResolution, responsiveDelta, anchorLayout, collapseCampaignBanner, clampMapScroll, clampAnimationFrame } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
 
 // Movies retain their source proportions within portrait, landscape and square viewports.
 for (const [sw, sh] of [[640, 1136], [720, 1280], [1920, 1080], [1280, 720], [720, 480]]) {
@@ -22,22 +22,38 @@ assert.equal(clampAnimationFrame(1, 1), 0);
 assert.equal(clampAnimationFrame(-1, 60), -1);
 assert.equal(clampAnimationFrame(0, 0), 0);
 
-// Old phones, modern tall phones, tablets, landscape and resized windows.
-for (const [width, height] of [[640, 960], [720, 1280], [1080, 2400],
-                              [1080, 2267], [1536, 2048], [2400, 1080], [800, 800]]) {
-  const result = chooseResolution(640, 1136, width, height);
-  assert.ok(result);
-  assert.ok(result.width >= 640 && result.height >= 1136, 'Preserve all original content');
-  assert.ok(Math.abs(result.width * result.scale - width) <= result.scale, 'Fill screen width');
-  assert.ok(Math.abs(result.height * result.scale - height) <= result.scale, 'Fill screen height');
-  assert.ok([3, 4].includes(result.policy), 'Never stretch or crop');
+// One continuous layout rule must cover portrait, tablet, landscape and
+// square windows. These are aspect ratios, not named device profiles.
+const aspectRatios = [1.33, 1.5, 1.775, 2, 2.22, 2.4, 2.67, 1, 0.75, 0.5];
+for (const aspect of aspectRatios) {
+  for (const scale of [0.5, 0.75, 1, 1.5, 2, 3]) {
+    const width = Math.round(720 * scale);
+    const height = Math.round(720 * aspect * scale);
+    const result = chooseResolution(640, 1136, width, height);
+    assert.ok(result);
+    assert.ok(result.width >= 640 && result.height >= 1136, 'Preserve all original content');
+    assert.ok(Math.abs(result.width * result.scale - width) <= result.scale, 'Fill screen width');
+    assert.ok(Math.abs(result.height * result.scale - height) <= result.scale, 'Fill screen height');
+    assert.ok([3, 4].includes(result.policy), 'Never stretch or crop');
+  }
 }
 assert.equal(chooseResolution(640, 1136, 1080, 2400).policy, 4);
 assert.equal(chooseResolution(640, 1136, 1536, 2048).policy, 3);
 for (const invalid of [0, -1, NaN, Infinity])
   assert.equal(chooseResolution(640, 1136, invalid, 2400), null);
-console.log('Adaptive display: 7 screen shapes and invalid sizes passed.');
+// Resolution changes at the same aspect ratio must not alter logical layout.
+for (const aspect of aspectRatios) {
+  const base = chooseResolution(640, 1136, 720, Math.round(720 * aspect));
+  for (const scale of [2, 3, 4]) {
+    const scaled = chooseResolution(640, 1136, 720 * scale, Math.round(720 * aspect) * scale);
+    assert.equal(scaled.policy, base.policy);
+    assert.equal(scaled.width, base.width);
+    assert.equal(scaled.height, base.height);
+  }
+}
+console.log('Adaptive display: 60 aspect and resolution combinations passed.');
 const reference = {width: 640, height: 1136}, canvas = {width: 640, height: 1358};
+assert.deepEqual(responsiveDelta(reference, canvas), {x: 0, y: 222});
 const button = {x: 20, y: 995, width: 100, height: 100};
 assert.deepEqual(anchorLayout('footer_home', button, reference, canvas),
   {x: 20, y: 1244, width: 100, height: 100});

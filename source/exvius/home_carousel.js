@@ -1,4 +1,5 @@
 // Restore the original Home carousel, including visible locked entries.
+'use strict';
 export function homeMenuState(esperCount, expeditionFlag) {
   return {espers: {visible: true, open: esperCount > 0},
     expedition: {visible: expeditionFlag !== 0, open: expeditionFlag === 2}};
@@ -54,7 +55,7 @@ export function installHomeCarousel(module, note, retained) {
   const nodeOpacity = native('_ZN7cocos2d4Node10setOpacityEh', 'void', ['pointer', 'uchar']);
   const spriteVisible = native('_ZN7cocos2d6Sprite10setVisibleEb', 'void', ['pointer', 'bool']);
   const nodeVisible = native('_ZN7cocos2d4Node10setVisibleEb', 'void', ['pointer', 'bool']);
-  const cast = new NativeFunction(Module.getGlobalExportByName('__dynamic_cast'), 'pointer',
+  const cast = new NativeFunction(module.getExportByName('__dynamic_cast'), 'pointer',
     ['pointer', 'pointer', 'pointer', 'long'], {exceptions: 'propagate'});
   const nodeType = module.getExportByName('_ZTIN7cocos2d4NodeE');
   const spriteType = module.getExportByName('_ZTIN7cocos2d6SpriteE');
@@ -95,7 +96,7 @@ export function installHomeCarousel(module, note, retained) {
   const addChild = native('_ZN9GameLayer8addChildEiiPN7cocos2d4NodeE', 'void', ['pointer', 'int', 'int', 'pointer']);
   // Reconnect the retained original carousel renderer. The v9 Home scene no
   // longer constructs it. Its pinned constructor writes through +0x44f.
-  const allocate = new NativeFunction(Module.getGlobalExportByName('_Znwm'), 'pointer', ['ulong']);
+  const allocate = new NativeFunction(module.getExportByName('_Znwm'), 'pointer', ['ulong']);
   const rotateCtor = native('_ZN18HomeRotateMenuListC2Ev', 'void', ['pointer']);
   const rotateSize = native('_ZN18HomeRotateMenuList7setSizeEff', 'void', ['pointer', 'float', 'float']);
   const rotateButton = native('_ZN18HomeRotateMenuList17setMenuIconButtonEP12SpriteButton', 'void', ['pointer', 'pointer']);
@@ -595,8 +596,10 @@ export function installHomeCarousel(module, note, retained) {
   }
   function snap(ui, target) {
     ui.snap = {from: ui.position, to: target, time: Date.now()};
-    const selected = ((target % ui.carousel.length) + ui.carousel.length) % ui.carousel.length;
-    note('HOME_CAROUSEL_FOCUS mode=' + ui.carousel[selected].name);
+    const rounded = Math.round(target);
+    const selected = ((rounded % ui.carousel.length) + ui.carousel.length) % ui.carousel.length;
+    const card = ui.carousel[selected];
+    note('HOME_CAROUSEL_FOCUS mode=' + (card ? card.name : 'unknown'));
   }
   function setup(scene) {
     // Keep one renderer reference to each original mode sprite while Home
@@ -673,6 +676,7 @@ export function installHomeCarousel(module, note, retained) {
     }
   }));
   function dispatch(ui, card, touch, event) {
+    if (!routeAllowed(ui.scene) || !touchEnabled(ui.scene) || !ui.cards.includes(card)) return;
     if (!card.open) { note('HOME_LOCKED mode=' + card.name); return; }
     if (!card.owner) {
       if (card.name === 'Expedition') {
@@ -716,7 +720,7 @@ export function installHomeCarousel(module, note, retained) {
       // accepted DOWN starts fresh, even when Android reuses its Touch pointer.
       releasePress(ui);
       ui.snap = null;
-      ui.gesture = {touch: touch.toString(), x: p.x, y: p.y, start: ui.position, direct};
+      ui.gesture = {touch: touch.toString(), x: p.x, y: p.y, start: ui.position, direct, moved: false};
       const card = direct || carouselHit(ui.carousel, p);
       const count = ui.carousel.length;
       const selected = ((Math.round(ui.position) % count) + count) % count;
@@ -728,7 +732,10 @@ export function installHomeCarousel(module, note, retained) {
       const ui = scenes.get(scene.toString()), g = ui?.gesture;
       if (!g || g.touch !== touch.toString()) return;
       const p = point(touch);
-      if (Math.abs(p.x - g.x) >= 14 || Math.abs(p.y - g.y) >= 14) releasePress(ui);
+      if (Math.abs(p.x - g.x) >= 14 || Math.abs(p.y - g.y) >= 14) {
+        g.moved = true;
+        releasePress(ui);
+      }
       if (g.direct) return;
       ui.position = g.start - (p.x - g.x) / (ui.width * 344 / 640);
       // Coalesce Android MOVE bursts into one update per rendered frame.
@@ -741,11 +748,11 @@ export function installHomeCarousel(module, note, retained) {
       releasePress(ui);
       const p = point(touch), result = carouselRelease(g.start, p.x - g.x, ui.width);
       if (g.direct) {
-        if (Math.abs(p.x - g.x) < 14 && Math.abs(p.y - g.y) < 14 && hit(g.direct.box, p))
+        if (!g.moved && hit(g.direct.box, p))
           dispatch(ui, g.direct, touch, event);
         return;
       }
-      if (result.dragged || Math.abs(p.y - g.y) >= 14) { snap(ui, result.position); return; }
+      if (g.moved || result.dragged || Math.abs(p.y - g.y) >= 14) { snap(ui, result.position); return; }
       const card = carouselHit(ui.carousel, p);
       if (!card || !touchEnabled(scene)) { snap(ui, Math.round(ui.position)); return; }
       const count = ui.carousel.length, index = ui.carousel.indexOf(card);

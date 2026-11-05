@@ -16,6 +16,13 @@ export function chooseResolution(width, height, frameWidth, frameHeight) {
 }
 
 const FOOTER_GAP = 1136 - 1109;
+const FOOTER_GROUP = new Set([
+  'menu_area',
+  'info_bottom_bg_offset',
+  'home_bottom_parts_offset',
+  'home_rotate_area',
+  'home_bg_gradation_bottom',
+]);
 
 export function clampAnimationFrame(frame, count) {
   return count > 0 && frame >= count ? count - 1 : frame;
@@ -52,38 +59,59 @@ export function collapseCampaignBanner(name, box, original, banner, reference) {
   return result;
 }
 
+export function responsiveDelta(reference, canvas) {
+  return {
+    x: (canvas.width - reference.width) / 2,
+    y: canvas.height - reference.height,
+  };
+}
+
+function layoutRole(name, box, reference) {
+  if (name.startsWith('footer_')) {
+    return {
+      kind: 'footer',
+      stretchWidth: name === 'footer_bg' || name === 'footer_bg_gradation',
+      seatOnBottom: name === 'footer_section_line',
+    };
+  }
+  if (isTallList(name, box, reference)) return {kind: 'stretch'};
+  if (isBottomLayout(name, box, reference)) return {kind: 'bottom'};
+  if (name === 'unit_bg') return {kind: 'cover'};
+  if (name === 'home_bg_clip_area') return {kind: 'home-clip'};
+  if (FOOTER_GROUP.has(name)) return {kind: 'footer-group'};
+  return {kind: 'intrinsic'};
+}
+
 export function anchorLayout(name, box, reference, canvas) {
   const result = { ...box };
-  const dy = canvas.height - reference.height;
-  const dx = (canvas.width - reference.width) / 2;
-  if (name.startsWith('footer_')) {
+  const delta = responsiveDelta(reference, canvas);
+  const role = layoutRole(name, box, reference);
+  if (role.kind === 'footer') {
     // The 1136 layout leaves the menu (footer_bg ends at 1109) and its frame bar (footer_section_line
     // at 1100) above the design bottom; on the phone that was a black strip under Home. Seat both on the edge.
-    result.x += dx;
-    result.y += dy + (name === 'footer_section_line' ? reference.height - box.y : FOOTER_GAP);
-    if (name === 'footer_bg' || name === 'footer_bg_gradation') {
+    result.x += delta.x;
+    result.y += delta.y + (role.seatOnBottom ? reference.height - box.y : FOOTER_GAP);
+    if (role.stretchWidth) {
       result.x = box.x;
       result.width += canvas.width - reference.width;
     }
-  } else if (isTallList(name, box, reference)) {
+  } else if (role.kind === 'stretch') {
     // Scroll lists authored to end above the 1136 footer (Bundles, Summon tabs) were cut off on tall
     // screens; they grow with the canvas down to the footer, which stays at the same distance above.
-    result.height += dy;
-  } else if (isBottomLayout(name, box, reference)) {
-    result.x += dx;
-    result.y += dy;
-  } else if (name === 'unit_bg') {
+    result.height += delta.y;
+  } else if (role.kind === 'bottom') {
+    result.x += delta.x;
+    result.y += delta.y;
+  } else if (role.kind === 'cover') {
     // Home loads this texture through BattleBgUtil, which ignores CSV size.
     // Its actual sprite is scaled uniformly after creation below.
-  } else if (name === 'home_bg_clip_area') {
+  } else if (role.kind === 'home-clip') {
     result.width += canvas.width - reference.width;
-    result.height += dy + FOOTER_GAP;
-  } else if (name === 'menu_area' || name === 'info_bottom_bg_offset' ||
-             name === 'home_bottom_parts_offset' || name === 'home_rotate_area' ||
-             name === 'home_bg_gradation_bottom') {
+    result.height += delta.y + FOOTER_GAP;
+  } else if (role.kind === 'footer-group') {
     // Home's bottom parts move with the footer menu, keeping the authored spacing above it.
-    result.x += dx;
-    result.y += dy + FOOTER_GAP;
+    result.x += delta.x;
+    result.y += delta.y + FOOTER_GAP;
   }
   return result;
 }
@@ -150,7 +178,7 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
     'void', ['pointer', 'pointer']);
   const freeLayoutKey = native('_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev',
     'void', ['pointer']);
-  const cast = new NativeFunction(Module.getGlobalExportByName('__dynamic_cast'),
+  const cast = new NativeFunction(module.getExportByName('__dynamic_cast'),
     'pointer', ['pointer', 'pointer', 'pointer', 'long'], {exceptions: 'propagate'});
   const refType = module.getExportByName('_ZTIN7cocos2d3RefE');
   const monthlyType = module.getExportByName('_ZTI23sgUserEmblemMonthlyInfo');

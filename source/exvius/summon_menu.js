@@ -10,6 +10,33 @@ export function modeFields(rows) {
   });
 }
 
+export function containsPoint(box, point) {
+  return !!box && Math.abs(point.x - box.x) <= box.w / 2 &&
+    Math.abs(point.y - box.y) <= box.h / 2;
+}
+
+export function firstHit(boxes, points) {
+  for (const point of points) {
+    const box = boxes.find(candidate => containsPoint(candidate, point));
+    if (box) return {box, point};
+  }
+  return null;
+}
+
+export function dropdownLayout(header, groups, rowHeight = 28) {
+  const left = header.x - 95;
+  const top = header.y + header.h / 2;
+  return {
+    left,
+    top,
+    listHeight: groups.length * rowHeight,
+    rows: groups.map((group, index) => ({
+      box: {x: header.x, y: top + rowHeight * (index + 0.5), w: 190, h: rowHeight},
+      group,
+    })),
+  };
+}
+
 // Add the season chooser to the original GL9 summon header: the game's own
 // button skin (GameScale9Sprite), StringLabel, rectangle and scene refresh.
 export function installSummonMenu(module, note, retained, bridge, homeCarousel = null) {
@@ -91,6 +118,8 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   }));
   const width = fn('_ZN11CommonUtils11getWinWidthEv', 'int', []);
   const height = fn('_ZN11CommonUtils12getWinHeightEv', 'int', []);
+  const getLocation = fn('_ZNK7cocos2d5Touch11getLocationEv', 'pointer', ['pointer']);
+  const getLocationInView = fn('_ZNK7cocos2d5Touch17getLocationInViewEv', 'pointer', ['pointer']);
   const rectangle = fn('_ZN12GraphicUtils8fillRectEiffffRKN7cocos2d7Color3BEiib',
     'pointer', ['int', 'float', 'float', 'float', 'float', 'pointer', 'int', 'int', 'bool']);
   const color = (r, g, b) => Memory.alloc(3).writeByteArray([r, g, b]);
@@ -165,13 +194,29 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
     ui.nodes.push(node);
     return {x, y, w, h};
   }
-  function hit(box, point) {
-    return box && Math.abs(point.x - box.x) <= box.w / 2 && Math.abs(point.y - box.y) <= box.h / 2;
-  }
-  function touchPoint(touch) {
-    // cocos2d::Touch::_point (+0x34): the view-space point, top-left origin, in design
-    // units; Touch::getLocation only flips it with Director::convertToGL.
-    return {x: touch.add(0x34).readFloat(), y: touch.add(0x38).readFloat()};
+  function touchPoints(touch) {
+    // Android input can enter Cocos through different coordinate paths. Keep
+    // the verified raw point, then add the engine's own view and GL values.
+    const points = [{
+      source: 'raw',
+      x: touch.add(0x34).readFloat(),
+      y: touch.add(0x38).readFloat(),
+    }];
+    for (const [source, read] of [['view', getLocationInView], ['gl', getLocation]]) {
+      try {
+        const point = read(touch);
+        if (!point.isNull()) points.push({
+          source,
+          x: point.readFloat(),
+          y: source === 'gl' ? height() - point.add(4).readFloat() : point.add(4).readFloat(),
+        });
+      } catch (error) {
+        note('LOCAL_GROUP_TOUCH_POINT_ERROR source=' + source + ' error=' + error);
+      }
+    }
+    return points.filter((point, index) =>
+      points.findIndex(other => Math.abs(other.x - point.x) < 0.01 &&
+        Math.abs(other.y - point.y) < 0.01) === index);
   }
   function readMenu(selection = '', kind = 'summon') {
     const result = kind === 'event' && !selection && eventMenu ? eventMenu :
@@ -439,7 +484,7 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   // The original GateScene subtype-12 branch allocates 0x610 bytes, calls
   // ParadeEntryScene's constructor and transfers it to changeScene(BaseScene*,bool).
   // Only operator new is a C++ runtime export; every game export stays module scoped.
-  const allocateScene = new NativeFunction(Module.getGlobalExportByName('_Znwm'), 'pointer', ['uint64']);
+  const allocateScene = new NativeFunction(module.getExportByName('_Znwm'), 'pointer', ['uint64']);
   const paradeEntry = fn('_ZN16ParadeEntrySceneC1Ev', 'void', ['pointer']);
   const paradeArea = fn('_ZN16ParadeEntryScene10setAreaMstEP7AreaMst', 'void', ['pointer', 'pointer']);
   const changeObject = fn('_ZN9GameScene11changeSceneEP9BaseSceneb', 'void', ['pointer', 'pointer', 'bool']);
@@ -547,7 +592,7 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   const originalChooseDungeon = new NativeFunction(Interceptor.replaceFast(chooseDungeonAddress, chooseDungeonCallback),
     'void', ['pointer'], {exceptions: 'propagate'});
   retained.push(chooseDungeonCallback);
-  const cast = new NativeFunction(Module.getGlobalExportByName('__dynamic_cast'),
+  const cast = new NativeFunction(module.getExportByName('__dynamic_cast'),
     'pointer', ['pointer', 'pointer', 'pointer', 'long'], {exceptions: 'propagate'});
   const refType = module.getExportByName('_ZTIN7cocos2d3RefE');
   const areaType = module.getExportByName('_ZTI7AreaMst');
@@ -683,13 +728,13 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
     // Dim the screen behind the list; the list drops down from the header button.
     ui.nodes.push(rectangle(layerId, 0, 0, width(), height(), black, z, 150, 0));
     drawHeader(ui);
-    const left = headerX(ui) - 95, top = headerY(ui) + headerH(ui) / 2;
-    const listHeight = ui.menu.groups.length * rowH;
+    const layout = dropdownLayout({x: headerX(ui), y: headerY(ui), w: headerW(ui), h: headerH(ui)},
+      ui.menu.groups, rowH);
+    const {left, top, listHeight} = layout;
     ui.nodes.push(rectangle(layerId, left - 1, top - 1, 192, listHeight + 2, popupBorder, z + 2, 255, 0));
     ui.nodes.push(rectangle(layerId, left, top, 190, listHeight, popupBackground, z + 3, 255, 0));
-    ui.rows = ui.menu.groups.map((group, i) => {
-      const y = top + rowH * (i + 0.5);
-      const box = {x: headerX(ui), y, w: 190, h: rowH};
+    ui.rows = layout.rows.map(({box, group}, i) => {
+      const y = box.y;
       if (group.id === ui.menu.selected.id)
         ui.nodes.push(rectangle(layerId, left, top + rowH * i, 190, rowH, popupSelected, z + 3, 255, 0));
       const mark = group.id === ui.menu.selected.id ? '▶ ' : '';
@@ -801,17 +846,17 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
   // scene and its native banner buttons. Handling only GateScene::touchEnded
   // still lets GameScene::buttonTouchEnded open a banner on the same release.
   let touchLogs = 0;
-  function claims(scene, touch) {
+  function claims(scene, touch, points) {
     const ui = scenes.get(scene.toString());
     if (ui && touchLogs < 12) {
       touchLogs += 1;
-      const p = touchPoint(touch);
-      note('LOCAL_SUMMON_GROUP_TOUCH x=' + p.x.toFixed(0) + ' y=' + p.y.toFixed(0) + ' enabled=' +
+      note('LOCAL_SUMMON_GROUP_TOUCH points=' +
+           points.map(p => p.source + ':' + p.x.toFixed(1) + ',' + p.y.toFixed(1)).join('|') + ' enabled=' +
            touchEnabled(scene) + ' state=' + (ui.kind === 'event' ? 'event' : sceneState(scene)) +
-           ' hit=' + hit(ui.header, p));
+           ' hit=' + !!firstHit(ui.open ? ui.rows.map(row => row.box) : [ui.header], points));
     }
     if (!ui) return null;
-    return ui.open || hit(ui.header, touchPoint(touch)) ? ui : null;
+    return ui.open || firstHit([ui.header], points) ? ui : null;
   }
   const chooserTouches = new Map();
   const touchKey = (scene, touch) => scene.toString() + ':' + touch.toString();
@@ -835,12 +880,15 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
     if (!ui) return 1;
     if (!touchEnabled(scene) || (ui.kind !== 'event' && sceneState(scene) !== 2)) return 1;
     try {
-      const point = touchPoint(touch);
-      if (!ui.open && hit(ui.header, point)) {
+      const points = gesture.points || touchPoints(touch);
+      const rowHit = ui.open ? firstHit(ui.rows.map(row => row.box), points) : null;
+      const headerHit = !ui.open ? firstHit([ui.header], points) : null;
+      const point = rowHit?.point || headerHit?.point || points[0];
+      if (headerHit) {
         ui.menu = readMenu('', ui.kind);
         open(ui);
       } else if (ui.open) {
-        const row = ui.rows.find(item => hit(item.box, point));
+        const row = rowHit ? ui.rows.find(item => item.box === rowHit.box) : null;
         note('LOCAL_GROUP_CHOICE kind=' + ui.kind + ' x=' + point.x + ' y=' + point.y + ' id=' + (row?.group.id || 'outside'));
         if (row) choose(ui, row.group);
         else close(ui);
@@ -858,13 +906,14 @@ export function installSummonMenu(module, note, retained, bridge, homeCarousel =
     const key = touchKey(scene, touch);
     chooserTouches.delete(key);
     try {
+      const points = touchPoints(touch);
       if (homeCarousel?.begin(scene, touch)) {
-        chooserTouches.set(key, {ended: false, home: true});
+        chooserTouches.set(key, {ended: false, home: true, points});
         stopTouch(event);
         return true;
       }
-      if (claims(scene, touch)) {
-        chooserTouches.set(key, {ended: false});
+      if (claims(scene, touch, points)) {
+        chooserTouches.set(key, {ended: false, points});
         stopTouch(event);
         return true;
       }

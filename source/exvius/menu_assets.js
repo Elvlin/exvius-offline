@@ -370,8 +370,10 @@ export function installMenuAssets(module, note, retained, bridge, modeChooserNam
     '_ZN16ParadeEntryScene10initializeEv',
     '_ZN26ParadeReadyForMissionScene10initializeEv',
     '_ZN11TfaTopScene19setLayoutBannerInfoEv'
-  ]) retained.push(Interceptor.attach(module.getExportByName(name), {
-    onEnter(args) {
+  ]) {
+    try {
+      retained.push(Interceptor.attach(module.getExportByName(name), {
+        onEnter(args) {
       depth += 1;
       this.dungeon = name.includes('GateDungeonScene');
       this.raid = name === '_ZN16GateMissionScene13setLayoutRaidEv';
@@ -390,7 +392,7 @@ export function installMenuAssets(module, note, retained, bridge, modeChooserNam
         }
       }
     },
-    onLeave() {
+        onLeave() {
       if (this.raid) {
         const picture = raidPictures.pop();
         if (picture.archived && picture.image) {
@@ -411,8 +413,12 @@ export function installMenuAssets(module, note, retained, bridge, modeChooserNam
       }
       if (this.dungeon) dungeonScenes.pop();
       depth -= 1;
+        }
+      }));
+    } catch (error) {
+      note('LOCAL_MENU_HOOK_SKIPPED symbol=' + name + ' error=' + error);
     }
-  }));
+  }
   retained.push(Interceptor.attach(module.getExportByName('_ZN16GateMissionScene19setSelectDungeonMstEP10DungeonMstP7AreaMst'), {
     onEnter(args) {
       if (!args[1].isNull()) note('LOCAL_GATE_DUNGEON id=' + args[1].add(0x24).readS32());
