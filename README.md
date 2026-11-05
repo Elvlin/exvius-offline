@@ -2,13 +2,15 @@
 
 **Play Final Fantasy Brave Exvius offline on Android.**
 
-**[Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.22.apk)**
+**[Download the APK (74 MB)](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.23/exvius-offline-v0.1.23.apk)**
 
 This is a fan project built from the original Global game. Download the game data once, then play it offline.
 
 Replay stages to farm Lapis, pick the summon banner you want, and revisit events you want
 
 This project is still being worked on. It is unofficial and is not affiliated with Square Enix or gumi.
+
+[What changed in v0.1.23](release/notes-v0.1.23.md)
 
 ## Screenshots
 
@@ -32,7 +34,7 @@ Seasons group banners by when they came out. Collab groups crossover banners by 
 
 Banner prices, featured units, tickets, step-ups and guarantees are kept where their original details are known. Some missing campaign details use replacements. You can check the current pool and rates through the banner's **Drop Rates** button.
 
-### Events are alwasy available
+### Events are always available
 
 Open **Vortex** and use **Filter** to choose **All Events, Permanent, Season 1, Season 2, Season 3, Season 4, Collab or Other Events**. 
 The summon dropdown and Vortex filter are separate. You can browse one season's summons and another season's events on the same save.
@@ -43,14 +45,14 @@ The shared raid progress is adjusted for one player. The original bosses, battle
 
 ### Former cash bundles cost Lapis
 
-Bundles that used to cost real money are bought with Lapis. There is also a **2,000 Friend Points** bundle for **100 Lapis**. Items in the VIP, EX Coin and Daily Coin shops also cost Lapis, so you can buy them with what you earn by replaying stages.
+Bundles that used to cost real money are bought with Lapis. There is also a **2,000 Friend Points** bundle for **100 Lapis**.
 
-Daily login rewards use your local save and date. Yo
+Daily login rewards use your local save and date.
 
 
 ## Install
 
-1. [Download the APK](https://github.com/Elvlin/exvius-offline/raw/refs/heads/main/release/exvius-offline-v0.1.22.apk) from the [release folder](release/).
+1. [Download the APK](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.23/exvius-offline-v0.1.23.apk) from the [release page](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.23).
 2. Install it on an **Android 7.0 or newer phone with 64-bit ARM support**.
 3. Open it with an internet connection. The app downloads all the game data automatically, about **14.5 GB**. Allow about **18 GB of free space** for setup.
 4. Once setup is done, you can play offline.
@@ -86,13 +88,5 @@ You can also contact me there if you have a project request or an idea you want 
 The APK is in the release folder. The large game data packs are in GitHub Releases and download automatically when you first open the app.
 
 ## Credits
-
-Thanks to the following projects and their contributors:
-
-- [TBMonkey/ffbe-gl-server](https://github.com/TBMonkey/ffbe-gl-server)
-- [aEnigmatic/ffbe](https://github.com/aEnigmatic/ffbe)
-- [kaikwb/ffbe-data-jp](https://github.com/kaikwb/ffbe-data-jp)
-- [luminest-llc/ffbe-memorial-downloads](https://github.com/luminest-llc/ffbe-memorial-downloads)
-
 
 Final Fantasy Brave Exvius and its original characters, artwork, music and other game content belong to their respective owners, including Square Enix and gumi. This is an unofficial fan project.
