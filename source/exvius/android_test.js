@@ -16,20 +16,31 @@ import { installHomeCarousel } from './home_carousel.js';
 // Loaded only by the separately labelled Android test APK.
 let logger;
 const retained = [];
+let initialized = false;
+let nativeBootstrapReady = globalThis.__EXVIUS_NATIVE_BOOTSTRAP_READY__ === true;
 
 function note(message) {
+  try { send({exviusLog: message}); } catch (error) {}
   if (logger) logger(4, Memory.allocUtf8String('ExviusTest'), Memory.allocUtf8String(message));
   else console.log(message);
 }
 
 rpc.exports = {
+  setNativeBootstrap() {
+    nativeBootstrapReady = true;
+  },
   init(stage, parameters) {
+    if (initialized) return;
+    initialized = true;
+    send({exviusTrace: 'INIT_ENTER'});
     // 1 = the normal build (original game timing); 10 only in builds labelled TEST.
     const scale = parameters.testSpeed;
     if (scale !== 10 && scale !== 1) throw new Error('The APK requires an explicit 1x or 10x speed.');
     logger = new NativeFunction(Module.getGlobalExportByName('__android_log_write'), 'int', ['int', 'pointer', 'pointer']);
+    send({exviusTrace: 'LOGGER_READY'});
     const networkAudit = { sockets: 0, dns: 0 };
     const socketAddress = Module.getGlobalExportByName('socket');
+    send({exviusTrace: 'SOCKET_RESOLVED', address: socketAddress ? socketAddress.toString() : null});
     retained.push(Interceptor.attach(socketAddress, {
       onEnter(args) {
         const family = args[0].toInt32();
@@ -49,8 +60,9 @@ rpc.exports = {
           note('OFFLINE_NETWORK_SOCKET_ATTEMPT caller=' + DebugSymbol.fromAddress(this.returnAddress));
       }
     }));
+    send({exviusTrace: 'SOCKET_HOOK_READY'});
     for (const symbol of ['getaddrinfo', 'gethostbyname']) {
-      const address = Module.findGlobalExportByName(symbol);
+      const address = Module.getGlobalExportByName(symbol);
       if (!address) continue;
       retained.push(Interceptor.attach(address, {
         onEnter(args) {
@@ -63,6 +75,7 @@ rpc.exports = {
         }
       }));
     }
+    send({exviusTrace: 'DNS_HOOKS_READY'});
     note('OFFLINE_IO_AUDIT_READY');
     let installed = false;
     function installGameHook() {
@@ -71,10 +84,13 @@ rpc.exports = {
         if (!module) return;
         // The native startup also initializes Firebase directly, independently
         // of the disabled Java bridge. Offline builds have no messaging service.
-        const skipFirebase = new NativeCallback(function () { return 0; }, 'bool', ['pointer', 'pointer']);
-        retained.push(skipFirebase);
-        Interceptor.replaceFast(module.getExportByName(
-          '_ZN12FirebaseWrap10initializeERKNSt6__ndk16vectorI15FirebaseModulesNS0_9allocatorIS2_EEEE'), skipFirebase);
+        if (!nativeBootstrapReady) {
+          const skipFirebase = new NativeCallback(function () { return 0; }, 'bool', ['pointer', 'pointer']);
+          retained.push(skipFirebase);
+          Interceptor.replaceFast(module.getExportByName(
+            '_ZN12FirebaseWrap10initializeERKNSt6__ndk16vectorI15FirebaseModulesNS0_9allocatorIS2_EEEE'), skipFirebase);
+        }
+        note('OFFLINE_FIREBASE_DISABLED');
         // Missing archive images otherwise enter the retired Java reporting
         // service from inside the native texture reader. Keep offline failures
         // local instead of invoking that service during scene construction.
@@ -86,6 +102,7 @@ rpc.exports = {
         let installing = 'summon menu';
         try {
         const bridge = createNativeBridge(module);
+        note('STARTUP_STAGE battle chain totals');
         installing = 'battle chain totals';
         const native = (name, result, args) => new NativeFunction(
           module.getExportByName(name), result, args, {exceptions: 'propagate'});
@@ -142,6 +159,7 @@ rpc.exports = {
           }
         }));
         installing = 'Android screenshot guard';
+        note('STARTUP_STAGE Android screenshot guard');
         // Android 16's Region parcel reader can pass a null AParcel during
         // screenshot/accessibility requests. Its array reader dereferences
         // that pointer before returning a status (the device crash is at
@@ -165,29 +183,51 @@ rpc.exports = {
           note('ANDROID_REGION_PARCEL_GUARD_READY');
         }
         if (parameters.mapInteractionAudit) installMapInteractionAudit(module, note, retained);
-        installing = 'Home carousel';
-        const homeCarousel = installHomeCarousel(module, note, retained);
-        installing = 'summon menu';
-        const modeChooserName = installSummonMenu(module, note, retained, bridge, homeCarousel);
-        installing = 'summon art';
-        installSummonArt(module, note, retained, bridge);
-        installing = 'title';
-        installTitleMenu(module, note, retained, bridge);
-        installing = 'raid';
-        installRaidMenu(module, note, retained, bridge);
-        installing = 'menu assets';
-        installMenuAssets(module, note, retained, bridge, modeChooserName);
-        installing = 'friends';
-        installFriendsMenu(module, note, retained);
+        function startupStage(name, callback) {
+          try {
+            installing = name;
+            note('STARTUP_STAGE ' + name);
+            return callback();
+          } catch (error) {
+            note('STARTUP_STAGE_FAILED component=' + name + ' error=' + error + ' stack=' + error.stack);
+            return null;
+          }
+        }
+        let homeCarousel = null;
+        let modeChooserName = () => null;
+        startupStage('Home carousel', () => {
+          homeCarousel = installHomeCarousel(module, note, retained);
+        });
+        startupStage('summon menu', () => {
+          modeChooserName = installSummonMenu(module, note, retained, bridge, homeCarousel);
+        });
+        startupStage('summon art', () => {
+          installSummonArt(module, note, retained, bridge);
+        });
+        startupStage('title', () => {
+          installTitleMenu(module, note, retained, bridge);
+        });
+        startupStage('raid', () => {
+          installRaidMenu(module, note, retained, bridge);
+        });
+        startupStage('menu assets', () => {
+          installMenuAssets(module, note, retained, bridge, modeChooserName);
+        });
+        startupStage('friends', () => {
+          installFriendsMenu(module, note, retained);
+        });
         const update = module.getExportByName('_ZN7cocos2d9Scheduler6updateEf');
         const constructor = module.getExportByName('_ZN7cocos2d9SchedulerC2Ev');
         if (constructor.add(0x1c).readU32() !== 0x52a7f008 ||
             constructor.add(0x20).readU32() !== 0xb9002668) {
           throw new Error('The pinned Global scheduler layout changed.');
         }
-        installing = 'display';
-        installAdaptiveDisplay(module, retained, note, bridge);
-        installMovieAspectFit(module, retained, note);
+        startupStage('display', () => {
+          installAdaptiveDisplay(module, retained, note, bridge);
+        });
+        startupStage('movie aspect', () => {
+          installMovieAspectFit(module, retained, note);
+        });
         function text(p) {
           const flag = p.readU8();
           const length = (flag & 1) ? p.add(8).readU64().toNumber() : flag >>> 1;
@@ -433,38 +473,38 @@ rpc.exports = {
           note('STARTUP_HOOK_FAILED component=' + installing + ' error=' + error + ' stack=' + error.stack);
         }
     }
-    // Do not intercept libdl's public wrappers with an onLeave callback: Frida
-    // replaces their return address, which Bionic uses to choose the caller's
-    // namespace. This prevents vendor graphics mapper libraries from loading.
-    // The inner Android 8+ loader exports already receive the real caller as an
-    // explicit argument. Leave that argument and all namespace flags unchanged.
-    const missingLibrary = Memory.allocUtf8String('/nonexistent/libaudioclientimpl.so');
-    retained.push(missingLibrary);
+    const missingAudioModule = Memory.allocUtf8String('/nonexistent/libaudioclientimpl.so');
+    retained.push(missingAudioModule);
+    // Android loads native game libraries through the dynamic linker's inner
+    // entry points. Hooking the public wrappers loses the vendor caller
+    // namespace on affected Android 8+ devices, so keep both loader exports
+    // and all caller arguments untouched.
     const linker = Process.findModuleByName('linker64') || Process.findModuleByName('linker');
-    ['__loader_android_dlopen_ext', '__loader_dlopen'].forEach(symbol => {
-      const address = linker?.findExportByName(symbol) || Module.findGlobalExportByName(symbol);
+    const loaderExport = name => {
+      const local = linker && linker.findExportByName ? linker.findExportByName(name) : null;
+      if (local) return local;
+      return Module.findGlobalExportByName ? Module.findGlobalExportByName(name) : null;
+    };
+    for (const symbol of ['__loader_dlopen', '__loader_android_dlopen_ext']) {
+      const address = loaderExport(symbol);
       if (!address) {
         note('STARTUP_LOADER_HOOK_UNAVAILABLE symbol=' + symbol);
-        return;
+        continue;
       }
       retained.push(Interceptor.attach(address, {
         onEnter(args) {
           const path = args[0].isNull() ? '' : args[0].readUtf8String();
-          this.isGame = path.endsWith('libgame.so');
-          // This phone's AudioTrack::releaseBuffer calls AudioClientStub::dumpAudioDataToFile, which
-          // dlopens libaudioclientimpl.so for every audio buffer. The lookup fails, and each failure
-          // re-scans this 800 MB APK's zip directory: the AudioTrack thread ran at 100% CPU and the track
-          // underran (heard as crackling). Ask for an absolute path that does not exist instead: one failed
-          // open, the same NULL handle the stub always got (a non-null handle crashes it), no archive scan.
-          if (path === 'libaudioclientimpl.so') args[0] = missingLibrary;
+          this.game = path.endsWith('libgame.so');
+          if (path === 'libaudioclientimpl.so') args[0] = missingAudioModule;
         },
         onLeave(result) {
-          if (this.isGame && !result.isNull()) installGameHook();
+          if (this.game && !result.isNull()) installGameHook();
         }
       }));
       note('STARTUP_LOADER_HOOK_READY symbol=' + symbol);
-    });
+    }
     installGameHook();
     note('initialized stage=' + stage + ' speed=' + scale);
   }
 };
+

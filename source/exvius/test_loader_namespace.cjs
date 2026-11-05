@@ -33,6 +33,7 @@ function start(resolution = 'linker') {
   };
   const context = {
     console,
+    send() {},
     rpc: {exports: {}},
     Memory: {allocUtf8String: value => new Ptr(value)},
     Module: {

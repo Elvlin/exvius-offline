@@ -35,6 +35,10 @@ def main():
                         help='Read-only native map touch tracing in an explicitly labelled test build.')
     parser.add_argument('--release-version', help='Android display version for a distribution build.')
     parser.add_argument('--release-code', type=int, help='Increasing Android version code for replacement updates.')
+    parser.add_argument('--frida-gadget', type=Path,
+                        help='Override the bundled Frida Gadget for local runtime compatibility testing.')
+    parser.add_argument('--frida-listen', action='store_true',
+                        help='Wait for a local Frida host to inject the compiled test bundle.')
     args = parser.parse_args()
     label = 'Exvius TEST ONLY 10x' if args.speed == 10 else 'Exvius'
     if args.map_interaction_audit:
@@ -116,18 +120,43 @@ def main():
     if original_game[0x2ae0fb4:0x2ae0fbc] != expected:
         raise ValueError('GL9 scheduler constructor does not match the verified layout.')
     print('Original game native library retained byte for byte.', flush=True)
-    shutil.copyfile(PROJECT / 'tools/vendor/frida-gadget-17.24.3-android-arm64.so', native / 'libexviustest.so')
+    gadget = args.frida_gadget or PROJECT / 'tools/vendor/frida-gadget-17.24.3-android-arm64.so'
+    if not gadget.is_file():
+        raise FileNotFoundError('Frida Gadget not found: ' + str(gadget))
+    shutil.copyfile(gadget, native / 'libexviustest.so')
+    print('Using Frida Gadget:', gadget, flush=True)
     bundle = PROJECT / 'source/build/android/android_test.bundle.js'
     subprocess.run(['node', str(PROJECT / 'tools/vendor/android-agent/node_modules/frida-compile/dist/cli.js'),
                     str(Path(__file__).with_name('android_test.js')), '-o', str(bundle),
                     '-S', '-c', '-T', 'none'], check=True, cwd=PROJECT)
+    compiled = bundle.read_bytes()
+    lines = compiled.splitlines(keepends=True)
+    script_tokens = (
+        b'function ', b'(', b'!', b'var ', b'let ', b'const ',
+        b'Object.defineProperty', b'"use strict"', b"'use strict'",
+        b'//', b'/*',
+    )
+    for index, line in enumerate(lines):
+        if line.lstrip().startswith(script_tokens):
+            break
+    else:
+        raise ValueError('Frida bundle has no JavaScript body')
+    if index:
+        # frida-compile 4 prints a Unicode progress banner before the script.
+        # It is valid on a terminal but invalid as the first bytes of a
+        # Gadget-loaded QuickJS program.
+        bundle.write_bytes(b''.join(lines[index:]))
     if b'frida-java-bridge' in bundle.read_bytes():
         raise ValueError('Global Java transport must stay in the APK. Runtime Java method replacement crashes Android 16 GC.')
     shutil.copyfile(bundle, native / 'libexviustest.js.so')
+    interaction = {'type': 'listen', 'address': '127.0.0.1', 'port': 27042,
+                   'on_load': 'wait'}
+    if not args.frida_listen:
+        interaction = {'type': 'script', 'path': 'libexviustest.js.so',
+                       'parameters': {'testSpeed': args.speed,
+                                      'mapInteractionAudit': args.map_interaction_audit}}
     (native / 'libexviustest.config.so').write_text(json.dumps({
-        'interaction': {'type': 'script', 'path': 'libexviustest.js.so',
-                        'parameters': {'testSpeed': args.speed,
-                                       'mapInteractionAudit': args.map_interaction_audit}},
+        'interaction': interaction,
         'runtime': 'qjs'
     }, indent=2), encoding='utf-8')
 
