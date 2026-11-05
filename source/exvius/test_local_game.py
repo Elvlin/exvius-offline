@@ -282,6 +282,54 @@ class LocalGameIntegration(unittest.TestCase):
         self.assertEqual(restored.item_count(20, 250033800), 50)
         self.assertEqual(restored.item_count(20, 293000100), 1)
 
+    def test_awakening_fragment_conversion_uses_the_base_nv_group(self):
+        player = self.game.server.State.player
+        for endpoint, group in (('SacrificeRequest', '6kvFj2Kw'),
+                                ('NvSacrificeRequest', '4Ncra9DF')):
+            unit = player.grant_unit('100041517')
+            iid = str(unit['instance_id'])
+            request = {group: [{'og2GHy49': iid, 'ijEey5f7': '1'}]}
+            reply = self.exchange(endpoint, request)
+            self.assertEqual(reply[group][0]['1swM3H4T'], '20:250016500:50,20:293000100:1')
+            self.exchange(endpoint, request)
+            self.assertIsNone(self.restored_player().roster_row(iid))
+        restored = self.restored_player()
+        self.assertEqual(restored.item_count(20, 250016500), 100)
+        self.assertEqual(restored.item_count(20, 293000100), 2)
+
+    def test_ex2_bound_moogle_grants_stmr_only_to_its_matching_unit(self):
+        from exvius_actions_shops import _rows, _triples
+        from player_state import unit_mst
+
+        state = self.game.server.State
+        player = state.player
+        unit = player.grant_unit('100031007')
+        iid = str(unit['instance_id'])
+        unit['nv_ex_level'] = 1
+        step = next(row for row in _rows('F_NV_EX_CLASS_UP_MST')
+                    if row['JPW8Vs40'] == '100031007' and row['f8vk4JrD'] == '2')
+        player.add_currency('gil', int(step['7UR4J2SE']))
+        player._grant_items(_triples(step['KCk8u0am']))
+        wrong = player.grant_unit('100044807')
+        self.exchange('UnitExClassUpRequest', {'14vWb7kX': [{
+            'og2GHy49': iid, 'KCk8u0am': step['KCk8u0am'], 'Knra4I19': '0'}]})
+        state.player = self.restored_player()
+        donor = next(u for u in state.player.data['roster'] if u['master_id'] == '906000103')
+        donor_id = str(donor['instance_id'])
+        self.assertEqual(donor['affinity_info'][1], unit_mst('100031007')['C74EmZ1I'])
+        self.exchange('UnitMixRequest', {'f08du6EW': [{
+            'og2GHy49': str(wrong['instance_id']), 'WbGYcN17': donor_id}]})
+        self.assertIsNotNone(self.restored_player().roster_row(donor_id))
+        request = {'f08du6EW': [{'og2GHy49': iid, 'WbGYcN17': donor_id}]}
+        response = self.exchange('UnitMixRequest', request)
+        self.assertEqual(response['f08du6EW'][0]['E90oBqct'], '0')
+        self.exchange('UnitMixRequest', request)
+        restored = self.restored_player()
+        self.assertIsNone(restored.roster_row(donor_id))
+        self.assertEqual(restored.roster_row(iid)['affinity_points'][1], '1000')
+        gear = next(row for row in restored.equip_item_rows() if row['J1YX9kmM'] == '303008900')
+        self.assertEqual(gear['Qy5EvcK1'], '1')
+
     def test_unit_exchange_credits_materials_and_preserves_trust_moogle(self):
         from exvius_actions_shops import POINT_TOKENS
         player = self.game.server.State.player

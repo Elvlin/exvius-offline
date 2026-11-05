@@ -195,7 +195,10 @@ def sacrifice(spec, req, group="6kvFj2Kw"):
         if not unit or iid in ids or iid in deployed or unit.get("favourite"):
             return _refresh(spec)
         master = unit_mst(unit["master_id"]) or {}
-        row = table.get(str(unit["master_id"])) or table.get(master.get("woghJa61"))
+        # The native picker resolves a Brave Shift form to the base NV
+        # group before looking up its sacrifice row.
+        row = (table.get(str(unit["master_id"])) or
+               table.get(master.get("JPW8Vs40")) or table.get(master.get("woghJa61")))
         if not row:
             return _refresh(spec)
         # The native picker can send pure NV units through SacrificeRequest.

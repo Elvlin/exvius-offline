@@ -2647,7 +2647,7 @@ class PlayerState:
                 source, override = self._unit_trust_info(material, channel)
                 if not source or source[0] == 71:
                     continue
-                if (channel and source[0] != 70 and
+                if (channel and source[0] != 70 and not override and
                         int((unit_mst(material['master_id']) or {}).get('9fW0TePj', 0)) < 7):
                     continue
                 if source[0] != 70 and source[:3] != target[:3]:
@@ -2693,6 +2693,16 @@ class PlayerState:
         if not materials:
             return None
         trust, claimed, trust_rewards = self._plan_trust_fusion(base, materials)
+        target, _ = self._unit_trust_info(base, 1)
+        before_stmr = (list(base.get('affinity_points') or []) + ['', ''])[1]
+        before_stmr = int(before_stmr) if str(before_stmr).isdigit() else 0
+        for material in materials:
+            if str(material['master_id']) != '906000103':
+                continue
+            source, bound = self._unit_trust_info(material, 1)
+            if bound and (not target or source[:3] != target[:3] or
+                          int(trust[1]) <= before_stmr):
+                return None
         if any(not self._can_credit(reward) for reward in trust_rewards):
             return None
         gain = sum(unit_mix_exp(u) for u in materials)

@@ -343,6 +343,20 @@ rpc.exports = {
         retained.push(Interceptor.attach(module.getExportByName('_ZN19DownloadMstFileList3addERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEiiiS8_b'), {
           onEnter(args) { note('LOCAL_TABLE_CHECK name=' + text(args[1]) + ' version=' + args[2].toInt32() + ' old=' + args[3].toInt32() + ' bytes=' + args[4].toInt32()); }
         }));
+        // The shortcut checks the retired server feature before applying
+        // the normal party, lock and sacrifice-table eligibility rules.
+        const materialEligibility = module.getExportByName(
+          '_ZN16UnitClassupUtils25isEnableTransformMaterialEiP12UserUnitInfo');
+        if (materialEligibility.add(0x90).readU32() === 0x97e55943) {
+          retained.push(Interceptor.attach(module.getExportByName(
+            '_ZN15FunctionMstList7isValidENSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE'), {
+            onEnter(args) {
+              this.localClassUp = this.returnAddress.equals(materialEligibility.add(0x94)) &&
+                text(args[1]) === 'FUNCTION_SP_CLASSUP';
+            },
+            onLeave(result) { if (this.localClassUp) result.replace(1); },
+          }));
+        }
         const sacrificeMaster = new NativeFunction(module.getExportByName('_ZN16SacrificeMstList6sharedEv'), 'pointer', []);
         // Use the pinned class's parser with an explicit path to the installed table.
         const sacrificeVtable = module.getExportByName('_ZTV16SacrificeMstList').add(0x10);
@@ -352,10 +366,13 @@ rpc.exports = {
           'void', ['pointer', 'pointer']);
         const freePath = new NativeFunction(module.getExportByName('_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev'),
           'void', ['pointer']);
-        let sacrificeLoaded = false;
-        retained.push(Interceptor.attach(module.getExportByName('_ZN26UnitSellTransformListScene10initializeEv'), {
+        for (const entry of [
+          '_ZN26UnitSellTransformListScene10initializeEv',
+          // Awakening counts eligible duplicates before opening the picker.
+          '_ZN20UnitEnhanceMainScene21initContentsExClassUpEv',
+          '_ZN33UnitClassUpConversionConfirmScene10initializeEv',
+        ]) retained.push(Interceptor.attach(module.getExportByName(entry), {
           onEnter() {
-            if (sacrificeLoaded) return;
             const master = sacrificeMaster();
             if (master.isNull() || !master.readPointer().equals(sacrificeVtable)) {
               note('LOCAL_SACRIFICE_MASTER unavailable');
@@ -370,7 +387,6 @@ rpc.exports = {
             makePath(nativePath, Memory.allocUtf8String(path));
             try {
               const status = loadSacrifice(master, nativePath);
-              sacrificeLoaded = status === 0;
               note('LOCAL_SACRIFICE_MASTER status=' + status);
             } finally {
               freePath(nativePath);
@@ -417,13 +433,20 @@ rpc.exports = {
           note('STARTUP_HOOK_FAILED component=' + installing + ' error=' + error + ' stack=' + error.stack);
         }
     }
-    // Use public loader entry points after the module-observer startup path
-    // triggered a native linker abort on this Android 16 test device.
+    // Do not intercept libdl's public wrappers with an onLeave callback: Frida
+    // replaces their return address, which Bionic uses to choose the caller's
+    // namespace. This prevents vendor graphics mapper libraries from loading.
+    // The inner Android 8+ loader exports already receive the real caller as an
+    // explicit argument. Leave that argument and all namespace flags unchanged.
     const missingLibrary = Memory.allocUtf8String('/nonexistent/libaudioclientimpl.so');
     retained.push(missingLibrary);
-    ['android_dlopen_ext', 'dlopen'].forEach(symbol => {
-      const address = Module.findGlobalExportByName(symbol);
-      if (!address) return;
+    const linker = Process.findModuleByName('linker64') || Process.findModuleByName('linker');
+    ['__loader_android_dlopen_ext', '__loader_dlopen'].forEach(symbol => {
+      const address = linker?.findExportByName(symbol) || Module.findGlobalExportByName(symbol);
+      if (!address) {
+        note('STARTUP_LOADER_HOOK_UNAVAILABLE symbol=' + symbol);
+        return;
+      }
       retained.push(Interceptor.attach(address, {
         onEnter(args) {
           const path = args[0].isNull() ? '' : args[0].readUtf8String();
@@ -439,6 +462,7 @@ rpc.exports = {
           if (this.isGame && !result.isNull()) installGameHook();
         }
       }));
+      note('STARTUP_LOADER_HOOK_READY symbol=' + symbol);
     });
     installGameHook();
     note('initialized stage=' + stage + ' speed=' + scale);
