@@ -87,4 +87,21 @@ The APK is in the release folder. The large game data packs are in GitHub Releas
 
 ## Credits
 
+Thanks to the following projects and their contributors:
+
+- [TBMonkey/ffbe-gl-server](https://github.com/TBMonkey/ffbe-gl-server)
+- [aEnigmatic/ffbe](https://github.com/aEnigmatic/ffbe)
+- [kaikwb/ffbe-data-jp](https://github.com/kaikwb/ffbe-data-jp)
+- [luminest-llc/ffbe-memorial-downloads](https://github.com/luminest-llc/ffbe-memorial-downloads)
+
+### Libraries and tools
+
+- [Frida](https://github.com/frida/frida)
+- [frida-compile](https://github.com/frida-packages/frida-compile)
+- [Chaquopy](https://github.com/chaquo/chaquopy)
+- [Apktool](https://github.com/iBotPeaches/Apktool)
+- [CriCodecs](https://github.com/Youjose/CriCodecs)
+- [PyYAML](https://github.com/yaml/pyyaml)
+- [cryptography](https://github.com/pyca/cryptography)
+
 Final Fantasy Brave Exvius and its original characters, artwork, music and other game content belong to their respective owners, including Square Enix and gumi. This is an unofficial fan project.
