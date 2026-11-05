@@ -144,9 +144,9 @@
   "app": {
     "version": "0.1.23",
     "versionName": "9.0.0-offline.23",
-    "versionCode": 9024,
+    "versionCode": 9025,
     "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.23/exvius-offline-v0.1.23.apk",
     "size": 74304226,
-    "sha256": "960b54f76ea1603d543aebf51383dee09f6297a6b35210cd522e51b6ae78fd35"
+    "sha256": "169b58540fd996f192fe5d0fac7306d2a9a9e81e052d1062e1b1def531a606d8"
   }
 }
