@@ -12,6 +12,7 @@ import { installMenuAssets } from './menu_assets.js';
 import { installFriendsMenu } from './friends_menu.js';
 import { installMapInteractionAudit } from './map_interaction_audit.js';
 import { installHomeCarousel } from './home_carousel.js';
+import { installMissionRepeat } from './mission_repeat.js';
 
 // Loaded only by the separately labelled Android test APK.
 let logger;
@@ -215,6 +216,9 @@ rpc.exports = {
         });
         startupStage('friends', () => {
           installFriendsMenu(module, note, retained);
+        });
+        startupStage('mission repeat', () => {
+          installMissionRepeat(module, note, retained);
         });
         const update = module.getExportByName('_ZN7cocos2d9Scheduler6updateEf');
         const constructor = module.getExportByName('_ZN7cocos2d9SchedulerC2Ev');

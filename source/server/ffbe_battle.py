@@ -38,6 +38,8 @@ __all__ = [
     "party_size",
     "per_unit_exp",
     "record_pushed_switches",
+    "record_result_echo",
+    "repeat_run_report",
     "roll_drops",
     "serve_challenge_clear",
     "serve_challenge_clear_all",
@@ -350,8 +352,11 @@ def mission_id_from(plaintext: str | None) -> str | None:
                     if v:
                         return str(v)
     return None
-def _lv_half(level, exp, stats, lb_level, lb_exp) -> str:
-    """One 15-field `Qic38SuC` half — `Lv:LimitExLvNum:Exp:HP:MP:ATK:DEF:MAG:SPR:f9:LbLv:LbExp:a12:0:a14`.
+def _lv_half(level, exp, stats, lb_level, lb_exp, trust=0, gained=0) -> str:
+    """One 15-field `Qic38SuC` half — `Lv:LimitExLvNum:Exp:HP:MP:ATK:DEF:MAG:SPR:Trust:LbLv:LbExp:a12:0:a14`.
+
+    `f9` is the unit's trust points: `ResultUnitExpScene::setTrustExp` sums `getAfterParam(27) -
+    getBeforeParam(27)` over the party, and param 27 is the first int after the six four-int stat groups.
 
     Format read end to end in `docs/notes/result_scene_selection.md` §7 (`UserUnitLvInfo::init`): 15 colon
     fields are read UNGUARDED, and fields 3..8 are `splitInt(...,"-")` each pushing exactly four ints, so
@@ -369,10 +374,40 @@ def _lv_half(level, exp, stats, lb_level, lb_exp) -> str:
     """
     fields = [str(level), "0", str(exp)]
     fields += [f"{int(s)}-0-0-0" for s in stats]          # HP, MP, ATK, DEF, MAG, SPR
-    fields += ["0", str(lb_level), str(lb_exp), str(exp), "0", "0"]   # f9, LbLv, LbExp, a12=EXP, a13, a14
+    # a12 is the EXP GAINED, not the unit's residual: the result gauge adds it to the BEFORE half's
+    # level and exp. Serving the residual there made the client level units past the server
+    # (device 2026-11-06: Lv1 11exp + residual 13 = 24 -> client Lv2 "next 93", server Lv1 13exp).
+    fields += [str(int(trust)), str(lb_level), str(lb_exp), str(int(gained)), "0", "0"]   # f9=Trust, LbLv, LbExp, a12=gained, a13, a14
     assert len(fields) == 15, len(fields)
     return ":".join(fields)
-def mission_lv_info(player, exp_gain: int) -> str:
+def _trust_points(unit) -> int:
+    points = list(unit.get("affinity_points") or [""])
+    return int(points[0]) if str(points[0]).isdigit() else 0
+
+
+def roll_battle_trust(player) -> dict:
+    """Trust earned by each party member for one cleared battle: `{instance_id: points}`.
+
+    The unit master's trust descriptor (`9mu4boy7`) is `kind:id:count:need:questAdd:questRate:mixAdd`;
+    every retail row is `...:1000:10:30:50`, i.e. each clear gives a 30% chance of +1% (10 of 1000) to
+    each unit in the party, matching the community record that only party membership counts. A mastered
+    unit, or one whose descriptor gives no quest gain, rolls nothing.
+    """
+    gains = {}
+    for iid in player.party_instance_ids():
+        u = player.roster_row(iid)
+        if u is None:
+            continue
+        info, _ = player._unit_trust_info(u, 0)
+        if not info or info[0] == 71 or info[3] <= 0 or _trust_points(u) >= info[3]:
+            continue
+        add, rate = info[4], info[5]
+        if add > 0 and rate > 0 and random.randrange(100) < rate:
+            gains[iid] = min(add, info[3] - _trust_points(u))
+    return gains
+
+
+def mission_lv_info(player, exp_gain: int, trust_gains=None) -> str:
     """The `Qic38SuC` value: one row per party member, `KEY@BEFORE_AFTER`.
 
     WHY THE KEY IS THE WHOLE POINT: `UserUnitLvInfo::init` stores the part before `@` as the LOOKUP KEY, and
@@ -393,8 +428,10 @@ def mission_lv_info(player, exp_gain: int) -> str:
         # client's `getLv()` is a bare field load, so the only way to know the post-battle level is to
         # credit the exp the way the client reads the table. See `player_state.credit_exp`.
         new_lv, new_ex = credit_exp(u["master_id"], lv, ex, int(exp_gain))
-        before = _lv_half(lv, ex, unit_stats(u["master_id"], lv), lbl, lbe)
-        after = _lv_half(new_lv, new_ex, unit_stats(u["master_id"], new_lv), lbl, lbe)
+        trust = _trust_points(u)
+        before = _lv_half(lv, ex, unit_stats(u["master_id"], lv), lbl, lbe, trust)
+        after = _lv_half(new_lv, new_ex, unit_stats(u["master_id"], new_lv), lbl, lbe,
+                         trust + (trust_gains or {}).get(iid, 0), int(exp_gain))
         rows.append(f"{iid}@{before}_{after}")
     return ",".join(rows)
 def per_unit_exp(total_exp) -> tuple[int, int, int]:
@@ -467,6 +504,83 @@ def mission_end_echo(spec, plaintext: str | None):
         # real before/after params, so it is built from the player state in `credit_mission_rewards` (once
         # the exp has been credited). See mission_lv_info.
     return out
+# Added to a MissionEnd's `09HRWXDf` row by the client hook (mission_repeat.js) on autoplay runs 2+.
+REPEAT_RUN_TOKEN = "exvRepeatRun"
+
+
+def _drop_counts(csv: str) -> Counter:
+    counts = Counter()
+    for entry in str(csv or '').split(','):
+        fields = entry.split(':')
+        if len(fields) >= 3 and all(f.isdigit() for f in fields[:3]):
+            counts[f"{fields[0]}:{fields[1]}"] += int(fields[2])
+    return counts
+
+
+def repeat_run_report(plaintext: str | None) -> str | None:
+    """Turn an autoplay continuation's running totals back into THIS run's exp, gil and drops.
+
+    Autoplay clears the client's result info once per sequence (`MissionRepeatResultInfo::onRepeatStart`),
+    and `MissionResultResponse` then stores each reply's echo into it, so run N reports its own values
+    PLUS the previous reply's (device 2026-11-06, Siren's Test x3: gil 30000/60000/90000, exp
+    20000/25000/26250 = 20000 + the previous per-unit echo). Crediting those totals paid 180000 gil for
+    90000. Only a run the client marks is adjusted, and only when the report really contains the
+    recorded echo, so a stale mark can never under-pay a normal run.
+    """
+    if not plaintext or State.player is None:
+        return plaintext
+    try:
+        req = json.JSONDecoder().raw_decode(plaintext)[0]
+    except Exception:  # noqa: BLE001
+        return plaintext
+    rows = req.get(RESULT_TAG) if isinstance(req, dict) else None
+    if not isinstance(rows, list) or not rows or not isinstance(rows[0], dict):
+        return plaintext
+    src = rows[0]
+    run = str(src.get(REPEAT_RUN_TOKEN) or '')
+    if not run.isdigit() or int(run) < 2:
+        return plaintext
+    mid = mission_id_from(plaintext)
+    echo = State.player.data.get('exvius_repeat', {}).get('echo') or {}
+    exp, gil = str(src.get("S4U09svH", "0")), str(src.get("Wdi3MAs2", "0"))
+    reported = _drop_counts(_reported_drops(src))
+    previous = _drop_counts(echo.get('drops', ''))
+    if (echo.get('mid') != mid or not exp.isdigit() or not gil.isdigit()
+            or int(exp) < int(echo.get('exp', 0)) or int(gil) < int(echo.get('gil', 0))
+            or any(reported[key] < count for key, count in previous.items())):
+        _note(f"repeat run {run} of {mid}: report does not contain the recorded echo; credited as sent")
+        return plaintext
+    for token in (RESULT_DROP_TOKEN, *TYPED_RESULT_DROPS.values()):
+        src.pop(token, None)
+    remaining = reported - previous
+    _set_result_drops(src, ','.join(f"{key}:{count}" for key, count in remaining.items()))
+    src["S4U09svH"] = str(int(exp) - int(echo.get('exp', 0)))
+    src["Wdi3MAs2"] = str(int(gil) - int(echo.get('gil', 0)))
+    print(f"repeat: run {run} of {mid} -> this run exp {src['S4U09svH']} gil {src['Wdi3MAs2']} "
+          f"drops {_reported_drops(src) or 'none'} (running totals exp {exp} gil {gil})", flush=True)
+    return json.dumps(req)
+
+
+def record_result_echo(spec, plaintext: str | None):
+    """Remember the exp/gil/drops this MissionEnd reply hands back; see `repeat_run_report`."""
+    if (State.player is None or State.player.mode == 'frozen' or not isinstance(spec, dict)
+            or not plaintext or RESULT_TAG not in spec):
+        return spec
+    mid = mission_id_from(plaintext)
+    rows = spec.get(RESULT_TAG)
+    row = rows[0] if isinstance(rows, list) and rows and isinstance(rows[0], dict) else None
+    attempt = State.player.data.get('exvius_repeat', {}).get('attempt', {})
+    # Only a result this server paid; a refused end must leave the save untouched.
+    if not mid or row is None or attempt.get('mid') != mid or not attempt.get('normal_rewards_recorded'):
+        return spec
+    exp, gil = str(row.get("kcb0tsM6", "0")), str(row.get("16LQuC5r", "0"))
+    State.player.data.setdefault('exvius_repeat', {})['echo'] = {
+        'mid': mid, 'exp': int(exp) if exp.isdigit() else 0, 'gil': int(gil) if gil.isdigit() else 0,
+        'drops': _reported_drops(row)}
+    State.player.dirty = True
+    return spec
+
+
 def credit_mission_rewards(plaintext: str | None, spec=None):
     """Credit original normal drops once per loaded attempt, with save rollback."""
     if not plaintext or not isinstance(spec, dict) or RESULT_TAG not in spec:
@@ -592,26 +706,50 @@ def _credit_mission_rewards(plaintext: str | None, spec=None, mid=None):
     if isinstance(spec, dict):
         rrows = spec.get("09HRWXDf")
         if isinstance(rrows, list) and rrows and isinstance(rrows[0], dict):
-            pts = rrows[0].get("wuUakq71")
+            mission = _load_ndjson("F_MISSION_MST.ndjson", "qo3PECw6").get(str(mid), {})
+            pts = mission.get("B6H34Mea", rrows[0].get("wuUakq71"))
             if pts is not None and str(pts).isdigit() and int(pts) > 0:
+                for result in rrows:
+                    if isinstance(result, dict):
+                        result["wuUakq71"] = str(pts)
                 exp_before = int(State.player.data["rank"].get("exp", 0))
                 if int(State.player.add_rank_exp(int(pts)).get("exp", 0)) != exp_before:
                     paid.append(f"{int(pts)}rankpt")
     # UNIT EXP -> the roster, and `Qic38SuC` built from it (docs/notes/result_scene_selection.md §7).
     # Build the string BEFORE crediting: its BEFORE half is the current state, its AFTER half the gain.
     uexp = src.get("S4U09svH")
-    if uexp is not None and str(uexp).isdigit() and int(uexp) > 0 and isinstance(spec, dict):
-        gain, n_members, remainder = per_unit_exp(uexp)
+    has_exp = uexp is not None and str(uexp).isdigit() and int(uexp) > 0
+    # Trust is rolled once per CLEARED battle; walking out of an exploration earns none, and a
+    # story-only scene (type 5, no waves) is "cleared" without a party ever fighting.
+    trust_gains = {}
+    story_scene = (mission_wave_count(mid) == 0
+                   and str((mission_row(mid) or {}).get("gQR24kST")) == "5")
+    if (State.player.mode != "frozen" and not story_scene
+            and mission_result_from(plaintext)["cleared"] is True):
+        trust_gains = roll_battle_trust(State.player)
+        print(f"trust: rolled for cleared {mid} -> {trust_gains or 'no gain'}", flush=True)
+    if (has_exp or trust_gains) and isinstance(spec, dict):
+        gain, n_members, remainder = per_unit_exp(uexp) if has_exp else (0, 0, 0)
         # The party's TOTAL is logged alongside the share, so a run's exp can be re-derived from the log
         # alone -- and so an over-credit (the pre-2026-09-26 bug) is visible in the transcript rather
         # than only in the roster's levels.
-        print(f"unit-exp: party total {int(uexp)} over {n_members} member(s) -> {gain} each"
-              + (f" (remainder {remainder}, floored)" if remainder else ""), flush=True)
-        lv_info = mission_lv_info(State.player, gain) if gain > 0 else ""
+        if has_exp:
+            print(f"unit-exp: party total {int(uexp)} over {n_members} member(s) -> {gain} each"
+                  + (f" (remainder {remainder}, floored)" if remainder else ""), flush=True)
+        lv_info = mission_lv_info(State.player, gain, trust_gains) if gain > 0 or trust_gains else ""
         for iid in State.player.party_instance_ids():
-            u = State.player.add_unit_exp(iid, gain)
+            u = State.player.add_unit_exp(iid, gain) if gain > 0 else None
             if u is not None and int(u.get("level", 1)) > 1:
                 paid.append(f"unit{u['master_id']}->Lv{u['level']}")
+        for iid, points in trust_gains.items():
+            u = State.player.roster_row(iid)
+            before = _trust_points(u)
+            mastered = State.player.advance_unit_trust(u, 0, points)
+            if _trust_points(u) != before:
+                paid.append(f"unit{u['master_id']}->trust{_trust_points(u)}")
+            paid.extend(f"tmr{r['kind']}:{r['id']}" for r in mastered)
+        if any(r.startswith("tmr") for r in paid):
+            spec.setdefault("B71MekS8", [])
         for r in spec.get("09HRWXDf", []):
             if isinstance(r, dict) and lv_info:
                 r["Qic38SuC"] = lv_info
@@ -622,28 +760,26 @@ def _credit_mission_rewards(plaintext: str | None, spec=None, mid=None):
             ids = State.player.party_instance_ids()
             print(f"unit-exp: served Qic38SuC for {len(ids)} unit(s), +{gain} each: {lv_info[:110]}",
                   flush=True)
+    rank = State.player.data["rank"]
     if paid:
-        rank = State.player.data["rank"]
         items = State.player.data.get("inventory", {}).get("items", [])
         print(f"rewards: credited {' '.join(paid)} -> gil={State.player.currencies.get('gil', 0)} "
               f"bag={sum(int(i.get('count', 0)) for i in items)} item(s) over {len(items)} kind(s) "
               f"rank={rank.get('level')}({rank.get('exp')}pt)", flush=True)
-        if int(rank.get("level", 1)) > lvl_before:
-            # THE RANK-UP BONUS -- the one thing that was missing from a rank-up, and the display reads it
-            # from THIS reply. See `RANKUP_BONUS_LAPIS` for why the token is proven and the number authored.
-            # Credit it as well as serve it: an award the balance does not show is a lie the next user-state
-            # reply tells, which is the same rule the challenge awards follow.
-            gained = int(rank.get("level", 1)) - lvl_before
-            bonus = RANKUP_BONUS_LAPIS * gained
-            if bonus > 0:
-                if isinstance(spec, dict):
-                    for r in spec.get("09HRWXDf", []):
-                        if isinstance(r, dict):
-                            r["GfQmi4h5"] = str(bonus)
-                State.player.add_currency("lapis_free", bonus)
-                paid.append(f"{bonus}rankup-lapis")
-            print(f"rewards: RANK UP {lvl_before} -> {rank.get('level')} "
-                  f"(bonus {bonus} lapis served as GfQmi4h5)", flush=True)
+    if int(rank.get("level", 1)) > lvl_before:
+        # Rank-up awards depend on the level change, not on whether another
+        # reward happened to populate the display ledger.
+        gained = int(rank.get("level", 1)) - lvl_before
+        bonus = RANKUP_BONUS_LAPIS * gained
+        if bonus > 0:
+            if isinstance(spec, dict):
+                for r in spec.get("09HRWXDf", []):
+                    if isinstance(r, dict):
+                        r["GfQmi4h5"] = str(bonus)
+            State.player.add_currency("lapis_free", bonus)
+            paid.append(f"{bonus}rankup-lapis")
+        print(f"rewards: RANK UP {lvl_before} -> {rank.get('level')} "
+              f"(bonus {bonus} lapis served as GfQmi4h5)", flush=True)
     return spec
 _CHALLENGE_TABLE: dict | None = None
 def challenge_table() -> dict:

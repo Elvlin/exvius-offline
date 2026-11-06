@@ -46,7 +46,7 @@ for key, pt in ((KEY_A, PLAINS[0]), (KEY_A, PLAINS[1]), (KEY_B, PLAINS[2]), (KEY
     ct = c.cbc_encrypt(key, pt.encode())
     ct_dp = c.cbc_encrypt(key, pt.encode(), double_pad=True)
     out.append({
-        "len": len(pt), "ct": ct, "ct_dp": ct_dp,
+        "len": len(pt), "plain": pt, "ct": ct, "ct_dp": ct_dp,
         "back": c.cbc_decrypt(key, ct).decode(),
         "back_dp": c.cbc_decrypt(key, ct_dp).decode(),
         "ecb": c.aes_ecb_decrypt(KEY_A, ECB_IN).hex(),
@@ -90,6 +90,9 @@ def main() -> int:
         return 1
 
     bad = 0
+    if len(cli["vectors"]) != len(lib["vectors"]):
+        print(f"FAIL — vector count differs: openssl={len(cli['vectors'])} cryptography={len(lib['vectors'])}")
+        bad += 1
     for i, (a, b) in enumerate(zip(cli["vectors"], lib["vectors"])):
         for field in ("ct", "ct_dp", "back", "back_dp", "ecb"):
             if a[field] != b[field]:
@@ -98,9 +101,8 @@ def main() -> int:
                       f"       openssl     : {a[field][:80]}\n       cryptography: {b[field][:80]}")
     for name, data in (("openssl", cli), ("cryptography", lib)):
         for i, v in enumerate(data["vectors"]):
-            pt_len = v["len"]
-            if v["back"] != "" and len(v["back"]) != pt_len:
-                print(f"FAIL — {name} round-trip length wrong on vector {i}: {len(v['back'])} != {pt_len}")
+            if v["back"] != v["plain"] or v["back_dp"] != v["plain"]:
+                print(f"FAIL — {name} round trip differs from the original plaintext on vector {i}")
                 bad += 1
     if bad:
         return 1

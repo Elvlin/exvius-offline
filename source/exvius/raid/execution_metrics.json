@@ -1,0 +1,37 @@
+{
+  "elapsed_seconds": 0.8451950409798883,
+  "child_peak_rss_kib": 13056,
+  "results": [
+    {
+      "command": [
+        "python3",
+        "audit_source.py",
+        "/workspace/shared/exvius-integration/base.zip",
+        "--mission",
+        "8960101",
+        "--output",
+        "source_audit.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_raid_model.py"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "raid_model.py",
+        "example_workload.json"
+      ],
+      "exit": 0
+    }
+  ],
+  "downloaded_code_executed": false
+}

@@ -9,7 +9,6 @@ refresh the client's lists carries the unit group, so `apply_to_reply` projects 
 from collections import Counter
 import json
 from exvius_raid_progress import personal_raid_menu
-from ffbe_friends import local_friend_action
 
 from ffbe_state import State, _note
 
@@ -143,8 +142,13 @@ def unit_equip(spec, req):
     materia = {row["H5jBL0Vf"]: int(row["Qy5EvcK1"]) for row in player.materia_rows()}
     cards = {str(card["user_vc_id"]) for card in player.data.get("vision_cards", [])}
     loadouts = {}
+    party_loadouts = {}
     try:
         for row in rows:
+            wire_kind = str(row.get("xBi3L6yR", "1"))
+            party_kind = {"1": "", "7": "7", "8": "8", "11": "11", "50": "11"}.get(wire_kind)
+            if party_kind is None:
+                raise ValueError("unsupported party type")
             decoded, _ = _wire_loadouts(row, roster)
             for iid, fields in decoded.items():
                 for field, values in fields.items():
@@ -153,12 +157,15 @@ def unit_equip(spec, req):
                         counts = Counter(values if "materia" in field else values.values())
                         if any(item != "0" and count > owned.get(item, 0) for item, count in counts.items()):
                             raise ValueError("unowned equipment or materia")
-                    if field in ("vision_card", "shift_vision_card") and values and values not in cards:
+                    if field in ("vision_card", "shift_vision_card") and values:
                         # Native vision-card strings carry the master id as well as the instance id.
-                        if not cards.intersection(values.split("-")):
+                        ids = {part for part in values.split("-") if part not in ("", "0")}
+                        if ids and not ids.intersection(cards):
                             raise ValueError("unowned vision card")
-                if str(row.get("xBi3L6yR", "1")) == "1":
+                if party_kind == "":
                     loadouts.setdefault(iid, {}).update(fields)
+                else:
+                    party_loadouts.setdefault(party_kind, {}).setdefault(iid, {}).update(fields)
     except (AttributeError, TypeError, ValueError):
         _note("unit-equip: invalid equipment update")
         return _refresh(spec)
@@ -174,6 +181,14 @@ def unit_equip(spec, req):
                     score_quest_action('13')
             roster[iid].update(fields)
         player.dirty = True
+    for party_kind, changes in party_loadouts.items():
+        party = player.special_party(party_kind)
+        stored = party.setdefault("loadouts", {})
+        for iid, fields in changes.items():
+            current = {**roster[iid], **stored.get(iid, {})}
+            if any(current.get(key) != value for key, value in fields.items()):
+                stored.setdefault(iid, {}).update(fields)
+                player.dirty = True
     return _refresh(spec)
 
 
@@ -329,10 +344,6 @@ HANDLERS = {
     'cVRHU84e': lambda s, r: inventory_favourite(s, r, 'K8pR0Fvb', ('I3FUD4Mt', 'DWJ3P8cg'), ('aME25KS0', 'Exp2A1u7')),
     'k5v0hMd8': lambda s, r: inventory_favourite(s, r, 'pJ9Eo6cn', ('8UJhyb4u',), ('85HUgcbK',)),
     'VTbX14dD': lambda s, r: inventory_favourite(s, r, '4I71fGzq', ('E0zptv3J',), ('N4ikBXn9',)),
-    "7kG0JAvE": lambda spec, req: local_friend_action(spec, req, 'detail'),
-    "3siZRSU4": lambda spec, req: local_friend_action(spec, req, 'search'),
-    "iAs67PhJ": lambda spec, req: local_friend_action(spec, req, 'suggest'),
-    "1oE3Fwn4": lambda spec, req: local_friend_action(spec, req, 'favorite'),
     "g0BjrU5D": personal_raid_menu,  # RoutineRaidMenuUpdateRequest
     "pB3st6Tg": unit_equip,         # UnitEquipRequest
     "7tWdn9zH": sacrifice,                                             # SacrificeRequest

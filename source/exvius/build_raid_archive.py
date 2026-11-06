@@ -99,7 +99,8 @@ def reward(value, category, tables, context):
     else:
         kind = (10 if 'unit' in category.lower() or 'enhanc' in category.lower() else
                 22 if re.search(r'\b(?:ability|materia)\b', category, re.I) else 20)
-    name = re.sub(r'^\d-star\s+', '', name)
+    star_match = re.match(r'^(\d+)-star\s+', name, re.I)
+    name = re.sub(r'^\d-star\s+', '', name, flags=re.I)
     name = {"Scion Conjurer's Patten": "Scion Conjurer's Pattens", 'Magi Staff': 'Magi Staff (FFV)',
             'Recipe for Magi Staff': 'Magi Staff (FFV)'}.get(name, name)
     if not tables[kind].get(item_key(name)):
@@ -115,6 +116,11 @@ def reward(value, category, tables, context):
     # Global units have one ID per rarity. The wiki's explicit rarity picks it;
     # otherwise use the lowest original base form, as a unit reward does.
     if kind == 10 and candidates:
+        if star_match:
+            from player_state import unit_mst
+            rarity = int(star_match[1])
+            candidates = [uid for uid in candidates
+                          if int((unit_mst(str(uid)) or {}).get('9fW0TePj', 0)) == rarity]
         if candidates:
             candidates = [min(candidates)]
     if len(candidates) != 1:

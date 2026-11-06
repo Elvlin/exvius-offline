@@ -11,7 +11,7 @@ export function installRaidMenu(module, note, retained, bridge) {
   const headerRaids = [];
   const makeArray = fn('_ZN7cocos2d7__Array6createEv', 'pointer', []);
   const append = fn('_ZN7cocos2d7__Array9addObjectEPNS_3RefE', 'void', ['pointer', 'pointer']);
-  const cast = new NativeFunction(Module.getGlobalExportByName('__dynamic_cast'),
+  const cast = new NativeFunction(module.getExportByName('__dynamic_cast'),
     'pointer', ['pointer', 'pointer', 'pointer', 'long'], {exceptions: 'propagate'});
   const refType = module.getExportByName('_ZTIN7cocos2d3RefE');
   const bannerType = module.getExportByName('_ZTI9BannerMst');

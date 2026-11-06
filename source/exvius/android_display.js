@@ -59,6 +59,16 @@ export function collapseCampaignBanner(name, box, original, banner, reference) {
   return result;
 }
 
+// Explorations draw their darkness as one SpriteStudio sprite, 1200 units tall
+// and centred on the player 568 units below the top: the middle of the 1136
+// design. On taller canvases its opaque outer ring ended above the bottom,
+// a black line over a fully lit strip. By user decision (2026-11-06) the
+// darkness is removed, so the whole exploration map is drawn lit.
+export const DARKNESS_TEXTURE = {width: 248, height: 380};
+export function isDarknessSprite(textureWidth, textureHeight, scaleY) {
+  return textureWidth === DARKNESS_TEXTURE.width && textureHeight === DARKNESS_TEXTURE.height && scaleY >= 5;
+}
+
 export function responsiveDelta(reference, canvas) {
   return {
     x: (canvas.width - reference.width) / 2,
@@ -531,6 +541,48 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
       }
     }
   }));
+  const children = native('_ZNK7cocos2d4Node11getChildrenEv', 'pointer', ['pointer']);
+  const spriteTexture = native('_ZNK7cocos2d6Sprite10getTextureEv', 'pointer', ['pointer']);
+  const textureHeight = native('_ZNK7cocos2d9Texture2D13getPixelsHighEv', 'int', ['pointer']);
+  const setVisible = native('_ZN7cocos2d4Node10setVisibleEb', 'void', ['pointer', 'bool']);
+  const customSpriteType = module.getExportByName('_ZTIN2ss12CustomSpriteE');
+  const darknessChecks = new Map();
+  function hasDarknessSprite(player) {
+    const vector = children(player), begin = vector.readPointer();
+    const count = Math.min(vector.add(8).readPointer().sub(begin).toInt32() / Process.pointerSize, 16);
+    for (let i = 0; i < count; i++) {
+      const child = begin.add(i * Process.pointerSize).readPointer();
+      if (child.isNull() || !child.readPointer().sub(Process.pointerSize).readPointer().equals(customSpriteType))
+        continue;
+      const texture = spriteTexture(child);
+      if (!texture.isNull() && isDarknessSprite(textureWidth(texture), textureHeight(texture), nodeScaleY(child)))
+        return true;
+    }
+    return false;
+  }
+  retained.push(Interceptor.attach(module.getExportByName('_ZN2ss6Player8setFrameEi'), {
+    onEnter(args) {
+      const player = args[0], key = player.toString();
+      const checks = darknessChecks.get(key) || 0;
+      // The animation sets its sprite's scale on its first frames; stop looking after that.
+      if (checks < 0 || checks > 8) return;
+      darknessChecks.set(key, checks + 1);
+      try {
+        if (!hasDarknessSprite(player)) return;
+        // Hide the player node, not its sprite: the animation rewrites part visibility every frame.
+        setVisible(player, 0);
+        darknessChecks.set(key, -1);
+        note('MAP_DARKNESS_REMOVED');
+      } catch (error) {
+        darknessChecks.set(key, -1);
+        note('MAP_DARKNESS_ERROR ' + error);
+      }
+    }
+  }));
+  for (const name of ['_ZN2ss6PlayerD1Ev', '_ZN2ss6PlayerD2Ev'])
+    retained.push(Interceptor.attach(module.getExportByName(name), {
+      onEnter(args) { darknessChecks.delete(args[0].toString()); }
+    }));
   // MapDrawManager already uses nearest-neighbour sampling for its pixel-art
   // tiles. AreaMapManager omitted it for the separate World/region sheets,
   // allowing linear sampling across sheet edges at fractional phone scales.

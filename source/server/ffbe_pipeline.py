@@ -29,7 +29,8 @@ from ffbe_state import State, _note, save_state
 # acyclic: config -> state -> {battle, gacha, player} -> pipeline -> capture_server.
 from ffbe_battle import (apply_battle_bgm, apply_result_drops, apply_result_item_columns,
                           credit_mission_lapis, credit_mission_rewards, grant_cleared_mission,
-                          mission_end_echo, record_pushed_switches, roll_drops,
+                          mission_end_echo, record_pushed_switches, record_result_echo,
+                          repeat_run_report, roll_drops,
                           serve_challenge_clear, serve_challenge_clear_all, serve_version_table)
 from ffbe_banner import MARQUEE_GROUP, serve_home_marquee
 from ffbe_friends import serve_friends
@@ -145,7 +146,13 @@ class Edge:
 
     def __repr__(self) -> str:
         return f"Edge({self.before!r} -> {self.after!r} via {self.channel})"
+def _repeat_run_report(ctx: _Ctx):
+    """Autoplay runs 2+ report running totals; every later step must read THIS run's values."""
+    ctx.plaintext = repeat_run_report(ctx.plaintext)
+    return ctx.spec
 PIPELINE: tuple = (
+    Step("repeat_run_report", _repeat_run_report, "io", "ctx.plaintext",
+         "FIRST: an autoplay continuation's running totals become this run's exp/gil/drops"),
     Step("serve_lapis_shop", lambda c: serve_lapis_shop(c.spec, c.reply_id, c.plaintext),
          "state", "State.player", "native bundle prices and purchases use local Lapis"),
     # Drops are server-authoritative and per-battle: roll the candidate list now. (A no-op for every reply
@@ -175,7 +182,7 @@ PIPELINE: tuple = (
     # The EMBLEM EVENT's weekly objectives ride the SAME mission end: a cleared mission that a campaign
     # objective names earns its crest, and a crest can cross a tier, so the tier mail is composed here
     # rather than waiting for the screen (the mailbox is state; the reply only carries the counters).
-    Step("credit_emblem_objectives", lambda c: credit_emblem_objectives(c.plaintext, c.spec),
+    Step("credit_emblem_objectives", lambda c: credit_emblem_objectives(c.plaintext, c.spec, c.reply_id),
          "state", "State.player.emblem_event / mailbox",
          "credits the live campaign's mission-shaped objectives and mails any tier they reach"),
     # Only original Lapis repeats; other first-clear rewards remain lifetime one-time.
@@ -385,6 +392,10 @@ PIPELINE: tuple = (
     # keeping the strips together makes the "this runs last" rule one place.
     Step("apply_battle_bgm", lambda c: apply_battle_bgm(c.spec),
          "spec", "an6TB4WS", "A/B strip; last, beside the other one, so the rule is in one place"),
+    # After every rewrite of the result row: the client stores exactly this echo, and an autoplay
+    # continuation adds its next run on top of it.
+    Step("record_result_echo", lambda c: (record_result_echo(c.spec, c.plaintext), save_state(), c.spec)[2],
+         "io", "State.player.exvius_repeat.echo", "LAST: records the result values actually served"),
 )
 PIPELINE_EDGES: tuple = (
     Edge("roll_drops", "apply_result_drops", "LAST_DROPS",

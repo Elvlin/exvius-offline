@@ -518,7 +518,19 @@ class Handler(BaseHTTPRequestHandler):
         #   /en/sd/area/Ver<N>_x.cpk           -> files/en/sd/area/...
         # So serve the whole `files/` tree rather than a single subdirectory, and keep the
         # same-token fallback for the version-prefixed MST names only.
-        rel = urllib.parse.unquote(path.lstrip("/"))     # the client percent-encodes spaces etc. in art names
+        decoded = urllib.parse.unquote(path)
+        rel = decoded.lstrip("/")     # decode first, then remove the client's leading slash
+        if (not rel or "\\" in rel or "\x00" in rel or
+                any(part in ("", ".", "..") for part in rel.split("/"))):
+            self.send_error(400, "Invalid content path")
+            return
+        def safe_join(base, relative):
+            candidate = os.path.realpath(os.path.join(base, relative))
+            boundary = os.path.realpath(base)
+            try:
+                return candidate if os.path.commonpath((candidate, boundary)) == boundary else None
+            except ValueError:
+                return None
         data = None
         how = None
         # --- authored web content -------------------------------------------------
@@ -531,14 +543,14 @@ class Handler(BaseHTTPRequestHandler):
             if os.path.isfile(page):
                 data, how = open(page, "rb").read(), "authored html stand-in"
         overlay = State.cdn_overlay
-        if data is None and overlay and rel and ".." not in rel:
-            exact = os.path.join(overlay, rel)
-            if os.path.isfile(exact):
+        if data is None and overlay and rel:
+            exact = safe_join(overlay, rel)
+            if exact and os.path.isfile(exact):
                 data, how = open(exact, "rb").read(), "overlay"
         root = State.cdn_root
-        if data is None and root and rel and ".." not in rel:
-            exact = os.path.join(root, rel)
-            if os.path.isfile(exact):
+        if data is None and root and rel:
+            exact = safe_join(root, rel)
+            if exact and os.path.isfile(exact):
                 with open(exact, "rb") as content:
                     data = content.read()
                 how = "exact"
@@ -548,7 +560,9 @@ class Handler(BaseHTTPRequestHandler):
                 m = re.search(r"Ver\d+_([^/]+)\.dat$", rel)
                 if m:
                     sub = os.path.dirname(rel)
-                    hits = sorted(glob.glob(os.path.join(root, sub, f"Ver*_{m.group(1)}.dat")))
+                    search_root = safe_join(root, sub)
+                    hits = sorted(glob.glob(os.path.join(search_root, f"Ver*_{m.group(1)}.dat"))) \
+                        if search_root else []
                     if len(hits) == 1:
                         data = open(hits[0], "rb").read()
                         how = "token-match " + os.path.basename(hits[0])

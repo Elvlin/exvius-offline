@@ -1,0 +1,11 @@
+test_configured_shared_progress_seam (__main__.PipelineFixture.test_configured_shared_progress_seam) ... ok
+test_failed_clear_and_unmet_objective (__main__.PipelineFixture.test_failed_clear_and_unmet_objective) ... ok
+test_full_loop_lapis_only_and_retry_reload (__main__.PipelineFixture.test_full_loop_lapis_only_and_retry_reload) ... ok
+test_generated_routes_load_in_real_dispatch (__main__.PipelineFixture.test_generated_routes_load_in_real_dispatch) ... ok
+test_persistent_event_policy_real_gate (__main__.PipelineFixture.test_persistent_event_policy_real_gate) ... ok
+test_registry_and_hook_order (__main__.PipelineFixture.test_registry_and_hook_order) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.034s
+
+OK

@@ -60,9 +60,10 @@ def _mission_treasures(out, request):
     if (attempt.get('mid') != mid or attempt.get('status') != 'completed'
             or not attempt.get('normal_rewards_recorded')):
         return out
-    # GL9 MissionResultRequest serializes opened-chest tuples in Z7G0yxXe.
-    # R1kg3EBA is retained for the earlier request form used by saved clients.
-    reported = {entry for channel in ('Z7G0yxXe', 'R1kg3EBA')
+    # GL9 MissionResultInfoBase::toJsonGroup writes each kind's opened-chest
+    # tuples in its own channel: items Z7G0yxXe, equipment Mh1BA4uv, materia
+    # 30u6XYiB. R1kg3EBA is retained for the earlier request form used by saved clients.
+    reported = {entry for channel in (*CHEST_CHANNELS.values(), 'R1kg3EBA')
                 for entry in str(results[0].get(channel) or '').split(',') if entry}
     opened = set(str(nodes[0].get('dIPkNn61') or '').split(','))
     display = {}
@@ -103,10 +104,45 @@ def _mission_treasures(out, request):
 
 
 @lru_cache(maxsize=1)
-def catalogue():
+def _raw_catalogue():
     path = Path(__file__).with_name('content') / 'field_treasures.json'
     rows = json.loads(path.read_text(encoding='utf8'))['treasures']
     return {str(row['id']): row for row in rows}
+
+
+@lru_cache(maxsize=1)
+def _projectable_catalogue():
+    player = State.player
+    if player is None:
+        return _raw_catalogue()
+    kept = {}
+    quarantined = []
+    for iid, row in _raw_catalogue().items():
+        rewards = []
+        for entry in str(row.get('rewards') or '').split(','):
+            fields = entry.split(':')
+            if len(fields) != 3 or not all(field.isdigit() for field in fields):
+                rewards.append(None)
+                continue
+            rewards.append(dict(zip(('kind', 'id', 'count'), map(int, fields))))
+        if rewards and all(reward is not None and player._can_credit(reward)
+                           for reward in rewards):
+            kept[iid] = row
+        else:
+            quarantined.append(iid)
+    if quarantined:
+        _note('field treasure: quarantined unprojectable rows ' + ','.join(quarantined))
+    return kept
+
+
+def catalogue():
+    """Only chests whose complete reward can be represented by the client.
+
+    The raw master contains three malformed reward references. Serving those
+    rows leaves a visible chest that can never settle, so they stay preserved
+    in the source file but are quarantined from the runtime catalogue.
+    """
+    return _projectable_catalogue() if State.player is not None else _raw_catalogue()
 
 
 def serve(spec, plaintext, reply_id=None):

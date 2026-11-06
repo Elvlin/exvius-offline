@@ -24,6 +24,10 @@ def run(*args, capture=False):
 def prepare():
     assert STAGE.resolve().is_relative_to((ROOT / 'source/build/distribution').resolve())
     STAGE.mkdir(parents=True, exist_ok=True)
+    for folder in ('source', 'release', 'data'):
+        target = STAGE / folder
+        if target.exists():
+            shutil.rmtree(target)
     selected = []
     for folder in ('exvius', 'server', 'memorial', 'harness', 'docs', 'server_app'):
         for source in sorted((ROOT / 'source' / folder).rglob('*')):

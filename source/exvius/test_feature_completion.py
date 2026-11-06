@@ -191,9 +191,13 @@ class Completion(unittest.TestCase):
         self.p.grant_item(20, 102001100, 1)
         request = {'JcxS6A8N': [{'Gh92V3Tx': '1101'}], '1sGiqV9T': [{'i9han5Sz': f'{qid}:{sid}'}]}
         expedition.mission_update({}, request)
+        active = next(r for r in self.p.groups()['mk5fza4r'] if r['Z34jU7ue'] == qid)
+        self.assertEqual(active['4kcAD9fW'], '1')
         request['1sGiqV9T'] = [{'9YPZuB2i': f'{qid}:{sid}'}]
         out = expedition.mission_update({}, request)
         self.assertEqual(out['JG96kr5C'][0]['4kcAD9fW'], '2')
+        reply = self.p.apply_to_reply(out, 'j5JHKq6S')
+        self.assertIn(qid, {row['Z34jU7ue'] for row in reply['mk5fza4r']})
         self.assertEqual(self.p.item_count(20, 102001100), 0)
         self.assertIn(qid, self.p.data['exvius_map']['rewarded'])
         self.reload()
@@ -201,6 +205,8 @@ class Completion(unittest.TestCase):
         expedition.mission_update({}, request)
         self.assertEqual(self.p.data, before)
         self.assertIn('hQKAwj18', self.p.groups())
+        cleared = next(r for r in self.p.groups()['mk5fza4r'] if r['Z34jU7ue'] == qid)
+        self.assertEqual(cleared['4kcAD9fW'], '2')
 
     def test_native_saved_equipment_and_shift_forms_survive_legacy_reload(self):
         unit = self.p.data['roster'][0]
@@ -347,6 +353,15 @@ class Completion(unittest.TestCase):
         self.assertIn('Dark Matter', page)
         self.assertIn('25,000', page)
         self.assertIn('Received', page)
+
+    def test_dark_visions_schedules_and_tables_are_season_specific(self):
+        from event_archive import events
+        dark = sorted((row for row in events() if row['name'] == 'Dark Visions'),
+                      key=lambda row: int(row['area']))
+        schedules = [modes._parade_schedule(row['area']) for row in dark[:4]]
+        self.assertEqual(len(set(schedules)), len(schedules))
+        self.assertEqual({modes._parade_table(schedule) for schedule in schedules},
+                         {str(int(schedule) * 10 + 1) for schedule in schedules})
 
     def test_parade_vision_card_milestone_grants_and_does_not_block_scoring(self):
         from event_archive import menu

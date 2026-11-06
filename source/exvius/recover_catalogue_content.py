@@ -62,7 +62,7 @@ def import_jp_archive(metadata, downloads):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--queue', type=Path, default=ROOT / 'data/web_sources/global-content-recovery.json')
-    parser.add_argument('--downloads', type=Path, default=Path.home() / 'Downloads')
+    parser.add_argument('--downloads', type=Path, default=Path('C:/Users/hanre/Downloads'))
     parser.add_argument('--first', type=int, default=0)
     parser.add_argument('--count', type=int, default=676)
     parser.add_argument('--pending', action='store_true')

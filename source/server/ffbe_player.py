@@ -14,6 +14,7 @@ from exvius_events import load_policy, apply_availability
 from data_paths import DATA_ROOT
 
 import copy, hashlib, json, os, time
+from datetime import date, timedelta
 from functools import lru_cache
 
 from ffbe_config import *          # noqa: F401,F403 -- constants; the table has no behaviour
@@ -719,7 +720,8 @@ def serve_unit_mix(spec, plaintext: str | None):
     lb_exp = int(base.get("lb_exp", 0) or 0)
     (b_lv, b_ex), (a_lv, a_ex) = res["before"], res["after"]
     before = _lv_half(b_lv, b_ex, unit_stats(base["master_id"], b_lv), lb_level, lb_exp)
-    after = _lv_half(a_lv, a_ex, unit_stats(base["master_id"], a_lv), lb_level, lb_exp)
+    after = _lv_half(a_lv, a_ex, unit_stats(base["master_id"], a_lv), lb_level, lb_exp,
+                     gained=res["gain"])
     out[MIX_GROUP] = [{"og2GHy49": base_id,
                        "WbGYcN17": ",".join(res["materials"]),
                        "B6H34Mea": str(res["gain"]),          # Exp
@@ -1190,15 +1192,13 @@ def _info_day_list(today: str, span: int = CATCHUP_INFO_DAYS) -> str:
     unparseable date yields an empty list rather than a list the gate will reject.
     """
     try:
-        day = time.strptime(str(today), "%Y-%m-%d")
+        day = date.fromisoformat(str(today))
     except (ValueError, TypeError):
         return ""
     out = []
     for back in range(max(1, int(span)) - 1, -1, -1):
-        # formatted by hand, not through time.strftime: the harness pins that name to a frozen value in
-        # tests, and a date list that repeats one date under a pinned clock is a false pass, not a pass.
-        t = time.gmtime(time.mktime(day) - back * 86400)
-        out.append(f"{t.tm_year:04d}{t.tm_mon:02d}{t.tm_mday:02d}")
+        current = day - timedelta(days=back)
+        out.append(current.strftime("%Y%m%d"))
     return CATCHUP_DAY_SEP_INFO.join(out)
 
 
@@ -3041,7 +3041,11 @@ def serve_survival(spec, reply_id):
             "0dh7yRIN": "",                 # +0xc8 /
         }
         events.append(event)
-    user = {"pvS5A4kE": SURVIVAL_EVENT, "52ibRBqw": "0", "7SPHKY1j": "0", "UbQ26oH4": "0"}
+    saved_survival = State.player.data.get("exvius_survival", {})
+    saved_groups = saved_survival.get("groups") or {}
+    saved_user = (saved_groups.get("65cMLkuQ") or [{}])[0]
+    user = {**{"pvS5A4kE": SURVIVAL_EVENT, "52ibRBqw": "0", "7SPHKY1j": "0", "UbQ26oH4": "0"},
+            **(copy.deepcopy(saved_user) if isinstance(saved_user, dict) else {})}
     # The break-through row is reached THROUGH the area, not keyed by it, and the two classes store the
     # shared pair in SWAPPED offsets. `UserBreakThroughProgressInfoList::getObjectWithAreaId` (0x1db8e68):
     #   0x1db8e84  SurvivalEventInfoList::getObjectWithAreaId(area)   <- the event row, by `uv60hgDW`
@@ -3083,7 +3087,9 @@ def serve_survival(spec, reply_id):
     # The party state, the one reply APP-8 was actually waiting on. DESTRUCTIVE and UN-GATED, so it is
     # restricted harder than the event list: every arrival clears the client's list unconditionally.
     if "state" in parts and reply_id in SURVIVAL_STATE_CARRIERS:
-        out[SURVIVAL_STATE_TAG] = [{SURVIVAL_STATE_TOKEN: _survival_state_block()}]
+        saved_party = (saved_groups.get("2w9Iyeaq") or [{}])[0]
+        packed = saved_party.get(SURVIVAL_STATE_TOKEN) if isinstance(saved_party, dict) else None
+        out[SURVIVAL_STATE_TAG] = [{SURVIVAL_STATE_TOKEN: packed or _survival_state_block()}]
     gate = "gate" in parts and reply_id in SURVIVAL_COND_CARRIERS
     if gate:
         kept = [r for r in (out.get(SURVIVAL_COND_TAG) or []) if isinstance(r, dict)]
@@ -3450,7 +3456,7 @@ def serve_emblem_event(spec, reply_id):
     return out
 
 
-def credit_emblem_objectives(plaintext, spec):
+def credit_emblem_objectives(plaintext, spec, reply_id=None):
     """A `MissionEndRequest` -> the campaign's objectives (a state write; the pipeline step calls this).
 
     **A TRANSFORM like every other step, so it returns the spec** -- and this is not a formality: the
@@ -3463,6 +3469,8 @@ def credit_emblem_objectives(plaintext, spec):
     even if they never open the Adventurer Crests screen.
     """
     if State.player is None or not plaintext:
+        return spec
+    if reply_id is not None and str(reply_id) != "x5Unqg2d":
         return spec
     try:
         req = json.JSONDecoder().raw_decode(plaintext)[0]

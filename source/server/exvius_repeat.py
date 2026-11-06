@@ -187,24 +187,47 @@ def repeat_challenge_rewards(spec, mid, plaintext):
         _note('repeat rewards withheld: challenge table unavailable/invalid: ' + str(exc))
         return spec
     already = set(State.player.cleared_challenges.get(str(mid), set()))
-    result = complete_attempt(State.player, mid, context['cleared'], challenges.values(),
-                              CONDITION_CHECKS, context, LAPIS_AWARD)
-    if result['reason'] == 'completed':
-        State.state_dirty = True
-        from exvius_fortuna import complete as complete_fortuna
-        complete_fortuna(State.player, mid,
-                         State.player.data.get('exvius_repeat', {}).get('attempt', {}).get('sequence', 0), context)
-        from exvius_raid_progress import complete_secret_unlock
-        complete_secret_unlock(State.player, mid)
-        # Only explicitly configured shared raid progress; combat/personal rewards unchanged.
-        from exvius_raid_progress import credit_configured_raid
-        from data_paths import DATA_ROOT
-        attempt = State.player.data.get('exvius_repeat', {}).get('attempt', {})
-        completion_id = 'mission:%s:attempt:%s' % (mid, attempt.get('sequence'))
-        try:
-            credit_configured_raid(State.player, mid, completion_id, context['cleared'], DATA_ROOT)
-        except (OSError, ValueError) as exc:
-            _note('local shared raid progress withheld: ' + str(exc))
+    before, dirty_before = copy.deepcopy(State.player.data), State.player.dirty
+    try:
+        result = complete_attempt(State.player, mid, context['cleared'], challenges.values(),
+                                  CONDITION_CHECKS, context, LAPIS_AWARD)
+        if result['reason'] == 'completed':
+            State.state_dirty = True
+            if context['cleared'] is True:
+                from player_state import _load_ndjson
+                mission = _load_ndjson('F_MISSION_MST.ndjson', 'qo3PECw6').get(str(mid), {})
+                challenge_text = ','.join(str(row.get('rewards') or '') for row in challenges.values())
+                bonus_rows = []
+                for entry in str(mission.get('1x4bG2J8') or '').split(','):
+                    fields = entry.split(':')
+                    if (len(fields) < 3 or not all(part.isdigit() for part in fields[:3])
+                            or str(fields[1]) != '1209001274' or entry[:entry.rfind(':')] in challenge_text):
+                        continue
+                    row = {'kind': int(fields[0]), 'id': int(fields[1]), 'count': int(fields[2])}
+                    if State.player._can_credit(row):
+                        bonus_rows.append(row)
+                if bonus_rows:
+                    if State.player._grant_items(bonus_rows) != bonus_rows:
+                        raise RuntimeError('mission bonus reward was not granted completely')
+                    State.player.data['exvius_repeat']['attempt']['mission_bonus_awards'] = bonus_rows
+            from exvius_fortuna import complete as complete_fortuna
+            complete_fortuna(State.player, mid,
+                             State.player.data.get('exvius_repeat', {}).get('attempt', {}).get('sequence', 0),
+                             context)
+            from exvius_raid_progress import complete_secret_unlock
+            complete_secret_unlock(State.player, mid)
+            # Only explicitly configured shared raid progress; combat/personal rewards unchanged.
+            from exvius_raid_progress import credit_configured_raid
+            from data_paths import DATA_ROOT
+            attempt = State.player.data.get('exvius_repeat', {}).get('attempt', {})
+            completion_id = 'mission:%s:attempt:%s' % (mid, attempt.get('sequence'))
+            try:
+                credit_configured_raid(State.player, mid, completion_id, context['cleared'], DATA_ROOT)
+            except (OSError, ValueError) as exc:
+                _note('local shared raid progress withheld: ' + str(exc))
+    except Exception:
+        State.player.data, State.player.dirty = before, dirty_before
+        raise
     # A replay's Lapis is paid but no result screen announces it (the challenge stars animate only on a
     # first clear). Use the native reward CSV, not the item-drop CSV: that
     # parser fixes the category to items and treats 50 as an item identifier.

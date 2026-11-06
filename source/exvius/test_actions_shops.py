@@ -221,6 +221,32 @@ class ActionsShops(unittest.TestCase):
         serve({'09HRWXDf': [{}]}, req)
         self.assertEqual(self.player.data, saved)
 
+    def test_equipment_and_materia_chests_settle_from_their_native_result_channels(self):
+        from exvius_field_treasures import serve, catalogue, CHEST_CHANNELS
+        # MissionResultInfoBase::toJsonGroup writes each kind's opened chests in its
+        # own column: items Z7G0yxXe, equipment Mh1BA4uv, materia 30u6XYiB.
+        rows = [row for row in catalogue().values() if row.get('mission') == 1110104
+                and int(row['rewards'].split(':')[0]) in CHEST_CHANNELS]
+        equipment = [row for row in rows if row['rewards'].startswith('21:')]
+        self.assertTrue(equipment)
+        channels = {}
+        for row in rows:
+            kind = int(row['rewards'].split(':')[0])
+            channels.setdefault(CHEST_CHANNELS[kind], []).append(row['rewards'] + ':' + str(row['switch']))
+        self.player.data['exvius_repeat'] = {'attempt': {
+            'mid': '1110104', 'sequence': 1, 'status': 'completed',
+            'cleared': False, 'normal_rewards_recorded': True}}
+        req = json.dumps({'jQsE54Iz': [{'qo3PECw6': '1110104',
+                         'dIPkNn61': ','.join(str(r['switch']) for r in rows)}],
+                         '09HRWXDf': [{key: ','.join(value) for key, value in channels.items()}]})
+        old = {r['J1YX9kmM']: int(r['Qy5EvcK1']) for r in self.player.equip_item_rows()}
+        out = serve({'09HRWXDf': [{}]}, req)
+        owned = {r['J1YX9kmM']: int(r['Qy5EvcK1']) for r in self.player.equip_item_rows()}
+        for iid, count in Counter(row['rewards'].split(':')[1] for row in equipment).items():
+            self.assertEqual(owned[iid], old.get(iid, 0) + count)
+        self.assertEqual(set(self.player.data['exvius_field_treasures']), {str(r['id']) for r in rows})
+        self.assertEqual(out['09HRWXDf'][0]['Mh1BA4uv'], ','.join(r['rewards'] for r in equipment))
+
     def test_mission_chest_rejects_wrong_reward_mission_switch_and_uncompleted_attempt(self):
         from exvius_field_treasures import serve
         spec = {'09HRWXDf': [{}]}
@@ -1082,10 +1108,14 @@ class ActionsShops(unittest.TestCase):
 
     def test_treasures_extend_beyond_original_three_locations(self):
         from exvius_field_treasures import catalogue, serve
-        self.assertEqual(len(catalogue()), 2667)
-        self.assertTrue(all(self.player._can_credit(reward)
-                            for row in catalogue().values()
-                            for reward in shops._triples(row['rewards'])))
+        self.assertEqual(len(catalogue()), 2664)
+        invalid = [(chest, reward)
+                   for chest, row in catalogue().items()
+                   for reward in shops._triples(row['rewards'])
+                   if not self.player._can_credit(reward)]
+        self.assertEqual(invalid, [])
+        for chest in ('9001009', '9102001', '9102003'):
+            self.assertNotIn(chest, catalogue())
         before = self.player.item_count(20, 101000200)
         request = json.dumps({'JcxS6A8N': [{'Gh92V3Tx': '1103', 'NiG2wL3A': '110301'}]})
         serve({}, request)

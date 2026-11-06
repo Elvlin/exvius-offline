@@ -111,6 +111,7 @@ def roll(player, banner, requested_detail, repeats=1):
 
 def next_box(spec, req):
     from exvius_actions import _node, _refresh
+    from gacha_archive import visible_banners
     from ffbe_gacha import all_banners, gacha_groups
     from ffbe_state import State, _note
     player = State.player
@@ -134,7 +135,8 @@ def next_box(spec, req):
             _note('Raid box: featured rewards must be drawn before advancing')
     out = _refresh(spec)
     out.pop('5yLD4dYI', None)
-    out.update(gacha_groups(banners))
+    visible = visible_banners(player, banners)
+    out.update(gacha_groups(visible))
     return out
 
 

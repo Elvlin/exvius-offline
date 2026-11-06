@@ -3,7 +3,7 @@ const fs = require('node:fs');
 
 (async () => {
 const source = fs.readFileSync(require('node:path').join(__dirname, 'android_display.js'), 'utf8');
-const { fitMovie, chooseResolution, responsiveDelta, anchorLayout, collapseCampaignBanner, clampMapScroll, clampAnimationFrame } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+const { fitMovie, chooseResolution, responsiveDelta, anchorLayout, collapseCampaignBanner, clampMapScroll, clampAnimationFrame, isDarknessSprite } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
 
 // Movies retain their source proportions within portrait, landscape and square viewports.
 for (const [sw, sh] of [[640, 1136], [720, 1280], [1920, 1080], [1280, 720], [720, 480]]) {
@@ -136,5 +136,11 @@ assert.deepEqual(clampMapScroll(-20, -40, 14, 14, 640, 1358), {x:0,y:0});
 assert.deepEqual(clampMapScroll(9999, 9999, 32, 40, 640, 1358), {x:1216,y:962});
 assert.equal(clampMapScroll(0, 0, 0, 40, 640, 1358), null);
 console.log('Small-map scroll bounds passed.');
+// Earth Shrine's darkness on the phone (2026-11-06): ss::CustomSprite, 248x380 texture at scale 10.
+assert.equal(isDarknessSprite(248, 380, 10), true);
+assert.equal(isDarknessSprite(248, 380, 1.19), false);
+assert.equal(isDarknessSprite(584, 502, 10), false);
+assert.equal(isDarknessSprite(986, 986, 1), false);
+console.log('Exploration darkness detection passed.');
 
 })().catch(error => { console.error(error); process.exitCode = 1; });

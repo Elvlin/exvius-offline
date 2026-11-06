@@ -1,0 +1,65 @@
+test_conflicting_class_rejected (test_endpoints.Endpoints.test_conflicting_class_rejected) ... ok
+test_exact_schema (test_endpoints.Endpoints.test_exact_schema) ... ok
+test_identical_duplicate_not_multiplied (test_endpoints.Endpoints.test_identical_duplicate_not_multiplied) ... ok
+test_invalid_empty_table (test_endpoints.Endpoints.test_invalid_empty_table) ... ok
+test_request_collision_rejected (test_endpoints.Endpoints.test_request_collision_rejected) ... ok
+test_same_wire_alias_preserved (test_endpoints.Endpoints.test_same_wire_alias_preserved) ... ok
+test_shared_url_preserved (test_endpoints.Endpoints.test_shared_url_preserved) ... ok
+test_bad_policy_not_silently_defaulted (test_events.Events.test_bad_policy_not_silently_defaulted) ... ok
+test_existing_expired_row_extended_only_selected (test_events.Events.test_existing_expired_row_extended_only_selected) ... ok
+test_explicit_empty_not_defaulted (test_events.Events.test_explicit_empty_not_defaulted) ... ok
+test_historical_policy_preserves_rows (test_events.Events.test_historical_policy_preserves_rows) ... ok
+test_resolve_content_not_invented (test_events.Events.test_resolve_content_not_invented) ... ok
+test_rolling_window_and_unresolved_not_changed (test_events.Events.test_rolling_window_and_unresolved_not_changed) ... ok
+test_selection_survives_reload_and_backup (test_events.Events.test_selection_survives_reload_and_backup) ... ok
+test_campaign_contains_standard (test_events.Preflight.test_campaign_contains_standard) ... ok
+test_missing_event_not_ready (test_events.Preflight.test_missing_event_not_ready) ... ok
+test_real_ids_and_chain_resolution (test_events.Preflight.test_real_ids_and_chain_resolution) ... ok
+test_unknown_selection_not_ready (test_events.Preflight.test_unknown_selection_not_ready) ... ok
+test_upstream_comment_header_schema (test_events.Preflight.test_upstream_comment_header_schema) ... ok
+test_ceil_milestone (test_raid_progress.RaidProgress.test_ceil_milestone) ... ok
+test_claim_not_early_or_twice (test_raid_progress.RaidProgress.test_claim_not_early_or_twice) ... ok
+test_configured_runtime_seam (test_raid_progress.RaidProgress.test_configured_runtime_seam) ... ok
+test_disabled_without_config (test_raid_progress.RaidProgress.test_disabled_without_config) ... ok
+test_failed_unknown_mission_do_not_change (test_raid_progress.RaidProgress.test_failed_unknown_mission_do_not_change) ... ok
+test_invalid_targets_and_event_ids (test_raid_progress.RaidProgress.test_invalid_targets_and_event_ids) ... ok
+test_local_progress_original_rewards (test_raid_progress.RaidProgress.test_local_progress_original_rewards) ... ok
+test_no_silent_config_change (test_raid_progress.RaidProgress.test_no_silent_config_change) ... ok
+test_personal_milestone_rejected (test_raid_progress.RaidProgress.test_personal_milestone_rejected) ... ok
+test_retry_and_reload (test_raid_progress.RaidProgress.test_retry_and_reload) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.008s
+
+OK
+
+test_concurrent_completion_retry (test_repeat.Repeat.test_concurrent_completion_retry) ... ok
+test_duplicate_original_reward_occurrences_once_each (test_repeat.Repeat.test_duplicate_original_reward_occurrences_once_each) ... ok
+test_duplicate_pending_load_does_not_rearm (test_repeat.Repeat.test_duplicate_pending_load_does_not_rearm) ... ok
+test_every_clear_original_amounts_and_types (test_repeat.Repeat.test_every_clear_original_amounts_and_types) ... ok
+test_extended_encoding_not_silently_truncated (test_repeat.Repeat.test_extended_encoding_not_silently_truncated) ... ok
+test_failed_unknown_and_missing_load (test_repeat.Repeat.test_failed_unknown_and_missing_load) ... ok
+test_frozen (test_repeat.Repeat.test_frozen) ... ok
+test_lapis_disabled_does_not_mark_lapis_paid (test_repeat.Repeat.test_lapis_disabled_does_not_mark_lapis_paid) ... ok
+test_legacy_paid_migration (test_repeat.Repeat.test_legacy_paid_migration) ... ok
+test_malformed_separate_reward_does_not_block_lapis (test_repeat.Repeat.test_malformed_separate_reward_does_not_block_lapis) ... ok
+test_objective_required_each_run (test_repeat.Repeat.test_objective_required_each_run) ... ok
+test_other_mission_cannot_consume (test_repeat.Repeat.test_other_mission_cannot_consume) ... ok
+test_reordered_changed_amount_non_lapis_not_repaid (test_repeat.Repeat.test_reordered_changed_amount_non_lapis_not_repaid) ... ok
+test_restart_replay_and_new_load (test_repeat.Repeat.test_restart_replay_and_new_load) ... ok
+test_rollback_partial_grant (test_repeat.Repeat.test_rollback_partial_grant) ... ok
+test_same_completion_retry_no_pay (test_repeat.Repeat.test_same_completion_retry_no_pay) ... ok
+test_unsupported_can_be_granted_later_once (test_repeat.Repeat.test_unsupported_can_be_granted_later_once) ... ok
+test_unsupported_group_not_partially_paid (test_repeat.Repeat.test_unsupported_group_not_partially_paid) ... ok
+test_equipment_only_once_after_restart (test_upstream_repeat.Upstream.test_equipment_only_once_after_restart) ... ok
+test_equipment_uses_real_inventory (test_upstream_repeat.Upstream.test_equipment_uses_real_inventory) ... ok
+test_failed_clear_and_unsupported (test_upstream_repeat.Upstream.test_failed_clear_and_unsupported) ... ok
+test_frozen_and_ephemeral (test_upstream_repeat.Upstream.test_frozen_and_ephemeral) ... ok
+test_legacy_paid_remains_one_time (test_upstream_repeat.Upstream.test_legacy_paid_remains_one_time) ... ok
+test_mixed_unknown_encoding_lapis_valid (test_upstream_repeat.Upstream.test_mixed_unknown_encoding_lapis_valid) ... ok
+test_repeat_save_reload_retry (test_upstream_repeat.Upstream.test_repeat_save_reload_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.014s
+
+OK

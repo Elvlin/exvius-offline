@@ -161,10 +161,21 @@ def _grant(rows):
             State.player.grant_emblem(row['id'])
         elif row['kind'] == 27:
             cards = State.player.data.setdefault('vision_cards', [])
+            master = _table('F_VISION_CARD_MST', '5giCMUd2').get(str(row['id']))
+            _require(master is not None, 'unknown reward vision card')
+            level = _int(row.get('level', 1), 1)
+            cap = _int(master['aU3o2D4t'], 1)
+            _require(level <= cap, 'reward vision card level exceeds master cap')
+            pattern = {int(entry['7wV3QZ80']): _int(entry['93fnYUJG'])
+                       for entry in _rows('F_VISION_CARD_EXP_PATTERN_MST')
+                       if str(entry['0W7g6YXS']) == str(master['0W7g6YXS'])}
+            _require(all(pattern.get(index, 0) > 0 for index in range(2, level + 1)),
+                     'reward vision card EXP pattern is incomplete')
+            total_exp = sum(pattern[index] for index in range(2, level + 1))
             for _ in range(row['count']):
                 key = str(max([int(c['user_vc_id']) for c in cards] + [int(time.time() * 1000)]) + 1)
-                cards.append({'user_vc_id': key, 'vc_id': str(row['id']), 'level': 1,
-                              'exp': 0, 'total_exp': 0})
+                cards.append({'user_vc_id': key, 'vc_id': str(row['id']), 'level': level,
+                              'exp': 0, 'total_exp': total_exp})
     if rows:
         State.player.dirty = True
 

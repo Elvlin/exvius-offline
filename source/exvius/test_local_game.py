@@ -412,7 +412,8 @@ class LocalGameIntegration(unittest.TestCase):
             {'m3Wghr1j': friend, '8zE6w9RP': '1'}]})
         row = next(row for row in result['2vuhy0Ex'] if row['m3Wghr1j'] == friend)
         self.assertEqual(row['8zE6w9RP'], '1')
-        self.assertTrue(self.restored_player().data['exvius_friends']['favorites'][friend])
+        self.assertEqual(
+            self.restored_player().data['exvius_friends']['relations'][friend]['favorite'], 1)
         self.assertEqual(player.data['roster'], before_roster)
         self.assertEqual(player.currencies, before_currency)
 

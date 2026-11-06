@@ -1,6 +1,7 @@
 """Verify a release APK and finalize its static update metadata."""
 import argparse
 import hashlib
+import io
 import json
 from pathlib import Path
 import zipfile
@@ -18,7 +19,7 @@ def finalize(version, client_version, version_code):
         assert all(not name.startswith('assets/') or name.startswith('assets/chaquopy/')
                    for name in archive.namelist()), 'Original resources remain bundled'
         assert not any(name.startswith('assets/chaquopy/exvius_pack') for name in archive.namelist())
-        with zipfile.ZipFile(ROOT / 'source/build/android/client/assets/chaquopy/app.imy') as python:
+        with zipfile.ZipFile(io.BytesIO(archive.read('assets/chaquopy/app.imy'))) as python:
             assert not any(name.startswith('exvius_pack/') for name in python.namelist()), 'Game data is still inside the APK'
         game_hash = hashlib.sha256(archive.read('lib/arm64-v8a/libgame.so')).hexdigest()
         with zipfile.ZipFile(ROOT / 'repository snapshots/FFBE-Global-v9.0.0-original.apk') as original:
@@ -27,6 +28,7 @@ def finalize(version, client_version, version_code):
     for pack in manifest['packs']:
         path = ROOT / 'source/build/distribution/assets' / pack['url'].rsplit('/', 1)[-1]
         assert path.stat().st_size == pack['size']
+        assert sha256(path) == pack['sha256'], 'Data-pack hash differs: ' + path.name
         with zipfile.ZipFile(path) as archive:
             assert sum(row.file_size for row in archive.infolist()) == pack['unpackedSize']
             assert all(row.filename.startswith(('native/', 'static/', 'metadata/')) for row in archive.infolist())

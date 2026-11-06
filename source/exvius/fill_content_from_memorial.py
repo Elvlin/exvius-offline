@@ -724,6 +724,7 @@ def main():
         data = None
         for source in sorted(sources, key=lambda p: (p.is_relative_to(DATA / 'memorial'),
                                                     p.stat().st_mtime), reverse=True):
+            data = None
             try:
                 if source.suffix in ('.acb', '.awb'):
                     data, added = source.read_bytes(), 0

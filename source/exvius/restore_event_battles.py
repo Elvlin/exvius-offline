@@ -166,6 +166,8 @@ def followers(lgd):
     parts = {r['xqartN26']: r for r in base.load('F_MONSTER_PARTS_MST')}
     mid = '9700102'
     phases, lotteries, groups, monsters, profiles = [], [], [], [], []
+    coin_counts = (6, 7, 8, 6)
+    shard_counts = (2, 3, 3, 3)
     for wave, count in enumerate((1, 2, 3, 1), 1):
         captain = wave == 4
         pid, gid = str(1900000100 + wave), str(int(mid) * 100 + wave)
@@ -187,9 +189,10 @@ def followers(lgd):
                         'PC97pWQj': '100', '7wV3QZ80': '25' if captain else '10',
                         'hn42BL3Q': '0,0,0,0,0,0,-100,0,0',
                         'D9Nb7jgd': '100,100,100,100,100,100,100,100',
-                        'B6H34Mea': '550' if captain else '200',
+                        'B6H34Mea': '250',
                         '7UR4J2SE': '0', 'ATM35pjf': '0',
-                        '9BetM2Ds': f'20:1209000976:{13 if wave < 3 else 12}:100,20:1209000975:5:100'})
+                        '9BetM2Ds': (f'20:1209000976:{coin_counts[wave - 1]}:100,'
+                                     f'20:1209000975:{shard_counts[wave - 1]}:100')})
         profiles.append(profile)
         monsters.append({'xqartN26': pid, 'G4L0YIB2': name,
                          'V9j8wJcC': '10000049' if captain else '10000053'})

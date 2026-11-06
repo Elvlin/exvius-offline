@@ -66,6 +66,65 @@ class SummonTransactions(unittest.TestCase):
         self.assertEqual(self.player.data, before)
         self.assertEqual(self.player.dirty, dirty)
 
+    def test_b_ticket_banner_spends_the_released_b_ticket(self):
+        from ffbe_gacha import all_banners
+
+        banner = next(b for b in all_banners() if str(b['id']) == '9200023')
+        self.player._grant_items([{'kind': 20, 'id': 1209001902, 'count': 10}])
+        old_tickets = self.player.item_count(23, 110260)
+        roster = len(self.player.data['roster'])
+        result = self.player.roll_gacha(banner, repeats=1)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(self.player.data['roster']), roster + 1)
+        self.assertEqual(self.player.item_count(20, 1209001902), 0)
+        self.assertEqual(self.player.item_count(23, 110260), old_tickets)
+
+    def test_step_pool_is_the_pool_that_is_drawn(self):
+        banner = self.banner(steps=[{
+            'cost': {'kind': 'lapis', 'amount': 500},
+            'draws': 1,
+            'pool': [{'unit_id': '100000315', 'rarity': 5, 'rate': 1}],
+        }], pool=[{'unit_id': '100000102', 'rarity': 5, 'rate': 1}])
+        result = self.player.roll_gacha(banner)
+        self.assertEqual(result['awards'][0]['unit_id'], '100000315')
+
+    def test_stale_summon_detail_is_rejected_before_spending(self):
+        from ffbe_gacha import serve_gacha
+
+        banner = self.banner(steps=[{
+            'cost': {'kind': 'lapis', 'amount': 500},
+            'draws': 1,
+            'pool': [{'unit_id': '100000315', 'rarity': 5, 'rate': 1}],
+        }])
+        lapis = self.player.currencies['lapis_free']
+        roster = len(self.player.data['roster'])
+        with patch('ffbe_gacha.all_banners', return_value=[banner]):
+            body = json.dumps({'5yLD4dYI': [{
+                'X1IuZnj2': str(banner['id']),
+                'nqzG3b2v': str(int(banner['id']) * 10 + 99),
+                '2RtVPS3b': '1',
+                'zJ1A6HXm': '0',
+            }]})
+            out = serve_gacha({'5yLD4dYI': [{}]}, body, '9fVIioy1')
+        self.assertEqual(out['5yLD4dYI'][0]['UJz5QED2'], '')
+        self.assertEqual(self.player.currencies['lapis_free'], lapis)
+        self.assertEqual(len(self.player.data['roster']), roster)
+
+    def test_ticket_rates_and_permanent_b_ticket_destination(self):
+        from ffbe_gacha import all_banners
+        import gacha_archive
+        import gacha_rates
+
+        document = json.loads((PROJECT / 'source/server/gacha_standard.json').read_text(encoding='utf8'))
+        standard = next(b for b in document['banners'] if str(b['id']) == '60002')
+        with patch('ffbe_gacha.all_banners', return_value=[standard]):
+            page = gacha_rates.page('60002')
+        self.assertNotIn('Cost: Free', page)
+        self.assertIn('1 ticket from', page)
+        self.player.data['summon_archive'] = 'collaborations'
+        visible = {str(banner['id']) for banner in gacha_archive.visible_banners(self.player, all_banners())}
+        self.assertIn('9200023', visible)
+
     def test_campaign_alias_uses_existing_purchase_and_daily_counters(self):
         banner = self.banner(state_id='9100001', purchase_limit=1)
         existing = self.player.banner_state('9100001')
@@ -240,6 +299,20 @@ class SummonTransactions(unittest.TestCase):
             with self.assertRaises(ValueError):
                 gacha_box.roll(self.player, banner, gacha_box.detail_id(self.player, banner), 2)
         self.assertEqual(self.player.data, before)
+
+    def test_box_advance_refreshes_only_banners_visible_in_the_archive(self):
+        banner = self.raid_box()
+        visible_banner = dict(banner, id='9200032')
+        request = {'5yLD4dYI': [{'X1IuZnj2': banner['id'],
+                                  'nqzG3b2v': gacha_box.detail_id(self.player, banner)}]}
+        with patch('ffbe_gacha.all_banners', return_value=[banner]), \
+                patch('gacha_archive.visible_banners', return_value=[visible_banner]) as visible, \
+                patch('ffbe_gacha.gacha_groups', return_value={'group': [visible_banner]}) as groups, \
+                patch('exvius_actions._refresh', return_value={}):
+            out = gacha_box.next_box({}, request)
+        visible.assert_called_once_with(self.player, [banner])
+        groups.assert_called_once_with([visible_banner])
+        self.assertEqual(out['group'], [visible_banner])
 
     def test_select_summon_grants_the_chosen_unit_and_charges_original_price(self):
         import exvius_gacha_select

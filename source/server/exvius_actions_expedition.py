@@ -350,13 +350,10 @@ def expedition_end(spec, req):
             continue
         State.player.add_unit_exp(iid, xp)
         if trust:
-            mst = unit_mst(unit['master_id']) or {}
             family = str(unit['master_id'])[:-1]
             rarity = next((n for n in range(1, 9) if unit_mst(family + str(n))), 7)
-            points = list(unit.get('affinity_points') or ['0', '0'])
-            points += ['0'] * (2 - len(points))
-            points[0] = str(min(1000, _int(points[0]) + trust[min(rarity - 1, len(trust) - 1)]))
-            unit['affinity_points'] = points
+            State.player.advance_unit_trust(
+                unit, 0, trust[min(rarity - 1, len(trust) - 1)])
     gained = _int(difficulty['2A07z50y']) if success else 0
     block['points'] = block.get('points', 0) + gained
     receipt = {'Ra7qY74q': _reward_csv(rewards + relics), '33ZM4Wyw': _reward_csv(bonus),
@@ -972,10 +969,11 @@ def party_load(spec, req):
                     used_materia[item] += extra
         for field in ('vision_card', 'shift_vision_card'):
             card = str(unit.get(field) or '')
-            unit[field] = card if card in cards_left or card in used_cards else ''
+            instance = card.split('-')[-1] if card else ''
+            unit[field] = card if instance == '0' or instance in cards_left or instance in used_cards else ''
             if unit[field]:
-                cards_left.discard(card)
-                used_cards.add(card)
+                cards_left.discard(instance)
+                used_cards.add(instance)
     block = deepcopy(_store("party_register"))
     block["last_load"] = {"slot": _slot_key(node), "deck": did, "party_type": kind or '1'}
     _put("party_register", block)

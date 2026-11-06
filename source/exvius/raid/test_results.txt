@@ -1,0 +1,12 @@
+test_break_rearms_with_additive_delta_not_accumulation (test_raid_model.WorkloadTests.test_break_rearms_with_additive_delta_not_accumulation) ... ok
+test_clear_caps_hp (test_raid_model.WorkloadTests.test_clear_caps_hp) ... ok
+test_clear_does_not_trigger_break (test_raid_model.WorkloadTests.test_clear_does_not_trigger_break) ... ok
+test_incomplete_trace_not_clear (test_raid_model.WorkloadTests.test_incomplete_trace_not_clear) ... ok
+test_invalid_numbers (test_raid_model.WorkloadTests.test_invalid_numbers) ... ok
+test_local_target (test_raid_model.WorkloadTests.test_local_target) ... ok
+test_no_silent_repeat (test_raid_model.WorkloadTests.test_no_silent_repeat) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

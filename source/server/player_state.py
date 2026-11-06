@@ -1175,6 +1175,7 @@ def expand_pool(banner: dict) -> list:
         rate = max(0.0, float(tier.get("rate", 0)))
         if rate <= 0:
             continue
+        explicit_units = bool(tier.get("units"))
         units = [str(u) for u in (tier.get("units") or [u for u in roots.get(str(tier.get("rarity")), [])
                                                           if keep_materials or not u.startswith("9")])]
         # A featured unit drawn at its own rarity (an NV unit is not a base 5★ root) still belongs here.
@@ -1196,7 +1197,9 @@ def expand_pool(banner: dict) -> list:
         else:
             per = rate / len(units)
             for u in units:
-                out.append({"unit_id": u, "rarity": tier.get("rarity"), "rate": per})
+                rarity = (unit_mst(u) or {}).get("9fW0TePj", tier.get("rarity")) if explicit_units \
+                    else tier.get("rarity")
+                out.append({"unit_id": u, "rarity": rarity, "rate": per})
     return _only_named(out)
 
 
@@ -1453,6 +1456,21 @@ def _mail_time() -> str:
     """A mail timestamp in the format the client parses: `%Y-%m-%d %H:%M:%S` UTC, or `""`.
     `CommonUtils::convertToTime` `0x1e35058` is `strptime(s,"%Y-%m-%d %H:%M:%S") + timegm` (docs/notes/mailbox.md §1)."""
     return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+
+
+STMR_FUSION_BONUS_TITLE = "Special Fusion Bonus"
+# Unit trust metadata a mailed reward keeps until Receive, applied by `_grant_items`.
+MAIL_UNIT_METADATA = ("affinity_points", "affinity_info")
+
+
+def _mail_item(item) -> dict:
+    """One stored attachment: `(item_type, item_id, count)` or the same plus a unit-metadata dict."""
+    kind, iid, count, *rest = item
+    entry = {"item_type": int(kind), "item_id": int(iid), "count": int(count)}
+    for key in MAIL_UNIT_METADATA:
+        if rest and rest[0].get(key):
+            entry[key] = list(rest[0][key])
+    return entry
 
 
 def _next_day(prev: str, today: str) -> bool:
@@ -2118,10 +2136,21 @@ class PlayerState:
                 with open(path, encoding="utf-8") as fh:
                     raw = json.load(fh)
             except OSError as exc:
-                # A missing/locked file is external bad luck: a fresh account is a defensible run.
-                print(f"state: {path} unreadable ({exc!r}) -- starting a FRESH account", flush=True)
+                backup = f"{path}.corrupt-{time.strftime('%Y%m%dT%H%M%S', time.gmtime())}"
+                try:
+                    os.replace(path, backup)
+                except OSError as quarantine_error:
+                    raise ValueError(f"player state is unreadable and could not be preserved: {path}") from quarantine_error
+                print(f"state: {path} unreadable ({exc!r}); preserved at {backup} -- starting a FRESH account",
+                      flush=True)
             except json.JSONDecodeError as exc:
-                print(f"state: {path} is not valid JSON ({exc!r}) -- starting a FRESH account", flush=True)
+                backup = f"{path}.corrupt-{time.strftime('%Y%m%dT%H%M%S', time.gmtime())}"
+                try:
+                    os.replace(path, backup)
+                except OSError as quarantine_error:
+                    raise ValueError(f"player state is invalid and could not be preserved: {path}") from quarantine_error
+                print(f"state: {path} is not valid JSON ({exc!r}); preserved at {backup} -- starting a FRESH account",
+                      flush=True)
             if raw is not None:
                 # NOT in the try above, deliberately: a crash in _upgrade is a bug or a shape we do not
                 # understand, and falling back to a fresh account would silently discard the player's
@@ -2647,9 +2676,8 @@ class PlayerState:
                 source, override = self._unit_trust_info(material, channel)
                 if not source or source[0] == 71:
                     continue
-                if (channel and source[0] != 70 and not override and
-                        int((unit_mst(material['master_id']) or {}).get('9fW0TePj', 0)) < 7):
-                    continue
+                # The material's rarity does not gate its donation: a 5★ duplicate's own
+                # C74EmZ1I row carries its super-trust mix value (500 = 50%).
                 if source[0] != 70 and source[:3] != target[:3]:
                     continue
                 values = material.get('affinity_points') or []
@@ -2667,6 +2695,39 @@ class PlayerState:
                 rewards.append(dict(zip(('kind', 'id', 'count'), target[:3])))
                 claimed.append(key)
         return list(map(str, points)), claimed, rewards
+
+    def advance_unit_trust(self, unit: dict, channel: int, gain: int) -> list[dict]:
+        """Advance one trust channel and grant its mastery reward exactly once."""
+        if self.mode == "frozen" or gain <= 0:
+            return []
+        target, _ = self._unit_trust_info(unit, channel)
+        if channel != 0 and not target:
+            return []
+        if target and (target[0] == 71 or target[3] <= 0):
+            return []
+        points = [int(p) if str(p).isdigit() else 0 for p in (unit.get("affinity_points") or ["", ""])]
+        points += [0] * max(0, 2 - len(points))
+        before = points[channel]
+        limit = int(target[3]) if target else 1000
+        after = min(limit, before + int(gain))
+        if after == before:
+            return []
+        unit["affinity_points"] = [str(value) for value in points[:channel]] + [str(after)] + \
+            [str(value) for value in points[channel + 1:]]
+        self.dirty = True
+        claimed = list(unit.get("affinity_reward_claimed") or [])
+        if not target:
+            return []
+        key = f"{channel}:{':'.join(map(str, target[:3]))}"
+        if after < limit or target[0] in (70, 71) or key in claimed:
+            return []
+        reward = dict(zip(("kind", "id", "count"), target[:3]))
+        if not self._can_credit(reward):
+            raise ValueError("trust mastery reward has no supported projection")
+        if self._grant_items([reward]) != [reward]:
+            raise ValueError("trust mastery reward was not granted completely")
+        unit["affinity_reward_claimed"] = claimed + [key]
+        return [reward]
 
     def mix_units(self, base_id, material_ids) -> dict | None:
         """Fuse `material_ids` into `base_id` (SW-106 item 5). Returns the result dict, or None.
@@ -2705,11 +2766,25 @@ class PlayerState:
                 return None
         if any(not self._can_credit(reward) for reward in trust_rewards):
             return None
+        # The client's final warning: the FIRST fusion of an identical unit into a 7★ base also sends
+        # "a Trust Moogle (All 50%) as a special reward" to the message box (device 2026-11-06).
+        special_bonus = bool(
+            target and not base.get('stmr_fusion_bonus') and
+            int((unit_mst(base['master_id']) or {}).get('9fW0TePj', 0)) >= 7 and
+            any(not str(u['master_id']).startswith(('904', '906')) and
+                (self._unit_trust_info(u, 1)[0] or [])[:3] == target[:3] for u in materials))
         gain = sum(unit_mix_exp(u) for u in materials)
         lb_gain = sum(unit_mix_lb_exp(u) for u in materials)
         before_level, before_exp = int(base.get("level", 1)), int(base.get("exp", 0))
         before, dirty = copy.deepcopy(self.data), self.dirty
         try:
+            if special_bonus:
+                # The original reward tuple `10:904000105:1:100:1:500:0:0:100000050`: a generic
+                # Trust Moogle carrying 500 (50%) trust points.
+                if not self.deliver_mail(STMR_FUSION_BONUS_TITLE, [
+                        (10, 904000105, 1, {'affinity_points': ['500', '']})]):
+                    raise ValueError('special fusion bonus mail was not delivered')
+                base['stmr_fusion_bonus'] = True
             removed = self.drop_units([u["instance_id"] for u in materials])
             self.add_unit_exp(base["instance_id"], gain)
             if lb_gain:
@@ -2725,6 +2800,7 @@ class PlayerState:
         return {"base_id": str(base["instance_id"]),
                 "materials": [str(u["instance_id"]) for u in materials],
                 "removed": removed, "gain": gain, "lb_gain": lb_gain, 'trust_rewards': trust_rewards,
+                'special_bonus': special_bonus,
                 "before": (before_level, before_exp),
                 "after": (int(base.get("level", 1)), int(base.get("exp", 0)))}
 
@@ -3624,7 +3700,7 @@ class PlayerState:
             "receive_type": 0, "daily_login": bool(daily_login),
             "send_date": send_date or _mail_time(), "open_date": "", "receive_date": "",
             "protect_date": str(protect_date),
-            "items": [{"item_type": int(t), "item_id": int(i), "count": int(c)} for t, i, c in items],
+            "items": [_mail_item(item) for item in items],
         }
         self.mailbox.append(entry)
         return entry
@@ -3650,13 +3726,22 @@ class PlayerState:
             if int(m.get("receive_type", 0) or 0) == 2:
                 return []
             rows = [{"kind": int(it.get("item_type", 0) or 0), "id": int(it.get("item_id", 0) or 0),
-                     "count": int(it.get("count", 0) or 0)} for it in m.get("items") or []]
+                     "count": int(it.get("count", 0) or 0),
+                     **{key: it[key] for key in MAIL_UNIT_METADATA if key in it}}
+                    for it in m.get("items") or []]
             bad = [r for r in rows if not self._can_credit(r)]
             if bad:
                 print("mail %s: NOT received -- no projection for %s, so nothing was credited"
                       % (mid, ", ".join(f"{r['kind']}:{r['id']}x{r['count']}" for r in bad)), flush=True)
                 return []
-            granted = self._grant_items(rows)
+            before, dirty_before = copy.deepcopy(self.data), self.dirty
+            try:
+                granted = self._grant_items(rows)
+                if granted != rows:
+                    raise ValueError("mail reward grant was incomplete")
+            except Exception:
+                self.data, self.dirty = before, dirty_before
+                raise
             m["receive_type"] = 2
             m["receive_date"] = _mail_time()
             self.dirty = True
@@ -3671,8 +3756,14 @@ class PlayerState:
                             int(row.get("count", 0) or 0))
         if count <= 0:
             return False
-        if kind in STORAGE_CURRENCY or str(kind) == "21":
+        if kind in STORAGE_CURRENCY:
             return True
+        if str(kind) == "21":
+            return str(iid) in _load_ndjson("F_EQUIP_ITEM_MST.ndjson", "J1YX9kmM")
+        if str(kind) == "20":
+            return str(iid) in _load_ndjson("F_ITEM_MST.ndjson", ITEM_KEY)
+        if str(kind) == "23":
+            return str(iid) in _load_ndjson("F_IMPORTANT_ITEM_MST.ndjson", "2dfixko3")
         if str(kind) == "10":
             return unit_mst(iid) is not None
         if str(kind) == '22':
@@ -4092,7 +4183,15 @@ class PlayerState:
             return None
         reward_pool = banner.get('reward_pool')
         bonus_before, bonus_dirty = (copy.deepcopy(self.data), self.dirty) if bonus_rewards or reward_pool else (None, None)
-        pool = copy.deepcopy(reward_pool) if reward_pool else expand_pool(banner)
+        if reward_pool:
+            pool = copy.deepcopy(reward_pool)
+        else:
+            effective = dict(banner)
+            if isinstance(step.get("pool"), (dict, list)):
+                effective["pool"] = step["pool"]
+            if isinstance((offer or {}).get("pool"), (dict, list)):
+                effective["pool"] = offer["pool"]
+            pool = expand_pool(effective)
         if not pool:
             return None
         if reward_pool:
@@ -4395,11 +4494,39 @@ class PlayerState:
         """The `5sEbN01y` countdown, from the regen anchor. The RATE is shipped (`RECOVER_TIME_ACTION`)."""
         anchor = self.data["rank"].get("nrg_regen_anchor_utc")
         try:
-            started = time.mktime(time.strptime(anchor, "%Y-%m-%dT%H:%M:%SZ"))
+            started = calendar.timegm(time.strptime(anchor, "%Y-%m-%dT%H:%M:%SZ"))
         except Exception:  # noqa: BLE001
             return 0
         elapsed = max(0, int(time.time() - started))
         return max(0, REGEN_SECONDS - (elapsed % REGEN_SECONDS)) if REGEN_SECONDS else 0
+
+    def settle_nrg(self, now: float | None = None) -> int:
+        """Apply elapsed natural NRG recovery and return the settled balance."""
+        rank = self.data["rank"]
+        current = max(0, int(rank.get("nrg", 0) or 0))
+        cap = nrg_cap(rank.get("level", 1))
+        if current >= cap or not REGEN_SECONDS or self.mode == "frozen":
+            return current
+        anchor_text = rank.get("nrg_regen_anchor_utc")
+        try:
+            anchor = calendar.timegm(time.strptime(anchor_text, "%Y-%m-%dT%H:%M:%SZ"))
+        except (TypeError, ValueError):
+            rank["nrg_regen_anchor_utc"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now or time.time()))
+            self.dirty = True
+            return current
+        present = int(now if now is not None else time.time())
+        ticks = max(0, (present - anchor) // REGEN_SECONDS)
+        if not ticks:
+            return current
+        settled = min(cap, current + int(ticks))
+        rank["nrg"] = settled
+        if settled >= cap:
+            rank["nrg_regen_anchor_utc"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(present))
+        else:
+            rank["nrg_regen_anchor_utc"] = time.strftime(
+                "%Y-%m-%dT%H:%M:%SZ", time.gmtime(anchor + int(ticks) * REGEN_SECONDS))
+        self.dirty = True
+        return settled
 
     def orb_view(self, family: str, now: float | None = None) -> tuple:
         """One orb family's current `(point, max, restTime)` at projection time (APP-34).
@@ -4621,6 +4748,14 @@ class PlayerState:
         quests = self.data.get('exvius_map', {}).get('quests')
         if quests is not None:
             out['hQKAwj18'] = list(quests.values())
+            quest_rows = self.quest_info_rows()
+            if quest_rows:
+                # Quest Report reads UserQuestInfoList before resolving each
+                # quest's current UserQuestSubInfo. The sub rows alone leave
+                # that main list empty, so accepted quests never appear.
+                out['mk5fza4r'] = quest_rows
+            else:
+                out['XoPQ5Rs3'] = []
         slots = self.data.get('exvius_party_register', {}).get('slots')
         if slots is not None:
             out['dEA91X0o'] = [{**{k: str(v) for k, v in slot.items()
@@ -4635,6 +4770,34 @@ class PlayerState:
                               for iid, skills in enhancements.items() for root, skill in skills.items()
                               if any(str(u['instance_id']) == str(iid) for u in self.data['roster'])]
         return out
+
+    def quest_info_rows(self) -> list:
+        """Project accepted map quests into the UserQuestInfoResponse grammar."""
+        quests = self.data.get('exvius_map', {}).get('quests') or {}
+        if not quests:
+            return []
+        steps = _load_ndjson("F_QUEST_SUB_MST.ndjson", "7Svg2kdT")
+        required = {}
+        for row in steps.values():
+            required.setdefault(str(row.get("Z34jU7ue") or ""), set()).add(
+                str(row.get("7Svg2kdT") or ""))
+        saved_by_sid = {
+            str(row.get("7Svg2kdT") or ""): str(row.get("4kcAD9fW") or "")
+            for row in quests.values()
+        }
+        states = {}
+        for row in quests.values():
+            qid = str(row.get("Z34jU7ue") or "")
+            if qid.isdigit():
+                states[qid] = str(row.get("4kcAD9fW") or "")
+        result = []
+        for qid in sorted(states, key=int):
+            expected = required.get(qid) or set()
+            complete = bool(expected) and all(
+                saved_by_sid.get(sid) == "2" for sid in expected)
+            # UserQuestInfo state 1 is active and state 2 is cleared.
+            result.append({"Z34jU7ue": qid, "4kcAD9fW": "2" if complete else "1"})
+        return result
 
     def exbonus_groups(self):
         owned = {str(u['instance_id']) for u in self.data['roster']}
@@ -4790,21 +4953,25 @@ class PlayerState:
     def _equip_rows(self, party=None) -> list:
         party = self.data['party'] if party is None else party
         rows = []
+        saved_loadouts = party.get("loadouts") or {}
         for u in self.data["roster"]:
-            equip = u.get("equipment") or {}
+            saved = saved_loadouts.get(str(u.get("instance_id"))) or {}
+            equip = saved.get("equipment", u.get("equipment")) or {}
             has_shift = bool(u.get('shift_equipment') or u.get('shift_materia') or u.get('shift_vision_card'))
             slots = "@".join(f"{slot}-{equip.get(str(slot), equip.get(slot, '0'))}"
                              for slot in range(1, 7))
             if has_shift:
-                shift = u.get('shift_equipment') or {}
+                shift = saved.get("shift_equipment", u.get('shift_equipment')) or {}
                 slots += '|' + '@'.join(f"{n}-{shift.get(str(n), shift.get(n, '0'))}" for n in range(1, 7))
-            materia = u.get("materia") or []
+            materia = saved.get("materia", u.get("materia")) or []
             mat = "@".join(f"{i + 1}-{m}" for i, m in enumerate(materia))
             if has_shift:
-                mat += '|' + '@'.join(f'{n + 1}-{m}' for n, m in enumerate(u.get('shift_materia') or ['0'] * 4))
-            card = u.get('vision_card', '')
-            if has_shift:
-                card = (card or '0-0') + '|' + (u.get('shift_vision_card') or '0-0')
+                shift_materia = saved.get("shift_materia", u.get('shift_materia')) or ['0'] * 4
+                mat += '|' + '@'.join(f'{n + 1}-{m}' for n, m in enumerate(shift_materia))
+            card = saved.get("vision_card", u.get('vision_card')) or \
+                saved.get("shift_vision_card", u.get('shift_vision_card')) or '0-0'
+            if not str(card).startswith('0-'):
+                card = '0-' + str(card)
             rows.append({"og2GHy49": str(u["instance_id"]),
                          "r21y0YzS": str(party["active_deck"]),
                          "93Y6evuT": slots, "80NUYFMJ": mat,
@@ -5027,6 +5194,7 @@ class PlayerState:
         self.dirty = True
 
     def _team_row(self) -> dict:
+        self.settle_nrg()
         rank = self.data["rank"]
         prof = self.data.get("profile", {})
         counts = self.data.get("counts", {})
@@ -5062,9 +5230,7 @@ class PlayerState:
             row[spec["tokens"][0]] = str(point)
             row[spec["tokens"][1]] = str(cap)
             row[spec["tokens"][2]] = str(rest)
-        # `5sEbN01y` (the NRG-regen countdown) is deliberately NOT sent yet: its handler calls
-        # NotificationManager::setLocalNotificationFlg(true) (schema §3.2). Its RATE is shipped data
-        # (`RECOVER_TIME_ACTION`); add the token with SW-49's countdown wiring.
+        row["5sEbN01y"] = str(self.nrg_rest() if int(rank["nrg"]) < nrg_cap(rank["level"]) else 0)
         return row
 
 
@@ -5228,10 +5394,14 @@ def _selftest() -> int:
     switched = cu.advance_catchup("2026-01-10", "1409", 28)           # a new campaign is a new calendar
     welcome1 = cu.grant_catchup_welcome({"gil": 1000, "lapis_free": 5, "not_a_currency": 9})
     welcome2 = cu.grant_catchup_welcome({"gil": 1000})
+    welcome_mail = cu.deliver_mail("Selftest welcome", [(30, 1, 1000), (50, 1, 5)])
+    welcome_claim = cu.receive_mail(welcome_mail["mail_id"])
     cu.advance_catchup("2026-01-11", "1409", 28)
-    cu_day = cu.pay_catchup_day("1409", 1, [{"kind": 20, "id": 555, "count": 2}])
+    cu_day = cu.pay_catchup_day("1409", 1, [{"kind": 20, "id": 101000100, "count": 2}])
+    day_mail = cu.deliver_mail("Selftest campaign day", [(20, 101000100, 2)])
+    day_claim = cu.receive_mail(day_mail["mail_id"])
     cur = cu.currencies
-    bag = [i for i in cu.data["inventory"]["items"] if i.get("item_id") == 555]
+    bag = [i for i in cu.data["inventory"]["items"] if i.get("item_id") == 101000100]
     checks = [
         ("advances once per date", first["total_login_days"] == 2 and first["campaign_day"] == 2),
         ("same date does not advance", (not again["advanced"]) and again["total_login_days"] == 2),
@@ -5246,11 +5416,15 @@ def _selftest() -> int:
          switched["campaign_id"] == "1409" and switched["campaign_day"] == 1),
         ("welcome pays once", len(welcome1) == 2 and welcome2 == []),
         ("welcome drops an unknown currency", "not_a_currency" not in {w["currency"] for w in welcome1}),
-        ("welcome credited the currency field", cur["gil"] >= 1000 and cur["lapis_free"] >= 5),
-        ("a campaign day grants into the bag", len(cu_day) == 1 and bag and bag[0]["count"] == 2),
+        ("welcome claim credited the currency field",
+         len(welcome_claim) == 2 and cur["gil"] >= 1000 and cur["lapis_free"] >= 5),
+        ("a campaign day claim grants into the bag",
+         cu_day == [] and len(day_claim) == 1 and bag and bag[0]["count"] == 2),
     ]
     for label, ok in checks:
         print(f"catchup {'ok  ' if ok else 'FAIL'} {label}")
+        if not ok:
+            rc = 1
 
     # --- the PROGRESS store: the invariants, not the numbers -------------------------------------------
     pr = PlayerState.load("/nonexistent", slot="selftest-progress")
@@ -5363,7 +5537,7 @@ def _selftest() -> int:
     got_1110403 = mstate.clear_mission("1110403")     # single-id mission: must not regress
     got_1110303 = mstate.clear_mission("1110303")     # the Dalnakya -> Siren's Tower link
     got_noop = mstate.clear_mission("2110101")        # dIPkNn61 is empty: records the clear, grants nothing
-    got_200only = mstate.clear_mission("1135307")     # the ONLY grant is type 200: a no-op, never a guess
+    got_200only = mstate.clear_mission("1135307")     # current data grants one type-200 container bit
     s101 = mstate.switches.get("101", set())
     switch_cases = [
         ("1110404 grants 10007400 (101,14) and skips the type-820 member",
@@ -5374,7 +5548,7 @@ def _selftest() -> int:
         ("1110303 grants the tower's gate 10006300 (101,9)", got_1110303 == "10006300" and 9 in s101),
         ("a mission opening nothing is None, but its clear is recorded",
          got_noop is None and "2110101" in mstate.data["progress"]["cleared_missions"]),
-        ("a type-200-only grant is a no-op (no bit, no guess)", got_200only is None and "200" not in mstate.switches),
+        ("a type-200 grant uses its master container", got_200only == "25000007" and "200" in mstate.switches),
     ]
     switch_fail = 0
     for why, ok in switch_cases:

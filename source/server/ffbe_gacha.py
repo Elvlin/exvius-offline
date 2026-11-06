@@ -273,6 +273,7 @@ def all_banners() -> list:
     only = gacha_only_ids()
     if only:
         kept = {k: v for k, v in by_id.items() if k in only}
+        kept.update({key: by_id[key] for key in ('9200023',) if key in by_id})
         missing = sorted(only - set(kept))
         if not _ONLY_LOGGED[0]:
             _ONLY_LOGGED[0] = True
@@ -283,6 +284,9 @@ def all_banners() -> list:
     if sel:
         std, ids, label = sel
         kept = {k: v for k, v in by_id.items() if k in ids}
+        # Reusable B tickets must always have a visible destination, even
+        # when the selected campaign otherwise filters the Season 4 archive.
+        kept.update({key: by_id[key] for key in ('9200023',) if key in by_id})
         if not _CAMPAIGN_LOGGED[0]:
             _CAMPAIGN_LOGGED[0] = True
             _note(f"gacha campaign {st.GACHA_CAMPAIGN or '(file default)'!r} "
@@ -771,13 +775,33 @@ def serve_gacha(spec, plaintext: str | None = None, reply_id=None):
         # `exeCount` -- so without this the pull would charge the primary offer (`gacha_multi_button.md` SS9).
         req_detail = str(req.get("nqzG3b2v") or "")
         offer = gacha_offer_for(banner, req_detail)
+        if req_detail:
+            expected_primary = str(banner.get("detail_id") or "")
+            if banner.get("steps"):
+                expected_primary = str(int(banner["id"]) * 10 + State.player.gacha_step(banner) + 1)
+            elif banner.get("boxes"):
+                from gacha_box import detail_id
+                expected_primary = str(detail_id(State.player, banner))
+            expected_secondary = gacha_secondary_detail_id(banner) if banner.get("secondary_offer") else ""
+            if req_detail not in {expected_primary, expected_secondary}:
+                _note(f"gacha: stale or unknown detail {req_detail}; expected "
+                      f"{expected_primary or '-'} or {expected_secondary or '-'}; no charge")
+                return decline()
         _note(f"gacha: pull banner {banner['id']} row={req_detail or '?'} "
               f"({'secondary offer' if offer else 'primary'}) repeats={repeats} ticket={ticket_id}")
         if State.player and banner.get('boxes'):
             from gacha_box import roll
             res = roll(State.player, banner, req_detail, repeats)
         else:
-            res = State.player.roll_gacha(banner, repeats, ticket_id, offer=offer) if State.player else None
+            if State.player:
+                state_before, dirty_before = copy.deepcopy(State.player.data), State.player.dirty
+                try:
+                    res = State.player.roll_gacha(banner, repeats, ticket_id, offer=offer)
+                except Exception:
+                    State.player.data, State.player.dirty = state_before, dirty_before
+                    raise
+            else:
+                res = None
         if not res:
             _note(f"gacha: banner {banner['id']} pull x{repeats} (ticket {ticket_id}) refused "
                   f"(cost/affordability, or frozen); no award")

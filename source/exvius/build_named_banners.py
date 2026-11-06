@@ -84,7 +84,7 @@ BANNERS = [
     ('c80787fd8f73bc54e76a4cc58c623ff2', 'NV Guaranteed EX Summon', 'free',
      '2023-05', ticket(110260), 1, [], 1),
     ('44ca2c0ff5f096ee4b3ada1a82f56cdc', 'NV Guaranteed EX Summon B', 'free',
-     '2023-08', ticket(110260), 1, [], 1),
+     '2023-08', ticket(1209001902), 1, [], 1),
     ('2cac0c125a8b1286ec21c373fdc5a8dd', 'Curated NV Guaranteed Summon', 'free',
      '2023-07', ticket(1209001717), 1, [], 1),
     ('a705f7d65d5897fe0506f91a73dc6520', 'Brave Exvius Ticket Summon', 'free',

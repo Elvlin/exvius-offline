@@ -33,15 +33,13 @@ try {
     dbg('libc::system FAIL: ' + e);
 }
 
-function findExport_(name) {
-    if (Module.getGlobalExportByName) {
-        try { return Module.getGlobalExportByName(name); } catch (_) {}
+function findGameExport_(name) {
+    const game = Process.findModuleByName('libgame.so');
+    if (!game) return null;
+    if (game.getExportByName) {
+        try { return game.getExportByName(name); } catch (_) {}
     }
-    for (const m of Process.enumerateModules()) {
-        const x = m.findExportByName ? m.findExportByName(name) : null;
-        if (x) return x;
-    }
-    return null;
+    return game.findExportByName ? game.findExportByName(name) : null;
 }
 
 // ============================================================
@@ -51,24 +49,19 @@ try {
     const PAYLOAD_DIR = '/data/user/0/com.square_enix.ffbejpn/files/plate_swaps';
     const OFF_initWithImageData = 0x2128b38;
 
-    const libgame = Process.enumerateModules().find(m => m.name === 'libgame.so');
+    const libgame = Process.findModuleByName('libgame.so');
     if (!libgame) throw new Error('libgame.so not loaded');
 
-    function xport(name, ret, argT) {
-        let p = null;
-        if (Module.findGlobalExportByName) p = Module.findGlobalExportByName(name);
-        if (!p) {
-            for (const m of Process.enumerateModules()) {
-                if (m.findExportByName) { p = m.findExportByName(name); if (p) break; }
-            }
-        }
+    function libcXport(name, ret, argT) {
+        const libc = Process.findModuleByName('libc.so');
+        const p = libc && libc.findExportByName ? libc.findExportByName(name) : null;
         if (!p) throw new Error('cannot resolve symbol: ' + name);
         return new NativeFunction(p, ret, argT);
     }
-    const open  = xport('open',  'int',     ['pointer','int','int']);
-    const read  = xport('read',  'ssize_t', ['int','pointer','size_t']);
-    const close = xport('close', 'int',     ['int']);
-    const lseek = xport('lseek', 'int64',   ['int','int64','int']);
+    const open  = libcXport('open',  'int',     ['pointer','int','int']);
+    const read  = libcXport('read',  'ssize_t', ['int','pointer','size_t']);
+    const close = libcXport('close', 'int',     ['int']);
+    const lseek = libcXport('lseek', 'int64',   ['int','int64','int']);
 
     function readFile(path) {
         const cpath = Memory.allocUtf8String(path);
@@ -205,7 +198,7 @@ try {
     // ---- JNI bridge ----
     let _getStaticMethodInfo = null;
     function initJni() {
-        const a = findExport_(SYM_JNIHELPER_GETSMI);
+        const a = findGameExport_(SYM_JNIHELPER_GETSMI);
         if (!a) { dbg("[lb_fetch] JniHelper::getStaticMethodInfo NOT FOUND"); return; }
         _getStaticMethodInfo = new NativeFunction(a, 'bool',
             ['pointer','pointer','pointer','pointer']);
@@ -283,6 +276,7 @@ try {
 
     // ---- Silent curl pre-fetch (most users never see a dialog) ----
     const inFlight = new Set();
+    const LOG_PATH = WRITABLE_DIR + "lb_fetch.log";
     function shellEsc(s) { return "'" + s.replace(/'/g, "'\\''") + "'"; }
     function fireCurl(filename, label) {
         if (!_system || inFlight.has(filename)) return;
@@ -301,15 +295,21 @@ try {
             "  rm -f " + shellEsc(part) + "; " +
             " fi) &";
         dbg("[lb_fetch] " + label + " " + filename);
-        _system(Memory.allocUtf8String(cmd));
+        try {
+            _system(Memory.allocUtf8String(cmd));
+            setTimeout(() => inFlight.delete(filename), 185000);
+        } catch (error) {
+            inFlight.delete(filename);
+            throw error;
+        }
     }
 
     // ---- Pre-fetch + cancellation reset on scene-open ----
     function armPrefetch() {
-        const setUL = findExport_(SYM_SET_UNIT_LAYOUT);
-        const a1 = findExport_(SYM_GET_LB_ID);
-        const a2 = findExport_(SYM_LB_MST_SHARED);
-        const a3 = findExport_(SYM_OBJECT_FOR_KEY);
+        const setUL = findGameExport_(SYM_SET_UNIT_LAYOUT);
+        const a1 = findGameExport_(SYM_GET_LB_ID);
+        const a2 = findGameExport_(SYM_LB_MST_SHARED);
+        const a3 = findGameExport_(SYM_OBJECT_FOR_KEY);
         if (!setUL || !a1 || !a2 || !a3) {
             dbg("[lb_fetch] prefetch: missing symbol(s)");
             return;
@@ -343,7 +343,7 @@ try {
 
     // ---- Safety-net: if user taps Play before file is local, prompt ----
     function armSafetyNet() {
-        const sym = findExport_(SYM_EXISTS_LOCAL_FILE);
+        const sym = findGameExport_(SYM_EXISTS_LOCAL_FILE);
         if (!sym) { dbg("[lb_fetch] safety-net: existsLocalFile NOT FOUND"); return; }
         Interceptor.attach(sym, {
             onEnter(args) { this.filename = readStdString(args[0]); },

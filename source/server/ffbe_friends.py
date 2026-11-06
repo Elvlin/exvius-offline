@@ -267,7 +267,15 @@ def serve_friends(spec, reply_id=None):
     replay caught it growing nine unrelated replies. With no friends.yaml and no rows, both replies
     keep exactly the shape they had (an empty list), so this step cannot regress the empty case.
     """
-    friends = load_friends()
+    relevant = set(BOOT_REPLIES) | {REINFORCE_REPLY, FRIENDLIST_REPLY}
+    if reply_id not in relevant:
+        return spec
+    try:
+        friends = load_friends()
+    except (ValueError, OSError) as error:
+        from ffbe_state import _note
+        _note(f"friends configuration ignored: {error}")
+        return spec
     if not friends:
         return spec
     if reply_id in BOOT_REPLIES and isinstance(spec, dict):

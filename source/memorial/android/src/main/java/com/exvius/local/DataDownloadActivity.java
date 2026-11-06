@@ -19,8 +19,13 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
-        if (DataUpdates.ready(this) && (!DataUpdates.hasPending(this) || DataUpdates.gameOpened())) {
+        if (DataUpdates.ready(this)) {
             openGame(true);
+            return;
+        }
+        if (DataUpdates.hasPending(this) && DataUpdates.gameOpened()) {
+            showDownloadPage();
+            failed("An update is ready. Fully close Exvius, then open it again to apply the update.");
             return;
         }
         repairAssets = DataUpdates.clientAssetsMissing(this);
@@ -79,6 +84,10 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
     @Override public void onDestroy() {
         DataUpdates.detach(this);
         super.onDestroy();
+    }
+    @Override public void onResume() {
+        super.onResume();
+        DataUpdates.installerReturned();
     }
 
     @Override public void update(String message, long done, long total) {

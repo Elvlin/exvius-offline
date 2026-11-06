@@ -7599,8 +7599,8 @@
     }
    ],
    "cost": {
-    "kind": "important",
-    "item_id": 110260,
+    "kind": "item",
+    "item_id": 1209001902,
     "amount": 10
    },
    "draws": 1,

@@ -185,6 +185,7 @@ def _begin(name, f, row, op, extra=None):
         _need(str(op['J1YX9kmM']) in _mst('F_EQUIP_ITEM_MST.ndjson', 'J1YX9kmM'), 'unknown mission equipment')
     cost = _cost(row, op)
     helper = _helper(op)
+    State.player.settle_nrg()
     rank = State.player.data["rank"]
     _need(int(rank["nrg"]) >= cost, "insufficient stamina")
     rank["nrg"] -= cost
@@ -686,6 +687,30 @@ def survival_return(spec, req):
     return out
 
 
+def _parade_schedule(area):
+    """Choose the shipped reward schedule that belongs to this Dark Visions season.
+
+    The reward master contains one schedule for every archived Dark Visions
+    campaign. Reusing 65000 for every area made all seasons read the first
+    season's milestone table and claim keys.
+    """
+    from event_archive import events
+    dark = sorted((row for row in events() if row['name'] == 'Dark Visions'),
+                  key=lambda row: int(row['area']))
+    index = next((n for n, row in enumerate(dark) if str(row['area']) == str(area)), 0)
+    schedules = sorted({
+        int(row['pvS5A4kE'])
+        for row in _mst('F_SEASON_EVENT_REWARD_MST.ndjson', None)['__rows__']
+        if str(row.get('pvS5A4kE', '')).isdigit() and int(row['pvS5A4kE']) >= 65000
+    })
+    return str(schedules[min(index, len(schedules) - 1)]) if schedules else '65000'
+
+
+def _parade_table(schedule):
+    """The native detail-table id paired with a Parade reward schedule."""
+    return str(int(schedule) * 10 + 1)
+
+
 def _parade(f, area, player=None):
     """Use the original Parade engine, with independent permanent campaign saves.
 
@@ -708,9 +733,9 @@ def _parade(f, area, player=None):
     f['area'] = area
     f.setdefault('bests', {})
     f.setdefault('milestones', [])
-    f['schedule'] = '65000'
+    f['schedule'] = _parade_schedule(area)
     groups = f.setdefault('groups', {})
-    event = {**_event(area), 'L84eYzxv': '650001', 'D1GdY4Vh': '1',
+    event = {**_event(area), 'L84eYzxv': _parade_table(f['schedule']), 'D1GdY4Vh': '1',
              'VjJQ51uG': '2020-01-01 00:00:00', 'm8ivD4NX': '2099-12-31 23:59:59',
              'RdV4nK8w': '1', 'td06MKEX': f['schedule']}
     groups['gXrD1h58'] = [event]
@@ -728,7 +753,7 @@ def _parade(f, area, player=None):
     return missions
 
 
-def _parade_archive(player, row, context):
+def _parade_archive(player, row, context, schedule=None):
     metrics = context.get('achievements', {})
     def value(key, default=0):
         try:
@@ -772,8 +797,9 @@ def _parade_archive(player, row, context):
     # The native artwork orders ranks from SSS (0) down to C (5).
     grades = [5 - min(5, points * 5 // (30000 if n == 0 else 10000))
               for n, (_, points) in enumerate(parts)]
-    return {'9Tbns0eI': str(player.data['identity']['user_id']), 'L9IAY8iW': '65000',
-            'qo3PECw6': str(row['qo3PECw6']), 'pvS5A4kE': '65000', '6DuiWx05': '0',
+    schedule = str(schedule or _parade_schedule(row['uv60hgDW']))
+    return {'9Tbns0eI': str(player.data['identity']['user_id']), 'L9IAY8iW': schedule,
+            'qo3PECw6': str(row['qo3PECw6']), 'pvS5A4kE': schedule, '6DuiWx05': '0',
             '7HSK9eBV': str(total), 'cH15BhQ0': str(max(grades) if context else 0),
             'qf9S3TLg': str(base if context else 0), 'jE9V1oSk': '0', '0A7msQc9': '0',
             'wF5Ac6ey': ','.join(f'{n + 1}:{grades[n]}:{points}:{min(raw, 2147483647)}'
@@ -787,7 +813,8 @@ def _parade_archive(player, row, context):
 def _parade_complete(f, mid, req):
     from ffbe_battle import mission_result_from
     row = _mission('parade', mid)
-    archive = _parade_archive(State.player, row, mission_result_from(json.dumps(req)))
+    schedule = _parade_schedule(row['uv60hgDW'])
+    archive = _parade_archive(State.player, row, mission_result_from(json.dumps(req)), schedule)
     f['last_archive'] = archive
     previous = deepcopy(list(f.get('bests', {}).values()))
     if int(archive['7HSK9eBV']) > int(f['bests'].get(mid, {}).get('7HSK9eBV', -1)):
@@ -1160,7 +1187,7 @@ def tfa_fix(spec, req):
     _tfa(f, str(node.get("U9iHsau3") or ""))
     choice = node.get("z4EhuqEN")
     _need(isinstance(choice, str), "missing TFA fix operation")
-    if f["claimed"] or (choice and choice == f.get("last_choice") and not f['pending']):
+    if f["claimed"] or (choice and choice == f.get("last_choice")):
         out = _reply(spec, f, ("Fs0sexp7", "x51bb135"))
         return _refresh(out) if not choice else out
     slots = _tfa_items(f["slots"], 4)
@@ -1223,7 +1250,7 @@ def tfa_bonus(spec, req):
     rows = f.get("bonus_previews", {}).get(key)
     if rows is None:
         from exvius_fortuna import preview
-        tier = max(1, min(5, (int(node.get('7dkQA0K4', 1)) + 19) // 20))
+        tier = max(1, min(5, (int(node.get('7dkQA0K4', 1)) - 1) // 20 + 1))
         rows = [{'Nmcx68HU': display, 'k5Oa5kC0': '-1',
                  'mXQWZ5Ql': preview(None if display == '1' else tier,
                                      node.get('F9gxH37C', 1000), node.get('rSpOEfsX', 1000))}]

@@ -83,8 +83,20 @@ def page(banner_id):
             currency = cost.get('kind', 'free')
             if cost.get('item_id'):
                 currency = _item_names().get(str(cost['item_id']), 'Item ' + str(cost['item_id']))
-            body += '<p>' + str(offer.get('draws', banner.get('draws', 1))) + ' draws. Cost: ' + (
-                str(amount) + ' ' + escape(currency) if amount else 'Free') + '.</p>'
+            if amount:
+                cost_text = str(amount) + ' ' + escape(str(currency))
+            elif offer.get('ticket_group_id') or banner.get('ticket_group_id'):
+                from player_state import ticket_group_items
+                group = offer.get('ticket_group_id') or banner.get('ticket_group_id')
+                tickets = []
+                for item_type, item_id, _rarity in sorted(ticket_group_items(group), key=lambda row: row[1],
+                                                          reverse=True):
+                    name = _item_names().get(str(item_id), f'Item {item_id}')
+                    tickets.append(escape(name))
+                cost_text = '1 ticket from ' + (', '.join(tickets) if tickets else 'the ticket group')
+            else:
+                cost_text = 'Free'
+            body += '<p>' + str(offer.get('draws', banner.get('draws', 1))) + ' draws. Cost: ' + cost_text + '.</p>'
         definition = dict(banner)
         if 'pool' in offer:
             definition['pool'] = offer['pool']

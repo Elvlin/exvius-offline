@@ -17,9 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -68,12 +72,34 @@ public final class DataUpdates {
     }
     public static File dataRoot(Context context) { return state(context, "static"); }
     public static boolean gameOpened() { return gameOpened; }
+    public static void installerReturned() {
+        installerShown = false;
+        permissionPrompted = false;
+    }
     public static boolean hasPending(Context context) { return state(context, "pending.json").isFile(); }
     public static boolean clientAssetsMissing(Context context) {
         return state(context, "installed.json").isFile() && !GameAssets.archive(context).isFile();
     }
+    private static boolean installedManifestComplete(Context context) {
+        try {
+            JSONObject current = installed(context);
+            JSONArray packs = current.optJSONArray("packs");
+            if (packs == null || packs.length() < 1) return false;
+            for (int i = 0; i < packs.length(); i++) {
+                JSONObject pack = packs.getJSONObject(i);
+                if (pack.optString("id").isEmpty() ||
+                    !pack.optString("sha256").matches("[a-f0-9]{64}") ||
+                    pack.optLong("unpackedSize", 0) < 1) return false;
+            }
+            return true;
+        } catch (Exception error) {
+            android.util.Log.w("ExviusUpdates", "Installed data manifest is unreadable", error);
+            return false;
+        }
+    }
     public static boolean ready(Context context) {
-        return state(context, "installed.json").isFile() &&
+        return !hasPending(context) &&
+            installedManifestComplete(context) &&
             GameAssets.archive(context).isFile() &&
             new File(dataRoot(context), "mst_decoded/F_UNIT_MST.ndjson").isFile() &&
             new File(context.getFilesDir(), "mst/Ver9001_YW9MUm2H.dat").isFile();
@@ -162,6 +188,131 @@ public final class DataUpdates {
 
     private static File download(Context context, String key, String url, String suffix,
                                  long base, long total, boolean small) throws Exception {
+        return download(context, key, url, suffix, base, total, small, "Downloading game data");
+    }
+
+    private static File download(Context context, String key, String url, String suffix,
+                                 long base, long total, boolean small, String label) throws Exception {
+        if (!small && !suffix.equals(".apk")) {
+            String preference = "download_" + key;
+            long staleId = preferences(context).getLong(preference, -1);
+            if (staleId >= 0) downloads(context).remove(staleId);
+            preferences(context).edit().remove(preference).commit();
+            return resumableDownload(context, key, url, suffix, base, total, label);
+        }
+        return downloadManager(context, key, url, suffix, base, total, small);
+    }
+
+    private static File resumableDownload(Context context, String key, String url, String suffix,
+                                          long base, long total, String label) throws Exception {
+        File target = downloadFile(context, key, suffix);
+        int failuresWithoutProgress = 0;
+        for (;;) {
+            if (!online(context)) throw new IOException("Connect to the internet to finish the game data installation.");
+            long before = target.isFile() ? target.length() : 0;
+            try {
+                resumeHttp(context, target, url, base, total, label);
+                return target;
+            } catch (IOException error) {
+                long after = target.isFile() ? target.length() : 0;
+                failuresWithoutProgress = after > before ? 0 : failuresWithoutProgress + 1;
+                progress(label + "\nResuming after interruption...", base + after, total);
+                if (failuresWithoutProgress >= 5) throw error;
+                Thread.sleep(2000);
+            }
+        }
+    }
+
+    private static void resumeHttp(Context context, File target, String url,
+                                   long base, long total, String label) throws IOException {
+        long offset = target.isFile() ? target.length() : 0;
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setConnectTimeout(30000);
+        connection.setReadTimeout(30000);
+        connection.setInstanceFollowRedirects(true);
+        connection.setRequestProperty("Accept-Encoding", "identity");
+        if (offset > 0) connection.setRequestProperty("Range", "bytes=" + offset + "-");
+        int code;
+        try {
+            code = connection.getResponseCode();
+        } catch (IOException error) {
+            connection.disconnect();
+            throw error;
+        }
+        if (code == 416) {
+            connection.disconnect();
+            return;
+        }
+        boolean append;
+        if (code == HttpURLConnection.HTTP_PARTIAL) {
+            append = true;
+        } else if (code == HttpURLConnection.HTTP_OK) {
+            append = false;
+            offset = 0;
+        } else {
+            connection.disconnect();
+            throw new IOException("Game data server returned HTTP " + code);
+        }
+        long responseBytes = connection.getContentLengthLong();
+        long expected = responseBytes >= 0 ? offset + responseBytes : -1;
+        String contentRange = connection.getHeaderField("Content-Range");
+        if (contentRange != null) {
+            int slash = contentRange.lastIndexOf('/');
+            if (slash >= 0) {
+                try { expected = Long.parseLong(contentRange.substring(slash + 1)); }
+                catch (NumberFormatException ignored) {}
+            }
+        }
+        long completed = offset;
+        long speedBytes = offset;
+        long speedTime = System.currentTimeMillis();
+        double bytesPerSecond = 0;
+        try (InputStream input = connection.getInputStream();
+             FileOutputStream output = new FileOutputStream(target, append)) {
+            byte[] buffer = new byte[262144];
+            int count;
+            long reported = completed;
+            while ((count = input.read(buffer)) != -1) {
+                output.write(buffer, 0, count);
+                completed += count;
+                long now = System.currentTimeMillis();
+                if (now - speedTime >= 1000) {
+                    bytesPerSecond = (completed - speedBytes) * 1000.0 / (now - speedTime);
+                    speedBytes = completed;
+                    speedTime = now;
+                }
+                if (completed - reported >= 1048576 || now - speedTime == 0) {
+                    reported = completed;
+                    progress(downloadMessage(label, base + completed, total, bytesPerSecond),
+                        base + completed, total);
+                }
+            }
+            progress(downloadMessage(label, base + completed, total, bytesPerSecond),
+                base + completed, total);
+            output.getFD().sync();
+        } finally {
+            connection.disconnect();
+        }
+        if (expected >= 0 && completed != expected)
+            throw new IOException("The game data connection closed early");
+    }
+
+    private static String transferRate(double bytesPerSecond) {
+        if (bytesPerSecond < 1) return "measuring speed";
+        if (bytesPerSecond >= 1048576)
+            return String.format(Locale.ROOT, "%.1f MB/s", bytesPerSecond / 1048576.0);
+        return Math.max(1, Math.round(bytesPerSecond / 1024.0)) + " KB/s";
+    }
+
+    private static String downloadMessage(String label, long completed, long total,
+                                          double bytesPerSecond) {
+        return label + "\n" +
+            String.format(Locale.ROOT, "%,d / %,d MB", completed / 1048576, total / 1048576) +
+            "\n" + transferRate(bytesPerSecond);
+    }
+
+    private static File downloadManager(Context context, String key, String url, String suffix,
+                                        long base, long total, boolean small) throws Exception {
         DownloadManager manager = downloads(context);
         SharedPreferences saved = preferences(context);
         File target = downloadFile(context, key, suffix);
@@ -206,10 +357,15 @@ public final class DataUpdates {
             Thread.sleep(1000);
         }
     }
-    private static File verifiedPack(Context context, JSONObject pack, long base, long total) throws Exception {
+    private static File verifiedPack(Context context, JSONObject pack, long base, long total,
+                                     int index, int count) throws Exception {
         String hash = pack.getString("sha256"), key = "data_" + hash;
-        File file = download(context, key, pack.getString("url"), ".zip", base, total, false);
+        File file = downloadFile(context, key, ".zip");
         File verified = downloadFile(context, key, ".verified");
+        if (!file.isFile() || file.length() != pack.getLong("size") ||
+            !verified.isFile() || !read(verified).equals(hash))
+            file = download(context, key, pack.getString("url"), ".zip", base, total, false,
+                "Downloading game data\nPack " + (index + 1) + " of " + count);
         if (file.length() != pack.getLong("size")) {
             clearDownload(context, key, ".zip");
             throw new IOException("Downloaded file has the wrong size. Please retry.");
@@ -260,7 +416,7 @@ public final class DataUpdates {
                 !read(verified).equals(pack.getString("sha256"))) {
                 if (!archive.isFile() && !online(context))
                     throw new IOException("Connect to the internet to finish the game data installation.");
-                archive = verifiedPack(context, pack, transferred, total);
+                archive = verifiedPack(context, pack, transferred, total, i, packs.length());
             }
             progress("Installing game data (" + (i + 1) + "/" + packs.length() + ")...", i, packs.length());
             try {
@@ -318,7 +474,9 @@ public final class DataUpdates {
                     }
                     installPending(context, true);
                 } else if (hasPending(context)) {
-                    if (!mandatory || gameOpened) return;
+                    if (gameOpened)
+                        throw new IOException("An update is ready. Fully close Exvius, then open it again to apply the update.");
+                    if (!mandatory) return;
                     installPending(context, false);
                 } else {
                     if (!online(context)) throw new IOException("Connect to the internet for the first game data download.");
@@ -343,7 +501,7 @@ public final class DataUpdates {
                         for (int i = 0; i < packs.length(); i++) {
                             JSONObject pack = packs.getJSONObject(i);
                             if (installedPack(current, pack)) continue;
-                            verifiedPack(context, pack, done, total);
+                            verifiedPack(context, pack, done, total, i, packs.length());
                             done += pack.getLong("size");
                         }
                         write(state(context, "pending.json"), manifest.toString());
@@ -405,6 +563,7 @@ public final class DataUpdates {
             activity.startActivity(new Intent(Intent.ACTION_VIEW).setDataAndType(uri,
                 "application/vnd.android.package-archive").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
         } catch (Exception error) {
+            installerShown = false;
             android.util.Log.w("ExviusUpdates", "Android installer is unavailable");
         }
     }

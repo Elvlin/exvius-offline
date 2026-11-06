@@ -74,6 +74,9 @@ def main() -> int:
     rows = len(by_class)
     distinct = len(by_url)
     print(f"parsed {rows} request classes -> {distinct} distinct URLs")
+    if not rows:
+        print("FAIL: contract contained no endpoint rows; output was not replaced", file=sys.stderr)
+        return 1
     if rows != 222 or distinct != 211:
         print(f"WARNING: contract states 222 classes / 211 URLs; got {rows} / {distinct}", file=sys.stderr)
 
