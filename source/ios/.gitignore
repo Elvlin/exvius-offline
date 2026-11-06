@@ -1,0 +1,10 @@
+.venv/
+.local/
+build/
+DerivedData/
+*.ipa
+*.dylib
+*.framework/
+*.xcframework/
+*.mobileprovision
+
