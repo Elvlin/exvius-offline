@@ -45,7 +45,7 @@ def raid_reward_banners(source, target, key):
         lines.append(cbc_encrypt(key16(key), json.dumps(row, ensure_ascii=False,
                      separators=(',', ':')).encode('utf8'), double_pad=double))
         existing.add(banner_id)
-    target.write_text('\n'.join(lines) + '\n', encoding='ascii')
+    target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
 
 
 def story_event_entries(source, target, key):
@@ -93,7 +93,7 @@ def arena_entry_events(source, target, key):
             output.append(line)
     if removed != 1:
         raise ValueError('Expected the single original Arena foyer event')
-    target.write_text('\n'.join(output) + '\n', encoding='ascii')
+    target.write_text('\n'.join(output) + '\n', encoding='ascii', newline='\n')
 
 
 def loading_text(source, target, key, replacements=None, append_missing=False):
@@ -138,7 +138,7 @@ def loading_text(source, target, key, replacements=None, append_missing=False):
             changed.add(text_key)
     if changed != set(replacements):
         raise ValueError('Expected localized labels were not found: ' + ','.join(sorted(set(replacements) - changed)))
-    target.write_text('\n'.join(output) + '\n', encoding='ascii')
+    target.write_text('\n'.join(output) + '\n', encoding='ascii', newline='\n')
     _, records = decode(target.read_bytes(), key, localized=True)
     assert all(all(value == replacements[row['key']] for value in row['v'])
                for row in records if row['key'] in replacements)
@@ -163,7 +163,7 @@ def event_skill_sets(source, target, key):
             lines.append(cbc_encrypt(key16(key), json.dumps(row, ensure_ascii=False,
                 separators=(',', ':')).encode('utf8'), double_pad=double))
             existing.add(row['A5x02C6a'])
-    target.write_text('\n'.join(lines) + '\n', encoding='ascii')
+    target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
 
 
 def exbonus_master(source, target, key, table, restored=None):
@@ -212,7 +212,7 @@ def exbonus_master(source, target, key, table, restored=None):
         if identity(row) not in existing:
             lines.append(encode(row))
             existing.add(identity(row))
-    target.write_text('\n'.join(lines) + '\n', encoding='ascii')
+    target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
 
 
 def localized_text_versions(source, target, key, replacements):
@@ -241,7 +241,7 @@ def localized_text_versions(source, target, key, replacements):
         output.append(line)
     if changed != set(replacements):
         raise ValueError('Missing English localized-text index entries: ' + str(set(replacements) - changed))
-    target.write_text('\n'.join(output) + '\n', encoding='ascii')
+    target.write_text('\n'.join(output) + '\n', encoding='ascii', newline='\n')
 
 
 def exchange_shop_comments(source, target, key):
@@ -345,7 +345,7 @@ def main():
                 lines.append(line)
             if changed != 1:
                 raise ValueError('Expected one original terms notice switch.')
-            target.write_text('\n'.join(lines) + '\n', encoding='ascii')
+            target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
             _, decoded = decode(target.read_bytes(), key)
             assert next(r for r in decoded if r.get('AK8Nn7ta') == 'TNC_SWITCH_ID')['YjIUDJ97'] == '0'
         elif table == 'F_BANNER_MST':

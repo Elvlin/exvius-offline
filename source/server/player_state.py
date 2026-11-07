@@ -4870,6 +4870,13 @@ class PlayerState:
             if favourites.get('pJ9Eo6cn'):
                 out['8QNSBeP9'] = [{'H5jBL0Vf': iid, 'zF6QIY2r': group}
                                    for iid, group in favourites['pJ9Eo6cn'].items()]
+        if str(reply_id) == "mRPo5n2j":
+            # UpdateSwitchInfoRequest only records switch flags, and the client sends it while the party
+            # and equipment editors still hold unsaved changes (leaving Manage Party sends it right before
+            # PartyDeckEditRequest / UnitEquipRequest). Its original reply carries no player group. The
+            # unit, equipment and party groups clear-and-rebuild the client's lists, so projecting them
+            # here replaced the pending edit with the saved one and the edit requests then sent old data.
+            return out
         for tag, rows in groups.items():
             out[tag] = rows
         if str(reply_id) == "pB3st6Tg":
