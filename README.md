@@ -77,7 +77,7 @@ To report a problem, [open an issue](https://github.com/Elvlin/exvius-offline/is
 
 If you would like to support the project, you can find me on [Ko-fi](https://ko-fi.com/elvlin) or [Patreon](https://www.patreon.com/c/ElvlinGame).
 
-You can also contact me there if you have a project request or an idea you want to discuss. 
+You can also contact me there if you have a project request or an idea you want to discuss. [Discord](https://discord.gg/Wnqh9q5WMY)
 
 ## Files in this repository
 
