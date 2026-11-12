@@ -2,7 +2,7 @@
 
 **Play Final Fantasy Brave Exvius offline on Android.**
 
-**[Download the APK (106 MB)](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.30/exvius-offline-v0.1.30.apk)**
+**[Download the APK (41.4 MB)](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-offline-v0.1.31.apk)**
 
 This is a fan project built from the original Global game. Download the game data once, then play it offline.
 
@@ -10,7 +10,7 @@ Replay stages to farm Lapis, pick the summon banner you want, and revisit events
 
 This project is still being worked on. It is unofficial and is not affiliated with Square Enix or gumi.
 
-[What changed in v0.1.30](release/notes-v0.1.30.md)
+[What changed in v0.1.31](release/notes-v0.1.31.md)
 
 ## Screenshots
 
@@ -52,9 +52,9 @@ Daily login rewards use your local save and date.
 
 ## Install
 
-1. [Download the APK](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.30/exvius-offline-v0.1.30.apk) from the [release page](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.30).
+1. [Download the APK](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-offline-v0.1.31.apk) from the [release page](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.31).
 2. Install it on an **Android 7.0 or newer phone with 64-bit ARM support**.
-3. Open it with an internet connection. The app downloads all the game data automatically, about **14.5 GB**. Allow about **18 GB of free space** for setup.
+3. Open it with an internet connection. The app downloads all the game data automatically, about **17.8 GB**. Allow about **21 GB of free space** for setup.
 4. Once setup is done, you can play offline.
 
 If the download stops, reopen the app to continue. You do not have to choose or download chapters separately.
@@ -77,7 +77,7 @@ To report a problem, [open an issue](https://github.com/Elvlin/exvius-offline/is
 
 If you would like to support the project, you can find me on [Ko-fi](https://ko-fi.com/elvlin) or [Patreon](https://www.patreon.com/c/ElvlinGame).
 
-You can also contact me there if you have a project request or an idea you want to discuss. [Discord](https://discord.gg/Wnqh9q5WMY)
+You can also contact me there if you have a project request or an idea you want to discuss. 
 
 ## Files in this repository
 
