@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 10,
-  "version": "2026.11.13.10",
+  "revision": 11,
+  "version": "2026.11.13.11",
   "minAppVersionCode": 9015,
   "packs": [
     {
@@ -147,9 +147,9 @@
     {
       "id": "content-002",
       "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-content-002.zip",
-      "size": 1451458783,
-      "unpackedSize": 1451388663,
-      "sha256": "dbeffd3236efeeabfe191e5c178fedb0362b2c16515912ad852dd9afd4dad49e"
+      "size": 1450036319,
+      "unpackedSize": 1449958839,
+      "sha256": "e543e52a8cec8295a76d1a4eeef3bdbfb8d726af5700d070b0d6fc16db0477e3"
     },
     {
       "id": "content-003",
@@ -159,8 +159,8 @@
       "sha256": "48796d1df87f0d86fb5b0e3042b0e403fa3480763a475cf56cd3f5a73567b3c0"
     }
   ],
-  "downloadBytes": 17826505220,
-  "installedBytes": 18252449403,
+  "downloadBytes": 17825082756,
+  "installedBytes": 18251019579,
   "files": 12487,
   "app": {
     "version": "0.1.31",
@@ -168,6 +168,6 @@
     "versionCode": 9071,
     "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-offline-v0.1.31.apk",
     "size": 41372830,
-    "sha256": "0ad576be2665dabb9755cd641a44c7fe80ff76a85ffed5a60c33bc42c00e2e2d"
+    "sha256": "7dfedd2ef5c9b6a5345673f6ab6e420f7e8d56a72f0fe6058a807dadefb0fdbf"
   }
 }

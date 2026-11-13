@@ -4,6 +4,8 @@
 
 The APK is attached to the **[v0.1.31 release](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.31)**.
 
+Updated November 13 with the battle music, summon artwork and game-data startup corrections. The version remains v0.1.31.
+
 Install it, then open it with an internet connection. It downloads all the game data automatically, about **17.8 GB**. After setup, you can play offline.
 
 Allow about **21 GB of free space** for setup. If the download stops, reopen the app to continue.

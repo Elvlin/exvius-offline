@@ -1,5 +1,12 @@
 # Exvius Offline v0.1.31
 
+**Additional corrections in this v0.1.31 upload**
+
+- Restored working battle music after incompatible sound-bank replacements.
+- Corrected missing raid summon artwork used by the season filter.
+- Required compatible game data before starting the updated app.
+
+
 **Fixes**
 
 - **Corrected Ramuh’s quest reward.** Completing his quest now grants Ramuh instead of Carbuncle.
