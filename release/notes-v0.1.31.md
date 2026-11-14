@@ -1,18 +1,18 @@
 # Exvius Offline v0.1.31
 
-**Android build 9072, November 14**
+**November 14 update (build 9072)**
 
-- Uses the phone-tested engine for purchases, equipment and party edits, awakening, fusion and unit selling.
-- Raises Android versionCode to 9072 so existing build-9071 installations can detect the APK update. Accept the Android installation prompt to finish updating.
-- Keeps v0.1.31, the existing package and signing key, and data revision 11.
+- Updates to unit awakening, fusion, unit selling and shop purchases.
+- Equipment and party changes stay saved after restarting the game.
+- Includes the battle music and missing summon artwork fixes.
 
+Open the game online to get the update prompt. Install over your current game to keep your save. Do not uninstall it.
 
-**Additional corrections in this v0.1.31 upload**
+**Earlier fixes included in this update**
 
-- Restored working battle music after incompatible sound-bank replacements.
-- Corrected missing raid summon artwork used by the season filter.
-- Required compatible game data before starting the updated app.
-
+- Restored battle music.
+- Fixed missing artwork when browsing summon seasons.
+- The game gets the required data before starting.
 
 **Fixes**
 
