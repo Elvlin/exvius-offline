@@ -82,6 +82,8 @@ If you would like to support the project, you can find me on [Ko-fi](https://ko-
 
 You can also contact me there if you have a project request or an idea you want to discuss. 
 
+Join the community on [Discord](https://discord.gg/Wnqh9q5WMY).
+
 ## Files in this repository
 
 - [source/](source/): the code and build instructions.
