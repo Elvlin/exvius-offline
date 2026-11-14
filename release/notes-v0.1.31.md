@@ -1,5 +1,12 @@
 # Exvius Offline v0.1.31
 
+**Android build 9072, November 14**
+
+- Uses the phone-tested engine for purchases, equipment and party edits, awakening, fusion and unit selling.
+- Raises Android versionCode to 9072 so existing build-9071 installations can detect the APK update. Accept the Android installation prompt to finish updating.
+- Keeps v0.1.31, the existing package and signing key, and data revision 11.
+
+
 **Additional corrections in this v0.1.31 upload**
 
 - Restored working battle music after incompatible sound-bank replacements.
