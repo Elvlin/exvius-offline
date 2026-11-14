@@ -12,7 +12,7 @@ This project is still being worked on. It is unofficial and is not affiliated wi
 
 [What changed in v0.1.31](release/notes-v0.1.31.md)
 
-Updated November 13: the v0.1.31 download includes the battle music repair, missing summon artwork correction and compatible game-data startup fix. Existing installations receive the music repair through the game-data update.
+Updated November 14, 2026: **v0.1.31, Android build 9072** is available. It includes the phone-tested engine for purchases, equipment and party edits, awakening, fusion and unit selling, plus the earlier battle music, summon artwork and game-data startup corrections. Existing build-9071 installations can detect the APK update when opened online; accept the Android installation prompt to complete it. Install over the existing app to keep your save.
 
 ## Screenshots
 
