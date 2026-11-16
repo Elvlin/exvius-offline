@@ -12,7 +12,7 @@ This project is still being worked on. It is unofficial and is not affiliated wi
 
 [What changed in v0.1.36](release/notes-v0.1.36.md)
 
-**v0.1.36, Android build 9076** is available. It includes bug fixes for 1.35
+**v0.1.36, Android build 9076** is available. It includes bug fixes from 1.35.
 Install over the existing app to keep your save.
 
 ## Screenshots
