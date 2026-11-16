@@ -12,7 +12,7 @@ This project is still being worked on. It is unofficial and is not affiliated wi
 
 [What changed in v0.1.36](release/notes-v0.1.36.md)
 
-**v0.1.36, Android build 9076** is available. It includes the engine fix for purchases, equipment and party edits, awakening, fusion and unit selling, plus the earlier battle music, summon artwork and game-data startup corrections. 
+**v0.1.36, Android build 9076** is available. It includes bug fixes for 1.35
 Install over the existing app to keep your save.
 
 ## Screenshots
