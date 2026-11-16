@@ -1,0 +1,177 @@
+{
+ "id": "800190",
+ "type": "normal",
+ "name": "Celebrating Lunar New Year (Free Summon)",
+ "detail_id": "8001901",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "free"
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1023,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_b8c94f29205fc512.png",
+  "detail_banner": "Gacha-Celebrating Lunar New Year.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": {
+  "tiers": [
+   {
+    "rarity": 5,
+    "rate": 0.01,
+    "units": [
+     "100000315",
+     "203000205",
+     "204000115",
+     "213000105",
+     "215000105",
+     "253000105",
+     "253000205",
+     "254000105"
+    ]
+   },
+   {
+    "rarity": 4,
+    "rate": 0.19,
+    "units": [
+     "100004604",
+     "100005004",
+     "100005104",
+     "201000104",
+     "203000404",
+     "204000304",
+     "209000304",
+     "213000204",
+     "213000304",
+     "213000504",
+     "253000304",
+     "253000504",
+     "254000704"
+    ]
+   },
+   {
+    "rarity": 3,
+    "rate": 0.8,
+    "units": [
+     "100002103",
+     "100002203",
+     "100002303",
+     "100002403",
+     "100002503",
+     "100002603",
+     "100002703",
+     "100002803",
+     "100003703",
+     "100003803",
+     "100003903",
+     "100004003",
+     "100004103",
+     "100004203",
+     "100004303",
+     "100004403",
+     "100004703",
+     "100004903",
+     "201000203",
+     "202000103",
+     "202000203",
+     "203000303",
+     "203000503",
+     "203000803",
+     "204000103",
+     "204000203",
+     "204000403",
+     "204000503",
+     "204001103",
+     "204001403",
+     "205000103",
+     "205000203",
+     "205000303",
+     "205000403",
+     "205000503",
+     "205000703",
+     "206000103",
+     "206000203",
+     "206000303",
+     "206000403",
+     "206000503",
+     "206000603",
+     "206000703",
+     "206001703",
+     "206001803",
+     "209000103",
+     "209000203",
+     "209000503",
+     "209000803",
+     "209000903",
+     "209001003",
+     "211000103",
+     "212000103",
+     "212000403",
+     "212000603",
+     "213000403",
+     "213000603",
+     "253000403",
+     "253000603",
+     "254000403",
+     "254000603"
+    ]
+   }
+  ]
+ },
+ "provenance": "community",
+ "source": "global-campaign-replacement",
+ "community": {
+  "release": "2017-01-24",
+  "until": "2017-02-02",
+  "limited": false,
+  "units": [],
+  "unit_ids": [],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2017-01-24",
+ "campaign_identity": "global:2017-01-24:gacha-celebrating lunar new year.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Summon?oldid=189591",
+  "sha256": "edc91368e634454d2d5c7ce58a03a14e38fa7f1e6c5f171e906545e6f2f994c7",
+  "scope": "Era rarity totals and featured rates, including the separate guaranteed-slot table. Incomplete eligibility uses documented Global releases.",
+  "eligibility_authored": true,
+  "before_first_base_five": false
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2017",
+   "sha256": "9a652a1a102226b8b4f46e0dc834a9f4f5e2e1a8d2f5f51dbb5794bbd1350053"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/0/02/Gacha-Celebrating_Lunar_New_Year.png/revision/latest?cb=20170130072628",
+   "sha256": "4697ee757b0dabb162d786019cb98b4d309ba11d56915f90efe6b5a7ff421ec1"
+  }
+ ],
+ "single_only": true,
+ "daily_limit": 1,
+ "catalogue_replacement": {
+  "campaign_id": "9100023",
+  "assignment": "User-authorized replacement for an unidentifiable reusable server slot."
+ },
+ "state_id": "9100023",
+ "alias_ids": [
+  "9100023"
+ ],
+ "eligibility_source": {
+  "source": "logs/reference/summons/unit-list-wiki.json",
+  "policy": "Global acquisition eligibility; Collaboration, Seasonal and Yes are limited. Only this banner evidenced limited units are permitted. Known future releases are excluded.",
+  "original_server_pool_recovered": false
+ },
+ "img_btn_primary": "gacha_btns_gold_free_1"
+}

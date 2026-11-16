@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "table": "F_CHALLENGE_MST",
+  "mission_id": "8540101",
+  "identity_fields": ["qo3PECw6", "V36ygRYs"],
+  "operation": "merge_fields",
+  "original": {
+    "V36ygRYs": "85401017",
+    "qo3PECw6": "8540101",
+    "Pzn5h0Ga": "18:854010101:306141000:1"
+  },
+  "rows": [
+    {
+      "qo3PECw6": "8540101",
+      "V36ygRYs": "85401017",
+      "Pzn5h0Ga": "18:854010101:1820000005:1"
+    }
+  ],
+  "native_member": "native/mst/Ver373_GL9t6cMF.dat",
+  "native_index_member": "native/mst/GL9t6cMF.i",
+  "static_member": "static/mst_decoded/F_CHALLENGE_MST.ndjson",
+  "native_version": 373,
+  "provenance": {
+    "reason": "Classic Gapra Whitewood HARD now serves its isolated Aster actor 1820000005 in original scripted group 854010101. The existing defeat-with-LB challenge must reference that served actor.",
+    "scope": "Change only Pzn5h0Ga on challenge 85401017. Preserve its mission, challenge identity, condition type, scripted group, count, reward, names and every other field.",
+    "static_baseline": {
+      "archive": "source/build/distribution/assets/exvius-data-001.zip",
+      "member": "static/mst_decoded/F_CHALLENGE_MST.ndjson",
+      "bytes": 11635326,
+      "sha256": "2c34c606987a3b096ad72cf02b319e382aa15ac2fbe59a348362da91a8cab412"
+    },
+    "native_baseline": {
+      "archive": "source/build/distribution/assets/exvius-data-010.zip",
+      "member": "native/mst/Ver373_GL9t6cMF.dat",
+      "bytes": 16947606,
+      "sha256": "42f0c66de5d4dca59f2c117d5f29998a34faa793523534b1f88a3f3c10d231ad"
+    },
+    "serialization": "Use the established merge_fields writers with mission plus challenge identity on pinned baselines, preserving existing cross-mission challenge-ID collisions. Rebuild the supported original native challenge index at version 373. Raw originals and baseline archives remain unchanged."
+  }
+}

@@ -12,6 +12,11 @@ from cricodecs import cpk, utf
 import fill_content_from_memorial as content
 from verify_content import inspect, common_tellers, common_npc_names, development_packages
 
+def _scratch(root):
+    path = root / 'build' / 'scratch'
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -21,6 +26,31 @@ def members(path):
 
 
 class LocalizationRegression(unittest.TestCase):
+    def test_global_town_repairs_keep_matching_original_scripts_and_text(self):
+        from approved_native_repairs import GLOBAL_TOWN_PACKAGES
+        for relative, expected in GLOBAL_TOWN_PACKAGES.items():
+            with self.subTest(package=relative):
+                original = ROOT / 'data/client/files' / relative
+                memorial = ROOT / 'data/memorial_fill' / relative
+                self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(), expected)
+                before = members(original)
+                other = members(memorial)
+                repaired, _ = content.localized_package(memorial)
+                with tempfile.TemporaryDirectory(dir=_scratch(ROOT), prefix='town-script-') as tmp:
+                    target = Path(tmp) / original.name
+                    target.write_bytes(repaired)
+                    after = members(target)
+                binary = 'map.bin' if '/map/' in relative else Path(relative).stem.split('_', 1)[1] + '_event.bin'
+                self.assertNotEqual(other, before)
+                self.assertEqual(after[binary], before[binary])
+                for name, payload in before.items():
+                    if name.endswith('_sg.txt'):
+                        self.assertEqual(localized := content.localized_rows(after[name]),
+                                         content.localized_rows(payload))
+                missing = 210135 if '111020301' in relative else 110108
+                if any(key in relative for key in ('111020301', '111020400')):
+                    self.assertNotIn(struct.pack('>I', missing), after[binary])
+
     def test_blank_translation_is_filled_before_town_speaker_is_scoped(self):
         source = '<name=200123><br>話そう。<keywait>'
         english = "<name=200123><br>Let's talk.<keywait>"

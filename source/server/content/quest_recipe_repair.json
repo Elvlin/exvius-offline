@@ -1,0 +1,474 @@
+{
+ "schema": 1,
+ "status": "VALIDATED_READY_TO_APPLY",
+ "purpose": "Restore original holiday quest recipe rewards 1901015/1901016 without replacing working Global equipment.",
+ "quest_book_bindings": {
+  "1901015": "904001710",
+  "1901016": "904001720"
+ },
+ "mappings": {
+  "F_EQUIP_ITEM_MST": {
+   "405002900": "870000018",
+   "403042600": "870000019"
+  },
+  "F_ICON_MST": {
+   "405002900": "880000001",
+   "403042600": "880000002"
+  }
+ },
+ "provenance": {
+  "sources": [
+   {
+    "table": "F_RECIPE_BOOK_MST",
+    "path": "Japan content/Shared sources/jp_andapp/Ver453_yu5rvEI3.dat",
+    "sha256": "9019d541bbf24615b5d0325a296ae3b6553cf94194177280e7d76c5cac1501b9",
+    "original_rows": [
+     {
+      "staFu8U1": "904001710",
+      "G4L0YIB2": "サンタの服改",
+      "Z0EN6jSh": "345",
+      "8Qt4Ccew": "904001710",
+      "A86KwrGh": "1",
+      "gJf3zp8a": "858",
+      "m23vY65S": "0",
+      "7UR4J2SE": "900"
+     },
+     {
+      "staFu8U1": "904001720",
+      "G4L0YIB2": "サンタの帽子改",
+      "Z0EN6jSh": "346",
+      "8Qt4Ccew": "904001720",
+      "A86KwrGh": "1",
+      "gJf3zp8a": "859",
+      "m23vY65S": "0",
+      "7UR4J2SE": "450"
+     }
+    ]
+   },
+   {
+    "table": "F_RECIPE_MST",
+    "path": "Japan content/Shared sources/jp_andapp/Ver577_27pGMZDm.dat",
+    "sha256": "9ab6373599f900178c411b4582afbf531970acaab29d7ba9147ce7630d274477",
+    "original_rows": [
+     {
+      "MpNE6gB5": "904001710",
+      "gak9Gb3N": "21",
+      "Z0EN6jSh": "346",
+      "6uIYE15X": "405002900",
+      "Qy5EvcK1": "1",
+      "M5VLKe2F": "1",
+      "HS7V6Ww1": "21:405001600:1,20:213001900:10",
+      "7UR4J2SE": "600",
+      "MHNbK26X": "0,",
+      "s7AwUk10": "",
+      "t4Yi1e7B": "71000346",
+      "VC9F3eJn": "FFBE<br>「聖夜はサンタに大変身！？」<br>クエスト報酬<br>FFBE<br>「第2回ユニットイラストコンテストレイド」<br>イベント報酬",
+      "bJ2nKT7A": "0",
+      "SKz5q4NQ": ""
+     },
+     {
+      "MpNE6gB5": "904001720",
+      "gak9Gb3N": "21",
+      "Z0EN6jSh": "347",
+      "6uIYE15X": "403042600",
+      "Qy5EvcK1": "1",
+      "M5VLKe2F": "1",
+      "HS7V6Ww1": "21:403041200:1,20:213002000:10",
+      "7UR4J2SE": "300",
+      "MHNbK26X": "0,",
+      "s7AwUk10": "",
+      "t4Yi1e7B": "71000347",
+      "VC9F3eJn": "FFBE<br>「聖夜はサンタに大変身！？」<br>クエスト報酬<br>FFBE<br>「第2回ユニットイラストコンテストレイド」<br>イベント報酬",
+      "bJ2nKT7A": "0",
+      "SKz5q4NQ": ""
+     }
+    ]
+   },
+   {
+    "table": "F_EQUIP_ITEM_MST",
+    "path": "Japan content/Shared sources/jp_andapp/Ver1096_S67QEJsz.dat",
+    "sha256": "ec39e449570c1623b9cc237db555451f743111dc24aea52cfec9f2b3dde6d5a6",
+    "original_rows": [
+     {
+      "J1YX9kmM": "403042600",
+      "G4L0YIB2": "サンタの帽子改",
+      "cnLF6Cz1": "サンタノボウシカイ",
+      "52KBR9qV": "4",
+      "Z0EN6jSh": "566",
+      "znGsI4f8": "3",
+      "8DZGF4Nn": "40",
+      "fUnkv59o": "0",
+      "t5Q4wZ7v": "",
+      "fh31sk7B": "0",
+      "PC97pWQj": "0",
+      "9NBV1XCS": "0",
+      "Pn5w9dfh": "6",
+      "84FJM3PD": "0",
+      "T8xMDAZ4": "0",
+      "ECbv61DK": "0",
+      "74dTs6k1": "100",
+      "Jn6BbR2P": "0,0,0,0,0,0,0,0",
+      "SxREt1M0": "0,0,0,0,0,0,0,0",
+      "hn42BL3Q": "0,0,0,0,0,0,0,0",
+      "D9Nb7jgd": "0,0,0,0,0,0,0,0",
+      "f67khsQZ": "0",
+      "Q1qLbx93": "0",
+      "zPu2iUK8": "0",
+      "Y9Vz8WNH": "0",
+      "u2I6pR9T": "",
+      "GiBvPK84": "",
+      "t42Xb3jV": "101700",
+      "5Sx0haBw": "",
+      "82PrpZU6": "",
+      "9J6uRe8f": "999",
+      "m23vY65S": "0",
+      "E61qF5Lp": "1500",
+      "bz6RS3pI": "150",
+      "0HUPxDf1": "403042600",
+      "A86KwrGh": "1",
+      "QLfe23bu": "595",
+      "fwChg17k": "0",
+      "iUIxB65H": "0",
+      "uj0xM8dH": "0"
+     },
+     {
+      "J1YX9kmM": "405002900",
+      "G4L0YIB2": "サンタの服改",
+      "cnLF6Cz1": "サンタノフクカイ",
+      "52KBR9qV": "4",
+      "Z0EN6jSh": "565",
+      "znGsI4f8": "4",
+      "8DZGF4Nn": "50",
+      "fUnkv59o": "0",
+      "t5Q4wZ7v": "",
+      "fh31sk7B": "0",
+      "PC97pWQj": "0",
+      "9NBV1XCS": "0",
+      "Pn5w9dfh": "14",
+      "84FJM3PD": "0",
+      "T8xMDAZ4": "0",
+      "ECbv61DK": "0",
+      "74dTs6k1": "100",
+      "Jn6BbR2P": "0,0,0,0,0,0,0,0",
+      "SxREt1M0": "0,0,0,0,0,0,0,0",
+      "hn42BL3Q": "0,0,0,0,0,0,0,0",
+      "D9Nb7jgd": "0,0,0,0,0,0,0,0",
+      "f67khsQZ": "0",
+      "Q1qLbx93": "0",
+      "zPu2iUK8": "0",
+      "Y9Vz8WNH": "0",
+      "u2I6pR9T": "",
+      "GiBvPK84": "",
+      "t42Xb3jV": "208980",
+      "5Sx0haBw": "",
+      "82PrpZU6": "",
+      "9J6uRe8f": "999",
+      "m23vY65S": "0",
+      "E61qF5Lp": "3000",
+      "bz6RS3pI": "300",
+      "0HUPxDf1": "405002900",
+      "A86KwrGh": "1",
+      "QLfe23bu": "594",
+      "fwChg17k": "0",
+      "iUIxB65H": "0",
+      "uj0xM8dH": "0"
+     }
+    ]
+   },
+   {
+    "table": "F_EQUIP_ITEM_EXPLAIN_MST",
+    "path": "Japan content/Shared sources/jp_andapp/Ver764_psuJ5VE2.dat",
+    "sha256": "db84cc7dee9dee719e3da5b06cf2909a1fbb1884e3e8075a165d4e00df083c9e",
+    "original_rows": [
+     {
+      "J1YX9kmM": "403042600",
+      "T7aEx3Mj": "聖なる夜に訪れるおじいさんの帽子の改良版",
+      "VC9F3eJn": "サンタさんの帽子をモグたちが改良したクポ！赤い羽根を使って、より頑丈に、より軽くなったクポ！これさえあれば、キミたちも立派なサンタさんになれるはずだクポ〜。キミたちがサンタさんになったら、モグにプレゼントをくれるクポ？"
+     },
+     {
+      "J1YX9kmM": "405002900",
+      "T7aEx3Mj": "聖なる夜に訪れるおじいさんの服の改良版",
+      "VC9F3eJn": "サンタさんの服をモグたちが改良したクポ！白い羽根を使って、より頑丈に、より軽くなったクポ！よーし、この調子でにぎやかな服にするクポ！大きな尻尾に、カラフルなポンポンに、背中にツリーもつけるクポ！……いらないクポ？絶対かっこいいと思ったのに、残念だクポー。"
+     }
+    ]
+   },
+   {
+    "table": "F_ICON_MST",
+    "path": "Japan content/Shared sources/jp_andapp/Ver1215_LM1APs6u.dat",
+    "sha256": "956cf74c0d0a2c5d1f14801c2dda6f5e3d84a41a5cc9135b8f9f57354705074d",
+    "original_rows": [
+     {
+      "0HUPxDf1": "403042600",
+      "G4L0YIB2": "サンタの帽子改",
+      "qtkvrS60": "item_30133.png"
+     },
+     {
+      "0HUPxDf1": "405002900",
+      "G4L0YIB2": "サンタの服改",
+      "qtkvrS60": "item_20127.png"
+     }
+    ]
+   }
+  ],
+  "english_names": "Preserved Global F_TEXT_RECIPE_BOOK_NAME keys MST_RECIPEBOOK_NAME_904001710 and MST_RECIPEBOOK_NAME_904001720.",
+  "english_descriptions": "Faithful translations of the two original Japanese F_EQUIP_ITEM_EXPLAIN_MST rows retained above.",
+  "preserved_global_equipment": [
+   "405002900",
+   "403042600"
+  ],
+  "source_switches": [
+   "71000346",
+   "71000347"
+  ],
+  "original_icon_assets": {
+   "item_20127.png": {
+    "effective_package": "data/overlay/common_lang/sd/item/Ver167_item1_common.cpk",
+    "sha256": "292cd87ef1439b199f57863b40de267af0d3ba7c20ca100ac2470550674c6eca"
+   },
+   "item_30133.png": {
+    "effective_package": "data/overlay/common_lang/sd/item/Ver167_item1_common.cpk",
+    "sha256": "c487a57d29bcb7cabd6061eaee2b7b17f0b6739a8c836346bb77b0308fb9d305"
+   }
+  }
+ },
+ "tables": [
+  {
+   "table": "F_RECIPE_BOOK_MST",
+   "identity_fields": [
+    "staFu8U1"
+   ],
+   "active_native_path": "mst/Ver318_yu5rvEI3.dat",
+   "operation": "replace",
+   "preserve_unselected_rows": true,
+   "rows": [
+    {
+     "staFu8U1": "904001710",
+     "G4L0YIB2": "サンタの服改",
+     "Z0EN6jSh": "345",
+     "8Qt4Ccew": "904001710",
+     "A86KwrGh": "1",
+     "gJf3zp8a": "858",
+     "m23vY65S": "0",
+     "7UR4J2SE": "900"
+    },
+    {
+     "staFu8U1": "904001720",
+     "G4L0YIB2": "サンタの帽子改",
+     "Z0EN6jSh": "346",
+     "8Qt4Ccew": "904001720",
+     "A86KwrGh": "1",
+     "gJf3zp8a": "859",
+     "m23vY65S": "0",
+     "7UR4J2SE": "450"
+    }
+   ]
+  },
+  {
+   "table": "F_RECIPE_MST",
+   "identity_fields": [
+    "MpNE6gB5"
+   ],
+   "active_native_path": "mst/Ver323_27pGMZDm.dat",
+   "operation": "replace",
+   "preserve_unselected_rows": true,
+   "rows": [
+    {
+     "MpNE6gB5": "904001710",
+     "gak9Gb3N": "21",
+     "Z0EN6jSh": "346",
+     "6uIYE15X": "870000018",
+     "Qy5EvcK1": "1",
+     "M5VLKe2F": "1",
+     "HS7V6Ww1": "21:405001600:1,20:213001900:10",
+     "7UR4J2SE": "600",
+     "MHNbK26X": "0,",
+     "s7AwUk10": "",
+     "t4Yi1e7B": "71000346",
+     "VC9F3eJn": "FFBE<br>「聖夜はサンタに大変身！？」<br>クエスト報酬<br>FFBE<br>「第2回ユニットイラストコンテストレイド」<br>イベント報酬",
+     "bJ2nKT7A": "0",
+     "SKz5q4NQ": ""
+    },
+    {
+     "MpNE6gB5": "904001720",
+     "gak9Gb3N": "21",
+     "Z0EN6jSh": "347",
+     "6uIYE15X": "870000019",
+     "Qy5EvcK1": "1",
+     "M5VLKe2F": "1",
+     "HS7V6Ww1": "21:403041200:1,20:213002000:10",
+     "7UR4J2SE": "300",
+     "MHNbK26X": "0,",
+     "s7AwUk10": "",
+     "t4Yi1e7B": "71000347",
+     "VC9F3eJn": "FFBE<br>「聖夜はサンタに大変身！？」<br>クエスト報酬<br>FFBE<br>「第2回ユニットイラストコンテストレイド」<br>イベント報酬",
+     "bJ2nKT7A": "0",
+     "SKz5q4NQ": ""
+    }
+   ]
+  },
+  {
+   "table": "F_EQUIP_ITEM_MST",
+   "identity_fields": [
+    "J1YX9kmM"
+   ],
+   "active_native_path": "mst/Ver392_S67QEJsz.dat",
+   "operation": "replace",
+   "preserve_unselected_rows": true,
+   "rows": [
+    {
+     "J1YX9kmM": "870000019",
+     "G4L0YIB2": "Festival Cap+",
+     "cnLF6Cz1": "サンタノボウシカイ",
+     "52KBR9qV": "4",
+     "Z0EN6jSh": "566",
+     "znGsI4f8": "3",
+     "8DZGF4Nn": "40",
+     "fUnkv59o": "0",
+     "t5Q4wZ7v": "",
+     "fh31sk7B": "0",
+     "PC97pWQj": "0",
+     "9NBV1XCS": "0",
+     "Pn5w9dfh": "6",
+     "84FJM3PD": "0",
+     "T8xMDAZ4": "0",
+     "ECbv61DK": "0",
+     "74dTs6k1": "100",
+     "Jn6BbR2P": "0,0,0,0,0,0,0,0",
+     "SxREt1M0": "0,0,0,0,0,0,0,0",
+     "hn42BL3Q": "0,0,0,0,0,0,0,0",
+     "D9Nb7jgd": "0,0,0,0,0,0,0,0",
+     "f67khsQZ": "0",
+     "Q1qLbx93": "0",
+     "zPu2iUK8": "0",
+     "Y9Vz8WNH": "0",
+     "u2I6pR9T": "",
+     "GiBvPK84": "",
+     "t42Xb3jV": "101700",
+     "5Sx0haBw": "",
+     "82PrpZU6": "",
+     "9J6uRe8f": "999",
+     "m23vY65S": "0",
+     "E61qF5Lp": "1500",
+     "bz6RS3pI": "150",
+     "0HUPxDf1": "880000002",
+     "A86KwrGh": "1",
+     "QLfe23bu": "595",
+     "fwChg17k": "0",
+     "iUIxB65H": "0",
+     "uj0xM8dH": "0"
+    },
+    {
+     "J1YX9kmM": "870000018",
+     "G4L0YIB2": "Festival Robe+",
+     "cnLF6Cz1": "サンタノフクカイ",
+     "52KBR9qV": "4",
+     "Z0EN6jSh": "565",
+     "znGsI4f8": "4",
+     "8DZGF4Nn": "50",
+     "fUnkv59o": "0",
+     "t5Q4wZ7v": "",
+     "fh31sk7B": "0",
+     "PC97pWQj": "0",
+     "9NBV1XCS": "0",
+     "Pn5w9dfh": "14",
+     "84FJM3PD": "0",
+     "T8xMDAZ4": "0",
+     "ECbv61DK": "0",
+     "74dTs6k1": "100",
+     "Jn6BbR2P": "0,0,0,0,0,0,0,0",
+     "SxREt1M0": "0,0,0,0,0,0,0,0",
+     "hn42BL3Q": "0,0,0,0,0,0,0,0",
+     "D9Nb7jgd": "0,0,0,0,0,0,0,0",
+     "f67khsQZ": "0",
+     "Q1qLbx93": "0",
+     "zPu2iUK8": "0",
+     "Y9Vz8WNH": "0",
+     "u2I6pR9T": "",
+     "GiBvPK84": "",
+     "t42Xb3jV": "208980",
+     "5Sx0haBw": "",
+     "82PrpZU6": "",
+     "9J6uRe8f": "999",
+     "m23vY65S": "0",
+     "E61qF5Lp": "3000",
+     "bz6RS3pI": "300",
+     "0HUPxDf1": "880000001",
+     "A86KwrGh": "1",
+     "QLfe23bu": "594",
+     "fwChg17k": "0",
+     "iUIxB65H": "0",
+     "uj0xM8dH": "0"
+    }
+   ]
+  },
+  {
+   "table": "F_EQUIP_ITEM_EXPLAIN_MST",
+   "identity_fields": [
+    "J1YX9kmM"
+   ],
+   "active_native_path": "mst/Ver325_psuJ5VE2.dat",
+   "operation": "replace",
+   "preserve_unselected_rows": true,
+   "rows": [
+    {
+     "J1YX9kmM": "870000019",
+     "T7aEx3Mj": "An improved festival cap, made sturdier and lighter with red feathers.",
+     "VC9F3eJn": "We moogles improved Santa's hat, kupo! Red feathers made it sturdier and lighter, kupo! With this, you can become a splendid Santa too, kupo! If you become Santa, will you give me a present, kupo?"
+    },
+    {
+     "J1YX9kmM": "870000018",
+     "T7aEx3Mj": "An improved festival robe, made sturdier and lighter with white feathers.",
+     "VC9F3eJn": "We moogles improved Santa's clothes, kupo! White feathers made them sturdier and lighter, kupo! Next, let's make them even more festive with a big tail, colorful pom-poms, and a tree on the back, kupo! ...You don't want those, kupo? That's a shame. I thought they would look really cool, kupo!"
+    }
+   ]
+  },
+  {
+   "table": "F_ICON_MST",
+   "identity_fields": [
+    "0HUPxDf1"
+   ],
+   "active_native_path": "mst/Ver375_LM1APs6u.dat",
+   "operation": "replace",
+   "preserve_unselected_rows": true,
+   "rows": [
+    {
+     "0HUPxDf1": "880000002",
+     "G4L0YIB2": "Festival Cap+",
+     "qtkvrS60": "item_30133.png"
+    },
+    {
+     "0HUPxDf1": "880000001",
+     "G4L0YIB2": "Festival Robe+",
+     "qtkvrS60": "item_20127.png"
+    }
+   ]
+  }
+ ],
+ "id_replacements": {},
+ "text_tables": [
+  {
+   "table": "F_TEXT_ITEM_EQUIP_NAME",
+   "inline_labels": {
+    "MST_EQUIP_ITEM_NAME_870000018": "Festival Robe+",
+    "MST_EQUIP_ITEM_NAME_870000019": "Festival Cap+"
+   },
+   "rows": 2
+  },
+  {
+   "table": "F_TEXT_ITEM_EQUIP_SHORT",
+   "inline_labels": {
+    "MST_EQUIP_ITEM_SHORTDESCRIPTION_870000018": "An improved festival robe, made sturdier and lighter with white feathers.",
+    "MST_EQUIP_ITEM_SHORTDESCRIPTION_870000019": "An improved festival cap, made sturdier and lighter with red feathers."
+   },
+   "rows": 2
+  },
+  {
+   "table": "F_TEXT_ITEM_EQUIP_LONG",
+   "inline_labels": {
+    "MST_EQUIP_ITEM_LONGDESCRIPTION_870000018": "We moogles improved Santa's clothes, kupo! White feathers made them sturdier and lighter, kupo! Next, let's make them even more festive with a big tail, colorful pom-poms, and a tree on the back, kupo! ...You don't want those, kupo? That's a shame. I thought they would look really cool, kupo!",
+    "MST_EQUIP_ITEM_LONGDESCRIPTION_870000019": "We moogles improved Santa's hat, kupo! Red feathers made it sturdier and lighter, kupo! With this, you can become a splendid Santa too, kupo! If you become Santa, will you give me a present, kupo?"
+   },
+   "rows": 2
+  }
+ ]
+}

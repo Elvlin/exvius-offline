@@ -1,0 +1,231 @@
+{
+ "id": "9100036",
+ "type": "normal",
+ "name": "The Egg Seekers",
+ "detail_id": "91000361",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "item",
+  "item_id": 1209000815,
+  "amount": 100
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1036,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_edd425b7bea13424.png",
+  "detail_banner": "Gacha-Egg Summon.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "provenance": "community",
+ "source": "community",
+ "community": {
+  "release": "2017-04-06",
+  "until": "2017-04-26",
+  "limited": false,
+  "units": [],
+  "unit_ids": [],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "free",
+ "release": "2017-04-06",
+ "campaign_identity": "global:2017-04-06:gacha-egg summon.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/The_Egg_Seekers#Egg_Summon",
+  "scope": "Week-two survey estimates from 56,082 pulls. Magicite and crystal groups split equally.",
+  "authored_details": "100-egg cost and 5% donor strength; original price and donor instance rows were not preserved."
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2017",
+   "sha256": "9a652a1a102226b8b4f46e0dc834a9f4f5e2e1a8d2f5f51dbb5794bbd1350053"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/1/16/Gacha-Egg_Summon.png/revision/latest?cb=20170411173734",
+   "sha256": "3919255fb181daec526241cd5b9ca54e5f04e97afac969596cc068574d87b94f"
+  }
+ ],
+ "reward_pool": [
+  {
+   "kind": 20,
+   "id": 1209000812,
+   "count": 1,
+   "rate": 0.4
+  },
+  {
+   "kind": 20,
+   "id": 1209000813,
+   "count": 1,
+   "rate": 0.4
+  },
+  {
+   "kind": 20,
+   "id": 1209000814,
+   "count": 1,
+   "rate": 0.0625
+  },
+  {
+   "kind": 20,
+   "id": 107001600,
+   "count": 1,
+   "rate": 0.014000000000000002
+  },
+  {
+   "kind": 20,
+   "id": 107001700,
+   "count": 1,
+   "rate": 0.014000000000000002
+  },
+  {
+   "kind": 20,
+   "id": 107002400,
+   "count": 1,
+   "rate": 0.014000000000000002
+  },
+  {
+   "kind": 20,
+   "id": 107002500,
+   "count": 1,
+   "rate": 0.014000000000000002
+  },
+  {
+   "kind": 20,
+   "id": 107002600,
+   "count": 1,
+   "rate": 0.014000000000000002
+  },
+  {
+   "kind": 10,
+   "id": 900010301,
+   "count": 1,
+   "rate": 0.03
+  },
+  {
+   "kind": 10,
+   "id": 900020301,
+   "count": 1,
+   "rate": 0.0175
+  },
+  {
+   "kind": 10,
+   "id": 900010401,
+   "count": 1,
+   "rate": 0.002
+  },
+  {
+   "kind": 10,
+   "id": 900020401,
+   "count": 1,
+   "rate": 0.0025
+  },
+  {
+   "kind": 10,
+   "id": 905000103,
+   "count": 1,
+   "rate": 0.001
+  },
+  {
+   "kind": 10,
+   "id": 904000103,
+   "count": 1,
+   "rate": 0.0045,
+   "affinity_points": [
+    "50",
+    ""
+   ],
+   "affinity_info": [
+    "21:1100000072:1:1000:10:30:50",
+    ""
+   ],
+   "display_name": "Trust Moogle (Fryevia's Needle, 5%)"
+  },
+  {
+   "kind": 10,
+   "id": 904000103,
+   "count": 1,
+   "rate": 0.0035,
+   "affinity_points": [
+    "50",
+    ""
+   ],
+   "affinity_info": [
+    "21:1100000073:1:1000:10:30:50",
+    ""
+   ],
+   "display_name": "Trust Moogle (Patches, 5%)"
+  },
+  {
+   "kind": 10,
+   "id": 904000103,
+   "count": 1,
+   "rate": 0.003,
+   "affinity_points": [
+    "50",
+    ""
+   ],
+   "affinity_info": [
+    "21:1100000071:1:1000:10:30:50",
+    ""
+   ],
+   "display_name": "Trust Moogle (Vestment of Mind, 5%)"
+  },
+  {
+   "kind": 20,
+   "id": 270000300,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270000800,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270001300,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270002800,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270003300,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270003800,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270004300,
+   "count": 1,
+   "rate": 0.0004375
+  },
+  {
+   "kind": 20,
+   "id": 270004800,
+   "count": 1,
+   "rate": 0.0004375
+  }
+ ],
+ "img_btn_primary": "gacha_btn_r_ticket"
+}

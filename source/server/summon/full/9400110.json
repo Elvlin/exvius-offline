@@ -1,0 +1,83 @@
+{
+ "id": "9400110",
+ "detail_id": "94001101",
+ "type": "normal",
+ "name": "SINoALICE Collaboration Commemorative Ticket Summon",
+ "name_override": true,
+ "exe_type": "primary",
+ "draws": 1,
+ "release": "2021-09-06",
+ "season": "collaborations",
+ "tab": "limited",
+ "schedule": {
+  "disp_order": 940110,
+  "banner_type": 0,
+  "window": {
+   "from": "2021-09-06 00:00:00",
+   "to": "2099-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_cdd877595eb5f0cb.png",
+  "detail_banner": "sinoalice-20210920-commemorative-ticket-english.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_rare/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "cost": {
+  "kind": "item",
+  "item_id": 106224700,
+  "amount": 1
+ },
+ "pool": [
+  {
+   "unit_id": "336000105",
+   "rarity": 5,
+   "rate": 0.3333333333333333
+  },
+  {
+   "unit_id": "336000205",
+   "rarity": 5,
+   "rate": 0.3333333333333333
+  },
+  {
+   "unit_id": "336000304",
+   "rarity": 4,
+   "rate": 0.3333333333333333
+  }
+ ],
+ "preview_units": [
+  "336000105",
+  "336000205",
+  "336000304"
+ ],
+ "source": "historical-jp-summon",
+ "provenance": "original-jp-offer",
+ "historical_window": {
+  "from": "2021-09-06",
+  "to": "2021-09-18"
+ },
+ "historical_original_server_id": null,
+ "pool_authored": true,
+ "rate_notice": "The original artwork, printed offer features and cited contemporary mechanics are preserved. The complete historical server pool was not recovered. The explicit residual character list, non-NV weights and unspecified guaranteed-slot weights are authored source data, not a recovered JP rate table.",
+ "sources": [
+  "https://jp.finalfantasy.com/news/3653/"
+ ],
+ "reconstruction": {
+  "reason": "The original named offer and associated artwork are preserved; the complete original server reply and rate table were not recovered after the recorded original-source search.",
+  "unknown_original_fields": [
+   "Residual eligible roster",
+   "Per-reward rates",
+   "Unprinted purchase terms"
+  ],
+  "runtime_schedule": "Historical event made available without an expired closing date."
+ },
+ "historical_offer_family": "JP-SINO-20210906-COLLAB-TICKET",
+ "art_presentation": {
+  "presentation": "translated_original_summon_art",
+  "historical_native_list_presentation_confirmed": true,
+  "evidence_file": "Japan content/Earlier JP crossovers/Sources/original-summon-art-presentation.json",
+  "dedicated_art_absence_proven": false
+ },
+ "img_btn_primary": "gacha_btn_r_ticket"
+}

@@ -1,0 +1,18 @@
+EXVIUS - IF THE GAME DATA CHECK DOES NOT START
+
+Use this only if the Exvius loading screen gets stuck on "Checking for game data".
+
+1. Download the file latest.json from this folder.
+
+2. Connect your phone to your PC with a USB cable.
+   On the phone, allow "File transfer" if it asks.
+
+3. On the PC, open your phone and go to this folder:
+
+   Internal storage > Android > data > com.exvius.offline.test > files
+
+   If there is no folder called "updates" here, make a new folder and name it: updates
+
+4. Open the "updates" folder and paste latest.json into it.
+
+5. Unplug the phone and open Exvius. The game data download starts by itself.

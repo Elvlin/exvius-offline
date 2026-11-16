@@ -7,6 +7,7 @@ harness/extract_request_fields.py) and applies the change to the one player stat
 refresh the client's lists carries the unit group, so `apply_to_reply` projects every player group.
 """
 from collections import Counter
+from copy import deepcopy
 import json
 from exvius_raid_progress import personal_raid_menu
 
@@ -82,13 +83,42 @@ def mission_restart(spec, req):
 
 
 def unit_class_up(spec, req):
+    before, dirty = deepcopy(State.player.data), State.player.dirty
+    try:
+        return _unit_class_up(spec, req)
+    except Exception:
+        # Match the existing action transaction without fabricating a reply.
+        State.player.data, State.player.dirty = before, dirty
+        raise
+
+
+def _unit_class_up(spec, req):
     """UnitClassUpRequest (awakening): group `sWc7EH69`, `og2GHy49` = the base unit. F_UNIT_CLASS_UP_MST
     names the next rarity (`t74crqAL`), its gil (`7UR4J2SE`) and materials (`KCk8u0am`). The reply is
     UnitClassUpResponse on the same tag (UserUnitClassUpResult: og2GHy49 unit, 5u7VYNEX new unit,
     KCk8u0am materials, WbGYcN17/02CI3bpE element info, p9Xj4Anc all-kigen flag)."""
     node = _node(req, "sWc7EH69")
     iid = str(node.get("og2GHy49") or "") if node else ""
+    all_kigen = str(node.get('p9Xj4Anc', '0')) if node else '0'
+    discount = str(node.get('Knra4I19', '0')) if node else '0'
+    if all_kigen not in ('0', '1'):
+        _note('unit-class-up: invalid all-kigen flag')
+        return spec
+    if discount not in ('0', '1'):
+        _note('unit-class-up: invalid discount flag')
+        return spec
     unit = next((u for u in State.player.data["roster"] if str(u["instance_id"]) == iid), None)
+    if unit is None and State.player.mode != 'frozen':
+        receipt = State.player.data.get('exvius_unit_class_up', {}).get('receipts', {}).get(iid, {})
+        result = receipt.get('result', {})
+        destination = State.player.roster_row(str(result.get('5u7VYNEX', '')))
+        if (destination is not None and result.get('og2GHy49') == iid
+                and result.get('p9Xj4Anc') == all_kigen
+                and receipt.get('discount_flag') == discount
+                and destination['master_id'] == receipt.get('master_id')):
+            out = _refresh(spec)
+            out['sWc7EH69'] = [dict(result)]
+            return out
     if unit is None or State.player.mode == 'frozen':
         _note(f"unit-class-up: unit {iid or '?'} not in the roster")
         return spec
@@ -96,16 +126,44 @@ def unit_class_up(spec, req):
     if not step:
         _note(f"unit-class-up: no F_UNIT_CLASS_UP_MST row for {unit['master_id']}")
         return spec
+    if discount != '0':
+        _note('unit-class-up: discount campaign is not active')
+        return spec
+    from player_state import unit_mst, item_mst
+    if unit_mst(unit['master_id']) is None or unit_mst(step.get('t74crqAL', '')) is None:
+        raise ValueError('class-up source or destination master is missing')
     materials = str(step.get("KCk8u0am") or "")
     gil = int(step.get("7UR4J2SE") or 0)
-    rows = [m.split(":") for m in materials.split(",") if m.count(":") == 2]
+    rows = [m.split(':') for m in materials.split(',')]
+    if gil < 0 or not rows or any(len(row) != 3 for row in rows):
+        raise ValueError('class-up cost is invalid')
+    if all_kigen == '1':
+        from player_state import unit_mst, item_mst
+        source = unit_mst(unit['master_id']) or {}
+        destination = unit_mst(step['t74crqAL']) or {}
+        if (source.get('9fW0TePj') != '6' or destination.get('9fW0TePj') != '7'
+                or destination.get('JPW8Vs40') != '0' or len(rows) != 1
+                or rows[0][0] != '20' or rows[0][2] != '1'):
+            _note('unit-class-up: all-kigen is not applicable to this awakening')
+            return spec
+        definition = _mst('F_DEFINE_MST.ndjson', 'AK8Nn7ta').get('CLASS_UP_PRISM_ALL_ITEM_ID', {})
+        prism_id = str(definition.get('YjIUDJ97') or '')
+        if item_mst(prism_id) is None:
+            _note('unit-class-up: universal prism definition is missing')
+            return spec
+        materials = '20:' + prism_id + ':1'
+        rows = [['20', prism_id, '1']]
+    if any(int(k) != 20 or int(c) <= 0 or item_mst(i) is None for k, i, c in rows):
+        raise ValueError('class-up material master or count is invalid')
     if any(State.player.item_count(int(k), i) < int(c) for k, i, c in rows) or \
             int(State.player.currencies.get("gil", 0)) < gil:
         _note(f"unit-class-up: {unit['master_id']} lacks materials or gil; not awakened")
         return spec
     for k, i, c in rows:
-        State.player.spend_item(int(k), i, int(c))
-    State.player.spend_currency("gil", gil)
+        if not State.player.spend_item(int(k), i, int(c)):
+            raise ValueError('class-up material debit failed')
+    if not State.player.spend_currency("gil", gil):
+        raise ValueError('class-up gil debit failed')
     before = unit["master_id"]
     unit["master_id"] = str(step["t74crqAL"])
     unit = State.player.renew_unit_instance(iid)
@@ -117,7 +175,9 @@ def unit_class_up(spec, req):
     print(f"unit: awakened {iid} {before} -> {unit['master_id']} for {gil} gil + {materials}", flush=True)
     out = _refresh(spec)
     out["sWc7EH69"] = [{"og2GHy49": iid, "5u7VYNEX": unit['instance_id'], "KCk8u0am": materials, "WbGYcN17": "",
-                        "02CI3bpE": "", "p9Xj4Anc": "0"}]
+                        "02CI3bpE": "", "p9Xj4Anc": all_kigen}]
+    State.player.data.setdefault('exvius_unit_class_up', {}).setdefault('receipts', {})[iid] = {
+        'result': dict(out['sWc7EH69'][0]), 'master_id': unit['master_id'], 'discount_flag': discount}
     return out
 
 

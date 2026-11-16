@@ -1,6 +1,7 @@
 """Browse recovered Vortex content without changing mission progress or rewards."""
 from collections import defaultdict
 from copy import deepcopy
+from datetime import date
 import json
 from pathlib import Path
 
@@ -46,15 +47,27 @@ def menu(player, selection=''):
         return activate_mode(player, selection)
     members = defaultdict(list)
     campaigns = listings()
-    rows = [row for row, _aliases in campaigns]
-    permanent = [str(row['area']) for row in rows if row['group'] == 'permanent']
+    rows = [row for row, _aliases in campaigns if str(row['area']) not in {'3279', '3282', '3264'}]
+    rows.sort(key=lambda row: (row['group'] != 'permanent',
+                              '' if row['group'] == 'permanent' else row.get('release') or '9999'))
     for row in rows:
-        members[row['group']].append(str(row['area']))
+        area = str(row['area'])
+        category = row['group']
+        if category == 'permanent':
+            members[category].append(area)
+            continue
+        if category == 'collaborations':
+            members[category].append(area)
+        try:
+            released = date.fromisoformat(row.get('release') or '')
+            from gacha_archive import STORY_STARTS
+            season = 'season' + str(1 + sum(released >= start for start in STORY_STARTS))
+        except ValueError:
+            season = 'other'
+        members[season].append(area)
     groups = []
     for key, label in GROUPS:
         ids = [str(row['area']) for row in rows] if key == 'all' else members[key]
-        if key not in ('all', 'permanent'):
-            ids = list(dict.fromkeys(permanent + ids))
         groups.append({'id': key, 'label': label, 'ids': ids,
                        'count': len(rows) if key == 'all' else len(members[key]), 'tab': 0})
     if selection:

@@ -59,9 +59,13 @@ def page(banner_id):
     notice = ('Choose a unit or prism from the selection list.' if banner.get('selection') else
               'The rates below apply to this summon. Guaranteed slots and additional rewards are listed separately.')
     body = '<h1>' + escape(banner['name']) + '</h1><p class="notice">' + escape(notice).replace('\n', '<br>') + '</p>'
+    if banner.get('rate_notice'):
+        body += '<p class="notice">' + escape(str(banner['rate_notice'])).replace('\n', '<br>') + '</p>'
+    if banner.get('eligibility_source'):
+        body += '<p>Eligible units follow this banner\'s recorded region, release and restrictions.</p>'
     if banner.get('boxes'):
-        body += '<p>The first five boxes draw without replacement. Remaining quantities and featured rewards appear in the original Box Details screen.</p>'
-        body += '<h2>Standard pool after the five boxes</h2><p>Materials 80%, enhancers 19%, ultra-rare rewards 1%, divided equally within each group.</p>'
+        body += '<p>Finite boxes draw without replacement. Remaining quantities and featured rewards appear in the original Box Details screen.</p>'
+        body += '<h2>Standard pool after the finite boxes</h2>'
     if banner.get('selection'):
         from exvius_actions import _mst
         from ffbe_gacha import unit_name

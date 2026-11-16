@@ -1,0 +1,231 @@
+{
+ "id": "800120",
+ "type": "normal",
+ "name": "Snow, Vanille, Sazh Featured Summon",
+ "detail_id": "8001201",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "lapis",
+  "amount": 500
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1017,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_ebf6ac25f7ffff07.png",
+  "detail_banner": "Gacha-Vanille Snow Sazh.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": {
+  "tiers": [
+   {
+    "rarity": 5,
+    "rate": 0.01,
+    "units": [
+     "203000205",
+     "204000115",
+     "213000105",
+     "253000105",
+     "253000205"
+    ]
+   },
+   {
+    "rarity": 4,
+    "rate": 0.19,
+    "units": [
+     "100004604",
+     "201000104",
+     "203000404",
+     "204000304",
+     "209000304",
+     "213000204",
+     "213000304",
+     "253000304",
+     "253000504"
+    ],
+    "featured": [
+     "213000204",
+     "213000304"
+    ],
+    "featured_share": 0.25
+   },
+   {
+    "rarity": 3,
+    "rate": 0.8,
+    "units": [
+     "100002103",
+     "100002203",
+     "100002303",
+     "100002403",
+     "100002503",
+     "100002603",
+     "100002703",
+     "100002803",
+     "100003703",
+     "100003803",
+     "100003903",
+     "100004003",
+     "100004103",
+     "100004203",
+     "100004303",
+     "100004403",
+     "100004703",
+     "201000203",
+     "202000103",
+     "202000203",
+     "203000303",
+     "203000503",
+     "203000803",
+     "204000103",
+     "204000203",
+     "204000403",
+     "204000503",
+     "204001103",
+     "204001403",
+     "205000103",
+     "205000203",
+     "205000303",
+     "205000403",
+     "205000503",
+     "205000703",
+     "206000103",
+     "206000203",
+     "206000303",
+     "206000403",
+     "206000503",
+     "206000603",
+     "206000703",
+     "206001703",
+     "206001803",
+     "209000103",
+     "209000203",
+     "209000503",
+     "209000803",
+     "209000903",
+     "209001003",
+     "211000103",
+     "212000103",
+     "212000403",
+     "212000603",
+     "213000403",
+     "253000403",
+     "253000603"
+    ],
+    "featured": [
+     "213000403"
+    ],
+    "featured_share": 0.25
+   }
+  ]
+ },
+ "provenance": "community",
+ "source": "global-campaign-replacement",
+ "community": {
+  "release": "2016-12-02",
+  "until": "2016-12-08",
+  "limited": false,
+  "units": [
+   "Snow",
+   "Vanille",
+   "Sazh"
+  ],
+  "unit_ids": [
+   "213000204",
+   "213000304",
+   "213000403"
+  ],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2016-12-02",
+ "campaign_identity": "global:2016-12-02:gacha-vanille snow sazh.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Summon?oldid=189591",
+  "sha256": "edc91368e634454d2d5c7ce58a03a14e38fa7f1e6c5f171e906545e6f2f994c7",
+  "scope": "Era rarity totals and featured rates, including the separate guaranteed-slot table. Incomplete eligibility uses documented Global releases.",
+  "eligibility_authored": true,
+  "before_first_base_five": false
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2016",
+   "sha256": "af6d445ecaf3bccdecbb473cd4f0f563d34320b8381b90f9bab1b5c4a03bda77"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/b/bc/Gacha-Vanille_Snow_Sazh.png/revision/latest?cb=20161223071639",
+   "sha256": "ba344e10eacd783b85f81520af81e47a193f51a6e5ef23b358454a5e4e5d7315"
+  }
+ ],
+ "secondary_offer": {
+  "cost": {
+   "kind": "lapis",
+   "amount": 5000
+  },
+  "draws": 11,
+  "exe_count": 1,
+  "guarantee": {
+   "rarity": 4,
+   "count": 1,
+   "pool": {
+    "tiers": [
+     {
+      "rarity": 5,
+      "rate": 0.05,
+      "units": [
+       "203000205",
+       "204000115",
+       "213000105",
+       "253000105",
+       "253000205"
+      ]
+     },
+     {
+      "rarity": 4,
+      "rate": 0.95,
+      "units": [
+       "100004604",
+       "201000104",
+       "203000404",
+       "204000304",
+       "209000304",
+       "213000204",
+       "213000304",
+       "253000304",
+       "253000504"
+      ],
+      "featured": [
+       "213000204",
+       "213000304"
+      ],
+      "featured_share": 0.5
+     }
+    ]
+   }
+  },
+  "img_btn": "gacha_btns_gold_11"
+ },
+ "catalogue_replacement": {
+  "campaign_id": "9100017",
+  "assignment": "User-authorized replacement for an unidentifiable reusable server slot."
+ },
+ "state_id": "9100017",
+ "alias_ids": [
+  "9100017"
+ ],
+ "eligibility_source": {
+  "source": "logs/reference/summons/unit-list-wiki.json",
+  "policy": "Global acquisition eligibility; Collaboration, Seasonal and Yes are limited. Only this banner evidenced limited units are permitted. Known future releases are excluded.",
+  "original_server_pool_recovered": false
+ },
+ "ticket_group_id": 10020,
+ "img_btn_primary": "gacha_btns_gold_1"
+}

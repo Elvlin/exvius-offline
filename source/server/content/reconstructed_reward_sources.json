@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "fixed_single_enemy_drops": {
+    "10480102": {
+      "source_page": "Sprouts of Devouring",
+      "source_heading": "Warriors Who Bear the Light",
+      "source_revision": 328796,
+      "enemy": "Cyan Malboro",
+      "item": "WOTV Collaboration Malboro Coin",
+      "item_id": "1209001336",
+      "quantity": 4000
+    },
+    "10480104": {
+      "source_page": "Sprouts of Devouring",
+      "source_heading": "A Frightful Mutation",
+      "source_revision": 328796,
+      "enemy": "Malboro Matriarch",
+      "item": "WOTV Collaboration Malboro Coin",
+      "item_id": "1209001336",
+      "quantity": 6000
+    }
+  }
+}

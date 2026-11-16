@@ -593,7 +593,8 @@ export function installAdaptiveDisplay(module, retained, note, bridge) {
   }));
   retained.push(Interceptor.attach(module.getExportByName('_ZN10GameSprite4initEPN7cocos2d9Texture2DE'), {
     onEnter(args) {
-      if (areaMapDepth && !args[1].isNull()) aliasTexture(args[1]);
+      // The original factory is static; its texture is the first argument.
+      if (areaMapDepth && !args[0].isNull()) aliasTexture(args[0]);
     }
   }));
 }

@@ -131,7 +131,7 @@ def main():
         name, _, qualifier = row['G4L0YIB2'].partition('【')
         assert name in PREFIXES, name
         english[sid] = PREFIXES[name] + (' (' + unit_captions[qualifier.rstrip('】')] + ')' if qualifier else '')
-    datamine = next((ROOT / 'repository snapshots').glob('kaikwb__ffbe-data-jp*'))
+    datamine = ROOT / 'Japan content/Shared sources/ffbe-jp-ea7d9fa82659.zip'
     provenance.append({'descriptions': datamine.relative_to(ROOT).as_posix(),
                        'sha256': hashlib.sha256(datamine.read_bytes()).hexdigest(),
                        'translation': 'Skill captions translated here; published parsed English effects and explicit native-master translations.'})

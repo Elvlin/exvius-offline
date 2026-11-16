@@ -1,0 +1,236 @@
+{
+ "id": "9400164",
+ "detail_id": "94001641",
+ "type": "normal",
+ "name": "Dark Category NV Guaranteed Ticket Summon 2024/1",
+ "name_override": true,
+ "exe_type": "primary",
+ "draws": 1,
+ "release": "2024-01-19",
+ "season": "collaborations",
+ "tab": "limited",
+ "schedule": {
+  "disp_order": 940164,
+  "banner_type": 0,
+  "window": {
+   "from": "2024-01-19 00:00:00",
+   "to": "2099-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_09c0510fa41096a1.png",
+  "detail_banner": "gacha_20240430_NVticket_darkness_reprint_top-english.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_rare/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "cost": {
+  "kind": "item",
+  "item_id": 106233570,
+  "amount": 1,
+  "is_coin": false
+ },
+ "pool": [
+  {
+   "unit_id": "100031607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100033007",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100033907",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100034407",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100037607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100037807",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100038007",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100039307",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100039407",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100040607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100041707",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100041807",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100042507",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100042707",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "100043607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "204003207",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "205002007",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "207002407",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "208002107",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "210002807",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "210003007",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "211001607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "212002207",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "215003007",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "249000607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "331001607",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "331001707",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "340000207",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "342000207",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "345000307",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "346000807",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "350000107",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "401014207",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  },
+  {
+   "unit_id": "401014507",
+   "rarity": 7,
+   "rate": 0.029411764705882353
+  }
+ ],
+ "preview_units": [],
+ "source": "historical-jp-summon",
+ "provenance": "original-jp-offer",
+ "historical_window": {
+  "from": "2024-01-19",
+  "to": null
+ },
+ "historical_original_server_id": null,
+ "pool_authored": true,
+ "rate_notice": "The original artwork, printed offer features and cited contemporary mechanics are preserved. The complete historical server pool was not recovered. The explicit residual character list, non-NV weights and unspecified guaranteed-slot weights are authored source data, not a recovered JP rate table.",
+ "sources": [
+  "https://jp.finalfantasy.com/news/4870/"
+ ],
+ "reconstruction": {
+  "reason": "The original named offer and associated artwork are preserved; the complete original server reply and rate table were not recovered after the recorded original-source search.",
+  "unknown_original_fields": [
+   "Residual eligible roster",
+   "Per-reward rates",
+   "Unprinted purchase terms"
+  ],
+  "runtime_schedule": "Historical event made available without an expired closing date.",
+  "category_pool_policy": "Eligible category, exact ticket identity, printed coin cost and NV guarantee retained; complete historical eligible lists/weights absent. Explicit equal pool contains only original source-category nativeNV base forms currently present, not NVA or shifts."
+ },
+ "historical_offer_family": "JP-106233570-ORIGINAL-OFFER",
+ "art_presentation": {
+  "presentation": "translated_original_summon_art",
+  "historical_native_list_presentation_confirmed": false,
+  "evidence_file": "Japan content/Earlier JP crossovers/Sources/original-summon-art-presentation.json",
+  "dedicated_art_absence_proven": false
+ },
+ "img_btn_primary": "gacha_btn_r_ticket"
+}

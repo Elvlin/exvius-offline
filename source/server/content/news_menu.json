@@ -1,0 +1,9 @@
+{
+ "title": "News and Updates",
+ "banners": [
+  {"id": "900012", "name": "YouTube Channel", "image": "SMBanner_youtube.jpg", "url": "https://www.youtube.com/@elvlin9821"},
+  {"id": "900013", "name": "Discord", "image": "SMBanner_fb.jpg", "url": "https://discord.gg/Wnqh9q5WMY"},
+  {"id": "900014", "name": "GitHub", "image": "SMBanner_youtube_cn.jpg", "url": "https://github.com/Elvlin/exvius-offline"}
+ ],
+ "hide_other_social_banners": true
+}

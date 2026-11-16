@@ -53,11 +53,7 @@ def archive_records(document):
     return result
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--include-unidentified', action='store_true',
-                        help='Include unused/unidentified master entries for source recovery only')
-    args = parser.parse_args()
+def build_document(include_unidentified=False, originals=None):
     source = json.loads(SOURCE.read_text(encoding='utf-8'))
     archive = archive_records(source)
     names = {row['key'].rsplit('_', 1)[1]: row['v'][0] for row in rows('F_TEXT_AREA_NAME', text=True)}
@@ -70,7 +66,8 @@ def main():
     for dungeon in rows('F_DUNGEON_MST'):
         if by_dungeon[dungeon['U9iHsau3']]:
             dungeons[dungeon['uv60hgDW']].append(dungeon)
-    originals = json.loads((ROOT / 'source/server/event_art.json').read_text(encoding='utf-8'))['events']
+    if originals is None:
+        originals = json.loads((ROOT / 'source/server/event_art.json').read_text(encoding='utf-8'))['events']
     events = []
     for area in rows('F_AREA_MST'):
         aid = area['uv60hgDW']
@@ -78,20 +75,25 @@ def main():
             continue
         # English master text also contains unused and JP-only areas. A
         # recovered Global event picture establishes the browsable campaign.
-        if not args.include_unidentified and aid not in originals:
+        if not include_unidentified and aid not in originals:
+            continue
+        if not include_unidentified and originals.get(aid, {}).get('archive_ready') is False:
             continue
         own_dungeons = dungeons[aid]
         own_missions = [mission for dungeon in own_dungeons for mission in by_dungeon[dungeon['U9iHsau3']]]
         modes = {row['gQR24kST'] for row in own_missions}
         name = (names[aid] if '12' in modes or '50' in modes else
                 originals.get(aid, {}).get('name') or names[aid])
-        candidates = archive.get(normal(name), []) or archive.get(normal(names[aid]), [])
+        alias = originals.get(aid, {}).get('archive_alias') or name
+        candidates = (archive.get(normal(alias), []) or archive.get(normal(name), []) or
+                      archive.get(normal(names[aid]), []))
         if not candidates:
             parent = re.sub(r'\s*[-:]\s*(?:Trial|Exploration|Challenge)\s*$', '', name, flags=re.I)
             candidates = archive.get(normal(parent), [])
         dated = [record for record in candidates if record['release']]
         record = min(dated, key=lambda row: row['release']) if dated else (candidates[0] if candidates else {})
-        release = record.get('release')
+        original_release = originals.get(aid, {}).get('release')
+        release = date.fromisoformat(original_release) if original_release else record.get('release')
         kind = record.get('type', '')
         collaboration = next((series for series in COLLABORATIONS if normal(series) in normal(kind + ' ' + name)), None)
         permanent = (name in ('Dark Visions', 'Clash of Wills') or
@@ -109,11 +111,12 @@ def main():
                  'missions': [row['qo3PECw6'] for row in own_missions],
                  'first_dungeon': own_dungeons[0]['U9iHsau3'],
                  'first_mission': by_dungeon[own_dungeons[0]['U9iHsau3']][0]['qo3PECw6'],
-                 'banner_title': 'File:Banner-' + banner + '.png',
+                 'banner_title': originals.get(aid, {}).get('banner_title') or 'File:Banner-' + banner + '.png',
                  'filename': originals.get(aid, {}).get('filename') or 'event_' + aid + '.png',
                  'source_page': originals.get(aid, {}).get('source_page') or
                      'https://exvius.fandom.com/wiki/' + record.get('link', name).replace(' ', '_'),
-                 'date_source': source['source'] if release else None}
+                 'date_source': ((originals[aid].get('release_source_page') or originals[aid].get('source_page'))
+                                 if original_release else source['source'] if release else None)}
         if modes == {'50'}:
             event['native_mode'] = 'tfa'
         elif '12' in modes and modes <= {'0', '12'}:
@@ -124,11 +127,24 @@ def main():
                          banner_title='File:Banner-' + title + '.png',
                          source_page=('https://exvius.fandom.com/wiki/Category:Clash_of_Wills' if title == 'Clash of Wills'
                                       else 'https://exvius.fandom.com/wiki/Dark_Visions_-_The_Advent_of_Chaos'))
+        for field in ('vortex_tab', 'vortex_category'):
+            if field in originals.get(aid, {}):
+                event[field] = originals[aid][field]
         events.append(event)
     events.sort(key=lambda row: (row['release'] or '', row['name'], int(row['area'])))
     document = {'version': 1, 'source_revision': source['revision'],
                 'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
                 'events': events}
+    return document
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--include-unidentified', action='store_true',
+                        help='Include unused/unidentified master entries for source recovery only')
+    args = parser.parse_args()
+    document = build_document(args.include_unidentified)
+    events = document['events']
     output = ROOT / 'source/server/event_archive.json'
     output.write_text(json.dumps(document, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     print('Indexed', len(events), 'original Global Vortex areas;', sum(bool(row['release']) for row in events), 'dated;',

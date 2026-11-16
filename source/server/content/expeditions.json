@@ -1,5 +1,7 @@
 {
   "source": "https://exvius.fandom.com/wiki/Expedition",
+  "tutorial_chain": ["1", "2", "3"],
+  "tutorial_provenance": "Original Global F_EXPEDITION_MST next IDs 1->2->3->0. The original top scene requires EXPEDITION_TUTORIALEND_SWITCH_ID after the introductory chain before displaying Refresh.",
   "policy": "Original expedition display rewards, relic quantities, durations and trust gains. Missing backend pool weights use uniform choices among the documented native item category. Local success grades: normal75%,great20%,amazing5%; XP1000 per hour. No claim of recovered backend roll weights.",
   "great_chance": 20,
   "amazing_chance": 5,
@@ -110,7 +112,7 @@
     {
       "id": "4",
       "points": 140,
-      "reward": "10:904000101:1:100:1:50,23:110003:10"
+      "reward": "10:904000101:1:100:1:50:0,23:110003:10"
     }
   ],
   "alternate_pot": "10:905000104:1:100:1"

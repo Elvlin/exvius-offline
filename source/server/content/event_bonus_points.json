@@ -1,0 +1,1691 @@
+{
+  "missions": {
+    "40000101": {
+      "event": "990004000",
+      "target": "400001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220119115223id_/https://exvius.fandom.com/wiki/End_of_Days",
+      "source_sha256": "ecf5d8187ced696f2f95de38a185e0316a3674704a0ee89dd12e7d038937bf83"
+    },
+    "40000102": {
+      "event": "990004000",
+      "target": "400001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220119115223id_/https://exvius.fandom.com/wiki/End_of_Days",
+      "source_sha256": "ecf5d8187ced696f2f95de38a185e0316a3674704a0ee89dd12e7d038937bf83"
+    },
+    "40000103": {
+      "event": "990004000",
+      "target": "400001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220119115223id_/https://exvius.fandom.com/wiki/End_of_Days",
+      "source_sha256": "ecf5d8187ced696f2f95de38a185e0316a3674704a0ee89dd12e7d038937bf83"
+    },
+    "40000104": {
+      "event": "990004000",
+      "target": "400001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220119115223id_/https://exvius.fandom.com/wiki/End_of_Days",
+      "source_sha256": "ecf5d8187ced696f2f95de38a185e0316a3674704a0ee89dd12e7d038937bf83"
+    },
+    "40000105": {
+      "event": "990004000",
+      "target": "400001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220119115223id_/https://exvius.fandom.com/wiki/End_of_Days",
+      "source_sha256": "ecf5d8187ced696f2f95de38a185e0316a3674704a0ee89dd12e7d038937bf83"
+    },
+    "10550101": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 300,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550102": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 350,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550103": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 475,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550104": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 550,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550105": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 600,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550106": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 700,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550107": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550108": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 950,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "10550109": {
+      "event": "990001055",
+      "target": "105501",
+      "points": 1200,
+      "source": "https://exvius.fandom.com/wiki/Brawler_From_Below_the_Depths",
+      "source_sha256": "966ab9924a221978688479ebdc5d80a37f18151ea9a08785469e3a1a6886e3a7"
+    },
+    "60000101": {
+      "event": "990006000",
+      "target": "600001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220128091331id_/https://exvius.fandom.com/wiki/Sacrifices",
+      "source_sha256": "b036e27821d6844cf100df18ca1b174d1a214a475c6cceb01fd32fd1a7d29f10"
+    },
+    "60000102": {
+      "event": "990006000",
+      "target": "600001",
+      "points": 1500,
+      "source": "https://web.archive.org/web/20220128091331id_/https://exvius.fandom.com/wiki/Sacrifices",
+      "source_sha256": "b036e27821d6844cf100df18ca1b174d1a214a475c6cceb01fd32fd1a7d29f10"
+    },
+    "60000103": {
+      "event": "990006000",
+      "target": "600001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20220128091331id_/https://exvius.fandom.com/wiki/Sacrifices",
+      "source_sha256": "b036e27821d6844cf100df18ca1b174d1a214a475c6cceb01fd32fd1a7d29f10"
+    },
+    "32490101": {
+      "event": "990003249",
+      "target": "324901",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220122234749id_/https://exvius.fandom.com/wiki/The_Promised_Day",
+      "source_sha256": "9d40cc1eb9eaef34886c45e48ad9a3ebcf200c906f3bdb244453239278496fc5"
+    },
+    "32490102": {
+      "event": "990003249",
+      "target": "324901",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20220122234749id_/https://exvius.fandom.com/wiki/The_Promised_Day",
+      "source_sha256": "9d40cc1eb9eaef34886c45e48ad9a3ebcf200c906f3bdb244453239278496fc5"
+    },
+    "32490103": {
+      "event": "990003249",
+      "target": "324901",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20220122234749id_/https://exvius.fandom.com/wiki/The_Promised_Day",
+      "source_sha256": "9d40cc1eb9eaef34886c45e48ad9a3ebcf200c906f3bdb244453239278496fc5"
+    },
+    "40100101": {
+      "event": "990004010",
+      "target": "401001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220810230918id_/https://exvius.fandom.com/wiki/Something_to_Protect",
+      "source_sha256": "f68106a240942230090b3428202e958e6f8e8e95b32cd649442c9e91d62d9ed6"
+    },
+    "40100102": {
+      "event": "990004010",
+      "target": "401001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220810230918id_/https://exvius.fandom.com/wiki/Something_to_Protect",
+      "source_sha256": "f68106a240942230090b3428202e958e6f8e8e95b32cd649442c9e91d62d9ed6"
+    },
+    "40100103": {
+      "event": "990004010",
+      "target": "401001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220810230918id_/https://exvius.fandom.com/wiki/Something_to_Protect",
+      "source_sha256": "f68106a240942230090b3428202e958e6f8e8e95b32cd649442c9e91d62d9ed6"
+    },
+    "40100104": {
+      "event": "990004010",
+      "target": "401001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220810230918id_/https://exvius.fandom.com/wiki/Something_to_Protect",
+      "source_sha256": "f68106a240942230090b3428202e958e6f8e8e95b32cd649442c9e91d62d9ed6"
+    },
+    "40100105": {
+      "event": "990004010",
+      "target": "401001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220810230918id_/https://exvius.fandom.com/wiki/Something_to_Protect",
+      "source_sha256": "f68106a240942230090b3428202e958e6f8e8e95b32cd649442c9e91d62d9ed6"
+    },
+    "10620101": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 300,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620102": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 350,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620103": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 475,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620104": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 550,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620105": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 600,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620106": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 700,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620107": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620108": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 950,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "10620109": {
+      "event": "990001062",
+      "target": "106201",
+      "points": 1200,
+      "source": "https://exvius.fandom.com/wiki/Gluttonous_Consumer_of_the_Cosmos",
+      "source_sha256": "ca89bb2931265f43fe370f3bbb4a121ed6e834960aabbc51d4ebed58377c0aa4"
+    },
+    "60100101": {
+      "event": "990006010",
+      "target": "601001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220123003654id_/https://exvius.fandom.com/wiki/Nashmeira%27s_Plea",
+      "source_sha256": "07f15802875cec30b0a7e991978f723d7f33caac6f02e4becc32e7ace57fa11c"
+    },
+    "60100102": {
+      "event": "990006010",
+      "target": "601001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20220123003654id_/https://exvius.fandom.com/wiki/Nashmeira%27s_Plea",
+      "source_sha256": "07f15802875cec30b0a7e991978f723d7f33caac6f02e4becc32e7ace57fa11c"
+    },
+    "60100103": {
+      "event": "990006010",
+      "target": "601001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20220123003654id_/https://exvius.fandom.com/wiki/Nashmeira%27s_Plea",
+      "source_sha256": "07f15802875cec30b0a7e991978f723d7f33caac6f02e4becc32e7ace57fa11c"
+    },
+    "40200101": {
+      "event": "990004020",
+      "target": "402001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20240916133757id_/https://exvius.fandom.com/wiki/Unbound_Offensive",
+      "source_sha256": "b6b9838b2cf2eb03ffc9c20293327aa2774b9c29bcee47955d70825ad97d77e2"
+    },
+    "40200102": {
+      "event": "990004020",
+      "target": "402001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20240916133757id_/https://exvius.fandom.com/wiki/Unbound_Offensive",
+      "source_sha256": "b6b9838b2cf2eb03ffc9c20293327aa2774b9c29bcee47955d70825ad97d77e2"
+    },
+    "40200103": {
+      "event": "990004020",
+      "target": "402001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20240916133757id_/https://exvius.fandom.com/wiki/Unbound_Offensive",
+      "source_sha256": "b6b9838b2cf2eb03ffc9c20293327aa2774b9c29bcee47955d70825ad97d77e2"
+    },
+    "40200104": {
+      "event": "990004020",
+      "target": "402001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20240916133757id_/https://exvius.fandom.com/wiki/Unbound_Offensive",
+      "source_sha256": "b6b9838b2cf2eb03ffc9c20293327aa2774b9c29bcee47955d70825ad97d77e2"
+    },
+    "40200105": {
+      "event": "990004020",
+      "target": "402001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20240916133757id_/https://exvius.fandom.com/wiki/Unbound_Offensive",
+      "source_sha256": "b6b9838b2cf2eb03ffc9c20293327aa2774b9c29bcee47955d70825ad97d77e2"
+    },
+    "40300101": {
+      "event": "990004030",
+      "target": "403001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20241003192248id_/https://exvius.fandom.com/wiki/The_Town_That_Never_Sleeps",
+      "source_sha256": "253a8f32ca8c57ed7cbfb70358907741adea728461e200188af5c7a11a445fa9"
+    },
+    "40300102": {
+      "event": "990004030",
+      "target": "403001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20241003192248id_/https://exvius.fandom.com/wiki/The_Town_That_Never_Sleeps",
+      "source_sha256": "253a8f32ca8c57ed7cbfb70358907741adea728461e200188af5c7a11a445fa9"
+    },
+    "40300103": {
+      "event": "990004030",
+      "target": "403001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20241003192248id_/https://exvius.fandom.com/wiki/The_Town_That_Never_Sleeps",
+      "source_sha256": "253a8f32ca8c57ed7cbfb70358907741adea728461e200188af5c7a11a445fa9"
+    },
+    "40300104": {
+      "event": "990004030",
+      "target": "403001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20241003192248id_/https://exvius.fandom.com/wiki/The_Town_That_Never_Sleeps",
+      "source_sha256": "253a8f32ca8c57ed7cbfb70358907741adea728461e200188af5c7a11a445fa9"
+    },
+    "40300105": {
+      "event": "990004030",
+      "target": "403001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20241003192248id_/https://exvius.fandom.com/wiki/The_Town_That_Never_Sleeps",
+      "source_sha256": "253a8f32ca8c57ed7cbfb70358907741adea728461e200188af5c7a11a445fa9"
+    },
+    "60200101": {
+      "event": "990006020",
+      "target": "602001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220122225848id_/https://exvius.fandom.com/wiki/Destiny%27s_Crossroads",
+      "source_sha256": "7ab4d929ac6bfdd77cc7301bae4604797af1739f2dc7331bdd2964b236cdedaf"
+    },
+    "60200102": {
+      "event": "990006020",
+      "target": "602001",
+      "points": 1500,
+      "source": "https://web.archive.org/web/20220122225848id_/https://exvius.fandom.com/wiki/Destiny%27s_Crossroads",
+      "source_sha256": "7ab4d929ac6bfdd77cc7301bae4604797af1739f2dc7331bdd2964b236cdedaf"
+    },
+    "60200103": {
+      "event": "990006020",
+      "target": "602001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20220122225848id_/https://exvius.fandom.com/wiki/Destiny%27s_Crossroads",
+      "source_sha256": "7ab4d929ac6bfdd77cc7301bae4604797af1739f2dc7331bdd2964b236cdedaf"
+    },
+    "40400101": {
+      "event": "990004040",
+      "target": "404001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20250117230202id_/https://exvius.fandom.com/wiki/Zozo",
+      "source_sha256": "78915b0c8aba8a4559c2f07d00d5a8ebf8880a639e8f74fb505690fe9b1c5183"
+    },
+    "40400102": {
+      "event": "990004040",
+      "target": "404001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20250117230202id_/https://exvius.fandom.com/wiki/Zozo",
+      "source_sha256": "78915b0c8aba8a4559c2f07d00d5a8ebf8880a639e8f74fb505690fe9b1c5183"
+    },
+    "40400103": {
+      "event": "990004040",
+      "target": "404001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20250117230202id_/https://exvius.fandom.com/wiki/Zozo",
+      "source_sha256": "78915b0c8aba8a4559c2f07d00d5a8ebf8880a639e8f74fb505690fe9b1c5183"
+    },
+    "40400104": {
+      "event": "990004040",
+      "target": "404001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20250117230202id_/https://exvius.fandom.com/wiki/Zozo",
+      "source_sha256": "78915b0c8aba8a4559c2f07d00d5a8ebf8880a639e8f74fb505690fe9b1c5183"
+    },
+    "40400105": {
+      "event": "990004040",
+      "target": "404001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20250117230202id_/https://exvius.fandom.com/wiki/Zozo",
+      "source_sha256": "78915b0c8aba8a4559c2f07d00d5a8ebf8880a639e8f74fb505690fe9b1c5183"
+    },
+    "40500101": {
+      "event": "990004050",
+      "target": "405001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220122092321id_/https://exvius.fandom.com/wiki/A_Journey_Filled_with_Love",
+      "source_sha256": "c4f354cdd45fa6307f5f5f8180e2da17a541b1ee47d80364d661c968930b19f9"
+    },
+    "40500102": {
+      "event": "990004050",
+      "target": "405001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220122092321id_/https://exvius.fandom.com/wiki/A_Journey_Filled_with_Love",
+      "source_sha256": "c4f354cdd45fa6307f5f5f8180e2da17a541b1ee47d80364d661c968930b19f9"
+    },
+    "40500103": {
+      "event": "990004050",
+      "target": "405001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220122092321id_/https://exvius.fandom.com/wiki/A_Journey_Filled_with_Love",
+      "source_sha256": "c4f354cdd45fa6307f5f5f8180e2da17a541b1ee47d80364d661c968930b19f9"
+    },
+    "40500104": {
+      "event": "990004050",
+      "target": "405001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220122092321id_/https://exvius.fandom.com/wiki/A_Journey_Filled_with_Love",
+      "source_sha256": "c4f354cdd45fa6307f5f5f8180e2da17a541b1ee47d80364d661c968930b19f9"
+    },
+    "40500105": {
+      "event": "990004050",
+      "target": "405001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220122092321id_/https://exvius.fandom.com/wiki/A_Journey_Filled_with_Love",
+      "source_sha256": "c4f354cdd45fa6307f5f5f8180e2da17a541b1ee47d80364d661c968930b19f9"
+    },
+    "10810101": {
+      "event": "990001081",
+      "target": "108101",
+      "points": 400,
+      "source": "https://exvius.fandom.com/wiki/Hallowed_Eve",
+      "source_sha256": "d6ef9588171518acb8738f5e60afc26f6618e7c319ee8838bca0ba185f1e976d"
+    },
+    "10810102": {
+      "event": "990001081",
+      "target": "108101",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Hallowed_Eve",
+      "source_sha256": "d6ef9588171518acb8738f5e60afc26f6618e7c319ee8838bca0ba185f1e976d"
+    },
+    "10810103": {
+      "event": "990001081",
+      "target": "108101",
+      "points": 1600,
+      "source": "https://exvius.fandom.com/wiki/Hallowed_Eve",
+      "source_sha256": "d6ef9588171518acb8738f5e60afc26f6618e7c319ee8838bca0ba185f1e976d"
+    },
+    "31430101": {
+      "event": "990003143",
+      "target": "314301",
+      "points": 100,
+      "source": "https://exvius.fandom.com/wiki/Dark_Castle",
+      "source_sha256": "43ad3ed9c4240c499a52abe29b66bfcf14a48a0f58456b54d4fa1655d3e10ac2"
+    },
+    "31430102": {
+      "event": "990003143",
+      "target": "314301",
+      "points": 400,
+      "source": "https://exvius.fandom.com/wiki/Dark_Castle",
+      "source_sha256": "43ad3ed9c4240c499a52abe29b66bfcf14a48a0f58456b54d4fa1655d3e10ac2"
+    },
+    "31430103": {
+      "event": "990003143",
+      "target": "314301",
+      "points": 1000,
+      "source": "https://exvius.fandom.com/wiki/Dark_Castle",
+      "source_sha256": "43ad3ed9c4240c499a52abe29b66bfcf14a48a0f58456b54d4fa1655d3e10ac2"
+    },
+    "40600101": {
+      "event": "990004060",
+      "target": "406001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220120150508id_/https://exvius.fandom.com/wiki/Journey_From_Besaid",
+      "source_sha256": "13e116ff2720b54632a1e0c6b903dc076968e8439ac685e58429193f537c48c9"
+    },
+    "40600102": {
+      "event": "990004060",
+      "target": "406001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220120150508id_/https://exvius.fandom.com/wiki/Journey_From_Besaid",
+      "source_sha256": "13e116ff2720b54632a1e0c6b903dc076968e8439ac685e58429193f537c48c9"
+    },
+    "40600103": {
+      "event": "990004060",
+      "target": "406001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220120150508id_/https://exvius.fandom.com/wiki/Journey_From_Besaid",
+      "source_sha256": "13e116ff2720b54632a1e0c6b903dc076968e8439ac685e58429193f537c48c9"
+    },
+    "40600104": {
+      "event": "990004060",
+      "target": "406001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220120150508id_/https://exvius.fandom.com/wiki/Journey_From_Besaid",
+      "source_sha256": "13e116ff2720b54632a1e0c6b903dc076968e8439ac685e58429193f537c48c9"
+    },
+    "40600105": {
+      "event": "990004060",
+      "target": "406001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220120150508id_/https://exvius.fandom.com/wiki/Journey_From_Besaid",
+      "source_sha256": "13e116ff2720b54632a1e0c6b903dc076968e8439ac685e58429193f537c48c9"
+    },
+    "10980101": {
+      "event": "990001098",
+      "target": "109801",
+      "points": 400,
+      "source": "https://exvius.fandom.com/wiki/Ochunenbaum",
+      "source_sha256": "e56dd681270554bb75ab8fb5535ed1a7e10b4efc271f6723ff0cb74a2c1859e5"
+    },
+    "10980102": {
+      "event": "990001098",
+      "target": "109801",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Ochunenbaum",
+      "source_sha256": "e56dd681270554bb75ab8fb5535ed1a7e10b4efc271f6723ff0cb74a2c1859e5"
+    },
+    "10980103": {
+      "event": "990001098",
+      "target": "109801",
+      "points": 1600,
+      "source": "https://exvius.fandom.com/wiki/Ochunenbaum",
+      "source_sha256": "e56dd681270554bb75ab8fb5535ed1a7e10b4efc271f6723ff0cb74a2c1859e5"
+    },
+    "40700101": {
+      "event": "990004070",
+      "target": "407001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220128022822id_/https://exvius.fandom.com/wiki/A_Destined_Duty",
+      "source_sha256": "cf5b827e09ba1d072d71b7c886157a68dfedf06e5c971d4f1f9ecc112ea303ae"
+    },
+    "40700102": {
+      "event": "990004070",
+      "target": "407001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220128022822id_/https://exvius.fandom.com/wiki/A_Destined_Duty",
+      "source_sha256": "cf5b827e09ba1d072d71b7c886157a68dfedf06e5c971d4f1f9ecc112ea303ae"
+    },
+    "40700103": {
+      "event": "990004070",
+      "target": "407001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220128022822id_/https://exvius.fandom.com/wiki/A_Destined_Duty",
+      "source_sha256": "cf5b827e09ba1d072d71b7c886157a68dfedf06e5c971d4f1f9ecc112ea303ae"
+    },
+    "40700104": {
+      "event": "990004070",
+      "target": "407001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220128022822id_/https://exvius.fandom.com/wiki/A_Destined_Duty",
+      "source_sha256": "cf5b827e09ba1d072d71b7c886157a68dfedf06e5c971d4f1f9ecc112ea303ae"
+    },
+    "40700105": {
+      "event": "990004070",
+      "target": "407001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220128022822id_/https://exvius.fandom.com/wiki/A_Destined_Duty",
+      "source_sha256": "cf5b827e09ba1d072d71b7c886157a68dfedf06e5c971d4f1f9ecc112ea303ae"
+    },
+    "10920101": {
+      "event": "990001092",
+      "target": "109201",
+      "points": 400,
+      "source": "https://exvius.fandom.com/wiki/The_Grrreat_Tiger_Spirit",
+      "source_sha256": "b0255fe13c75ec499a428007f148d8b3bcb6bf8c831d2e1b6d57f174665d09b2"
+    },
+    "10920102": {
+      "event": "990001092",
+      "target": "109201",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/The_Grrreat_Tiger_Spirit",
+      "source_sha256": "b0255fe13c75ec499a428007f148d8b3bcb6bf8c831d2e1b6d57f174665d09b2"
+    },
+    "10920103": {
+      "event": "990001092",
+      "target": "109201",
+      "points": 1600,
+      "source": "https://exvius.fandom.com/wiki/The_Grrreat_Tiger_Spirit",
+      "source_sha256": "b0255fe13c75ec499a428007f148d8b3bcb6bf8c831d2e1b6d57f174665d09b2"
+    },
+    "40800101": {
+      "event": "990004080",
+      "target": "408001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20250118001956id_/https://exvius.fandom.com/wiki/The_Last_Crystal",
+      "source_sha256": "6e99149da058e2a416e23d0846a2000a433456bdcabcfc313f1efaeccade1da0"
+    },
+    "40800102": {
+      "event": "990004080",
+      "target": "408001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20250118001956id_/https://exvius.fandom.com/wiki/The_Last_Crystal",
+      "source_sha256": "6e99149da058e2a416e23d0846a2000a433456bdcabcfc313f1efaeccade1da0"
+    },
+    "40800103": {
+      "event": "990004080",
+      "target": "408001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20250118001956id_/https://exvius.fandom.com/wiki/The_Last_Crystal",
+      "source_sha256": "6e99149da058e2a416e23d0846a2000a433456bdcabcfc313f1efaeccade1da0"
+    },
+    "40800104": {
+      "event": "990004080",
+      "target": "408001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20250118001956id_/https://exvius.fandom.com/wiki/The_Last_Crystal",
+      "source_sha256": "6e99149da058e2a416e23d0846a2000a433456bdcabcfc313f1efaeccade1da0"
+    },
+    "40800105": {
+      "event": "990004080",
+      "target": "408001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20250118001956id_/https://exvius.fandom.com/wiki/The_Last_Crystal",
+      "source_sha256": "6e99149da058e2a416e23d0846a2000a433456bdcabcfc313f1efaeccade1da0"
+    },
+    "41000101": {
+      "event": "990004100",
+      "target": "410001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220516200315id_/https://exvius.fandom.com/wiki/Balamb_Garden_in_Crisis",
+      "source_sha256": "d02d2befe10b73e966ca3f71391b74794ce0602002583bdd6293f07f15251a8f"
+    },
+    "41000102": {
+      "event": "990004100",
+      "target": "410001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220516200315id_/https://exvius.fandom.com/wiki/Balamb_Garden_in_Crisis",
+      "source_sha256": "d02d2befe10b73e966ca3f71391b74794ce0602002583bdd6293f07f15251a8f"
+    },
+    "41000103": {
+      "event": "990004100",
+      "target": "410001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220516200315id_/https://exvius.fandom.com/wiki/Balamb_Garden_in_Crisis",
+      "source_sha256": "d02d2befe10b73e966ca3f71391b74794ce0602002583bdd6293f07f15251a8f"
+    },
+    "41000104": {
+      "event": "990004100",
+      "target": "410001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220516200315id_/https://exvius.fandom.com/wiki/Balamb_Garden_in_Crisis",
+      "source_sha256": "d02d2befe10b73e966ca3f71391b74794ce0602002583bdd6293f07f15251a8f"
+    },
+    "41000105": {
+      "event": "990004100",
+      "target": "410001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220516200315id_/https://exvius.fandom.com/wiki/Balamb_Garden_in_Crisis",
+      "source_sha256": "d02d2befe10b73e966ca3f71391b74794ce0602002583bdd6293f07f15251a8f"
+    },
+    "41100101": {
+      "event": "990004110",
+      "target": "411001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220523032221id_/https://exvius.fandom.com/wiki/This_Opportunity",
+      "source_sha256": "008450da198510e17d8df273d36c2fbd8520a6e21db752b3d501f5d7120f9f23"
+    },
+    "41100102": {
+      "event": "990004110",
+      "target": "411001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220523032221id_/https://exvius.fandom.com/wiki/This_Opportunity",
+      "source_sha256": "008450da198510e17d8df273d36c2fbd8520a6e21db752b3d501f5d7120f9f23"
+    },
+    "41100103": {
+      "event": "990004110",
+      "target": "411001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220523032221id_/https://exvius.fandom.com/wiki/This_Opportunity",
+      "source_sha256": "008450da198510e17d8df273d36c2fbd8520a6e21db752b3d501f5d7120f9f23"
+    },
+    "41100104": {
+      "event": "990004110",
+      "target": "411001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220523032221id_/https://exvius.fandom.com/wiki/This_Opportunity",
+      "source_sha256": "008450da198510e17d8df273d36c2fbd8520a6e21db752b3d501f5d7120f9f23"
+    },
+    "41100105": {
+      "event": "990004110",
+      "target": "411001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220523032221id_/https://exvius.fandom.com/wiki/This_Opportunity",
+      "source_sha256": "008450da198510e17d8df273d36c2fbd8520a6e21db752b3d501f5d7120f9f23"
+    },
+    "41400101": {
+      "event": "990004140",
+      "target": "414001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20241010190337id_/https://exvius.fandom.com/wiki/The_Nightmare_of_Castle_Palamecia",
+      "source_sha256": "ad8a8f3355e242ca606418d5d8611096376492ef19d73e72a8ec694c5cf0c0c4"
+    },
+    "41400102": {
+      "event": "990004140",
+      "target": "414001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20241010190337id_/https://exvius.fandom.com/wiki/The_Nightmare_of_Castle_Palamecia",
+      "source_sha256": "ad8a8f3355e242ca606418d5d8611096376492ef19d73e72a8ec694c5cf0c0c4"
+    },
+    "41400103": {
+      "event": "990004140",
+      "target": "414001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20241010190337id_/https://exvius.fandom.com/wiki/The_Nightmare_of_Castle_Palamecia",
+      "source_sha256": "ad8a8f3355e242ca606418d5d8611096376492ef19d73e72a8ec694c5cf0c0c4"
+    },
+    "41400104": {
+      "event": "990004140",
+      "target": "414001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20241010190337id_/https://exvius.fandom.com/wiki/The_Nightmare_of_Castle_Palamecia",
+      "source_sha256": "ad8a8f3355e242ca606418d5d8611096376492ef19d73e72a8ec694c5cf0c0c4"
+    },
+    "41400105": {
+      "event": "990004140",
+      "target": "414001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20241010190337id_/https://exvius.fandom.com/wiki/The_Nightmare_of_Castle_Palamecia",
+      "source_sha256": "ad8a8f3355e242ca606418d5d8611096376492ef19d73e72a8ec694c5cf0c0c4"
+    },
+    "41500101": {
+      "event": "990004150",
+      "target": "415001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20220815013410id_/https://exvius.fandom.com/wiki/A_Trap_in_the_Lhusu_Mines",
+      "source_sha256": "18e372ebc0cf303f84af4664c5c21e1106edf0f55e022c32581e97c2bbcd660e"
+    },
+    "41500102": {
+      "event": "990004150",
+      "target": "415001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20220815013410id_/https://exvius.fandom.com/wiki/A_Trap_in_the_Lhusu_Mines",
+      "source_sha256": "18e372ebc0cf303f84af4664c5c21e1106edf0f55e022c32581e97c2bbcd660e"
+    },
+    "41500103": {
+      "event": "990004150",
+      "target": "415001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20220815013410id_/https://exvius.fandom.com/wiki/A_Trap_in_the_Lhusu_Mines",
+      "source_sha256": "18e372ebc0cf303f84af4664c5c21e1106edf0f55e022c32581e97c2bbcd660e"
+    },
+    "41500104": {
+      "event": "990004150",
+      "target": "415001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20220815013410id_/https://exvius.fandom.com/wiki/A_Trap_in_the_Lhusu_Mines",
+      "source_sha256": "18e372ebc0cf303f84af4664c5c21e1106edf0f55e022c32581e97c2bbcd660e"
+    },
+    "41500105": {
+      "event": "990004150",
+      "target": "415001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20220815013410id_/https://exvius.fandom.com/wiki/A_Trap_in_the_Lhusu_Mines",
+      "source_sha256": "18e372ebc0cf303f84af4664c5c21e1106edf0f55e022c32581e97c2bbcd660e"
+    },
+    "41800101": {
+      "event": "990004180",
+      "target": "418001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20221022102220id_/https://exvius.fandom.com/wiki/Passage_to_the_Feymarch",
+      "source_sha256": "8bd4a1027aa779ad4e5d9d2cb4668c10380c41b2a9c049620281ea17eb37b1f9"
+    },
+    "41800102": {
+      "event": "990004180",
+      "target": "418001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20221022102220id_/https://exvius.fandom.com/wiki/Passage_to_the_Feymarch",
+      "source_sha256": "8bd4a1027aa779ad4e5d9d2cb4668c10380c41b2a9c049620281ea17eb37b1f9"
+    },
+    "41800103": {
+      "event": "990004180",
+      "target": "418001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20221022102220id_/https://exvius.fandom.com/wiki/Passage_to_the_Feymarch",
+      "source_sha256": "8bd4a1027aa779ad4e5d9d2cb4668c10380c41b2a9c049620281ea17eb37b1f9"
+    },
+    "41800104": {
+      "event": "990004180",
+      "target": "418001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20221022102220id_/https://exvius.fandom.com/wiki/Passage_to_the_Feymarch",
+      "source_sha256": "8bd4a1027aa779ad4e5d9d2cb4668c10380c41b2a9c049620281ea17eb37b1f9"
+    },
+    "41800105": {
+      "event": "990004180",
+      "target": "418001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20221022102220id_/https://exvius.fandom.com/wiki/Passage_to_the_Feymarch",
+      "source_sha256": "8bd4a1027aa779ad4e5d9d2cb4668c10380c41b2a9c049620281ea17eb37b1f9"
+    },
+    "99100101": {
+      "event": "990009910",
+      "target": "991001",
+      "points": 400,
+      "source": "https://exvius.fandom.com/wiki/One_Cut_of_the_Undead",
+      "source_sha256": "882ebf4e44ccc1cfe52a16b753c2e08be223013aabd2b53c0fde5f654568b8de"
+    },
+    "99100102": {
+      "event": "990009910",
+      "target": "991001",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/One_Cut_of_the_Undead",
+      "source_sha256": "882ebf4e44ccc1cfe52a16b753c2e08be223013aabd2b53c0fde5f654568b8de"
+    },
+    "99100103": {
+      "event": "990009910",
+      "target": "991001",
+      "points": 1600,
+      "source": "https://exvius.fandom.com/wiki/One_Cut_of_the_Undead",
+      "source_sha256": "882ebf4e44ccc1cfe52a16b753c2e08be223013aabd2b53c0fde5f654568b8de"
+    },
+    "41900101": {
+      "event": "990004190",
+      "target": "419001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20221119210715id_/https://exvius.fandom.com/wiki/Viper_Manor_-_Where_Lies_the_Key_to_the_Past",
+      "source_sha256": "bdcb5b2a91cdbfcf9305ce3e708bb14954d2283178627f22cd60a726b9d206dd"
+    },
+    "41900201": {
+      "event": "990004190",
+      "target": "419001",
+      "points": 400,
+      "source": "https://web.archive.org/web/20221119210715id_/https://exvius.fandom.com/wiki/Viper_Manor_-_Where_Lies_the_Key_to_the_Past",
+      "source_sha256": "bdcb5b2a91cdbfcf9305ce3e708bb14954d2283178627f22cd60a726b9d206dd"
+    },
+    "41900301": {
+      "event": "990004190",
+      "target": "419001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20221119210715id_/https://exvius.fandom.com/wiki/Viper_Manor_-_Where_Lies_the_Key_to_the_Past",
+      "source_sha256": "bdcb5b2a91cdbfcf9305ce3e708bb14954d2283178627f22cd60a726b9d206dd"
+    },
+    "41900401": {
+      "event": "990004190",
+      "target": "419001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20221119210715id_/https://exvius.fandom.com/wiki/Viper_Manor_-_Where_Lies_the_Key_to_the_Past",
+      "source_sha256": "bdcb5b2a91cdbfcf9305ce3e708bb14954d2283178627f22cd60a726b9d206dd"
+    },
+    "41900501": {
+      "event": "990004190",
+      "target": "419001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20221119210715id_/https://exvius.fandom.com/wiki/Viper_Manor_-_Where_Lies_the_Key_to_the_Past",
+      "source_sha256": "bdcb5b2a91cdbfcf9305ce3e708bb14954d2283178627f22cd60a726b9d206dd"
+    },
+    "42000101": {
+      "event": "990004200",
+      "target": "420001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20260112005855id_/https://exvius.fandom.com/wiki/A_World_Ripped_Apart",
+      "source_sha256": "421bb73de74cce95ef824a345017088e26998e02aebf0ced3a16cf6e4d3fb827"
+    },
+    "42000102": {
+      "event": "990004200",
+      "target": "420001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20260112005855id_/https://exvius.fandom.com/wiki/A_World_Ripped_Apart",
+      "source_sha256": "421bb73de74cce95ef824a345017088e26998e02aebf0ced3a16cf6e4d3fb827"
+    },
+    "42000103": {
+      "event": "990004200",
+      "target": "420001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20260112005855id_/https://exvius.fandom.com/wiki/A_World_Ripped_Apart",
+      "source_sha256": "421bb73de74cce95ef824a345017088e26998e02aebf0ced3a16cf6e4d3fb827"
+    },
+    "42000104": {
+      "event": "990004200",
+      "target": "420001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20260112005855id_/https://exvius.fandom.com/wiki/A_World_Ripped_Apart",
+      "source_sha256": "421bb73de74cce95ef824a345017088e26998e02aebf0ced3a16cf6e4d3fb827"
+    },
+    "42000105": {
+      "event": "990004200",
+      "target": "420001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20260112005855id_/https://exvius.fandom.com/wiki/A_World_Ripped_Apart",
+      "source_sha256": "421bb73de74cce95ef824a345017088e26998e02aebf0ced3a16cf6e4d3fb827"
+    },
+    "99130101": {
+      "event": "990009913",
+      "target": "991301",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform_(2022)",
+      "source_sha256": "d460d8d4260475166116180b7082780462bf41d85aa8d22e10732a8eefe2c7a7"
+    },
+    "99130102": {
+      "event": "990009913",
+      "target": "991301",
+      "points": 2400,
+      "source": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform_(2022)",
+      "source_sha256": "d460d8d4260475166116180b7082780462bf41d85aa8d22e10732a8eefe2c7a7"
+    },
+    "99130103": {
+      "event": "990009913",
+      "target": "991301",
+      "points": 7000,
+      "source": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform_(2022)",
+      "source_sha256": "d460d8d4260475166116180b7082780462bf41d85aa8d22e10732a8eefe2c7a7"
+    },
+    "42100101": {
+      "event": "990004210",
+      "target": "421001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20260211050817id_/https://exvius.fandom.com/wiki/The_Second_Gate_-_The_Light_of_Babel",
+      "source_sha256": "933d634f786e780db4cd2ae1f627e3e3cdf12544d2cfc8a273014be4c5cf5dc5"
+    },
+    "42100102": {
+      "event": "990004210",
+      "target": "421001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20260211050817id_/https://exvius.fandom.com/wiki/The_Second_Gate_-_The_Light_of_Babel",
+      "source_sha256": "933d634f786e780db4cd2ae1f627e3e3cdf12544d2cfc8a273014be4c5cf5dc5"
+    },
+    "42100103": {
+      "event": "990004210",
+      "target": "421001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20260211050817id_/https://exvius.fandom.com/wiki/The_Second_Gate_-_The_Light_of_Babel",
+      "source_sha256": "933d634f786e780db4cd2ae1f627e3e3cdf12544d2cfc8a273014be4c5cf5dc5"
+    },
+    "42100104": {
+      "event": "990004210",
+      "target": "421001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20260211050817id_/https://exvius.fandom.com/wiki/The_Second_Gate_-_The_Light_of_Babel",
+      "source_sha256": "933d634f786e780db4cd2ae1f627e3e3cdf12544d2cfc8a273014be4c5cf5dc5"
+    },
+    "42100105": {
+      "event": "990004210",
+      "target": "421001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20260211050817id_/https://exvius.fandom.com/wiki/The_Second_Gate_-_The_Light_of_Babel",
+      "source_sha256": "933d634f786e780db4cd2ae1f627e3e3cdf12544d2cfc8a273014be4c5cf5dc5"
+    },
+    "99200101": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99200102": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 2400,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99200103": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 7000,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99200104": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99200105": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 2400,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99200106": {
+      "event": "990009920",
+      "target": "992001",
+      "points": 7000,
+      "source": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+      "source_sha256": "083b9691c44896e5c0719bd2ce4840596567526db30436313bf06dc84165af14"
+    },
+    "99270101": {
+      "event": "990009927",
+      "target": "992701",
+      "points": 150,
+      "source": "https://exvius.fandom.com/wiki/Hoppy_New_Year",
+      "source_sha256": "dfd7be86ed57986f533dfa4f7b849060a78b478d32a103ab63e32c5127d2e36c"
+    },
+    "99270102": {
+      "event": "990009927",
+      "target": "992701",
+      "points": 900,
+      "source": "https://exvius.fandom.com/wiki/Hoppy_New_Year",
+      "source_sha256": "dfd7be86ed57986f533dfa4f7b849060a78b478d32a103ab63e32c5127d2e36c"
+    },
+    "99270103": {
+      "event": "990009927",
+      "target": "992701",
+      "points": 1750,
+      "source": "https://exvius.fandom.com/wiki/Hoppy_New_Year",
+      "source_sha256": "dfd7be86ed57986f533dfa4f7b849060a78b478d32a103ab63e32c5127d2e36c"
+    },
+    "42310101": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310102": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310103": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310104": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310105": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310106": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310107": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310108": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310109": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310110": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310111": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310112": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310113": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42310114": {
+      "event": "990004231",
+      "target": "423101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/The_Sealed_Crystals",
+      "source_sha256": "d13e5e35945f4828c8cfbaa1842850f51f8feb34035d4ec3ea001d1222cc4816"
+    },
+    "42700101": {
+      "event": "990004270",
+      "target": "427001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20230314204200id_/https://exvius.fandom.com/wiki/Rise_of_the_Zilart",
+      "source_sha256": "dfceb0f05267e925742e286616edd301a7b215ba2c21991af9655425e3dac0c2"
+    },
+    "42700102": {
+      "event": "990004270",
+      "target": "427001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20230314204200id_/https://exvius.fandom.com/wiki/Rise_of_the_Zilart",
+      "source_sha256": "dfceb0f05267e925742e286616edd301a7b215ba2c21991af9655425e3dac0c2"
+    },
+    "42700103": {
+      "event": "990004270",
+      "target": "427001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20230314204200id_/https://exvius.fandom.com/wiki/Rise_of_the_Zilart",
+      "source_sha256": "dfceb0f05267e925742e286616edd301a7b215ba2c21991af9655425e3dac0c2"
+    },
+    "42700104": {
+      "event": "990004270",
+      "target": "427001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20230314204200id_/https://exvius.fandom.com/wiki/Rise_of_the_Zilart",
+      "source_sha256": "dfceb0f05267e925742e286616edd301a7b215ba2c21991af9655425e3dac0c2"
+    },
+    "42700105": {
+      "event": "990004270",
+      "target": "427001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20230314204200id_/https://exvius.fandom.com/wiki/Rise_of_the_Zilart",
+      "source_sha256": "dfceb0f05267e925742e286616edd301a7b215ba2c21991af9655425e3dac0c2"
+    },
+    "42400101": {
+      "event": "990004240",
+      "target": "424001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20231115225730id_/https://exvius.fandom.com/wiki/Aldore_Tower_Investigation",
+      "source_sha256": "5a1f3c097c5141d4be6282a7a4c1d9e011ab7e6582b1089c6c8262bd19eebac3"
+    },
+    "42400102": {
+      "event": "990004240",
+      "target": "424001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20231115225730id_/https://exvius.fandom.com/wiki/Aldore_Tower_Investigation",
+      "source_sha256": "5a1f3c097c5141d4be6282a7a4c1d9e011ab7e6582b1089c6c8262bd19eebac3"
+    },
+    "42400103": {
+      "event": "990004240",
+      "target": "424001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20231115225730id_/https://exvius.fandom.com/wiki/Aldore_Tower_Investigation",
+      "source_sha256": "5a1f3c097c5141d4be6282a7a4c1d9e011ab7e6582b1089c6c8262bd19eebac3"
+    },
+    "42400104": {
+      "event": "990004240",
+      "target": "424001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20231115225730id_/https://exvius.fandom.com/wiki/Aldore_Tower_Investigation",
+      "source_sha256": "5a1f3c097c5141d4be6282a7a4c1d9e011ab7e6582b1089c6c8262bd19eebac3"
+    },
+    "42400105": {
+      "event": "990004240",
+      "target": "424001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20231115225730id_/https://exvius.fandom.com/wiki/Aldore_Tower_Investigation",
+      "source_sha256": "5a1f3c097c5141d4be6282a7a4c1d9e011ab7e6582b1089c6c8262bd19eebac3"
+    },
+    "42410101": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410102": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410103": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410104": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410105": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410106": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410107": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410108": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410109": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410110": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410111": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410112": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410113": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "42410114": {
+      "event": "990004241",
+      "target": "424101",
+      "points": 3500,
+      "source": "https://exvius.fandom.com/wiki/Guardian's_Barrel_EX",
+      "source_sha256": "8377b847f386ea3ed35894a600f66da39b09ce50e18c3e2ae82ce83dbf857602"
+    },
+    "63700101": {
+      "event": "990006370",
+      "target": "637001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20240909081926id_/https://exvius.fandom.com/wiki/The_Power_of_Destruction",
+      "source_sha256": "d3b6f860252da497a704d612e9beccbf2916986aa3cb804bc9b134e2f79b1a68"
+    },
+    "63700102": {
+      "event": "990006370",
+      "target": "637001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20240909081926id_/https://exvius.fandom.com/wiki/The_Power_of_Destruction",
+      "source_sha256": "d3b6f860252da497a704d612e9beccbf2916986aa3cb804bc9b134e2f79b1a68"
+    },
+    "63700103": {
+      "event": "990006370",
+      "target": "637001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20240909081926id_/https://exvius.fandom.com/wiki/The_Power_of_Destruction",
+      "source_sha256": "d3b6f860252da497a704d612e9beccbf2916986aa3cb804bc9b134e2f79b1a68"
+    },
+    "62200101": {
+      "event": "990006220",
+      "target": "622001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20250408183020id_/https://exvius.fandom.com/wiki/The_Hunted_S_Cells",
+      "source_sha256": "54ab6949ba6e700cd3a8a618881d3dd4b0d676d0aaada47ac0cec65e521a91a9"
+    },
+    "62200102": {
+      "event": "990006220",
+      "target": "622001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20250408183020id_/https://exvius.fandom.com/wiki/The_Hunted_S_Cells",
+      "source_sha256": "54ab6949ba6e700cd3a8a618881d3dd4b0d676d0aaada47ac0cec65e521a91a9"
+    },
+    "62200103": {
+      "event": "990006220",
+      "target": "622001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20250408183020id_/https://exvius.fandom.com/wiki/The_Hunted_S_Cells",
+      "source_sha256": "54ab6949ba6e700cd3a8a618881d3dd4b0d676d0aaada47ac0cec65e521a91a9"
+    },
+    "42800101": {
+      "event": "990004280",
+      "target": "428001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20230808092050id_/https://exvius.fandom.com/wiki/The_Unsung_Epic",
+      "source_sha256": "c6dcb446483f5ad1f76e968cc4ec453d942221b34a094ed3ea4c3688c7124a85"
+    },
+    "42800102": {
+      "event": "990004280",
+      "target": "428001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20230808092050id_/https://exvius.fandom.com/wiki/The_Unsung_Epic",
+      "source_sha256": "c6dcb446483f5ad1f76e968cc4ec453d942221b34a094ed3ea4c3688c7124a85"
+    },
+    "42800103": {
+      "event": "990004280",
+      "target": "428001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20230808092050id_/https://exvius.fandom.com/wiki/The_Unsung_Epic",
+      "source_sha256": "c6dcb446483f5ad1f76e968cc4ec453d942221b34a094ed3ea4c3688c7124a85"
+    },
+    "42800104": {
+      "event": "990004280",
+      "target": "428001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20230808092050id_/https://exvius.fandom.com/wiki/The_Unsung_Epic",
+      "source_sha256": "c6dcb446483f5ad1f76e968cc4ec453d942221b34a094ed3ea4c3688c7124a85"
+    },
+    "42800105": {
+      "event": "990004280",
+      "target": "428001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20230808092050id_/https://exvius.fandom.com/wiki/The_Unsung_Epic",
+      "source_sha256": "c6dcb446483f5ad1f76e968cc4ec453d942221b34a094ed3ea4c3688c7124a85"
+    },
+    "62300101": {
+      "event": "990006230",
+      "target": "623001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20260204022415id_/https://exvius.fandom.com/wiki/The_Grudge-Filled_Ruins",
+      "source_sha256": "bcc1de122f78c8f3ddc78e3a8eeed5818658a31eac1b64ac62f3d2c89d7d345e"
+    },
+    "62300102": {
+      "event": "990006230",
+      "target": "623001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20260204022415id_/https://exvius.fandom.com/wiki/The_Grudge-Filled_Ruins",
+      "source_sha256": "bcc1de122f78c8f3ddc78e3a8eeed5818658a31eac1b64ac62f3d2c89d7d345e"
+    },
+    "62300103": {
+      "event": "990006230",
+      "target": "623001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20260204022415id_/https://exvius.fandom.com/wiki/The_Grudge-Filled_Ruins",
+      "source_sha256": "bcc1de122f78c8f3ddc78e3a8eeed5818658a31eac1b64ac62f3d2c89d7d345e"
+    },
+    "43100101": {
+      "event": "990004310",
+      "target": "431001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20241003103255id_/https://exvius.fandom.com/wiki/Operation_Breakthrough",
+      "source_sha256": "12532854c039279b1e0d9155b6653e6d25cc3ce401c09a782f5a48cd1e60a6e2"
+    },
+    "43100102": {
+      "event": "990004310",
+      "target": "431001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20241003103255id_/https://exvius.fandom.com/wiki/Operation_Breakthrough",
+      "source_sha256": "12532854c039279b1e0d9155b6653e6d25cc3ce401c09a782f5a48cd1e60a6e2"
+    },
+    "43100103": {
+      "event": "990004310",
+      "target": "431001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20241003103255id_/https://exvius.fandom.com/wiki/Operation_Breakthrough",
+      "source_sha256": "12532854c039279b1e0d9155b6653e6d25cc3ce401c09a782f5a48cd1e60a6e2"
+    },
+    "43100104": {
+      "event": "990004310",
+      "target": "431001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20241003103255id_/https://exvius.fandom.com/wiki/Operation_Breakthrough",
+      "source_sha256": "12532854c039279b1e0d9155b6653e6d25cc3ce401c09a782f5a48cd1e60a6e2"
+    },
+    "43100105": {
+      "event": "990004310",
+      "target": "431001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20241003103255id_/https://exvius.fandom.com/wiki/Operation_Breakthrough",
+      "source_sha256": "12532854c039279b1e0d9155b6653e6d25cc3ce401c09a782f5a48cd1e60a6e2"
+    },
+    "62400101": {
+      "event": "990006240",
+      "target": "624001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20251114104348id_/https://exvius.fandom.com/wiki/A_Fog-Laden_Foray",
+      "source_sha256": "7e1bd62a46a2de8843efb912749f15a1d02ceaad2735f04024c6abd790f886dc"
+    },
+    "62400102": {
+      "event": "990006240",
+      "target": "624001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20251114104348id_/https://exvius.fandom.com/wiki/A_Fog-Laden_Foray",
+      "source_sha256": "7e1bd62a46a2de8843efb912749f15a1d02ceaad2735f04024c6abd790f886dc"
+    },
+    "62400103": {
+      "event": "990006240",
+      "target": "624001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20251114104348id_/https://exvius.fandom.com/wiki/A_Fog-Laden_Foray",
+      "source_sha256": "7e1bd62a46a2de8843efb912749f15a1d02ceaad2735f04024c6abd790f886dc"
+    },
+    "43200101": {
+      "event": "990004320",
+      "target": "432001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20251115220333id_/https://exvius.fandom.com/wiki/To_Omega%27s_End_We_Sail",
+      "source_sha256": "64c78be706d4b137392f28e6d0d99aa83770cb8a1b796d902268c2c0d49467b3"
+    },
+    "43200102": {
+      "event": "990004320",
+      "target": "432001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20251115220333id_/https://exvius.fandom.com/wiki/To_Omega%27s_End_We_Sail",
+      "source_sha256": "64c78be706d4b137392f28e6d0d99aa83770cb8a1b796d902268c2c0d49467b3"
+    },
+    "43200103": {
+      "event": "990004320",
+      "target": "432001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20251115220333id_/https://exvius.fandom.com/wiki/To_Omega%27s_End_We_Sail",
+      "source_sha256": "64c78be706d4b137392f28e6d0d99aa83770cb8a1b796d902268c2c0d49467b3"
+    },
+    "43200104": {
+      "event": "990004320",
+      "target": "432001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20251115220333id_/https://exvius.fandom.com/wiki/To_Omega%27s_End_We_Sail",
+      "source_sha256": "64c78be706d4b137392f28e6d0d99aa83770cb8a1b796d902268c2c0d49467b3"
+    },
+    "43200105": {
+      "event": "990004320",
+      "target": "432001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20251115220333id_/https://exvius.fandom.com/wiki/To_Omega%27s_End_We_Sail",
+      "source_sha256": "64c78be706d4b137392f28e6d0d99aa83770cb8a1b796d902268c2c0d49467b3"
+    },
+    "62600101": {
+      "event": "990006260",
+      "target": "626001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20231010113450id_/https://exvius.fandom.com/wiki/The_Sealed_Volcano",
+      "source_sha256": "708ee1ac75d0525d4ff5b42190b4b73c667bd58cf49d29fde42c0cfc515db69a"
+    },
+    "62600102": {
+      "event": "990006260",
+      "target": "626001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20231010113450id_/https://exvius.fandom.com/wiki/The_Sealed_Volcano",
+      "source_sha256": "708ee1ac75d0525d4ff5b42190b4b73c667bd58cf49d29fde42c0cfc515db69a"
+    },
+    "62600103": {
+      "event": "990006260",
+      "target": "626001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20231010113450id_/https://exvius.fandom.com/wiki/The_Sealed_Volcano",
+      "source_sha256": "708ee1ac75d0525d4ff5b42190b4b73c667bd58cf49d29fde42c0cfc515db69a"
+    },
+    "99410101": {
+      "event": "990009941",
+      "target": "994101",
+      "points": 100,
+      "source": "https://exvius.fandom.com/wiki/Influence_of_Deep",
+      "source_sha256": "70bbbdd4c111d70adf5dee0f831631c77a741fcee15b89508c525555024fdafd"
+    },
+    "99410102": {
+      "event": "990009941",
+      "target": "994101",
+      "points": 300,
+      "source": "https://exvius.fandom.com/wiki/Influence_of_Deep",
+      "source_sha256": "70bbbdd4c111d70adf5dee0f831631c77a741fcee15b89508c525555024fdafd"
+    },
+    "99410103": {
+      "event": "990009941",
+      "target": "994101",
+      "points": 600,
+      "source": "https://exvius.fandom.com/wiki/Influence_of_Deep",
+      "source_sha256": "70bbbdd4c111d70adf5dee0f831631c77a741fcee15b89508c525555024fdafd"
+    },
+    "99410104": {
+      "event": "990009941",
+      "target": "994101",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Influence_of_Deep",
+      "source_sha256": "70bbbdd4c111d70adf5dee0f831631c77a741fcee15b89508c525555024fdafd"
+    },
+    "99410105": {
+      "event": "990009941",
+      "target": "994101",
+      "points": 1000,
+      "source": "https://exvius.fandom.com/wiki/Influence_of_Deep",
+      "source_sha256": "70bbbdd4c111d70adf5dee0f831631c77a741fcee15b89508c525555024fdafd"
+    },
+    "62900101": {
+      "event": "990006290",
+      "target": "629001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20250118001734id_/https://exvius.fandom.com/wiki/Heart_of_Vearn_Palace",
+      "source_sha256": "d483e50b15d675a5943a0169abdbf044cfde93183db05000d9f113702b38463c"
+    },
+    "62900102": {
+      "event": "990006290",
+      "target": "629001",
+      "points": 2400,
+      "source": "https://web.archive.org/web/20250118001734id_/https://exvius.fandom.com/wiki/Heart_of_Vearn_Palace",
+      "source_sha256": "d483e50b15d675a5943a0169abdbf044cfde93183db05000d9f113702b38463c"
+    },
+    "62900103": {
+      "event": "990006290",
+      "target": "629001",
+      "points": 7000,
+      "source": "https://web.archive.org/web/20250118001734id_/https://exvius.fandom.com/wiki/Heart_of_Vearn_Palace",
+      "source_sha256": "d483e50b15d675a5943a0169abdbf044cfde93183db05000d9f113702b38463c"
+    },
+    "43700101": {
+      "event": "990004370",
+      "target": "437001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20250118085306id_/https://exvius.fandom.com/wiki/Checkmate!",
+      "source_sha256": "d61c5244abea9d6baea25bdd3769c084f43a001fa435a2286af6db8d6bc258eb"
+    },
+    "43700102": {
+      "event": "990004370",
+      "target": "437001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20250118085306id_/https://exvius.fandom.com/wiki/Checkmate!",
+      "source_sha256": "d61c5244abea9d6baea25bdd3769c084f43a001fa435a2286af6db8d6bc258eb"
+    },
+    "43700103": {
+      "event": "990004370",
+      "target": "437001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20250118085306id_/https://exvius.fandom.com/wiki/Checkmate!",
+      "source_sha256": "d61c5244abea9d6baea25bdd3769c084f43a001fa435a2286af6db8d6bc258eb"
+    },
+    "43700104": {
+      "event": "990004370",
+      "target": "437001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20250118085306id_/https://exvius.fandom.com/wiki/Checkmate!",
+      "source_sha256": "d61c5244abea9d6baea25bdd3769c084f43a001fa435a2286af6db8d6bc258eb"
+    },
+    "43700105": {
+      "event": "990004370",
+      "target": "437001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20250118085306id_/https://exvius.fandom.com/wiki/Checkmate!",
+      "source_sha256": "d61c5244abea9d6baea25bdd3769c084f43a001fa435a2286af6db8d6bc258eb"
+    },
+    "63000101": {
+      "event": "990006300",
+      "target": "630001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20240310005455id_/https://exvius.fandom.com/wiki/On_the_Hunt_for_Treasure",
+      "source_sha256": "30b5306effa0192c461dc6890f49ad50d1299d6154e8047b593ed994df1a16ab"
+    },
+    "63000102": {
+      "event": "990006300",
+      "target": "630001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20240310005455id_/https://exvius.fandom.com/wiki/On_the_Hunt_for_Treasure",
+      "source_sha256": "30b5306effa0192c461dc6890f49ad50d1299d6154e8047b593ed994df1a16ab"
+    },
+    "63000103": {
+      "event": "990006300",
+      "target": "630001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20240310005455id_/https://exvius.fandom.com/wiki/On_the_Hunt_for_Treasure",
+      "source_sha256": "30b5306effa0192c461dc6890f49ad50d1299d6154e8047b593ed994df1a16ab"
+    },
+    "63000104": {
+      "event": "990006300",
+      "target": "630001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20240310005455id_/https://exvius.fandom.com/wiki/On_the_Hunt_for_Treasure",
+      "source_sha256": "30b5306effa0192c461dc6890f49ad50d1299d6154e8047b593ed994df1a16ab"
+    },
+    "63000105": {
+      "event": "990006300",
+      "target": "630001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20240310005455id_/https://exvius.fandom.com/wiki/On_the_Hunt_for_Treasure",
+      "source_sha256": "30b5306effa0192c461dc6890f49ad50d1299d6154e8047b593ed994df1a16ab"
+    },
+    "44500101": {
+      "event": "990004450",
+      "target": "445001",
+      "points": 100,
+      "source": "https://exvius.fandom.com/wiki/Battle_on_Blazing_Sands",
+      "source_sha256": "f7e1fce9c9af3f819f8ecb02f201e0a7733abaea59bc7fad5d6134bb95bd3e12"
+    },
+    "44500102": {
+      "event": "990004450",
+      "target": "445001",
+      "points": 300,
+      "source": "https://exvius.fandom.com/wiki/Battle_on_Blazing_Sands",
+      "source_sha256": "f7e1fce9c9af3f819f8ecb02f201e0a7733abaea59bc7fad5d6134bb95bd3e12"
+    },
+    "44500103": {
+      "event": "990004450",
+      "target": "445001",
+      "points": 600,
+      "source": "https://exvius.fandom.com/wiki/Battle_on_Blazing_Sands",
+      "source_sha256": "f7e1fce9c9af3f819f8ecb02f201e0a7733abaea59bc7fad5d6134bb95bd3e12"
+    },
+    "44500104": {
+      "event": "990004450",
+      "target": "445001",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/Battle_on_Blazing_Sands",
+      "source_sha256": "f7e1fce9c9af3f819f8ecb02f201e0a7733abaea59bc7fad5d6134bb95bd3e12"
+    },
+    "44600101": {
+      "event": "990004460",
+      "target": "446001",
+      "points": 100,
+      "source": "https://exvius.fandom.com/wiki/A_Summoner's_Path",
+      "source_sha256": "27948699b524ec7fa5500c9381285d85ea0dfa216e9f57619ebd2b244ad43a58"
+    },
+    "44600102": {
+      "event": "990004460",
+      "target": "446001",
+      "points": 300,
+      "source": "https://exvius.fandom.com/wiki/A_Summoner's_Path",
+      "source_sha256": "27948699b524ec7fa5500c9381285d85ea0dfa216e9f57619ebd2b244ad43a58"
+    },
+    "44600103": {
+      "event": "990004460",
+      "target": "446001",
+      "points": 600,
+      "source": "https://exvius.fandom.com/wiki/A_Summoner's_Path",
+      "source_sha256": "27948699b524ec7fa5500c9381285d85ea0dfa216e9f57619ebd2b244ad43a58"
+    },
+    "44600104": {
+      "event": "990004460",
+      "target": "446001",
+      "points": 800,
+      "source": "https://exvius.fandom.com/wiki/A_Summoner's_Path",
+      "source_sha256": "27948699b524ec7fa5500c9381285d85ea0dfa216e9f57619ebd2b244ad43a58"
+    },
+    "45300101": {
+      "event": "990004530",
+      "target": "453001",
+      "points": 100,
+      "source": "https://web.archive.org/web/20240808223021id_/https://exvius.fandom.com/wiki/Path_of_Vengeance",
+      "source_sha256": "5242dc0fa226b8d4d2464b9f0ca095477e5e962f3a3f9362cc5cae040521922b"
+    },
+    "45300102": {
+      "event": "990004530",
+      "target": "453001",
+      "points": 300,
+      "source": "https://web.archive.org/web/20240808223021id_/https://exvius.fandom.com/wiki/Path_of_Vengeance",
+      "source_sha256": "5242dc0fa226b8d4d2464b9f0ca095477e5e962f3a3f9362cc5cae040521922b"
+    },
+    "45300103": {
+      "event": "990004530",
+      "target": "453001",
+      "points": 600,
+      "source": "https://web.archive.org/web/20240808223021id_/https://exvius.fandom.com/wiki/Path_of_Vengeance",
+      "source_sha256": "5242dc0fa226b8d4d2464b9f0ca095477e5e962f3a3f9362cc5cae040521922b"
+    },
+    "45300104": {
+      "event": "990004530",
+      "target": "453001",
+      "points": 800,
+      "source": "https://web.archive.org/web/20240808223021id_/https://exvius.fandom.com/wiki/Path_of_Vengeance",
+      "source_sha256": "5242dc0fa226b8d4d2464b9f0ca095477e5e962f3a3f9362cc5cae040521922b"
+    },
+    "45300105": {
+      "event": "990004530",
+      "target": "453001",
+      "points": 1000,
+      "source": "https://web.archive.org/web/20240808223021id_/https://exvius.fandom.com/wiki/Path_of_Vengeance",
+      "source_sha256": "5242dc0fa226b8d4d2464b9f0ca095477e5e962f3a3f9362cc5cae040521922b"
+    }
+  }
+}

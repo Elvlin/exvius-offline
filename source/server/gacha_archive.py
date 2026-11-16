@@ -1,6 +1,7 @@
 """Browse the existing summon catalogue by story season and collaboration."""
 from collections import defaultdict
 from datetime import date
+from functools import lru_cache
 import json
 from pathlib import Path
 
@@ -14,9 +15,9 @@ COLLABORATIONS = (
     'Legend of Mana', 'NieR', 'Octopath Traveler', 'Secret of Mana', 'Star Ocean',
     'Tomb Raider', 'Trials of Mana', 'Valkyrie Profile', 'WOTV', 'Xenogears', 'Katy Perry',
 )
-GROUPS = (('standard', 'Standard'), ('season1', 'Season 1'), ('season2', 'Season 2'),
-          ('season3', 'Season 3'), ('season4', 'Season 4'), ('collaborations', 'Collab'))
-# Always-available summons, shown with every group (as on the live game).
+GROUPS = (('standard', 'Permanent'), ('season1', 'Season 1'), ('season2', 'Season 2'),
+          ('season3', 'Season 3'), ('season4', 'Season 4'), ('collaborations', 'Collab'), ('other', 'Other'))
+# Always-available summons belong only to Permanent.
 PERMANENT_NAMES = {
     'Standard Summon', 'Rare Summon', 'Premium 10+1 Summon', '5★ Guaranteed 10+1 Summon',
     'NV Guaranteed EX Summon B',
@@ -79,11 +80,20 @@ def _standard_families():
 
 def permanent(banner, families=None):
     families = _standard_families() if families is None else families
-    return (str(banner['id']) in families or banner.get('name') in PERMANENT_NAMES
+    return (bool(banner.get('permanent')) or str(banner['id']) in families or banner.get('name') in PERMANENT_NAMES
             or banner.get('type') == 'friend')
 
 
+@lru_cache(maxsize=1)
+def _historical_summons():
+    path = Path(__file__).with_name('content').joinpath('menu_timeline.json')
+    return json.loads(path.read_text(encoding='utf-8')).get('summons', {})
+
+
 def _collaboration(banner):
+    recorded = _historical_summons().get(str(banner['id']), {}).get('collaboration')
+    if recorded:
+        return recorded
     search = banner.get('name', '') + ' ' + str((banner.get('art') or {}).get('banner', ''))
     return next((name for name in COLLABORATIONS if name.lower() in search.lower()), None)
 
@@ -91,6 +101,8 @@ def _collaboration(banner):
 def _released(banner):
     try:
         release = (banner.get('community') or {}).get('release') or banner['release']
+        if str(release) in {'2017-11', '2020-01', '2021-11'}:
+            return None
         parts = list(map(int, str(release).split('-'))) + [1]
         return date(*parts[:3])
     except (KeyError, TypeError, ValueError):
@@ -98,12 +110,9 @@ def _released(banner):
 
 
 def catalogue(banners):
-    """Every non-permanent banner belongs to exactly one group; the permanent summons
-    appear with every group. Uncertain dates stay under Standard. Collab banners are
-    ordered by series, and seasons by release date."""
+    """Browse historical run dates, with separate permanent and collaboration views."""
     families = _standard_families()
     members = defaultdict(list)
-    shared = []
     seen = set()
     aliases = {str(alias) for banner in banners for alias in banner.get('alias_ids', [])
                if str(alias) != str(banner['id'])}
@@ -126,26 +135,24 @@ def catalogue(banners):
         if identity in seen:
             continue
         seen.add(identity)
+        released = _released(banner)
         if permanent(banner, families):
-            shared.append(bid)
+            members['standard'].append(('', released or date.min, bid))
             continue
         collab = _collaboration(banner)
-        released = _released(banner)
         if collab:
             members['collaborations'].append((collab, released or date.min, bid))
-        elif banner.get('season'):
-            members[banner['season']].append(('', released or date.min, bid))
-        elif released:
+        if released:
             season = 1 + sum(released >= start for start in STORY_STARTS)
             members['season' + str(season)].append(('', released, bid))
-        else:
-            members['standard'].append(('', date.min, bid))
+        elif not collab:
+            members['other'].append(('', date.min, bid))
     by_id = {str(banner['id']): banner for banner in banners}
     from ffbe_gacha import gacha_type_code
     groups = []
     for key, label in GROUPS:
-        ordered = [bid for _, _, bid in sorted(members[key], key=lambda row: (row[0], row[1]))]
-        ids = shared + ordered
+        ordered = [bid for _, _, bid in sorted(members[key], key=lambda row: row[1])]
+        ids = ordered
         # Open the group on its own lineup: Limited Time when it has limited banners.
         limited = any(by_id[bid].get('tab') == 'limited' or
                       gacha_type_code(by_id[bid]) in LIMITED_CODES for bid in ids)
@@ -160,8 +167,11 @@ def selected_group(player, groups):
 
 
 def visible_banners(player, banners):
-    ids = selected_group(player, catalogue(banners))['ids']
+    ids = list(selected_group(player, catalogue(banners))['ids'])
     by_id = {str(banner['id']): banner for banner in banners}
+    target = getattr(player, '_raid_summon_target', '') if player else ''
+    if target in by_id and target not in ids:
+        ids.append(target)
     # GL9 sorts schedule rows by descending display order. Publish the archive's
     # series/date order there, rather than preserving unrelated old campaign ranks.
     return [dict(by_id[bid], schedule=dict(by_id[bid].get('schedule') or {},
@@ -169,11 +179,21 @@ def visible_banners(player, banners):
             for index, bid in enumerate(ids)]
 
 
+def raid_summon_target(player, banner_id):
+    if player is None:
+        return
+    path = Path(__file__).with_name('raid_summon_links.json')
+    links = json.loads(path.read_text(encoding='utf-8'))['links'] if path.exists() else []
+    target = str(banner_id)
+    player._raid_summon_target = target if any(str(r['gacha_id']) == target for r in links) else ''
+
+
 def menu(player, banners, selection=''):
     groups = catalogue(banners)
     if selection:
         if selection not in {group['id'] for group in groups}:
             raise ValueError('Unknown summon archive group')
+        player._raid_summon_target = ''
         player.data['summon_archive'] = selection
         player.dirty = True
     chosen = selected_group(player, groups)

@@ -12,6 +12,94 @@ _LOCK = threading.RLock()
 _PERSONAL_EVENTS = None
 
 
+def daily_fragment_contract(mission_id):
+    path = Path(__file__).with_name('raid_archive.json')
+    return json.loads(path.read_text(encoding='utf8')).get('jp_daily_fragment_rewards', {}).get(str(mission_id))
+
+
+def observe_daily_fragment(player, mission_id, spec):
+    contract = daily_fragment_contract(mission_id)
+    if contract is None:
+        return
+    attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
+    if attempt.get('mid') != str(mission_id) or attempt.get('status') != 'pending':
+        return
+    actors = {str(row['xqartN26']) for row in spec.get('Bi6hVv34', [])}
+    selected = actors & contract['chosen_enemy_rewards'].keys()
+    if len(selected) != 1:
+        raise ValueError('Character Battle must select exactly one original fragment character')
+    enemy = selected.pop()
+    attempt['jp_fragment_enemy'] = enemy
+    attempt['jp_fragment_reward'] = {k: contract['chosen_enemy_rewards'][enemy][k] for k in ('kind', 'id', 'count')}
+    player.dirty = True
+
+
+def apply_daily_fragment(player, spec, mission_id):
+    contract = daily_fragment_contract(mission_id)
+    attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
+    if (contract is None or player.mode == 'frozen' or attempt.get('mid') != str(mission_id)
+            or attempt.get('status') != 'completed' or attempt.get('cleared') is not True):
+        return spec
+    enemy = attempt.get('jp_fragment_enemy')
+    expected = contract['chosen_enemy_rewards'].get(enemy)
+    if expected is None:
+        raise ValueError('Character Battle has no captured selected character')
+    reward = {k: expected[k] for k in ('kind', 'id', 'count')}
+    if attempt.get('jp_fragment_reward') != reward:
+        raise ValueError('Character Battle reward does not match its captured original enemy')
+    claims = player.data.get('exvius_jp_daily_fragments', {}).get('claimed_missions', {})
+    receipt = claims.get(str(mission_id))
+    if receipt is None:
+        before, dirty = copy.deepcopy(player.data), player.dirty
+        try:
+            if not player._can_credit(reward) or player._grant_items([reward]) != [reward]:
+                raise ValueError('Character Battle fragment cannot be projected')
+            receipt = {'sequence': attempt['sequence'], 'enemy_id': enemy, 'reward': reward}
+            player.data.setdefault('exvius_jp_daily_fragments', {}).setdefault('claimed_missions', {})[str(mission_id)] = receipt
+            player.dirty = True
+        except Exception:
+            player.data, player.dirty = before, dirty
+            raise
+    if receipt['sequence'] != attempt['sequence']:
+        return spec
+    out = copy.deepcopy(spec)
+    for row in out.get('09HRWXDf', []):
+        entry = '%s:%s:%s' % tuple(reward[k] for k in ('kind', 'id', 'count'))
+        existing = str(row.get('xF9Sr1a6') or '')
+        if entry not in existing.split(','):
+            row['xF9Sr1a6'] = existing + (',' if existing else '') + entry
+    return out
+
+
+def apply_jp_clear_rewards(player, spec, mission_id):
+    config = json.loads(Path(__file__).with_name('raid_archive.json').read_text(encoding='utf8'))
+    rewards = config.get('jp_mission_clear_rewards', {}).get(str(mission_id))
+    attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
+    if (not rewards or player.mode == 'frozen' or attempt.get('mid') != str(mission_id)
+            or attempt.get('status') != 'completed' or attempt.get('cleared') is not True):
+        return spec
+    if not attempt.get('jp_clear_rewards_granted'):
+        before, dirty = copy.deepcopy(player.data), player.dirty
+        try:
+            if any(not player._can_credit(r) for r in rewards) or player._grant_items(rewards) != rewards:
+                raise ValueError('JP event crafting materials cannot be projected')
+            player.data['exvius_repeat']['attempt']['jp_clear_rewards_granted'] = copy.deepcopy(rewards)
+            player.dirty = True
+        except Exception:
+            player.data, player.dirty = before, dirty
+            raise
+    elif attempt['jp_clear_rewards_granted'] != rewards:
+        raise ValueError('JP clear reward definition changed during an accepted attempt')
+    out = copy.deepcopy(spec)
+    for row in out.get('09HRWXDf', []):
+        entries = list(filter(None, str(row.get('xF9Sr1a6') or '').split(',')))
+        for r in rewards:
+            entry = '%s:%s:%s' % tuple(r[k] for k in ('kind', 'id', 'count'))
+            if entry not in entries: entries.append(entry)
+        row['xF9Sr1a6'] = ','.join(entries)
+    return out
+
+
 def integer(value, name, minimum=1, maximum=10**15):
     if type(value) is not int or not minimum <= value <= maximum:
         raise ValueError(name + ' is outside the supported integer range')
@@ -152,15 +240,24 @@ def personal_event(mission_id=None, dungeon_id=None):
 
 def observe_personal_raid(player, mission_id, spec):
     """Keep the actual encounter HP, so scoring never assumes a different boss profile."""
+    observe_daily_fragment(player, mission_id, spec)
     event = personal_event(mission_id=mission_id)
     if event is None:
+        return
+    if event.get('point_mode') == 'clear':
+        attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
+        if attempt.get('mid') == str(mission_id) and attempt.get('status') == 'pending':
+            attempt['raid_boss_hp'] = 1
+            attempt['jp_bonus_formation'] = any(str(r['xqartN26']) in event.get('bonus_enemy_ids', []) for r in spec.get('Bi6hVv34', []))
+            player.dirty = True
         return
     parts = spec.get('bV34YIJQ', [])
     groups = spec.get('Bi6hVv34', [])
     profiles = {row['xqartN26']: row for row in parts}
     if not groups or any(row['xqartN26'] not in profiles for row in groups):
         raise ValueError('unsupported raid encounter shape')
-    hp = sum(int(profiles[row['xqartN26']]['fh31sk7B']) for row in groups)
+    hp = (sum(int(p['fh31sk7B']) for row in groups for p in parts if p['xqartN26'] == row['xqartN26'])
+          if event.get('all_parts_hp') else sum(int(profiles[row['xqartN26']]['fh31sk7B']) for row in groups))
     if hp <= 0:
         raise ValueError('raid boss HP must be positive')
     attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
@@ -249,10 +346,15 @@ def complete_secret_unlock(player, mission_id):
 
 def personal_menu_groups(player, event):
     saved = _personal_state(player, event)
+    from raid_summon import schedule_rows
+    schedules = {'jBL5XNf6': schedule_rows(event['event_id'])}
+    if event.get('point_mode') == 'clear':
+        return dict(schedules, **{'71ctQHWm': [{'52ibRBqw': '1', 'UbQ26oH4': str(saved.get('points', 0))}]})
     budget = int(event['solo_pacing']['shared_hp_per_level'])
     damage = int(saved.get('shared_damage', 0))
     level = damage // budget + 1
     return {
+        **schedules,
         'dg5ZV3kQ': [{'xfirgH86': event['name'] + ' (Solo)', 'R01Wz7fe': str(level),
                      '7DTnc2Lt': event['menu_background'],
                      'F4gkm9Rt': str((level - 1) * event['level_bonus_percent']),
@@ -283,6 +385,8 @@ def apply_personal_raid_result(player, spec, mission_id, plaintext):
     """
     if player.mode == 'frozen':
         return spec
+    spec = apply_daily_fragment(player, spec, mission_id)
+    spec = apply_jp_clear_rewards(player, spec, mission_id)
     event = personal_event(mission_id=mission_id)
     attempt = player.data.get('exvius_repeat', {}).get('attempt', {})
     if (event is None or attempt.get('mid') != str(mission_id) or
@@ -292,12 +396,15 @@ def apply_personal_raid_result(player, spec, mission_id, plaintext):
     saved = _personal_state(player, event)
     receipt = saved.get('receipts', {}).get(receipt_id)
     if receipt is None:
+        clear_points = event.get('point_mode') == 'clear'
+        if clear_points and attempt.get('cleared') is not True:
+            return spec
         request = json.JSONDecoder().raw_decode(plaintext)[0]
         reports = [r.get('6gAX1BpC') for r in request.get('nSG9Jb1s', [])
                    if r.get('NYb0Cri6') == 'TOTAL_DAMAGE']
-        if len(reports) != 1 or not str(reports[0]).isdigit():
+        if not clear_points and (len(reports) != 1 or not str(reports[0]).isdigit()):
             return spec
-        damage = int(reports[0])
+        damage = 0 if clear_points else int(reports[0])
         if damage > 2**63 - 1:
             raise ValueError('raid damage exceeds the native signed 64-bit range')
         with _LOCK:
@@ -311,14 +418,17 @@ def apply_personal_raid_result(player, spec, mission_id, plaintext):
                     'points': 0, 'shared_damage': 0, 'receipts': {}, 'mailed_milestones': []})
                 hp = int(attempt['raid_boss_hp'])
                 effective = min(damage, hp)
-                base = int(event['mission_points'][str(mission_id)]) * effective // hp
+                base = (int(event['mission_points'][str(mission_id)]) if clear_points else
+                        int(event['mission_points'][str(mission_id)]) * effective // hp)
                 budget = int(event['solo_pacing']['shared_hp_per_level'])
                 level = saved['shared_damage'] // budget + 1
-                rate = (level - 1) * int(event['level_bonus_percent'])
+                rate = 0 if clear_points else (level - 1) * int(event['level_bonus_percent'])
                 bonus = base * rate // 100
                 points = base + bonus
                 coin = event.get('raid_coin')
                 coins = points // int(event['points_per_coin']) if coin else 0
+                if clear_points and coin:
+                    coins = 0 if attempt.get('jp_bonus_formation') else int(event.get('currency_per_clear', {}).get(str(mission_id), 0))
                 if coins:
                     reward = {'kind': coin['kind'], 'id': coin['id'], 'count': coins}
                     if not player._can_credit(reward) or player._grant_items([reward]) != [reward]:
@@ -332,8 +442,10 @@ def apply_personal_raid_result(player, spec, mission_id, plaintext):
                     rewards = milestone.get('rewards') or [milestone['reward']]
                     if any(not player._can_credit(row) for row in rewards):
                         raise ValueError('raid milestone cannot be projected: ' + milestone['label'])
+                    attachments = [(row['kind'], row['id'], row['count'], row) if event.get('jp_original_scope') == 'earlier-jp-28'
+                                   else (row['kind'], row['id'], row['count']) for row in rewards]
                     mail = player.deliver_mail(event['name'] + ': ' + str(threshold) + ' points',
-                        [(row['kind'], row['id'], row['count']) for row in rewards], message=milestone['label'])
+                        attachments, message=milestone['label'])
                     if mail is None:
                         raise ValueError('raid milestone mail could not be delivered')
                     saved['mailed_milestones'].append(threshold)
@@ -356,7 +468,8 @@ def _personal_result_reply(player, event, spec, receipt):
             coin = event['raid_coin']
             entry = '%s:%s:%s' % (coin['kind'], coin['id'], receipt['coins'])
             drops = str(row.get('xF9Sr1a6') or '')
-            row['xF9Sr1a6'] = drops + (',' if drops else '') + entry
+            if entry not in drops.split(','):
+                row['xF9Sr1a6'] = drops + (',' if drops else '') + entry
     out.update(personal_menu_groups(player, event))
     return out
 
@@ -383,7 +496,7 @@ table{border-collapse:collapse;width:100%;background:#0d2d58}th,td{text-align:le
 th{background:#194875;color:#ffe398}td:first-child{white-space:nowrap}.delivered{background:#173f48}
 small{display:block;color:#a9e9cb;margin-top:5px}</style></head><body><h1>''' +
         escape(event['name']) + '</h1><p>Personal points: <strong>' + format(points, ',') +
-        '</strong><br>Solo raid level: <strong>' + str(level) +
+        ('</strong><br>Solo raid level: <strong>' + str(level) if event.get('point_mode') != 'clear' else '') +
         '</strong></p><p>Milestone rewards are delivered to your mailbox.</p>' +
         '<table><thead><tr><th>Points</th><th>Reward</th></tr></thead><tbody>' + rows +
         '</tbody></table></body></html>')

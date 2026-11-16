@@ -488,18 +488,11 @@ PHASE_BGM_TOKEN = "YS9kfCX7"              # MissionPhaseMst BgmResourceID (+0x88
 # Why this flag exists at all: five attempts at this fault each changed MORE THAN ONE THING (item-channel
 # emptying, the result-screen mirror, the 9BetM2Ds arity, the enemy exp), so a failure could not be
 # attributed and every fix was a guess. One variable per run, or the next failure teaches nothing.
-# The Dire Rat drop table: `cat:item:count:rate`. It lives HERE and not in the payload because the
-# payload must always be safe to serve verbatim -- with the roll off it is exactly what the client
-# receives, and a 4-field table in the payload is the shape that caused the original black screen.
-# [Community] ExviusReborn lineage; the client never receives this table.
-DROP_TABLE = ("20:290050100:1:30,20:290010000:1:30,20:290050200:1:30,20:202000100:1:30,"
-              "20:290020100:1:30,20:290020500:1:30,20:202000400:1:30")
-
 # DEFAULT ON since 2026-09-20. The served `9BetM2Ds` is the per-monster CANDIDATE pool (6-8 items at rate 30
 # for the shrine mobs, straight from the oracle) and the client DISCARDS the rate, so serving the pool
 # verbatim hands the player every candidate at once -- the operator's "4-5 items, where retail is 1-2".
-# Rolling it is what the real server did. Measured with the served pools (20000 trials/phase): mean 2.2-2.5
-# items, 1-2 items 55-65% of the time. Set ROLL_DROPS=0 only for a deterministic reference state (SW-26).
+# Roll each candidate using its authored rate. A failed roll may legitimately
+# produce no items. Set ROLL_DROPS=0 only for a deterministic reference state (SW-26).
 ROLL_DROPS = os.environ.get("ROLL_DROPS", "1") == "1"
 STATE_PERSIST = os.environ.get("STATE", "1") == "1"
 
@@ -1101,12 +1094,6 @@ EVENT_GATE_TAG = "0xkoNP8U"                                # SpDungeonCondMstRes
 # only a carrier that already serves it may be written.
 EVENT_GATE_CARRIERS = tuple(x for x in (os.environ.get("EVENT_GATE_CARRIERS") or
                                         "lEHBdOEf,6H1R9WID").split(",") if x)
-# THE EVENT CURRENCY. A story event pays an event item, and the family's item is shipped
-# (`F_ITEM_MST` 310001240 = Fundamental Forces Fragment; 1209002117 = Summon Coin). AUTHORED, and labelled:
-# which item, how many, and onto which areas. GL's drop tables are not shipped (the server resolved drops
-# live and that code is gone) and the JP oracle's drop ids are JP ids with no item table beside them, so
-# there is nothing to derive this from. Format `cat:id:count` comma-joined; empty = off.
-EVENT_CURRENCY = os.environ.get("EVENT_CURRENCY", "20:310001240:5")
 
 
 # --- DAILY QUEST -------------------------------------------------------------------------------
@@ -1487,7 +1474,6 @@ __all__ = [
     "BATTLE_BGM",
     "PHASE_TAG",
     "PHASE_BGM_TOKEN",
-    "DROP_TABLE",
     "ROLL_DROPS",
     "STATE_PERSIST",
     "CHALLENGE_GROUP",
@@ -1659,7 +1645,6 @@ __all__ = [
     "EVENT_GATE_WINDOW_END",
     "EVENT_GATE_TAG",
     "EVENT_GATE_CARRIERS",
-    "EVENT_CURRENCY",
     "SURVIVAL_EVENT_KIND",
     "SURVIVAL_BREAK_TAG",
     "SURVIVAL_BREAK_PROGRESS",

@@ -1,0 +1,1499 @@
+{
+  "status": "authored reconstruction",
+  "tables": {
+    "F_QUEST_MST": {
+      "key": "Z34jU7ue",
+      "rows": [
+        {
+          "Z34jU7ue": "1014006",
+          "G4L0YIB2": "Inherited Memories",
+          "Z0EN6jSh": "1014006",
+          "Qvb5N1WT": "1210060",
+          "96ej0dxb": "",
+          "AgoB52Ey": "1",
+          "rFd5CiV2": "1",
+          "Lxj5u3WB": "2",
+          "6uIYE15X": "3101",
+          "dX6cor8j": "30:0:1000:100:1",
+          "juA0Z4m7": "10077600",
+          "dIPkNn61": "20063051,20063052,20063053,20063054,20063055"
+        },
+        {
+          "Z34jU7ue": "1029003",
+          "G4L0YIB2": "The Master's Whereabouts",
+          "Z0EN6jSh": "1029003",
+          "Qvb5N1WT": "1520012",
+          "96ej0dxb": "",
+          "AgoB52Ey": "1",
+          "rFd5CiV2": "1",
+          "Lxj5u3WB": "2",
+          "6uIYE15X": "12104",
+          "dX6cor8j": "30:0:1000:100:1",
+          "juA0Z4m7": "10190400",
+          "dIPkNn61": "20340021,20340022,20340023,20340024,20340025,20340026"
+        }
+      ]
+    },
+    "F_QUEST_SUB_MST": {
+      "key": "7Svg2kdT",
+      "rows": [
+        {
+          "7Svg2kdT": "101400601",
+          "G4L0YIB2": "Inherited Memories",
+          "Z34jU7ue": "1014006",
+          "dX0SkK3j": "2",
+          "9ZCEWn0z": "1320906",
+          "96ej0dxb": "",
+          "Z0EN6jSh": "1",
+          "tZw2c7KS": "0",
+          "42ZNoa7B": "Look for the ring left by Elle",
+          "7EuJK9ZL": "Go and look for Elle's ring said to be somewhere around the Water Shrine.",
+          "89EvGKHx": "4",
+          "PFk17xnI": "",
+          "siLGXq94": "3",
+          "25oxcKwN": "20063053",
+          "K50szcYX": "",
+          "71BDvsNw": "",
+          "juA0Z4m7": "20063051",
+          "dIPkNn61": "20063054"
+        },
+        {
+          "7Svg2kdT": "101400602",
+          "G4L0YIB2": "Inherited Memories",
+          "Z34jU7ue": "1014006",
+          "dX0SkK3j": "1",
+          "9ZCEWn0z": "100002800",
+          "96ej0dxb": "",
+          "Z0EN6jSh": "2",
+          "tZw2c7KS": "0",
+          "42ZNoa7B": "Hand the ring to Arsha",
+          "7EuJK9ZL": "Deliver the ring Elle left behind to Arsha.",
+          "89EvGKHx": "4",
+          "PFk17xnI": "",
+          "siLGXq94": "3",
+          "25oxcKwN": "20063055",
+          "K50szcYX": "",
+          "71BDvsNw": "2:3101:19:13:18",
+          "juA0Z4m7": "20063054",
+          "dIPkNn61": "20063052"
+        },
+        {
+          "7Svg2kdT": "102900301",
+          "G4L0YIB2": "The Master's Whereabouts 1",
+          "Z34jU7ue": "1029003",
+          "dX0SkK3j": "1",
+          "9ZCEWn0z": "1520013",
+          "96ej0dxb": "",
+          "Z0EN6jSh": "1",
+          "tZw2c7KS": "0",
+          "42ZNoa7B": "Find the master craftsman",
+          "7EuJK9ZL": "A factory manager has asked you to find a master craftsman capable of creating an efficient filter.",
+          "89EvGKHx": "4",
+          "PFk17xnI": "",
+          "siLGXq94": "3",
+          "25oxcKwN": "20340023",
+          "K50szcYX": "",
+          "71BDvsNw": "2:12103:1:2:10",
+          "juA0Z4m7": "20340021",
+          "dIPkNn61": "20340024"
+        },
+        {
+          "7Svg2kdT": "102900302",
+          "G4L0YIB2": "The Master's Whereabouts 2",
+          "Z34jU7ue": "1029003",
+          "dX0SkK3j": "1",
+          "9ZCEWn0z": "1520013",
+          "96ej0dxb": "",
+          "Z0EN6jSh": "2",
+          "tZw2c7KS": "0",
+          "42ZNoa7B": "Deliver 8 giant feathers",
+          "7EuJK9ZL": "Collect eight giant feathers and deliver them to the master craftsman in Luzell Colony.",
+          "89EvGKHx": "1",
+          "PFk17xnI": "",
+          "siLGXq94": "1",
+          "25oxcKwN": "20:104004100:8:100",
+          "K50szcYX": "",
+          "71BDvsNw": "2:12103:1:2:10",
+          "juA0Z4m7": "20340024",
+          "dIPkNn61": "20340025"
+        },
+        {
+          "7Svg2kdT": "102900303",
+          "G4L0YIB2": "The Master's Whereabouts 3",
+          "Z34jU7ue": "1029003",
+          "dX0SkK3j": "1",
+          "9ZCEWn0z": "1520012",
+          "96ej0dxb": "",
+          "Z0EN6jSh": "3",
+          "tZw2c7KS": "0",
+          "42ZNoa7B": "Deliver the efficient filter",
+          "7EuJK9ZL": "Deliver the efficient filter to the factory manager in the industrial city.",
+          "89EvGKHx": "4",
+          "PFk17xnI": "",
+          "siLGXq94": "3",
+          "25oxcKwN": "20340026",
+          "K50szcYX": "",
+          "71BDvsNw": "2:12104:10:9:19",
+          "juA0Z4m7": "20340025",
+          "dIPkNn61": "20340022"
+        }
+      ]
+    },
+    "F_SWITCH_MST": {
+      "key": "8vAYn3IX",
+      "rows": [
+        {
+          "8vAYn3IX": "20063051",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1221"
+        },
+        {
+          "8vAYn3IX": "20063052",
+          "5opcUT9t": "201",
+          "QLfe23bu": "526"
+        },
+        {
+          "8vAYn3IX": "20063053",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1222"
+        },
+        {
+          "8vAYn3IX": "20063054",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1223"
+        },
+        {
+          "8vAYn3IX": "20063055",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1224"
+        },
+        {
+          "8vAYn3IX": "20340021",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1225"
+        },
+        {
+          "8vAYn3IX": "20340022",
+          "5opcUT9t": "201",
+          "QLfe23bu": "527"
+        },
+        {
+          "8vAYn3IX": "20340023",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1226"
+        },
+        {
+          "8vAYn3IX": "20340024",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1227"
+        },
+        {
+          "8vAYn3IX": "20340025",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1228"
+        },
+        {
+          "8vAYn3IX": "20340026",
+          "5opcUT9t": "200",
+          "QLfe23bu": "1229"
+        }
+      ]
+    },
+    "F_RESOURCE_MAP_MST": {
+      "key": "Nnb20keZ",
+      "rows": [
+        {
+          "Nnb20keZ": "331201206",
+          "dX0SkK3j": "300",
+          "3LHdc6Qa": "event/sub31",
+          "drE35YcF": "event",
+          "pJ56sAEo": "131010416.cpk",
+          "6uvHX2JG": ""
+        },
+        {
+          "Nnb20keZ": "331209201",
+          "dX0SkK3j": "300",
+          "3LHdc6Qa": "event/sub32",
+          "drE35YcF": "event",
+          "pJ56sAEo": "132010916.cpk",
+          "6uvHX2JG": ""
+        },
+        {
+          "Nnb20keZ": "602203203",
+          "dX0SkK3j": "300",
+          "3LHdc6Qa": "event2/sub02",
+          "drE35YcF": "event",
+          "pJ56sAEo": "550220413.cpk",
+          "6uvHX2JG": ""
+        },
+        {
+          "Nnb20keZ": "602202203",
+          "dX0SkK3j": "300",
+          "3LHdc6Qa": "event2/sub02",
+          "drE35YcF": "event",
+          "pJ56sAEo": "550220313.cpk",
+          "6uvHX2JG": ""
+        }
+      ]
+    },
+    "F_RESOURCE_MAP_VERSION_MST_LOCALIZE": {
+      "key": "Nnb20keZ",
+      "rows": [
+        {
+          "Nnb20keZ": "331201206",
+          "OzT5lSz3": "1",
+          "950Qpfly": "1",
+          "86SWOBTb": "0",
+          "Vj837Irv": "0",
+          "6D7bv0K3": "0",
+          "Qs25cPB7": "0",
+          "G4KEn0p2": "0",
+          "1DFs9NFO": "0",
+          "xRBQB61E": "0",
+          "hpCk5rJW": "0",
+          "LNEVfZn9": "0",
+          "lBTy0mF9": "0",
+          "ijlh9qCp": "0",
+          "5AscS0Du": "0",
+          "bMJEAOol": "0",
+          "Ol46HBC4": "0",
+          "8V88UsJ8": "",
+          "lHmCEGxA": "",
+          "7mgrgWZn": "0",
+          "PSI4bCjE": "0",
+          "rRzH7h0C": "0",
+          "2dPm9yy1": "0",
+          "08DqLCaK": "0",
+          "slJ8eIIM": "0",
+          "Nk52jesM": "0",
+          "6Bz9b0mt": "0",
+          "0Eay3J4F": "0",
+          "ju7pMXh2": "0",
+          "v86b23M5": "0",
+          "DqoC393V": "0",
+          "qHB03586": "0",
+          "xSxZENkI": "0",
+          "6tSP4s8J": "0",
+          "0HJs6nFe": "2016-03-22 08:11:15",
+          "N2PkD9sy": "2016-03-22 08:11:15"
+        },
+        {
+          "Nnb20keZ": "331209201",
+          "OzT5lSz3": "1",
+          "950Qpfly": "1",
+          "86SWOBTb": "0",
+          "Vj837Irv": "0",
+          "6D7bv0K3": "0",
+          "Qs25cPB7": "0",
+          "G4KEn0p2": "0",
+          "1DFs9NFO": "0",
+          "xRBQB61E": "0",
+          "hpCk5rJW": "0",
+          "LNEVfZn9": "0",
+          "lBTy0mF9": "0",
+          "ijlh9qCp": "0",
+          "5AscS0Du": "0",
+          "bMJEAOol": "0",
+          "Ol46HBC4": "0",
+          "8V88UsJ8": "",
+          "lHmCEGxA": "",
+          "7mgrgWZn": "0",
+          "PSI4bCjE": "0",
+          "rRzH7h0C": "0",
+          "2dPm9yy1": "0",
+          "08DqLCaK": "0",
+          "slJ8eIIM": "0",
+          "Nk52jesM": "0",
+          "6Bz9b0mt": "0",
+          "0Eay3J4F": "0",
+          "ju7pMXh2": "0",
+          "v86b23M5": "0",
+          "DqoC393V": "0",
+          "qHB03586": "0",
+          "xSxZENkI": "0",
+          "6tSP4s8J": "0",
+          "0HJs6nFe": "2016-03-22 08:11:15",
+          "N2PkD9sy": "2016-03-22 08:11:15"
+        },
+        {
+          "Nnb20keZ": "602203203",
+          "OzT5lSz3": "1",
+          "950Qpfly": "1",
+          "86SWOBTb": "0",
+          "Vj837Irv": "0",
+          "6D7bv0K3": "0",
+          "Qs25cPB7": "0",
+          "G4KEn0p2": "0",
+          "1DFs9NFO": "0",
+          "xRBQB61E": "0",
+          "hpCk5rJW": "0",
+          "LNEVfZn9": "0",
+          "lBTy0mF9": "0",
+          "ijlh9qCp": "0",
+          "5AscS0Du": "0",
+          "bMJEAOol": "0",
+          "Ol46HBC4": "0",
+          "8V88UsJ8": "",
+          "lHmCEGxA": "",
+          "7mgrgWZn": "0",
+          "PSI4bCjE": "0",
+          "rRzH7h0C": "0",
+          "2dPm9yy1": "0",
+          "08DqLCaK": "0",
+          "slJ8eIIM": "0",
+          "Nk52jesM": "0",
+          "6Bz9b0mt": "0",
+          "0Eay3J4F": "0",
+          "ju7pMXh2": "0",
+          "v86b23M5": "0",
+          "DqoC393V": "0",
+          "qHB03586": "0",
+          "xSxZENkI": "0",
+          "6tSP4s8J": "0",
+          "0HJs6nFe": "2016-03-22 08:11:15",
+          "N2PkD9sy": "2016-03-22 08:11:15"
+        },
+        {
+          "Nnb20keZ": "602202203",
+          "OzT5lSz3": "1",
+          "950Qpfly": "1",
+          "86SWOBTb": "0",
+          "Vj837Irv": "0",
+          "6D7bv0K3": "0",
+          "Qs25cPB7": "0",
+          "G4KEn0p2": "0",
+          "1DFs9NFO": "0",
+          "xRBQB61E": "0",
+          "hpCk5rJW": "0",
+          "LNEVfZn9": "0",
+          "lBTy0mF9": "0",
+          "ijlh9qCp": "0",
+          "5AscS0Du": "0",
+          "bMJEAOol": "0",
+          "Ol46HBC4": "0",
+          "8V88UsJ8": "",
+          "lHmCEGxA": "",
+          "7mgrgWZn": "0",
+          "PSI4bCjE": "0",
+          "rRzH7h0C": "0",
+          "2dPm9yy1": "0",
+          "08DqLCaK": "0",
+          "slJ8eIIM": "0",
+          "Nk52jesM": "0",
+          "6Bz9b0mt": "0",
+          "0Eay3J4F": "0",
+          "ju7pMXh2": "0",
+          "v86b23M5": "0",
+          "DqoC393V": "0",
+          "qHB03586": "0",
+          "xSxZENkI": "0",
+          "6tSP4s8J": "0",
+          "0HJs6nFe": "2016-03-22 08:11:15",
+          "N2PkD9sy": "2016-03-22 08:11:15"
+        }
+      ]
+    },
+    "F_MAP_EXT_RESOURCE_MST": {
+      "key": null,
+      "rows": [
+        {
+          "Lxj5u3WB": "2",
+          "6uIYE15X": "3101",
+          "a3u6d1re": "10077600",
+          "ECcDwp14": "20063052",
+          "Y4PER0gB": "331201206"
+        },
+        {
+          "Lxj5u3WB": "1",
+          "6uIYE15X": "1320906",
+          "a3u6d1re": "20063051",
+          "ECcDwp14": "20063052",
+          "Y4PER0gB": "331209201"
+        },
+        {
+          "Lxj5u3WB": "2",
+          "6uIYE15X": "12104",
+          "a3u6d1re": "10190400",
+          "ECcDwp14": "20340022",
+          "Y4PER0gB": "602203203"
+        },
+        {
+          "Lxj5u3WB": "2",
+          "6uIYE15X": "12103",
+          "a3u6d1re": "20340021",
+          "ECcDwp14": "20340022",
+          "Y4PER0gB": "602202203"
+        }
+      ]
+    }
+  },
+  "packs": [
+    {
+      "resource_id": 331201206,
+      "folder": "event/sub31",
+      "stem": "131010416",
+      "maps": {
+        "19": [
+          {
+            "id": 31000,
+            "kind": 0,
+            "xy": [
+              290,
+              1044
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063003,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ],
+                  [
+                    20063051,
+                    1
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000791908"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3ae"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              },
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063003,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ],
+                  [
+                    20063051,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000791908"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3ad"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 10,
+                    "payload_hex": "0132234b01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 74,
+                    "payload_hex": "000f78f6060b4019"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 42,
+                    "payload_hex": "0000791b00"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 94,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31001,
+            "kind": 1,
+            "xy": [
+              267,
+              992
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063003,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": 1210060
+              }
+            ]
+          },
+          {
+            "id": 31003,
+            "kind": 29,
+            "xy": [
+              290,
+              928
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063003,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ],
+                  [
+                    20063051,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31010,
+            "kind": 0,
+            "xy": [
+              754,
+              1102
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063008,
+                    1
+                  ],
+                  [
+                    20063054,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000792308"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 10,
+                    "payload_hex": "0132234f01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 38,
+                    "payload_hex": "00000f78f6060b401a01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3b1"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 4,
+                    "payload_hex": "0001"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3b2"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 75,
+                    "payload_hex": "000f78f6060b401a"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 101,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31011,
+            "kind": 1,
+            "xy": [
+              731,
+              1050
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063008,
+                    1
+                  ],
+                  [
+                    20063054,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": 100002800
+              }
+            ]
+          },
+          {
+            "id": 31012,
+            "kind": 28,
+            "xy": [
+              754,
+              986
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10077600,
+                    1
+                  ],
+                  [
+                    10063008,
+                    1
+                  ],
+                  [
+                    20063054,
+                    1
+                  ],
+                  [
+                    20063052,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": null
+              }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "91014061": "<name_npc=1210060><br>Elle left a ring near the Water Shrine. Please find it and take it to Arsha.<keywait>",
+        "91014062": "<name_npc=1210060><br>Look near the Water Shrine's entrance. Arsha should have the ring Elle left behind.<keywait>",
+        "91014065": "<name_npc=100002800><br>Have you found the ring Elle left behind?<keywait>",
+        "91014066": "<name_npc=100002800><br>This is Elle's ring. Thank you for bringing it to me.<keywait>"
+      }
+    },
+    {
+      "resource_id": 331209201,
+      "folder": "event/sub32",
+      "stem": "132010916",
+      "maps": {
+        "1": [
+          {
+            "id": 31020,
+            "kind": 0,
+            "xy": [
+              1276,
+              1392
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    20063051,
+                    1
+                  ],
+                  [
+                    20063054,
+                    0
+                  ],
+                  [
+                    20063052,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 10,
+                    "payload_hex": "0132234d01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 38,
+                    "payload_hex": "00000f78f6060b401901"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3af"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 4,
+                    "payload_hex": "0001"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cc3b0"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 75,
+                    "payload_hex": "000f78f6060b4019"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "91014063": "Search the Water Shrine for the ring Elle left behind.<keywait>",
+        "91014064": "You found Elle's ring. Take it to Arsha in Olderion.<keywait>"
+      }
+    },
+    {
+      "resource_id": 602203203,
+      "folder": "event2/sub02",
+      "stem": "550220413",
+      "maps": {
+        "10": [
+          {
+            "id": 31030,
+            "kind": 0,
+            "xy": [
+              522,
+              1044
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340021,
+                    1
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000793708"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe28"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              },
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340025,
+                    1
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000793708"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 10,
+                    "payload_hex": "01365d3a01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 38,
+                    "payload_hex": "00000fb38b0622224f01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe29"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 4,
+                    "payload_hex": "0001"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2a"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 75,
+                    "payload_hex": "000fb38b0622224f"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 101,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              },
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340021,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000793708"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe27"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 10,
+                    "payload_hex": "01365d3501"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 74,
+                    "payload_hex": "000fb38b0622224d"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 42,
+                    "payload_hex": "0000793900"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 94,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31031,
+            "kind": 1,
+            "xy": [
+              499,
+              992
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": 1520012
+              }
+            ]
+          },
+          {
+            "id": 31032,
+            "kind": 28,
+            "xy": [
+              522,
+              928
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340025,
+                    1
+                  ]
+                ],
+                "commands": [],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31033,
+            "kind": 29,
+            "xy": [
+              522,
+              928
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    10190400,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340021,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": null
+              }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "91029031": "<name_npc=1520012><br>I need an efficient filter. Please find the skilled worker in Luzell Colony.<keywait>",
+        "91029032": "<name_npc=1520012><br>Ask the skilled worker in Luzell Colony to make an efficient filter.<keywait>",
+        "91029033": "<name_npc=1520012><br>Have you brought the efficient filter?<keywait>",
+        "91029034": "<name_npc=1520012><br>This filter is just what the factory needs. Thank you for your help.<keywait>"
+      }
+    },
+    {
+      "resource_id": 602202203,
+      "folder": "event2/sub02",
+      "stem": "550220313",
+      "maps": {
+        "1": [
+          {
+            "id": 31040,
+            "kind": 0,
+            "xy": [
+              116,
+              522
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    20340021,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340024,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000794108"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 10,
+                    "payload_hex": "01365d3701"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 38,
+                    "payload_hex": "00000fb38b0622224d01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2b"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 4,
+                    "payload_hex": "0001"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2c"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 75,
+                    "payload_hex": "000fb38b0622224d"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              },
+              {
+                "conditions": [
+                  [
+                    20340021,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340024,
+                    1
+                  ],
+                  [
+                    20340025,
+                    0
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000794108"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 38,
+                    "payload_hex": "00000fb38b0622224e01"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2d"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 4,
+                    "payload_hex": "0001"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2e"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 75,
+                    "payload_hex": "000fb38b0622224e"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              },
+              {
+                "conditions": [
+                  [
+                    20340021,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340025,
+                    1
+                  ]
+                ],
+                "commands": [
+                  {
+                    "op": 11,
+                    "payload_hex": "010000794108"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  },
+                  {
+                    "op": 8,
+                    "payload_hex": "056cfe2f"
+                  },
+                  {
+                    "op": 1,
+                    "payload_hex": ""
+                  }
+                ],
+                "npc": null
+              }
+            ]
+          },
+          {
+            "id": 31041,
+            "kind": 1,
+            "xy": [
+              93,
+              470
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    20340021,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": 1520013
+              }
+            ]
+          },
+          {
+            "id": 31042,
+            "kind": 28,
+            "xy": [
+              116,
+              406
+            ],
+            "pages": [
+              {
+                "conditions": [
+                  [
+                    20340021,
+                    1
+                  ],
+                  [
+                    20340022,
+                    0
+                  ],
+                  [
+                    20340025,
+                    0
+                  ]
+                ],
+                "commands": [],
+                "npc": null
+              }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "91029035": "<name_npc=1520013><br>Are you looking for someone who can make an efficient filter?<keywait>",
+        "91029036": "<name_npc=1520013><br>I can make that filter. Bring me eight giant feathers.<keywait>",
+        "91029037": "<name_npc=1520013><br>I need eight giant feathers to make the filter.<keywait>",
+        "91029038": "<name_npc=1520013><br>These feathers will do. Here is the efficient filter. Take it to the factory manager in Dormdry.<keywait>",
+        "91029039": "<name_npc=1520013><br>Deliver the efficient filter to the factory manager in Dormdry.<keywait>"
+      }
+    }
+  ],
+  "localized_text": {
+    "F_TEXT_QUEST": {
+      "MST_QUEST_NAME_1014006": "Inherited Memories"
+    }
+  },
+  "provenance": {
+    "objectives": "Exact retained English F_TEXT_QUEST_SUB_NAME/STORY/DETAIL records.",
+    "roles": "Original F_NPC_MST and English F_TEXT_NPC_NAME.",
+    "scripts": "Original GL op38/74/75, NPC plus interaction plus marker arrangement from 131010411 and 131010414.",
+    "rewards": "1000 gil per chain is authored, not recovered retail reward. Original quest 1003009 supplies the 30:0:1000:100:1 contract.",
+    "placement": "Nichol uses the vacated early Arsha floor position after flags 10077600 and 10063003. Arsha uses her original poststory position. Manager/worker use original generic NPC positions with identical models. Ring uses the Water Shrine header entry tile (22,24), map 1.",
+    "navigation": "Town goals use adjacent native 58px-grid tiles with original collision byte 0: Arsha (13,18) above foot (13,19); worker (2,10) below foot (2,9); manager (9,19) below foot (9,18). Ring mission navigation stays empty because its world-area destination was not recovered.",
+    "switches": "New IDs are absent in GL and JP. New bit positions follow JP maxima 1220/525, preserving all previous mappings.",
+    "append_format": "Original loadAppendData at 0x1fabcec skips plane writing below version 1015. Version 1014 uses short event IDs and no encounter plane.",
+    "dialogue": "All added speech is authored from preserved objectives, not recovered original dialogue."
+  },
+  "native_overlay": {
+    "files": [
+      {
+        "path": "mst/Ver45_2Px75LpY.dat",
+        "sha256": "15fd34e33a16d728fd2f858ef06837c35446d413b2ee2de6f4fc8cd14f970cc1"
+      },
+      {
+        "path": "mst/Ver46_myGc0U5v.dat",
+        "sha256": "fd1e81d396451ff599e4f574962951b5e0d42f7c554fea044000d64abef4d57a"
+      },
+      {
+        "path": "mst/myGc0U5v.i",
+        "sha256": "998bf07a7dcbaa90f4a3dbb7b88648dd5d25dfe3cb09b34e95496020991bb4ac"
+      },
+      {
+        "path": "mst/Ver404_T46RpNZH.dat",
+        "sha256": "7958dbb81e99d255e4c8b0ed98da9ac7c325d6d8922c4dad7768fb3c31c4f2eb"
+      },
+      {
+        "path": "mst/Ver265_B7LnP2TH.dat",
+        "sha256": "8fddb0013ec732f5b8817eb9fa195149af6185a3a3aad40d01ef2175361dd5b7"
+      },
+      {
+        "path": "mst/B7LnP2TH.i",
+        "sha256": "518c60fcbf7adf34b33b3f8697238c410ee01babae409ee8a71655ef5ae559c0"
+      },
+      {
+        "path": "mst/Ver563_YIgCpDKW.dat",
+        "sha256": "64086d1afedafaa8b8e9d1eea38da4a84db792195ace7d94eb0e63bebc5e2973"
+      },
+      {
+        "path": "mst/Ver116_En90A5BC.dat",
+        "sha256": "a836eb57645c33bbd76f0d40fdf002516860de98e2798ca54b0d8d47e6d51652"
+      },
+      {
+        "path": "common_lang/sd/event/sub31/Ver1_131010416.cpk",
+        "sha256": "8c8b2eeeaec9df3392741101ecb5e8f3ff5a0c1ffa7475acf88e6fe67410a265"
+      },
+      {
+        "path": "common_lang/sd/event/sub32/Ver1_132010916.cpk",
+        "sha256": "65c53bc2827b237878270c9f001bca2fb4df28e77244438550cc7ef675f79e04"
+      },
+      {
+        "path": "common_lang/sd/event2/sub02/Ver1_550220413.cpk",
+        "sha256": "06f16e4377c091a6a0f4ebbf3a0529c08167e453300dd54930a7404eb0e552bf"
+      },
+      {
+        "path": "common_lang/sd/event2/sub02/Ver1_550220313.cpk",
+        "sha256": "63fe52d1a35a97ea7cfc105cea8fa03d3be36402a4ca1454cc1ce47906729e62"
+      },
+      {
+        "path": "localized_texts/en/Ver6_NMwfx1lf.dat",
+        "sha256": "66cc39a0a1d361d914dcfe055bddddade33ec6c8c569e3efae0027993a9d7a11"
+      }
+    ]
+  }
+}

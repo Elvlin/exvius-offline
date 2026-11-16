@@ -1,0 +1,220 @@
+{
+ "id": "9100011",
+ "type": "normal",
+ "name": "Dark Knight Cecil, Rosa, Cecil, Edge Featured Summon",
+ "detail_id": "91000111",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "lapis",
+  "amount": 500
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1011,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_95e808ca022858a2.png",
+  "detail_banner": "Gacha-Rosa Dark Knight Cecil Cecil Edge.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": {
+  "tiers": [
+   {
+    "rarity": 5,
+    "rate": 0.01,
+    "units": [
+     "204000115",
+     "213000105",
+     "253000105",
+     "253000205"
+    ],
+    "featured": [
+     "204000115"
+    ],
+    "featured_share": 0.5
+   },
+   {
+    "rarity": 4,
+    "rate": 0.19,
+    "units": [
+     "100004604",
+     "201000104",
+     "204000304",
+     "209000304",
+     "253000304",
+     "253000504"
+    ],
+    "featured": [
+     "204000304"
+    ],
+    "featured_share": 0.25
+   },
+   {
+    "rarity": 3,
+    "rate": 0.8,
+    "units": [
+     "100002103",
+     "100002203",
+     "100002303",
+     "100002403",
+     "100002503",
+     "100002603",
+     "100002703",
+     "100002803",
+     "100003703",
+     "100003803",
+     "100003903",
+     "100004003",
+     "100004103",
+     "100004203",
+     "100004303",
+     "100004403",
+     "100004703",
+     "201000203",
+     "202000103",
+     "202000203",
+     "203000803",
+     "204000103",
+     "204000203",
+     "204000403",
+     "204000503",
+     "204001103",
+     "204001403",
+     "205000103",
+     "205000203",
+     "205000303",
+     "205000503",
+     "205000703",
+     "206000103",
+     "206000203",
+     "206000303",
+     "206000403",
+     "206000503",
+     "206000603",
+     "206000703",
+     "206001703",
+     "206001803",
+     "209000103",
+     "209000203",
+     "209000503",
+     "209000803",
+     "209000903",
+     "209001003",
+     "211000103",
+     "212000103",
+     "212000403",
+     "212000603",
+     "253000403",
+     "253000603"
+    ],
+    "featured": [
+     "204000103",
+     "204001103"
+    ],
+    "featured_share": 0.25
+   }
+  ]
+ },
+ "provenance": "community",
+ "source": "community",
+ "community": {
+  "release": "2016-10-14",
+  "until": null,
+  "limited": false,
+  "units": [
+   "Dark Knight Cecil",
+   "Rosa",
+   "Cecil",
+   "Edge"
+  ],
+  "unit_ids": [
+   "204000103",
+   "204000115",
+   "204000304",
+   "204001103"
+  ],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2016-10-14",
+ "campaign_identity": "global:2016-10-14:gacha-rosa dark knight cecil cecil edge.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Summon?oldid=189591",
+  "sha256": "edc91368e634454d2d5c7ce58a03a14e38fa7f1e6c5f171e906545e6f2f994c7",
+  "scope": "Era rarity totals and featured rates, including the separate guaranteed-slot table. Incomplete eligibility uses documented Global releases.",
+  "eligibility_authored": true,
+  "before_first_base_five": false
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2016",
+   "sha256": "af6d445ecaf3bccdecbb473cd4f0f563d34320b8381b90f9bab1b5c4a03bda77"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/e/e0/Gacha-Rosa_Dark_Knight_Cecil_Cecil_Edge.png/revision/latest?cb=20161014114220",
+   "sha256": "107e11dbc78f9ff40848cdd6a898b154962df6211082b63467576c7bb77331e5"
+  }
+ ],
+ "secondary_offer": {
+  "cost": {
+   "kind": "lapis",
+   "amount": 5000
+  },
+  "draws": 11,
+  "exe_count": 1,
+  "guarantee": {
+   "rarity": 4,
+   "count": 1,
+   "pool": {
+    "tiers": [
+     {
+      "rarity": 5,
+      "rate": 0.05,
+      "units": [
+       "204000115",
+       "213000105",
+       "253000105",
+       "253000205"
+      ],
+      "featured": [
+       "204000115"
+      ],
+      "featured_share": 0.7499999999999999
+     },
+     {
+      "rarity": 4,
+      "rate": 0.95,
+      "units": [
+       "100004604",
+       "201000104",
+       "204000304",
+       "209000304",
+       "253000304",
+       "253000504"
+      ],
+      "featured": [
+       "204000304"
+      ],
+      "featured_share": 0.5
+     }
+    ]
+   }
+  },
+  "img_btn": "gacha_btns_gold_11"
+ },
+ "eligibility_source": {
+  "source": "logs/reference/summons/unit-list-wiki.json",
+  "policy": "Global acquisition eligibility; Collaboration, Seasonal and Yes are limited. Only this banner evidenced limited units are permitted. Known future releases are excluded.",
+  "original_server_pool_recovered": false
+ },
+ "ticket_group_id": 10020,
+ "img_btn_primary": "gacha_btns_gold_1"
+}

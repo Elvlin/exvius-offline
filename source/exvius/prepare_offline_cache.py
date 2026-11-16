@@ -16,6 +16,7 @@ sys.path.insert(0, str(PROJECT / 'source/server'))
 from ffbe_config import FORCE_TABLE_VERSIONS
 from ffbe_crypto import cbc_decrypt, cbc_encrypt, key16
 from decode_client_data import client_manifest, decode, json_record
+from native_master_index import paired_index
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 
 from android_offline import OFFLINE_TEXT
@@ -45,7 +46,29 @@ def raid_reward_banners(source, target, key):
         lines.append(cbc_encrypt(key16(key), json.dumps(row, ensure_ascii=False,
                      separators=(',', ':')).encode('utf8'), double_pad=double))
         existing.add(banner_id)
-    target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
+    links_path = PROJECT / 'source/server/raid_summon_links.json'
+    links = json.loads(links_path.read_text(encoding='utf8'))['links'] if links_path.exists() else []
+    added = set()
+    for link in links:
+        banner_id = str(link['banner_id'])
+        if banner_id in added:
+            continue
+        if banner_id in existing:
+            raise ValueError('Local raid summon banner ID collides with original data: ' + banner_id)
+        row = {'fSxqkF10': banner_id, 'w2A76noc': '6',
+               'G4L0YIB2': link['name'] + ' Raid Summon', 'T4o9heqC': '1,2,3,101,102,103',
+               'Z0EN6jSh': '1', '6Dgaqir0': 'home_icon', '1X65WPLU': str(link['gacha_id']),
+               'xHZj7Va5': '', '2odVXyT8': '0', 'rUP3Gix0': '4'}
+        lines.append(cbc_encrypt(key16(key), json.dumps(row, ensure_ascii=False,
+                     separators=(',', ':')).encode('utf8'), double_pad=double))
+        added.add(banner_id)
+    content = '\n'.join(lines) + '\n'
+    raw = content.encode('ascii')
+    if target is not None:
+        index, index_raw = paired_index('F_BANNER_MST', target, raw, key)
+        target.write_bytes(raw)
+        index.write_bytes(index_raw)
+    return raw
 
 
 def story_event_entries(source, target, key):
@@ -151,7 +174,7 @@ def event_skill_sets(source, target, key):
     encounters = json.loads((PROJECT / 'source/server/event_encounters.json').read_text(encoding='utf8'))['missions']
     needed = {row['A5x02C6a'] for entry in encounters.values() for row in entry['bundle']['bV34YIJQ']}
     additions += [row for row in map(json.loads,
-        (DATA / 'memorial_battle_decoded/F_MONSTER_SKILL_SET_MST.ndjson').read_text(encoding='utf8').splitlines())
+        (PROJECT / 'Japan content/Shared sources/memorial_battle_decoded/F_MONSTER_SKILL_SET_MST.ndjson').read_text(encoding='utf8').splitlines())
                   if row['A5x02C6a'] in needed]
     lines = [line for line in source.read_text(encoding='ascii').splitlines() if line]
     existing = {json_record(cbc_decrypt(key16(key), line))['A5x02C6a'] for line in lines}
@@ -212,7 +235,11 @@ def exbonus_master(source, target, key, table, restored=None):
         if identity(row) not in existing:
             lines.append(encode(row))
             existing.add(identity(row))
-    target.write_text('\n'.join(lines) + '\n', encoding='ascii', newline='\n')
+    native_raw = ('\n'.join(lines) + '\n').encode('ascii')
+    index = paired_index(table, target, native_raw, key)
+    target.write_bytes(native_raw)
+    if index is not None:
+        index[0].write_bytes(index[1])
 
 
 def localized_text_versions(source, target, key, replacements):

@@ -1,0 +1,8100 @@
+{
+ "note": "Original collection identities for every bound exploration. Selection persists per attempt; items are credited only from reported collection results. Unless documented otherwise, three draws per point are reconstructed. Estimates are stated per mission.",
+ "missions": {
+  "1110104": {
+   "name": "Earth Shrine",
+   "points": [
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006,
+    10007
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 2000,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 2000,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 1000,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 1000,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 1000,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 1000,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 1500,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 500,
+     "name": "Red Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver36_111010100.cpk",
+     "map_bin_sha256": "67a28e513bf33732318807f42b49269f282c283376aeea3daf12f21c7d9cd52b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Earth_Shrine/Exploration",
+   "provenance": "Published item percentages used as relative weights."
+  },
+  "1110105": {
+   "name": "Earth Shrine",
+   "points": [
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006,
+    10007
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 2000,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 2000,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 1000,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 1000,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 1000,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 1000,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 1500,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 500,
+     "name": "Red Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver36_111010100.cpk",
+     "map_bin_sha256": "67a28e513bf33732318807f42b49269f282c283376aeea3daf12f21c7d9cd52b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Earth_Shrine/Exploration",
+   "provenance": "Published item percentages used as relative weights."
+  },
+  "1110204": {
+   "name": "Latius Woods",
+   "points": [
+    10100,
+    10101,
+    10102
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver27_111010200.cpk",
+     "map_bin_sha256": "ecefa4e8104a1549f367b342ffbef5e59710184b4d0ceb6072ab07a3fbcaeb01"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Latius_Woods/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110206": {
+   "name": "Latius Woods",
+   "points": [
+    10100,
+    10101,
+    10102
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver27_111010200.cpk",
+     "map_bin_sha256": "ecefa4e8104a1549f367b342ffbef5e59710184b4d0ceb6072ab07a3fbcaeb01"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Latius_Woods/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110304": {
+   "name": "Dalnakya Cavern",
+   "points": [
+    10200,
+    10201,
+    10202
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver34_111010300.cpk",
+     "map_bin_sha256": "1057bad0e31755af172e33f3d58893955b7168147166169bef21dc2101deb035"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Dalnakya_Cavern/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110305": {
+   "name": "Dalnakya Cavern",
+   "points": [
+    10200,
+    10201,
+    10202
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver34_111010300.cpk",
+     "map_bin_sha256": "1057bad0e31755af172e33f3d58893955b7168147166169bef21dc2101deb035"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Dalnakya_Cavern/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110604": {
+   "name": "Grandshelt Catacombs",
+   "points": [
+    10300,
+    10301,
+    10302
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver32_111010600.cpk",
+     "map_bin_sha256": "afd9915be6ad55e4be0180696df8c39d6292818802af48302d9e451f890062cd"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Grandshelt_Catacombs/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110804": {
+   "name": "Fulan Pass",
+   "points": [
+    10400,
+    10401,
+    10402
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver39_111010800.cpk",
+     "map_bin_sha256": "6ba1dbba23f3eeb215d6f61b2c03b3db44da744f87a39bdf570526072a860d06"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Fulan_Pass/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1110805": {
+   "name": "Fulan Pass",
+   "points": [
+    10400,
+    10401,
+    10402
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/11/Ver39_111010800.cpk",
+     "map_bin_sha256": "6ba1dbba23f3eeb215d6f61b2c03b3db44da744f87a39bdf570526072a860d06"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Fulan_Pass/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1120205": {
+   "name": "Phantom Forest",
+   "points": [
+    10500,
+    10501,
+    10502
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 700,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 700,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 2400,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 600,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 700,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 600,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 600,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 1900,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 600,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 500,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 700,
+     "name": "Green Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver31_112010200.cpk",
+     "map_bin_sha256": "e48706d30ac9d5331b449656d61ab4e767d3f36870d7425a22b12f817c658cca"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Phantom_Forest/Exploration",
+   "provenance": "Published item percentages used as relative weights."
+  },
+  "1120606": {
+   "name": "Zadehl Westersands",
+   "points": [
+    10600,
+    10601,
+    10602
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver38_112010600.cpk",
+     "map_bin_sha256": "ed64f95076c71f1603bbe5372f28a3c80e3b46a20c4b7ad39c3614d05b422e82"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Zadehl_Westersands/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1120607": {
+   "name": "Zadehl Westersands",
+   "points": [
+    10600,
+    10601,
+    10602
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver38_112010600.cpk",
+     "map_bin_sha256": "ed64f95076c71f1603bbe5372f28a3c80e3b46a20c4b7ad39c3614d05b422e82"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Zadehl_Westersands/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1120906": {
+   "name": "Lanzelt Highlands",
+   "points": [
+    10700,
+    10701,
+    10702
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver30_112010900.cpk",
+     "map_bin_sha256": "4a03e50df63f23f4eb654d4334046ed0130b7e9ba252ff754f31eb60398ffc74"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Lanzelt_Highlands/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1121106": {
+   "name": "Wolfsfang Peak",
+   "points": [
+    10800,
+    10801,
+    10802
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver31_112011100.cpk",
+     "map_bin_sha256": "61175188908e70b00a81aa4cf131040fed7b2fabcd0651a30d33ea4de4ad1cc0"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Wolfsfang_Peak/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1121206": {
+   "name": "Lanzelt Ruins",
+   "points": [
+    10900,
+    10901,
+    10902
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver24_112011200.cpk",
+     "map_bin_sha256": "4b87cdef1b2d1a012207a1255768e8cd5bc62f5a9c6dd7ba29b97387362508f3"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Lanzelt_Ruins/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1121207": {
+   "name": "Lanzelt Ruins",
+   "points": [
+    10900,
+    10901,
+    10902
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/12/Ver24_112011200.cpk",
+     "map_bin_sha256": "4b87cdef1b2d1a012207a1255768e8cd5bc62f5a9c6dd7ba29b97387362508f3"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Lanzelt_Ruins/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1135106": {
+   "name": "Kolobos Marsh",
+   "points": [
+    11000,
+    11001,
+    11002,
+    11003,
+    11004
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/13/Ver26_113010100.cpk",
+     "map_bin_sha256": "acf3d9b54293cd6601f917f97c78295d3b8ad3135b37bc542cddc73894ecf6d4"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Kolobos_Marsh/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1135306": {
+   "name": "Golzas Canyon",
+   "points": [
+    11100,
+    11101,
+    11102,
+    11103,
+    11104
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/13/Ver32_113010300.cpk",
+     "map_bin_sha256": "a6603ca8cf8808324f79f2e76eee3d0c52d88baeb18d9dfedd54fc1e1ddd0e27"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Golzas_Canyon/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1135606": {
+   "name": "Kolobos Reef",
+   "points": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/13/Ver27_113010500.cpk",
+     "map_bin_sha256": "5beddc3cd2da6c9092a8857853a40dd352cf8b3d9aaa0b9ab21623eec96449f5"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Kolobos_Reef/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1135807": {
+   "name": "Shrine of Decay",
+   "points": [
+    11300,
+    11301,
+    11302,
+    11303,
+    11304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/13/Ver40_113010700.cpk",
+     "map_bin_sha256": "ac37d6b1ae2c14464f0a0aa5b8a7dfa0778411c3a9a052f4654c0ca4841ba5c1"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Shrine_of_Decay/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1210106": {
+   "name": "Maranda Coast",
+   "points": [
+    12100,
+    12101,
+    12102,
+    12103,
+    12104
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 1400,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 1500,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 1100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 900,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 500,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 900,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 600,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 800,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 500,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 400,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 900,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 500,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 200,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/21/Ver32_121010100.cpk",
+     "map_bin_sha256": "4061b42d1376ca7748ada323f5cc9e81b934264253ed8a2fb8605f74b0faa92d"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Maranda_Coast/Exploration",
+   "provenance": "Published item percentages used as relative weights."
+  },
+  "1210406": {
+   "name": "Dwarves' Forge",
+   "points": [
+    12200,
+    12201,
+    12202,
+    12203,
+    12204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 1500,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 1500,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 1000,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 800,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 500,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 900,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 400,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 800,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 500,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 500,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 900,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 500,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 200,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/21/Ver38_121010300.cpk",
+     "map_bin_sha256": "d0d86ec9627b5c70463cdb218b179d530355411ec44195e176f9e8491382f985"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Dwarves'_Forge/Exploration",
+   "provenance": "Published item percentages used as relative weights."
+  },
+  "1210606": {
+   "name": "Windy Heights (West)",
+   "points": [
+    12300,
+    12301,
+    12302,
+    12303,
+    12304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/21/Ver24_121010500.cpk",
+     "map_bin_sha256": "ecc43ca89e2f12568330fbfe3318f19b2633b6830178d351fccce34c1a486b0b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Windy_Heights_West/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1220206": {
+   "name": "Mobreeze Airship Factory",
+   "points": [
+    12400,
+    12401,
+    12402,
+    12403,
+    12404
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/22/Ver24_122010200.cpk",
+     "map_bin_sha256": "c1d5717d1917530a88cc436cee25b64142536c9e84d2749c646636c37c0f757e"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Mobreeze_Airship_Factory/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1220306": {
+   "name": "Junkyard",
+   "points": [
+    12500,
+    12501,
+    12502,
+    12503,
+    12504
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/22/Ver23_122010300.cpk",
+     "map_bin_sha256": "78b941a011198533c23fa0f17b5a09be456a14090d35bd08d96646d34a741be5"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Junkyard/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1220607": {
+   "name": "Wind Shrine",
+   "points": [
+    12600,
+    12601,
+    12602,
+    12603,
+    12604
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/22/Ver31_122010600.cpk",
+     "map_bin_sha256": "d5c7070f98c90c08e905e355c3b4f30f9162bd9f1d64fbc0cfd9f3ce8259d16c"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Wind_Shrine/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1310606": {
+   "name": "Aquatic Cove",
+   "points": [
+    13201,
+    13202,
+    13203,
+    13204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/31/Ver19_131010700.cpk",
+     "map_bin_sha256": "4bb4a1163df75e73124e98e14091f3a24506f531a2b4081813688e2aa533a7c1"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Aquatic_Cove/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1310806": {
+   "name": "Lake Dorr",
+   "points": [
+    13301,
+    13302,
+    13303,
+    13304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/31/Ver29_131010900.cpk",
+     "map_bin_sha256": "10c2c34b511999199ee3951d62803da5f4022a2833ff2fb3de9483db645a4d9c"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Lake_Dorr/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1320506": {
+   "name": "Ghost Ship",
+   "points": [
+    13401,
+    13402,
+    13403,
+    13404
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/32/Ver20_132010500.cpk",
+     "map_bin_sha256": "36bbddf6ffd5ecf84968d1adb333980467ff635062b104b401f771adddac9f60"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ghost_Ship/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1320906": {
+   "name": "Water Shrine",
+   "points": [
+    13501,
+    13502,
+    13503,
+    13504
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/32/Ver21_132010900.cpk",
+     "map_bin_sha256": "39a8de343b9889f9ff25d2b6c1ecdae0881a5d908fe8da2296081c933c86f8ce"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Water_Shrine/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1410306": {
+   "name": "Abandoned Orphanage",
+   "points": [
+    14201,
+    14202,
+    14203,
+    14204,
+    14205
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/41/Ver19_141010300.cpk",
+     "map_bin_sha256": "509e81fae7fde9c63ea37cce1862eb8bc22f53a8ddc71eb33a2b27199597268a"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Abandoned_Orphanage/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1410605": {
+   "name": "Surging Volcano",
+   "points": [
+    14301,
+    14302,
+    14303,
+    14304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/41/Ver24_141010600.cpk",
+     "map_bin_sha256": "f4d3ab758a2e212a65f43ef3edeeaef38ff876b72069574ba7a9aa3c4805eae0"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Surging_Volcano/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1410807": {
+   "name": "Fire Shrine",
+   "points": [
+    14401,
+    14402,
+    14403,
+    14404
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/41/Ver20_141010800.cpk",
+     "map_bin_sha256": "8208231e9525273fbbd5f48528851550f24509029d81e206018679cc982b4721"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Fire_Shrine/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1420307": {
+   "name": "Zoldaad Castle Grounds",
+   "points": [
+    14501,
+    14502,
+    14503,
+    14504,
+    14505
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/42/Ver17_142010300.cpk",
+     "map_bin_sha256": "af8fddbaa7e752fa5270ca0635aa6a0608bfc06c4ed7625342e04ed70d54eba9"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Zoldaad_Castle_Grounds/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1420607": {
+   "name": "Invincible Interior",
+   "points": [
+    14601,
+    14602,
+    14603,
+    14604,
+    14605
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Iron Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/42/Ver17_142010600.cpk",
+     "map_bin_sha256": "56943cc64957c671dfe6edb9361a04a1dfc1348c4c95b18f1dc955b87166fdb5"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Invincible_Interior/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1510205": {
+   "name": "Snowy Woods",
+   "points": [
+    15101,
+    15102,
+    15103,
+    15104,
+    15105
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/51/Ver24_151010200.cpk",
+     "map_bin_sha256": "c950261f38b5955cfcb9db42aad03022fcd55a26b91af21c92bd7e5bce03fed6"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Snowy_Woods/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1510705": {
+   "name": "Mysidia Underground",
+   "points": [
+    15301,
+    15302,
+    15303,
+    15304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/52/Ver18_152010200.cpk",
+     "map_bin_sha256": "9c2dbf06bcb4bd7ff81571eb5a5a32fd023aefc6220c0453151472fade5da311"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Mysidia_Underground/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1510906": {
+   "name": "Mysidia Tower",
+   "points": [
+    15401,
+    15402,
+    15403,
+    15404
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/52/Ver24_152010400.cpk",
+     "map_bin_sha256": "37a92d15e570a3b9565199e80e57ac7a41ee320a3f77d7454cffc62acf60cfdf"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Mysidia_Tower/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1610405": {
+   "name": "Societal Ruins",
+   "points": [
+    16101,
+    16102,
+    16103,
+    16104,
+    16105
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/61/Ver21_161010400.cpk",
+     "map_bin_sha256": "3b2594dd37d46c77137a5b3880e54a55253aae492134473479b26c2d299bbc96"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Societal_Ruins/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1610806": {
+   "name": "Gronoa Shrine Entrance",
+   "points": [
+    16201,
+    16202,
+    16203
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/61/Ver27_161010800.cpk",
+     "map_bin_sha256": "f6c4ca591ac2782cf09dd147a7331cb79466ea92e622f450ee6c26ba2c772c59"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Gronoa_Shrine_Entrance/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1620606": {
+   "name": "Ruggles Underground Pass",
+   "points": [
+    16301,
+    16302,
+    16303,
+    16304
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/62/Ver24_162010600.cpk",
+     "map_bin_sha256": "47613f382f03c673826c9586495914d9ca6fed73825d8f52709c97f6f5b373ed"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ruggles_Underground_Pass/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1710806": {
+   "name": "Forgotten Walls",
+   "points": [
+    17201,
+    17202,
+    17203,
+    17204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/71/Ver21_171010800.cpk",
+     "map_bin_sha256": "46d7a7030cba4f64b61d07b85b25bd327fe4b07accf29cf4c216a010d8f21e20"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Forgotten_Walls/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1810305": {
+   "name": "Sky Cave",
+   "points": [
+    18101,
+    18102,
+    18103,
+    18104
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/81/Ver30_181010300.cpk",
+     "map_bin_sha256": "5a9ddfc7586ebc80852f96440e16bdc99f41f47fdffc596215e32993e879a029"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Sky_Cave/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1910305": {
+   "name": "Roaring Volcano",
+   "points": [
+    19101,
+    19102,
+    19103,
+    19104
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/91/Ver20_182010300.cpk",
+     "map_bin_sha256": "5ddd394bd5b0d906ff79aaf33237321a63271a96a884f21f3819636a3c542755"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Roaring_Volcano/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "1910606": {
+   "name": "Land of Darkness",
+   "points": [
+    19201,
+    19202,
+    19203,
+    19204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/91/Ver17_182010600.cpk",
+     "map_bin_sha256": "0420979bfbffff1ebb59449275d5e007c850ccc778d33567e634745f035a0f7f"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Land_of_Darkness/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "8180102": {
+   "name": "King Mog's Lost Maps",
+   "points": [
+    81801,
+    81802,
+    81803,
+    81804,
+    81805,
+    81806
+   ],
+   "draws": 5,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP3/Ver10_818010100.cpk",
+     "map_bin_sha256": "c901679c3c262d1001a655e8247830d71675877824bd546fa33caf5ffd7b0a36"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/King_Mog's_Lost_Maps",
+   "provenance": "King Mog Lost Maps: all eight megacrysts, 25-30 per run. Five items per point; equal element weights reconstructed."
+  },
+  "8180104": {
+   "name": "King Mog's Lost Maps",
+   "points": [
+    81807,
+    81808,
+    81809,
+    81810,
+    81811,
+    81812
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 290010000,
+     "count": 1,
+     "weight": 100,
+     "name": "Beast Meat"
+    },
+    {
+     "kind": 20,
+     "id": 290010100,
+     "count": 1,
+     "weight": 100,
+     "name": "Pearl of Wisdom"
+    },
+    {
+     "kind": 20,
+     "id": 290010200,
+     "count": 1,
+     "weight": 100,
+     "name": "Allure Powder"
+    },
+    {
+     "kind": 20,
+     "id": 290020000,
+     "count": 1,
+     "weight": 100,
+     "name": "Litrock"
+    },
+    {
+     "kind": 20,
+     "id": 290020100,
+     "count": 1,
+     "weight": 100,
+     "name": "Seed of Life"
+    },
+    {
+     "kind": 20,
+     "id": 290020200,
+     "count": 1,
+     "weight": 100,
+     "name": "Crimson Tear"
+    },
+    {
+     "kind": 20,
+     "id": 290020300,
+     "count": 1,
+     "weight": 100,
+     "name": "Mystic Ore"
+    },
+    {
+     "kind": 20,
+     "id": 290020400,
+     "count": 1,
+     "weight": 100,
+     "name": "Aqua Pearl"
+    },
+    {
+     "kind": 20,
+     "id": 290020500,
+     "count": 1,
+     "weight": 100,
+     "name": "Luminous Horn"
+    },
+    {
+     "kind": 20,
+     "id": 290020600,
+     "count": 1,
+     "weight": 100,
+     "name": "Quality Parts"
+    },
+    {
+     "kind": 20,
+     "id": 290020700,
+     "count": 1,
+     "weight": 100,
+     "name": "Rainbow Needle"
+    },
+    {
+     "kind": 20,
+     "id": 290020800,
+     "count": 1,
+     "weight": 100,
+     "name": "Golden Egg"
+    },
+    {
+     "kind": 20,
+     "id": 290020900,
+     "count": 1,
+     "weight": 100,
+     "name": "Book of Ruin"
+    },
+    {
+     "kind": 20,
+     "id": 290030000,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth's Core"
+    },
+    {
+     "kind": 20,
+     "id": 290030100,
+     "count": 1,
+     "weight": 100,
+     "name": "Heaven's Ash"
+    },
+    {
+     "kind": 20,
+     "id": 290030200,
+     "count": 1,
+     "weight": 100,
+     "name": "Deepsea Bloom"
+    },
+    {
+     "kind": 20,
+     "id": 290030300,
+     "count": 1,
+     "weight": 100,
+     "name": "Scripture of Time"
+    },
+    {
+     "kind": 20,
+     "id": 290030400,
+     "count": 1,
+     "weight": 100,
+     "name": "Farplane Dew"
+    },
+    {
+     "kind": 20,
+     "id": 290030500,
+     "count": 1,
+     "weight": 100,
+     "name": "Hard Rock"
+    },
+    {
+     "kind": 20,
+     "id": 290030600,
+     "count": 1,
+     "weight": 100,
+     "name": "Fury Seed"
+    },
+    {
+     "kind": 20,
+     "id": 290030700,
+     "count": 1,
+     "weight": 100,
+     "name": "Wicked Drop"
+    },
+    {
+     "kind": 20,
+     "id": 290030800,
+     "count": 1,
+     "weight": 100,
+     "name": "Brilliant Ray"
+    },
+    {
+     "kind": 20,
+     "id": 290030900,
+     "count": 1,
+     "weight": 100,
+     "name": "Lucky Seedling"
+    },
+    {
+     "kind": 20,
+     "id": 290031000,
+     "count": 1,
+     "weight": 100,
+     "name": "Bizarre Box"
+    },
+    {
+     "kind": 20,
+     "id": 290040000,
+     "count": 1,
+     "weight": 100,
+     "name": "Spiritsand"
+    },
+    {
+     "kind": 20,
+     "id": 290040100,
+     "count": 1,
+     "weight": 100,
+     "name": "God's Reliquary"
+    },
+    {
+     "kind": 20,
+     "id": 290040200,
+     "count": 1,
+     "weight": 100,
+     "name": "Dragon Heart"
+    },
+    {
+     "kind": 20,
+     "id": 290040300,
+     "count": 1,
+     "weight": 100,
+     "name": "Esper's Tear"
+    },
+    {
+     "kind": 20,
+     "id": 290040400,
+     "count": 1,
+     "weight": 100,
+     "name": "Talmonite of Life"
+    },
+    {
+     "kind": 20,
+     "id": 290050100,
+     "count": 1,
+     "weight": 100,
+     "name": "Esper Shard"
+    },
+    {
+     "kind": 20,
+     "id": 290050200,
+     "count": 1,
+     "weight": 100,
+     "name": "Esper Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 290050300,
+     "count": 1,
+     "weight": 100,
+     "name": "Sacred Crystal"
+    },
+    {
+     "kind": 20,
+     "id": 290050400,
+     "count": 1,
+     "weight": 100,
+     "name": "Holy Crystal"
+    },
+    {
+     "kind": 20,
+     "id": 290050500,
+     "count": 1,
+     "weight": 100,
+     "name": "Divine Crystal"
+    },
+    {
+     "kind": 20,
+     "id": 290060000,
+     "count": 1,
+     "weight": 100,
+     "name": "Fairies' Writ"
+    },
+    {
+     "kind": 20,
+     "id": 290060100,
+     "count": 1,
+     "weight": 100,
+     "name": "Rainbow Bloom"
+    },
+    {
+     "kind": 20,
+     "id": 290060200,
+     "count": 1,
+     "weight": 100,
+     "name": "Calamity Gem"
+    },
+    {
+     "kind": 20,
+     "id": 290060300,
+     "count": 1,
+     "weight": 100,
+     "name": "Prismatic Horn"
+    },
+    {
+     "kind": 20,
+     "id": 290060400,
+     "count": 1,
+     "weight": 100,
+     "name": "Calamity Writ"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP3/Ver12_818010200.cpk",
+     "map_bin_sha256": "b8214477b593dd2cfcbc436a1c2253cf738febf0d645eff2c73a18c08979199f"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/King_Mog's_Lost_Maps",
+   "provenance": "King Mog Lost Maps: 3-6 star unit awakening materials. IDs from original unit awakening recipes; equal weights reconstructed."
+  },
+  "8600101": {
+   "name": "Castle Exdeath - Exploration",
+   "points": [
+    423401,
+    423402,
+    423403,
+    423404
+   ],
+   "draws": 1,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 106307000,
+     "count": 100,
+     "weight": 10000,
+     "name": "Dragon Grass"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP4/Ver19_860010100.cpk",
+     "map_bin_sha256": "dcd9b375c7a38be7afdb81bb00d4e6d2caa46eba1cfeac48ad9b3261f1469877"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Castle_Exdeath_-_Exploration",
+   "provenance": "Original Castle Exdeath event currency. Point allocation reconstructed; the reused map carries newer Warlock Castle identities."
+  },
+  "8600102": {
+   "name": "Castle Exdeath - Exploration",
+   "points": [
+    423401,
+    423402,
+    423403,
+    423404
+   ],
+   "draws": 1,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 106307000,
+     "count": 100,
+     "weight": 10000,
+     "name": "Dragon Grass"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP4/Ver19_860010100.cpk",
+     "map_bin_sha256": "dcd9b375c7a38be7afdb81bb00d4e6d2caa46eba1cfeac48ad9b3261f1469877"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Castle_Exdeath_-_Exploration",
+   "provenance": "Original Castle Exdeath event currency. Point allocation reconstructed; the reused map carries newer Warlock Castle identities."
+  },
+  "11120405": {
+   "name": "Aldore Tower",
+   "points": [
+    111201,
+    111202,
+    111203
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/09/Ver17_550810400.cpk",
+     "map_bin_sha256": "5d2892718c964a85562e8288d260d053f43b3db357558e11a2cb5a5920872d80"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Aldore_Tower_(2)/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11130505": {
+   "name": "Grandore Gravity Block",
+   "points": [
+    111301,
+    111302,
+    111303,
+    111304,
+    111305,
+    111306
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/09/Ver11_550811200.cpk",
+     "map_bin_sha256": "a0021fbf522495fdeeb71c05c6b91d4702500a7a89c657fc0ec35699e47ca806"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Grandore_Gravity_Block/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11210105": {
+   "name": "Vesta Ruins",
+   "points": [
+    112101,
+    112102,
+    112103
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/02/Ver25_550210100.cpk",
+     "map_bin_sha256": "1406a89c4df7d7a00c7f718031192673c864b903a22f91c507240deffb203062"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Vesta_Ruins/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11211006": {
+   "name": "Inside Labor Camp",
+   "points": [
+    112104,
+    112105,
+    112106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/02/Ver28_550210400.cpk",
+     "map_bin_sha256": "13153f8d932f89b55c405c676158bf168b4ed346bd179642ccb7a0248fa6a05e"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Inside_Labor_Camp/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11211706": {
+   "name": "Georl Barrier Station",
+   "points": [
+    112107,
+    112108,
+    112109
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/02/Ver25_550210900.cpk",
+     "map_bin_sha256": "050cf1c4cb45f3b2f8ce58c7443faa508408eaa3993fd2a296ee437643695b71"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Georl_Barrier_Station/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11310505": {
+   "name": "Petra, Forest of Illusion",
+   "points": [
+    113101,
+    113102,
+    113103
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/03/Ver24_550310300.cpk",
+     "map_bin_sha256": "ec0583fc1cd7ad85cc0fd90e4d34136833e65d8b96e7f3cf61af8a0a8ea3f25b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Petra,_Forest_of_Illusion/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11311506": {
+   "name": "Energy Transfer Station",
+   "points": [
+    113107,
+    113108,
+    113109
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/03/Ver23_550310800.cpk",
+     "map_bin_sha256": "906934ac6f03fc9d3d71b81dd015240556a08f0f08f343357cbd0cba52168496"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Energy_Transfer_Station/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11315101": {
+   "name": "Ruins of the Water God",
+   "points": [
+    113104,
+    113105,
+    113106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/03/Ver24_550330100.cpk",
+     "map_bin_sha256": "cd60d7256939eaa3ee768fcad1e38aa9767c5c9362ee6e349d4b0198585d429b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ruins_of_the_Water_God",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11315102": {
+   "name": "Ruins of the Water God",
+   "points": [
+    113104,
+    113105,
+    113106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/03/Ver24_550330100.cpk",
+     "map_bin_sha256": "cd60d7256939eaa3ee768fcad1e38aa9767c5c9362ee6e349d4b0198585d429b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ruins_of_the_Water_God",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11315103": {
+   "name": "Ruins of the Water God",
+   "points": [
+    113104,
+    113105,
+    113106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/03/Ver24_550330100.cpk",
+     "map_bin_sha256": "cd60d7256939eaa3ee768fcad1e38aa9767c5c9362ee6e349d4b0198585d429b"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ruins_of_the_Water_God",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11420806": {
+   "name": "Runferia Castle",
+   "points": [
+    114101,
+    114102,
+    114103,
+    114104,
+    114105
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/04/Ver18_550410600.cpk",
+     "map_bin_sha256": "00df574e60b414c4d7432f2ae3173ad7096f1ce617dbe37e9df8c1d21cacd1fe"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Runferia_Castle/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11421506": {
+   "name": "Energy Extraction Station",
+   "points": [
+    115101,
+    115102,
+    115103,
+    115104,
+    115105
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/04/Ver23_550411100.cpk",
+     "map_bin_sha256": "adb102ca603bbe327812b51224663c6d4310912ce984c3b95f3e740ffabed92a"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Energy_Extraction_Station/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11421605": {
+   "name": "Nirvana Woods",
+   "points": [
+    114116,
+    114117
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/04/Ver21_550411200.cpk",
+     "map_bin_sha256": "3cdbf06016830ccd852cca101a57ac36ecdecc5151f52eb802fe13edcfc4539e"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Nirvana_Woods/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11510606": {
+   "name": "Savage Ruins",
+   "points": [
+    116101,
+    116102,
+    116103
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/05/Ver28_550510500.cpk",
+     "map_bin_sha256": "a9f28cbb7ecb31ec797af5265996ed115d9ba8bb3f74d52e0ca533fa33cbccef"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Savage_Ruins/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11511406": {
+   "name": "Ghastly Valley",
+   "points": [
+    116104,
+    116105,
+    116106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/05/Ver17_550511300.cpk",
+     "map_bin_sha256": "a2a3c8c87f665bcae67b743da1a7e17e365248d3999403c006b43052db5dc8eb"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Ghastly_Valley/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11512405": {
+   "name": "Sandstorm Maze",
+   "points": [
+    115201,
+    115202,
+    115203
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/05/Ver16_550512500.cpk",
+     "map_bin_sha256": "727aa55c22fdccf67eea05fa9fc155fd3578a9cb03cea9c56a5a5836c8258ddf"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Sandstorm_Maze/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11520705": {
+   "name": "Visectrum Underground Waterway",
+   "points": [
+    115204,
+    115205,
+    115206
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/05/Ver16_550513000.cpk",
+     "map_bin_sha256": "51b12104d7c52f2671b6dcfcebb7a06b1959f100388c2aab185e63fb57261e44"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Visectrum_Underground_Waterway/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11610405": {
+   "name": "Magitek Weapon Development Facility",
+   "points": [
+    116107,
+    116108
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/06/Ver22_550610300.cpk",
+     "map_bin_sha256": "0969b1d059a8712cda0fd4cb30e94da0418e3af212c8a2f718e0fec1ac4f4edd"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Magitek_Weapon_Development_Facility/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11621306": {
+   "name": "Lezal Mountain Base",
+   "points": [
+    116201,
+    116202
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001800,
+     "count": 1,
+     "weight": 100,
+     "name": "Green Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107002200,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002500,
+     "count": 1,
+     "weight": 100,
+     "name": "Orange Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/06/Ver24_550611600.cpk",
+     "map_bin_sha256": "40b99a799a062ebc73dd1397eba75a781147c85a764cf0fece87ecae66ae4bbe"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Lezal_Mountain_Base/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11710506": {
+   "name": "Pearl Cavern",
+   "points": [
+    117101,
+    117102,
+    117103
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002300,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002600,
+     "count": 1,
+     "weight": 100,
+     "name": "Violet Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/07/Ver14_550710500.cpk",
+     "map_bin_sha256": "6c58bd631fac906b503037a211bb7c644e0f11d231508bd7dae444757c4dd715"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Pearl_Cavern/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11711205": {
+   "name": "Grand Falls",
+   "points": [
+    117104,
+    117105,
+    117106
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/07/Ver21_550711100.cpk",
+     "map_bin_sha256": "6060617c8ae5a1f70acd5bec758b1a3a92d558043a2db264d7617a782921fa8e"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Grand_Falls/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11711605": {
+   "name": "Glistening Ice Caves",
+   "points": [
+    117107,
+    117108,
+    117109
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001700,
+     "count": 1,
+     "weight": 100,
+     "name": "Blue Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001900,
+     "count": 1,
+     "weight": 100,
+     "name": "White Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/08/Ver23_550711500.cpk",
+     "map_bin_sha256": "a2c846c85a68790f650d2ac1f4571ad18adda5fbff7da6e2a081eb9f966b3ff1"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Glistening_Ice_Caves/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11712105": {
+   "name": "Smokey Caves",
+   "points": [
+    117110,
+    117111,
+    117112
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Adamantite Lump"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107002100,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002400,
+     "count": 1,
+     "weight": 100,
+     "name": "Yellow Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/08/Ver16_550712000.cpk",
+     "map_bin_sha256": "934eff3128cc12a0fd059abfcb35fee055332b138d044d0683a5c3979dce7165"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Smokey_Caves/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "11712305": {
+   "name": "River of Fire",
+   "points": [
+    117113,
+    117114,
+    117115
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Mythril Ore"
+    },
+    {
+     "kind": 20,
+     "id": 203000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Gold Ore"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 107001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Red Megacite"
+    },
+    {
+     "kind": 20,
+     "id": 107001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Magicite"
+    },
+    {
+     "kind": 20,
+     "id": 107002000,
+     "count": 1,
+     "weight": 100,
+     "name": "Black Megacite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map2/08/Ver16_550712200.cpk",
+     "map_bin_sha256": "da6774523a6119e98a12714fd1b82039434efd4e6f07c8e04a05919058750f8a"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/River_of_Fire/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "21010101": {
+   "name": "The Sealed Tower",
+   "points": [
+    210101,
+    210102,
+    210103,
+    210104,
+    210105
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map4/ex/Ver3_1610101000.cpk",
+     "map_bin_sha256": "6f08159b6db9318a5f05065bc8a28a7f28ebddac0c8af4b5caedba2d897e53fe"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/The_Sealed_Tower_-_Level_1",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "21010102": {
+   "name": "The Sealed Tower",
+   "points": [
+    210201,
+    210202,
+    210203,
+    210204
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map4/ex/Ver3_1610102000.cpk",
+     "map_bin_sha256": "3833c20ec58dcb4fe6a118ffcbbb872d019f6d93b74c2d5d597427b076fb5c92"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/The_Sealed_Tower_-_Level_2",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "21010103": {
+   "name": "The Sealed Tower",
+   "points": [
+    210301,
+    210302,
+    210303,
+    210304,
+    210305,
+    210306
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 203000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Silver Ore"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map4/ex/Ver1_1610103000.cpk",
+     "map_bin_sha256": "bef17eba4107dce3c443c3a82a1e146146dcc2ead2989c53465c54d7c6ae9dfc"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/The_Sealed_Tower_-_Level_3",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "22010101": {
+   "name": "",
+   "points": [
+    10400,
+    10401,
+    10402
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 203000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Copper Ore"
+    },
+    {
+     "kind": 20,
+     "id": 204000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lumber"
+    },
+    {
+     "kind": 20,
+     "id": 201000800,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000500,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000200,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000700,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000300,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000400,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 201000600,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Cryst"
+    },
+    {
+     "kind": 20,
+     "id": 107000100,
+     "count": 1,
+     "weight": 100,
+     "name": "Magicite Shard"
+    },
+    {
+     "kind": 20,
+     "id": 107001400,
+     "count": 1,
+     "weight": 100,
+     "name": "White Magicite"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/memorial_fill/common_lang/sd/map/rtg/Ver0_220101000.cpk",
+     "map_bin_sha256": "b4d9a1bab90696fdb64e31b097dfdab0cb44a6d59c59961467aa90f90723d6ff"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Fulan_Pass/Exploration",
+   "provenance": "Published item membership. Equal item weights are local estimates; original server probabilities were not recovered."
+  },
+  "32830101": {
+   "name": "",
+   "points": [
+    328301,
+    328302
+   ],
+   "draws": 3,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 201000900,
+     "count": 1,
+     "weight": 100,
+     "name": "Fire Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001000,
+     "count": 1,
+     "weight": 100,
+     "name": "Ice Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001100,
+     "count": 1,
+     "weight": 100,
+     "name": "Lightning Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001200,
+     "count": 1,
+     "weight": 100,
+     "name": "Water Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001400,
+     "count": 1,
+     "weight": 100,
+     "name": "Wind Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001300,
+     "count": 1,
+     "weight": 100,
+     "name": "Earth Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001500,
+     "count": 1,
+     "weight": 100,
+     "name": "Light Megacryst"
+    },
+    {
+     "kind": 20,
+     "id": 201001600,
+     "count": 1,
+     "weight": 100,
+     "name": "Dark Megacryst"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/memorial_fill/common_lang/sd/map4/SP8/Ver0_429405100.cpk",
+     "map_bin_sha256": "48ada2d0008e1f8665ecc4b6554c72cc0ad0d41e2e3d9188f030709a76d25d60"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Esper_of_Destruction",
+   "provenance": "Original underwater exploration point identities. Later-tier megacryst membership reconstructed; original pool unverified."
+  },
+  "42020101": {
+   "name": "Daring Rescue at the Crumbling House",
+   "points": [
+    420201,
+    420202,
+    420203,
+    420204
+   ],
+   "draws": 1,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 106317000,
+     "count": 100,
+     "weight": 10000,
+     "name": "A World Ripped Apart Certificate"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP6/Ver1_5001400100.cpk",
+     "map_bin_sha256": "5e088c1619529cc6a283d9ee55e22b6c9ae6927a124f1a4bbec4b249f9b76de0"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Daring_Rescue_at_the_Crumbling_House",
+   "provenance": "Published event currency and quantity per point."
+  },
+  "42220101": {
+   "name": "Fight for Survival",
+   "points": [
+    422201,
+    422202,
+    422203,
+    422204,
+    422205
+   ],
+   "draws": 1,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 106317300,
+     "count": 100,
+     "weight": 10000,
+     "name": "Haunted Certificate"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP6/Ver1_5001500100.cpk",
+     "map_bin_sha256": "57b982d2eeb58dcd99c81bb2e3aea349f549b132d6b933bd5369daba3c2e4a66"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/Fight_for_Survival",
+   "provenance": "Published event currency and quantity per point."
+  },
+  "42340101": {
+   "name": "The Warlock's Castle",
+   "points": [
+    423401,
+    423402,
+    423403,
+    423404
+   ],
+   "draws": 1,
+   "pool": [
+    {
+     "kind": 20,
+     "id": 106317600,
+     "count": 150,
+     "weight": 10000,
+     "name": "The Forest of Slumbering Crystals Certificate"
+    }
+   ],
+   "map_sources": [
+    {
+     "path": "data/client/files/common_lang/sd/map/SP4/Ver19_860010100.cpk",
+     "map_bin_sha256": "dcd9b375c7a38be7afdb81bb00d4e6d2caa46eba1cfeac48ad9b3261f1469877"
+    }
+   ],
+   "source": "https://exvius.fandom.com/wiki/The_Warlock's_Castle",
+   "provenance": "Published event currency and quantity per point."
+  }
+ }
+}

@@ -21,8 +21,9 @@ from battle_content import IndexSource, derive_mission, is_menu_resource_row, re
 
 
 def rows(directory, name):
+    parent = ROOT / ('Japan content/Shared sources' if directory == 'memorial_battle_decoded' else 'data')
     return [json.loads(line) for line in
-            (ROOT / 'data' / directory / (name + '.ndjson')).read_text(encoding='utf-8').splitlines() if line]
+            (parent / directory / (name + '.ndjson')).read_text(encoding='utf-8').splitlines() if line]
 
 
 def identity(value):
@@ -248,7 +249,7 @@ def main():
         recovered = [reconstruction.skill_rows[sid] for sid in sorted(reconstruction.recovered_skills)]
     document = {'version': 1, 'provenance': {
         'global': 'data/mst_decoded/F_MISSION_MST.ndjson',
-        'memorial': 'data/memorial_battle_decoded/F_MISSION_MST.ndjson',
+        'memorial': 'Japan content/Shared sources/memorial_battle_decoded/F_MISSION_MST.ndjson',
         'item_world': 'Original Steel Castle Melfikya floor encounters, shared across campaign dates',
         'global_sha256': hashlib.sha256((ROOT / 'data/mst_decoded/F_MISSION_MST.ndjson').read_bytes()).hexdigest()},
         'global_counterparts': {

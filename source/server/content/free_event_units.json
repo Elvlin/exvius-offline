@@ -1,0 +1,685 @@
+{
+ "note": "One claimable copy per verified free reward, raid or event exchange unit, including historical login gifts. Brave Shift forms and summon-only units are excluded. Stable issuance receipts survive claims and deletion.",
+ "units": [
+  {
+   "unit": "216000207",
+   "root": "216000207",
+   "name": "Jill Warrick",
+   "mail_id": "9800216000207",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "212002907",
+   "root": "212002907",
+   "name": "Princess of Liberty Ashe",
+   "mail_id": "9800212002907",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "212002807",
+   "root": "212002807",
+   "name": "Spirited Friend Penelo",
+   "mail_id": "9800212002807",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "339000907",
+   "root": "339000907",
+   "name": "Wing of Destiny Sterne",
+   "mail_id": "9800339000907",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100043507",
+   "root": "100043507",
+   "name": "Charlotte -Esper of Destruction-",
+   "mail_id": "9800100043507",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "215003207",
+   "root": "215003207",
+   "name": "Chosen King's Shield Gladiolus",
+   "mail_id": "9800215003207",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "253002107",
+   "root": "253002107",
+   "name": "Argath",
+   "mail_id": "9800253002107",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100042107",
+   "root": "100042107",
+   "name": "Dark Dragon Buffon",
+   "mail_id": "9800100042107",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "213001907",
+   "root": "213001907",
+   "name": "Cid Raines",
+   "mail_id": "9800213001907",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100041607",
+   "root": "100041607",
+   "name": "Sheratan",
+   "mail_id": "9800100041607",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "254002707",
+   "root": "254002707",
+   "name": "Qator",
+   "mail_id": "9800254002707",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401014707",
+   "root": "401014707",
+   "name": "Radiant Smile Addison Rae",
+   "mail_id": "9800401014707",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "208002807",
+   "root": "208002807",
+   "name": "Sorceress of the Present Edea",
+   "mail_id": "9800208002807",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "207003307",
+   "root": "207003307",
+   "name": "Cissnei",
+   "mail_id": "9800207003307",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100040707",
+   "root": "100040707",
+   "name": "Raegen -Dark Lineage-",
+   "mail_id": "9800100040707",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "205002107",
+   "root": "205002107",
+   "name": "Kelger",
+   "mail_id": "9800205002107",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "207003007",
+   "root": "207003007",
+   "name": "Sonon",
+   "mail_id": "9800207003007",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "343000107",
+   "root": "343000107",
+   "name": "Lord of Light",
+   "mail_id": "9800343000107",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "344000407",
+   "root": "344000407",
+   "name": "Beast King Crocodine",
+   "mail_id": "9800344000407",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100037707",
+   "root": "100037707",
+   "name": "Golden Rizer",
+   "mail_id": "9800100037707",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "258000305",
+   "root": "258000305",
+   "name": "Lumina",
+   "mail_id": "9800258000305",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100032907",
+   "root": "100032907",
+   "name": "Charlotte & Physalis",
+   "mail_id": "9800100032907",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "206000905",
+   "root": "206000905",
+   "name": "Strago",
+   "mail_id": "9800206000905",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "341000105",
+   "root": "341000105",
+   "name": "Young Xehanort (KHDR)",
+   "mail_id": "9800341000105",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100026205",
+   "root": "100026205",
+   "name": "Alhena",
+   "mail_id": "9800100026205",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "202002205",
+   "root": "202002205",
+   "name": "Minwu",
+   "mail_id": "9800202002205",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100031405",
+   "root": "100031405",
+   "name": "Stylish Steward Pecciotta",
+   "mail_id": "9800100031405",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "251000105",
+   "root": "251000105",
+   "name": "Tyro",
+   "mail_id": "9800251000105",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "207001305",
+   "root": "207001305",
+   "name": "Reno (FFVII REMAKE)",
+   "mail_id": "9800207001305",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "209002305",
+   "root": "209002305",
+   "name": "Knight of Pluto Zidane",
+   "mail_id": "9800209002305",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "212001705",
+   "root": "212001705",
+   "name": "Blue Sky Belle Fran",
+   "mail_id": "9800212001705",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "254002105",
+   "root": "254002105",
+   "name": "Steadfast Soldier Machina",
+   "mail_id": "9800254002105",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "339000205",
+   "root": "339000205",
+   "name": "Mont Leonis",
+   "mail_id": "9800339000205",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "208000305",
+   "root": "208000305",
+   "name": "Quistis",
+   "mail_id": "9800208000305",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "250000205",
+   "root": "250000205",
+   "name": "Lightning (FFXIII-2)",
+   "mail_id": "9800250000205",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100027805",
+   "root": "100027805",
+   "name": "Untamed Wolf Edel",
+   "mail_id": "9800100027805",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "207001805",
+   "root": "207001805",
+   "name": "Kadaj",
+   "mail_id": "9800207001805",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000605",
+   "root": "214000605",
+   "name": "Y'shtola, the Sorceress",
+   "mail_id": "9800214000605",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100026103",
+   "root": "100026103",
+   "name": "Caroline",
+   "mail_id": "9800100026103",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "209001705",
+   "root": "209001705",
+   "name": "Strange Gourmand Quina",
+   "mail_id": "9800209001705",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "210000505",
+   "root": "210000505",
+   "name": "Kimahri",
+   "mail_id": "9800210000505",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100023903",
+   "root": "100023903",
+   "name": "Winkel",
+   "mail_id": "9800100023903",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "203001805",
+   "root": "203001805",
+   "name": "Xande",
+   "mail_id": "9800203001805",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "204002405",
+   "root": "204002405",
+   "name": "White Mage Rosa",
+   "mail_id": "9800204002405",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "201000505",
+   "root": "201000505",
+   "name": "Immortal Knight Garland",
+   "mail_id": "9800201000505",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100022705",
+   "root": "100022705",
+   "name": "Holy Night Amelia & Emilia",
+   "mail_id": "9800100022705",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "215002605",
+   "root": "215002605",
+   "name": "Gentiana",
+   "mail_id": "9800215002605",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401007505",
+   "root": "401007505",
+   "name": "Lovely Katy",
+   "mail_id": "9800401007505",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100021304",
+   "root": "100021304",
+   "name": "Chocobo Rain",
+   "mail_id": "9800100021304",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "304000503",
+   "root": "304000503",
+   "name": "Rabite",
+   "mail_id": "9800304000503",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401007305",
+   "root": "401007305",
+   "name": "Immortal Flame Katy",
+   "mail_id": "9800401007305",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "331000603",
+   "root": "331000603",
+   "name": "Chu-Chu",
+   "mail_id": "9800331000603",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401006305",
+   "root": "401006305",
+   "name": "Popstar Katy",
+   "mail_id": "9800401006305",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "306001303",
+   "root": "306001303",
+   "name": "Dracky",
+   "mail_id": "9800306001303",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "306001005",
+   "root": "306001005",
+   "name": "Marquis de L\u00e9on",
+   "mail_id": "9800306001005",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "319000104",
+   "root": "319000104",
+   "name": "Reimi",
+   "mail_id": "9800319000104",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100015005",
+   "root": "100015005",
+   "name": "Vagrant Knight Rain",
+   "mail_id": "9800100015005",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401004303",
+   "root": "401004303",
+   "name": "Teo",
+   "mail_id": "9800401004303",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100016605",
+   "root": "100016605",
+   "name": "Ukiyo",
+   "mail_id": "9800100016605",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "306000603",
+   "root": "306000603",
+   "name": "Slime",
+   "mail_id": "9800306000603",
+   "acquisition": "Reward Units, Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100012104",
+   "root": "100012104",
+   "name": "Emilia",
+   "mail_id": "9800100012104",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401003605",
+   "root": "401003605",
+   "name": "Lara Croft",
+   "mail_id": "9800401003605",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401001004",
+   "root": "401001004",
+   "name": "Cowboy Jake",
+   "mail_id": "9800401001004",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009704",
+   "root": "100009704",
+   "name": "Grinfield",
+   "mail_id": "9800100009704",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009604",
+   "root": "100009604",
+   "name": "Sandee",
+   "mail_id": "9800100009604",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009204",
+   "root": "100009204",
+   "name": "Kupolkan",
+   "mail_id": "9800100009204",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009504",
+   "root": "100009504",
+   "name": "Nyalu",
+   "mail_id": "9800100009504",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009304",
+   "root": "100009304",
+   "name": "Ashteroze",
+   "mail_id": "9800100009304",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401002504",
+   "root": "401002504",
+   "name": "Sportive Ariana",
+   "mail_id": "9800401002504",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401000904",
+   "root": "401000904",
+   "name": "Maiden Sakura",
+   "mail_id": "9800401000904",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401000804",
+   "root": "401000804",
+   "name": "Cheerleader Fina",
+   "mail_id": "9800401000804",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401000704",
+   "root": "401000704",
+   "name": "Swordsman Lasswell",
+   "mail_id": "9800401000704",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401002304",
+   "root": "401002304",
+   "name": "Chic Ariana",
+   "mail_id": "9800401002304",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "310000304",
+   "root": "310000304",
+   "name": "Adam",
+   "mail_id": "9800310000304",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401000604",
+   "root": "401000604",
+   "name": "Artisan Lid",
+   "mail_id": "9800401000604",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100008804",
+   "root": "100008804",
+   "name": "Moogle",
+   "mail_id": "9800100008804",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000504",
+   "root": "214000504",
+   "name": "Papalymo",
+   "mail_id": "9800214000504",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000404",
+   "root": "214000404",
+   "name": "Yda",
+   "mail_id": "9800214000404",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "100009405",
+   "root": "100009405",
+   "name": "Kelsus",
+   "mail_id": "9800100009405",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000304",
+   "root": "214000304",
+   "name": "Minfilia",
+   "mail_id": "9800214000304",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000203",
+   "root": "214000203",
+   "name": "Thancred",
+   "mail_id": "9800214000203",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "214000105",
+   "root": "214000105",
+   "name": "Y'shtola",
+   "mail_id": "9800214000105",
+   "acquisition": "Raid Summon",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "401000104",
+   "root": "401000104",
+   "name": "Dangerous Ariana",
+   "mail_id": "9800401000104",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "302000505",
+   "root": "302000505",
+   "name": "Maxwell",
+   "mail_id": "9800302000505",
+   "acquisition": "Reward Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  },
+  {
+   "unit": "206000113",
+   "root": "206000113",
+   "name": "Magitek Armor Terra",
+   "mail_id": "9800206000113",
+   "acquisition": "Star Quartz Units",
+   "source": "https://exvius.fandom.com/wiki/Unit_List"
+  }
+ ]
+}

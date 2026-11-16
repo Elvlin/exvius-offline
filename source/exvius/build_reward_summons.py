@@ -174,6 +174,16 @@ def update_arena():
     pool = [reward(10, uid, 0.75 / len(units)) for uid in units]
     pool += [reward(20, iid, 0.25 / len(items)) for iid in items]
     for banner in doc['banners']:
+        if str(banner['id']) in ('45', '46'):
+            # The original long descriptions explicitly promise one 4-star
+            # or higher unit. Keep the existing local roster and rates; the
+            # ordinary guarantee path conditions that pool for the final slot.
+            banner['guarantee'] = {'rarity': 4, 'count': 1}
+            banner['guarantee_source'] = {
+                'file': 'data/text_decoded/F_TEXT_GACHA.ndjson',
+                'key': 'MST_GACHA_EXPLAIN_LONG_' + str(banner['id']),
+                'scope': 'Original guaranteed rarity and count. Per-unit slot rates remain the existing local pool conditioned on rarity 4 or higher.'}
+            continue
         if str(banner['id']) not in ('70001', '70003'):
             continue
         banner.pop('pool', None)

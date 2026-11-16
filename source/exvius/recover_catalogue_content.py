@@ -31,7 +31,7 @@ def valid(path):
 def import_jp_archive(metadata, downloads):
     """Retain checksum-verified original packages from the preserved JP archive."""
     records = json.loads(metadata.read_text(encoding='utf8'))['files']
-    folder = ROOT / 'data/jp_andapp'
+    folder = ROOT / 'Japan content/Shared sources/jp_andapp'
     manifest_path = folder / 'manifest.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf8'))
     imported, pending = 0, 0

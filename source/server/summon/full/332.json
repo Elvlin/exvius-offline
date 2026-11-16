@@ -1,0 +1,762 @@
+{
+ "id": "332",
+ "type": "normal",
+ "name": "Leo, Terra, Celes, Locke Featured Summon",
+ "detail_id": "3321",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "lapis",
+  "amount": 500
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1005,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_ee4e99203f5c0f70.png",
+  "detail_banner": "Gacha-Leo Terra Celes Locke.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": [
+  {
+   "unit_id": "100002103",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "100002104",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "100002203",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "100002204",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "100002303",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "100002304",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "100002403",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "100002404",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "100002503",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100002504",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100002505",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100002603",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100002604",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100002605",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100002703",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100002704",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100002705",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100002803",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100002804",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100002805",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100003703",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "100003704",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "100003803",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100003804",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100003805",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100003903",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100003904",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100003905",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100004003",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100004004",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100004005",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100004103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100004104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100004105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100004403",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100004404",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100004405",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "100004604",
+   "rarity": 4,
+   "rate": 0.0009000000000000002
+  },
+  {
+   "unit_id": "100004605",
+   "rarity": 5,
+   "rate": 0.00023333333333333333
+  },
+  {
+   "unit_id": "100004703",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "100004704",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "100004705",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "201000104",
+   "rarity": 4,
+   "rate": 0.0009000000000000002
+  },
+  {
+   "unit_id": "201000105",
+   "rarity": 5,
+   "rate": 0.00023333333333333333
+  },
+  {
+   "unit_id": "201000203",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "201000204",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "201000205",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "202000103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "202000104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "202000105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "202000203",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "202000204",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "203000803",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "203000804",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "203000805",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "204000103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "204000104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "204000105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "204000203",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "204000204",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "204000403",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "204000404",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "204000503",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "204000504",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "204000505",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "204001403",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "204001404",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "204001405",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "205000103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "205000104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "205000105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "205000203",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "205000204",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "205000205",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "205000303",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "205000304",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "205000503",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "205000504",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "205000703",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "205000704",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "205000705",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "206000103",
+   "rarity": 3,
+   "rate": 0.06
+  },
+  {
+   "unit_id": "206000104",
+   "rarity": 4,
+   "rate": 0.01425
+  },
+  {
+   "unit_id": "206000105",
+   "rarity": 5,
+   "rate": 0.00075
+  },
+  {
+   "unit_id": "206000203",
+   "rarity": 3,
+   "rate": 0.06
+  },
+  {
+   "unit_id": "206000204",
+   "rarity": 4,
+   "rate": 0.01425
+  },
+  {
+   "unit_id": "206000205",
+   "rarity": 5,
+   "rate": 0.00075
+  },
+  {
+   "unit_id": "206000303",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "206000304",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "206000403",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "206000404",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "206000503",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "206000504",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "206000603",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "206000604",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "206000703",
+   "rarity": 3,
+   "rate": 0.06
+  },
+  {
+   "unit_id": "206000704",
+   "rarity": 4,
+   "rate": 0.01425
+  },
+  {
+   "unit_id": "206000705",
+   "rarity": 5,
+   "rate": 0.00075
+  },
+  {
+   "unit_id": "206001703",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "206001704",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "206001705",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "206001803",
+   "rarity": 3,
+   "rate": 0.06
+  },
+  {
+   "unit_id": "206001804",
+   "rarity": 4,
+   "rate": 0.01425
+  },
+  {
+   "unit_id": "206001805",
+   "rarity": 5,
+   "rate": 0.00075
+  },
+  {
+   "unit_id": "209000103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "209000104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "209000105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "209000203",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "209000204",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "209000304",
+   "rarity": 4,
+   "rate": 0.0009000000000000002
+  },
+  {
+   "unit_id": "209000305",
+   "rarity": 5,
+   "rate": 0.00023333333333333333
+  },
+  {
+   "unit_id": "209000503",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "209000504",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "209000505",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "209000803",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "209000804",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "209000805",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "209000903",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "209000904",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "209001003",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "209001004",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "209001005",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "211000103",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "211000104",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "212000103",
+   "rarity": 3,
+   "rate": 0.00336
+  },
+  {
+   "unit_id": "212000104",
+   "rarity": 4,
+   "rate": 0.0009720000000000001
+  },
+  {
+   "unit_id": "212000105",
+   "rarity": 5,
+   "rate": 0.00025199999999999995
+  },
+  {
+   "unit_id": "212000403",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "212000404",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  },
+  {
+   "unit_id": "212000603",
+   "rarity": 3,
+   "rate": 0.02505263157894737
+  },
+  {
+   "unit_id": "212000604",
+   "rarity": 4,
+   "rate": 0.005578947368421052
+  }
+ ],
+ "provenance": "community",
+ "source": "global-campaign-replacement",
+ "community": {
+  "release": "2016-09-02",
+  "until": null,
+  "limited": false,
+  "units": [
+   "Leo",
+   "Terra",
+   "Celes",
+   "Locke"
+  ],
+  "unit_ids": [
+   "206000103",
+   "206000203",
+   "206000703",
+   "206001803"
+  ],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2016-09-02",
+ "campaign_identity": "global:2016-09-02:gacha-leo terra celes locke.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Widget:Summon_Simulator/20160902",
+  "sha256": "ff1413c110f33ed8823ce439651bbb39616cffd775319aba672b1a28aa6772ba",
+  "scope": "Full unit pools and weights preserved by the contemporary community simulator.",
+  "official_server_table": false,
+  "eligibility_authored": false,
+  "guaranteed_simulator_unresolved": "empty historical group: 4_common_ft"
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2016",
+   "sha256": "af6d445ecaf3bccdecbb473cd4f0f563d34320b8381b90f9bab1b5c4a03bda77"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/9/9f/Gacha-Leo_Terra_Celes_Locke.png/revision/latest?cb=20160901141256",
+   "sha256": "e1712112639860a420a245e55891e4983c02118be494212e0fd29344a620b356"
+  }
+ ],
+ "secondary_offer": {
+  "cost": {
+   "kind": "lapis",
+   "amount": 5000
+  },
+  "draws": 11,
+  "exe_count": 1,
+  "guarantee": {
+   "rarity": 4,
+   "count": 1,
+   "pool": {
+    "tiers": [
+     {
+      "rarity": 4,
+      "rate": 0.95,
+      "units": [
+       "100004604",
+       "201000104",
+       "209000304"
+      ]
+     }
+    ]
+   }
+  },
+  "img_btn": "gacha_btns_gold_11"
+ },
+ "catalogue_replacement": {
+  "campaign_id": "9100005",
+  "assignment": "User-authorized replacement for an unidentifiable reusable server slot."
+ },
+ "state_id": "9100005",
+ "alias_ids": [
+  "9100005"
+ ],
+ "ticket_group_id": 10020,
+ "img_btn_primary": "gacha_btns_gold_1"
+}

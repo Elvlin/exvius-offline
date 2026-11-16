@@ -44,7 +44,14 @@ def groups(player, banner):
 
 
 def roll(player, banner, requested_detail, repeats=1):
-    if player.mode == 'frozen' or str(requested_detail) != detail_id(player, banner):
+    if banner.get('activation_ready') is False:
+        return None
+    primary = detail_id(player, banner)
+    from raid_summon import batch_detail_id
+    allowed = {primary}
+    if banner.get('raid_batch_limit'):
+        allowed.add(batch_detail_id(primary))
+    if player.mode == 'frozen' or str(requested_detail) not in allowed:
         return None
     saved = state(player, banner)
     index = saved['index']
@@ -120,9 +127,15 @@ def next_box(spec, req):
     banner = next((b for b in banners if str(b['id']) == str(node.get('X1IuZnj2')) and b.get('boxes')), None)
     if player is None or player.mode == 'frozen' or banner is None:
         return spec
+    from raid_summon import prepare, batch_detail_id
+    banner = prepare(player, banner)
     saved = state(player, banner)
     index = saved['index']
-    if str(node.get('nqzG3b2v')) == detail_id(player, banner) and index < len(banner['boxes']):
+    primary = detail_id(player, banner)
+    accepted = {primary}
+    if banner.get('raid_batch_limit'):
+        accepted.add(batch_detail_id(primary))
+    if str(node.get('nqzG3b2v')) in accepted and index < len(banner['boxes']):
         bid = int(banner['box_base_id']) + index
         drawn = saved['drawn'].get(str(index), {})
         pending = any(int(drawn.get(str(bid * 1000 + order + 1), 0)) < entry['copies']

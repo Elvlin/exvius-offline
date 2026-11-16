@@ -1,0 +1,771 @@
+{
+ "version": 1,
+ "currencies": {
+  "106301000": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/March_on_Ifrit",
+    "source_revision": 305313,
+    "single_cost": 100,
+    "batch_limit": 50
+   }
+  },
+  "1209000825": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Vision_of_Bahamut",
+    "source_revision": 311243,
+    "single_cost": 100,
+    "batch_limit": 50
+   }
+  },
+  "106303000": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/March_on_Titan",
+    "source_revision": 305408,
+    "single_cost": 100,
+    "batch_limit": 50
+   }
+  },
+  "106303200": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform",
+    "source_revision": 307528,
+    "single_cost": 100,
+    "batch_limit": 100
+   },
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform_(2022)",
+    "source_revision": 351758,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106301300": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Shadow_Lord_Invades",
+    "source_revision": 307572,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106303500": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Imperial_Infiltration",
+    "source_revision": 307547,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "1209000865": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Tomb_of_the_Silversmith",
+    "source_revision": 307576,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106303400": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/March_on_Garuda",
+    "source_revision": 354199,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106304100": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Vanquish_Jie_Revorse!",
+    "source_revision": 307575,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106304500": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Estark's_Challenge",
+    "source_revision": 340230,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106304900": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Lost_City_of_Dipan",
+    "source_revision": 307546,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106307100": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Heartless:_Guard_Armor",
+    "source_revision": 307539,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106305500": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Elements'_Formation",
+    "source_revision": 307530,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106305700": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/First_and_Last",
+    "source_revision": 341362,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106305900": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Orders_and_the_Magitek_Ruins",
+    "source_revision": 307568,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106305100": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Mana_Beast",
+    "source_revision": 336494,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106306300": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Da-chao_Statue",
+    "source_revision": 307523,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106306700": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Golden_Bomb_Rush!",
+    "source_revision": 307512,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106306100": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Brigands'_Den",
+    "source_revision": 307518,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106308800": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Heartless:_Large_Body",
+    "source_revision": 307511,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106306900": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Barrier_Tower",
+    "source_revision": 340522,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106307300": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Floating_Continent:_Skies",
+    "source_revision": 307969,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106309500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Vs._Mordegon",
+    "source_revision": 339207,
+    "single_cost": 200,
+    "batch_limit": 50,
+    "standard_cost": 100,
+    "standard_batch_limit": 500
+   }
+  },
+  "106308000": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Homecoming",
+    "source_revision": 307543,
+    "single_cost": 200,
+    "batch_limit": 50,
+    "standard_cost": 100,
+    "standard_batch_limit": 500
+   }
+  },
+  "1209001140": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/No_Bed_of_Roses",
+    "source_revision": 307553,
+    "single_cost": 200,
+    "batch_limit": 50,
+    "standard_cost": 100,
+    "standard_batch_limit": 500
+   }
+  },
+  "106309000": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Vanquish_Lady_Lilith",
+    "source_revision": 307968,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106309700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_First_Homunculus",
+    "source_revision": 307567,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106308600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Asgard_Hill",
+    "source_revision": 307517,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106309900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Guiding_Hands",
+    "source_revision": 386170,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106310200": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Deling_City_Gateway",
+    "source_revision": 308240,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106310500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Battle_with_the_Vision_of_Dark_Bahamut",
+    "source_revision": 310908,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106310700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Sochen_Cave_Palace",
+    "source_revision": 346422,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106311300": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/High-Speed_Aerial_Weapon:_The_Valkyrie",
+    "source_revision": 334999,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106311500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Great_Crystal",
+    "source_revision": 324596,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106311700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Morze's_Soiree_and_the_Fountain_of_Power",
+    "source_revision": 324594,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106311900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Eternal_Wind_(Event)",
+    "source_revision": 324592,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106312100": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Resurrection_of_the_Eight_Legendary_Dragons",
+    "source_revision": 324885,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106312400": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Battle_with_Bahamut_&_Asura",
+    "source_revision": 327488,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106312600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Grand_Chaos",
+    "source_revision": 327536,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 4000,
+    "standard_batch_limit": 500
+   }
+  },
+  "106313000": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Sacrifices",
+    "source_revision": 333789,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106312800": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Promised_Day",
+    "source_revision": 403285,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106313300": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Nashmeira's_Plea",
+    "source_revision": 333877,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106313500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Destiny's_Crossroads",
+    "source_revision": 339587,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106313700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Kingdom's_Final_Hours",
+    "source_revision": 339586,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "1209001472": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Tomb_Raider:_Lost_Valley",
+    "source_revision": 351899,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106314100": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Operation_Mi'ihen",
+    "source_revision": 339674,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106313900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Monster_Mash",
+    "source_revision": 400554,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106314500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Library_of_the_Ancients",
+    "source_revision": 340545,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106314700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Rage_of_Men",
+    "source_revision": 341985,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106315200": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Counterattack_of_the_Exostars",
+    "source_revision": 342914,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106315400": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_First_Shoot",
+    "source_revision": 343509,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106315800": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Decisive_Battle_at_Sovereign_Rock_Castle!",
+    "source_revision": 348154,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106315600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/A_Culling_Mission_for_Yshe's_Elites",
+    "source_revision": 348153,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106316000": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Search_and_Destroy:_Flora_Omega_Spawn",
+    "source_revision": 346139,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106316200": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/In_Search_of_the_Sun-Cryst",
+    "source_revision": 346486,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106316600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Road_to_Terra",
+    "source_revision": 349724,
+    "standard_cost": 400,
+    "standard_batch_limit": 500,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "reconstruction": "User-approved reconstruction: box price 400 coins and batch cap50 from contemporary Global raid offers. This event source prints only the standard price400 and cap500."
+   }
+  },
+  "106316900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Forbidden_Land_of_Slumbering_Power",
+    "source_revision": 350540,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "1209001748": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Get_Ready_to_Crumble!",
+    "source_revision": 386167,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106317400": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Defender_of_the_Main_Pillar",
+    "source_revision": 386233,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106317700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Big_Bridge_Showdown",
+    "source_revision": 353839,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106322400": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Power_of_Destruction",
+    "source_revision": 395771,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106317900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Intercepting_the_Invincible",
+    "source_revision": 360025,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106318700": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Hunted_S_Cells",
+    "source_revision": 364543,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106319100": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Grudge-Filled_Ruins",
+    "source_revision": 368026,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106319400": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/A_Fog-Laden_Foray",
+    "source_revision": 368859,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106319800": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Sealed_Volcano",
+    "source_revision": 370240,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106320200": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Escape's_End",
+    "source_revision": 372467,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106320600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Heart_of_Vearn_Palace",
+    "source_revision": 386217,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106321000": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Glittering_Desert_Sand's_Temptation",
+    "source_revision": 382888,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500
+   }
+  },
+  "106302800": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/King_of_Darkness",
+    "source_revision": 305405,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "106304700": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Dracotaur_Lancer",
+    "source_revision": 311255,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "1209000905": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+    "source_revision": 307527,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "1209000939": {
+   "normal": {
+    "source_url": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+    "source_revision": 307525,
+    "single_cost": 100,
+    "batch_limit": 100
+   }
+  },
+  "1209001576": {
+   "box": {
+    "single_cost": 1,
+    "batch_limit": 10,
+    "standard_cost": 1,
+    "standard_batch_limit": 10,
+    "source_url": "https://exvius.fandom.com/wiki/Golden_Rizer_Box_Summon_Ticket"
+   }
+  },
+  "106228200": {
+   "box": {
+    "single_cost": 2000,
+    "batch_limit": 50,
+    "standard_cost": 4000,
+    "standard_batch_limit": 500,
+    "source_url": "https://exvius.fandom.com/wiki/This_Opportunity"
+   }
+  },
+  "106318300": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Destroy_the_Machine_Lifeform_(2022)",
+    "source_revision": 351758,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500,
+    "reconstruction": {
+     "status": "reconstructed",
+     "sibling": "9609913",
+     "field": "raid_summon_offers.json/currencies/106303200/box"
+    }
+   }
+  },
+  "106323500": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Glittering_Desert_Sand's_Temptation",
+    "source_revision": 382888,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500,
+    "reconstruction": {
+     "status": "reconstructed",
+     "sibling": "9606310",
+     "field": "raid_summon_offers.json/currencies/106321000/box"
+    }
+   }
+  },
+  "106323600": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/Glittering_Desert_Sand's_Temptation",
+    "source_revision": 382888,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500,
+    "reconstruction": {
+     "status": "reconstructed",
+     "sibling": "9606310",
+     "field": "raid_summon_offers.json/currencies/106321000/box"
+    }
+   }
+  },
+  "106323900": {
+   "box": {
+    "source_url": "https://exvius.fandom.com/wiki/The_Power_of_Destruction",
+    "source_revision": 395771,
+    "single_cost": 400,
+    "batch_limit": 50,
+    "standard_cost": 400,
+    "standard_batch_limit": 500,
+    "reconstruction": {
+     "status": "reconstructed",
+     "sibling": "9200031",
+     "field": "raid_summon_offers.json/currencies/106322400/box"
+    }
+   }
+  }
+ },
+ "scope": "Published offer costs and batch limits only. No reward pool or probability substitutions."
+}

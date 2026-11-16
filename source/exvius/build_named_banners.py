@@ -52,11 +52,11 @@ BANNERS = [
      '2024-08-22', steps((3000, 6), (4000, 9), (4000, 9), (4500, 10), (4500, 10), (5000, 11)), None,
      ['401016307', '210003007', '401016407', '401016507'], 6),
     ('43eca28c60532db1a6ebf98bf646c244', 'NV Guaranteed Special Step-Up Summon', 'limited',
-     '2023-06', steps((3000, 11), (3000, 11), (3000, 11), (4000, 10), (4000, 11), (5000, 11)), None, [], 6),
+     '2024-08-29', steps((3000, 11), (3000, 11), (3000, 11), (4000, 10), (4000, 11), (5000, 11)), None, [], 6),
     ('40339e27526da74902e32a6b6265daba', 'Featured Summon (Final Fantasy Brave Exvius)', 'limited',
      '2024-03', lapis(250), 1, ['100043107'], 1),
     ('437ed7b5e3b0166da04b446dfd2bf3b1', 'Featured Summon (Final Fantasy Brave Exvius: Hero Resurrected Taivas)',
-     'limited', '2024-06', lapis(250), 1, ['100045007'], 1),
+     'limited', '2024-08-01', lapis(250), 1, ['100045007'], 1),
     ('11f9a39d6c4bfee7caba9ee8ef8d7990', '8th Anniversary Weekly Free 15+1 Summon', 'free',
      '2024-06', {'kind': 'free'}, 16, [], 1),
     ('2c9fb2294b385e5321fae6368ba7e938', 'The Final Daily Free 10 Summon', 'free',
@@ -101,6 +101,15 @@ BANNERS = [
      '2023-01', {'kind': 'important', 'item_id': 260, 'amount': 1}, 1, [], 1),
     ('6ca7c5fcd7d6549fcb152b0c1cceb0bb', 'Raid Box Summon: The Power of Destruction', 'free',
      '2024-03', ticket(106301000), 1, [], 1),
+    ('47a363b515b1d12334ecb892090cec08', 'Eithne NV Special Step-Up Summon', 'limited',
+     '2024-06-27', steps((2500, 7), (3500, 9), (0, 1), (4000, 11), (4000, 11)), None,
+     ['401016507'], 5),
+    ('b1eb11092981ee840cc34b0badff1c69', 'Fundamental Force NV Premium Step-Up Summon', 'limited',
+     '2024-06-27', steps((1000, 4), (3000, 8), (5000, 11), (0, 6)), None,
+     ['401016407'], 4),
+    ('8dca934fc93c70c0ad195f2d8b08c587', 'Eithne/Fundamental Force Step-Up Summon', 'limited',
+     '2024-06-27', steps((3000, 11), (4000, 11), (5000, 11), (5000, 11), (5000, 11), (5000, 11)), None,
+     ['401016507', '401016407'], 6),
 ]
 
 # JP-only 4.5th-anniversary banners (April-May 2020) with no Global English original. Their art was
@@ -476,6 +485,50 @@ JP_SPECIALS = [
 ]
 
 
+def nv_plus_awakenable_roots(release=None):
+    """Approved Global Rare Summon roots with an original NV-to-NV+ awakening.
+
+    GL9 UnitClassupUtils::isNvpClassUpEnable (0x19b84b4) requires isNv(),
+    then the unit's own ClassUp entry and its possible date. UnitMst::isNv
+    tests nvType == 1; isNvp tests nvType == 2. The reader maps nvType to
+    5Mgpv8hJ (UnitMstResponse 0x1971ddc, store at 0x1972a2c).
+
+    Summons grant the unshifted base root, so their own transition is used.
+    This excludes ordinary five-star NVA roots, shifted forms, reward units,
+    unrelated limited units and JP-only additions. The approved positive
+    ClassUp records have no scheduled possible date. A supplied release is
+    an evidenced banner cutoff, not an invented date for undated units.
+    This recovers eligibility, not the missing historical server rates.
+    """
+    import datetime
+    import zipfile
+    from audit_summon_pools import unit_evidence
+
+    if release is not None:
+        datetime.date.fromisoformat(release)
+    evidence = unit_evidence({})
+    units = evidence['mst']
+    with zipfile.ZipFile(PROJECT / 'source/build/distribution/assets/exvius-data-001.zip') as archive:
+        raw = archive.read('static/mst_decoded/F_UNIT_CLASS_UP_MST.ndjson')
+    if hashlib.sha256(raw).hexdigest() != 'e5faa4c3926c21dc11ca9b8f90bf72c5e2ea63ff046289fba6c9d3ccbfe50ef8':
+        raise ValueError('Approved Global ClassUp baseline changed')
+    eligible = []
+    for step in map(json.loads, raw.splitlines()):
+        uid, destination = str(step['3HriTp6B']), str(step['t74crqAL'])
+        source, target = units.get(uid, {}), units.get(destination, {})
+        if (uid not in evidence['roots'] or uid not in evidence['retail']
+                or uid in evidence['limited'] or uid not in evidence['named_units']
+                or source.get('5Mgpv8hJ') != '1' or target.get('5Mgpv8hJ') != '2'):
+            continue
+        if step.get('9kzo8vjW') not in (None, '', 'null', '0', 0):
+            raise ValueError('NV+ ClassUp possible date requires source review: ' + uid)
+        known_release = evidence['releases'].get(uid)
+        if release and known_release and known_release > release:
+            continue
+        eligible.append(uid)
+    return sorted(set(eligible))
+
+
 # Guaranteed slots read from each original detail image. Missing NV pools
 # must refuse the pull before payment rather than substitute lower rarities.
 PRINTED_GUARANTEES = {
@@ -486,6 +539,10 @@ PRINTED_GUARANTEES = {
     '9dea16ad6acf93fab24c9ccd90bbb2a8': {0: (5, 2), 1: (5, 5), 2: (5, 11), 3: (5, 1)},
     'baebcb30e5ce42931b56e372607d211c': {0: (5, 6), 1: (7, 2), 2: (7, 2),
                                         3: (7, 3), 4: (7, 3), 5: (7, 2)},
+    '47a363b515b1d12334ecb892090cec08': {0: (5, 3), 1: (5, 3), 2: (7, 1), 3: (5, 11), 4: (7, 1)},
+    'b1eb11092981ee840cc34b0badff1c69': {0: (5, 2), 1: (5, 5), 2: (5, 11), 3: (5, 1)},
+    '8dca934fc93c70c0ad195f2d8b08c587': {0: (5, 1), 1: (5, 5), 2: (5, 11),
+                                        3: (7, 1), 4: (7, 1), 5: (7, 1)},
     '43eca28c60532db1a6ebf98bf646c244': {0: (7, 2), 1: (7, 2), 2: (7, 3),
                                         3: (7, 6), 4: (7, 6), 5: (7, 9)},
 }
@@ -495,6 +552,7 @@ PRINTED_GUARANTEES = {
 ORIGINAL_NOTICES = {
     '03ad8d03a1f090c6e70f1413e43c9c56': {
         'url': 'https://exvius.fandom.com/wiki/Update_Schedule',
+        'transcription_url': 'https://www.reddit.com/r/FFBraveExvius/comments/1esrces/gl_gacha_megathread_ffbe_nv_acbrhus_08150904/',
         'notice': '20240813gbehACRhusFeaturedSummon0829Update.html'},
     '2737aaf0bd539ad578ad15706856c980': {
         'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1en21y9/gl_gacha_megathread_ffbe_nv_aklasswell_08080904/'},
@@ -502,11 +560,28 @@ ORIGINAL_NOTICES = {
         'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1en21y9/gl_gacha_megathread_ffbe_nv_aklasswell_08080904/'},
     '9dea16ad6acf93fab24c9ccd90bbb2a8': {
         'url': 'https://exvius.fandom.com/wiki/Update_Schedule',
+        'transcription_url': 'https://www.reddit.com/r/FFBraveExvius/comments/1ehdund/gl_gacha_megathread_ffbe_nv_ckrain_nv_hrtaivas/',
         'notice': '20240730gbehaRainTaivasFeaturedSummon0829Update.html'},
     'baebcb30e5ce42931b56e372607d211c': {
         'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1ewooeq/gl_news_821_maintenance_august_crest_pass/',
         'featured_units': ['401016307', '210003007', '401016407', '401016507'],
         'notice': '20240820agehUnitedForcesStepUpSummonExchange.html'},
+    '43eca28c60532db1a6ebf98bf646c244': {
+        'url': 'https://deathsnacks.com/ffbe/global.html',
+        'notice': '20240829pleb1NVGuaranteedSpecialStepUpSummon.html',
+        'ticket_exchange_report': 'https://www.reddit.com/r/FFBraveExvius/comments/1f47u1p/psa_for_maxing_out_your_team_for_those_looking_to/'},
+    '47a363b515b1d12334ecb892090cec08': {
+        'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/gl_gacha_megathread_ffbe_nv_eithne_nv_fundamental/',
+        'notice': '202403625tg1bEithneFeaturedSummon.html'},
+    'b1eb11092981ee840cc34b0badff1c69': {
+        'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/gl_gacha_megathread_ffbe_nv_eithne_nv_fundamental/',
+        'notice': '202403625vb27FundamentalForceFeaturedSummon.html'},
+    '8dca934fc93c70c0ad195f2d8b08c587': {
+        'url': 'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/gl_gacha_megathread_ffbe_nv_eithne_nv_fundamental/',
+        'ticket_order_sources': [
+            'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/comment/laj6abh/',
+            'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/comment/lajak9y/',
+            'https://www.reddit.com/r/FFBraveExvius/comments/1dpt9eq/comment/lajcr2n/']},
 }
 
 
@@ -527,12 +602,14 @@ def printed_bonuses(banner, digest):
     if digest in premium:
         coin, exchange, limit = premium[digest]
         banner['lap_limit'] = limit
-        for step in banner['steps'][:3]:
-            step['bonus_rewards'] = [item(coin), item(exchange)]
+        # The original notices and step art award these on steps 2 and 3.
+        # The discounted opening step has no coin or exchange ticket bonus.
+        for index, step in enumerate(banner['steps']):
+            step['bonus_rewards'] = [item(coin), item(exchange)] if index in (1, 2) else []
     elif digest == '2737aaf0bd539ad578ad15706856c980':
         banner['lap_limit'] = 2
-        extras = [[], [item(250034000, 25)],
-                  [item(250034000, 25), item(110003, 100, 23)], [],
+        extras = [[], [item(106211340, 25)],
+                  [item(106211340, 25), item(110003, 100, 23)], [item(293000100)],
                   [item(110003, 200, 23)], [item(1209002140)]]
         for index, step in enumerate(banner['steps']):
             step['bonus_rewards'] = [item(1209002141, 2 if index == 5 else 1),
@@ -544,25 +621,254 @@ def printed_bonuses(banner, digest):
                    [item(1209002122, 1000)], [item(1209002145)]]
         for step, reward in zip(banner['steps'], rewards):
             step['bonus_rewards'] = reward
+    elif digest in ('47a363b515b1d12334ecb892090cec08', 'b1eb11092981ee840cc34b0badff1c69',
+                    '8dca934fc93c70c0ad195f2d8b08c587'):
+        eithne = digest == '47a363b515b1d12334ecb892090cec08'
+        fundamental = digest == 'b1eb11092981ee840cc34b0badff1c69'
+        banner['lap_limit'] = 11 if eithne or fundamental else 2
+        if eithne:
+            currencies = [(1209002115, 1209002116), (1209002115, 1209002116), None,
+                          (1209002115, 1209002116), (1209002115, 1209002116)]
+            enhanced = {2: .02, 4: .05}
+        elif fundamental:
+            currencies = [None, (1209002117, 1209002118), (1209002117, 1209002118), None]
+            enhanced = {}
+        else:
+            # Original live players identify Eithne on step 1 and Fundamental
+            # Force on step 2, then the same alternating order for all six.
+            currencies = [(1209002115, 1209002116), (1209002117, 1209002118)] * 3
+            enhanced = {3: .04, 4: .05, 5: .10}  # sum of the printed rate for each featured unit
+        for index, (step, pair) in enumerate(zip(banner['steps'], currencies)):
+            step['bonus_rewards'] = [item(iid) for iid in pair] if pair else []
+            if not eithne and not fundamental:
+                if index in (1, 2):
+                    step['bonus_rewards'].append(item(106211340, 25))
+                if index == 2:
+                    step['bonus_rewards'].append(item(110003, 100, 23))
+                if index == 3:
+                    step['bonus_rewards'].append(item(293000100))
+                if index == 4:
+                    step['bonus_rewards'].append(item(110003, 200, 23))
+                if index == 5:
+                    step['bonus_rewards'].append(item(1209002119))
+            if index in enhanced:
+                nv = dict(next(t for t in banner['pool']['tiers'] if t['rarity'] == 7))
+                nv.update(rate=1.0, featured_share=enhanced[index])
+                step['guarantee']['pool'] = {'tiers': [nv]}
+        banner['bonus_provenance'] = {
+            'source': 'Original Global main and numbered detail images, ' + digest,
+            'currencies': 'Original Global F_ITEM_MST, F_MEDAL_EXCHANGE_MST and F_STORE_ITEM_MST; distinct unit exchanges remain distinct.',
+            'coin_pairing': 'Campaign coin follows its own exchange ticket; shared campaign uses the observed alternating ticket order.'}
     elif digest == '43eca28c60532db1a6ebf98bf646c244':
         for index, step in enumerate(banner['steps']):
-            step['bonus_rewards'] = [item(106211340, 20)]
+            step['bonus_rewards'] = [item(110, 20, kind=23)]
             if index < 2:
                 step['bonus_rewards'].append(item(904000105, kind=10, affinity_points=['1000', '']))
             if index in (2, 3, 4):
-                step['bonus_rewards'].append(item(1209001670, 1 if index == 2 else 2))
-            if index in (3, 5):
-                step['bonus_rewards'].append(item(1209001717))
+                step['bonus_rewards'].append(item(1209002104, 1 if index == 2 else 2))
+            if index == 3:
+                step['bonus_rewards'].append(item(1209002102))
+            if index == 5:
+                step['bonus_rewards'].append(item(1209002124))
             if index == 4:
-                step['bonus_rewards'].append(item(290050500, 2))
+                step['bonus_rewards'].append(item(900000001, 2))
         banner['bonus_provenance'] = {
             'source': 'Original Global detail art, 43eca28c60532db1a6ebf98bf646c244_01 through _06.png',
-            'replacement_mapping': 'Unidentified historical ticket instances use existing NV Guaranteed Special fragment ticket 1670 and playable curated NV ticket 1717. The step-five crystal bonus uses two Transcension Pearls.'}
+            'item_definitions': 'Original Global NRG Restore 50 (Important Item 110), Omniprism 900000001 and the final 8th Anniversary selection currencies.',
+            'final_curated_ticket': 'Contemporary August 29 reports link this 22,000-Lapis step-up to the curated Wilhelm selection exchange, currency 1209002124.',
+            'reconstructed_bindings': 'Steps 3-5 fragment tickets and the step-4 unit ticket use the final 8th Anniversary exchanges, currencies 1209002104 and 1209002102. Their reward classes and quantities match the art; their exact historical per-step currency IDs were not recovered.',
+            'original_server_reward_bindings_recovered': False}
+
+
+def special_nv_guarantees(banner):
+    """Apply the final Global special banner's actual NV+ awakening class."""
+    import zipfile
+    from audit_summon_pools import approved_unit_baseline
+
+    banner['release'] = '2024-08-29'
+    banner['historical_notice'] = ORIGINAL_NOTICES['43eca28c60532db1a6ebf98bf646c244']
+    with zipfile.ZipFile(PROJECT / 'source/build/distribution/assets/exvius-data-001.zip') as archive:
+        raw = archive.read('static/mst_decoded/F_MEDAL_EXCHANGE_MST.ndjson')
+    if hashlib.sha256(raw).hexdigest() != '038fcc8ed65d9f591f53d1df8b0ea83a73f1f3e1cdabea4150ecaf3759581278':
+        raise ValueError('Approved Global curated selection baseline changed')
+    units, _ = approved_unit_baseline()
+    curated = []
+    for row in map(json.loads, raw.splitlines()):
+        if row.get('ak2dhKm3') != '1209002124':
+            continue
+        kind, uid, *_ = row['7iJpH5zZ'].split(':')
+        if kind == '10':
+            unit = units.get(uid, {})
+            if unit.get('5Mgpv8hJ') != '1' or unit.get('woghJa61') != uid:
+                raise ValueError('Curated selection contains a non-NV root: ' + uid)
+            curated.append(uid)
+    if not curated:
+        raise ValueError('Original curated selection stock is missing')
+    banner['steps'][3]['guarantee'] = {'rarity': 7, 'count': 5}
+    banner['steps'][3]['guarantee_slots'] = [{
+        'count': 1, 'label': 'NV unit from the curated selection pool',
+        'pool': {'tiers': [{'rarity': 7, 'rate': 1, 'units': sorted(set(curated))}]}}]
+    awakenable = nv_plus_awakenable_roots(banner['release'])
+    banner['steps'][-1]['guarantee_slots'] = [{
+        'count': 2, 'label': 'NV+ awakenable NV unit',
+        'pool': {'tiers': [{'rarity': 7, 'rate': 1, 'units': awakenable}]}}]
+    banner['eligibility_source'] = {
+        'source': 'logs/reference/summons/unit-list-wiki.json',
+        'policy': 'Released Global nonlimited Rare Summon roots; special slots require their own approved NV-to-NV+ ClassUp transition.',
+        'cutoff': banner['release'],
+        'native_predicate': 'GL9 UnitClassupUtils::isNvpClassUpEnable; nvType 1 source to nvType 2 target',
+        'classup_baseline_sha256': 'e5faa4c3926c21dc11ca9b8f90bf72c5e2ea63ff046289fba6c9d3ccbfe50ef8',
+        'original_server_pool_recovered': False,
+        'curated_slot_basis': 'Reconstructed from the original 40-unit 8th Anniversary curated selection stock; the historical step-4 random pool and weights were not recovered.',
+        'medal_exchange_baseline_sha256': '038fcc8ed65d9f591f53d1df8b0ea83a73f1f3e1cdabea4150ecaf3759581278',
+    }
+
+
+def recovered_anniversary_banners():
+    """Build only the three recovered June 2024 campaigns, without rewriting other pools."""
+    import copy
+    from audit_summon_pools import unit_evidence
+
+    documents = {name: json.loads(path.read_text(encoding='utf-8'))
+                 for name in ('catalogue', 'community', 'named', 'authored', 'raid', 'standard')
+                 if (path := PROJECT / 'source/server' / ('gacha_' + name + '.json')).is_file()}
+    evidence = unit_evidence(documents)
+    release = '2024-06-27'
+    # Preserve the established explicitly local rate policy. Eligibility comes
+    # from the approved Global baseline, not the separate pending JP import.
+    eligible = sorted(uid for uid in evidence['roots'] & evidence['retail'] & evidence['named_units']
+                      if uid not in evidence['limited']
+                      and evidence['releases'].get(uid, '') <= release)
+    by_rarity = {rarity: [uid for uid in eligible if evidence['mst'][uid]['9fW0TePj'] == str(rarity)]
+                 for rarity in (3, 4, 5, 7)}
+    digests = {'47a363b515b1d12334ecb892090cec08', 'b1eb11092981ee840cc34b0badff1c69',
+               '8dca934fc93c70c0ad195f2d8b08c587'}
+    result = []
+    for n, (digest, name, tab, released, cost, _, featured, count) in enumerate(BANNERS, 1):
+        if digest not in digests:
+            continue
+        files = [ART / 'main' / (digest + '.png')] + [ART / 'sub' / f'{digest}_{i:02d}.png'
+                                                   for i in range(1, count + 1)]
+        banner = {
+            'id': str(9200000 + n), 'type': 'step', 'name': name,
+            'detail_id': str((9200000 + n) * 10 + 1), 'exe_type': 'primary',
+            'schedule': {'disp_order': 2000 + n, 'banner_type': 0,
+                         'window': {'from': '2026-01-01 00:00:00', 'to': '2030-12-31 23:59:59'}},
+            'art': {'banner': files[0].name, 'detail_banner': files[1].name,
+                    'detail_extra': [f.name for f in files[2:]],
+                    'anime_file': 'gacha_animation', 'anime_name': 'gacha_moogle_rare/anime',
+                    'img_btn': 'gacha_btn_n'},
+            'pool': {'tiers': [dict({'rarity': rarity, 'rate': rate, 'units': by_rarity[rarity]},
+                                    **({'featured': featured, 'featured_share': .2} if rarity == 7 else {}))
+                               for rarity, rate in ((7, .05), (5, .10), (4, .35), (3, .50))]},
+            'steps': copy.deepcopy(cost), 'gacha_layout': 2,
+            'tab': tab, 'season': 'season4', 'release': released,
+            'provenance': 'named', 'source': 'global-cache', 'pool_authored': True,
+            'rate_notice': 'LOCAL RATES: NV 5%, 5-star 10%, 4-star 35%, 3-star 50%. Printed guarantees and featured guaranteed-slot rates apply. The original complete server draw table was not preserved.',
+            'historical_notice': copy.deepcopy(ORIGINAL_NOTICES[digest]),
+            'sources': [{'file': f.relative_to(PROJECT).as_posix(), 'sha256': sha256(f)} for f in files],
+        }
+        for index, (rarity, quantity) in PRINTED_GUARANTEES[digest].items():
+            banner['steps'][index]['guarantee'] = {'rarity': rarity, 'count': quantity}
+        printed_bonuses(banner, digest)
+        result.append(banner)
+    return result
+
+
+def recovered_anniversary_art():
+    """Deliver only the 18 original files referenced by the recovered campaigns."""
+    selected = {}
+    for banner in recovered_anniversary_banners():
+        for source in banner['sources']:
+            path = PROJECT / source['file']
+            raw = path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != source['sha256']:
+                raise ValueError('Recovered anniversary summon art changed: ' + source['file'])
+            selected['native/' + path.relative_to(PROJECT / 'data/client/files').as_posix()] = raw
+    return selected
+
+
+def recovered_anniversary_fragment_shop():
+    """Reconstruct the missing final-run 2104 stock without aliasing another ticket."""
+    import zipfile
+    from audit_summon_pools import approved_unit_baseline
+
+    units, names = approved_unit_baseline()
+    labels = {r['key'].rsplit('_', 1)[-1]: r['v'][0] for r in names}
+    members = ('F_MEDAL_EXCHANGE_MST', 'F_NV_EX_CLASS_UP_MST', 'F_ITEM_MST')
+    tables, sources = {}, []
+    with zipfile.ZipFile(PROJECT / 'source/build/distribution/assets/exvius-data-001.zip') as archive:
+        for table in members:
+            member = 'static/mst_decoded/' + table + '.ndjson'
+            raw = archive.read(member)
+            tables[table] = list(map(json.loads, raw.splitlines()))
+            sources.append({'archive': 'source/build/distribution/assets/exvius-data-001.zip',
+                            'member': member, 'sha256': hashlib.sha256(raw).hexdigest()})
+    stock = [r for r in tables['F_MEDAL_EXCHANGE_MST'] if r['ak2dhKm3'] == '1209002102']
+    roster = {r['7iJpH5zZ'].split(':')[1] for r in stock}
+    if len(stock) != 194 or len(roster) != 194 or any(not r['7iJpH5zZ'].startswith('10:') for r in stock):
+        raise ValueError('Original 8th Anniversary unit-select roster changed')
+    # The final-run guide names Wilhelm, and its first player reply explicitly
+    # reports using this shop to finish both Wilhelm and Eithne.
+    roster.update(('401016607', '401016507'))
+    items = {r['tL6G9egd']: r for r in tables['F_ITEM_MST']}
+    ex = {r['JPW8Vs40']: r for r in tables['F_NV_EX_CLASS_UP_MST'] if r['f8vk4JrD'] == '1'}
+    products, bindings = [], []
+    for uid in sorted(roster, key=int):
+        unit = units.get(uid)
+        if not unit or unit['9fW0TePj'] != '7':
+            raise ValueError('Original anniversary stock has no approved NV unit: ' + uid)
+        step = ex.get(unit['JPW8Vs40'])
+        materials = [part.split(':') for part in (step or {}).get('KCk8u0am', '').split(',') if part]
+        fragments = {p[1] for p in materials if len(p) == 3 and p[0] == '20'
+                     and p[1].startswith(('250', '310')) and p[1] in items}
+        if len(fragments) != 1:
+            raise ValueError('Original anniversary awakening fragment is ambiguous: ' + uid)
+        fragment = fragments.pop()
+        products.append({'reward': '20:' + fragment + ':10',
+                         'price': 2 if uid == '401016607' else 1, 'limit': 35,
+                         'label': labels[uid] + ' Fragments x10'})
+        bindings.append({'unit_id': uid, 'ex_series_id': unit['JPW8Vs40'], 'fragment_item_id': fragment})
+    return {
+        'name': 'Ticket Exchange (NV Fragment Select 8th Anniversary)',
+        'currency': [20, '1209002104'], 'category': 5, 'reset_months': 0,
+        'products': products,
+        'evidence': {
+            'status': 'Reconstructed missing final Global server fragment catalogue; not recovered retail product rows.',
+            'source': 'https://www.reddit.com/r/FFBraveExvius/comments/1f47u1p/psa_for_maxing_out_your_team_for_those_looking_to/',
+            'eithne_source': 'https://www.reddit.com/r/FFBraveExvius/comments/1f47u1p/comment/lkjop4o/',
+            'recovered': 'Original 2104 currency; original 194-unit 2102 roster; each approved unit exact NV_EX_CLASS_UP fragment item; guide final cap 35 and Wilhelm double price.',
+            'reconstructed': 'Fragment eligibility anchored to the original 194-unit selection plus explicitly documented Wilhelm and Eithne. Ten fragments per purchase and one ticket for other units follow the original 1670 fragment-select convention. This does not claim the complete historical premium-unit roster or every historical premium price was recovered.',
+            'sources': sources, 'unit_fragment_bindings': bindings,
+        },
+    }
+
+
+def restore_anniversary_fragment_shop():
+    """Keep the existing shop position and receipt IDs on repeated authoring."""
+    from apply_jp_unit_tables import atomic_write
+
+    path = PROJECT / 'source/server/content/permanent_shops.json'
+    doc = json.loads(path.read_text(encoding='utf-8'))
+    shop = recovered_anniversary_fragment_shop()
+    positions = [index for index, current in enumerate(doc['shops'])
+                 if current.get('currency') == shop['currency']]
+    if len(positions) > 1:
+        raise ValueError('Duplicate 8th Anniversary fragment-select currency')
+    if positions:
+        doc['shops'][positions[0]] = shop
+    else:
+        doc['shops'].append(shop)
+    raw = (json.dumps(doc, indent=2, ensure_ascii=False) + '\n').encode('utf-8')
+    if path.read_bytes() != raw:
+        atomic_write(path, raw)
+    return shop
 
 
 def main():
     sys.path.insert(0, str(PROJECT / 'source/server'))
     from player_state import unit_mst
+    restore_anniversary_fragment_shop()
     reconcile_community_names()
     reconcile_curated_art()
     banners = []
@@ -666,15 +972,7 @@ def main():
         from build_reward_summons import regular_offers
         regular_offers(banner, digest, local_nv)
         if digest == '43eca28c60532db1a6ebf98bf646c244':
-            from player_state import unit_roots_by_rarity
-            rows = [json.loads(line) for line in (PROJECT / 'data/mst_decoded/F_UNIT_MST.ndjson').read_text(
-                encoding='utf-8').splitlines()]
-            roots = set(unit_roots_by_rarity().get('5', []))
-            awakenable = sorted({r['woghJa61'] for r in rows if r['woghJa61'] in roots and
-                                 r.get('JPW8Vs40') not in (None, '', '0')})
-            banner['steps'][-1]['guarantee_slots'] = [{
-                'count': 2, 'label': 'NV-awakenable base 5-star unit',
-                'pool': {'tiers': [{'rarity': 5, 'rate': 1, 'units': awakenable}]}}]
+            special_nv_guarantees(banner)
         banners.append(banner)
     log = {e['output']: e for e in json.loads((TRANSLATED_ART / 'translations.json').read_text(encoding='utf-8'))['images']}
     for n, (stem, name, cost, draws, units, guarantee, daily) in enumerate(TRANSLATED, 101):
@@ -724,12 +1022,19 @@ def main():
     from build_reward_summons import king_mog, update_arena
     banners.append(king_mog())
     update_arena()
+    from build_original_jp_banners import build as original_jp_banners
+    banners.extend(original_jp_banners())
     doc = {'_meta': {'what': 'Named banners from original Global client art, recovered Global wiki art and '
                              'recorded English translations of the JP-only specials.',
                      'generator': 'source/exvius/build_named_banners.py',
                      'units': 'game unit ids for the names printed on the art (F_TEXT_UNITS_NAME)',
                      'release': 'approximate month, from neighbouring dated ticket items; all Season 4'},
            'banners': banners}
+    from audit_summon_pools import unit_evidence
+    from jp_summon_pools import repair_banner
+    evidence = unit_evidence({'named': doc})
+    for banner in banners:
+        repair_banner(banner, evidence)
     OUT.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     print('wrote', len(banners), 'banners to', OUT)
     from build_catalogue_banners import rebuild

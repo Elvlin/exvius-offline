@@ -26,7 +26,6 @@ from ffbe_battle import _switch_container
 from player_state import GRANT_BAG_PROJECTED, STORAGE_CURRENCY, switch_position, unit_mst
 
 AUTHORED_REFRESH_SECONDS = 24 * 60 * 60  # Offline free-offer cadence, not a recovered price.
-AUTHORED_PARTY_LIMIT = 5                 # Conservative offline expedition selection limit.
 
 QUEST = "67l03PW2"
 SLOT = "b7Ay4Ju8"
@@ -80,9 +79,18 @@ def _quest_reply(spec):
     rows = deepcopy(list(_store("expedition").get("quests", {}).values()))
     day = (int(time.time()) - 14400) // 86400
     attempts = _store('expedition').get('daily_attempts', {})
+    masters = _mst('F_EXPEDITION_MST.ndjson', 'Ko86047K')
     for row in rows:
         key = str(day) + ':' + str(row.get('Ko86047K'))
-        row['mqbn4Gdm'] = str(attempts.get(key, row.get('mqbn4Gdm', '0')))
+        used = _int(attempts.get(key))
+        row['mqbn4Gdm'] = str(used)
+        limit = _int(masters.get(str(row.get('Ko86047K')), {}).get('7utfhGQa'))
+        if limit > 0:
+            row['O82h92n5'] = str((day + 1) * 86400 + 14400)
+            # The original TM expedition uses status 4 when its daily attempts
+            # are exhausted. Keep dispatched jobs until their result is claimed.
+            if str(row.get('3JND4wjr')) in ('1', '4'):
+                row['3JND4wjr'] = '4' if used >= limit else '1'
     return _out(spec, **{QUEST: rows})
 
 
@@ -155,14 +163,63 @@ def _reward_csv(rewards):
     return ','.join(f"{r['kind']}:{r['id']}:{r['count']}" for r in rewards)
 
 
+def _settle_expedition_tutorial(block):
+    """Restore only tutorial progress proved by a recorded claimed expedition."""
+    chain = _expedition_policy()['tutorial_chain']
+    masters = _mst('F_EXPEDITION_MST.ndjson', 'Ko86047K')
+    completed = block.setdefault('completed', {})
+    for master in block.get('receipt_masters', {}).values():
+        completed[str(master)] = True
+    # Older saves kept the paid result without its master ID. A unique fixed
+    # original reward signature can recover that identity without replaying it.
+    def signature(row):
+        entries = (str(row.get('4Ya160s7') or '') + ',' + str(row.get('5Yn160s8') or '')).split(',')
+        return ','.join(':'.join(p[:3]) for e in entries if len(p := e.split(':')) >= 3 and p[2] != '0')
+    for mid in chain:
+        expected = signature(masters[mid])
+        if not expected or sum(signature(row) == expected for row in masters.values()) != 1:
+            continue
+        if any(_int(r.get('7x8K23fx')) > 0 and r.get('Ra7qY74q') == expected
+               for r in block.get('receipts', {}).values()):
+            completed[mid] = True
+    position = switch_position(_define('EXPEDITION_TUTORIALEND_SWITCH_ID'))
+    unlocked = position and position[1] in State.player.switches.get(position[0], set())
+    if not unlocked and completed.get(chain[-1]):
+        _switches({}, [str(_define('EXPEDITION_TUTORIALEND_SWITCH_ID'))])
+        unlocked = True
+    return bool(unlocked)
+
+
 def expedition_info(spec, req):
     """Open/reopen the native Expedition list with durable jobs and milestones."""
-    block = _store('expedition')
-    # The info request has no payload. Seed the first offers once, preserving
-    # dispatched jobs and paid refresh timers on every subsequent reopen.
-    if 'quests' not in block and State.player.mode != 'frozen':
-        return expedition_refresh(spec, {QUEST: []})
-    return expedition_refresh(spec, {})
+    if State.player.mode == 'frozen':
+        return expedition_refresh(spec, {})
+    block = deepcopy(_store('expedition'))
+    unlocked = _settle_expedition_tutorial(block)
+    chain = _expedition_policy()['tutorial_chain']
+    quests = block.setdefault('quests', {})
+    out = _switches(spec, []) if unlocked else spec
+    if not unlocked and not quests:
+        mid = next((mid for mid in chain if not block['completed'].get(mid)), chain[-1])
+        serial = _int(block.get('serial')) + 1
+        key = 'offline-' + str(serial)
+        quests[key] = {'q3D53k94': key, 'Ko86047K': mid, '7mA422N6': '', 'Tx6MGkJ1': '0',
+                       '2CL6pZmE': '0', '3JND4wjr': '1', 'Sf2m961q': '0',
+                       'mqbn4Gdm': '0', 'O82h92n5': '0', '2A6fYiEC': ''}
+        block['serial'] = serial
+    first_normal = unlocked and not block.get('normal_offers_started')
+    seed_normal = False
+    if first_normal:
+        block['normal_offers_started'] = True
+        # The first regular catalogue is separate from the introductory jobs.
+        # Existing regular offers retain their timer and dispatched parties.
+        if not any(str(q.get('Ko86047K')) not in chain for q in quests.values()):
+            block['next_free'] = 0
+            seed_normal = True
+    _put('expedition', block)
+    if unlocked and (seed_normal or not quests) and _int(block.get('next_free')) <= int(time.time()):
+        return expedition_refresh(out, {QUEST: []})
+    return expedition_refresh(out, {})
 
 
 def expedition_refresh(spec, req):
@@ -194,8 +251,12 @@ def expedition_refresh(spec, req):
                 State.player.spend_item(payment["kind"], payment["id"], payment["count"]))
         if not paid:
             return _refuse(out, "insufficient refresh payment")
-    ongoing = {k: v for k, v in block.get("quests", {}).items() if str(v.get("3JND4wjr")) == "2"}
-    ids = sorted(masters, key=int)
+    daily = {str(v.get('Ko86047K')) for v in block.get('quests', {}).values()
+             if _int(masters.get(str(v.get('Ko86047K')), {}).get('7utfhGQa')) > 0}
+    ongoing = {k: v for k, v in block.get("quests", {}).items()
+               if str(v.get("3JND4wjr")) == "2" or str(v.get('Ko86047K')) in daily}
+    tutorial = set(_expedition_policy()['tutorial_chain'])
+    ids = sorted((iid for iid in masters if iid not in daily and iid not in tutorial), key=int)
     cursor = _int(block.get("cursor"))
     serial = _int(block.get("serial"))
     for i in range(min(available, len(ids))):
@@ -220,7 +281,8 @@ def expedition_refresh(spec, req):
 def _live(req):
     node = _node(req, QUEST) or {}
     key = str(node.get("Ko86047K") or "")
-    return node, key, _store("expedition").get("quests", {}).get(key)
+    quest = next((row for row in _quest_reply({})[QUEST] if row['q3D53k94'] == key), None)
+    return node, key, quest
 
 
 def expedition_start(spec, req):
@@ -238,7 +300,8 @@ def expedition_start(spec, req):
     busy = {p.split(":")[0] for q in quests.values() if str(q.get("3JND4wjr")) == "2"
             for p in str(q.get("7mA422N6") or "").split(",") if p}
     running = sum(str(q.get("3JND4wjr")) == "2" for q in quests.values())
-    if (duration <= 0 or gil < 0 or not 1 <= len(pairs) <= AUTHORED_PARTY_LIMIT or
+    capacity = _int(row.get('8s85O72e'))
+    if (duration <= 0 or gil < 0 or not 1 <= len(pairs) <= capacity or
             any(len(p) != 2 or p[0] not in roster or p[0] in busy or
                 str(roster[p[0]]["master_id"]) != p[1] or roster[p[0]].get("storage_state", 0)
                 for p in pairs) or len({p[0] for p in pairs}) != len(pairs) or
@@ -359,8 +422,12 @@ def expedition_end(spec, req):
     receipt = {'Ra7qY74q': _reward_csv(rewards + relics), '33ZM4Wyw': _reward_csv(bonus),
                '7x8K23fx': str(grade if success else 0)}
     block.setdefault('receipts', {})[key] = receipt
+    block.setdefault('receipt_masters', {})[key] = str(row['Ko86047K'])
+    block.setdefault('completed', {})[str(row['Ko86047K'])] = True
     del block['quests'][key]
     next_id = str(row.get('sZ4964o7') or '0')
+    if next_id in policy['tutorial_chain'] and block['completed'].get(next_id):
+        next_id = '0'
     if next_id != '0' or trust:
         next_id = str(row['Ko86047K']) if trust else next_id
         block['serial'] = _int(block.get('serial')) + 1
@@ -368,10 +435,12 @@ def expedition_end(spec, req):
         block['quests'][next_key] = {**quest, 'q3D53k94': next_key, 'Ko86047K': next_id,
                                      '3JND4wjr': '1', '7mA422N6': '', 'Tx6MGkJ1': '0',
                                      '2CL6pZmE': '0', 'mqbn4Gdm': '0', '2A6fYiEC': quest.get('7mA422N6', '')}
+    unlocked = _settle_expedition_tutorial(block)
     _put('expedition', block)
     points = _points()
     points[0]['edd6db2H'] = str(gained)
-    return _out(_quest_reply(_refresh(spec)), UDBrChWN=[receipt], nv1j95sC=points, Ec901P4A=_milestones(block))
+    out = _out(_quest_reply(_refresh(spec)), UDBrChWN=[receipt], nv1j95sC=points, Ec901P4A=_milestones(block))
+    return _switches(out, []) if unlocked else out
 
 
 def expedition_recall(spec, req):
@@ -551,8 +620,10 @@ def mission_update(spec, req):
         block['mission'] = mid
     if town:
         block['town'] = str(town.get('Gh92V3Tx') or '')
-    operation = _node(req, '1sGiqV9T')
-    if operation:
+    operations = req.get('1sGiqV9T') or []
+    _require(isinstance(operations, list), 'invalid quest operations')
+    for operation in operations:
+        _require(isinstance(operation, dict), 'invalid quest operation')
         masters = _mst('F_QUEST_MST.ndjson', 'Z34jU7ue')
         steps = _mst('F_QUEST_SUB_MST.ndjson', '7Svg2kdT')
         saved = block.setdefault('quests', {})
@@ -588,22 +659,33 @@ def mission_update(spec, req):
         _require(all(switch_position(s) is not None for s in switches), 'unknown quest switch')
         spec = _switches(spec, switches)
     _put("map", block)
-    return _out(_refresh(spec), JG96kr5C=list(block.get('quests', {}).values())) if operation else _out(spec)
+    return _out(_refresh(spec), JG96kr5C=list(block.get('quests', {}).values())) if operations else _out(spec)
 
 
 def _reward_rows(text):
-    # Use the project's currency shorthand, but refuse unrecovered unit suffixes.
+    # Panel line/page rewards use the same native unit metadata as individual
+    # quest rewards. Preserve their levels and trust targets instead of
+    # rejecting those original tuples or reducing them to generic units.
     from ffbe_player import _parse_reward
-    entries = str(text or "").split(",")
-    if any(len(e.split(":")) not in (2, 3) or not all(p.isdigit() for p in e.split(":")) for e in entries):
+    from exvius_rewards import parse
+    entries = [entry.strip() for entry in str(text or "").split(",")]
+    rows = []
+    try:
+        for entry in entries:
+            fields = entry.split(':')
+            if len(fields) == 2:
+                if not all(field.isascii() and field.isdigit() for field in fields):
+                    return None
+                rows.extend({'kind': k, 'id': i, 'count': c}
+                            for k, i, c in _parse_reward(entry))
+            else:
+                rows.extend(parse(entry))
+    except ValueError:
         return None
-    rows = [{"kind": k, "id": i, "count": c} for k, i, c in _parse_reward(text)]
     if not rows or len(rows) != len(entries):
         return None
-    for r in rows:
-        if (r["kind"] not in STORAGE_CURRENCY and str(r["kind"]) not in GRANT_BAG_PROJECTED
-                and r["kind"] not in (10, 21)) or (r["kind"] == 10 and unit_mst(r["id"]) is None):
-            return None
+    if any(not State.player._can_credit(row) for row in rows):
+        return None
     return rows
 
 
@@ -792,9 +874,11 @@ def _retain_owned_equipment():
 
 def _wire_loadouts(slot, members, slots=5):
     """Decode the original save-slot strings, including both unit forms."""
+    from player_state import unit_materia_slots
+
     loadouts = {}
     for token, fields, size in [('93Y6evuT', ('equipment', 'shift_equipment'), 6),
-                                ('80NUYFMJ', ('materia', 'shift_materia'), 4)]:
+                                ('80NUYFMJ', ('materia', 'shift_materia'), None)]:
         for entry in filter(None, str(slot.get(token) or '').split(',')):
             iid, raw = entry.split(':', 1)
             if iid not in members:
@@ -803,7 +887,12 @@ def _wire_loadouts(slot, members, slots=5):
             if len(forms) > 2:
                 raise ValueError('too many unit forms')
             for field, form in zip(fields, forms):
-                values = {str(n): '0' for n in range(1, size + 1)}
+                unit = State.player.roster_row(iid)
+                if unit is None:
+                    raise ValueError('saved loadout unit is not owned')
+                capacity = size if size is not None else unit_materia_slots(
+                    unit, shifted=field == 'shift_materia')
+                values = {str(n): '0' for n in range(1, capacity + 1)}
                 seen = set()
                 for pair in filter(None, form.split('@')):
                     position, item = pair.split('-', 1)
@@ -811,7 +900,7 @@ def _wire_loadouts(slot, members, slots=5):
                         raise ValueError('invalid saved equipment slot')
                     seen.add(position)
                     values[position] = item
-                loadouts.setdefault(iid, {})[field] = values if size == 6 else list(values.values())
+                loadouts.setdefault(iid, {})[field] = values if token == '93Y6evuT' else list(values.values())
     for token, field in [('w1JG7i9j', 'brave_shift'), ('2c8nqLrM', 'skin_id')]:
         for entry in filter(None, str(slot.get(token) or '').split(',')):
             iid, value = entry.split(':', 1)
@@ -988,6 +1077,7 @@ HANDLERS = {
     "D9xphQ8X": challenge_clear, "nQMb2L4h": dungeon_liberation,
     "Tvq54dx6": mission_switch_update, "j5JHKq6S": mission_update,
     "G1hQM8Dr": mission_update,
+    "sJcMPy04": mission_update, "x5Unqg2d": mission_update,
     "1IOdaWOW": comeback_claim, "AOY6npa3": panel_extra, "egJpaGtk": panel_status,
     "LJhqu0x6": mission_unlock, "dzU2t3HA": extra_challenge_info,
     "68RQ9GwN": exbonus_execute, "HaJp14F6": exbonus_update,

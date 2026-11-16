@@ -171,6 +171,13 @@ def serve(spec, plaintext, reply_id=None):
 
 def _settle(out, req):
     for node in _rows(req, 'JcxS6A8N'):
+        from exvius_actions import _mst
+        town = str(node.get('Gh92V3Tx') or '')
+        if town in _mst('F_TOWN_MST.ndjson', 'Gh92V3Tx'):
+            State.player.data.setdefault('progress', {}).setdefault('visited_towns', {})[town] = True
+            State.player.dirty = True
+            if State.player.restore_story_clear_rewards():
+                out.update(State.player.groups())
         for iid in str(node.get('NiG2wL3A') or '').split(','):
             row = catalogue().get(iid)
             if row is None:

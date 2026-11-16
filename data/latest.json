@@ -1,36 +1,36 @@
 {
   "schema": 1,
-  "revision": 11,
-  "version": "2026.11.13.11",
-  "minAppVersionCode": 9015,
+  "revision": 12,
+  "version": "2026.11.16.12",
+  "minAppVersionCode": 9075,
   "packs": [
     {
       "id": "client-assets",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-client-assets.zip",
-      "size": 94993258,
-      "unpackedSize": 94993102,
-      "sha256": "ff8c5ec973ae046dad2041f27d1e5862358355874d34e45ed20c26065f6070b9"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-client-assets.zip",
+      "size": 103701960,
+      "unpackedSize": 103701804,
+      "sha256": "0f73d5dc9078f791fafa2a304cced55bb76e5f486254dd0270da7c97210ebd79"
     },
     {
       "id": "data-001",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-001.zip",
-      "size": 1215128698,
-      "unpackedSize": 1458655297,
-      "sha256": "6063469eb90e52d3512e9176c5fdb9435db322004130d989e0d587a0b58d170c"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-001.zip",
+      "size": 1215396487,
+      "unpackedSize": 1460391950,
+      "sha256": "654f5c8ef2b7f1e5659ba04ff126e807aaa7acdd495c72736698da76d5fe97b7"
     },
     {
       "id": "data-002",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-002.zip",
-      "size": 1461366379,
-      "unpackedSize": 1460778051,
-      "sha256": "2a4e6f19d285cf9ea408c120b445a0a899d46a7080d4f3bab074d059c480efef"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-002.zip",
+      "size": 1485498789,
+      "unpackedSize": 1484910461,
+      "sha256": "672d4ab8629a055c1f01b2b87fb009b292cb3243985e484ce3c9adf89f2992fd"
     },
     {
       "id": "data-003",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-003.zip",
-      "size": 1458598428,
-      "unpackedSize": 1458407264,
-      "sha256": "f7b0b84082827f80e106ecaa0f197b0fd5a1a4c7c853f75cd9fcd136d5b1035c"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-003.zip",
+      "size": 1459727148,
+      "unpackedSize": 1459535984,
+      "sha256": "851b97b907efed7a468e5975836a068dc3598d1487312278d1fb5603dd3d07cd"
     },
     {
       "id": "data-004",
@@ -48,10 +48,10 @@
     },
     {
       "id": "data-006",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-006.zip",
-      "size": 1452236957,
-      "unpackedSize": 1452210037,
-      "sha256": "c71bdb3c539a2654f3ac9c59268935edf5447402a287741df7c342a5c3a713d9"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-006.zip",
+      "size": 1454232473,
+      "unpackedSize": 1454205553,
+      "sha256": "192f90ae220d08a2a0bb26fe5d36bd53e8f679376ec3307b06b5e4f02f1187ba"
     },
     {
       "id": "data-007",
@@ -62,10 +62,10 @@
     },
     {
       "id": "data-008",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-008.zip",
-      "size": 1462913449,
-      "unpackedSize": 1462861757,
-      "sha256": "b8aed747faab4f6565bb62dce14ee013f95c35ae8426b5c990b929f577415480"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-008.zip",
+      "size": 1481450703,
+      "unpackedSize": 1481399011,
+      "sha256": "86b1eefd5a98d34708f81572b59723f7efdd76a97ac2d10fa551aecdff95f564"
     },
     {
       "id": "data-009",
@@ -76,17 +76,17 @@
     },
     {
       "id": "data-010",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-010.zip",
-      "size": 1456323327,
-      "unpackedSize": 1456072919,
-      "sha256": "a787dfa06e6cf9ffa1216970b6fc6674a93b80e7dbb3675ec482eefd5983d94a"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-010.zip",
+      "size": 1457879995,
+      "unpackedSize": 1457628345,
+      "sha256": "b4f948dad53e468f0913ed84655221db5f6d1851986d80460e950d78aa3c272c"
     },
     {
       "id": "data-011",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.0/exvius-data-011.zip",
-      "size": 94280406,
-      "unpackedSize": 94273880,
-      "sha256": "0d4f5ab31b686e8690b5f8d04e7249efe3f0938ed3db66783723bef4c1b01a18"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-data-011.zip",
+      "size": 94280466,
+      "unpackedSize": 94273940,
+      "sha256": "2267ebc4c07e2d8ea2a84b06add8b4598e642ea8beb5c47b57cad2bb41c879c3"
     },
     {
       "id": "story-movies-003",
@@ -104,24 +104,24 @@
     },
     {
       "id": "nv-fragment-table",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/data-r5/exvius-nv-fragments-r5.zip",
-      "size": 183848,
-      "unpackedSize": 268703,
-      "sha256": "56d58602aa0d1f9ee1b846e55485684c4eef463fd32ded2fdf16bf3ad409ce2c"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-nv-fragments-r5.zip",
+      "size": 277821,
+      "unpackedSize": 277505,
+      "sha256": "1fb4fd8e9a7af6f023f6788ee9b75bee01775e3c9b8fa4e0ec397971bdc5cb48"
     },
     {
       "id": "quest-rewards-and-shop-text",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/data-r6/exvius-quest-rewards-r6.zip",
-      "size": 252885,
-      "unpackedSize": 666543,
-      "sha256": "84d8672efa7a60d62ab12494eadf1075cc261ff19f0005f4642f017cb0c7b52c"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-quest-rewards-r6.zip",
+      "size": 656028,
+      "unpackedSize": 665104,
+      "sha256": "86639db5298bc71f16f6e5dfcc2e6fa233f50ad6ce507e37d86cb64e5ba4477b"
     },
     {
       "id": "kira-event",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/data-r7/exvius-kira-r7.zip",
-      "size": 37141645,
-      "unpackedSize": 89734912,
-      "sha256": "587bff9091a99360d21ac63595ae7deb2a7765fa1d9ab307af8e79b7e4fbd965"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-kira-r7.zip",
+      "size": 55335394,
+      "unpackedSize": 91363965,
+      "sha256": "57cfb0c2d6df49e1c695347d863a2b229aeeac96c156cf02b0ef22211b86988f"
     },
     {
       "id": "mitra-forge",
@@ -139,35 +139,35 @@
     },
     {
       "id": "content-001",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-content-001.zip",
-      "size": 1466139939,
-      "unpackedSize": 1465830553,
-      "sha256": "5ce1a3071cdf46d40ceef8b676e30b89349cd684e1d2c00638a91e21a729d19a"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-content-001.zip",
+      "size": 1466193439,
+      "unpackedSize": 1465849113,
+      "sha256": "bdbaf3a9471727d02376e98349e50b4a55b345b28fb927ee0acecc04d9645099"
     },
     {
       "id": "content-002",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-content-002.zip",
-      "size": 1450036319,
-      "unpackedSize": 1449958839,
-      "sha256": "e543e52a8cec8295a76d1a4eeef3bdbfb8d726af5700d070b0d6fc16db0477e3"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-content-002.zip",
+      "size": 1473911430,
+      "unpackedSize": 1473838610,
+      "sha256": "c54e135ac99e3ae7e06e9aa26b746f98c84517dfd9cece7db1c778511d55fdda"
     },
     {
       "id": "content-003",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-content-003.zip",
-      "size": 238038621,
-      "unpackedSize": 363542700,
-      "sha256": "48796d1df87f0d86fb5b0e3042b0e403fa3480763a475cf56cd3f5a73567b3c0"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-content-003.zip",
+      "size": 942399339,
+      "unpackedSize": 1075502506,
+      "sha256": "2bf24063fe41fc5c815324a454b43db8286a988462e9f97d6441ad01cb7b6342"
     }
   ],
-  "downloadBytes": 17825082756,
-  "installedBytes": 18251019579,
-  "files": 12487,
+  "downloadBytes": 18628390069,
+  "installedBytes": 19046308873,
+  "files": 16299,
   "app": {
-    "version": "0.1.31",
-    "versionName": "9.0.0-offline.31",
-    "versionCode": 9072,
-    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.31/exvius-offline-v0.1.31.apk",
-    "size": 41372830,
-    "sha256": "b441f18699706209a371ec406b1c03c567798020211feab6c43973a6dbf61aff"
+    "version": "0.1.35",
+    "versionName": "9.0.0-offline.35",
+    "versionCode": 9075,
+    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-offline-v0.1.35.apk",
+    "size": 41295064,
+    "sha256": "2417710b5e61277a0ad11cdd93dc92c290a70583059044ccce441fb9dd1f56c1"
   }
 }

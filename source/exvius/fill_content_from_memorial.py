@@ -18,6 +18,7 @@ import argparse
 import collections
 import hashlib
 import json
+import os
 import re
 import struct
 import sys
@@ -256,8 +257,8 @@ def global_names():
 
 def memorial_index():
     index = collections.defaultdict(list)
-    for root in ('memorial', 'jp_andapp'):
-        for path in (DATA / root).rglob('*'):
+    for root in (DATA / 'memorial', PROJECT / 'Japan content/Shared sources/jp_andapp'):
+        for path in root.rglob('*'):
             if path.suffix in ('.cpk', '.acb', '.awb', '.usm'):
                 index[re.sub(r'^Ver\d+_', '', path.name)].append(path)
     return index
@@ -542,12 +543,102 @@ def add_scene_speakers(archive, members, memorial):
     return added
 
 
+def repair_preserved_scene_messages(archive, scene_id):
+    """Correct two original scenes' stale message references, without new prose."""
+    if scene_id == '18301010101':
+        # Block0/event200008/page0 repeats event200000's eight-message scene.
+        # Its choreography is identical through the last message. Only the
+        # replay condition/end command and these missing message IDs differ.
+        # Reuse the existing matching messages, including every language cell.
+        member = '18301010101_event.bin'
+        original = '4ac0d5b18b26670ffe24e29c319acbcf88e069ca0103039804f80fa77f6c508e'
+        repaired = '3957d17f3dcc429fd13ff55b8a891a54cfaebf73a0c5c812b175e59607419e28'
+        changes = ((2212, 210016, 210014), (2269, 210017, 210015),
+                   (2293, 210018, 210008), (2317, 210019, 210009),
+                   (2332, 210020, 210010), (2347, 210021, 210011),
+                   (2371, 210022, 210012), (2431, 210023, 210013))
+    elif scene_id == '402090403':
+        # Block9/event200000/page0 asks for absent004/005 after the announcer's
+        # introduction and before "Who... Who are those people?!". Both the
+        # original HD Japanese and SD English tables supply that same scene's
+        # speaker300004 introduction under014/015 (Team Black Airship).
+        # This is a source-supported binding correction, not a claim that an
+        # alternative historical script was recovered. Unreferenced016 and
+        # all other commands and text remain unchanged.
+        member = '402090403_event.bin'
+        original = '1284f730d2f8fd266abceb7b5b919c9bf3925b601cba404e2832eb6ca4aa1ebd'
+        repaired = 'd626a276d55476653d05e325f9c24a0edd486d5a8b1158a6cefaac2d5c8ae072'
+        changes = ((5681, 210004, 210014), (5696, 210005, 210015))
+    else:
+        return 0
+    members = {entry.full_path: index for index, entry in enumerate(archive.file_infos())}
+    if member not in members:
+        raise ValueError('Preserved scene message source is missing: ' + member)
+    body = archive.file_bytes(members[member])
+    digest = hashlib.sha256(body).hexdigest()
+    if digest == repaired:
+        return 0
+    if digest != original:
+        raise ValueError('Preserved scene message source changed: ' + member)
+    text_name = member[:-4] + '_text_sg.txt'
+    if text_name not in members:
+        raise ValueError('Preserved scene localized messages are missing: ' + member)
+    localized = archive.file_bytes(members[text_name])
+    filled = 0
+    if scene_id == '402090403':
+        # The Global package's original JP rows establish the speaker/context,
+        # but its English014/015 cells are blank. Memorial retains their exact
+        # English in this same scene. Import only those two existing rows.
+        from cricodecs import cpk
+        english_source = DATA / 'memorial_fill/common_lang/sd/event2/chara2/Ver15_402090403.cpk'
+        if hashlib.sha256(english_source.read_bytes()).hexdigest() != '155074b0d39e69286e426f4decbbed12ce7dc09c2746db3f0bb7396a7587911f':
+            raise ValueError('Preserved character scene English source changed')
+        english_pack = cpk.load(str(english_source))
+        english = next(english_pack.file_bytes(i) for i, entry in enumerate(english_pack.file_infos())
+                       if entry.full_path == '402090403_event_text.txt')
+        selected = ''.join(key + ',' + value + '\n' for key, value in text_rows(english)
+                           if key in ('210014', '210015')).encode('utf8')
+        localized, filled = merge_localized(selected, localized)
+        if filled:
+            archive.replace_bytes(members[text_name], localized)
+    text = localized.decode('utf-8-sig')
+    cells = {row.split('^', 1)[0]: row.split('^')[1:] for row in text.splitlines()}
+    patched = bytearray(body)
+    for offset, old, new in changes:
+        if patched[offset:offset + 7] != b'\x08\x00\x04' + struct.pack('>i', old):
+            raise ValueError('Preserved scene message command changed: ' + member)
+        if not cells.get(str(new)) or not cells[str(new)][0].strip():
+            raise ValueError('Preserved scene replacement message is missing: ' + str(new))
+        struct.pack_into('>i', patched, offset + 3, new)
+    archive.replace_bytes(members[member], bytes(patched))
+    return len(changes) + filled
+
+
 def localized_package(source, memorial=None, scene_alias=None):
     """Memorial package plus the Global `_sg` text members built from its English."""
     from cricodecs import cpk
+    from approved_native_repairs import GLOBAL_TOWN_PACKAGES, GLOBAL_SCENE_MESSAGE_PACKAGES
+    for relative, expected in {**GLOBAL_TOWN_PACKAGES, **GLOBAL_SCENE_MESSAGE_PACKAGES}.items():
+        if source.name != Path(relative).name:
+            continue
+        original = DATA / 'client/files' / relative
+        if hashlib.sha256(original.read_bytes()).hexdigest() != expected:
+            raise ValueError('Recovered Global town source changed: ' + relative)
+        source = original
+        break
     archive = cpk.load(str(source))
     members = {entry.full_path: index for index, entry in enumerate(archive.file_infos())}
-    added = apply_english_dialogue(archive, members)
+    scene_id = re.sub(r'^Ver\d+_', '', source.stem)
+    added = repair_preserved_scene_messages(archive, scene_id)
+    for name, index in members.items():
+        if name.endswith('_sg.txt'):
+            body = archive.file_bytes(index)
+            if body.startswith(b'\xef\xbb\xbf'):
+                # The original GL CSV reader preserves these bytes in the
+                # first key. Serialize the localized table as plain UTF-8.
+                archive.replace_bytes(index, body[3:])
+                added += 1
+    added += apply_english_dialogue(archive, members)
     # Fill reviewed base dialogue before speaker IDs are scoped to this scene.
     # Otherwise a newly resolved town speaker changes the source hash before
     # its English translation can fill an empty retail cell.
@@ -751,7 +842,7 @@ def main():
             overlay = DATA / 'overlay' / relative
             overlay.parent.mkdir(parents=True, exist_ok=True)
             overlay.write_bytes(data)
-        manifest.append({'path': relative, 'source': source.relative_to(DATA).as_posix(),
+        manifest.append({'path': relative, 'source': Path(os.path.relpath(source, DATA)).as_posix(),
                          'sg_members_added': added, 'bytes': len(data),
                          'sha256': hashlib.sha256(data).hexdigest(),
                          **({'legacy_scene': Path(source_name).stem,

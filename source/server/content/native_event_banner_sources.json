@@ -1,0 +1,1906 @@
+{
+  "version": 1,
+  "scope": "Campaign-corroborated whole original native English banners recovered for omitted Global event areas.",
+  "source_record_count": 60,
+  "sources": [
+    {
+      "area": "703",
+      "name": "Orbonne Vaults",
+      "canonical_name": "Orbonne Monastery Vaults",
+      "filename": "event_703.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_bn_list_FFT.png",
+      "source_sha256": "5903a28e0a2c838cc08611febdc2d219880aff5b4bf69091802e10e574905095",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_bn_list_FFT.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7030101",
+        "selected_original_icon_id": "7030101",
+        "selected_original_icon_label": "FFTイベント",
+        "selected_original_icon_filename": "spd_bn_list_FFT.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Orbonne_Monastery_Vaults",
+          "banner_title": "File:Banner-Orbonne Monastery Vaults.png",
+          "evidence": [
+            "logs/reference/field-scenario-wiki-20261109.json: Orbonne Monastery Vaults initial File link, original Global event period and Global announcement",
+            "logs/reference/events-archives-wiki-20261026.json: original 2016 notice literal banner and 2018 rerun"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_703.png",
+      "runtime_sha256": "5903a28e0a2c838cc08611febdc2d219880aff5b4bf69091802e10e574905095",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "711",
+      "name": "Hall of Memories",
+      "canonical_name": "Memories from the Aquapolis",
+      "filename": "event_711.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_bn_list_FFBE.png",
+      "source_sha256": "5a89304d2972cd935fb3fb438cb0b798a95bd0b8940a1fcb1fa07e5774c687ab",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_bn_list_FFBE.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7110101",
+        "selected_original_icon_id": "7110101",
+        "selected_original_icon_label": "水都に秘められた想い",
+        "selected_original_icon_filename": "spd_bn_list_FFBE.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Memories_from_the_Aquapolis",
+          "banner_title": "File:Banner-Memories from the Aquapolis Reappeared.png",
+          "evidence": [
+            "logs/reference/exchange-timeline-wiki-20261110.json: original Global release 2017-01-06 and rerun 2017-07-17",
+            "Original Global mission names Memories of the Aquapolis, paired with semantically confirmed own native English icon in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_711.png",
+      "runtime_sha256": "5a89304d2972cd935fb3fb438cb0b798a95bd0b8940a1fcb1fa07e5774c687ab",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "712",
+      "name": "FFT Round 2",
+      "canonical_name": "The Auracite Chosen",
+      "filename": "event_712.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_bn_list_FFT2.png",
+      "source_sha256": "2e539ab78d3d3c0e9928f6b78185febe87221a67127b010b70146fe180f50669",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_bn_list_FFT2.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7120101",
+        "selected_original_icon_id": "7120101",
+        "selected_original_icon_label": "FFTイベント2",
+        "selected_original_icon_filename": "spd_bn_list_FFT2.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/The_Auracite_Chosen",
+          "banner_title": "File:Banner-The Auracite Chosen.png",
+          "evidence": [
+            "logs/reference/exchange-timeline-wiki-20261110.json: original Global release 2017-03-24 and rerun 2019-03-22",
+            "Original area Japanese title and Chosen by the Stone mission names, paired with semantically confirmed own native English icon in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_712.png",
+      "runtime_sha256": "2e539ab78d3d3c0e9928f6b78185febe87221a67127b010b70146fe180f50669",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "746",
+      "name": "Guardian of Order",
+      "canonical_name": "Guardian of the Order",
+      "filename": "event_746.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20170215_bn_list_ffbe.png",
+      "source_sha256": "acb4adfd2e31c9b5b19e67ac0f5687594d65dfdbc7ec3ba1cdf3520d5204d5b2",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20170215_bn_list_ffbe.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7460101",
+        "selected_original_icon_id": "7460101",
+        "selected_original_icon_label": "秩序の守護者",
+        "selected_original_icon_filename": "spd_20170215_bn_list_ffbe.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Guardian_of_the_Order",
+          "banner_title": "File:Banner-Guardian of the Order.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_746.png",
+      "runtime_sha256": "acb4adfd2e31c9b5b19e67ac0f5687594d65dfdbc7ec3ba1cdf3520d5204d5b2",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "749",
+      "name": "The Web-Weaving Princesses",
+      "canonical_name": "The Web-Weaving Princess",
+      "filename": "event_749.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20170307_bn_list_FF15_02_last.png",
+      "source_sha256": "b4381ab5e8901b5d3cde748286f556db83b347e1505201e918db5e6db9a4b9fb",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20170307_bn_list_FF15_02_last.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7490102",
+        "selected_original_icon_id": "7490102",
+        "selected_original_icon_label": "化生のプリンセス_最終日",
+        "selected_original_icon_filename": "spd_20170307_bn_list_FF15_02_last.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/The_Web-Weaving_Princess",
+          "banner_title": "File:Banner-The Web-Weaving Princess.png",
+          "evidence": [
+            "logs/reference/field-scenario-wiki-20261109.json: The Web-Weaving Princess initial File link; own HARD and EASY mission headings; Global 20171129_news_banner_Ariadne.jpg reference"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_749.png",
+      "runtime_sha256": "b4381ab5e8901b5d3cde748286f556db83b347e1505201e918db5e6db9a4b9fb",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "797",
+      "name": "FFBE Raid - Dracotaur Lancer",
+      "canonical_name": "FFBE Raid - Dracotaur Lancer",
+      "filename": "event_797.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20171220_bn_list_contest.png",
+      "source_sha256": "61059dd3f049e99e141a347e9ab74e1e5c9684add5cd7e1fdbd545c3829a14d8",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20171220_bn_list_contest.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "7970101",
+        "selected_original_icon_id": "7970101",
+        "selected_original_icon_label": "第2回ユニットイラストコンテストレイド",
+        "selected_original_icon_filename": "spd_20171220_bn_list_contest.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Dracotaur_Lancer",
+          "banner_title": "File:Banner-Dracotaur Lancer.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_797.png",
+      "runtime_sha256": "61059dd3f049e99e141a347e9ab74e1e5c9684add5cd7e1fdbd545c3829a14d8",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "908",
+      "name": "Great Nian Beast Attack!",
+      "canonical_name": "Lunar New Year: The Great Nian",
+      "filename": "event_908.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00010.png",
+      "source_sha256": "689dbb0016c062620694ff5ec9d635aa39a2a82fc3b9034f114483dff01d812c",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00010.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000008",
+        "selected_original_icon_id": "9000008",
+        "selected_original_icon_label": "Great Nian Beast",
+        "selected_original_icon_filename": "global_spd_bn_list_00010.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+          "banner_title": "File:Banner-Lunar New Year.png",
+          "evidence": [
+            "logs/reference/field-scenario-wiki-20261109.json: Lunar New Year explicitly Global-exclusive; own two named dungeons; initial File link"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_908.png",
+      "runtime_sha256": "689dbb0016c062620694ff5ec9d635aa39a2a82fc3b9034f114483dff01d812c",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "940",
+      "name": "FFBE Raid - Darkness Awakens",
+      "canonical_name": "FFBE Raid - Darkness Awakens",
+      "filename": "event_940.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00039.png",
+      "source_sha256": "4f9b9fd714b9546c358de7f4411ab32e4936a9feccd2fc26cf5f1174d33bd6e8",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00039.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000046",
+        "selected_original_icon_id": "9000046",
+        "selected_original_icon_label": "Darkness Awakens Banner",
+        "selected_original_icon_filename": "global_spd_bn_list_00039.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+          "banner_title": "File:Banner-Darkness Awakens.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_940.png",
+      "runtime_sha256": "4f9b9fd714b9546c358de7f4411ab32e4936a9feccd2fc26cf5f1174d33bd6e8",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "997",
+      "name": "Defiance of Fate - Fixed-Party Trials",
+      "canonical_name": "Defiance of Fate - Fixed-Party Trials",
+      "filename": "event_997.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00093.png",
+      "source_sha256": "f4879bfedb01419480ad6c7ae9e3346350180025e2928edfddbf6a1120110c67",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00093.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000115",
+        "selected_original_icon_id": "9000115",
+        "selected_original_icon_label": "Ultra Hard 2",
+        "selected_original_icon_filename": "global_spd_bn_list_00093.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate",
+          "banner_title": "File:Banner-Defiance of Fate.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_997.png",
+      "runtime_sha256": "f4879bfedb01419480ad6c7ae9e3346350180025e2928edfddbf6a1120110c67",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "998",
+      "name": "Free-Party Trials",
+      "canonical_name": "Defiance of Fate - Free-Party Trials",
+      "filename": "event_998.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00094.png",
+      "source_sha256": "8e9f5dfb2eef6b696b2c3165259abb53a3521745e691cd566b3405514e241cfd",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00094.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000116",
+        "selected_original_icon_id": "9000116",
+        "selected_original_icon_label": "Ultra Hard 3",
+        "selected_original_icon_filename": "global_spd_bn_list_00094.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate_-_Free-Party_Trials",
+          "banner_title": "File:Banner-Defiance of Fate - Free-Party Trials.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_998.png",
+      "runtime_sha256": "8e9f5dfb2eef6b696b2c3165259abb53a3521745e691cd566b3405514e241cfd",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1032",
+      "name": "Challenge of the Brave: Transcendent Heroes",
+      "canonical_name": "Challenge of the Brave: Transcendent Heroes",
+      "filename": "event_1032.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00273.png",
+      "source_sha256": "46e3917a09897e30c14190e69152ba6f1c5bd0e61c16ebc6791a39afce3602a6",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00273.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000351",
+        "selected_original_icon_id": "9000351",
+        "selected_original_icon_label": "Transcendent Heroes: VS Wylk",
+        "selected_original_icon_filename": "global_spd_bn_list_00273.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Wylk",
+          "banner_title": "File:Banner-Transcendent Heroes VS Wylk.png",
+          "evidence": [
+            "Original six area missions explicitly contain VS Elena, VS Louise and VS Wylk INT/ADV",
+            "logs/reference/events-archives-wiki-20261026.json: all three exact Global variants; Wylk literal banner; earliest Elena publication2020-09-24",
+            "logs/ffbe-omitted-area-banner-source-20261111.json: own original English native icon is Wylk variant"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1032.png",
+      "runtime_sha256": "46e3917a09897e30c14190e69152ba6f1c5bd0e61c16ebc6791a39afce3602a6",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1035",
+      "name": "Transcendent Heroes: VS Itachi - INT",
+      "canonical_name": "Transcendent Heroes: VS Itachi",
+      "filename": "event_1035.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00145.png",
+      "source_sha256": "74512f5ff06bc71d0f22d36f08b64f70ff6e806c6df5dddcdc6465ee8a3f795d",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00145.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000167",
+        "selected_original_icon_id": "9000167",
+        "selected_original_icon_label": "Event Banner (Challenge of the Brave: Itachi)",
+        "selected_original_icon_filename": "global_spd_bn_list_00145.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Itachi",
+          "banner_title": "File:Banner-Transcendent Heroes VS Itachi.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1035.png",
+      "runtime_sha256": "74512f5ff06bc71d0f22d36f08b64f70ff6e806c6df5dddcdc6465ee8a3f795d",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1078",
+      "name": "Espers' Test",
+      "canonical_name": "Test of the Espers: Espers' Test",
+      "filename": "event_1078.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00222.png",
+      "source_sha256": "62ba8472db4125d7120edfb5aa6e16b5a815dd13bb128a6b7deed41ba966ca5b",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00222.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000259",
+        "selected_original_icon_id": "9000259",
+        "selected_original_icon_label": "Esper Week - Daily Eight",
+        "selected_original_icon_filename": "global_spd_bn_list_00222.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "banner_title": "File:Banner-Test of the Espers.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+            "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1078.png",
+      "runtime_sha256": "62ba8472db4125d7120edfb5aa6e16b5a815dd13bb128a6b7deed41ba966ca5b",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1079",
+      "name": "Odin and Asura's Test",
+      "canonical_name": "Test of the Espers: Odin and Asura's Test",
+      "filename": "event_1079.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00223.png",
+      "source_sha256": "4337dc51cde9fa22a81eca723c8015b8c0b8f964b521c7dc63663bb7e9ccd219",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00223.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000260",
+        "selected_original_icon_id": "9000260",
+        "selected_original_icon_label": "Esper Week - Weekend Special",
+        "selected_original_icon_filename": "global_spd_bn_list_00223.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "banner_title": "File:Banner-Test of the Espers.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+            "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1079.png",
+      "runtime_sha256": "4337dc51cde9fa22a81eca723c8015b8c0b8f964b521c7dc63663bb7e9ccd219",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1080",
+      "name": "Bahamut's Test",
+      "canonical_name": "Test of the Espers: Bahamut's Test",
+      "filename": "event_1080.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00224.png",
+      "source_sha256": "1ed7b48147b32f8b4a0046ca6bddcad95aa6f3b00587b72de9bdf5a93315fac7",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00224.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000261",
+        "selected_original_icon_id": "9000261",
+        "selected_original_icon_label": "Esper Week - Bahamut Revisited",
+        "selected_original_icon_filename": "global_spd_bn_list_00224.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "banner_title": "File:Banner-Test of the Espers.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+            "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1080.png",
+      "runtime_sha256": "1ed7b48147b32f8b4a0046ca6bddcad95aa6f3b00587b72de9bdf5a93315fac7",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1084",
+      "name": "Tomb Raider: Lost Valley - Daily Challenge",
+      "canonical_name": "Tomb Raider: Lost Valley - Daily Challenge",
+      "filename": "event_1084.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00220.png",
+      "source_sha256": "780fb0281078c93ed653b8ba1035ed7eeacddef5413a83ee3c3a2be52cb3f5db",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00220.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000257",
+        "selected_original_icon_id": "9000257",
+        "selected_original_icon_label": "Tomb Raider Daily 2021",
+        "selected_original_icon_filename": "global_spd_bn_list_00220.png",
+        "binding": "Original area icon links to original icon record; native member title matches own campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Tomb_Raider:_Lost_Valley",
+          "banner_title": "File:Banner-Tomb Raider Lost Valley.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable",
+            "Original area has21 Lost Valley Daily Challenge missions; primary Lost Valley page includes its own Daily battle section within September30-October20,2021 period; native own daily card independently recovered"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1084.png",
+      "runtime_sha256": "780fb0281078c93ed653b8ba1035ed7eeacddef5413a83ee3c3a2be52cb3f5db",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "907",
+      "name": "Nian Beast Challenges!",
+      "canonical_name": "Lunar New Year",
+      "filename": "event_907.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00009.png",
+      "source_sha256": "365d15f54029a21b3f7270894050675c09ff7f80f220618085ecf11efa1aa56a",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00009.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "2110005",
+        "selected_original_icon_id": "9000007",
+        "selected_original_icon_label": "Nian Beast",
+        "selected_original_icon_filename": "global_spd_bn_list_00009.png",
+        "binding": "Original area icon is stale. Original icon descriptive label and whole member title identify the own campaign instead.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+          "banner_title": "File:Banner-Lunar New Year.png",
+          "evidence": [
+            "logs/reference/field-scenario-wiki-20261109.json: Lunar New Year explicitly Global-exclusive; own two named dungeons; initial File link"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_907.png",
+      "runtime_sha256": "365d15f54029a21b3f7270894050675c09ff7f80f220618085ecf11efa1aa56a",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "918",
+      "name": "Festival of the Autumn Moon",
+      "canonical_name": "Festival of the Autumn Moon",
+      "filename": "event_918.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00020.png",
+      "source_sha256": "070b1bf6cd2ba08686a07310dd5249a89068c8bf196153b6313f41d152512385",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00020.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "2110002",
+        "selected_original_icon_id": "9000023",
+        "selected_original_icon_label": "Festival of the Autumn Moon",
+        "selected_original_icon_filename": "global_spd_bn_list_00020.png",
+        "binding": "Original area icon is stale. Original icon descriptive label and whole member title identify the own campaign instead.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Festival_of_the_Autumn_Moon",
+          "banner_title": "File:Banner-Festival of the Autumn Moon.jpg",
+          "evidence": [
+            "logs/reference/event-missing-banner-pages-20261026.json: primary revision244162 returns actual JPG banner",
+            "logs/reference/field-scenario-wiki-20261109.json: The Misty Bamboo Forest has exact four Festival of the Autumn Moon tier headings and original Global announcement"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0",
+        "visible_campaign_title": "Festival of the Autumn Moon: The Misty Bamboo Forest. This is the2017 exploration/battle campaign, distinct from the2016 Mogcake campaign."
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_918.png",
+      "runtime_sha256": "070b1bf6cd2ba08686a07310dd5249a89068c8bf196153b6313f41d152512385",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "919",
+      "name": "Halloween Castle Dungeon",
+      "canonical_name": "Halloween Castle Dungeon",
+      "filename": "event_919.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00021.png",
+      "source_sha256": "8e14c5222254ba0a765927d3cd7d2903f38fb7233a36437ad2a63bc72cd3fed1",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00021.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "2110002",
+        "selected_original_icon_id": "9000024",
+        "selected_original_icon_label": "Halloween Castle Dungeon",
+        "selected_original_icon_filename": "global_spd_bn_list_00021.png",
+        "binding": "Original area icon is stale. Original icon descriptive label and whole member title identify the own campaign instead.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Return_to_the_Halloween_Castle",
+          "banner_title": "File:Banner-Halloween Dungeon.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: Global release2017-10-20 and exact banner stem Halloween Dungeon",
+            "Original F_ICON9000024 explicitly labels Halloween Castle Dungeon and points to semantically confirmed original English art in logs/ffbe-omitted-area-banner-source-20261111.json"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_919.png",
+      "runtime_sha256": "8e14c5222254ba0a765927d3cd7d2903f38fb7233a36437ad2a63bc72cd3fed1",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "958",
+      "name": "FFBE Raid - Darkness Apocalypse",
+      "canonical_name": "FFBE Raid - Darkness Apocalypse",
+      "filename": "event_958.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00051.png",
+      "source_sha256": "086f8a4d115a5006385c17700021df38957b2f4536585d2085d94dab9a24ad5f",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00051.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000046",
+        "selected_original_icon_id": "9000062",
+        "selected_original_icon_label": "FFBE Raid - Darkness Apocalypse",
+        "selected_original_icon_filename": "global_spd_bn_list_00051.png",
+        "binding": "Original area icon is stale. Original icon descriptive label and whole member title identify the own campaign instead.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+          "banner_title": "File:Banner-Darkness Apocalypse.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_958.png",
+      "runtime_sha256": "086f8a4d115a5006385c17700021df38957b2f4536585d2085d94dab9a24ad5f",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "999",
+      "name": "The Lightning Tyrant - Tyrant Unleashed",
+      "canonical_name": "The Lightning Tyrant - Tyrant Unleashed",
+      "filename": "event_999.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00095.png",
+      "source_sha256": "3a371feef22d00231d4f30c4d8146bd66dc3ea440c7ea6996af465cc14e3067b",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00095.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "original_area_icon_id": "9000115",
+        "selected_original_icon_id": "9000117",
+        "selected_original_icon_label": "Ultra Hard 4",
+        "selected_original_icon_filename": "global_spd_bn_list_00095.png",
+        "binding": "Original area icon is stale. Original icon descriptive label and whole member title identify the own campaign instead.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate:_The_Lightning_Tyrant_-_Tyrant_Unleashed",
+          "banner_title": "File:Banner-Defiance of Fate - The Lightning Tyrant - Tyrant Unleashed.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        },
+        "source_master": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/mst/Ver375_LM1APs6u.dat",
+        "source_master_sha256": "8b9514c23b32ce253aea215694c1da719c01cbeb6d0ca7da3dd9c3296dcd4ba0"
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_999.png",
+      "runtime_sha256": "3a371feef22d00231d4f30c4d8146bd66dc3ea440c7ea6996af465cc14e3067b",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3161",
+      "name": "Tifa Enhancement Quest",
+      "canonical_name": "Tifa Enhancement Quests",
+      "filename": "event_3161.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200424_bn_list_TIFA.png",
+      "source_sha256": "9c6385ec1f94a948bba2949dfd3c5e03a02067032eabec24d571f8bf2b464e38",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200424_bn_list_TIFA.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Tifa_Enhancement_Quests",
+          "banner_title": "File:Banner-Tifa Enhancement Quests.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3161.png",
+      "runtime_sha256": "9c6385ec1f94a948bba2949dfd3c5e03a02067032eabec24d571f8bf2b464e38",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3190",
+      "name": "Challenge of the Brave: Caught Between Virtues and Vices",
+      "canonical_name": "Challenge of the Brave: Caught Between Virtues and Vices",
+      "filename": "event_3190.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200630_bn_shingi.png",
+      "source_sha256": "9618abc7901d5b9018415489dfe1fcb0e4fe1ba174448831ac182c942f0c9640",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200630_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Caught_Between_Virtues_and_Vices",
+          "banner_title": "File:Banner-Caught Between Virtues and Vices.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3190.png",
+      "runtime_sha256": "9618abc7901d5b9018415489dfe1fcb0e4fe1ba174448831ac182c942f0c9640",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3198",
+      "name": "Challenge of the Brave: Treasured Bonds",
+      "canonical_name": "Challenge of the Brave: Treasured Bonds",
+      "filename": "event_3198.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200721_bn_shingi.png",
+      "source_sha256": "c730d05664029f0f2227d4e36b4a8b2cfeca728f8663b4f26b6b0e0ad04a940a",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200721_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Treasured_Bonds",
+          "banner_title": "File:Banner-Treasured Bonds.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3198.png",
+      "runtime_sha256": "c730d05664029f0f2227d4e36b4a8b2cfeca728f8663b4f26b6b0e0ad04a940a",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3204",
+      "name": "Challenge of the Brave: Let Your Heart Be the Guiding Key",
+      "canonical_name": "Challenge of the Brave: Let Your Heart Be the Guiding Key",
+      "filename": "event_3204.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200729_bn_KH_shingi.png",
+      "source_sha256": "f223e9f5f2d2d9524928df1e2b5205c67a87bc6eafde6cc2ef551df97ea13da4",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200729_bn_KH_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Let_Your_Heart_Be_the_Guiding_Key",
+          "banner_title": "File:Banner-Let Your Heart Be the Guiding Key.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3204.png",
+      "runtime_sha256": "f223e9f5f2d2d9524928df1e2b5205c67a87bc6eafde6cc2ef551df97ea13da4",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3207",
+      "name": "Challenge of the Brave: Pillars of Strength",
+      "canonical_name": "Challenge of the Brave: Pillars of Strength",
+      "filename": "event_3207.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200811_bn_shingi.png",
+      "source_sha256": "f5551e2f30bb432c5ad54f6772d31f9bd26c8f3ab33ec776655293d88a871263",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200811_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Pillars_of_Strength",
+          "banner_title": "File:Banner-Pillars of Strength.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3207.png",
+      "runtime_sha256": "f5551e2f30bb432c5ad54f6772d31f9bd26c8f3ab33ec776655293d88a871263",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3208",
+      "name": "Challenge of the Brave: Those Who Stand Against Darkness",
+      "canonical_name": "Challenge of the Brave: Those Who Stand Against Darkness",
+      "filename": "event_3208.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200821_bn_shingi.png",
+      "source_sha256": "6c2dacf2ef7fb5d5ba0784b80045b833490d21cdefc4353df9fd6c4cfb148ba7",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200821_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Those_Who_Stand_Against_Darkness",
+          "banner_title": "File:Banner-Those Who Stand Against Darkness.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3208.png",
+      "runtime_sha256": "6c2dacf2ef7fb5d5ba0784b80045b833490d21cdefc4353df9fd6c4cfb148ba7",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3209",
+      "name": "Challenge of the Brave: At the Mercy of Magitek",
+      "canonical_name": "Challenge of the Brave: At the Mercy of Magitek",
+      "filename": "event_3209.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200831_bn_shingi.png",
+      "source_sha256": "19b05383823b79534c610e5b9065c250765b94ead94ebf7dd2145213c36b256b",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200831_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/At_the_Mercy_of_Magitek",
+          "banner_title": "File:Banner-At the Mercy of Magitek.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3209.png",
+      "runtime_sha256": "19b05383823b79534c610e5b9065c250765b94ead94ebf7dd2145213c36b256b",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3218",
+      "name": "Challenge of the Brave: Seekers of Peace",
+      "canonical_name": "Challenge of the Brave: Seekers of Peace",
+      "filename": "event_3218.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200910_bn_shingi.png",
+      "source_sha256": "f96f5ec9f260a83a7bb9600cf1ba196722d40e9765b49a4188da66bc9234fa1b",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200910_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Seekers_of_Peace",
+          "banner_title": "File:Banner-Seekers of Peace.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3218.png",
+      "runtime_sha256": "f96f5ec9f260a83a7bb9600cf1ba196722d40e9765b49a4188da66bc9234fa1b",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3224",
+      "name": "Challenge of the Brave: Bonds of the Heart",
+      "canonical_name": "Challenge of the Brave: Bonds of the Heart",
+      "filename": "event_3224.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200921_bn_shingi.png",
+      "source_sha256": "a51e7f9a04840fd27a0bd7da1cce35b2a6a5a55c7e1f956feec36dafcb496408",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200921_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Bonds_of_the_Heart",
+          "banner_title": "File:Banner-Bonds of the Heart.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3224.png",
+      "runtime_sha256": "a51e7f9a04840fd27a0bd7da1cce35b2a6a5a55c7e1f956feec36dafcb496408",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3228",
+      "name": "Challenge of the Brave: Farplane Wanderers I",
+      "canonical_name": "Challenge of the Brave: Farplane Wanderers I",
+      "filename": "event_3228.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200930_bn_shingi.png",
+      "source_sha256": "94e2894549d3ea6db705116950a81b9b52d6b151dba354ddc8477d2020337d18",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200930_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Farplane_Wanderers_I",
+          "banner_title": "File:Banner-Farplane Wanderers I.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3228.png",
+      "runtime_sha256": "94e2894549d3ea6db705116950a81b9b52d6b151dba354ddc8477d2020337d18",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3229",
+      "name": "Challenge of the Brave: Farplane Wanderers II",
+      "canonical_name": "Challenge of the Brave: Farplane Wanderers II",
+      "filename": "event_3229.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201012_bn_shingi.png",
+      "source_sha256": "d4a24272dc6d5cd7a8ec61fa97c323cd96301bb3505ed89390af8c26c8de67ad",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201012_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Farplane_Wanderers_II",
+          "banner_title": "File:Banner-Farplane Wanderers II.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3229.png",
+      "runtime_sha256": "d4a24272dc6d5cd7a8ec61fa97c323cd96301bb3505ed89390af8c26c8de67ad",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3230",
+      "name": "Challenge of the Brave: A Race Against Time",
+      "canonical_name": "Challenge of the Brave: A Race Against Time",
+      "filename": "event_3230.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201030_bn_shingi.png",
+      "source_sha256": "f4dfa88644ab48dd76ba74c1715efc1615e462236c3f3660dfe330cb805e50cf",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201030_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/A_Race_Against_Time",
+          "banner_title": "File:Banner-A Race Against Time.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3230.png",
+      "runtime_sha256": "f4dfa88644ab48dd76ba74c1715efc1615e462236c3f3660dfe330cb805e50cf",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3240",
+      "name": "Challenge of the Brave: Resolute Wills",
+      "canonical_name": "Challenge of the Brave: Resolute Wills",
+      "filename": "event_3240.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201111_bn_shingi.png",
+      "source_sha256": "55b9d855d0ed1ec653edb19aeaf740698bdd8ccae7b3676e9a99bcf4ccb259c1",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201111_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Resolute_Wills",
+          "banner_title": "File:Banner-Resolute Wills.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3240.png",
+      "runtime_sha256": "55b9d855d0ed1ec653edb19aeaf740698bdd8ccae7b3676e9a99bcf4ccb259c1",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3241",
+      "name": "Challenge of the Brave: Bound Across Time",
+      "canonical_name": "Challenge of the Brave: Bound Across Time",
+      "filename": "event_3241.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201120_bn_shingi.png",
+      "source_sha256": "a4ad177acb2818f319b51614383592e9369f56e3cbdad548e5cdf285766b49f1",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201120_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Bound_Across_Time",
+          "banner_title": "File:Banner-Bound Across Time.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3241.png",
+      "runtime_sha256": "a4ad177acb2818f319b51614383592e9369f56e3cbdad548e5cdf285766b49f1",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3251",
+      "name": "Challenge of the Brave: Bonds Beyond Blood",
+      "canonical_name": "Challenge of the Brave: Bonds Beyond Blood",
+      "filename": "event_3251.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201130_bn_shingi.png",
+      "source_sha256": "d04de42ef3270486891d0f4dd53b9e4fa23e6a8110b2fa2356bdc531af09a3e5",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201130_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Bonds_Beyond_Blood",
+          "banner_title": "File:Banner-Bonds Beyond Blood.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3251.png",
+      "runtime_sha256": "d04de42ef3270486891d0f4dd53b9e4fa23e6a8110b2fa2356bdc531af09a3e5",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3252",
+      "name": "Challenge of the Brave: Hidden Passions",
+      "canonical_name": "Challenge of the Brave: Hidden Passions",
+      "filename": "event_3252.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201211_bn_shingi.png",
+      "source_sha256": "2b25d4f2f4cd39793fb19a8e15c7e0f700614e94b9842a780153b8f702f4fe86",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201211_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Hidden_Passions",
+          "banner_title": "File:Banner-Hidden Passions.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3252.png",
+      "runtime_sha256": "2b25d4f2f4cd39793fb19a8e15c7e0f700614e94b9842a780153b8f702f4fe86",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3253",
+      "name": "Challenge of the Brave: Conflict at Baschool",
+      "canonical_name": "Challenge of the Brave: Conflict at Baschool",
+      "filename": "event_3253.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20201221_bn_shingi.png",
+      "source_sha256": "ebc3c8f760fff6e9797c61b0d4185462c1804800b6280bf761904a9f8f130f37",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20201221_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Conflict_at_Baschool",
+          "banner_title": "File:Banner-Conflict at Baschool.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3253.png",
+      "runtime_sha256": "ebc3c8f760fff6e9797c61b0d4185462c1804800b6280bf761904a9f8f130f37",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "747",
+      "name": "FFBE Raid - King of Darkness",
+      "canonical_name": "King of Darkness",
+      "filename": "event_747.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20170220_bn_list_ffbe.png",
+      "source_sha256": "72f867333afb3f2622ae791bea26736b5e7504b46d87acb4dd854ea18b4c1b54",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20170220_bn_list_ffbe.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale or absent original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/King_of_Darkness",
+          "banner_title": "File:Banner-King of Darkness.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_747.png",
+      "runtime_sha256": "72f867333afb3f2622ae791bea26736b5e7504b46d87acb4dd854ea18b4c1b54",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1003",
+      "name": "Defiance of Fate - Vault of Hidden Treasures",
+      "canonical_name": "Defiance of Fate - Vault of Hidden Treasures",
+      "filename": "event_1003.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00105.png",
+      "source_sha256": "2360caa9c2b26a3085159016e2c6854a0aacf2c6131620d674f6c03b86e24ca9",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00105.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale or absent original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Vault_of_Hidden_Treasures_(Defiance_of_Fate)",
+          "banner_title": "File:Banner-Vault of Hidden Treasures (Defiance of Fate).png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1003.png",
+      "runtime_sha256": "2360caa9c2b26a3085159016e2c6854a0aacf2c6131620d674f6c03b86e24ca9",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1075",
+      "name": "Cetra Descendant Aerith Enhancement Quest",
+      "canonical_name": "Cetra Descendant Aerith Enhancement Quests",
+      "filename": "event_1075.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00204.png",
+      "source_sha256": "f72e9781cb60496905b0d63d2059389284e20184e048455e2ae3b0d6868bf7bb",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00204.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale or absent original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith_Enhancement_Quests",
+          "banner_title": "File:Banner-Cetra Descendant Aerith Enhancement Quests.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1075.png",
+      "runtime_sha256": "f72e9781cb60496905b0d63d2059389284e20184e048455e2ae3b0d6868bf7bb",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "7200",
+      "name": "Shura Fellspirit",
+      "canonical_name": "Chronicle Battle: Shura Fellspirit",
+      "filename": "event_7200.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20220111_bn_list_Chronicle_FFBE.png",
+      "source_sha256": "903d581fcb280db60043a9ece95901f026629723f61d040bcca4f884aa52ea7e",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20220111_bn_list_Chronicle_FFBE.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale or absent original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Chronicle_Battle:_Shura_Fellspirit",
+          "banner_title": "File:Banner-Chronicle Battle Shura Fellspirit.png",
+          "evidence": [
+            "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field",
+            "Retained Global Events archive explicitly categorizes Chronicle Battle: Shura Fellspirit as FFBE - Limited Chronicle Battle Event"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_7200.png",
+      "runtime_sha256": "903d581fcb280db60043a9ece95901f026629723f61d040bcca4f884aa52ea7e",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1074",
+      "name": "Craft Material Quest",
+      "canonical_name": "Craft Material Quest",
+      "filename": "event_1074.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00198.png",
+      "source_sha256": "5720405be07828b0b1c5a180b4a690f978eddad5189ed0b693dc54d480bde01f",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00198.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale or absent original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "banner_title": "File:Banner-Fundamental Forces Researcher Arc.png",
+          "evidence": [
+            "logs/reference/event-battle-extra-wiki-20261026.json: exact primary subpage revision334076 groups July1-14 own Craft Material Quest stages and awards FFBE5th Anniversary Slots Tokens, Transcendent Heroes Brave Insignia and four Researcher Arc crafting materials",
+            "logs/reference/exchange-timeline-wiki-20261110.json: Fundamental Forces Researcher Arc Global release2021-07-01",
+            "source/server/event_art.json:1066 retains exact parent campaign image",
+            "logs/ffbe-omitted-area-banner-source-20261111.json: original F_ICON9000223 labels Craft Material Quest; visual character identification is not evidence"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1074.png",
+      "runtime_sha256": "5720405be07828b0b1c5a180b4a690f978eddad5189ed0b693dc54d480bde01f",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3110",
+      "name": "FFRK Collaboration Equipment Enhancement Event",
+      "canonical_name": "FFRK Collaboration Equipment Enhancement Event",
+      "filename": "event_3110.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200214_bn_list_wp.png",
+      "source_sha256": "c37a260e6763b07b6c05ad9b7e73b035729aacf3ef58ee6535fc388ff46babb5",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200214_bn_list_wp.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/FFRK_Equipment_Enhancement_Event",
+          "banner_title": "File:Banner-FFRK Equipment Enhancement Event.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3110.png",
+      "runtime_sha256": "c37a260e6763b07b6c05ad9b7e73b035729aacf3ef58ee6535fc388ff46babb5",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3176",
+      "name": "Companion Battle - VS Two-Headed Frost Dragon",
+      "canonical_name": "Companion Battle - VS Two-Headed Frost Dragon",
+      "filename": "event_3176.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20200531_bn_list_FFBE_03.png",
+      "source_sha256": "f0eebe08598c3c7bbf137047c4652b15a3f61688129e6aa9764e7c6e3f306f73",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20200531_bn_list_FFBE_03.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/VS_Two-Headed_Frost_Dragon",
+          "banner_title": "File:Banner-VS Two-Headed Frost Dragon.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3176.png",
+      "runtime_sha256": "f0eebe08598c3c7bbf137047c4652b15a3f61688129e6aa9764e7c6e3f306f73",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3162",
+      "name": "Challenge of the Brave: FFBE Season 1",
+      "canonical_name": "Challenge of the Brave: FFBE Season 1",
+      "filename": "event_3162.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20210531_bn_shingi.png",
+      "source_sha256": "6b5c83a9c6dcdf1e00c866eb88863fd0af6503c0a3740cb9b5238c71848730b5",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20210531_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/FFBE_Season_1",
+          "banner_title": "File:Banner-FFBE Season 1.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3162.png",
+      "runtime_sha256": "6b5c83a9c6dcdf1e00c866eb88863fd0af6503c0a3740cb9b5238c71848730b5",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3261",
+      "name": "Challenge of the Brave: Chosen by Auracite",
+      "canonical_name": "Challenge of the Brave: Chosen by Auracite",
+      "filename": "event_3261.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20230630_bn_shingi.png",
+      "source_sha256": "0181ae002600c73d51d1868f79f445792cd2f1e08f4f2cac3c71b48542e91604",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20230630_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Chosen_by_Auracite",
+          "banner_title": "File:Banner-Chosen by Auracite.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3261.png",
+      "runtime_sha256": "0181ae002600c73d51d1868f79f445792cd2f1e08f4f2cac3c71b48542e91604",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3287",
+      "name": "Challenge of the Brave: Dominant Awakened",
+      "canonical_name": "Challenge of the Brave: Dominant Awakened",
+      "filename": "event_3287.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20240411_bn_shingi.png",
+      "source_sha256": "9a6c312cd7d689ed0b74ce6b7130f7a7add4e0d7368a724c9eed9e5feac0ded6",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20240411_bn_shingi.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English image title visually matches independently corroborated own Global campaign. Stale original area icon is not used.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Dominant_Awakened",
+          "banner_title": "File:Banner-Dominant Awakened.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3287.png",
+      "runtime_sha256": "9a6c312cd7d689ed0b74ce6b7130f7a7add4e0d7368a724c9eed9e5feac0ded6",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3197",
+      "name": "Challenge of the Brave: Seasons' Greetings",
+      "canonical_name": "Challenge of the Brave: Seasons' Greetings",
+      "filename": "event_3197.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00231.png",
+      "source_sha256": "85536d2a3658f1d41d1140735519b4bf97806ec5750f9f053d7c2ad786c0eaec",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00231.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English title visually matches independently documented own Global campaign.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Seasons'_Greetings",
+          "banner_title": "File:Banner-Seasons' Greetings.png",
+          "evidence": [
+            "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3197.png",
+      "runtime_sha256": "85536d2a3658f1d41d1140735519b4bf97806ec5750f9f053d7c2ad786c0eaec",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1037",
+      "name": "Turn Challenge",
+      "canonical_name": "Turn Challenge",
+      "filename": "event_1037.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00148.png",
+      "source_sha256": "dbaa705bd4b347eb0e494801fd3ead2b212bb9ecee35cddc98b1aaeced96c55e",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00148.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/The_Steel_Dummy",
+          "banner_title": "File:Banner-The Steel Dummy.png",
+          "evidence": [
+            "Fresh public primary MediaWiki API record read through verified BrowserOS neo on2026-11-11; literal initial File banner and original Global announcement",
+            "Own original mission contract matches source: Steel Dummy10energy/1battle/rank20; Specimen10energy/3battles/rank705"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1037.png",
+      "runtime_sha256": "dbaa705bd4b347eb0e494801fd3ead2b212bb9ecee35cddc98b1aaeced96c55e",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "1073",
+      "name": "Daily Turn Challenge",
+      "canonical_name": "Daily Turn Challenge",
+      "filename": "event_1073.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/global_spd_bn_list_00208.png",
+      "source_sha256": "3eddd4c1743e460548caac45191a4e72ffb2d9e655841256f600382c673553f2",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "global_spd_bn_list_00208.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/The_Steel_Dummy_(2021)",
+          "banner_title": "File:Banner-The Steel Dummy-21.png",
+          "evidence": [
+            "Fresh public primary MediaWiki API record read through verified BrowserOS neo on2026-11-11; literal initial File banner and original Global announcement",
+            "Own original mission contract matches source: Steel Dummy10energy/1battle/rank20; Specimen10energy/3battles/rank705"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_1073.png",
+      "runtime_sha256": "3eddd4c1743e460548caac45191a4e72ffb2d9e655841256f600382c673553f2",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3048",
+      "name": "Companion Battle - Rampaging Shiva",
+      "canonical_name": "Companion Battle - Rampaging Shiva",
+      "filename": "event_3048.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20191017_bn_list_ffbe_extra_01.png",
+      "source_sha256": "964b50d243e8aca623021a3542278f7aeb5be823c930efaec734dc6d7671d377",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20191017_bn_list_ffbe_extra_01.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Shiva",
+          "banner_title": "File:Banner-Rampaging Shiva.png",
+          "evidence": [
+            "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+            "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+            "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3048.png",
+      "runtime_sha256": "964b50d243e8aca623021a3542278f7aeb5be823c930efaec734dc6d7671d377",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3049",
+      "name": "Companion Battle - Rampaging Odin",
+      "canonical_name": "Companion Battle - Rampaging Odin",
+      "filename": "event_3049.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20191017_bn_list_ffbe_extra_02.png",
+      "source_sha256": "8708ad682107085a9d108f95296ef939604c20e9bf3e7f4eacd6ecc919541aa3",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20191017_bn_list_ffbe_extra_02.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Odin",
+          "banner_title": "File:Banner-Rampaging Odin.png",
+          "evidence": [
+            "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+            "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+            "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3049.png",
+      "runtime_sha256": "8708ad682107085a9d108f95296ef939604c20e9bf3e7f4eacd6ecc919541aa3",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3050",
+      "name": "Companion Battle - Rampaging Tetra Sylphid",
+      "canonical_name": "Companion Battle - Rampaging Tetra Sylphid",
+      "filename": "event_3050.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20191017_bn_list_ffbe_extra_03.png",
+      "source_sha256": "7e47f5b85efdf6902006be8a669494a28077e85b34ef84975da129c48cde40b3",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20191017_bn_list_ffbe_extra_03.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Tetra_Sylphid",
+          "banner_title": "File:Banner-Rampaging Tetra Sylphid.png",
+          "evidence": [
+            "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+            "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+            "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3050.png",
+      "runtime_sha256": "7e47f5b85efdf6902006be8a669494a28077e85b34ef84975da129c48cde40b3",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3051",
+      "name": "Companion Battle - Rampaging Alexander",
+      "canonical_name": "Companion Battle - Rampaging Alexander",
+      "filename": "event_3051.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20191017_bn_list_ffbe_extra_04.png",
+      "source_sha256": "9314e245b0c46d0e4bd768e7c7eb6b0503e000ea9a4a93d56ee55d3036569ef0",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20191017_bn_list_ffbe_extra_04.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Alexander",
+          "banner_title": "File:Banner-Rampaging Alexander.png",
+          "evidence": [
+            "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+            "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+            "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3051.png",
+      "runtime_sha256": "9314e245b0c46d0e4bd768e7c7eb6b0503e000ea9a4a93d56ee55d3036569ef0",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "3052",
+      "name": "Companion Battle - Rampaging Fenrir",
+      "canonical_name": "Companion Battle - Rampaging Fenrir",
+      "filename": "event_3052.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20191017_bn_list_ffbe_extra_05.png",
+      "source_sha256": "161a21bde80190fc0473962278bc783dcd302dc5b7775cb54ddd0225c77b572d",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20191017_bn_list_ffbe_extra_05.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English stage banner visually matches the own dated original Global mission contract. Correct historical stage type and period retained.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Fenrir",
+          "banner_title": "File:Banner-Rampaging Fenrir.png",
+          "evidence": [
+            "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+            "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+            "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_3052.png",
+      "runtime_sha256": "161a21bde80190fc0473962278bc783dcd302dc5b7775cb54ddd0225c77b572d",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "4172",
+      "name": "Character Battle",
+      "canonical_name": "Final Fantasy X-2 Character Battle",
+      "filename": "event_4172.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20220428_bn_list_FF10-2_chara.png",
+      "source_sha256": "c5d69357de3343c626f3d7ad534fb5bb9531b7ef0f8d7bd4e6d3ea7ec9bb7299",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20220428_bn_list_FF10-2_chara.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English Character Battle title, franchise and I/II part visually match the exact primary Global stage and its40energy/1battle/rank1500 contract.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Final_Fantasy_X-2_Character_Battle",
+          "banner_title": "File:Banner-Final Fantasy X-2 Character Battle.png",
+          "evidence": [
+            "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+            "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_4172.png",
+      "runtime_sha256": "c5d69357de3343c626f3d7ad534fb5bb9531b7ef0f8d7bd4e6d3ea7ec9bb7299",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "4192",
+      "name": "Character Battle",
+      "canonical_name": "Chrono Cross Character Battle",
+      "filename": "event_4192.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20220610_bn_list_ChronoCross_chara.png",
+      "source_sha256": "27a89424b9a413e55a7a2401d51e672cb52ea9ac95963e2c8862c4cb30864720",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20220610_bn_list_ChronoCross_chara.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English Character Battle title, franchise and I/II part visually match the exact primary Global stage and its40energy/1battle/rank1500 contract.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/Chrono_Cross_Character_Battle",
+          "banner_title": "File:Banner-Chrono Cross Character Battle.png",
+          "evidence": [
+            "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+            "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract",
+            "Native day labels begin11/3; published Global page begins11/4. Source release records actual published date, and does not rewrite native stage labels"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_4192.png",
+      "runtime_sha256": "27a89424b9a413e55a7a2401d51e672cb52ea9ac95963e2c8862c4cb30864720",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "6112",
+      "name": "Character Battle I",
+      "canonical_name": "DRAGON QUEST The Adventure of Dai Character Battle I",
+      "filename": "event_6112.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20220120_bn_list_dai_chara.png",
+      "source_sha256": "78a1a1d6a2acb768f79001853f65d2d19c6391d340ac8413eaf17e3a893ebbcc",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20220120_bn_list_dai_chara.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English Character Battle title, franchise and I/II part visually match the exact primary Global stage and its40energy/1battle/rank1500 contract.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/DRAGON_QUEST_The_Adventure_of_Dai_Character_Battle_I",
+          "banner_title": "File:Banner-DRAGON QUEST The Adventure of Dai Character Battle I.png",
+          "evidence": [
+            "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+            "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_6112.png",
+      "runtime_sha256": "78a1a1d6a2acb768f79001853f65d2d19c6391d340ac8413eaf17e3a893ebbcc",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    },
+    {
+      "area": "6113",
+      "name": "Character Battle II",
+      "canonical_name": "DRAGON QUEST The Adventure of Dai Character Battle II",
+      "filename": "event_6113.png",
+      "source_file": "data/cpk_extract/en/area/Ver461_spdungeon1/spd_20220131_bn_list_dai_chara.png",
+      "source_sha256": "39639800fb3fd7e697b7ae0133a38110847e110d7904191e5cfb493619d278ce",
+      "native_cpk": "en/sd/area/Ver461_spdungeon1.cpk",
+      "source_package": "repository snapshots/ffbe_gl_contentserver_archive/FFBE_GL/d3syu63yncawjw.cloudfront.net/lapis-static-prod/dlc_assets_prod/en/sd/area/Ver461_spdungeon1.cpk",
+      "member": "spd_20220131_bn_list_dai_chara.png",
+      "size": [
+        640,
+        240
+      ],
+      "source_evidence": {
+        "binding": "Whole original English Character Battle title, franchise and I/II part visually match the exact primary Global stage and its40energy/1battle/rank1500 contract.",
+        "campaign_corroboration": {
+          "source_manifest": "source/server/content/omitted_global_event_sources.json",
+          "source_page": "https://exvius.fandom.com/wiki/DRAGON_QUEST_The_Adventure_of_Dai_Character_Battle_II",
+          "banner_title": "File:Banner-DRAGON QUEST The Adventure of Dai Character Battle II.png",
+          "evidence": [
+            "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+            "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+          ]
+        }
+      },
+      "runtime_file": "data/overlay/en/sd/area/event_6113.png",
+      "runtime_sha256": "39639800fb3fd7e697b7ae0133a38110847e110d7904191e5cfb493619d278ce",
+      "conversion": "Whole original English PNG bytes retained. No pixel, dimension, text or aspect changes."
+    }
+  ]
+}

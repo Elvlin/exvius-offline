@@ -530,7 +530,7 @@ def serve_beast_board(spec, plaintext: str | None):
     the pieces just LEARNED; `BoardCommonScene::initEffect` `0x205f188` pushes the piece being learned,
     and `BeastUtil::learningPiece` `0x1a56468` spent its CP at the tap) and `0bMAwC1t` (`UnlockPieceInfo`
     — the pieces whose UNLOCK anime ended; `BeastBoardScene::unlockAnimeEndCallback` `0x205e710` pushes
-    them, and that path spent item `107037768` — `BeastBoardScene::updateEvent` `0x205be20`). The client
+    them, and that path spent Galvanite `107005000` at `BeastBoardScene::updateEvent` `0x205be20`). The client
     sends this on its way off the board (`backScene` `0x205c9d4` / `onTouchFooter` `0x205cda0`).
 
     Nothing reads the reply (no factory entry for the tag), so the ack is an empty object whenever the
@@ -671,72 +671,94 @@ def serve_unit_exchange(spec, reply_id, plaintext: str | None):
 
 
 def serve_unit_mix(spec, plaintext: str | None):
-    """UnitMixRequest (`UiSC9y8R`): fuse the materials into the base and serve `UnitMixResponse`.
+    """Settle every native fusion node atomically, with a durable retry receipt.
 
-    WHY THIS EXISTS: without it the request got an EMPTY body and the client showed "Connection error (api
-    call)" (observed live 2026-09-24) -- unlike `UnitExchangeRequest`, which tolerates an empty reply, this
-    one does not. The request group is the reply tag `f08du6EW` carrying `og2GHy49` (base instance id) and
-    `WbGYcN17` (materials, CSV).
-
-    Reply tokens (`UnitMixResponse::readParam` `0x196f874`, all 10 mapped in the field map):
-      `og2GHy49` / `WbGYcN17` echo what was fused, `B6H34Mea` = exp gained, `UDMIFB72` = LB exp gained,
-      `1dT7ha9H` = success type, `7UR4J2SE` = gil, `Qic38SuC` = the LevelUp channel, `E90oBqct` = the
-      SP-affinity-reward display flag (optional). `9mu4boy7` is inert (the map's own note).
-    The EXP is the client's OWN formula (`GameUtils::getMixExp`, see `player_state.unit_mix_exp`) so the
-    number we serve agrees with the preview the player just looked at.
-    Trust progress and newly mastered items are projected through the refreshed player groups.
-
-    Two values are AUTHORED, labelled, and to be checked on screen:
-      * `7UR4J2SE` (gil) = 0 -- there is NO unit-mix gil function in the binary (only
-        `VisionCardUtils::getMixGil`), so unit fusion is treated as free.
-      * `1dT7ha9H` (success type) = 1 -- no reader of `getSuccessType` could be found in the unit path, so
-        the value is a placeholder rather than a recovered enum.
+    UnitMixAutoSelectConnectScene::createRequestList (0x26b1900) puts every
+    selected base in one request. Its bulk result window reads the refreshed
+    roster, while UnitMixResponse (0x196f874) owns one UserUnitMixResult.
+    Preserve that single-result shape and publish all changed player groups.
+    The existing authored success-type1 and gil0 values are unchanged.
     """
     req = _request_json(plaintext)
     rows = req.get(MIX_GROUP) if req else None
     if not isinstance(rows, list) or not rows:
         return spec
-    node = rows[0] if isinstance(rows[0], dict) else {}
-    base_id = str(node.get("og2GHy49") or "").strip()
-    materials = []
-    for x in str(node.get("WbGYcN17") or "").split(","):
-        if x.strip():
-            materials.append(x.strip())
-    if not base_id or not materials or State.player is None:
-        return spec
-    base = State.player.roster_row(base_id) or {}
-    affinity_before = list(base.get('affinity_points') or ('', ''))
-    res = State.player.mix_units(base_id, materials)
     out = dict(spec) if isinstance(spec, dict) else {}
-    if not res:
-        _note(f"unit-mix: refused (base {base_id} or materials not in the roster, or frozen)")
+
+    def reject():
+        out.pop(MIX_GROUP, None)
+        _note('unit-mix: refused invalid, unavailable or already reassigned fusion inputs')
         return out
-    base = State.player.roster_row(base_id)
-    State.player.record_archive({'TOTAL_UNIT_MIX': 1})
-    if any(int(after or 0) > int(before or 0) for before, after in
-           zip(affinity_before, base.get('affinity_points') or ())):
-        score_quest_action('31')
-    lb_level = int(base.get("lb_level", 0) or 0)
-    lb_exp = int(base.get("lb_exp", 0) or 0)
-    (b_lv, b_ex), (a_lv, a_ex) = res["before"], res["after"]
-    before = _lv_half(b_lv, b_ex, unit_stats(base["master_id"], b_lv), lb_level, lb_exp)
-    after = _lv_half(a_lv, a_ex, unit_stats(base["master_id"], a_lv), lb_level, lb_exp,
-                     gained=res["gain"])
-    out[MIX_GROUP] = [{"og2GHy49": base_id,
-                       "WbGYcN17": ",".join(res["materials"]),
-                       "B6H34Mea": str(res["gain"]),          # Exp
-                       "UDMIFB72": str(res["lb_gain"]),       # LbExp
-                       "1dT7ha9H": "1",                        # success type (authored; see docstring)
-                       "7UR4J2SE": "0",                        # gil (authored; no unit-mix gil exists)
-                       "Qic38SuC": f"{base_id}@{before}_{after}",
-                       "E90oBqct": "0"}]
-    # ...and let the client relearn the roster (materials gone, base levelled) from the same reply. The
-    # FULL player groups, not `currency_groups()`: fusion changes the ROSTER, and the roster group
-    # (`B71MekS8`) is what makes the consumed materials disappear client-side.
-    out.update(State.player.groups())
-    lb_note = f" +{res['lb_gain']} lb" if res["lb_gain"] else ""
-    print(f"unit: MIX {len(res['removed'])} material(s) into {base_id} -> +{res['gain']} exp{lb_note}; "
-          f"level {b_lv} -> {a_lv}, roster {len(State.player.data['roster'])}", flush=True)
+
+    player = State.player
+    if player is None or player.mode == 'frozen':
+        return reject()
+    operations, bases, donors = [], set(), set()
+    for node in rows:
+        if not isinstance(node, dict):
+            return reject()
+        base_id = str(node.get('og2GHy49') or '').strip()
+        materials = [x.strip() for x in str(node.get('WbGYcN17') or '').split(',') if x.strip()]
+        if not base_id or not materials or base_id in bases or any(x in donors for x in materials):
+            return reject()
+        if len(set(materials)) != len(materials):
+            return reject()
+        operations.append([base_id, materials])
+        bases.add(base_id)
+        donors.update(materials)
+    if bases & donors:
+        return reject()
+    key = hashlib.sha256(json.dumps(operations, separators=(',', ':')).encode()).hexdigest()
+    ledger = player.data.get('exvius_unit_mix', {})
+    if not isinstance(ledger, dict):
+        return reject()
+    receipt = ledger.get(key)
+    if receipt is not None:
+        if not isinstance(receipt, dict) or not isinstance(receipt.get('bases'), dict):
+            return reject()
+        original_bases = receipt['bases']
+        if (set(original_bases) != bases or not isinstance(receipt.get('result'), dict) or
+                any(player.roster_row(x) is not None for x in donors)):
+            return reject()
+        if any(not player.roster_row(iid) or str(player.roster_row(iid)['master_id']) != mid
+               for iid, mid in original_bases.items()):
+            return reject()
+        out[MIX_GROUP] = [copy.deepcopy(receipt['result'])]
+        out.update(player.groups())
+        return out
+    if any(player.roster_row(iid) is None for iid in bases | donors):
+        return reject()
+    original_bases = {iid: str(player.roster_row(iid)['master_id']) for iid in bases}
+    checkpoint, dirty = copy.deepcopy(player.data), player.dirty
+    try:
+        for base_id, materials in operations:
+            base = player.roster_row(base_id)
+            affinity_before = list(base.get('affinity_points') or ('', ''))
+            res = player.mix_units(base_id, materials)
+            if not res:
+                player.data, player.dirty = checkpoint, dirty
+                return reject()
+            base = player.roster_row(base_id)
+            player.record_archive({'TOTAL_UNIT_MIX': 1})
+            if any(int(after or 0) > int(before or 0) for before, after in
+                   zip(affinity_before, base.get('affinity_points') or ())):
+                score_quest_action('31')
+            lb_level, lb_exp = int(base.get('lb_level', 0) or 0), int(base.get('lb_exp', 0) or 0)
+            (b_lv, b_ex), (a_lv, a_ex) = res['before'], res['after']
+            before = _lv_half(b_lv, b_ex, unit_stats(base['master_id'], b_lv), lb_level, lb_exp)
+            after = _lv_half(a_lv, a_ex, unit_stats(base['master_id'], a_lv), lb_level, lb_exp,
+                             gained=res['gain'])
+            result = {'og2GHy49': base_id, 'WbGYcN17': ','.join(res['materials']),
+                      'B6H34Mea': str(res['gain']), 'UDMIFB72': str(res['lb_gain']),
+                      '1dT7ha9H': '1', '7UR4J2SE': '0',
+                      'Qic38SuC': f'{base_id}@{before}_{after}', 'E90oBqct': '0'}
+        player.data.setdefault('exvius_unit_mix', {})[key] = {'bases': original_bases, 'result': result}
+        player.dirty = True
+        out[MIX_GROUP] = [copy.deepcopy(result)]
+        out.update(player.groups())
+    except Exception:
+        player.data, player.dirty = checkpoint, dirty
+        raise
     return out
 def serve_favourite_info(spec, reply_id: str | None = None):
     """Attach the cumulative favourite list (`UserUnitFavoriteResponse`, tag `F2pYJGt5`) to user-state replies.
@@ -978,8 +1000,19 @@ def serve_mail(spec, reply_id, plaintext):
     if State.player is None:
         return spec
     if reply_id == "KQHpi0D7":
+        State.player.deliver_free_event_units()
         out = dict(spec) if isinstance(spec, dict) else {}
-        out["qja26wHb"] = State.player.mail_rows()
+        page = 1
+        for row in _request_obj(plaintext).get("t8TPs6o2") or []:
+            if isinstance(row, dict) and "uk5ZRa6E" in row:
+                try:
+                    page = max(1, int(row["uk5ZRa6E"]))
+                except (TypeError, ValueError):
+                    page = 1
+        # MailTopScene appends each one-based page to its native list.
+        # Its page size is 100 in getPageMailListRequest/checkConnectResult.
+        start = (page - 1) * 100
+        out["qja26wHb"] = State.player.mail_rows()[start:start + 100]
         out["t8TPs6o2"] = State.player.mail_counters()
         return out
     if reply_id == "XK7efER9":
@@ -1008,6 +1041,23 @@ def serve_mail(spec, reply_id, plaintext):
         out.update(State.player.currency_groups())
         return out
     return spec
+def deliver_jp_campaign_login_mail(player):
+    """Issue recovered day-one campaign rewards through the existing inbox."""
+    if player.mode == 'frozen':
+        return
+    from pathlib import Path
+    config = json.loads(Path(__file__).with_name('raid_archive.json').read_text(encoding='utf8'))
+    for key, row in config.get('jp_login_campaign_rewards', {}).items():
+        issued = player.data.get('exvius_jp_login_campaigns', {})
+        if issued.get(key): continue
+        reward = {k: row[k] for k in ('kind', 'id', 'count')}
+        if not player._can_credit(reward): raise ValueError('JP login reward has no native unit master')
+        if player.deliver_mail(row['title'], [(reward['kind'], reward['id'], reward['count'])],
+                               mail_id=row['mail_id'], message=row['message']):
+            player.data.setdefault('exvius_jp_login_campaigns', {})[key] = True
+            player.dirty = True
+
+
 def deliver_login_mail(spec, reply_id):
     """The daily-login award lands in the in-box.
 
@@ -1020,6 +1070,7 @@ def deliver_login_mail(spec, reply_id):
     """
     if reply_id != "vw9RP3i4" or State.player is None or not isinstance(spec, dict):
         return spec
+    deliver_jp_campaign_login_mail(State.player)
     items = spec.get("f5bA4wFx")
     if not isinstance(items, list):
         return spec
@@ -2943,7 +2994,7 @@ def serve_event_gate(spec, reply_id):
             # The shipped rows' remaining fields, with their own values, so the row's SHAPE matches what
             # the client has already parsed: the neutral zeros/empties where no reader was located.
             "0iWgxc1X": "0", "45wVefcS": "", "5mouF8P1": "", "B2FW5Qjq": "",
-            "C8Qf5bs6": "1" if raid else "0", "ET8L6iDw": "0", "M1p3ehVU": "", "MrxFQ63W": "",
+            "C8Qf5bs6": "1" if raid and raid.get('point_mode') != 'clear' else "0", "ET8L6iDw": "0", "M1p3ehVU": "", "MrxFQ63W": "",
             "QCLs6SV8": "0", "mTHe6pI0": "", "oY0vAuE9": "0", "vnhT2EM5": "",
             "xm7c08IS": "0", "z0ft1PK8": "0", "pAwU2R6W": "0", "td06MKEX": "0",
             "BGFw7qi4": "", "2oL4dNFy": "", "uwHx3jk0": "", "XY5ZfS0w": "", "0dh7yRIN": "",
@@ -2982,6 +3033,10 @@ def serve_event_gate(spec, reply_id):
         schedules.extend({'fSxqkF10': bid, 'VjJQ51uG': windows[bid]['VjJQ51uG'],
                           'm8ivD4NX': windows[bid]['m8ivD4NX']} for bid in sorted(windows))
         spec['jBL5XNf6'] = schedules
+    from raid_summon import schedule_rows
+    schedules = spec.setdefault('jBL5XNf6', [])
+    have = {r['fSxqkF10'] for r in schedules}
+    schedules.extend(r for r in schedule_rows() if r['fSxqkF10'] not in have)
     return spec
 
 

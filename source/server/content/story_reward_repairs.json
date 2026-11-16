@@ -1,0 +1,100 @@
+{
+ "note": "Recovered acquisition bindings whose original retired-server reward response is absent. Each binding uses preserved acquisition evidence and the matching final story mission, not a replacement challenge.",
+ "rewards": [
+  {
+   "mission": "1110703",
+   "reward": "60:901000500:1",
+   "evidence": {
+    "recipe": "901000500",
+    "table": "F_RECIPE_MST",
+    "field": "VC9F3eJn",
+    "original_acquisition": "グランシェルト城内をクリア",
+    "global_datamine_acquisition": "Clear Grandshelt Castle",
+    "global_datamine": "repository snapshots/aEnigmatic__ffbe-95727376e82d.zip:recipes.json",
+    "dungeon": "11107",
+    "final_mission": "1110703",
+    "original_native_sha256": "a127654037f2f28a70cce7c64ff0a9d291770ea904cdf5bcba59a7af9a6937e4",
+    "limit": "The acquisition is preserved; the original backend response carrying this recipe award is not."
+   }
+  },
+  {
+   "mission": "1120704",
+   "reward": "10:100000302:1",
+   "evidence": {
+    "unit": "100000302",
+    "rarity": 2,
+    "acquisition": "Clear Lechios Hills in Lanzelt",
+    "sources": [
+     "https://exvius.fandom.com/wiki/Fina",
+     "https://exvius.fandom.com/wiki/Lechios_Hills"
+    ],
+    "dungeon": "11207",
+    "final_mission": "1120704",
+    "limit": "The story acquisition and original unit are preserved; the retired backend award response is not."
+   }
+  },
+  {
+   "mission": "1220505",
+   "reward": "10:100000503:1",
+   "evidence": {
+    "unit": "100000503",
+    "acquisition": "Clear Galebreak in Dirnado",
+    "source": "https://exvius.fandom.com/wiki/Lid"
+   }
+  },
+  {
+   "mission": "1320905",
+   "reward": "10:100000403:1",
+   "evidence": {
+    "unit": "100000403",
+    "acquisition": "Visit Aquapolis Olderion after Water Shrine",
+    "source": "https://exvius.fandom.com/wiki/Nichol"
+   },
+   "town": "3101",
+   "later_mission": "1410101"
+  },
+  {
+   "mission": "1420606",
+   "reward": "10:100000703:1",
+   "evidence": {
+    "unit": "100000703",
+    "acquisition": "Visit Downtown Zoldaad after Invincible Interior",
+    "source": "https://exvius.fandom.com/wiki/Jake"
+   },
+   "town": "4202",
+   "later_mission": "1510101"
+  },
+  {
+   "mission": "1510506",
+   "reward": "10:100000603:1",
+   "evidence": {
+    "unit": "100000603",
+    "acquisition": "Visit Magi Nation Mysidia after Magic Library - Showdown of Destiny",
+    "source": "https://exvius.fandom.com/wiki/Sakura"
+   },
+   "town": "5101",
+   "later_mission": "1610101"
+  },
+  {
+   "mission": "11810702",
+   "reward": "10:100025705:1",
+   "evidence": {
+    "unit": "100025705",
+    "acquisition": "Watch Starting on a New Journey after Season 2",
+    "source": "https://exvius.fandom.com/wiki/Blue_Mage_Fina"
+   },
+   "alternate_missions": [
+    "11810703"
+   ]
+  },
+  {
+   "mission": "14010503",
+   "reward": "10:100037407:1",
+   "evidence": {
+    "unit": "100037407",
+    "acquisition": "Heroic Quest: clear Trail to Yorte - Underground Nest",
+    "source": "https://exvius.fandom.com/wiki/General_Quests#Heroic_Quests"
+   }
+  }
+ ]
+}

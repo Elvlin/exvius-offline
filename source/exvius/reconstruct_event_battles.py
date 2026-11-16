@@ -70,12 +70,194 @@ def numeric(value):
 
 def linked_enemies(value):
     result = []
-    for match in re.finditer(r'\[\[([^]|]+)(?:\|([^]]+))?\]\](?:\s*(?:x|×)\s*(\d+))?', value):
-        title, label, quantity = match.groups()
+    for match in re.finditer(r'\[\[([^]|]+)(?:\|([^]]+))?\]\](?:\s*(?:(?:x|×)\s*(\d+)|\((\d+)\)))?', value):
+        title, label, multiplied, parenthesized = match.groups()
+        quantity = multiplied or parenthesized
         if title.startswith(('File:', 'Category:')):
             continue
         result.extend([(title, label or re.sub(r'\s*\(Monster\)$', '', title))] * int(quantity or 1))
     return result
+
+
+def supercite_drop_info(text):
+    """Recover the chamber's fixed quantities from its preserved battle record."""
+    names = {row['v'][0]: row['key'].rsplit('_', 1)[-1]
+             for row in rows('F_TEXT_ITEM_NAME', text=True)}
+    items = {row['tL6G9egd'] for row in rows('F_ITEM_MST')}
+    pattern = r'\[\[([^]|]+)(?:\|[^]]+)?\]\]\s*\((\d+)\)'
+    found = re.findall(pattern, text)
+    remainder = re.sub(pattern, '', text)
+    if not found or re.sub(r'<br\s*/?>|\s', '', remainder, flags=re.I):
+        raise ValueError('Unresolved Chamber of Supercite drop definition: ' + text)
+    rewards = []
+    for name, count in found:
+        iid = names.get(name)
+        if iid not in items or not name.endswith(' Supercite') or int(count) <= 0:
+            raise ValueError('Unresolved Chamber of Supercite item: ' + name)
+        rewards.append(f'20:{iid}:{int(count)}:100')
+    return ','.join(rewards)
+
+
+CRYSTAL_PAIR_MISSIONS = {str(mid) for mid in range(9003111, 9003119)}
+CAVE_OF_SHADOWS_DAILY_MISSIONS = {str(mid) for mid in range(8150107, 8150121)}
+CAVE_OF_SHADOWS_DAILY_DROP_PROVENANCE = {
+    'enemy': 'Death Claw', 'native_drop': '20:106305400:1000:100',
+    'source_field': 'Once-a-Day Special Quest Battle Infobox drop',
+    'ownership': 'The single defeated Death Claw owns 1000 Fang of Earth; '
+                 'the source lists no clear bonus or first-clear challenge rewards.',
+    'reconstructed': 'No item identity, amount, drop lottery or enemy ownership is reconstructed.',
+}
+JOINED_FORCES_FIXED_DROP_STAGES = {
+    '99000101': ('Weltall-Id', 5), '99000102': ('Weltall-Id', 10),
+    '99000103': ('Weltall-Id', 15), '99000104': ('Weltall-Id', 20),
+    '99000105': ('Weltall-Id', 25), '99000106': ('Weltall-Id', 30),
+    '99000107': ('Alpha Weltall', 35), '99060101': ('Mindflayer Obscura', 20),
+}
+EGGSTINCTION_FIXED_DROP_STAGES = {
+    '99090101': (200, 100), '99090102': (350, 180),
+    '99090103': (500, 280), '99090104': (700, 420),
+    '99090105': (1000, 680),
+}
+CRYSTAL_ENEMY_COLORS = {
+    'Aqua Elemental': 'Blue', 'Blue Wisp': 'Blue',
+    'Crimson Elemental': 'Red', 'Ruby': 'Red',
+    'Dark Elemental': 'Violet', 'Shiranui': 'Violet',
+    'Hitobosu': 'Yellow', 'Yellow Elemental': 'Yellow',
+    'Red Elemental': 'Orange', 'Red Wisp': 'Orange',
+    'St. Elmo': 'White', 'White Elemental': 'White',
+    'Black Elemental': 'Black', 'Ignus Fatuus': 'Black',
+    'Green Elemental': 'Green', 'Green Wisp': 'Green',
+}
+
+
+def apply_crystal_drop_choices(bundle, text):
+    """Restore the documented items without inheriting a donor's world-map loot.
+
+    Original per-enemy lottery rates were not preserved. One item per monster,
+    equal tier weights and the enemy-to-colour allocation are explicit local
+    reconstructions. The allowed tiers come from each original battle record.
+    """
+    names = {row['v'][0]: row['key'].rsplit('_', 1)[-1]
+             for row in rows('F_TEXT_ITEM_NAME', text=True)}
+    items = {row['tL6G9egd'] for row in rows('F_ITEM_MST')}
+    allowed = [name for name, _ in linked_enemies(text)]
+    if not allowed or any(not name.endswith((' Magicite', ' Megacite', ' Supercite'))
+                          or names.get(name) not in items for name in allowed):
+        raise ValueError('Unresolved Chamber of Crystals item list')
+    monsters = {row['xqartN26']: row['G4L0YIB2'] for row in bundle['wbet57nF']}
+    for row in bundle['y35YvQjZ']:
+        color = CRYSTAL_ENEMY_COLORS.get(monsters[row['xqartN26']])
+        selected = [name for name in allowed if name.startswith(str(color) + ' ')]
+        if not color or not selected:
+            raise ValueError('Unresolved Chamber of Crystals enemy colour')
+        choices = [{'drop': '20:' + names[name] + ':1:100', 'weight': 1} for name in selected]
+        row['_drop_choices'] = choices
+        row['9BetM2Ds'] = ','.join(choice['drop'] for choice in choices)
+
+
+def apply_cave_of_shadows_daily_drop(bundle, text):
+    """Keep the published daily Death Claw drop on its own enemy carrier."""
+    if not re.fullmatch(r'\{\{\s*Currency\s*\|\s*Fang of Earth\s*\|\s*1,?000\s*\}\}',
+                        text.strip(), re.I):
+        raise ValueError('Unresolved Cave of Shadows daily currency definition')
+    names = {row['v'][0]: row['key'].rsplit('_', 1)[-1]
+             for row in rows('F_TEXT_ITEM_NAME', text=True)}
+    iid = names.get('Fang of Earth')
+    if iid != '106305400' or iid not in {row['tL6G9egd'] for row in rows('F_ITEM_MST')}:
+        raise ValueError('Cave of Shadows currency identity changed')
+    phases = bundle.get('an6TB4WS', [])
+    if len(phases) != 1:
+        raise ValueError('Cave of Shadows daily battle must have one wave')
+    group = phases[0]['2fY1IomW']
+    slots = [row for row in bundle.get('Bi6hVv34', [])
+             if row['2fY1IomW'] == group and row['WJdBp9f0'] == '1']
+    monsters = {row['xqartN26']: row['G4L0YIB2'] for row in bundle.get('wbet57nF', [])}
+    if len(slots) != 1 or monsters.get(slots[0]['xqartN26']) != 'Death Claw':
+        raise ValueError('Cave of Shadows daily drop requires its own Death Claw')
+    carriers = bundle.get('y35YvQjZ', [])
+    if len(carriers) != 1 or carriers[0]['xqartN26'] != slots[0]['xqartN26']:
+        raise ValueError('Cave of Shadows daily enemy reward carrier changed')
+    carrier = carriers[0]
+    drop = '20:' + iid + ':1000:100'
+    if carrier.get('9BetM2Ds') not in ('', drop):
+        raise ValueError('Cave of Shadows daily reward conflicts with its source')
+    carrier['2fY1IomW'] = group
+    carrier['Z0EN6jSh'] = slots[0]['Z0EN6jSh']
+    carrier['9BetM2Ds'] = drop
+
+
+def apply_joined_forces_fixed_drop(bundle, mid, text):
+    """Restore the exact published insignia amount on these eight own bosses."""
+    enemy, amount = JOINED_FORCES_FIXED_DROP_STAGES[mid]
+    pattern = (r'\{\{\s*Item\s*\|\s*Brave Insignia \(Joined Forces\)\s*\|\s*' +
+               str(amount) + r'\s*\}\}')
+    if not re.fullmatch(pattern, text.strip(), re.I):
+        raise ValueError('Fixed Joined Forces stage drop differs from its source: ' + mid)
+    names = {row['v'][0]: row['key'].rsplit('_', 1)[-1]
+             for row in rows('F_TEXT_ITEM_NAME', text=True)}
+    iid = names.get('Brave Insignia (Joined Forces)')
+    if iid != '1209001294' or iid not in {row['tL6G9egd'] for row in rows('F_ITEM_MST')}:
+        raise ValueError('Joined Forces insignia native item identity changed')
+    phases = bundle.get('an6TB4WS', [])
+    if len(phases) != 1:
+        raise ValueError('Fixed Joined Forces stage must have one wave: ' + mid)
+    group = phases[0]['2fY1IomW']
+    slots = [row for row in bundle.get('Bi6hVv34', [])
+             if row['2fY1IomW'] == group and row['WJdBp9f0'] == '1']
+    monsters = {row['xqartN26']: row['G4L0YIB2'] for row in bundle.get('wbet57nF', [])}
+    if len(slots) != 1 or monsters.get(slots[0]['xqartN26']) != enemy:
+        raise ValueError('Fixed Joined Forces drop requires its own single boss: ' + mid)
+    carriers = bundle.get('y35YvQjZ', [])
+    if len(carriers) != 1 or carriers[0]['xqartN26'] != slots[0]['xqartN26']:
+        raise ValueError('Fixed Joined Forces enemy reward carrier changed: ' + mid)
+    carrier = carriers[0]
+    drop = '20:' + iid + ':' + str(amount) + ':100'
+    if carrier.get('9BetM2Ds') not in ('', drop):
+        raise ValueError('Fixed Joined Forces reward conflicts with its source: ' + mid)
+    carrier['2fY1IomW'] = group
+    carrier['Z0EN6jSh'] = slots[0]['Z0EN6jSh']
+    carrier['9BetM2Ds'] = drop
+    return {'enemy': enemy, 'native_drop': drop,
+            'source_field': 'Battle Infobox drop; clear-bonus and challenge rewards remain separate.',
+            'reconstructed': 'No item identity, amount, drop lottery or enemy ownership is reconstructed.'}
+
+
+def apply_eggstinction_fixed_drop(bundle, mid, text):
+    """Restore each tier's two documented currencies on its Eggsterminator."""
+    sunstone, egg_coin = EGGSTINCTION_FIXED_DROP_STAGES[mid]
+    expected = ('{{Currency|Sunstone|' + str(sunstone) + '}}, ' +
+                '{{Currency|Egg Coin|' + str(egg_coin) + '}}')
+    if re.sub(r'\s+', '', text) != re.sub(r'\s+', '', expected):
+        raise ValueError('Eggstinction tier drops differ from their source: ' + mid)
+    names = {row['v'][0]: row['key'].rsplit('_', 1)[-1]
+             for row in rows('F_TEXT_ITEM_NAME', text=True)}
+    items = {row['tL6G9egd'] for row in rows('F_ITEM_MST')}
+    if (names.get('Sunstone') != '1209000950' or names.get('Egg Coin') != '1209000951'
+            or not {'1209000950', '1209000951'}.issubset(items)):
+        raise ValueError('Eggstinction native currency identities changed')
+    phases = bundle.get('an6TB4WS', [])
+    if len(phases) != 1:
+        raise ValueError('Eggstinction tier must have one wave: ' + mid)
+    group = phases[0]['2fY1IomW']
+    slots = [row for row in bundle.get('Bi6hVv34', [])
+             if row['2fY1IomW'] == group and row['WJdBp9f0'] == '1']
+    monsters = {row['xqartN26']: row['G4L0YIB2'] for row in bundle.get('wbet57nF', [])}
+    if len(slots) != 1 or monsters.get(slots[0]['xqartN26']) != 'Eggsterminator':
+        raise ValueError('Eggstinction drops require their own single boss: ' + mid)
+    carriers = bundle.get('y35YvQjZ', [])
+    if len(carriers) != 1 or carriers[0]['xqartN26'] != slots[0]['xqartN26']:
+        raise ValueError('Eggstinction enemy reward carrier changed: ' + mid)
+    carrier = carriers[0]
+    drop = ('20:1209000950:' + str(sunstone) + ':100,' +
+            '20:1209000951:' + str(egg_coin) + ':100')
+    if carrier.get('9BetM2Ds') not in ('', drop):
+        raise ValueError('Eggstinction rewards conflict with their source: ' + mid)
+    carrier['2fY1IomW'] = group
+    carrier['Z0EN6jSh'] = slots[0]['Z0EN6jSh']
+    carrier['9BetM2Ds'] = drop
+    return {'enemy': 'Eggsterminator', 'native_drop': drop,
+            'source_field': 'Battle Infobox drop; clear-bonus and challenge rewards remain separate.',
+            'reconstructed': 'No item identity, amount, drop lottery or enemy ownership is reconstructed.'}
 
 
 class Reconstruction:
@@ -144,7 +326,7 @@ class Reconstruction:
         self.recovered_skills = set()
         self.source_phases, self.source_pools, self.source_groups = defaultdict(list), defaultdict(list), defaultdict(list)
         self.source_mission_names = {row['qo3PECw6']: row['G4L0YIB2'] for row in map(json.loads,
-            (ROOT / 'data/memorial_battle_decoded/F_MISSION_MST.ndjson').read_text(encoding='utf8').splitlines())}
+            (ROOT / 'Japan content/Shared sources/memorial_battle_decoded/F_MISSION_MST.ndjson').read_text(encoding='utf8').splitlines())}
         for row in self.base.load('F_MISSION_PHASE_MST'):
             if row.get('gou39JeI') == '2':
                 self.source_phases[row['qo3PECw6']].append(row)
@@ -235,7 +417,12 @@ class Reconstruction:
             candidates.remove(gap['mission'])
             candidates.insert(0, gap['mission'])
         for source in candidates:
-            phases = sorted(self.source_phases[source], key=lambda r: int(r['6v7y3QcJ']))[:gap['waves']]
+            from battle_content import EventSource
+            # Retain an explicitly challenged boss if the regional source
+            # inserted an extra bonus fight before it. Do not regenerate the
+            # old first-N truncation that replaced a boss with a Rabite.
+            phases = EventSource(self.base, gap['mission'], {
+                'source': source, 'waves': gap['waves']}).load('F_MISSION_PHASE_MST')
             formations, native_rosters, donors = [], [], {}
             for phase in phases:
                 pool = phase.get('6uIYE15X', '')
@@ -410,9 +597,12 @@ class Reconstruction:
             if len(matching) == 1:
                 return matching[0]
         if campaign == 'Vault of Hidden Treasures (1 Year Anniversary Dungeon)' and records:
-            # The original daily server rotation was not retained. Keep the
-            # documented anniversary rosters in a deterministic local rotation.
-            return records[int(mission) % len(records)]
+            # Retain the generic author's allocation order for unrelated local
+            # IDs. The mandatory final Vault authoring step replaces every
+            # runtime Vault entry with its own source-backed reconstruction.
+            return dict(records[int(mission) % len(records)],
+                        identity_source='Legacy allocator-only Vault reconstruction; '
+                                        'replaced by the final stage-owned Vault source contract')
         rosters = {(tuple(linked_enemies(r['fields'].get('monster', ''))),
                     tuple(linked_enemies(r['fields'].get('boss', '')))) for r in records}
         if len(rosters) == 1 and any(roster[0] or roster[1] for roster in rosters):
@@ -646,6 +836,32 @@ class Reconstruction:
                   'F_MONSTER_SKILL_SET_MST': self.base.load('F_MONSTER_SKILL_SET_MST') + list(self.global_sets.values()),
                   'F_MONSTER_SKILL_MST': list(self.skill_rows.values())}
         bundle = derive_mission(mid, ReconstructionSource(self.base, tables))
+        if campaign == 'Chamber of Supercite':
+            # These are fixed, published battle drops. Empty donor loot used
+            # to reach the unrelated generic early-game drop table at runtime.
+            if len(bundle['y35YvQjZ']) != 1:
+                raise ValueError('Expected one Chamber of Supercite battle')
+            bundle['y35YvQjZ'][0]['9BetM2Ds'] = supercite_drop_info(info.get('drop', ''))
+        if campaign == 'Chamber of Crystals' and mid in CRYSTAL_PAIR_MISSIONS:
+            apply_crystal_drop_choices(bundle, info.get('drop', ''))
+        if campaign == 'Cave of Shadows' and mid in CAVE_OF_SHADOWS_DAILY_MISSIONS:
+            apply_cave_of_shadows_daily_drop(bundle, info.get('drop', ''))
+        if mid in JOINED_FORCES_FIXED_DROP_STAGES:
+            expected = ('Creeping Malice' if mid == '99060101' else
+                        'The Scarlet Demon and the Dark-Winged Destroyer')
+            if campaign != expected:
+                raise ValueError('Fixed Joined Forces stage campaign changed: ' + mid)
+            proof = apply_joined_forces_fixed_drop(bundle, mid, info.get('drop', ''))
+            for basis in provenance:
+                if basis['enemy'] == JOINED_FORCES_FIXED_DROP_STAGES[mid][0]:
+                    basis['fixed_enemy_drop_source'] = dict(proof)
+        if mid in EGGSTINCTION_FIXED_DROP_STAGES:
+            if campaign != 'Eggstinction':
+                raise ValueError('Fixed Eggstinction stage campaign changed: ' + mid)
+            proof = apply_eggstinction_fixed_drop(bundle, mid, info.get('drop', ''))
+            for basis in provenance:
+                if basis['enemy'] == 'Eggsterminator':
+                    basis['fixed_enemy_drop_source'] = dict(proof)
         # Original AI can summon adds that are absent from the initial roster.
         # Send their profiles and skills without placing them in the opening wave.
         present = {row['xqartN26'] for row in bundle['wbet57nF']}
@@ -680,6 +896,7 @@ class Reconstruction:
 
 def main():
     reconstructor = Reconstruction()
+    from repair_global_vault_encounters import build as build_global_vault
     missions = {row['qo3PECw6']: row for row in rows('F_MISSION_MST')}
     with zipfile.ZipFile(ROOT / 'repository snapshots/aEnigmatic__ffbe-95727376e82d.zip') as source:
         original = json.loads(source.read(next(n for n in source.namelist() if n.endswith('/missions.json'))))
@@ -805,19 +1022,60 @@ def main():
                     'mission': record['source_mission'], 'enemy_ids_by_wave': record['source_rosters']}
             encounters[mid]['source_url'] = ('https://' + record['page'].get('_source_site', 'exvius.fandom.com') +
                                              '/wiki/' + quote(record['page']['title'].replace(' ', '_')))
+            if title == 'Chamber of Crystals' and mid in CRYSTAL_PAIR_MISSIONS:
+                encounters[mid]['drop_reconstruction'] = (
+                    'Original battle-record item tiers and original item IDs. One item per monster, '
+                    'equal tier weights and enemy-colour allocation are local reconstructions; '
+                    'the original server lottery rates were not recovered.')
+            if title == 'Cave of Shadows' and mid in CAVE_OF_SHADOWS_DAILY_MISSIONS:
+                encounters[mid]['daily_enemy_drop_source'] = dict(CAVE_OF_SHADOWS_DAILY_DROP_PROVENANCE)
             if record.get('native_source_only'):
-                encounters[mid]['source_url'] = 'data/memorial_battle_decoded/F_BATTLE_GROUP_MST.ndjson'
+                encounters[mid]['source_url'] = 'Japan content/Shared sources/memorial_battle_decoded/F_BATTLE_GROUP_MST.ndjson'
             if len(encounters) % 100 == 0:
                 print('Assembled', len(encounters), 'documented encounters', flush=True)
         except (ValueError, SystemExit) as exc:
             missing.append(dict(gap, reason=str(exc)))
+    # Required final replacement, not a fallback or a generic shared loot pool.
+    # Building before any write also preserves the previous pending bundles.
+    vault_entries, vault_labels = build_global_vault(reconstructor.base)
+    encounters.update(vault_entries)
+    missing = [gap for gap in missing if str(gap.get('mission')) not in vault_entries]
+    # The original omitted campaigns have their own primary stage contracts,
+    # loot ownership and complete scenario profiles. Keep their scoped final
+    # projection after generic reconstruction without touching other repairs.
+    from repair_omitted_global_combat import build as build_omitted_global_combat
+    omitted_entries, omitted_labels = build_omitted_global_combat(
+        {'missions': encounters, 'local_monster_names': reconstructor.local_names})
+    encounters.update(omitted_entries)
+    reconstructor.local_names.update(omitted_labels)
+    missing = [gap for gap in missing if str(gap.get('mission')) not in omitted_entries]
+    from repair_additional_global_combat import build as build_additional_global_combat
+    additional_entries, additional_labels = build_additional_global_combat(
+        {'missions': encounters, 'local_monster_names': reconstructor.local_names})
+    encounters.update(additional_entries)
+    reconstructor.local_names.update(additional_labels)
+    missing = [gap for gap in missing if str(gap.get('mission')) not in additional_entries]
+    from restore_sbb_ext_profiles import proposals as sbb_ext_profiles
+    from restore_documented_enemy_counts import proposals as documented_enemy_counts
+    for scoped_builder in (sbb_ext_profiles, documented_enemy_counts):
+        scoped_entries = scoped_builder({'missions': encounters})
+        encounters.update(scoped_entries)
+        for entry in scoped_entries.values():
+            for actor in entry['bundle']['wbet57nF']:
+                reconstructor.local_names[actor['xqartN26']] = actor['G4L0YIB2']
     used = {row['xqartN26'] for entry in encounters.values() for row in entry['bundle']['wbet57nF']}
-    used_names = {iid: name for iid, name in reconstructor.local_names.items()
+    used.update(vault_labels)
+    labels = {**reconstructor.local_names, **vault_labels}
+    used_names = {iid: name for iid, name in labels.items()
                   if iid in used or (iid[-1:].isalpha() and iid[:-1] in used)}
     document = {'version': 1,
         'provenance': 'User-approved event reconstruction. Original wiki rosters and published stats; locally reconstructed formations and preserved same-model profiles for unpublished stats/AI.',
         'missions': encounters, 'local_monster_names': used_names}
+    from restore_native_loot_channels import restore_encounter_channels
+    restore_encounter_channels(document, reconstructor.base)
     (ROOT / 'source/server/event_encounters.json').write_text(json.dumps(document, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+    from build_turn_challenge_bindings import build as build_turn_bindings, write as write_turn_bindings
+    write_turn_bindings(build_turn_bindings(document))
     (ROOT / 'source/build/event-reconstruction-gaps-20261026.json').write_text(json.dumps(missing, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print('Reconstructed documented Global encounters:', len(encounters), '; unresolved:', len(missing))
 

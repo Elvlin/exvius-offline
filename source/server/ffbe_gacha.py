@@ -167,7 +167,7 @@ def _banner_doc(path: str, *, offset: int = 0, limit: int = 0, note: str) -> lis
     try:
         with open(path, encoding="utf-8") as fh:
             bs = [b for b in (json.load(fh).get("banners") or [])
-                  if isinstance(b, dict) and b.get("id")]
+                  if isinstance(b, dict) and b.get("id") and b.get('activation_ready') is not False]
     except (OSError, ValueError) as exc:  # noqa: BLE001 - a bad doc must not kill the reply
         _note(f"gacha: {path} unreadable ({exc!r}) -- {note}")
         return []
@@ -268,6 +268,8 @@ def all_banners() -> list:
         by_id[str(b["id"])] = b
     for b in authored_banners():
         by_id[str(b["id"])] = b
+    for b in _banner_doc(os.path.join(HERE, 'gacha_raid.json'), note='no recovered Global raid banners'):
+        by_id[str(b['id'])] = b
     # Archive identity merging shows a replacement and its calendar alias once.
     # Keep both IDs resolvable for requests already issued by an older client.
     only = gacha_only_ids()
@@ -560,7 +562,8 @@ def gacha_groups(banners: list) -> dict:
     One `GachaPanelGroupMst` row PER POOL ENTRY (that row's `targetInfo` is the pool + rate)."""
     mst, detail, sched, panel, pgroup = [], [], [], [], []
     for configured in banners:
-        b = configured
+        from raid_summon import prepare
+        b = prepare(State.player, configured)
         if b.get('boxes'):
             from gacha_box import detail_id, box_id
             b = dict(b, detail_id=detail_id(State.player, b), box_id=box_id(State.player, b))
@@ -762,6 +765,8 @@ def serve_gacha(spec, plaintext: str | None = None, reply_id=None):
             out.update(State.player.currency_groups())
         return out
     if banner is not None:
+        from raid_summon import prepare, batch_offer
+        banner = prepare(State.player, banner)
         # The CLIENT's request tokens (verified live 2026-09-21, `out/requests/*`, GachaExeRequest):
         #   `2RtVPS3b` = the REPEAT COUNT (1 for a single, 10 for a 10x)  -- NOT the ticket id
         #   `zJ1A6HXm` = the TICKET ID the player chose (12 = F_TICKET_MST item 180, the 5-star EX ticket)
@@ -775,6 +780,14 @@ def serve_gacha(spec, plaintext: str | None = None, reply_id=None):
         # `exeCount` -- so without this the pull would charge the primary offer (`gacha_multi_button.md` SS9).
         req_detail = str(req.get("nqzG3b2v") or "")
         offer = gacha_offer_for(banner, req_detail)
+        if banner.get('raid_batch_limit'):
+            if req_detail == str(banner['secondary_offer']['detail_id']):
+                try:
+                    offer = batch_offer(banner, req_detail, repeats)
+                except ValueError:
+                    return decline()
+            elif repeats != 1:
+                return decline()
         if req_detail:
             expected_primary = str(banner.get("detail_id") or "")
             if banner.get("steps"):

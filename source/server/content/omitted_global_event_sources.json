@@ -1,0 +1,2682 @@
+{
+  "version": 1,
+  "purpose": "Source-authoring identities for proven omitted Global campaigns; no runtime display labels or universal publication fallback",
+  "sources": [
+    "logs/reference/events-archives-wiki-20261026.json",
+    "logs/reference/exchange-timeline-wiki-20261110.json",
+    "logs/reference/field-scenario-wiki-20261109.json",
+    "logs/reference/event-battles-wiki-20261026.json",
+    "logs/ffbe-omitted-area-banner-source-20261111.json",
+    "logs/reference/omitted-global-event-canonical-wiki-20261111.json"
+  ],
+  "events": {
+    "703": {
+      "canonical_name": "Orbonne Monastery Vaults",
+      "archive_alias": "Orbonne Monastery Vaults",
+      "source_page": "https://exvius.fandom.com/wiki/Orbonne_Monastery_Vaults",
+      "banner_title": "File:Banner-Orbonne Monastery Vaults.png",
+      "release": "2016-09-30",
+      "evidence": [
+        "logs/reference/field-scenario-wiki-20261109.json: Orbonne Monastery Vaults initial File link, original Global event period and Global announcement",
+        "logs/reference/events-archives-wiki-20261026.json: original 2016 notice literal banner and 2018 rerun"
+      ]
+    },
+    "711": {
+      "canonical_name": "Memories from the Aquapolis",
+      "archive_alias": "Memories from the Aquapolis",
+      "source_page": "https://exvius.fandom.com/wiki/Memories_from_the_Aquapolis",
+      "banner_title": "File:Banner-Memories from the Aquapolis Reappeared.png",
+      "release": "2017-01-06",
+      "evidence": [
+        "logs/reference/exchange-timeline-wiki-20261110.json: original Global release 2017-01-06 and rerun 2017-07-17",
+        "Original Global mission names Memories of the Aquapolis, paired with semantically confirmed own native English icon in logs/ffbe-omitted-area-banner-source-20261111.json"
+      ]
+    },
+    "712": {
+      "canonical_name": "The Auracite Chosen",
+      "archive_alias": "The Auracite Chosen",
+      "source_page": "https://exvius.fandom.com/wiki/The_Auracite_Chosen",
+      "banner_title": "File:Banner-The Auracite Chosen.png",
+      "release": "2017-03-24",
+      "evidence": [
+        "logs/reference/exchange-timeline-wiki-20261110.json: original Global release 2017-03-24 and rerun 2019-03-22",
+        "Original area Japanese title and Chosen by the Stone mission names, paired with semantically confirmed own native English icon in logs/ffbe-omitted-area-banner-source-20261111.json"
+      ]
+    },
+    "746": {
+      "canonical_name": "Guardian of the Order",
+      "archive_alias": "Guardian of the Order",
+      "source_page": "https://exvius.fandom.com/wiki/Guardian_of_the_Order",
+      "banner_title": "File:Banner-Guardian of the Order.png",
+      "release": "2017-11-03",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "747": {
+      "canonical_name": "King of Darkness",
+      "archive_alias": "King of Darkness",
+      "source_page": "https://exvius.fandom.com/wiki/King_of_Darkness",
+      "banner_title": "File:Banner-King of Darkness.png",
+      "release": "2017-12-08",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "749": {
+      "canonical_name": "The Web-Weaving Princess",
+      "archive_alias": null,
+      "source_page": "https://exvius.fandom.com/wiki/The_Web-Weaving_Princess",
+      "banner_title": "File:Banner-The Web-Weaving Princess.png",
+      "release": "2017-12-01",
+      "evidence": [
+        "logs/reference/field-scenario-wiki-20261109.json: The Web-Weaving Princess initial File link; own HARD and EASY mission headings; Global 20171129_news_banner_Ariadne.jpg reference"
+      ]
+    },
+    "797": {
+      "canonical_name": "Dracotaur Lancer",
+      "archive_alias": "Dracotaur Lancer",
+      "source_page": "https://exvius.fandom.com/wiki/Dracotaur_Lancer",
+      "banner_title": "File:Banner-Dracotaur Lancer.png",
+      "release": "2018-05-25",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "907": {
+      "canonical_name": "Nian Beast Challenges!",
+      "archive_alias": null,
+      "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+      "banner_title": "File:Banner-Lunar New Year.png",
+      "release": "2017-01-27",
+      "evidence": [
+        "logs/reference/field-scenario-wiki-20261109.json: Lunar New Year explicitly Global-exclusive; own two named dungeons; initial File link",
+        "Retained Lunar New Year primary Event Period states January27-February2,2017; retained Global timeline independently dates January27"
+      ]
+    },
+    "908": {
+      "canonical_name": "Great Nian Beast Attack!",
+      "archive_alias": null,
+      "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+      "banner_title": "File:Banner-Lunar New Year.png",
+      "release": "2017-01-27",
+      "evidence": [
+        "logs/reference/field-scenario-wiki-20261109.json: Lunar New Year explicitly Global-exclusive; own two named dungeons; initial File link",
+        "Retained Lunar New Year primary Event Period states January27-February2,2017; retained Global timeline independently dates January27"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "9000801",
+          "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+          "source_revision": null,
+          "source_heading": "Great Nian Beast Attack! - ADV",
+          "energy": "10",
+          "battle": "1",
+          "gil": "450",
+          "unit-exp": "4000",
+          "rank-exp": "155",
+          "monster": "",
+          "boss": "[[Great Nian Beast]]",
+          "drop": "",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9000802",
+          "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+          "source_revision": null,
+          "source_heading": "Great Nian Beast Attack! - PRO",
+          "energy": "15",
+          "battle": "1",
+          "gil": "485",
+          "unit-exp": "4000",
+          "rank-exp": "305",
+          "monster": "",
+          "boss": "[[Great Nian Beast]]",
+          "drop": "",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9000803",
+          "source_page": "https://exvius.fandom.com/wiki/Lunar_New_Year",
+          "source_revision": null,
+          "source_heading": "Great Nian Beast Attack! - ELT",
+          "energy": "20",
+          "battle": "1",
+          "gil": "520",
+          "unit-exp": "4000",
+          "rank-exp": "420",
+          "monster": "",
+          "boss": "[[Great Nian Beast]]",
+          "drop": "",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "918": {
+      "canonical_name": "Festival of the Autumn Moon",
+      "archive_alias": "The Misty Bamboo Forest",
+      "source_page": "https://exvius.fandom.com/wiki/The_Misty_Bamboo_Forest",
+      "banner_title": "File:Banner-The Misty Bamboo Forest.png",
+      "release": "2017-09-29",
+      "evidence": [
+        "logs/reference/field-scenario-wiki-20261109.json: The Misty Bamboo Forest initial File banner and exact own four tier headings; source costs/ranks match native10/210,15/350,20/500,25/750",
+        "logs/reference/exchange-timeline-wiki-20261110.json: own Global Misty Bamboo Forest release2017-09-29",
+        "Do not use2016Festival of the Autumn Moon mogcake-crafting guide: that is a different same-name campaign with no own dungeon battle contract"
+      ]
+    },
+    "919": {
+      "canonical_name": "Halloween Castle Dungeon",
+      "archive_alias": "Return to the Halloween Castle",
+      "source_page": "https://exvius.fandom.com/wiki/Return_to_the_Halloween_Castle",
+      "banner_title": "File:Banner-Halloween Dungeon.png",
+      "release": "2017-10-20",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: Global release2017-10-20 and exact banner stem Halloween Dungeon",
+        "Original F_ICON9000024 explicitly labels Halloween Castle Dungeon and points to semantically confirmed original English art in logs/ffbe-omitted-area-banner-source-20261111.json"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "9190001",
+          "source_page": "https://exvius.fandom.com/wiki/Return_to_the_Halloween_Castle",
+          "source_revision": 277583,
+          "source_heading": "Castle Dungeon BGN",
+          "energy": "10",
+          "battle": "3",
+          "gil": "224",
+          "unit-exp": "156",
+          "rank-exp": "105",
+          "monster": "[[Ghoul]]<br>[[Zombie]]",
+          "boss": "[[Revenant]]",
+          "drop": "[[Skeleton Key]]",
+          "clear-bonus": "{{Item|Rare Summon Ticket}}<br>{{Item|Skeleton Key|1}}"
+        },
+        {
+          "mission": "9190002",
+          "source_page": "https://exvius.fandom.com/wiki/Return_to_the_Halloween_Castle",
+          "source_revision": 277583,
+          "source_heading": "Castle Dungeon ADV",
+          "energy": "20",
+          "battle": "4",
+          "gil": "406",
+          "unit-exp": "266",
+          "rank-exp": "250",
+          "monster": "[[Mage]]<br>[[Shadow (Monster)|Shadow]]",
+          "boss": "[[Pumpkin Kid]]",
+          "drop": "[[Skeleton Key]]",
+          "clear-bonus": "{{Item|Rare Summon Ticket}}<br>{{Item|Skeleton Key|2}}"
+        },
+        {
+          "mission": "9190003",
+          "source_page": "https://exvius.fandom.com/wiki/Return_to_the_Halloween_Castle",
+          "source_revision": 277583,
+          "source_heading": "Castle Dungeon ELT",
+          "energy": "30",
+          "battle": "5",
+          "gil": "793",
+          "unit-exp": "728",
+          "rank-exp": "435",
+          "monster": "[[Mammon]]<br>[[Treant]]<br>[[Woodwatcher]]",
+          "boss": "[[Pumpkin Rider]]",
+          "drop": "[[Skeleton Key]]",
+          "clear-bonus": "{{Item|Rare Summon Ticket}}<br>{{Item|Skeleton Key|3}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "940": {
+      "canonical_name": "Darkness Awakens",
+      "archive_alias": "Darkness Awakens",
+      "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+      "banner_title": "File:Banner-Darkness Awakens.png",
+      "release": "2018-09-28",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "9400101",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+          "source_revision": 307527,
+          "source_heading": "FFBE Raid - Darkness Awakens - INT",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "120",
+          "unit-exp": "1000",
+          "rank-exp": "50",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''800 event points''' before bonus<br>Up to {{Currency|Hatred Raid Coin|80}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9400102",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+          "source_revision": 307527,
+          "source_heading": "FFBE Raid - Darkness Awakens - ADV",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "550",
+          "unit-exp": "5000",
+          "rank-exp": "155",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''1500 event points''' before bonus<br>Up to {{Currency|Hatred Raid Coin|150}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9400103",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+          "source_revision": 307527,
+          "source_heading": "FFBE Raid - Darkness Awakens - PRO",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "1085",
+          "unit-exp": "10000",
+          "rank-exp": "300",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''2400 event points''' before bonus<br>Up to {{Currency|Hatred Raid Coin|240}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9400104",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Awakens",
+          "source_revision": 307527,
+          "source_heading": "FFBE Raid - Darkness Awakens - ELT",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "3117",
+          "unit-exp": "30000",
+          "rank-exp": "365",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''7000 event points''' before bonus<br>Up to {{Currency|Hatred Raid Coin|700}} before bonus",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "958": {
+      "canonical_name": "Darkness Apocalypse",
+      "archive_alias": "Darkness Apocalypse",
+      "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+      "banner_title": "File:Banner-Darkness Apocalypse.png",
+      "release": "2019-02-22",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "9580101",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+          "source_revision": 307525,
+          "source_heading": "FFBE Raid - Darkness Apocalypse - INT",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "240",
+          "unit-exp": "1000",
+          "rank-exp": "50",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''800 event points''' before bonus<br>Up to {{Currency|Ruination Raid Coin|80}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9580102",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+          "source_revision": 307525,
+          "source_heading": "FFBE Raid - Darkness Apocalypse - ADV",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "550",
+          "unit-exp": "5000",
+          "rank-exp": "155",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''1500 event points''' before bonus<br>Up to {{Currency|Ruination Raid Coin|150}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9580103",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+          "source_revision": 307525,
+          "source_heading": "FFBE Raid - Darkness Apocalypse - PRO",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "1085",
+          "unit-exp": "10000",
+          "rank-exp": "300",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''2400 event points''' before bonus<br>Up to {{Currency|Ruination Raid Coin|240}} before bonus",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "9580104",
+          "source_page": "https://exvius.fandom.com/wiki/Darkness_Apocalypse",
+          "source_revision": 307525,
+          "source_heading": "FFBE Raid - Darkness Apocalypse - ELT",
+          "energy": "1 Raid Orb",
+          "battle": "1",
+          "gil": "3117",
+          "unit-exp": "30000",
+          "rank-exp": "365",
+          "monster": "",
+          "boss": "[[Incarnation of Hatred]]",
+          "drop": "Up to '''7000 event points''' before bonus<br>Up to {{Currency|Ruination Raid Coin|700}} before bonus",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "990": {
+      "canonical_name": "NYC Livestream Bonus Lapis Giveaway",
+      "archive_alias": "NYC Livestream Lapis Giveaway",
+      "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+      "banner_title": "File:Banner-NYC Livestream Lapis Giveaway.png",
+      "release": "2019-11-04",
+      "evidence": [
+        "logs/reference/event-battles-wiki-20261026.json: primary NYC Livestream Lapis Giveaway revision285880 initial File link and own five dated Bonus Lapis stage headings",
+        "source/server/event_art.json:989 retains exact campaign image and verified source URL"
+      ],
+      "reuse_art_area": "989",
+      "published_stage_contracts": [
+        {
+          "mission": "9900101",
+          "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+          "source_revision": 285880,
+          "source_heading": "NYC Livestream Bonus Lapis Giveaway (11/4)",
+          "energy": "5",
+          "battle": "2",
+          "gil": "124",
+          "unit-exp": "140",
+          "rank-exp": "100",
+          "monster": "Random Pot<br>[[King Gil Snapper (Monster)|King Gil Snapper]]<br>[[King Metal Minituar (Monster)|King Metal Minituar]]",
+          "boss": "",
+          "drop": "Random Pot<br>2 Random Colored Megacite<br>2 [[Gallean Tins]]<br>[[King Gil Snapper]]<br>[[King Metal Minituar]]",
+          "clear-bonus": "{{Item|Giveaway Bonus Ticket}}"
+        },
+        {
+          "mission": "9900102",
+          "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+          "source_revision": 285880,
+          "source_heading": "NYC Livestream Bonus Lapis Giveaway (11/6)",
+          "energy": "5",
+          "battle": "2",
+          "gil": "124",
+          "unit-exp": "140",
+          "rank-exp": "100",
+          "monster": "Random Pot<br>[[King Gil Snapper (Monster)|King Gil Snapper]]<br>[[King Metal Minituar (Monster)|King Metal Minituar]]",
+          "boss": "",
+          "drop": "Random Pot<br>2 Random Colored Megacite<br>2 [[Gallean Tins]]<br>[[King Gil Snapper]]<br>[[King Metal Minituar]]",
+          "clear-bonus": "{{Item|Giveaway Bonus Ticket}}"
+        },
+        {
+          "mission": "9900103",
+          "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+          "source_revision": 285880,
+          "source_heading": "NYC Livestream Bonus Lapis Giveaway (11/8)",
+          "energy": "5",
+          "battle": "2",
+          "gil": "124",
+          "unit-exp": "140",
+          "rank-exp": "100",
+          "monster": "Random Pot<br>[[King Gil Snapper (Monster)|King Gil Snapper]]<br>[[King Metal Minituar (Monster)|King Metal Minituar]]",
+          "boss": "",
+          "drop": "Random Pot<br>2 Random Colored Megacite<br>2 [[Gallean Tins]]<br>[[King Gil Snapper]]<br>[[King Metal Minituar]]",
+          "clear-bonus": "{{Item|Giveaway Bonus Ticket}}"
+        },
+        {
+          "mission": "9900104",
+          "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+          "source_revision": 285880,
+          "source_heading": "NYC Livestream Bonus Lapis Giveaway (11/10)",
+          "energy": "5",
+          "battle": "2",
+          "gil": "124",
+          "unit-exp": "140",
+          "rank-exp": "100",
+          "monster": "Random Pot<br>[[King Gil Snapper (Monster)|King Gil Snapper]]<br>[[King Metal Minituar (Monster)|King Metal Minituar]]",
+          "boss": "",
+          "drop": "Random Pot<br>2 Random Colored Megacite<br>2 [[Gallean Tins]]<br>[[King Gil Snapper]]<br>[[King Metal Minituar]]",
+          "clear-bonus": "{{Item|Giveaway Bonus Ticket}}"
+        },
+        {
+          "mission": "9900105",
+          "source_page": "https://exvius.fandom.com/wiki/NYC_Livestream_Lapis_Giveaway",
+          "source_revision": 285880,
+          "source_heading": "NYC Livestream Bonus Lapis Giveaway (11/12)",
+          "energy": "5",
+          "battle": "2",
+          "gil": "124",
+          "unit-exp": "140",
+          "rank-exp": "100",
+          "monster": "Random Pot<br>[[King Gil Snapper (Monster)|King Gil Snapper]]<br>[[King Metal Minituar (Monster)|King Metal Minituar]]",
+          "boss": "",
+          "drop": "Random Pot<br>2 Random Colored Megacite<br>2 [[Gallean Tins]]<br>[[King Gil Snapper]]<br>[[King Metal Minituar]]",
+          "clear-bonus": "{{Item|Giveaway Bonus Ticket}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "997": {
+      "canonical_name": "Defiance of Fate - Fixed-Party Trials",
+      "archive_alias": "Defiance of Fate",
+      "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate",
+      "banner_title": "File:Banner-Defiance of Fate.png",
+      "release": "2019-12-26",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "9970101",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate",
+          "source_revision": 296187,
+          "source_heading": "Battle Info",
+          "energy": "5",
+          "battle": "1",
+          "gil": "580",
+          "unit-exp": "2000",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Essence of Despair]]",
+          "drop": "[[Dark Megacryst]]",
+          "clear-bonus": "[[King Metal Minituar|King Metal Minituar (Max level)]] (3)"
+        },
+        {
+          "mission": "9970102",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate",
+          "source_revision": 296187,
+          "source_heading": "Battle Info",
+          "energy": "5",
+          "battle": "1",
+          "gil": "580",
+          "unit-exp": "2000",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Maw of Malice]]",
+          "drop": "[[Fire Megacryst]]",
+          "clear-bonus": "[[King Metal Minituar|King Metal Minituar (Max level)]] (3)"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "998": {
+      "canonical_name": "Free-Party Trials",
+      "archive_alias": "Defiance of Fate - Free-Party Trials",
+      "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate_-_Free-Party_Trials",
+      "banner_title": "File:Banner-Defiance of Fate - Free-Party Trials.png",
+      "release": "2020-01-15",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "reuse_art_area": "996",
+      "published_stage_contracts": [
+        {
+          "mission": "9980101",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate_-_Free-Party_Trials",
+          "source_revision": 297382,
+          "source_heading": "Battle Info",
+          "energy": "5",
+          "battle": "1",
+          "gil": "50000",
+          "unit-exp": "2000",
+          "rank-exp": "1000",
+          "monster": "",
+          "boss": "[[Essence of Despair]]",
+          "drop": "",
+          "clear-bonus": "{{Item|Purified Ring}} - recipe"
+        },
+        {
+          "mission": "9980102",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate_-_Free-Party_Trials",
+          "source_revision": 297382,
+          "source_heading": "Battle Info",
+          "energy": "5",
+          "battle": "1",
+          "gil": "50000",
+          "unit-exp": "2000",
+          "rank-exp": "1000",
+          "monster": "",
+          "boss": "[[Maw of Malice]]",
+          "drop": "",
+          "clear-bonus": "{{Item|Faithsworn Ring}} - recipe"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "999": {
+      "canonical_name": "The Lightning Tyrant - Tyrant Unleashed",
+      "archive_alias": "Defiance of Fate: The Lightning Tyrant - Tyrant Unleashed",
+      "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate:_The_Lightning_Tyrant_-_Tyrant_Unleashed",
+      "banner_title": "File:Banner-Defiance of Fate - The Lightning Tyrant - Tyrant Unleashed.png",
+      "release": "2020-02-06",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "reuse_art_area": "996",
+      "published_stage_contracts": [
+        {
+          "mission": "9990101",
+          "source_page": "https://exvius.fandom.com/wiki/Defiance_of_Fate:_The_Lightning_Tyrant_-_Tyrant_Unleashed",
+          "source_revision": 297875,
+          "source_heading": "Battle Info",
+          "energy": "5",
+          "battle": "3",
+          "gil": "26000",
+          "unit-exp": "14000",
+          "rank-exp": "3000",
+          "monster": "",
+          "boss": "[[Essence of Despair]]<br>[[Maw of Malice]]<br>[[Blue Wisp|Blue Sigil]], [[Red Wisp|Red Sigil]], [[Tel-Fulsanis]]",
+          "drop": "",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1003": {
+      "canonical_name": "Defiance of Fate - Vault of Hidden Treasures",
+      "archive_alias": "Vault of Hidden Treasures (Defiance of Fate)",
+      "source_page": "https://exvius.fandom.com/wiki/Vault_of_Hidden_Treasures_(Defiance_of_Fate)",
+      "banner_title": "File:Banner-Vault of Hidden Treasures (Defiance of Fate).png",
+      "release": "2020-02-13",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "vortex_tab": 1,
+      "vortex_category": "enhance",
+      "category_source": "Internal family-based projection: the same source-pinned137-stage Global Vault contract and existing Global Vault Enhance categories. No original per-area menu-tab receipt is claimed."
+    },
+    "1032": {
+      "canonical_name": "Transcendent Heroes",
+      "archive_alias": "Transcendent Heroes: VS Wylk",
+      "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Wylk",
+      "banner_title": "File:Banner-Transcendent Heroes VS Wylk.png",
+      "release": "2020-09-24",
+      "evidence": [
+        "Original six area missions explicitly contain VS Elena, VS Louise and VS Wylk INT/ADV",
+        "logs/reference/events-archives-wiki-20261026.json: all three exact Global variants; Wylk literal banner; earliest Elena publication2020-09-24",
+        "logs/ffbe-omitted-area-banner-source-20261111.json: own original English native icon is Wylk variant"
+      ],
+      "release_source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Elena",
+      "published_stage_contracts": [
+        {
+          "mission": "10320101",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Elena",
+          "source_revision": 326033,
+          "source_heading": "Transcendent Heroes: VS Elena - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Starlight Elena (Transcendent)|Starlight Elena]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|5}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|5}}"
+        },
+        {
+          "mission": "10320102",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Elena",
+          "source_revision": 326033,
+          "source_heading": "Transcendent Heroes: VS Elena - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Starlight Elena (Transcendent)|Starlight Elena]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|30}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|10}}"
+        },
+        {
+          "mission": "10320201",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Louise",
+          "source_revision": 357781,
+          "source_heading": "Transcendent Heroes: VS Louise - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Louise (Monster)|Louise]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|5}}<br>{{Item|Researcher's Badge}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|10}}"
+        },
+        {
+          "mission": "10320202",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Louise",
+          "source_revision": 357781,
+          "source_heading": "Transcendent Heroes: VS Louise - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Louise (Monster)|Louise]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|30}}<br>{{Item|Researcher's Badge|5}}",
+          "clear-bonus": "{{Lapis|200}}"
+        },
+        {
+          "mission": "10320301",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Wylk",
+          "source_revision": 345093,
+          "source_heading": "Transcendent Heroes: VS Wylk - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Wylk (Monster)|Wylk]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|5}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|10}}"
+        },
+        {
+          "mission": "10320302",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Wylk",
+          "source_revision": 345093,
+          "source_heading": "Transcendent Heroes: VS Wylk - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Wylk (Monster)|Wylk]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|30}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|20}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1035": {
+      "canonical_name": "Transcendent Heroes: VS Itachi",
+      "archive_alias": "Transcendent Heroes: VS Itachi",
+      "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Itachi",
+      "banner_title": "File:Banner-Transcendent Heroes VS Itachi.png",
+      "release": "2020-09-17",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10350101",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Itachi",
+          "source_revision": 351994,
+          "source_heading": "Transcendent Heroes: VS Itachi - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Itachi (Monster)|Itachi]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|1-4}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|5}}"
+        },
+        {
+          "mission": "10350102",
+          "source_page": "https://exvius.fandom.com/wiki/Transcendent_Heroes:_VS_Itachi",
+          "source_revision": 351994,
+          "source_heading": "Transcendent Heroes: VS Itachi - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Itachi (Dark)|Itachi]]",
+          "drop": "{{Item|Brave Insignia (Transcendent Heroes)|16-20}}",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|5}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1037": {
+      "canonical_name": "Turn Challenge",
+      "archive_alias": "The Steel Dummy",
+      "source_page": "https://exvius.fandom.com/wiki/The_Steel_Dummy",
+      "banner_title": "File:Banner-The Steel Dummy.png",
+      "release": "2020-10-08",
+      "source_revision": 317967,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/content/20201006SteelDummyChallenge.html",
+      "evidence": [
+        "Fresh public primary MediaWiki API record read through verified BrowserOS neo on2026-11-11; literal initial File banner and original Global announcement",
+        "Own original mission contract matches source: Steel Dummy10energy/1battle/rank20; Specimen10energy/3battles/rank705"
+      ]
+    },
+    "1073": {
+      "canonical_name": "Daily Turn Challenge",
+      "archive_alias": "The Steel Dummy (2021)",
+      "source_page": "https://exvius.fandom.com/wiki/The_Steel_Dummy_(2021)",
+      "banner_title": "File:Banner-The Steel Dummy-21.png",
+      "release": "2021-07-29",
+      "source_revision": 335228,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/content/20210727SteelDummyChallenge.html",
+      "evidence": [
+        "Fresh public primary MediaWiki API record read through verified BrowserOS neo on2026-11-11; literal initial File banner and original Global announcement",
+        "Own original mission contract matches source: Steel Dummy10energy/1battle/rank20; Specimen10energy/3battles/rank705"
+      ]
+    },
+    "1074": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "Fundamental Forces: Researcher Arc",
+      "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+      "banner_title": "File:Banner-Fundamental Forces Researcher Arc.png",
+      "release": "2021-07-01",
+      "reuse_art_area": "1066",
+      "evidence": [
+        "logs/reference/event-battle-extra-wiki-20261026.json: exact primary subpage revision334076 groups July1-14 own Craft Material Quest stages and awards FFBE5th Anniversary Slots Tokens, Transcendent Heroes Brave Insignia and four Researcher Arc crafting materials",
+        "logs/reference/exchange-timeline-wiki-20261110.json: Fundamental Forces Researcher Arc Global release2021-07-01",
+        "source/server/event_art.json:1066 retains exact parent campaign image",
+        "logs/ffbe-omitted-area-banner-source-20261111.json: original F_ICON9000223 labels Craft Material Quest; visual character identification is not evidence"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10740101",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740102",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 2, 8, 10, 12, 14)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|18}}"
+        },
+        {
+          "mission": "10740103",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 3, 11)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|15}}"
+        },
+        {
+          "mission": "10740104",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740105",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 5)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|9}}"
+        },
+        {
+          "mission": "10740106",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740107",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740108",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 2, 8, 10, 12, 14)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|18}}"
+        },
+        {
+          "mission": "10740109",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740110",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 2, 8, 10, 12, 14)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|18}}"
+        },
+        {
+          "mission": "10740111",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 3, 11)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|15}}"
+        },
+        {
+          "mission": "10740112",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 2, 8, 10, 12, 14)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|18}}"
+        },
+        {
+          "mission": "10740113",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 1, 4, 6, 7, 9, 13)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|FFBE 5th Anniversary Slots Token|5}}"
+        },
+        {
+          "mission": "10740114",
+          "source_page": "https://exvius.fandom.com/wiki/Fundamental_Forces:_Researcher_Arc/Craft_Material_Quest",
+          "source_revision": 334076,
+          "source_heading": "Craft Material Quest (July 2, 8, 10, 12, 14)",
+          "energy": "10",
+          "battle": "1",
+          "gil": "285",
+          "unit-exp": "200",
+          "rank-exp": "370",
+          "monster": "[[Desert Baretta]]<br>[[Red Claw]]",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Item|Brave Insignia (Transcendent Heroes)|18}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1075": {
+      "canonical_name": "Cetra Descendant Aerith Enhancement Quests",
+      "archive_alias": "Cetra Descendant Aerith Enhancement Quests",
+      "source_page": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith_Enhancement_Quests",
+      "banner_title": "File:Banner-Cetra Descendant Aerith Enhancement Quests.png",
+      "release": "2021-07-22",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10750101",
+          "source_page": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith_Enhancement_Quests",
+          "source_revision": 335233,
+          "source_heading": "Quest 1",
+          "energy": "5",
+          "battle": "1",
+          "gil": "457",
+          "unit-exp": "0",
+          "rank-exp": "457",
+          "monster": "[[Dive Talon]] (3)",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Lapis|50}}"
+        },
+        {
+          "mission": "10750102",
+          "source_page": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith_Enhancement_Quests",
+          "source_revision": 335233,
+          "source_heading": "Quest 2",
+          "energy": "5",
+          "battle": "1",
+          "gil": "457",
+          "unit-exp": "0",
+          "rank-exp": "457",
+          "monster": "[[Dive Talon]] (3)",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Lapis|50}}"
+        },
+        {
+          "mission": "10750103",
+          "source_page": "https://exvius.fandom.com/wiki/Cetra_Descendant_Aerith_Enhancement_Quests",
+          "source_revision": 335233,
+          "source_heading": "Quest 3",
+          "energy": "5",
+          "battle": "1",
+          "gil": "457",
+          "unit-exp": "0",
+          "rank-exp": "457",
+          "monster": "[[Dive Talon]] (3)",
+          "boss": "",
+          "drop": "",
+          "clear-bonus": "{{Lapis|50}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1078": {
+      "canonical_name": "Espers' Test",
+      "archive_alias": "Test of the Espers",
+      "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+      "banner_title": "File:Banner-Test of the Espers.png",
+      "release": "2021-09-23",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+        "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10780101",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Siren's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Siren (Monster)|Siren]]",
+          "drop": "[[Blue Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780102",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Tetra Sylphid's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Tetra Sylphid (Monster)|Tetra Sylphid]]",
+          "drop": "[[Green Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780103",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Ifrit's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Ifrit (Monster)|Ifrit]]",
+          "drop": "[[Red Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780104",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Golem's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Golem (Monster)|Golem]]",
+          "drop": "[[Orange Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780105",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Carbuncle's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Carbuncle (Monster)|Carbuncle]]",
+          "drop": "[[White Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780106",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Ramuh's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Ramuh (Monster)|Ramuh]]",
+          "drop": "[[Yellow Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780107",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Diabolos's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Diabolos (Monster)|Diabolos]]",
+          "drop": "[[Black Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        },
+        {
+          "mission": "10780108",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Shiva's Test",
+          "energy": "15",
+          "battle": "1",
+          "gil": "650",
+          "unit-exp": "6500",
+          "rank-exp": "500",
+          "monster": "",
+          "boss": "[[Shiva (Monster)|Shiva]]",
+          "drop": "[[Violet Supercite]] (10)",
+          "clear-bonus": "{{Lapis|20}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1079": {
+      "canonical_name": "Odin and Asura's Test",
+      "archive_alias": "Test of the Espers",
+      "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+      "banner_title": "File:Banner-Test of the Espers.png",
+      "release": "2021-09-25",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+        "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json",
+        "logs/reference/restored-event-rewards-wiki-20261111.json: Test of the Espers own schedule explicitly opens this area on2021-09-25"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10790101",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Odin's Test",
+          "energy": "30",
+          "battle": "1",
+          "gil": "3200",
+          "unit-exp": "15000",
+          "rank-exp": "1000",
+          "monster": "",
+          "boss": "[[Odin (Monster)|Odin]]",
+          "drop": "[[Green Megacite]] (8)<br>[[Green Supercite]] (8)",
+          "clear-bonus": "{{Lapis|100}}"
+        },
+        {
+          "mission": "10790102",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Asura's Test",
+          "energy": "30",
+          "battle": "1",
+          "gil": "3200",
+          "unit-exp": "15000",
+          "rank-exp": "1000",
+          "monster": "",
+          "boss": "[[Asura (Monster)|Asura]]",
+          "drop": "[[Black Supercite]] (8)<br>[[Green Megacite]] (8)<br>[[Green Supercite]] (8)",
+          "clear-bonus": "{{Lapis|100}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1080": {
+      "canonical_name": "Bahamut's Test",
+      "archive_alias": "Test of the Espers",
+      "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+      "banner_title": "File:Banner-Test of the Espers.png",
+      "release": "2021-09-30",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: dated Global Test of the Espers release2021-09-23 and literal banner field",
+        "Original area missions name individual esper tests; own original English native icon labels semantically confirmed in logs/ffbe-omitted-area-banner-source-20261111.json",
+        "logs/reference/restored-event-rewards-wiki-20261111.json: Test of the Espers own schedule explicitly opens this area on2021-09-30"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "10800101",
+          "source_page": "https://exvius.fandom.com/wiki/Test_of_the_Espers",
+          "source_revision": 338383,
+          "source_heading": "Bahamut's Test",
+          "energy": "40",
+          "battle": "1",
+          "gil": "11500",
+          "unit-exp": "30000",
+          "rank-exp": "1500",
+          "monster": "",
+          "boss": "[[Bahamut (Monster)|Bahamut]]",
+          "drop": "",
+          "clear-bonus": "{{Lapis|100}}"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "1084": {
+      "canonical_name": "Tomb Raider: Lost Valley - Daily Challenge",
+      "archive_alias": "Tomb Raider: Lost Valley",
+      "source_page": "https://exvius.fandom.com/wiki/Tomb_Raider:_Lost_Valley",
+      "banner_title": "File:Banner-Tomb Raider Lost Valley.png",
+      "release": "2021-09-30",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable",
+        "Original area has21 Lost Valley Daily Challenge missions; primary Lost Valley page includes its own Daily battle section within September30-October20,2021 period; native own daily card independently recovered"
+      ],
+      "reuse_art_area": "1083"
+    },
+    "3048": {
+      "canonical_name": "Companion Battle - Rampaging Shiva",
+      "archive_alias": "Genesis of Chaos -DARK VISIONS-",
+      "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Shiva",
+      "banner_title": "File:Banner-Rampaging Shiva.png",
+      "release": "2020-05-21",
+      "source_revision": 304516,
+      "reuse_art_area": "3040",
+      "evidence": [
+        "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+        "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+        "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+      ]
+    },
+    "3049": {
+      "canonical_name": "Companion Battle - Rampaging Odin",
+      "archive_alias": "Genesis of Chaos -DARK VISIONS-",
+      "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Odin",
+      "banner_title": "File:Banner-Rampaging Odin.png",
+      "release": "2020-05-21",
+      "source_revision": 304415,
+      "reuse_art_area": "3040",
+      "evidence": [
+        "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+        "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+        "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+      ]
+    },
+    "3050": {
+      "canonical_name": "Companion Battle - Rampaging Tetra Sylphid",
+      "archive_alias": "Genesis of Chaos -DARK VISIONS-",
+      "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Tetra_Sylphid",
+      "banner_title": "File:Banner-Rampaging Tetra Sylphid.png",
+      "release": "2020-05-21",
+      "source_revision": 304518,
+      "reuse_art_area": "3040",
+      "evidence": [
+        "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+        "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+        "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+      ]
+    },
+    "3051": {
+      "canonical_name": "Companion Battle - Rampaging Alexander",
+      "archive_alias": "Genesis of Chaos -DARK VISIONS-",
+      "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Alexander",
+      "banner_title": "File:Banner-Rampaging Alexander.png",
+      "release": "2020-05-21",
+      "source_revision": 304437,
+      "reuse_art_area": "3040",
+      "evidence": [
+        "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+        "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+        "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+      ]
+    },
+    "3052": {
+      "canonical_name": "Companion Battle - Rampaging Fenrir",
+      "archive_alias": "Genesis of Chaos -DARK VISIONS-",
+      "source_page": "https://exvius.fandom.com/wiki/Genesis_of_Chaos_-DARK_VISIONS-/Rampaging_Fenrir",
+      "banner_title": "File:Banner-Rampaging Fenrir.png",
+      "release": "2020-05-21",
+      "source_revision": 304434,
+      "reuse_art_area": "3040",
+      "evidence": [
+        "Fresh own Genesis of Chaos bonus-stage primary page read through verified BrowserOS neo on2026-11-11: literal initial File banner and own May21-27,2020 period",
+        "Own original native mission and primary page both use30energy/1battle/rank705; parent Global announcement20200512FFBEGenesisofChaos.png",
+        "Use original2020 Companion Battle card. Later2021 Chronicle Tetra stage has different10energy/rank750 contract and is an invalid donor"
+      ]
+    },
+    "3086": {
+      "canonical_name": "Companion Battle - VS Seifer",
+      "archive_alias": "Lunatic Pandora",
+      "source_page": "https://exvius.fandom.com/wiki/Lunatic_Pandora",
+      "banner_title": "File:Banner-Lunatic Pandora.png",
+      "release": "2020-06-25",
+      "reuse_art_area": "3083",
+      "evidence": [
+        "logs/reference/event-battles-wiki-20261026.json: Lunatic Pandora revision308070 exact own Companion Battle section and explicit one-time availability starting6/25 within June2020 event period",
+        "source/server/event_art.json:3083 retains exact parent campaign image"
+      ]
+    },
+    "3091": {
+      "canonical_name": "Companion Battle - VS Lone Lion Squall",
+      "archive_alias": "Lunatic Pandora",
+      "source_page": "https://exvius.fandom.com/wiki/Lunatic_Pandora",
+      "banner_title": "File:Banner-Lunatic Pandora.png",
+      "release": "2020-06-25",
+      "reuse_art_area": "3083",
+      "evidence": [
+        "logs/reference/event-battles-wiki-20261026.json: Lunatic Pandora revision308070 exact own Companion Battle section and explicit one-time availability starting6/25 within June2020 event period",
+        "source/server/event_art.json:3083 retains exact parent campaign image"
+      ]
+    },
+    "3110": {
+      "canonical_name": "FFRK Collaboration Equipment Enhancement Event",
+      "archive_alias": "FFRK Equipment Enhancement Event",
+      "source_page": "https://exvius.fandom.com/wiki/FFRK_Equipment_Enhancement_Event",
+      "banner_title": "File:Banner-FFRK Equipment Enhancement Event.png",
+      "release": "2020-08-27",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "3150": {
+      "canonical_name": "Daily Bonus Challenge - VS Specimen H0512",
+      "archive_alias": "VS Specimen H0512",
+      "source_page": "https://exvius.fandom.com/wiki/VS_Specimen_H0512",
+      "banner_title": "File:Banner-VS Specimen H0512.png",
+      "release": "2020-08-20",
+      "source_revision": 313280,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod/en/img/20200818FF7RShinraBuilding68thFloor.jpg",
+      "evidence": [
+        "Fresh public primary MediaWiki API record read through verified BrowserOS neo on2026-11-11; literal initial File banner and original Global announcement",
+        "Own original mission contract matches source: Steel Dummy10energy/1battle/rank20; Specimen10energy/3battles/rank705",
+        "Retained area4343 source_url is the exact2020 primary VS Specimen image, although that different area label must not be treated as proof of this source identity"
+      ],
+      "reuse_art_area": "4343"
+    },
+    "3161": {
+      "canonical_name": "Tifa Enhancement Quests",
+      "archive_alias": "Tifa Enhancement Quests",
+      "source_page": "https://exvius.fandom.com/wiki/Tifa_Enhancement_Quests",
+      "banner_title": "File:Banner-Tifa Enhancement Quests.png",
+      "release": "2020-08-20",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3162": {
+      "canonical_name": "Challenge of the Brave: FFBE Season 1",
+      "archive_alias": "FFBE Season 1",
+      "source_page": "https://exvius.fandom.com/wiki/FFBE_Season_1",
+      "banner_title": "File:Banner-FFBE Season 1.png",
+      "release": "2021-09-22",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "3176": {
+      "canonical_name": "Companion Battle - VS Two-Headed Frost Dragon",
+      "archive_alias": "VS Two-Headed Frost Dragon",
+      "source_page": "https://exvius.fandom.com/wiki/VS_Two-Headed_Frost_Dragon",
+      "banner_title": "File:Banner-VS Two-Headed Frost Dragon.png",
+      "release": "2020-09-10",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "3190": {
+      "canonical_name": "Challenge of the Brave: Caught Between Virtues and Vices",
+      "archive_alias": "Caught Between Virtues and Vices",
+      "source_page": "https://exvius.fandom.com/wiki/Caught_Between_Virtues_and_Vices",
+      "banner_title": "File:Banner-Caught Between Virtues and Vices.png",
+      "release": "2020-10-08",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3197": {
+      "canonical_name": "Challenge of the Brave: Seasons' Greetings",
+      "archive_alias": "Seasons' Greetings",
+      "source_page": "https://exvius.fandom.com/wiki/Seasons'_Greetings",
+      "banner_title": "File:Banner-Seasons' Greetings.png",
+      "release": "2021-09-22",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "3198": {
+      "canonical_name": "Challenge of the Brave: Treasured Bonds",
+      "archive_alias": "Treasured Bonds",
+      "source_page": "https://exvius.fandom.com/wiki/Treasured_Bonds",
+      "banner_title": "File:Banner-Treasured Bonds.png",
+      "release": "2020-10-15",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3204": {
+      "canonical_name": "Challenge of the Brave: Let Your Heart Be the Guiding Key",
+      "archive_alias": "Let Your Heart Be the Guiding Key",
+      "source_page": "https://exvius.fandom.com/wiki/Let_Your_Heart_Be_the_Guiding_Key",
+      "banner_title": "File:Banner-Let Your Heart Be the Guiding Key.png",
+      "release": "2020-11-26",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "32040101",
+          "source_page": "https://exvius.fandom.com/wiki/Let_Your_Heart_Be_the_Guiding_Key",
+          "source_revision": 330829,
+          "source_heading": "Let Your Heart Be the Guiding Key - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Darkside (KH)|Darkside]]",
+          "drop": "{{Item|Brave Insignia (Joined Forces)|5}}",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "32040102",
+          "source_page": "https://exvius.fandom.com/wiki/Let_Your_Heart_Be_the_Guiding_Key",
+          "source_revision": 330829,
+          "source_heading": "Let Your Heart Be the Guiding Key - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Darkside (KH)|Darkside]]",
+          "drop": "{{Item|Brave Insignia (Joined Forces)|30}}",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "3207": {
+      "canonical_name": "Challenge of the Brave: Pillars of Strength",
+      "archive_alias": "Pillars of Strength",
+      "source_page": "https://exvius.fandom.com/wiki/Pillars_of_Strength",
+      "banner_title": "File:Banner-Pillars of Strength.png",
+      "release": "2020-12-03",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3208": {
+      "canonical_name": "Challenge of the Brave: Those Who Stand Against Darkness",
+      "archive_alias": "Those Who Stand Against Darkness",
+      "source_page": "https://exvius.fandom.com/wiki/Those_Who_Stand_Against_Darkness",
+      "banner_title": "File:Banner-Those Who Stand Against Darkness.png",
+      "release": "2020-11-19",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3209": {
+      "canonical_name": "Challenge of the Brave: At the Mercy of Magitek",
+      "archive_alias": "At the Mercy of Magitek",
+      "source_page": "https://exvius.fandom.com/wiki/At_the_Mercy_of_Magitek",
+      "banner_title": "File:Banner-At the Mercy of Magitek.png",
+      "release": "2020-12-10",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3218": {
+      "canonical_name": "Challenge of the Brave: Seekers of Peace",
+      "archive_alias": "Seekers of Peace",
+      "source_page": "https://exvius.fandom.com/wiki/Seekers_of_Peace",
+      "banner_title": "File:Banner-Seekers of Peace.png",
+      "release": "2021-01-14",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3220": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "The Festival of Visions",
+      "source_page": "https://exvius.fandom.com/wiki/The_Festival_of_Visions/Craft_Material_Quest",
+      "banner_title": "File:Banner-The Festival of Visions.png",
+      "release": "2021-02-04",
+      "reuse_art_area": "3219",
+      "source_revision": 403281,
+      "evidence": [
+        "Fresh own primary Craft Material Quest subpage read through verified BrowserOS neo on2026-11-11; campaign-specific crafting materials and boss match named parent",
+        "Original own daily dated mission span matches retained Global parent publication; first native mission and primary subpage both use15energy/1battle/rank500",
+        "logs/reference/events-archives-wiki-20261026.json: exact parent Global date and literal banner field; retained own parent art reused"
+      ]
+    },
+    "3224": {
+      "canonical_name": "Challenge of the Brave: Bonds of the Heart",
+      "archive_alias": "Bonds of the Heart",
+      "source_page": "https://exvius.fandom.com/wiki/Bonds_of_the_Heart",
+      "banner_title": "File:Banner-Bonds of the Heart.png",
+      "release": "2020-12-17",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3228": {
+      "canonical_name": "Challenge of the Brave: Farplane Wanderers I",
+      "archive_alias": "Farplane Wanderers I",
+      "source_page": "https://exvius.fandom.com/wiki/Farplane_Wanderers_I",
+      "banner_title": "File:Banner-Farplane Wanderers I.png",
+      "release": "2021-01-21",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3229": {
+      "canonical_name": "Challenge of the Brave: Farplane Wanderers II",
+      "archive_alias": "Farplane Wanderers II",
+      "source_page": "https://exvius.fandom.com/wiki/Farplane_Wanderers_II",
+      "banner_title": "File:Banner-Farplane Wanderers II.png",
+      "release": "2021-02-04",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3230": {
+      "canonical_name": "Challenge of the Brave: A Race Against Time",
+      "archive_alias": "A Race Against Time",
+      "source_page": "https://exvius.fandom.com/wiki/A_Race_Against_Time",
+      "banner_title": "File:Banner-A Race Against Time.png",
+      "release": "2021-02-25",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3234": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "A Friend Like You",
+      "source_page": "https://exvius.fandom.com/wiki/A_Friend_Like_You/Craft_Material_Quest",
+      "banner_title": "File:Banner-A Friend Like You.png",
+      "release": "2021-03-04",
+      "reuse_art_area": "3233",
+      "source_revision": 327122,
+      "evidence": [
+        "Fresh own primary Craft Material Quest subpage read through verified BrowserOS neo on2026-11-11; campaign-specific crafting materials and boss match named parent",
+        "Original own daily dated mission span matches retained Global parent publication; first native mission and primary subpage both use30energy/1battle/rank500",
+        "logs/reference/events-archives-wiki-20261026.json: exact parent Global date and literal banner field; retained own parent art reused"
+      ]
+    },
+    "3240": {
+      "canonical_name": "Challenge of the Brave: Resolute Wills",
+      "archive_alias": "Resolute Wills",
+      "source_page": "https://exvius.fandom.com/wiki/Resolute_Wills",
+      "banner_title": "File:Banner-Resolute Wills.png",
+      "release": "2021-03-04",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3241": {
+      "canonical_name": "Challenge of the Brave: Bound Across Time",
+      "archive_alias": "Bound Across Time",
+      "source_page": "https://exvius.fandom.com/wiki/Bound_Across_Time",
+      "banner_title": "File:Banner-Bound Across Time.png",
+      "release": "2021-03-11",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3245": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "A Hero's Return",
+      "source_page": "https://exvius.fandom.com/wiki/A_Hero's_Return/Craft_Material_Quest",
+      "banner_title": "File:Banner-A Hero's Return.png",
+      "release": "2021-04-08",
+      "reuse_art_area": "3244",
+      "source_revision": 329451,
+      "evidence": [
+        "Fresh own primary Craft Material Quest subpage read through verified BrowserOS neo on2026-11-11; campaign-specific crafting materials and boss match named parent",
+        "Original own daily dated mission span matches retained Global parent publication; first native mission and primary subpage both use30energy/1battle/rank500",
+        "logs/reference/events-archives-wiki-20261026.json: exact parent Global date and literal banner field; retained own parent art reused"
+      ]
+    },
+    "3251": {
+      "canonical_name": "Challenge of the Brave: Bonds Beyond Blood",
+      "archive_alias": "Bonds Beyond Blood",
+      "source_page": "https://exvius.fandom.com/wiki/Bonds_Beyond_Blood",
+      "banner_title": "File:Banner-Bonds Beyond Blood.png",
+      "release": "2021-03-18",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3252": {
+      "canonical_name": "Challenge of the Brave: Hidden Passions",
+      "archive_alias": "Hidden Passions",
+      "source_page": "https://exvius.fandom.com/wiki/Hidden_Passions",
+      "banner_title": "File:Banner-Hidden Passions.png",
+      "release": "2021-04-08",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ]
+    },
+    "3253": {
+      "canonical_name": "Challenge of the Brave: Conflict at Baschool",
+      "archive_alias": "Conflict at Baschool",
+      "source_page": "https://exvius.fandom.com/wiki/Conflict_at_Baschool",
+      "banner_title": "File:Banner-Conflict at Baschool.png",
+      "release": "2021-05-13",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field"
+      ],
+      "published_stage_contracts": [
+        {
+          "mission": "32530101",
+          "source_page": "https://exvius.fandom.com/wiki/Conflict_at_Baschool",
+          "source_revision": 371615,
+          "source_heading": "Conflict at Baschool - INT",
+          "energy": "10",
+          "battle": "1",
+          "gil": "345",
+          "unit-exp": "1800",
+          "rank-exp": "600",
+          "monster": "",
+          "boss": "[[Scar (Monster)|Scar]]",
+          "drop": "{{Item|Brave Insignia (Joined Forces)|5}}",
+          "clear-bonus": "-"
+        },
+        {
+          "mission": "32530102",
+          "source_page": "https://exvius.fandom.com/wiki/Conflict_at_Baschool",
+          "source_revision": 371615,
+          "source_heading": "Conflict at Baschool - ADV",
+          "energy": "30",
+          "battle": "1",
+          "gil": "10155",
+          "unit-exp": "100000",
+          "rank-exp": "750",
+          "monster": "",
+          "boss": "[[Scar (Monster)|Scar]]",
+          "drop": "{{Item|Brave Insignia (Joined Forces)|30}}",
+          "clear-bonus": "-"
+        }
+      ],
+      "stage_contract_note": "Primary documented stage totals and roster/drop text. Empty source fields remain empty. Historical drop probabilities and unspecified actor stats are not implied."
+    },
+    "3261": {
+      "canonical_name": "Challenge of the Brave: Chosen by Auracite",
+      "archive_alias": "Chosen by Auracite",
+      "source_page": "https://exvius.fandom.com/wiki/Chosen_by_Auracite",
+      "banner_title": "File:Banner-Chosen by Auracite.png",
+      "release": "2023-12-07",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "3287": {
+      "canonical_name": "Challenge of the Brave: Dominant Awakened",
+      "archive_alias": "Dominant Awakened",
+      "source_page": "https://exvius.fandom.com/wiki/Dominant_Awakened",
+      "banner_title": "File:Banner-Dominant Awakened.png",
+      "release": "2024-07-11",
+      "evidence": [
+        "logs/reference/omitted-global-event-canonical-wiki-20261111.json: actual primary page, literal File banner and original Global announcement; exact released INT/ADV or daily stage where applicable"
+      ]
+    },
+    "4172": {
+      "canonical_name": "Final Fantasy X-2 Character Battle",
+      "archive_alias": "Final Fantasy X-2 Character Battle",
+      "source_page": "https://exvius.fandom.com/wiki/Final_Fantasy_X-2_Character_Battle",
+      "banner_title": "File:Banner-Final Fantasy X-2 Character Battle.png",
+      "release": "2022-09-22",
+      "source_revision": 349045,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/hjk20220920FFX2GoGoGullwings.jpg",
+      "evidence": [
+        "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+        "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+      ]
+    },
+    "4192": {
+      "canonical_name": "Chrono Cross Character Battle",
+      "archive_alias": "Chrono Cross Character Battle",
+      "source_page": "https://exvius.fandom.com/wiki/Chrono_Cross_Character_Battle",
+      "banner_title": "File:Banner-Chrono Cross Character Battle.png",
+      "release": "2022-11-04",
+      "source_revision": 350358,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20221101xdgCCViperManor.jpg",
+      "evidence": [
+        "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+        "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract",
+        "Native day labels begin11/3; published Global page begins11/4. Source release records actual published date, and does not rewrite native stage labels"
+      ]
+    },
+    "5011": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "Guided by Conviction",
+      "source_page": "https://exvius.fandom.com/wiki/Guided_by_Conviction/Craft_Material_Quest",
+      "banner_title": "File:Banner-Guided by Conviction.png",
+      "release": "2021-06-10",
+      "reuse_art_area": "5010",
+      "source_revision": 333424,
+      "evidence": [
+        "Fresh own primary Craft Material Quest subpage read through verified BrowserOS neo on2026-11-11; campaign-specific crafting materials and boss match named parent",
+        "Original own daily dated mission span matches retained Global parent publication; first native mission and primary subpage both use30energy/1battle/rank500",
+        "logs/reference/events-archives-wiki-20261026.json: exact parent Global date and literal banner field; retained own parent art reused"
+      ]
+    },
+    "5111": {
+      "canonical_name": "Craft Material Quest",
+      "archive_alias": "The Destroyers' Journey",
+      "source_page": "https://exvius.fandom.com/wiki/The_Destroyers'_Journey/Craft_Material_Quest",
+      "banner_title": "File:Banner-The Destroyers' Journey.png",
+      "release": "2022-10-13",
+      "reuse_art_area": "5110",
+      "source_revision": 349733,
+      "evidence": [
+        "Fresh own primary Craft Material Quest subpage read through verified BrowserOS neo on2026-11-11; campaign-specific crafting materials and boss match named parent",
+        "Original own daily dated mission span matches retained Global parent publication; first native mission and primary subpage both use30energy/1battle/rank500",
+        "logs/reference/events-archives-wiki-20261026.json: exact parent Global date and literal banner field; retained own parent art reused"
+      ]
+    },
+    "6112": {
+      "canonical_name": "DRAGON QUEST The Adventure of Dai Character Battle I",
+      "archive_alias": "DRAGON QUEST The Adventure of Dai Character Battle I",
+      "source_page": "https://exvius.fandom.com/wiki/DRAGON_QUEST_The_Adventure_of_Dai_Character_Battle_I",
+      "banner_title": "File:Banner-DRAGON QUEST The Adventure of Dai Character Battle I.png",
+      "release": "2022-06-02",
+      "source_revision": 344144,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/content/20220531DaiCharacterBattleI.html",
+      "evidence": [
+        "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+        "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+      ]
+    },
+    "6113": {
+      "canonical_name": "DRAGON QUEST The Adventure of Dai Character Battle II",
+      "archive_alias": "DRAGON QUEST The Adventure of Dai Character Battle II",
+      "source_page": "https://exvius.fandom.com/wiki/DRAGON_QUEST_The_Adventure_of_Dai_Character_Battle_II",
+      "banner_title": "File:Banner-DRAGON QUEST The Adventure of Dai Character Battle II.png",
+      "release": "2022-06-09",
+      "source_revision": 344303,
+      "global_announcement": "https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/content/20220607DaiCharacterBattleI2.html",
+      "evidence": [
+        "Fresh primary page read through verified BrowserOS neo on2026-11-11: own Character Battle, literal initial File banner and dated Global announcement",
+        "Original native daily stage date span and40energy/1battle/rank1500 match published parent Character Battle contract"
+      ]
+    },
+    "7200": {
+      "canonical_name": "Chronicle Battle: Shura Fellspirit",
+      "archive_alias": "Chronicle Battle: Shura Fellspirit",
+      "source_page": "https://exvius.fandom.com/wiki/Chronicle_Battle:_Shura_Fellspirit",
+      "banner_title": "File:Banner-Chronicle Battle Shura Fellspirit.png",
+      "release": "2022-07-14",
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: exact canonical Recent Event name/link and literal banner field",
+        "Retained Global Events archive explicitly categorizes Chronicle Battle: Shura Fellspirit as FFBE - Limited Chronicle Battle Event"
+      ],
+      "vortex_tab": 4,
+      "vortex_category": "chronicle"
+    }
+  },
+  "excluded_internal_areas": {
+    "211": "Only mission2110101 is <temp>; no real campaign established",
+    "600": "Playback1 contains story replay/menu records rather than a separately established campaign",
+    "900": "Expedition Into the Abyss is an internal expedition route"
+  },
+  "pending_source_identity": {},
+  "excluded_by_user": {
+    "756": {
+      "canonical_name": "Unit Intro Quest",
+      "archive_alias": "Pyro Glacial Lasswell",
+      "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Pyro_Glacial_Lasswell",
+      "banner_title": "File:Banner-Pyro Glacial Lasswell.png",
+      "release": "2018-01-12",
+      "unit_intro_sources": [
+        {
+          "mission": "7560101",
+          "unit": "Pyro Glacial Lasswell",
+          "archive_name": "Pyro Glacial Lasswell",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Pyro_Glacial_Lasswell",
+          "banner_title": "File:Banner-Pyro Glacial Lasswell.png",
+          "release": "2018-01-12"
+        },
+        {
+          "mission": "7560102",
+          "unit": "Blossom Sage Sakura",
+          "archive_name": "Blossom Sage Sakura",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Blossom_Sage_Sakura",
+          "banner_title": "File:Banner-Blossom Sage Sakura.png",
+          "release": "2018-02-02"
+        },
+        {
+          "mission": "7560103",
+          "unit": "Lotus Mage Fina",
+          "archive_name": "Lotus Mage Fina",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Lotus_Mage_Fina",
+          "banner_title": "File:Banner-Lotus Mage Fina.png",
+          "release": "2018-03-23"
+        },
+        {
+          "mission": "7560104",
+          "unit": "Nameless Gunner Jake",
+          "archive_name": "Nameless Gunner Jake",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Nameless_Gunner_Jake",
+          "banner_title": "File:Banner-Nameless Gunner Jake.png",
+          "release": "2018-04-13"
+        },
+        {
+          "mission": "7560105",
+          "unit": "Heavenly Technician Lid",
+          "archive_name": "Heavenly Technician Lid",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Heavenly_Technician_Lid",
+          "banner_title": "File:Banner-Heavenly Technician Lid.png",
+          "release": "2018-05-18"
+        },
+        {
+          "mission": "7560106",
+          "unit": "Maritime Strategist Nichol",
+          "archive_name": "Maritime Strategist Nichol",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Maritime_Strategist_Nichol",
+          "banner_title": "File:Banner-Maritime Strategist Nichol.png",
+          "release": "2018-06-15"
+        },
+        {
+          "mission": "7560107",
+          "unit": "Raegen",
+          "archive_name": "Raegen",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Raegen",
+          "banner_title": "File:Banner-Raegen.png",
+          "release": "2018-07-13"
+        },
+        {
+          "mission": "7560108",
+          "unit": "Hyoh",
+          "archive_name": "Hyoh",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Hyoh",
+          "banner_title": "File:Banner-Hyoh.png",
+          "release": "2018-09-14"
+        },
+        {
+          "mission": "7560109",
+          "unit": "Citra",
+          "archive_name": "Citra",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Citra",
+          "banner_title": "File:Banner-Citra.png",
+          "release": "2018-10-12"
+        },
+        {
+          "mission": "7560110",
+          "unit": "Sieghard",
+          "archive_name": "Sieghard",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Sieghard",
+          "banner_title": "File:Banner-Sieghard.png",
+          "release": "2018-12-07"
+        },
+        {
+          "mission": "7560111",
+          "unit": "Folka",
+          "archive_name": "Folka",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Folka",
+          "banner_title": "File:Banner-Folka.png",
+          "release": "2019-01-18"
+        },
+        {
+          "mission": "7560112",
+          "unit": "Ignacio",
+          "archive_name": "Ignacio",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Ignacio",
+          "banner_title": "File:Banner-Ignacio.png",
+          "release": "2019-02-15"
+        },
+        {
+          "mission": "7560113",
+          "unit": "Cid",
+          "archive_name": "Cid",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cid",
+          "banner_title": "File:Banner-Cid.png",
+          "release": "2019-03-15"
+        },
+        {
+          "mission": "7560114",
+          "unit": "Akstar",
+          "archive_name": "Akstar",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Akstar",
+          "banner_title": "File:Banner-Akstar.png",
+          "release": "2019-05-10"
+        },
+        {
+          "mission": "9650107",
+          "unit": "Magitek Warrior Terra",
+          "archive_name": "Magitek Warrior Terra",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Magitek_Warrior_Terra",
+          "banner_title": "File:Banner-Magitek Warrior Terra.png",
+          "release": "2019-11-14"
+        },
+        {
+          "mission": "9650110",
+          "unit": "Awakened Warrior of Light",
+          "archive_name": "Awakened Warrior of Light",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Awakened_Warrior_of_Light",
+          "banner_title": "File:Banner-Awakened Warrior of Light.png",
+          "release": "2020-01-02"
+        },
+        {
+          "mission": "9650112",
+          "unit": "Awakened Onion Knight",
+          "archive_name": "Awakened Onion Knight",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Awakened_Onion_Knight",
+          "banner_title": "File:Banner-Awakened Onion Knight.png",
+          "release": "2020-02-20"
+        },
+        {
+          "mission": "9650118",
+          "unit": "Star Player Tidus",
+          "archive_name": "Star Player Tidus",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Star_Player_Tidus",
+          "banner_title": "File:Banner-Star Player Tidus.png",
+          "release": "2020-03-12"
+        },
+        {
+          "mission": "9650121",
+          "unit": "Mystical Ice Lasswell",
+          "archive_name": "Mystical Ice Lasswell",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Mystical_Ice_Lasswell",
+          "banner_title": "File:Banner-Mystical Ice Lasswell.png",
+          "release": "2020-05-14"
+        },
+        {
+          "mission": "9650132",
+          "unit": "Rain -Neo Vision-",
+          "archive_name": "Rain -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Rain_-Neo_Vision-",
+          "banner_title": "File:Banner-Rain -Neo Vision-.png",
+          "release": "2020-08-27"
+        },
+        {
+          "mission": "9650136",
+          "unit": "Yoshikiri",
+          "archive_name": "Yoshikiri",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Yoshikiri",
+          "banner_title": "File:Banner-Yoshikiri.png",
+          "release": "2020-09-17"
+        },
+        {
+          "mission": "9650139",
+          "unit": "Shoreline Fina & Daisy",
+          "archive_name": "Shoreline Fina & Daisy",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Shoreline_Fina_&_Daisy",
+          "banner_title": "File:Banner-Shoreline Fina & Daisy.png",
+          "release": "2020-11-12"
+        },
+        {
+          "mission": "9650143",
+          "unit": "Terra -Neo Vision-",
+          "archive_name": "Terra -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Terra_-Neo_Vision-",
+          "banner_title": "File:Banner-Terra -Neo Vision-.png",
+          "release": "2020-12-10"
+        },
+        {
+          "mission": "9650145",
+          "unit": "Rain & Fina",
+          "archive_name": "Rain & Fina",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Rain_&_Fina",
+          "banner_title": "File:Banner-Rain & Fina.png",
+          "release": "2021-01-21"
+        },
+        {
+          "mission": "9650147",
+          "unit": "Vinera Fennes",
+          "archive_name": "Vinera Fennes",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Vinera_Fennes",
+          "banner_title": "File:Banner-Vinera Fennes.png",
+          "release": "2021-03-25"
+        },
+        {
+          "mission": "9650151",
+          "unit": "Vermilion Blade Ardyn",
+          "archive_name": "Vermilion Blade Ardyn",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Vermilion_Blade_Ardyn",
+          "banner_title": "File:Banner-Vermilion Blade Ardyn.png",
+          "release": "2021-05-06"
+        },
+        {
+          "mission": "9650154",
+          "unit": "King Behemy",
+          "archive_name": "King Behemy",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_King_Behemy",
+          "banner_title": "File:Banner-King Behemy.png",
+          "release": "2021-04-22"
+        },
+        {
+          "mission": "9650155",
+          "unit": "Kaktiria",
+          "archive_name": "Kaktiria",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Kaktiria",
+          "banner_title": "File:Banner-Kaktiria.png",
+          "release": "2021-05-27"
+        },
+        {
+          "mission": "9650157",
+          "unit": "Louise",
+          "archive_name": "Louise",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Louise",
+          "banner_title": "File:Banner-Louise.png",
+          "release": "2021-07-01"
+        },
+        {
+          "mission": "9650160",
+          "unit": "Avalanche's Tifa",
+          "archive_name": "Avalanche's Tifa",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Avalanche's_Tifa",
+          "banner_title": "File:Banner-Avalanche's Tifa.png",
+          "release": "2021-07-29"
+        },
+        {
+          "mission": "9650163",
+          "unit": "Skye",
+          "archive_name": "Skye",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Skye",
+          "banner_title": "File:Banner-Skye.png",
+          "release": "2021-08-12"
+        },
+        {
+          "mission": "9650165",
+          "unit": "Ygni",
+          "archive_name": "Ygni",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Ygni",
+          "banner_title": "File:Banner-Ygni.png",
+          "release": "2021-08-26"
+        },
+        {
+          "mission": "9650167",
+          "unit": "Bulwark & the Melodic Mascots",
+          "archive_name": "Bulwark & the Melodic Mascots",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Bulwark_&_the_Melodic_Mascots",
+          "banner_title": "File:Banner-Bulwark & the Melodic Mascots.png",
+          "release": "2021-09-09"
+        },
+        {
+          "mission": "9650169",
+          "unit": "Roca",
+          "archive_name": "Roca",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Roca",
+          "banner_title": "File:Banner-Roca.png",
+          "release": "2021-10-07"
+        },
+        {
+          "mission": "9650171",
+          "unit": "Full Moon Karten",
+          "archive_name": "Full Moon Karten",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Full_Moon_Karten",
+          "banner_title": "File:Banner-Full Moon Karten.png",
+          "release": "2021-10-28"
+        },
+        {
+          "mission": "9650176",
+          "unit": "Maeve",
+          "archive_name": "Maeve",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Maeve",
+          "banner_title": "File:Banner-Maeve.png",
+          "release": "2021-11-18"
+        },
+        {
+          "mission": "9650179",
+          "unit": "Summer Sniper Physalis",
+          "archive_name": "Summer Sniper Physalis",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Summer_Sniper_Physalis",
+          "banner_title": "File:Banner-Summer Sniper Physalis.png",
+          "release": "2021-12-09"
+        },
+        {
+          "mission": "9650180",
+          "unit": "Taivas",
+          "archive_name": "Taivas",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Taivas",
+          "banner_title": "File:Banner-Taivas.png",
+          "release": "2022-01-06"
+        },
+        {
+          "mission": "9650182",
+          "unit": "Dragoon Kain",
+          "archive_name": "Dragoon Kain",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Dragoon_Kain",
+          "banner_title": "File:Banner-Dragoon Kain.png",
+          "release": "2022-02-17"
+        },
+        {
+          "mission": "9650184",
+          "unit": "Reberta & Ignitos",
+          "archive_name": "Reberta & Ignitos",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Reberta_&_Ignitos",
+          "banner_title": "File:Banner-Reberta & Ignitos.png",
+          "release": "2022-03-24"
+        },
+        {
+          "mission": "9650186",
+          "unit": "Fina -The Return-",
+          "archive_name": "Fina -The Return-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Fina_-The_Return-",
+          "banner_title": "File:Banner-Fina -The Return-.png",
+          "release": "2022-04-07"
+        },
+        {
+          "mission": "9650187",
+          "unit": "Rinoa & Angelo",
+          "archive_name": "Rinoa & Angelo",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Rinoa_&_Angelo",
+          "banner_title": "File:Banner-Rinoa & Angelo.png",
+          "release": "2022-04-28"
+        },
+        {
+          "mission": "9650192",
+          "unit": "Wylk",
+          "archive_name": "Wylk",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Wylk",
+          "banner_title": "File:Banner-Wylk.png",
+          "release": "2022-06-30"
+        },
+        {
+          "mission": "9650194",
+          "unit": "Beach Blaster Olive",
+          "archive_name": "Beach Blaster Olive",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Beach_Blaster_Olive",
+          "banner_title": "File:Banner-Beach Blaster Olive.png",
+          "release": "2022-08-18"
+        }
+      ],
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: every own native mission unit has an exact Global record categorized Unit Intro Event; zero unmatched",
+        "Native area membership uses original F_DUNGEON_MST binding, including965-prefixed missions owned by756/1089/1090; image must match one of this area own unit_intro_sources, not an arbitrary latest unit"
+      ],
+      "exclusion": "User2026-11-11 explicitly excluded all Unit Intro work; source-only receipt, no archive publication or combat projection.",
+      "baseline_event_encounter_entries": "Absent for every listed intro mission before this task merge"
+    },
+    "965": {
+      "canonical_name": "Unit Intro Quest",
+      "archive_alias": "Summer Fina & Lid",
+      "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Summer_Fina_&_Lid",
+      "banner_title": "File:Banner-Summer Fina & Lid.png",
+      "release": "2019-05-31",
+      "unit_intro_sources": [
+        {
+          "mission": "9650101",
+          "unit": "Summer Fina & Lid",
+          "archive_name": "Summer Fina & Lid",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Summer_Fina_&_Lid",
+          "banner_title": "File:Banner-Summer Fina & Lid.png",
+          "release": "2019-05-31"
+        },
+        {
+          "mission": "9650102",
+          "unit": "Summer Folka & Citra",
+          "archive_name": "Summer Folka & Citra",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Summer_Folka_&_Citra",
+          "banner_title": "File:Banner-Summer Folka & Citra.png",
+          "release": "2019-05-31"
+        },
+        {
+          "mission": "9650103",
+          "unit": "Sacred Shield Charlotte",
+          "archive_name": "Sacred Shield Charlotte",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Sacred_Shield_Charlotte",
+          "banner_title": "File:Banner-Sacred Shield Charlotte.png",
+          "release": "2019-07-05"
+        },
+        {
+          "mission": "9650104",
+          "unit": "Elena",
+          "archive_name": "Elena",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Elena",
+          "banner_title": "File:Banner-Elena.png",
+          "release": "2019-07-19"
+        },
+        {
+          "mission": "9650106",
+          "unit": "Warrior of Light Bartz",
+          "archive_name": "Warrior of Light Bartz",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Warrior_of_Light_Bartz",
+          "banner_title": "File:Banner-Warrior of Light Bartz.png",
+          "release": "2019-08-30"
+        },
+        {
+          "mission": "9650108",
+          "unit": "Wild Rose Firion",
+          "archive_name": "Wild Rose Firion",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Wild_Rose_Firion",
+          "banner_title": "File:Banner-Wild Rose Firion.png",
+          "release": "2019-10-04"
+        },
+        {
+          "mission": "9650109",
+          "unit": "White Lily Dark Fina",
+          "archive_name": "White Lily Dark Fina",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_White_Lily_Dark_Fina",
+          "banner_title": "File:Banner-White Lily Dark Fina.png",
+          "release": "2019-12-26"
+        },
+        {
+          "mission": "9650111",
+          "unit": "Aldore King Rain",
+          "archive_name": "Aldore King Rain",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Aldore_King_Rain",
+          "banner_title": "File:Banner-Aldore King Rain.png",
+          "release": "2019-11-07"
+        },
+        {
+          "mission": "9650113",
+          "unit": "Hess King Lasswell",
+          "archive_name": "Hess King Lasswell",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Hess_King_Lasswell",
+          "banner_title": "File:Banner-Hess King Lasswell.png",
+          "release": "2020-01-16"
+        },
+        {
+          "mission": "9650114",
+          "unit": "Crown Prince Noctis",
+          "archive_name": "Crown Prince Noctis",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Crown_Prince_Noctis",
+          "banner_title": "File:Banner-Crown Prince Noctis.png",
+          "release": "2019-12-12"
+        },
+        {
+          "mission": "9650115",
+          "unit": "Paladin Cecil",
+          "archive_name": "Paladin Cecil",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Paladin_Cecil",
+          "banner_title": "File:Banner-Paladin Cecil.png",
+          "release": "2020-02-06"
+        },
+        {
+          "mission": "9650116",
+          "unit": "Rakish Thief Zidane",
+          "archive_name": "Rakish Thief Zidane",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Rakish_Thief_Zidane",
+          "banner_title": "File:Banner-Rakish Thief Zidane.png",
+          "release": "2020-04-02"
+        },
+        {
+          "mission": "9650119",
+          "unit": "Wizardess Shantotto",
+          "archive_name": "Wizardess Shantotto",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Wizardess_Shantotto",
+          "banner_title": "File:Banner-Wizardess Shantotto.png",
+          "release": "2020-03-05"
+        },
+        {
+          "mission": "9650120",
+          "unit": "Infernal Fire Rain",
+          "archive_name": "Infernal Fire Rain",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Infernal_Fire_Rain",
+          "banner_title": "File:Banner-Infernal Fire Rain.png",
+          "release": "2020-04-16"
+        },
+        {
+          "mission": "9650122",
+          "unit": "Cloud (FFVII: AC)",
+          "archive_name": "Cloud (FFVII: AC)",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cloud_(FFVII:_AC)",
+          "banner_title": "File:Banner-Cloud (FFVII AC).png",
+          "release": "2020-05-07"
+        },
+        {
+          "mission": "9650123",
+          "unit": "Serah",
+          "archive_name": "Serah",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Serah",
+          "banner_title": "File:Banner-Serah.png",
+          "release": "2020-06-04"
+        },
+        {
+          "mission": "9650125",
+          "unit": "Lone Lion Squall",
+          "archive_name": "Lone Lion Squall",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Lone_Lion_Squall",
+          "banner_title": "File:Banner-Lone Lion Squall.png",
+          "release": "2020-06-18"
+        },
+        {
+          "mission": "9650129",
+          "unit": "Wild Card Ace",
+          "archive_name": "Wild Card Ace",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Wild_Card_Ace",
+          "banner_title": "File:Banner-Wild Card Ace.png",
+          "release": "2020-07-09"
+        },
+        {
+          "mission": "9650130",
+          "unit": "Seeker of Freedom Vaan",
+          "archive_name": "Seeker of Freedom Vaan",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Seeker_of_Freedom_Vaan",
+          "banner_title": "File:Banner-Seeker of Freedom Vaan.png",
+          "release": "2020-07-23"
+        },
+        {
+          "mission": "9650131",
+          "unit": "Angel of Death Kuja",
+          "archive_name": "Angel of Death Kuja",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Angel_of_Death_Kuja",
+          "banner_title": "File:Banner-Angel of Death Kuja.png",
+          "release": "2020-08-06"
+        },
+        {
+          "mission": "9650133",
+          "unit": "Cloud (FFVII REMAKE)",
+          "archive_name": "Cloud (FFVII REMAKE)",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cloud_(FFVII_REMAKE)",
+          "banner_title": "File:Banner-Cloud (FFVII REMAKE).png",
+          "release": "2020-08-20"
+        },
+        {
+          "mission": "9650134",
+          "unit": "Awakened Dragon Akstar",
+          "archive_name": "Awakened Dragon Akstar",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Awakened_Dragon_Akstar",
+          "banner_title": "File:Banner-Awakened Dragon Akstar.png",
+          "release": "2020-09-10"
+        },
+        {
+          "mission": "9650135",
+          "unit": "Starlight Elena",
+          "archive_name": "Starlight Elena",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Starlight_Elena",
+          "banner_title": "File:Banner-Starlight Elena.png",
+          "release": "2020-09-24"
+        },
+        {
+          "mission": "9650137",
+          "unit": "Firion -Neo Vision-",
+          "archive_name": "Firion -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Firion_-Neo_Vision-",
+          "banner_title": "File:Banner-Firion -Neo Vision-.png",
+          "release": "2020-10-08"
+        },
+        {
+          "mission": "9650141",
+          "unit": "Sol -Neo Vision-",
+          "archive_name": "Sol -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Sol_-Neo_Vision-",
+          "banner_title": "File:Banner-Sol -Neo Vision-.png",
+          "release": "2020-11-05"
+        },
+        {
+          "mission": "9650142",
+          "unit": "Physalis -Neo Vision-",
+          "archive_name": "Physalis -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Physalis_-Neo_Vision-",
+          "banner_title": "File:Banner-Physalis -Neo Vision-.png",
+          "release": "2020-12-03"
+        },
+        {
+          "mission": "9650146",
+          "unit": "Lasswell & Raegen",
+          "archive_name": "Lasswell & Raegen",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Lasswell_&_Raegen",
+          "banner_title": "File:Banner-Lasswell & Raegen.png",
+          "release": "2021-01-28"
+        },
+        {
+          "mission": "9650148",
+          "unit": "Savior of Souls Lightning",
+          "archive_name": "Savior of Souls Lightning",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Savior_of_Souls_Lightning",
+          "banner_title": "File:Banner-Savior of Souls Lightning.png",
+          "release": "2021-02-25"
+        },
+        {
+          "mission": "9650149",
+          "unit": "Faris -Neo Vision-",
+          "archive_name": "Faris -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Faris_-Neo_Vision-",
+          "banner_title": "File:Banner-Faris -Neo Vision-.png",
+          "release": "2021-03-18"
+        },
+        {
+          "mission": "9650150",
+          "unit": "Cobalt Blade Noctis",
+          "archive_name": "Cobalt Blade Noctis",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cobalt_Blade_Noctis",
+          "banner_title": "File:Banner-Cobalt Blade Noctis.png",
+          "release": "2021-04-15"
+        },
+        {
+          "mission": "9650152",
+          "unit": "Lightning-Fast Zidane",
+          "archive_name": "Lightning-Fast Zidane",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Lightning-Fast_Zidane",
+          "banner_title": "File:Banner-Lightning-Fast Zidane.png",
+          "release": "2021-05-20"
+        },
+        {
+          "mission": "9650156",
+          "unit": "Noppy",
+          "archive_name": "Noppy",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Noppy",
+          "banner_title": "File:Banner-Noppy.png",
+          "release": "2021-06-17"
+        },
+        {
+          "mission": "9650159",
+          "unit": "Cetra Descendant Aerith",
+          "archive_name": "Cetra Descendant Aerith",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cetra_Descendant_Aerith",
+          "banner_title": "File:Banner-Cetra Descendant Aerith.png",
+          "release": "2021-07-22"
+        },
+        {
+          "mission": "9650161",
+          "unit": "White Dragon Ling",
+          "archive_name": "White Dragon Ling",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_White_Dragon_Ling",
+          "banner_title": "File:Banner-White Dragon Ling.png",
+          "release": "2021-07-01"
+        },
+        {
+          "mission": "9650162",
+          "unit": "Legendary Hero Sephiroth",
+          "archive_name": "Legendary Hero Sephiroth",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Legendary_Hero_Sephiroth",
+          "banner_title": "File:Banner-Legendary Hero Sephiroth.png",
+          "release": "2021-08-05"
+        },
+        {
+          "mission": "9650164",
+          "unit": "Triumphant General Celes",
+          "archive_name": "Triumphant General Celes",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Triumphant_General_Celes",
+          "banner_title": "File:Banner-Triumphant General Celes.png",
+          "release": "2021-08-19"
+        },
+        {
+          "mission": "9650166",
+          "unit": "Cressnik",
+          "archive_name": "Cressnik",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Cressnik",
+          "banner_title": "File:Banner-Cressnik.png",
+          "release": "2021-09-09"
+        },
+        {
+          "mission": "9650168",
+          "unit": "Lara Croft -Neo Vision-",
+          "archive_name": "Lara Croft -Neo Vision-",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Lara_Croft_-Neo_Vision-",
+          "banner_title": "File:Banner-Lara Croft -Neo Vision-.png",
+          "release": "2021-09-30"
+        },
+        {
+          "mission": "9650170",
+          "unit": "Olivera",
+          "archive_name": "Olivera",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Olivera",
+          "banner_title": "File:Banner-Olivera.png",
+          "release": "2021-10-21"
+        },
+        {
+          "mission": "9650172",
+          "unit": "Ninja Master Hawkeye",
+          "archive_name": "Ninja Master Hawkeye",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Ninja_Master_Hawkeye",
+          "banner_title": "File:Banner-Ninja Master Hawkeye.png",
+          "release": "2021-11-04"
+        },
+        {
+          "mission": "9650177",
+          "unit": "Summoner Yuna",
+          "archive_name": "Summoner Yuna",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Summoner_Yuna",
+          "banner_title": "File:Banner-Summoner Yuna.png",
+          "release": "2021-11-25"
+        },
+        {
+          "mission": "9650178",
+          "unit": "Whimsical Winter Tiana",
+          "archive_name": "Whimsical Winter Tiana",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Whimsical_Winter_Tiana",
+          "banner_title": "File:Banner-Whimsical Winter Tiana.png",
+          "release": "2021-12-23"
+        },
+        {
+          "mission": "9650181",
+          "unit": "Divine Beast Chow",
+          "archive_name": "Divine Beast Chow",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Divine_Beast_Chow",
+          "banner_title": "File:Banner-Divine Beast Chow.png",
+          "release": "2022-01-27"
+        },
+        {
+          "mission": "9650185",
+          "unit": "Dark Rain",
+          "archive_name": "Dark Rain",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Dark_Rain",
+          "banner_title": "File:Banner-Dark Rain.png",
+          "release": "2022-03-17"
+        },
+        {
+          "mission": "9650188",
+          "unit": "Frostblade Fryevia",
+          "archive_name": "Frostblade Fryevia",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Frostblade_Fryevia",
+          "banner_title": "File:Banner-Frostblade Fryevia.png",
+          "release": "2022-04-21"
+        },
+        {
+          "mission": "9650190",
+          "unit": "Tide Bringer Kaito",
+          "archive_name": "Tide Bringer Kaito",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Tide_Bringer_Kaito",
+          "banner_title": "File:Banner-Tide Bringer Kaito.png",
+          "release": "2022-05-26"
+        },
+        {
+          "mission": "9650191",
+          "unit": "Paladin Sylvie",
+          "archive_name": "Paladin Sylvie",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Paladin_Sylvie",
+          "banner_title": "File:Banner-Paladin Sylvie.png",
+          "release": "2022-06-30"
+        },
+        {
+          "mission": "9650193",
+          "unit": "Samurai Chizuru",
+          "archive_name": "Samurai Chizuru",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Samurai_Chizuru",
+          "banner_title": "File:Banner-Samurai Chizuru.png",
+          "release": "2022-07-21"
+        },
+        {
+          "mission": "9650195",
+          "unit": "Shrine Maiden Tsukiko",
+          "archive_name": "Shrine Maiden Tsukiko",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Shrine_Maiden_Tsukiko",
+          "banner_title": "File:Banner-Shrine Maiden Tsukiko.png",
+          "release": "2022-09-15"
+        }
+      ],
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: every own native mission unit has an exact Global record categorized Unit Intro Event; zero unmatched",
+        "Native area membership uses original F_DUNGEON_MST binding, including965-prefixed missions owned by756/1089/1090; image must match one of this area own unit_intro_sources, not an arbitrary latest unit"
+      ],
+      "exclusion": "User2026-11-11 explicitly excluded all Unit Intro work; source-only receipt, no archive publication or combat projection.",
+      "baseline_event_encounter_entries": "Absent for every listed intro mission before this task merge"
+    },
+    "976": {
+      "canonical_name": "Unit Intro Quest",
+      "archive_alias": "Radiant Lightning",
+      "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Radiant_Lightning",
+      "banner_title": "File:Banner-Radiant Lightning.png",
+      "release": "2019-07-31",
+      "unit_intro_sources": [
+        {
+          "mission": "9760101",
+          "unit": "Radiant Lightning",
+          "archive_name": "Radiant Lightning",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Radiant_Lightning",
+          "banner_title": "File:Banner-Radiant Lightning.png",
+          "release": "2019-07-31"
+        }
+      ],
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: every own native mission unit has an exact Global record categorized Unit Intro Event; zero unmatched",
+        "Native area membership uses original F_DUNGEON_MST binding, including965-prefixed missions owned by756/1089/1090; image must match one of this area own unit_intro_sources, not an arbitrary latest unit"
+      ],
+      "exclusion": "User2026-11-11 explicitly excluded all Unit Intro work; source-only receipt, no archive publication or combat projection.",
+      "baseline_event_encounter_entries": "Absent for every listed intro mission before this task merge"
+    },
+    "1089": {
+      "canonical_name": "Unit Intro Quest",
+      "archive_alias": "Duran",
+      "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Duran",
+      "banner_title": "File:Banner-Duran.png",
+      "release": "2021-11-11",
+      "unit_intro_sources": [
+        {
+          "mission": "9650174",
+          "unit": "Duran",
+          "archive_name": "Duran",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Duran",
+          "banner_title": "File:Banner-Duran.png",
+          "release": "2021-11-11"
+        },
+        {
+          "mission": "9650183",
+          "unit": "Storm Seeker Esther",
+          "archive_name": "Storm Seeker Esther",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Storm_Seeker_Esther",
+          "banner_title": "File:Banner-Storm Seeker Esther.png",
+          "release": "2022-02-24"
+        },
+        {
+          "mission": "9650189",
+          "unit": "Knights of Grandshelt",
+          "archive_name": "Knights of Grandshelt",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Knights_of_Grandshelt",
+          "banner_title": "File:Banner-Knights of Grandshelt.png",
+          "release": "2022-04-28"
+        }
+      ],
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: every own native mission unit has an exact Global record categorized Unit Intro Event; zero unmatched",
+        "Native area membership uses original F_DUNGEON_MST binding, including965-prefixed missions owned by756/1089/1090; image must match one of this area own unit_intro_sources, not an arbitrary latest unit"
+      ],
+      "exclusion": "User2026-11-11 explicitly excluded all Unit Intro work; source-only receipt, no archive publication or combat projection.",
+      "baseline_event_encounter_entries": "Absent for every listed intro mission before this task merge"
+    },
+    "1090": {
+      "canonical_name": "Unit Intro Quest",
+      "archive_alias": "Riesz",
+      "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Riesz",
+      "banner_title": "File:Banner-Riesz.png",
+      "release": "2021-11-11",
+      "unit_intro_sources": [
+        {
+          "mission": "9650175",
+          "unit": "Riesz",
+          "archive_name": "Riesz",
+          "source_page": "https://exvius.fandom.com/wiki/Unit_Intro_-_Riesz",
+          "banner_title": "File:Banner-Riesz.png",
+          "release": "2021-11-11"
+        }
+      ],
+      "evidence": [
+        "logs/reference/events-archives-wiki-20261026.json: every own native mission unit has an exact Global record categorized Unit Intro Event; zero unmatched",
+        "Native area membership uses original F_DUNGEON_MST binding, including965-prefixed missions owned by756/1089/1090; image must match one of this area own unit_intro_sources, not an arbitrary latest unit"
+      ],
+      "exclusion": "User2026-11-11 explicitly excluded all Unit Intro work; source-only receipt, no archive publication or combat projection.",
+      "baseline_event_encounter_entries": "Absent for every listed intro mission before this task merge"
+    }
+  }
+}

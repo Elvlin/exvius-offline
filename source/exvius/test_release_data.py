@@ -122,15 +122,23 @@ public class Os {
         repair = project / 'data/apk_overlay/assets/cpk/en/boot.cpk'
         repair.parent.mkdir(parents=True)
         repair.write_bytes(b'accepted repair')
+        rules = project / 'source/server/gacha_named.json'
+        rules.parent.mkdir(parents=True)
+        rules.write_bytes(b'{"banners":[{"id":"9400001","name":"Reconstructed Offline Summon"}]}')
+        treasures = project / 'source/server/content/field_treasures.json'
+        treasures.parent.mkdir(parents=True)
+        treasures.write_bytes(b'{"treasures":[{"id":"jp-route-1"}]}')
         with patch.object(self.builder, 'ROOT', project):
             pack, count = self.builder.client_assets(self.folder / 'packs', 'v0.1.1')
-        self.assertEqual(count, 2)
+        self.assertEqual(count, 4)
         path = self.folder / 'packs/exvius-client-assets.zip'
         result = self.java('extract', path, self.files, pack['unpackedSize'])
         self.assertEqual(result.returncode, 0, result.stderr)
         with zipfile.ZipFile(self.files / 'exvius/data/static/client/game-assets.apk') as archive:
             self.assertEqual(archive.read('assets/cpk/en/boot.cpk'), b'accepted repair')
             self.assertEqual(archive.read('assets/font/font.ttf'), b'original font')
+            self.assertEqual(archive.read('assets/rules/gacha_named.json'), rules.read_bytes())
+            self.assertEqual(archive.read('assets/rules/content/field_treasures.json'), treasures.read_bytes())
             self.assertNotIn('assets/audience_network.dex', archive.namelist())
         self.assertEqual(self.save.read_bytes(), b'keep this campaign')
 

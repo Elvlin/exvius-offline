@@ -157,6 +157,10 @@ def build(output):
                 assert {row[identity]: row for row in merged} == dict(rows, **{
                     row[identity]: row for row in replacement})
                 archive.write(target, 'native/mst/' + source.name)
+                from native_master_index import paired_index
+                paired = paired_index(table, target, target.read_bytes(), key)
+                if paired is not None:
+                    archive.writestr('native/mst/' + paired[0].name, paired[1])
                 archive.writestr(f'static/mst_decoded/{table}.ndjson', ndjson(merged))
     print(f'{output}: {output.stat().st_size:,} bytes')
 

@@ -2499,6 +2499,3345 @@
           "limit": 2
         }
       ]
+    },
+    {
+      "name": "Collaboration Special Exchange (2022/11)",
+      "source": "https://altema.jp/ffbe/rotonomonsyouhikubekika",
+      "currency": [
+        20,
+        "106230830"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "evidence": "Published original2022 table with captured in-game panel; generic IDs verified against original native master names.",
+      "products": [
+        {
+          "reward": "10:346000107:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Arus"
+        },
+        {
+          "reward": "10:346000407:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Poron"
+        },
+        {
+          "reward": "10:346000307:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Yao"
+        },
+        {
+          "reward": "20:106230840:1",
+          "price": 3,
+          "limit": 3,
+          "label": "Collaboration New NV 30% Summon Ticket (2022/11)"
+        },
+        {
+          "reward": "20:235037300:1",
+          "price": 5,
+          "limit": 5,
+          "label": "Mystery Crystal"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 5,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 10,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:900000001:1",
+          "price": 2,
+          "limit": 1,
+          "label": "Omniprism"
+        },
+        {
+          "reward": "10:906000105:1:100:1:1000:0:0:1100000100",
+          "price": 1,
+          "limit": 2,
+          "label": "Super Trust Moogle (ALL 100%)"
+        },
+        {
+          "reward": "20:106213510:1",
+          "price": 1,
+          "limit": 10,
+          "label": "Fragment Select Exchange Ticket"
+        },
+        {
+          "reward": "23:260:1",
+          "price": 1,
+          "limit": 10,
+          "label": "5-Star Select Summon Ticket"
+        },
+        {
+          "reward": "23:110:10",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Energy Restore 50 x10"
+        },
+        {
+          "reward": "10:900020401:1:100:60",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "King Metal Minituar (MAX)"
+        },
+        {
+          "reward": "20:400000040:1",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Gil Snapper Tower"
+        }
+      ]
+    },
+    {
+      "name": "Fragment Select Exchange",
+      "source": "https://altema.jp/ffbe/kakeraselectticket",
+      "currency": [
+        20,
+        "106213510"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "evidence": "Published46eligible five-star-base NVA units. Exact10tickets for25fragments. Source publishes no stock cap; permanent local availability is uncapped.",
+      "products": [
+        {
+          "reward": "20:250000510:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Infernal Fire Rain Fragment x25"
+        },
+        {
+          "reward": "20:250000520:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Draconian Princess Fina Fragment x25"
+        },
+        {
+          "reward": "20:250000610:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Serah Fragment x25"
+        },
+        {
+          "reward": "20:250000020:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Tifa Fragment x25"
+        },
+        {
+          "reward": "20:250000030:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Red XIII Fragment x25"
+        },
+        {
+          "reward": "20:250000050:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Veritas of the Dark Fragment x25"
+        },
+        {
+          "reward": "20:250000070:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Cloud Fragment x25"
+        },
+        {
+          "reward": "20:250000090:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Aileen Fragment x25"
+        },
+        {
+          "reward": "20:250000100:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Pyro Glacial Lasswell Fragment x25"
+        },
+        {
+          "reward": "20:250000130:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Blossom Sage Sakura Fragment x25"
+        },
+        {
+          "reward": "20:250000120:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Dark Fina Fragment x25"
+        },
+        {
+          "reward": "20:250000150:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Balthier Fragment x25"
+        },
+        {
+          "reward": "20:250000180:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Emperor Fragment x25"
+        },
+        {
+          "reward": "20:250000190:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Dark Knight Leon Fragment x25"
+        },
+        {
+          "reward": "20:250000220:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Summer Folka & Citra Fragment x25"
+        },
+        {
+          "reward": "20:250000210:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Summer Fina & Lid Fragment x25"
+        },
+        {
+          "reward": "20:250000240:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Nalu Fragment x25"
+        },
+        {
+          "reward": "20:250000300:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Lotus Mage Fina Fragment x25"
+        },
+        {
+          "reward": "20:250000290:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Sacred Shield Charlotte Fragment x25"
+        },
+        {
+          "reward": "20:250000330:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Onion Knight Refia Fragment x25"
+        },
+        {
+          "reward": "20:250000320:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Dark Knight Luneth Fragment x25"
+        },
+        {
+          "reward": "20:250000350:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Archmage Kefka Fragment x25"
+        },
+        {
+          "reward": "20:250000360:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Assassin Shadow Fragment x25"
+        },
+        {
+          "reward": "20:250000390:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Kunshira Fragment x25"
+        },
+        {
+          "reward": "20:250000380:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Yuraisha Fragment x25"
+        },
+        {
+          "reward": "20:250000410:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Monk Sabin of Kolts Fragment x25"
+        },
+        {
+          "reward": "20:250000420:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "King Edgar of Figaro Fragment x25"
+        },
+        {
+          "reward": "20:250000460:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Lid & Jake Fragment x25"
+        },
+        {
+          "reward": "20:250000470:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Fina & Dark Fina Fragment x25"
+        },
+        {
+          "reward": "20:250000540:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Radiant Lightning Fragment x25"
+        },
+        {
+          "reward": "20:250000550:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Lightning Fragment x25"
+        },
+        {
+          "reward": "20:250000560:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Grim Lord Sakura Fragment x25"
+        },
+        {
+          "reward": "20:250000590:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Raegen Fragment x25"
+        },
+        {
+          "reward": "20:250000630:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Warrior of Light Bartz Fragment x25"
+        },
+        {
+          "reward": "20:250020600:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Gilgamesh (WOTV FFBE) Fragment x25"
+        },
+        {
+          "reward": "20:250000990:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Rufus Shinra (FFVII REMAKE) Fragment x25"
+        },
+        {
+          "reward": "20:250001200:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Barret (FFVII REMAKE) Fragment x25"
+        },
+        {
+          "reward": "20:250000960:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Shadow Lord Fragment x25"
+        },
+        {
+          "reward": "20:250000950:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Livid Shantotto Fragment x25"
+        },
+        {
+          "reward": "20:250000830:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Beatrix Fragment x25"
+        },
+        {
+          "reward": "20:250000730:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Nyx Fragment x25"
+        },
+        {
+          "reward": "20:250000800:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Gladiolus Fragment x25"
+        },
+        {
+          "reward": "20:250000740:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Aranea Fragment x25"
+        },
+        {
+          "reward": "20:250000780:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Prompto Fragment x25"
+        },
+        {
+          "reward": "20:250000790:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Ignis Fragment x25"
+        },
+        {
+          "reward": "20:250000660:25",
+          "price": 10,
+          "limit": 2147483647,
+          "label": "Ignacio Fragment x25"
+        }
+      ]
+    },
+    {
+      "name": "SaGa Collaboration Special Exchange (2024/1/11)",
+      "source": "https://altema.jp/ffbe/romasagagachahikubekika",
+      "currency": [
+        20,
+        "106233670"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "10:349000107:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Rocbouquet"
+        },
+        {
+          "reward": "10:348000107:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Albert"
+        },
+        {
+          "reward": "10:309000507:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Ellen"
+        },
+        {
+          "reward": "20:106233680:1",
+          "price": 3,
+          "limit": 3,
+          "label": "Collaboration New NV 30% Summon Ticket (2024/1)"
+        },
+        {
+          "reward": "20:106233690:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Light NV Guaranteed Summon Ticket (2024/1)"
+        },
+        {
+          "reward": "20:106233580:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Earth NV Guaranteed Summon Ticket (2024/1)"
+        },
+        {
+          "reward": "20:250028300:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Fina -Esper of Destruction- Fragment x50"
+        },
+        {
+          "reward": "20:250022400:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Deity of War Taivas Fragment x50"
+        },
+        {
+          "reward": "20:250019000:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Vermilion Class Zero Deuce Fragment x50"
+        },
+        {
+          "reward": "20:250017900:50",
+          "price": 8,
+          "limit": 1,
+          "label": "SeeD's Blue Mage Quistis Fragment x50"
+        },
+        {
+          "reward": "20:250028600:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Chaos=Bismarck Fragment x50"
+        },
+        {
+          "reward": "20:250024300:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Steadfast Knight Agrias Fragment x50"
+        },
+        {
+          "reward": "20:250021200:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Denial of Focus Vanille Fragment x50"
+        },
+        {
+          "reward": "20:250015600:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Dioxus Fragment x50"
+        },
+        {
+          "reward": "20:250028500:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Dark Fina -Esper of Destruction- Fragment x50"
+        },
+        {
+          "reward": "20:250027600:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Metze Fragment x50"
+        },
+        {
+          "reward": "20:250024200:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Unsung Hero Ramza Fragment x50"
+        },
+        {
+          "reward": "20:250020800:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Challenger of Fate Hope Fragment x50"
+        },
+        {
+          "reward": "20:235037300:1",
+          "price": 5,
+          "limit": 5,
+          "label": "Mystery Crystal"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 5,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 10,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:900000001:1",
+          "price": 2,
+          "limit": 1,
+          "label": "Omniprism"
+        },
+        {
+          "reward": "10:906000105:1:100:1:1000:0:0:1100000100",
+          "price": 1,
+          "limit": 2,
+          "label": "Super Trust Moogle (ALL 100%)"
+        },
+        {
+          "reward": "20:106213510:1",
+          "price": 1,
+          "limit": 10,
+          "label": "Fragment Select Exchange Ticket"
+        },
+        {
+          "reward": "23:260:1",
+          "price": 1,
+          "limit": 10,
+          "label": "5-Star Select Summon Ticket"
+        },
+        {
+          "reward": "23:110:10",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Energy Restore 50 x10"
+        },
+        {
+          "reward": "10:900020401:1:100:60",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "King Metal Minituar (MAX)"
+        },
+        {
+          "reward": "20:400000040:1",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Gil Snapper Tower"
+        }
+      ]
+    },
+    {
+      "name": "SaGa Collaboration Special Exchange (2024/1/19)",
+      "source": "https://altema.jp/ffbe/sagagachahikubekika2",
+      "currency": [
+        20,
+        "106233740"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "10:350000107:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Asellus"
+        },
+        {
+          "reward": "10:351000107:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Gustave XIII"
+        },
+        {
+          "reward": "20:106233570:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Dark NV Guaranteed Summon Ticket (2024/1)"
+        },
+        {
+          "reward": "20:106233580:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Earth NV Guaranteed Summon Ticket (2024/1)"
+        },
+        {
+          "reward": "20:250028700:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Rhus -Esper of Destruction- Fragment x50"
+        },
+        {
+          "reward": "20:250024800:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Sword Saint Orlandeau Fragment x50"
+        },
+        {
+          "reward": "20:250021900:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Voidmage Roca Fragment x50"
+        },
+        {
+          "reward": "20:250018500:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Blades of Black Flame Raegen Fragment x50"
+        },
+        {
+          "reward": "20:250029700:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Paladin of Grandshelt Fragment x50"
+        },
+        {
+          "reward": "20:250021600:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Cursebringer Neilikka Fragment x50"
+        },
+        {
+          "reward": "20:250021000:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Wondrous Flash Lightning Fragment x50"
+        },
+        {
+          "reward": "20:250019500:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Snovlinka Fragment x50"
+        },
+        {
+          "reward": "20:235037300:1",
+          "price": 5,
+          "limit": 5,
+          "label": "Mystery Crystal"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 5,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 10,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:900000001:1",
+          "price": 2,
+          "limit": 1,
+          "label": "Omniprism"
+        },
+        {
+          "reward": "10:906000105:1:100:1:1000:0:0:1100000100",
+          "price": 1,
+          "limit": 2,
+          "label": "Super Trust Moogle (ALL 100%)"
+        },
+        {
+          "reward": "20:106213510:1",
+          "price": 1,
+          "limit": 10,
+          "label": "Fragment Select Exchange Ticket"
+        },
+        {
+          "reward": "23:260:1",
+          "price": 1,
+          "limit": 10,
+          "label": "5-Star Select Summon Ticket"
+        },
+        {
+          "reward": "23:110:10",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Energy Restore 50 x10"
+        },
+        {
+          "reward": "10:900020401:1:100:60",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "King Metal Minituar (MAX)"
+        },
+        {
+          "reward": "20:400000040:1",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Gil Snapper Tower"
+        }
+      ]
+    },
+    {
+      "name": "Emblem of Roto Special Exchange (2024/2/19)",
+      "source": "https://altema.jp/ffbe/rotonomonsyouhikubekika2",
+      "currency": [
+        20,
+        "106233930"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "10:346000507:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Hero Alan"
+        },
+        {
+          "reward": "10:346000707:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Sea King II Caesarion"
+        },
+        {
+          "reward": "10:346000607:1",
+          "price": 12,
+          "limit": 1,
+          "label": "Hero Asthea"
+        },
+        {
+          "reward": "20:106233940:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Emblem of Roto NV Guaranteed Summon Ticket (2024/2)"
+        },
+        {
+          "reward": "20:106233950:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Light NV Guaranteed Summon Ticket (2024/2/19)"
+        },
+        {
+          "reward": "20:106233960:1",
+          "price": 2,
+          "limit": 5,
+          "label": "The Saviors NV Guaranteed Summon Ticket (2024/2)"
+        },
+        {
+          "reward": "20:106233970:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Water NV Guaranteed Summon Ticket (2024/2)"
+        },
+        {
+          "reward": "20:250028900:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Neilikka -Esper of Destruction- Fragment x50"
+        },
+        {
+          "reward": "20:250024800:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Sword Saint Orlandeau Fragment x50"
+        },
+        {
+          "reward": "20:250025000:50",
+          "price": 8,
+          "limit": 1,
+          "label": "True King Noctis Fragment x50"
+        },
+        {
+          "reward": "20:250028700:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Rhus -Esper of Destruction- Fragment x50"
+        },
+        {
+          "reward": "20:250022500:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Petite Jewel Lehftia Fragment x50"
+        },
+        {
+          "reward": "20:872000006:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Arus Fragment x50"
+        },
+        {
+          "reward": "20:872000008:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Yao Fragment x50"
+        },
+        {
+          "reward": "20:872000009:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Poron Fragment x50"
+        },
+        {
+          "reward": "20:235037300:1",
+          "price": 5,
+          "limit": 5,
+          "label": "Mystery Crystal"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 5,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 10,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:900000001:1",
+          "price": 2,
+          "limit": 1,
+          "label": "Omniprism"
+        },
+        {
+          "reward": "10:906000105:1:100:1:1000:0:0:1100000100",
+          "price": 1,
+          "limit": 2,
+          "label": "Super Trust Moogle (ALL 100%)"
+        },
+        {
+          "reward": "20:106213510:1",
+          "price": 1,
+          "limit": 10,
+          "label": "Fragment Select Exchange Ticket"
+        },
+        {
+          "reward": "23:260:1",
+          "price": 1,
+          "limit": 10,
+          "label": "5-Star Select Summon Ticket"
+        },
+        {
+          "reward": "23:110:10",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Energy Restore 50 x10"
+        },
+        {
+          "reward": "10:900020401:1:100:60",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "King Metal Minituar (MAX)"
+        },
+        {
+          "reward": "20:400000040:1",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Gil Snapper Tower"
+        }
+      ]
+    },
+    {
+      "name": "Emblem of Roto Special Exchange (2024/3)",
+      "source": "https://altema.jp/ffbe/rotonomonsyouhikubekika3",
+      "currency": [
+        20,
+        "106234070"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "10:346000907:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Hero Arus"
+        },
+        {
+          "reward": "10:346000807:1",
+          "price": 12,
+          "limit": 3,
+          "label": "Imagine"
+        },
+        {
+          "reward": "20:106233940:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Emblem of Roto NV Guaranteed Summon Ticket (2024/2)"
+        },
+        {
+          "reward": "20:106233960:1",
+          "price": 2,
+          "limit": 5,
+          "label": "The Saviors NV Guaranteed Summon Ticket (2024/2)"
+        },
+        {
+          "reward": "20:106234080:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Earth NV Guaranteed Summon Ticket (2024/3)"
+        },
+        {
+          "reward": "20:106234090:1",
+          "price": 2,
+          "limit": 5,
+          "label": "Fire NV Guaranteed Summon Ticket (2024/3)"
+        },
+        {
+          "reward": "20:250030000:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Blitzball Legend Jecht Fragment x50"
+        },
+        {
+          "reward": "20:250025400:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Chosen King's Shield Gladiolus Fragment x50"
+        },
+        {
+          "reward": "20:250029700:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Paladin of Grandshelt Fragment x50"
+        },
+        {
+          "reward": "20:250024400:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Rydia, Girl Who Communes with Espers Fragment x50"
+        },
+        {
+          "reward": "20:872000006:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Arus Fragment x50"
+        },
+        {
+          "reward": "20:872000008:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Yao Fragment x50"
+        },
+        {
+          "reward": "20:872000009:50",
+          "price": 8,
+          "limit": 1,
+          "label": "Poron Fragment x50"
+        },
+        {
+          "reward": "20:235037300:1",
+          "price": 5,
+          "limit": 5,
+          "label": "Mystery Crystal"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 5,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:235037700:1",
+          "price": 10,
+          "limit": 2,
+          "label": "Master's Crown"
+        },
+        {
+          "reward": "20:900000001:1",
+          "price": 2,
+          "limit": 1,
+          "label": "Omniprism"
+        },
+        {
+          "reward": "10:906000105:1:100:1:1000:0:0:1100000100",
+          "price": 1,
+          "limit": 2,
+          "label": "Super Trust Moogle (ALL 100%)"
+        },
+        {
+          "reward": "20:106213510:1",
+          "price": 1,
+          "limit": 10,
+          "label": "Fragment Select Exchange Ticket"
+        },
+        {
+          "reward": "23:260:1",
+          "price": 1,
+          "limit": 10,
+          "label": "5-Star Select Summon Ticket"
+        },
+        {
+          "reward": "23:110:10",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Energy Restore 50 x10"
+        },
+        {
+          "reward": "10:900020401:1:100:60",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "King Metal Minituar (MAX)"
+        },
+        {
+          "reward": "20:400000040:1",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Gil Snapper Tower"
+        }
+      ]
+    },
+    {
+      "name": "Emblem of Roto NV Fragment Exchange (2024/3)",
+      "source": "https://altema.jp/ffbe/rotonomonsyoudai2dangacha",
+      "currency": [
+        20,
+        "106234130"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "20:872000006:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Arus Fragment x50"
+        },
+        {
+          "reward": "20:872000008:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Yao Fragment x50"
+        },
+        {
+          "reward": "20:872000009:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Poron Fragment x50"
+        },
+        {
+          "reward": "20:250032100:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Hero Alan Fragment x50"
+        },
+        {
+          "reward": "20:250032000:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Hero Asthea Fragment x50"
+        },
+        {
+          "reward": "20:250032200:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Sea King II Caesarion Fragment x50"
+        },
+        {
+          "reward": "20:250032300:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Hero Arus Fragment x50"
+        },
+        {
+          "reward": "20:250032400:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Imagine Fragment x50"
+        }
+      ],
+      "evidence": "Original special STEP5 ticket and50fragment quantity published. Complete original selection table unrecovered;8paid Roto NV versions are a documented eligibility reconstruction."
+    },
+    {
+      "name": "Air Raid! Loran Castle NV Fragment Exchange",
+      "source": "https://altema.jp/ffbe/kuusyuuroranjyou",
+      "currency": [
+        20,
+        "106234120"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "jp_original_scope": "earlier-jp-28",
+      "products": [
+        {
+          "reward": "20:250000630:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Warrior of Light Bartz Fragments x50"
+        },
+        {
+          "reward": "20:250006800:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Lone Lion Squall Fragments x50"
+        },
+        {
+          "reward": "20:250000100:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Pyro Glacial Lasswell Fragments x50"
+        },
+        {
+          "reward": "20:250000810:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Lightning-Fast Zidane Fragments x50"
+        },
+        {
+          "reward": "20:250000530:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Savior of Souls Lightning Fragments x50"
+        },
+        {
+          "reward": "20:250000710:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Cobalt Blade Noctis Fragments x50"
+        },
+        {
+          "reward": "20:250000340:50",
+          "price": 1,
+          "limit": 2147483647,
+          "label": "Terra -Neo Vision- Fragments x50"
+        }
+      ],
+      "evidence": "The published300kEP ticket and Summon to Exchange destination are exact. Original quantity/pool unrecovered after guide/native search. Offline1ticket for50fragments from the7published event-box versions is explicitly reconstructed."
+    },
+    {
+      "name": "Ticket Exchange (NV Fragment Select 8th Anniversary)",
+      "currency": [
+        20,
+        "1209002104"
+      ],
+      "category": 5,
+      "reset_months": 0,
+      "products": [
+        {
+          "reward": "20:250000040:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rain -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000080:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Awakened Dragon Akstar Fragments x10"
+        },
+        {
+          "reward": "20:250000110:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Sol -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Shoreline Fina & Daisy Fragments x10"
+        },
+        {
+          "reward": "20:250000230:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Madam Edel -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000280:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Physalis -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000370:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lasswell -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000430:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rain & Fina Fragments x10"
+        },
+        {
+          "reward": "20:250000440:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lasswell & Raegen Fragments x10"
+        },
+        {
+          "reward": "20:250000490:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dark Fina & Sol Fragments x10"
+        },
+        {
+          "reward": "20:250000500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Akstar & Cleome Fragments x10"
+        },
+        {
+          "reward": "20:250000580:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Mazurka Fragments x10"
+        },
+        {
+          "reward": "20:250000650:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Melo Fragments x10"
+        },
+        {
+          "reward": "20:250000840:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Chorale Fragments x10"
+        },
+        {
+          "reward": "20:250000850:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Diverti Fragments x10"
+        },
+        {
+          "reward": "20:250000890:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Guardian Blade Charlotte Fragments x10"
+        },
+        {
+          "reward": "20:250000900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Emperor Vlad Fragments x10"
+        },
+        {
+          "reward": "20:250001300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lord of the Seas Nichol Fragments x10"
+        },
+        {
+          "reward": "20:250002300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Roca Fragments x10"
+        },
+        {
+          "reward": "20:250002400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Paus Fragments x10"
+        },
+        {
+          "reward": "20:250003800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Summer Sniper Physalis Fragments x10"
+        },
+        {
+          "reward": "20:250002000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Sage of Thunder Sakura Fragments x10"
+        },
+        {
+          "reward": "20:250003900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Magic Mermaid Freesia Fragments x10"
+        },
+        {
+          "reward": "20:250004000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Beach Buoy Shinju Fragments x10"
+        },
+        {
+          "reward": "20:250004500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Tulien Fragments x10"
+        },
+        {
+          "reward": "20:250005700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lehftia Fragments x10"
+        },
+        {
+          "reward": "20:250005800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Haveh Fragments x10"
+        },
+        {
+          "reward": "20:250006000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Raegen -The Return- Fragments x10"
+        },
+        {
+          "reward": "20:250006200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Akstar -The Return- Fragments x10"
+        },
+        {
+          "reward": "20:250006400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Nichol -The Return- Fragments x10"
+        },
+        {
+          "reward": "20:250006500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Sakura -The Return- Fragments x10"
+        },
+        {
+          "reward": "20:250008900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lasswell -FFIV Form- Fragments x10"
+        },
+        {
+          "reward": "20:250008800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rain -FFI Form- Fragments x10"
+        },
+        {
+          "reward": "20:250007900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Yshe Fragments x10"
+        },
+        {
+          "reward": "20:250008000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Kall Fragments x10"
+        },
+        {
+          "reward": "20:250008100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ilmatalle Fragments x10"
+        },
+        {
+          "reward": "20:250008300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Silent Knight Charlotte Fragments x10"
+        },
+        {
+          "reward": "20:250008600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rain -Warrior's Prayer- Fragments x10"
+        },
+        {
+          "reward": "20:250009000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Poppy -Warrior's Prayer- Fragments x10"
+        },
+        {
+          "reward": "20:250009100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lehftia -Warrior's Prayer- Fragments x10"
+        },
+        {
+          "reward": "20:250010200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rhus Fragments x10"
+        },
+        {
+          "reward": "20:250010300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Neilikka Fragments x10"
+        },
+        {
+          "reward": "20:250012000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ultimate Regina Fragments x10"
+        },
+        {
+          "reward": "20:250012700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vanharma Fragments x10"
+        },
+        {
+          "reward": "20:250012800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ihana Fragments x10"
+        },
+        {
+          "reward": "20:250014200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Taivas & Yshe Fragments x10"
+        },
+        {
+          "reward": "20:250014700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vacation Voyager Fina Fragments x10"
+        },
+        {
+          "reward": "20:250014800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Marine-Type Runda Fragments x10"
+        },
+        {
+          "reward": "20:250015700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Roca -Dark Lineage- Fragments x10"
+        },
+        {
+          "reward": "20:250016100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Veritas of the Frost Fragments x10"
+        },
+        {
+          "reward": "20:250016200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Sakura -Dark Lineage- Fragments x10"
+        },
+        {
+          "reward": "20:250016400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Fina -Dark Lineage- Fragments x10"
+        },
+        {
+          "reward": "20:250015400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Mid Fragments x10"
+        },
+        {
+          "reward": "20:250018500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Blades of Black Flame Raegen Fragments x10"
+        },
+        {
+          "reward": "20:250018600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Red-Eyed Sage Sol Fragments x10"
+        },
+        {
+          "reward": "20:250019500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Snovlinka Fragments x10"
+        },
+        {
+          "reward": "20:250019600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Riddar Fragments x10"
+        },
+        {
+          "reward": "20:250020900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Grand Couture Ayaka Fragments x10"
+        },
+        {
+          "reward": "20:250021600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cursebringer Neilikka Fragments x10"
+        },
+        {
+          "reward": "20:250022500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Petite Jewel Lehftia Fragments x10"
+        },
+        {
+          "reward": "20:250021700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dragonlord Rhus Fragments x10"
+        },
+        {
+          "reward": "20:250022200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Bewitching Warrior Yshe Fragments x10"
+        },
+        {
+          "reward": "20:250028100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lasswell -Esper of Destruction- Fragments x10"
+        },
+        {
+          "reward": "20:250028800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Charlotte -Esper of Destruction- Fragments x10"
+        },
+        {
+          "reward": "20:250028500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dark Fina -Esper of Destruction- Fragments x10"
+        },
+        {
+          "reward": "20:250027500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Magic Markswoman Physalis Fragments x10"
+        },
+        {
+          "reward": "20:250027600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Metze Fragments x10"
+        },
+        {
+          "reward": "20:250007600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Fledgling Warrior Fragments x10"
+        },
+        {
+          "reward": "20:250007700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Marilith Fragments x10"
+        },
+        {
+          "reward": "20:250023100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Princess of Cornelia Sarah Fragments x10"
+        },
+        {
+          "reward": "20:250000170:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Firion -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250010000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Emperor of Palamecia Fragments x10"
+        },
+        {
+          "reward": "20:250010100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ricard & Wyvern Fragments x10"
+        },
+        {
+          "reward": "20:250000310:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Onion Knight -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250013500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Red Mage Ingus Fragments x10"
+        },
+        {
+          "reward": "20:250023000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Evoker Fragments x10"
+        },
+        {
+          "reward": "20:250005000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dragoon Kain Fragments x10"
+        },
+        {
+          "reward": "20:250005100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Summoner Rydia Fragments x10"
+        },
+        {
+          "reward": "20:250005500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ninja Edge Fragments x10"
+        },
+        {
+          "reward": "20:250012900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "The Red Wings's Cecil Fragments x10"
+        },
+        {
+          "reward": "20:250013000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "White Mage of Benediction Rosa Fragments x10"
+        },
+        {
+          "reward": "20:250000620:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Faris -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250004200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Summoner Lenna Fragments x10"
+        },
+        {
+          "reward": "20:250004300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Warrior of Dawn Dorgann Fragments x10"
+        },
+        {
+          "reward": "20:250014900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "World Wayfarer Bartz Fragments x10"
+        },
+        {
+          "reward": "20:250015000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "White Mage Krile Fragments x10"
+        },
+        {
+          "reward": "20:250015200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "World's Hero Gilgamesh Fragments x10"
+        },
+        {
+          "reward": "20:250023900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "King of Bal Galuf Fragments x10"
+        },
+        {
+          "reward": "20:250000340:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Terra -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250000400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Locke -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250001500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Triumphant General Celes Fragments x10"
+        },
+        {
+          "reward": "20:250001600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Doma Samurai Cyan Fragments x10"
+        },
+        {
+          "reward": "20:250013700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Embracer of Duty Edgar Fragments x10"
+        },
+        {
+          "reward": "20:250013800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Embracer of Freedom Sabin Fragments x10"
+        },
+        {
+          "reward": "20:250024700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Fastest in the Skies Setzer Fragments x10"
+        },
+        {
+          "reward": "20:250000010:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cloud (FFVII REMAKE) Fragments x10"
+        },
+        {
+          "reward": "20:250000060:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Aerith (FFVII REMAKE) Fragments x10"
+        },
+        {
+          "reward": "20:250017300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Angeal Fragments x10"
+        },
+        {
+          "reward": "20:250017400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Genesis Fragments x10"
+        },
+        {
+          "reward": "20:250014400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Avalanche's Barret Fragments x10"
+        },
+        {
+          "reward": "20:250006700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Rinoa & Angelo Fragments x10"
+        },
+        {
+          "reward": "20:250007000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Laguna Fragments x10"
+        },
+        {
+          "reward": "20:250007100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Kiros & Ward Fragments x10"
+        },
+        {
+          "reward": "20:250017900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "SeeD's Blue Mage Quistis Fragments x10"
+        },
+        {
+          "reward": "20:250018200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Expert Sharpshooter Irvine Fragments x10"
+        },
+        {
+          "reward": "20:250000810:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lightning-Fast Zidane Fragments x10"
+        },
+        {
+          "reward": "20:250000820:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Pure-Hearted Vivi Fragments x10"
+        },
+        {
+          "reward": "20:250012400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Determined Dagger Fragments x10"
+        },
+        {
+          "reward": "20:250012500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Planet Destroyer Kuja Fragments x10"
+        },
+        {
+          "reward": "20:250019800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Thief of Tantalus Zidane Fragments x10"
+        },
+        {
+          "reward": "20:250020100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Knights of Pluto Captain Steiner Fragments x10"
+        },
+        {
+          "reward": "20:250019900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Little Summoner Eiko Fragments x10"
+        },
+        {
+          "reward": "20:250020400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Gastronomist Quina Fragments x10"
+        },
+        {
+          "reward": "20:250003500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Al Bhed Girl Rikku Fragments x10"
+        },
+        {
+          "reward": "20:250011400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Besaid Mage Lulu Fragments x10"
+        },
+        {
+          "reward": "20:250011800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ronso Warrior Kimahri Fragments x10"
+        },
+        {
+          "reward": "20:250030100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Bewitching Black Mage Lulu Fragments x10"
+        },
+        {
+          "reward": "20:250000940:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Royal Puppeteer Aphmau Fragments x10"
+        },
+        {
+          "reward": "20:250016600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lady Shantotto Fragments x10"
+        },
+        {
+          "reward": "20:250016700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lion Fragments x10"
+        },
+        {
+          "reward": "20:250000140:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Gabranth -Neo Vision- Fragments x10"
+        },
+        {
+          "reward": "20:250010500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Fleetfooted Sky Pirate Balthier Fragments x10"
+        },
+        {
+          "reward": "20:250010600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dynast-King's Scion Ashe Fragments x10"
+        },
+        {
+          "reward": "20:250010800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Youth from Rabanastre Vaan Fragments x10"
+        },
+        {
+          "reward": "20:250031900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Spirited Friend Penelo Fragments x10"
+        },
+        {
+          "reward": "20:250031700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Princess of Liberty Ashe Fragments x10"
+        },
+        {
+          "reward": "20:250020800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Challenger of Fate Hope Fragments x10"
+        },
+        {
+          "reward": "20:250021200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Denial of Focus Vanille Fragments x10"
+        },
+        {
+          "reward": "20:250021400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Loving Father Sazh Fragments x10"
+        },
+        {
+          "reward": "20:250000770:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Oracle Maiden Lunafreya Fragments x10"
+        },
+        {
+          "reward": "20:250000710:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cobalt Blade Noctis Fragments x10"
+        },
+        {
+          "reward": "20:250000720:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vermilion Blade Ardyn Fragments x10"
+        },
+        {
+          "reward": "20:250025400:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Chosen King's Shield Gladiolus Fragments x10"
+        },
+        {
+          "reward": "20:250025100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Chosen King's Tactician Ignis Fragments x10"
+        },
+        {
+          "reward": "20:250025300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Chosen King's Friend Prompto Fragments x10"
+        },
+        {
+          "reward": "20:250033200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Clive Rosfield Fragments x10"
+        },
+        {
+          "reward": "20:250033300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Jill Warrick Fragments x10"
+        },
+        {
+          "reward": "20:250033500:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cidolfus Telamon Fragments x10"
+        },
+        {
+          "reward": "20:250033600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Benedikta Harman Fragments x10"
+        },
+        {
+          "reward": "20:250012100:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Songstress Yuna Fragments x10"
+        },
+        {
+          "reward": "20:250012200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Berserker Rikku Fragments x10"
+        },
+        {
+          "reward": "20:250012300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dark Knight Paine Fragments x10"
+        },
+        {
+          "reward": "20:250024300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Steadfast Knight Agrias Fragments x10"
+        },
+        {
+          "reward": "20:250001700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ice Reaper Kurasame Fragments x10"
+        },
+        {
+          "reward": "20:250018800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vermilion Class Zero Ace Fragments x10"
+        },
+        {
+          "reward": "20:250019300:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vermilion Class Zero Trey Fragments x10"
+        },
+        {
+          "reward": "20:250019000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Vermilion Class Zero Deuce Fragments x10"
+        },
+        {
+          "reward": "20:250000600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Solitary Patron Snow Fragments x10"
+        },
+        {
+          "reward": "20:250000530:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Savior of Souls Lightning Fragments x10"
+        },
+        {
+          "reward": "20:310000590:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Starlight Elena Fragments x10"
+        },
+        {
+          "reward": "20:310000600:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Yoshikiri Fragments x10"
+        },
+        {
+          "reward": "20:310000610:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ibara Fragments x10"
+        },
+        {
+          "reward": "20:310000640:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Eldryn Fragments x10"
+        },
+        {
+          "reward": "20:310000720:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Noppy Fragments x10"
+        },
+        {
+          "reward": "20:310000760:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ygni Fragments x10"
+        },
+        {
+          "reward": "20:310000790:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cressnik Fragments x10"
+        },
+        {
+          "reward": "20:310000800:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Bulwark & the Melodic Mascots Fragments x10"
+        },
+        {
+          "reward": "20:310000710:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Kaktiria Fragments x10"
+        },
+        {
+          "reward": "20:310000700:10",
+          "price": 1,
+          "limit": 35,
+          "label": "King Behemy Fragments x10"
+        },
+        {
+          "reward": "20:310000670:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Shui Yu Fragments x10"
+        },
+        {
+          "reward": "20:310000690:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Melia Fragments x10"
+        },
+        {
+          "reward": "20:310000740:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Louise Fragments x10"
+        },
+        {
+          "reward": "20:310000730:10",
+          "price": 1,
+          "limit": 35,
+          "label": "White Dragon Ling Fragments x10"
+        },
+        {
+          "reward": "20:310000780:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Skye Fragments x10"
+        },
+        {
+          "reward": "20:310000830:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Olivera Fragments x10"
+        },
+        {
+          "reward": "20:310000820:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Full Moon Karten Fragments x10"
+        },
+        {
+          "reward": "20:310000840:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Maeve Fragments x10"
+        },
+        {
+          "reward": "20:310000850:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Whimsical Winter Tiana Fragments x10"
+        },
+        {
+          "reward": "20:310000860:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Divine Beast Chow Fragments x10"
+        },
+        {
+          "reward": "20:310000880:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Reberta & Ignitos Fragments x10"
+        },
+        {
+          "reward": "20:310000890:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Frostblade Fryevia Fragments x10"
+        },
+        {
+          "reward": "20:310000900:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Tide Bringer Kaito Fragments x10"
+        },
+        {
+          "reward": "20:310000920:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Paladin Sylvie Fragments x10"
+        },
+        {
+          "reward": "20:310000930:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Samurai Chizuru Fragments x10"
+        },
+        {
+          "reward": "20:310000940:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Beach Blaster Olive Fragments x10"
+        },
+        {
+          "reward": "20:310000950:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Shrine Maiden Tsukiko Fragments x10"
+        },
+        {
+          "reward": "20:310000960:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Elegant Temptress Lilith Fragments x10"
+        },
+        {
+          "reward": "20:310000990:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Cheerful Caroler Ayaka Fragments x10"
+        },
+        {
+          "reward": "20:310001000:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Lunar Festival Cleome Fragments x10"
+        },
+        {
+          "reward": "20:310001010:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Master Machinist Abigail Fragments x10"
+        },
+        {
+          "reward": "20:310001020:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Curse of Immunity Melissa Fragments x10"
+        },
+        {
+          "reward": "20:310001040:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Dark Knight Duane Fragments x10"
+        },
+        {
+          "reward": "20:310001050:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ruin Explorer Nora Fragments x10"
+        },
+        {
+          "reward": "20:310001090:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Wings of Midnight Malphasie Fragments x10"
+        },
+        {
+          "reward": "20:310001120:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Arcane Scholar Kir Fragments x10"
+        },
+        {
+          "reward": "20:310001130:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Blood Dancer Ellesperis Fragments x10"
+        },
+        {
+          "reward": "20:310001140:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Guardian of the Underworld Chow Fragments x10"
+        },
+        {
+          "reward": "20:310001170:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Ghost of Winter Past Beryl Fragments x10"
+        },
+        {
+          "reward": "20:310001180:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Chains of Fate Mirei Fragments x10"
+        },
+        {
+          "reward": "20:310001190:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Divine Archer Ang Fragments x10"
+        },
+        {
+          "reward": "20:310001200:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Blood Mage Zyrus Fragments x10"
+        },
+        {
+          "reward": "20:310001210:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Winged Officer Celeste Fragments x10"
+        },
+        {
+          "reward": "20:310001220:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Phantom Thief Xon Fragments x10"
+        },
+        {
+          "reward": "20:310001240:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Fundamental Force Fragments x10"
+        },
+        {
+          "reward": "20:310001230:10",
+          "price": 1,
+          "limit": 35,
+          "label": "Eithne Fragments x10"
+        },
+        {
+          "reward": "20:310001250:10",
+          "price": 2,
+          "limit": 35,
+          "label": "Imperial Shield Wilhelm Fragments x10"
+        }
+      ],
+      "evidence": {
+        "status": "Reconstructed missing final Global server fragment catalogue; not recovered retail product rows.",
+        "source": "https://www.reddit.com/r/FFBraveExvius/comments/1f47u1p/psa_for_maxing_out_your_team_for_those_looking_to/",
+        "eithne_source": "https://www.reddit.com/r/FFBraveExvius/comments/1f47u1p/comment/lkjop4o/",
+        "recovered": "Original 2104 currency; original 194-unit 2102 roster; each approved unit exact NV_EX_CLASS_UP fragment item; guide final cap 35 and Wilhelm double price.",
+        "reconstructed": "Fragment eligibility anchored to the original 194-unit selection plus explicitly documented Wilhelm and Eithne. Ten fragments per purchase and one ticket for other units follow the original 1670 fragment-select convention. This does not claim the complete historical premium-unit roster or every historical premium price was recovered.",
+        "sources": [
+          {
+            "archive": "source/build/distribution/assets/exvius-data-001.zip",
+            "member": "static/mst_decoded/F_MEDAL_EXCHANGE_MST.ndjson",
+            "sha256": "038fcc8ed65d9f591f53d1df8b0ea83a73f1f3e1cdabea4150ecaf3759581278"
+          },
+          {
+            "archive": "source/build/distribution/assets/exvius-data-001.zip",
+            "member": "static/mst_decoded/F_NV_EX_CLASS_UP_MST.ndjson",
+            "sha256": "682f8809ec38164d369f50e06bba904b280300226cceed6006cf9284e6bfc9ff"
+          },
+          {
+            "archive": "source/build/distribution/assets/exvius-data-001.zip",
+            "member": "static/mst_decoded/F_ITEM_MST.ndjson",
+            "sha256": "b233de9d6af717d62dec5d2158006cdbc92f5f78eadeb000334b901952d86e5b"
+          }
+        ],
+        "unit_fragment_bindings": [
+          {
+            "unit_id": "100031007",
+            "ex_series_id": "100031007",
+            "fragment_item_id": "250000040"
+          },
+          {
+            "unit_id": "100031507",
+            "ex_series_id": "100031507",
+            "fragment_item_id": "250000080"
+          },
+          {
+            "unit_id": "100031607",
+            "ex_series_id": "100031607",
+            "fragment_item_id": "250000110"
+          },
+          {
+            "unit_id": "100031707",
+            "ex_series_id": "100031707",
+            "fragment_item_id": "250000200"
+          },
+          {
+            "unit_id": "100031907",
+            "ex_series_id": "100031907",
+            "fragment_item_id": "250000230"
+          },
+          {
+            "unit_id": "100032207",
+            "ex_series_id": "100032207",
+            "fragment_item_id": "250000280"
+          },
+          {
+            "unit_id": "100032607",
+            "ex_series_id": "100032607",
+            "fragment_item_id": "250000370"
+          },
+          {
+            "unit_id": "100032707",
+            "ex_series_id": "100032707",
+            "fragment_item_id": "250000430"
+          },
+          {
+            "unit_id": "100032807",
+            "ex_series_id": "100032807",
+            "fragment_item_id": "250000440"
+          },
+          {
+            "unit_id": "100033007",
+            "ex_series_id": "100033007",
+            "fragment_item_id": "250000490"
+          },
+          {
+            "unit_id": "100033107",
+            "ex_series_id": "100033107",
+            "fragment_item_id": "250000500"
+          },
+          {
+            "unit_id": "100033207",
+            "ex_series_id": "100033207",
+            "fragment_item_id": "250000580"
+          },
+          {
+            "unit_id": "100033407",
+            "ex_series_id": "100033407",
+            "fragment_item_id": "250000650"
+          },
+          {
+            "unit_id": "100033907",
+            "ex_series_id": "100033907",
+            "fragment_item_id": "250000840"
+          },
+          {
+            "unit_id": "100034107",
+            "ex_series_id": "100034107",
+            "fragment_item_id": "250000850"
+          },
+          {
+            "unit_id": "100034307",
+            "ex_series_id": "100034307",
+            "fragment_item_id": "250000890"
+          },
+          {
+            "unit_id": "100034407",
+            "ex_series_id": "100034407",
+            "fragment_item_id": "250000900"
+          },
+          {
+            "unit_id": "100034707",
+            "ex_series_id": "100034707",
+            "fragment_item_id": "250001300"
+          },
+          {
+            "unit_id": "100035107",
+            "ex_series_id": "100035107",
+            "fragment_item_id": "250002300"
+          },
+          {
+            "unit_id": "100035307",
+            "ex_series_id": "100035307",
+            "fragment_item_id": "250002400"
+          },
+          {
+            "unit_id": "100035507",
+            "ex_series_id": "100035507",
+            "fragment_item_id": "250003800"
+          },
+          {
+            "unit_id": "100035807",
+            "ex_series_id": "100035807",
+            "fragment_item_id": "250002000"
+          },
+          {
+            "unit_id": "100037107",
+            "ex_series_id": "100037107",
+            "fragment_item_id": "250003900"
+          },
+          {
+            "unit_id": "100037207",
+            "ex_series_id": "100037207",
+            "fragment_item_id": "250004000"
+          },
+          {
+            "unit_id": "100037307",
+            "ex_series_id": "100037307",
+            "fragment_item_id": "250004500"
+          },
+          {
+            "unit_id": "100037507",
+            "ex_series_id": "100037507",
+            "fragment_item_id": "250005700"
+          },
+          {
+            "unit_id": "100037607",
+            "ex_series_id": "100037607",
+            "fragment_item_id": "250005800"
+          },
+          {
+            "unit_id": "100037907",
+            "ex_series_id": "100037907",
+            "fragment_item_id": "250006000"
+          },
+          {
+            "unit_id": "100038007",
+            "ex_series_id": "100038007",
+            "fragment_item_id": "250006200"
+          },
+          {
+            "unit_id": "100038207",
+            "ex_series_id": "100038207",
+            "fragment_item_id": "250006400"
+          },
+          {
+            "unit_id": "100038307",
+            "ex_series_id": "100038307",
+            "fragment_item_id": "250006500"
+          },
+          {
+            "unit_id": "100038407",
+            "ex_series_id": "100038407",
+            "fragment_item_id": "250008900"
+          },
+          {
+            "unit_id": "100038507",
+            "ex_series_id": "100038507",
+            "fragment_item_id": "250008800"
+          },
+          {
+            "unit_id": "100038807",
+            "ex_series_id": "100038807",
+            "fragment_item_id": "250007900"
+          },
+          {
+            "unit_id": "100038907",
+            "ex_series_id": "100038907",
+            "fragment_item_id": "250008000"
+          },
+          {
+            "unit_id": "100039007",
+            "ex_series_id": "100039007",
+            "fragment_item_id": "250008100"
+          },
+          {
+            "unit_id": "100039107",
+            "ex_series_id": "100039107",
+            "fragment_item_id": "250008300"
+          },
+          {
+            "unit_id": "100039307",
+            "ex_series_id": "100039307",
+            "fragment_item_id": "250008600"
+          },
+          {
+            "unit_id": "100039507",
+            "ex_series_id": "100039507",
+            "fragment_item_id": "250009000"
+          },
+          {
+            "unit_id": "100039607",
+            "ex_series_id": "100039607",
+            "fragment_item_id": "250009100"
+          },
+          {
+            "unit_id": "100039807",
+            "ex_series_id": "100039807",
+            "fragment_item_id": "250010200"
+          },
+          {
+            "unit_id": "100039907",
+            "ex_series_id": "100039907",
+            "fragment_item_id": "250010300"
+          },
+          {
+            "unit_id": "100040007",
+            "ex_series_id": "100040007",
+            "fragment_item_id": "250012000"
+          },
+          {
+            "unit_id": "100040107",
+            "ex_series_id": "100040107",
+            "fragment_item_id": "250012700"
+          },
+          {
+            "unit_id": "100040207",
+            "ex_series_id": "100040207",
+            "fragment_item_id": "250012800"
+          },
+          {
+            "unit_id": "100040307",
+            "ex_series_id": "100040307",
+            "fragment_item_id": "250014200"
+          },
+          {
+            "unit_id": "100040407",
+            "ex_series_id": "100040407",
+            "fragment_item_id": "250014700"
+          },
+          {
+            "unit_id": "100040507",
+            "ex_series_id": "100040507",
+            "fragment_item_id": "250014800"
+          },
+          {
+            "unit_id": "100040907",
+            "ex_series_id": "100040907",
+            "fragment_item_id": "250015700"
+          },
+          {
+            "unit_id": "100041007",
+            "ex_series_id": "100041007",
+            "fragment_item_id": "250016100"
+          },
+          {
+            "unit_id": "100041107",
+            "ex_series_id": "100041107",
+            "fragment_item_id": "250016200"
+          },
+          {
+            "unit_id": "100041307",
+            "ex_series_id": "100041307",
+            "fragment_item_id": "250016400"
+          },
+          {
+            "unit_id": "100041407",
+            "ex_series_id": "100041407",
+            "fragment_item_id": "250015400"
+          },
+          {
+            "unit_id": "100041707",
+            "ex_series_id": "100041707",
+            "fragment_item_id": "250018500"
+          },
+          {
+            "unit_id": "100041807",
+            "ex_series_id": "100041807",
+            "fragment_item_id": "250018600"
+          },
+          {
+            "unit_id": "100041907",
+            "ex_series_id": "100041907",
+            "fragment_item_id": "250019500"
+          },
+          {
+            "unit_id": "100042007",
+            "ex_series_id": "100042007",
+            "fragment_item_id": "250019600"
+          },
+          {
+            "unit_id": "100042307",
+            "ex_series_id": "100042307",
+            "fragment_item_id": "250020900"
+          },
+          {
+            "unit_id": "100042507",
+            "ex_series_id": "100042507",
+            "fragment_item_id": "250021600"
+          },
+          {
+            "unit_id": "100042607",
+            "ex_series_id": "100042607",
+            "fragment_item_id": "250022500"
+          },
+          {
+            "unit_id": "100042807",
+            "ex_series_id": "100042807",
+            "fragment_item_id": "250021700"
+          },
+          {
+            "unit_id": "100042907",
+            "ex_series_id": "100042907",
+            "fragment_item_id": "250022200"
+          },
+          {
+            "unit_id": "100043107",
+            "ex_series_id": "100043107",
+            "fragment_item_id": "250028100"
+          },
+          {
+            "unit_id": "100043507",
+            "ex_series_id": "100043507",
+            "fragment_item_id": "250028800"
+          },
+          {
+            "unit_id": "100043607",
+            "ex_series_id": "100043607",
+            "fragment_item_id": "250028500"
+          },
+          {
+            "unit_id": "100044107",
+            "ex_series_id": "100044107",
+            "fragment_item_id": "250027500"
+          },
+          {
+            "unit_id": "100044207",
+            "ex_series_id": "100044207",
+            "fragment_item_id": "250027600"
+          },
+          {
+            "unit_id": "201000607",
+            "ex_series_id": "201000607",
+            "fragment_item_id": "250007600"
+          },
+          {
+            "unit_id": "201000707",
+            "ex_series_id": "201000707",
+            "fragment_item_id": "250007700"
+          },
+          {
+            "unit_id": "201000807",
+            "ex_series_id": "201000807",
+            "fragment_item_id": "250023100"
+          },
+          {
+            "unit_id": "202001907",
+            "ex_series_id": "202001907",
+            "fragment_item_id": "250000170"
+          },
+          {
+            "unit_id": "202002307",
+            "ex_series_id": "202002307",
+            "fragment_item_id": "250010000"
+          },
+          {
+            "unit_id": "202002407",
+            "ex_series_id": "202002407",
+            "fragment_item_id": "250010100"
+          },
+          {
+            "unit_id": "203004207",
+            "ex_series_id": "203004207",
+            "fragment_item_id": "250000310"
+          },
+          {
+            "unit_id": "203004407",
+            "ex_series_id": "203004407",
+            "fragment_item_id": "250013500"
+          },
+          {
+            "unit_id": "203004507",
+            "ex_series_id": "203004507",
+            "fragment_item_id": "250023000"
+          },
+          {
+            "unit_id": "204002907",
+            "ex_series_id": "204002907",
+            "fragment_item_id": "250005000"
+          },
+          {
+            "unit_id": "204003007",
+            "ex_series_id": "204003007",
+            "fragment_item_id": "250005100"
+          },
+          {
+            "unit_id": "204003107",
+            "ex_series_id": "204003107",
+            "fragment_item_id": "250005500"
+          },
+          {
+            "unit_id": "204003207",
+            "ex_series_id": "204003207",
+            "fragment_item_id": "250012900"
+          },
+          {
+            "unit_id": "204003307",
+            "ex_series_id": "204003307",
+            "fragment_item_id": "250013000"
+          },
+          {
+            "unit_id": "205001407",
+            "ex_series_id": "205001407",
+            "fragment_item_id": "250000620"
+          },
+          {
+            "unit_id": "205001607",
+            "ex_series_id": "205001607",
+            "fragment_item_id": "250004200"
+          },
+          {
+            "unit_id": "205001707",
+            "ex_series_id": "205001707",
+            "fragment_item_id": "250004300"
+          },
+          {
+            "unit_id": "205001807",
+            "ex_series_id": "205001807",
+            "fragment_item_id": "250014900"
+          },
+          {
+            "unit_id": "205001907",
+            "ex_series_id": "205001907",
+            "fragment_item_id": "250015000"
+          },
+          {
+            "unit_id": "205002007",
+            "ex_series_id": "205002007",
+            "fragment_item_id": "250015200"
+          },
+          {
+            "unit_id": "205002207",
+            "ex_series_id": "205002207",
+            "fragment_item_id": "250023900"
+          },
+          {
+            "unit_id": "206002507",
+            "ex_series_id": "206002507",
+            "fragment_item_id": "250000340"
+          },
+          {
+            "unit_id": "206002607",
+            "ex_series_id": "206002607",
+            "fragment_item_id": "250000400"
+          },
+          {
+            "unit_id": "206002807",
+            "ex_series_id": "206002807",
+            "fragment_item_id": "250001500"
+          },
+          {
+            "unit_id": "206002907",
+            "ex_series_id": "206002907",
+            "fragment_item_id": "250001600"
+          },
+          {
+            "unit_id": "206003207",
+            "ex_series_id": "206003207",
+            "fragment_item_id": "250013700"
+          },
+          {
+            "unit_id": "206003307",
+            "ex_series_id": "206003307",
+            "fragment_item_id": "250013800"
+          },
+          {
+            "unit_id": "206003507",
+            "ex_series_id": "206003507",
+            "fragment_item_id": "250024700"
+          },
+          {
+            "unit_id": "207002007",
+            "ex_series_id": "207002007",
+            "fragment_item_id": "250000010"
+          },
+          {
+            "unit_id": "207002207",
+            "ex_series_id": "207002207",
+            "fragment_item_id": "250000060"
+          },
+          {
+            "unit_id": "207002707",
+            "ex_series_id": "207002707",
+            "fragment_item_id": "250017300"
+          },
+          {
+            "unit_id": "207002807",
+            "ex_series_id": "207002807",
+            "fragment_item_id": "250017400"
+          },
+          {
+            "unit_id": "207003207",
+            "ex_series_id": "207003207",
+            "fragment_item_id": "250014400"
+          },
+          {
+            "unit_id": "208002107",
+            "ex_series_id": "208002107",
+            "fragment_item_id": "250006700"
+          },
+          {
+            "unit_id": "208002207",
+            "ex_series_id": "208002207",
+            "fragment_item_id": "250007000"
+          },
+          {
+            "unit_id": "208002307",
+            "ex_series_id": "208002307",
+            "fragment_item_id": "250007100"
+          },
+          {
+            "unit_id": "208002607",
+            "ex_series_id": "208002607",
+            "fragment_item_id": "250017900"
+          },
+          {
+            "unit_id": "208002707",
+            "ex_series_id": "208002707",
+            "fragment_item_id": "250018200"
+          },
+          {
+            "unit_id": "209002807",
+            "ex_series_id": "209002807",
+            "fragment_item_id": "250000810"
+          },
+          {
+            "unit_id": "209002907",
+            "ex_series_id": "209002907",
+            "fragment_item_id": "250000820"
+          },
+          {
+            "unit_id": "209003107",
+            "ex_series_id": "209003107",
+            "fragment_item_id": "250012400"
+          },
+          {
+            "unit_id": "209003207",
+            "ex_series_id": "209003207",
+            "fragment_item_id": "250012500"
+          },
+          {
+            "unit_id": "209003407",
+            "ex_series_id": "209003407",
+            "fragment_item_id": "250019800"
+          },
+          {
+            "unit_id": "209003507",
+            "ex_series_id": "209003507",
+            "fragment_item_id": "250020100"
+          },
+          {
+            "unit_id": "209003607",
+            "ex_series_id": "209003607",
+            "fragment_item_id": "250019900"
+          },
+          {
+            "unit_id": "209003707",
+            "ex_series_id": "209003707",
+            "fragment_item_id": "250020400"
+          },
+          {
+            "unit_id": "210002207",
+            "ex_series_id": "210002207",
+            "fragment_item_id": "250003500"
+          },
+          {
+            "unit_id": "210002507",
+            "ex_series_id": "210002507",
+            "fragment_item_id": "250011400"
+          },
+          {
+            "unit_id": "210002707",
+            "ex_series_id": "210002707",
+            "fragment_item_id": "250011800"
+          },
+          {
+            "unit_id": "210003007",
+            "ex_series_id": "210003007",
+            "fragment_item_id": "250030100"
+          },
+          {
+            "unit_id": "211001507",
+            "ex_series_id": "211001507",
+            "fragment_item_id": "250000940"
+          },
+          {
+            "unit_id": "211001607",
+            "ex_series_id": "211001607",
+            "fragment_item_id": "250016600"
+          },
+          {
+            "unit_id": "211001707",
+            "ex_series_id": "211001707",
+            "fragment_item_id": "250016700"
+          },
+          {
+            "unit_id": "212002207",
+            "ex_series_id": "212002207",
+            "fragment_item_id": "250000140"
+          },
+          {
+            "unit_id": "212002407",
+            "ex_series_id": "212002407",
+            "fragment_item_id": "250010500"
+          },
+          {
+            "unit_id": "212002507",
+            "ex_series_id": "212002507",
+            "fragment_item_id": "250010600"
+          },
+          {
+            "unit_id": "212002607",
+            "ex_series_id": "212002607",
+            "fragment_item_id": "250010800"
+          },
+          {
+            "unit_id": "212002807",
+            "ex_series_id": "212002807",
+            "fragment_item_id": "250031900"
+          },
+          {
+            "unit_id": "212002907",
+            "ex_series_id": "212002907",
+            "fragment_item_id": "250031700"
+          },
+          {
+            "unit_id": "213001507",
+            "ex_series_id": "213001507",
+            "fragment_item_id": "250020800"
+          },
+          {
+            "unit_id": "213001707",
+            "ex_series_id": "213001707",
+            "fragment_item_id": "250021200"
+          },
+          {
+            "unit_id": "213001807",
+            "ex_series_id": "213001807",
+            "fragment_item_id": "250021400"
+          },
+          {
+            "unit_id": "215002407",
+            "ex_series_id": "215002407",
+            "fragment_item_id": "250000770"
+          },
+          {
+            "unit_id": "215002907",
+            "ex_series_id": "215002907",
+            "fragment_item_id": "250000710"
+          },
+          {
+            "unit_id": "215003007",
+            "ex_series_id": "215003007",
+            "fragment_item_id": "250000720"
+          },
+          {
+            "unit_id": "215003207",
+            "ex_series_id": "215003207",
+            "fragment_item_id": "250025400"
+          },
+          {
+            "unit_id": "215003307",
+            "ex_series_id": "215003307",
+            "fragment_item_id": "250025100"
+          },
+          {
+            "unit_id": "215003407",
+            "ex_series_id": "215003407",
+            "fragment_item_id": "250025300"
+          },
+          {
+            "unit_id": "216000107",
+            "ex_series_id": "216000107",
+            "fragment_item_id": "250033200"
+          },
+          {
+            "unit_id": "216000207",
+            "ex_series_id": "216000207",
+            "fragment_item_id": "250033300"
+          },
+          {
+            "unit_id": "216000307",
+            "ex_series_id": "216000307",
+            "fragment_item_id": "250033500"
+          },
+          {
+            "unit_id": "216000407",
+            "ex_series_id": "216000407",
+            "fragment_item_id": "250033600"
+          },
+          {
+            "unit_id": "249000407",
+            "ex_series_id": "249000407",
+            "fragment_item_id": "250012100"
+          },
+          {
+            "unit_id": "249000507",
+            "ex_series_id": "249000507",
+            "fragment_item_id": "250012200"
+          },
+          {
+            "unit_id": "249000607",
+            "ex_series_id": "249000607",
+            "fragment_item_id": "250012300"
+          },
+          {
+            "unit_id": "253002007",
+            "ex_series_id": "253002007",
+            "fragment_item_id": "250024300"
+          },
+          {
+            "unit_id": "254002207",
+            "ex_series_id": "254002207",
+            "fragment_item_id": "250001700"
+          },
+          {
+            "unit_id": "254002307",
+            "ex_series_id": "254002307",
+            "fragment_item_id": "250018800"
+          },
+          {
+            "unit_id": "254002507",
+            "ex_series_id": "254002507",
+            "fragment_item_id": "250019300"
+          },
+          {
+            "unit_id": "254002607",
+            "ex_series_id": "254002607",
+            "fragment_item_id": "250019000"
+          },
+          {
+            "unit_id": "258000107",
+            "ex_series_id": "258000107",
+            "fragment_item_id": "250000600"
+          },
+          {
+            "unit_id": "258000207",
+            "ex_series_id": "258000207",
+            "fragment_item_id": "250000530"
+          },
+          {
+            "unit_id": "401009907",
+            "ex_series_id": "401009907",
+            "fragment_item_id": "310000590"
+          },
+          {
+            "unit_id": "401010007",
+            "ex_series_id": "401010007",
+            "fragment_item_id": "310000600"
+          },
+          {
+            "unit_id": "401010107",
+            "ex_series_id": "401010107",
+            "fragment_item_id": "310000610"
+          },
+          {
+            "unit_id": "401010207",
+            "ex_series_id": "401010207",
+            "fragment_item_id": "310000640"
+          },
+          {
+            "unit_id": "401010407",
+            "ex_series_id": "401010407",
+            "fragment_item_id": "310000720"
+          },
+          {
+            "unit_id": "401010507",
+            "ex_series_id": "401010507",
+            "fragment_item_id": "310000760"
+          },
+          {
+            "unit_id": "401010607",
+            "ex_series_id": "401010607",
+            "fragment_item_id": "310000790"
+          },
+          {
+            "unit_id": "401010707",
+            "ex_series_id": "401010707",
+            "fragment_item_id": "310000800"
+          },
+          {
+            "unit_id": "401010807",
+            "ex_series_id": "401010807",
+            "fragment_item_id": "310000710"
+          },
+          {
+            "unit_id": "401010907",
+            "ex_series_id": "401010907",
+            "fragment_item_id": "310000700"
+          },
+          {
+            "unit_id": "401011207",
+            "ex_series_id": "401011207",
+            "fragment_item_id": "310000670"
+          },
+          {
+            "unit_id": "401011307",
+            "ex_series_id": "401011307",
+            "fragment_item_id": "310000690"
+          },
+          {
+            "unit_id": "401011607",
+            "ex_series_id": "401011607",
+            "fragment_item_id": "310000740"
+          },
+          {
+            "unit_id": "401011707",
+            "ex_series_id": "401011707",
+            "fragment_item_id": "310000730"
+          },
+          {
+            "unit_id": "401011907",
+            "ex_series_id": "401011907",
+            "fragment_item_id": "310000780"
+          },
+          {
+            "unit_id": "401012107",
+            "ex_series_id": "401012107",
+            "fragment_item_id": "310000830"
+          },
+          {
+            "unit_id": "401012207",
+            "ex_series_id": "401012207",
+            "fragment_item_id": "310000820"
+          },
+          {
+            "unit_id": "401012307",
+            "ex_series_id": "401012307",
+            "fragment_item_id": "310000840"
+          },
+          {
+            "unit_id": "401012507",
+            "ex_series_id": "401012507",
+            "fragment_item_id": "310000850"
+          },
+          {
+            "unit_id": "401012707",
+            "ex_series_id": "401012707",
+            "fragment_item_id": "310000860"
+          },
+          {
+            "unit_id": "401012907",
+            "ex_series_id": "401012907",
+            "fragment_item_id": "310000880"
+          },
+          {
+            "unit_id": "401013007",
+            "ex_series_id": "401013007",
+            "fragment_item_id": "310000890"
+          },
+          {
+            "unit_id": "401013107",
+            "ex_series_id": "401013107",
+            "fragment_item_id": "310000900"
+          },
+          {
+            "unit_id": "401013307",
+            "ex_series_id": "401013307",
+            "fragment_item_id": "310000920"
+          },
+          {
+            "unit_id": "401013407",
+            "ex_series_id": "401013407",
+            "fragment_item_id": "310000930"
+          },
+          {
+            "unit_id": "401013507",
+            "ex_series_id": "401013507",
+            "fragment_item_id": "310000940"
+          },
+          {
+            "unit_id": "401013607",
+            "ex_series_id": "401013607",
+            "fragment_item_id": "310000950"
+          },
+          {
+            "unit_id": "401013707",
+            "ex_series_id": "401013707",
+            "fragment_item_id": "310000960"
+          },
+          {
+            "unit_id": "401014007",
+            "ex_series_id": "401014007",
+            "fragment_item_id": "310000990"
+          },
+          {
+            "unit_id": "401014107",
+            "ex_series_id": "401014107",
+            "fragment_item_id": "310001000"
+          },
+          {
+            "unit_id": "401014207",
+            "ex_series_id": "401014207",
+            "fragment_item_id": "310001010"
+          },
+          {
+            "unit_id": "401014307",
+            "ex_series_id": "401014307",
+            "fragment_item_id": "310001020"
+          },
+          {
+            "unit_id": "401014507",
+            "ex_series_id": "401014507",
+            "fragment_item_id": "310001040"
+          },
+          {
+            "unit_id": "401014607",
+            "ex_series_id": "401014607",
+            "fragment_item_id": "310001050"
+          },
+          {
+            "unit_id": "401015007",
+            "ex_series_id": "401015007",
+            "fragment_item_id": "310001090"
+          },
+          {
+            "unit_id": "401015107",
+            "ex_series_id": "401015107",
+            "fragment_item_id": "310001120"
+          },
+          {
+            "unit_id": "401015207",
+            "ex_series_id": "401015207",
+            "fragment_item_id": "310001130"
+          },
+          {
+            "unit_id": "401015507",
+            "ex_series_id": "401015507",
+            "fragment_item_id": "310001140"
+          },
+          {
+            "unit_id": "401015807",
+            "ex_series_id": "401015807",
+            "fragment_item_id": "310001170"
+          },
+          {
+            "unit_id": "401015907",
+            "ex_series_id": "401015907",
+            "fragment_item_id": "310001180"
+          },
+          {
+            "unit_id": "401016007",
+            "ex_series_id": "401016007",
+            "fragment_item_id": "310001190"
+          },
+          {
+            "unit_id": "401016107",
+            "ex_series_id": "401016107",
+            "fragment_item_id": "310001200"
+          },
+          {
+            "unit_id": "401016207",
+            "ex_series_id": "401016207",
+            "fragment_item_id": "310001210"
+          },
+          {
+            "unit_id": "401016307",
+            "ex_series_id": "401016307",
+            "fragment_item_id": "310001220"
+          },
+          {
+            "unit_id": "401016407",
+            "ex_series_id": "401016407",
+            "fragment_item_id": "310001240"
+          },
+          {
+            "unit_id": "401016507",
+            "ex_series_id": "401016507",
+            "fragment_item_id": "310001230"
+          },
+          {
+            "unit_id": "401016607",
+            "ex_series_id": "401016607",
+            "fragment_item_id": "310001250"
+          }
+        ]
+      }
     }
   ]
 }

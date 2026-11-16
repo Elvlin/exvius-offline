@@ -1,0 +1,2048 @@
+{
+  "version": 1,
+  "source": "Original Global F_CHALLENGE_MST party-turn targets and the current exact served mission phase/group graph.",
+  "challenge_sha256": "68641a50f19c9f51b6862fff1ef6928a126902c08963db9929c8d04a2f97fef3",
+  "semantics": "Native69ieJGhD is wave:actualBattleGroupID:turns. Each alias requires an actual logged group, and a matching wave when specified. No overall-mission-turn fallback and no guessed suffix mapping.",
+  "missions": {
+    "7430103": {
+      "743010303": {
+        "aliases": [
+          {
+            "phase": "3",
+            "group": "1700000325",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "74301032",
+            "condition": "77:743010303:5"
+          }
+        ]
+      }
+    },
+    "7430107": {
+      "743010303": {
+        "aliases": [
+          {
+            "phase": "3",
+            "group": "1700000337",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "74301072",
+            "condition": "77:743010303:5"
+          }
+        ]
+      }
+    },
+    "8120805": {
+      "812080501": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "812080401",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "81208052",
+            "condition": "77:812080501:5"
+          }
+        ]
+      }
+    },
+    "8250101": {
+      "825010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000937",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "82501013",
+            "condition": "77:825010101:10"
+          }
+        ]
+      }
+    },
+    "8440101": {
+      "844010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000876",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "84401012",
+            "condition": "77:844010101:10"
+          }
+        ]
+      }
+    },
+    "9630601": {
+      "900011404": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000127",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96306011",
+            "condition": "77:900011404:5"
+          },
+          {
+            "challenge": "96306012",
+            "condition": "77:900011404:10"
+          },
+          {
+            "challenge": "96306013",
+            "condition": "77:900011404:15"
+          }
+        ]
+      }
+    },
+    "9630602": {
+      "900011405": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000128",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96306022",
+            "condition": "77:900011405:10"
+          },
+          {
+            "challenge": "96306023",
+            "condition": "77:900011405:15"
+          }
+        ]
+      }
+    },
+    "9630603": {
+      "900011406": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000129",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96306032",
+            "condition": "77:900011406:10"
+          },
+          {
+            "challenge": "96306033",
+            "condition": "77:900011406:15"
+          }
+        ]
+      }
+    },
+    "9630701": {
+      "900011597": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000130",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96307011",
+            "condition": "77:900011597:5"
+          },
+          {
+            "challenge": "96307012",
+            "condition": "77:900011597:10"
+          },
+          {
+            "challenge": "96307013",
+            "condition": "77:900011597:15"
+          }
+        ]
+      }
+    },
+    "9630702": {
+      "900011598": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000131",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96307022",
+            "condition": "77:900011598:10"
+          },
+          {
+            "challenge": "96307023",
+            "condition": "77:900011598:15"
+          }
+        ]
+      }
+    },
+    "9630703": {
+      "900011599": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000132",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "96307032",
+            "condition": "77:900011599:10"
+          },
+          {
+            "challenge": "96307033",
+            "condition": "77:900011599:15"
+          }
+        ]
+      }
+    },
+    "9810102": {
+      "741010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000973",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "98101021",
+            "condition": "76:741010101:10"
+          }
+        ]
+      }
+    },
+    "10120101": {
+      "825010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000938",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "101201014",
+            "condition": "77:825010101:10"
+          }
+        ]
+      }
+    },
+    "10150101": {
+      "844010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000877",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "101501013",
+            "condition": "77:844010101:10"
+          }
+        ]
+      }
+    },
+    "10320201": {
+      "900011209": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001221",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "103202012",
+            "condition": "77:900011209:10"
+          }
+        ]
+      }
+    },
+    "10320202": {
+      "900011210": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001231",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "103202022",
+            "condition": "77:900011210:10"
+          }
+        ]
+      }
+    },
+    "10320301": {
+      "900011400": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001241",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "103203012",
+            "condition": "77:900011400:10"
+          }
+        ]
+      }
+    },
+    "10320302": {
+      "900011401": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001251",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "103203022",
+            "condition": "77:900011401:10"
+          }
+        ]
+      }
+    },
+    "10460101": {
+      "900011174": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001391",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "104601012",
+            "condition": "77:900011174:5"
+          }
+        ]
+      }
+    },
+    "10560101": {
+      "900011182": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001412",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "105601012",
+            "condition": "77:900011182:5"
+          }
+        ]
+      }
+    },
+    "10790101": {
+      "900011255": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001361",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "107901011",
+            "condition": "77:900011255:15"
+          }
+        ]
+      }
+    },
+    "10880101": {
+      "900011287": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001627",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "108801011",
+            "condition": "77:900011287:5"
+          },
+          {
+            "challenge": "108801012",
+            "condition": "77:900011287:10"
+          }
+        ]
+      }
+    },
+    "10880102": {
+      "900011288": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001628",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "108801021",
+            "condition": "77:900011288:5"
+          },
+          {
+            "challenge": "108801022",
+            "condition": "77:900011288:10"
+          }
+        ]
+      }
+    },
+    "10930101": {
+      "900011298": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001629",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "109301012",
+            "condition": "77:900011298:5"
+          },
+          {
+            "challenge": "109301013",
+            "condition": "77:900011298:10"
+          }
+        ]
+      }
+    },
+    "10930102": {
+      "900011299": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001630",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "109301022",
+            "condition": "77:900011299:5"
+          },
+          {
+            "challenge": "109301023",
+            "condition": "77:900011299:10"
+          }
+        ]
+      }
+    },
+    "10970101": {
+      "900011335": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001701",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "109701012",
+            "condition": "77:900011335:5"
+          },
+          {
+            "challenge": "109701013",
+            "condition": "77:900011335:10"
+          }
+        ]
+      }
+    },
+    "10970102": {
+      "900011336": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001702",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "109701022",
+            "condition": "77:900011336:5"
+          },
+          {
+            "challenge": "109701023",
+            "condition": "77:900011336:10"
+          }
+        ]
+      }
+    },
+    "11060101": {
+      "900011398": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "110601011",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "110601012",
+            "condition": "77:900011398:5"
+          },
+          {
+            "challenge": "110601013",
+            "condition": "77:900011398:10"
+          }
+        ]
+      }
+    },
+    "11060102": {
+      "900011399": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "110601021",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "110601022",
+            "condition": "77:900011399:5"
+          },
+          {
+            "challenge": "110601023",
+            "condition": "77:900011399:10"
+          }
+        ]
+      }
+    },
+    "30050109": {
+      "30050109": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001148",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "300501092",
+            "condition": "77:30050109:10"
+          }
+        ]
+      }
+    },
+    "30050110": {
+      "30050110": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001149",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "300501102",
+            "condition": "77:30050110:7"
+          }
+        ]
+      }
+    },
+    "30050111": {
+      "30050111": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001150",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "300501112",
+            "condition": "77:30050111:5"
+          }
+        ]
+      }
+    },
+    "30060101": {
+      "306010101": {
+        "aliases": [
+          {
+            "group": "306010101",
+            "scenario": "30060101",
+            "basis": "Original Global scenario link and served link share the exact same scenario ID."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "300601012",
+            "condition": "77:306010101:15"
+          }
+        ]
+      }
+    },
+    "30150101": {
+      "30150101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001155",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "301501012",
+            "condition": "77:30150101:10"
+          }
+        ]
+      }
+    },
+    "30230101": {
+      "30230101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001062",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "302301013",
+            "condition": "77:30230101:15"
+          }
+        ]
+      }
+    },
+    "30230102": {
+      "30230102": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001063",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "302301023",
+            "condition": "77:30230102:10"
+          }
+        ]
+      }
+    },
+    "30260101": {
+      "30260101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001088",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "302601013",
+            "condition": "77:30260101:10"
+          }
+        ]
+      }
+    },
+    "30270101": {
+      "30270101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001087",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "302701013",
+            "condition": "77:30270101:10"
+          }
+        ]
+      }
+    },
+    "30280101": {
+      "30280101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001086",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "302801013",
+            "condition": "77:30280101:10"
+          }
+        ]
+      }
+    },
+    "31430103": {
+      "314301032": {
+        "aliases": [
+          {
+            "phase": "2",
+            "group": "1700001595",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "314301031",
+            "condition": "77:314301032:5"
+          }
+        ]
+      }
+    },
+    "31500101": {
+      "315001013": {
+        "aliases": [
+          {
+            "phase": "3",
+            "group": "1910651013",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "315001012",
+            "condition": "77:315001013:10"
+          }
+        ]
+      }
+    },
+    "31620101": {
+      "31620101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910661011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "316201012",
+            "condition": "77:31620101:10"
+          }
+        ]
+      }
+    },
+    "31620102": {
+      "31620102": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910661021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "316201022",
+            "condition": "77:31620102:10"
+          }
+        ]
+      }
+    },
+    "31760101": {
+      "317601013": {
+        "aliases": [
+          {
+            "phase": "3",
+            "group": "1910671013",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "317601012",
+            "condition": "77:317601013:10"
+          }
+        ]
+      }
+    },
+    "31970101": {
+      "31970101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910681011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "319701012",
+            "condition": "77:31970101:10"
+          }
+        ]
+      }
+    },
+    "31970102": {
+      "31970102": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910681021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "319701022",
+            "condition": "77:31970102:10"
+          }
+        ]
+      }
+    },
+    "32000114": {
+      "32000101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700000443",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "320001142",
+            "condition": "77:32000101:10"
+          }
+        ]
+      }
+    },
+    "32040101": {
+      "32040101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001391",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "320401012",
+            "condition": "77:32040101:10"
+          }
+        ]
+      }
+    },
+    "32040102": {
+      "32040102": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001401",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "320401022",
+            "condition": "77:32040102:10"
+          }
+        ]
+      }
+    },
+    "32200101": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001012",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200102": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001022",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200103": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691031",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001032",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200104": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691041",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001042",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200105": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691051",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001052",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200106": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691061",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001062",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200107": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691071",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001072",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200108": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691081",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001082",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200109": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691091",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001092",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200110": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691101",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001102",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200111": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691111",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001112",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200112": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691121",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001122",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200113": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691131",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001132",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32200114": {
+      "322001011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910691141",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "322001142",
+            "condition": "77:322001011:10"
+          }
+        ]
+      }
+    },
+    "32340101": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401011",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340102": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401021",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340103": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701031",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401031",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340104": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701041",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401041",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340105": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701051",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401051",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340106": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701061",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401061",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340107": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701071",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401071",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340108": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701081",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401081",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340109": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701091",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401091",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340110": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701101",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401101",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340111": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701111",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401111",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340112": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701121",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401121",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340113": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701131",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401131",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32340114": {
+      "323401011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910701141",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "323401141",
+            "condition": "77:323401011:10"
+          }
+        ]
+      }
+    },
+    "32450101": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501012",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450102": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501022",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450103": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711031",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501032",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450104": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711041",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501042",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450105": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711051",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501052",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450106": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711061",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501062",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450107": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711071",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501072",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450108": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711081",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501082",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450109": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711091",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501092",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450110": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711101",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501102",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450111": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711111",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501112",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450112": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711121",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501122",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450113": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711131",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501132",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32450114": {
+      "324501011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910711141",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "324501142",
+            "condition": "77:324501011:10"
+          }
+        ]
+      }
+    },
+    "32530101": {
+      "32530101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001411",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "325301012",
+            "condition": "77:32530101:10"
+          }
+        ]
+      }
+    },
+    "32530102": {
+      "32530102": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910001421",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "325301022",
+            "condition": "77:32530102:10"
+          }
+        ]
+      }
+    },
+    "32870101": {
+      "328701010": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910731011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "328701012",
+            "condition": "77:328701010:10"
+          }
+        ]
+      }
+    },
+    "32870102": {
+      "328701020": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910731021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "328701022",
+            "condition": "77:328701020:10"
+          }
+        ]
+      }
+    },
+    "50110101": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761011",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101012",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110102": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761021",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101022",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110103": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761031",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101032",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110104": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761041",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101042",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110105": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761051",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101052",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110106": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761061",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101062",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110107": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761071",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101072",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110108": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761081",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101082",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110109": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761091",
+            "basis": "Retained source phase explicitly references the original challenge party ID as its encounter/lottery key; follow that same phase to its exact served formation."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101092",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110110": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761101",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101102",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110111": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761111",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101112",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110112": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761121",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101122",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110113": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761131",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101132",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "50110114": {
+      "501101011": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1910761141",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "501101142",
+            "condition": "77:501101011:10"
+          }
+        ]
+      }
+    },
+    "99110101": {
+      "900011441": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001812",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "991101012",
+            "condition": "77:900011441:5"
+          }
+        ]
+      }
+    },
+    "99110102": {
+      "900011441": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001813",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "991101022",
+            "condition": "77:900011441:5"
+          }
+        ]
+      }
+    },
+    "99160101": {
+      "948010101": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001790",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "991601012",
+            "condition": "77:948010101:10"
+          }
+        ]
+      }
+    },
+    "99160102": {
+      "948010201": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001791",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "991601022",
+            "condition": "77:948010201:10"
+          }
+        ]
+      }
+    },
+    "99280101": {
+      "900011465": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001916",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "992801012",
+            "condition": "77:900011465:5"
+          }
+        ]
+      }
+    },
+    "99280102": {
+      "900011466": {
+        "aliases": [
+          {
+            "phase": "1",
+            "group": "1700001917",
+            "basis": "This original mission has one combat wave and one original party-turn target; bind only its exact served battle group."
+          }
+        ],
+        "original_conditions": [
+          {
+            "challenge": "992801022",
+            "condition": "77:900011466:5"
+          }
+        ]
+      }
+    }
+  },
+  "unresolved": [
+    {
+      "mission": "7630103",
+      "target": "763010303",
+      "phases": [
+        {
+          "phase": "1",
+          "group": "1700001571"
+        },
+        {
+          "phase": "2",
+          "group": "1700001572"
+        },
+        {
+          "phase": "3",
+          "group": "1700001573"
+        }
+      ],
+      "reason": "No unique own-battle or original formation/scenario mapping proved."
+    }
+  ]
+}

@@ -348,7 +348,10 @@ def _load_ndjson(fname: str, key_token: str | None = None) -> dict:
                 rows.setdefault("__rows__", []).append(row)
     if fname in ('F_UNIT_EX_BONUS_MST.ndjson', 'F_UNIT_SERIES_NV_PIECE_MST.ndjson',
                  'F_SUBLIMATION_RECIPE_MST.ndjson', 'F_ABILITY_MST.ndjson', 'F_ABILITY_EXPLAIN_MST.ndjson',
-                 'F_UNIT_SERIES_LV_ACQUIRE_MST.ndjson', 'F_UNIT_SERIES_POWER_UP_POINT_MST.ndjson'):
+                 'F_UNIT_SERIES_LV_ACQUIRE_MST.ndjson', 'F_UNIT_SERIES_POWER_UP_POINT_MST.ndjson',
+                 'F_QUEST_MST.ndjson', 'F_QUEST_SUB_MST.ndjson', 'F_SWITCH_MST.ndjson',
+                 'F_RESOURCE_MAP_MST.ndjson', 'F_RESOURCE_MAP_VERSION_MST_LOCALIZE.ndjson',
+                 'F_MAP_EXT_RESOURCE_MST.ndjson'):
         restored = restored_master(fname[:-7])
         identity = lambda row: str(row[restored['key']]) if restored['key'] else json.dumps(row, sort_keys=True)
         if fname == 'F_ABILITY_EXPLAIN_MST.ndjson':
@@ -371,6 +374,9 @@ def _load_ndjson(fname: str, key_token: str | None = None) -> dict:
 
 def restored_master(table):
     filename = ('series_point_rewards.json' if table == 'F_UNIT_SERIES_POWER_UP_POINT_MST'
+                else 'quest_chain_repairs.json' if table in (
+                    'F_QUEST_MST', 'F_QUEST_SUB_MST', 'F_SWITCH_MST', 'F_RESOURCE_MAP_MST',
+                    'F_RESOURCE_MAP_VERSION_MST_LOCALIZE', 'F_MAP_EXT_RESOURCE_MST')
                 else 'exbonus_masters.json')
     with open(os.path.join(os.path.dirname(__file__), 'content', filename), encoding='utf8') as fh:
         return json.load(fh)['tables'][table]
@@ -1030,7 +1036,7 @@ def unit_roots_by_rarity() -> dict:
     if _UNIT_ROOTS is None:
         out: dict = {}
         for r in _load_ndjson("F_UNIT_MST.ndjson").get("__rows__", []):
-            if str(r.get(UNIT_KEY)) != str(r.get("woghJa61")):
+            if str(r.get(UNIT_KEY)) != str(r.get("woghJa61")) or str(r.get("I3SKJ4q0")) == '1':
                 continue
             out.setdefault(str(r.get("9fW0TePj")), []).append(str(r.get(UNIT_KEY)))
         _UNIT_ROOTS = {k: sorted(v) for k, v in out.items()}
@@ -1185,8 +1191,10 @@ def expand_pool(banner: dict) -> list:
         featured = [u for u in (str(x) for x in (tier.get("featured") or [])) if u in units]
         if featured:
             share = min(1.0, max(0.0, float(tier.get("featured_share", 0.0))))
-            f_rate = rate * share / len(featured)
             others = [u for u in units if u not in featured]
+            if not others:
+                share = 1.0
+            f_rate = rate * share / len(featured)
             o_rate = rate * (1.0 - share) / len(others) if others else 0.0
             for u in units:
                 rarity = tier.get("rarity")
@@ -1344,6 +1352,22 @@ def owned_unit_stats(unit: dict) -> list:
                 unit.get('stat_pots', [0] * 6), unit.get('exbonus_stats', [0] * 6))]
 
 
+def unit_materia_slots(unit: dict, shifted=False) -> int:
+    """Original master capacity for this owned unit's equipment form.
+
+    UnitInfoBase::getTotalMateriaSlot (GL9 0x1dca90c) reads materiaCnt
+    (19ykfMgL, UnitMst+0xf0), resolving a shift by NV series and order.
+    NV+ masters can have five slots. No extra slot entitlement is inferred.
+    """
+    master = unit_mst(unit['master_id']) or {}
+    if shifted and str(master.get('JPW8Vs40') or '0') != '0':
+        series = str(master['JPW8Vs40'])
+        master = next((row for row in _load_ndjson('F_UNIT_MST.ndjson')['__rows__']
+                       if str(row.get('JPW8Vs40')) == series
+                       and str(row.get('I3SKJ4q0')) == '1'), master)
+    return int(master.get('19ykfMgL') or 0)
+
+
 def exbonus_status_bonus(master_id, details):
     """Six original EX-bonus status values, the fifth native stat component.
 
@@ -1441,7 +1465,8 @@ def _unit(master_id: str, instance_id) -> dict:
             # is null and `BattleCharacter::reserveLimitBurstAction` dereferences it UNGUARDED, so serving 0
             # crashes the client the moment the LB is activated (docs/notes/limit_burst_path.md).
             "lb_level": 1 if limit_burst(master_id) else 0,
-            "equipment": {}, "materia": ["0", "0", "0", "0"], "vision_card": "",
+            "equipment": {}, "materia": ["0"] * unit_materia_slots({'master_id': str(master_id)}),
+            "vision_card": "",
             "affinity_points": ["", ""], "affinity_info": ["", ""]}
 
 
@@ -1461,6 +1486,7 @@ def _mail_time() -> str:
 STMR_FUSION_BONUS_TITLE = "Special Fusion Bonus"
 # Unit trust metadata a mailed reward keeps until Receive, applied by `_grant_items`.
 MAIL_UNIT_METADATA = ("affinity_points", "affinity_info")
+MAIL_REWARD_SCALARS = ("level", "reward_target_master")
 
 
 def _mail_item(item) -> dict:
@@ -1470,6 +1496,9 @@ def _mail_item(item) -> dict:
     for key in MAIL_UNIT_METADATA:
         if rest and rest[0].get(key):
             entry[key] = list(rest[0][key])
+    for key in MAIL_REWARD_SCALARS:
+        if rest and rest[0].get(key):
+            entry[key] = int(rest[0][key])
     return entry
 
 
@@ -2293,8 +2322,9 @@ class PlayerState:
                 return re.sub(r'(?<!\d)' + re.escape(old) + r'(?!\d)', new, value)
             return value
 
+        # Completed fusion and awakening receipts describe historical instances.
         for key in list(self.data):
-            if key != 'roster':
+            if key not in ('roster', 'exvius_unit_class_up', 'exvius_unit_mix'):
                 self.data[key] = move(self.data[key])
         return unit
 
@@ -2478,13 +2508,15 @@ class PlayerState:
 
     def unlock_beast_pieces(self, esper_id, piece_ids) -> tuple[list, list]:
         """Apply the lock-piece open: spend `unlockCost` of `BEAST_UNLOCK_ITEM_ID` (kind 20) per piece and
-        set its bit. Returns `(opened_ids, refusal_reasons)`. NO CP is charged — this path does not call
-        `BeastUtil::learningPiece`; the client pays with the item (`BeastBoardScene::updateEvent`
-        `0x205be20`) and only then plays the anime whose end reports the piece here."""
+        set its separate unlock bit. Learning the opened piece still costs SP.
+
+        `BeastUtil::getPieceState` reads learned bits at UserBeastPieceInfo+0x28,
+        then tests lock bits at +0x40 (0x1a562cc). Opening is not learning.
+        """
         entry = self.beast_entry(esper_id)
         if entry is None or not self._mutate():
             return [], [f"esper {esper_id!r} is not owned"]
-        board = str(entry.get("board") or BEAST_BOARD_NONE)
+        board = str(entry.get("board_unlocked") or BEAST_BOARD_NONE)
         opened: list = []
         refused: list = []
         for pid in piece_ids:
@@ -2492,30 +2524,60 @@ class PlayerState:
             if row is None:
                 refused.append(f"piece {pid}: no F_BEAST_BOARD_PIECE_MST row")
                 continue
+            if str(row.get(BEAST_ID)) != str(entry["esper_id"]):
+                refused.append(f"piece {pid}: belongs to another esper")
+                continue
             try:
                 bit = int(row.get(BEAST_PIECE_BIT))
                 count = int(row.get(BEAST_PIECE_UNLOCK_COUNT, 0) or 0)
             except (TypeError, ValueError):
                 refused.append(f"piece {pid}: unusable row")
                 continue
+            if count <= 0 or int(row.get(BEAST_PIECE_RARE, 0) or 0) > int(entry["rarity"]):
+                refused.append(f"piece {pid}: not an available locked piece")
+                continue
             if board_bit(board, bit):
                 refused.append(f"piece {pid}: bit {bit} already set")
                 continue
             if not self.spend_item(BAG_ITEM_TYPE, BEAST_UNLOCK_ITEM_ID, count):
-                # The client's confirm window checks the count first (`GameUtils::getItemNum` `0x2058f40`), so
-                # a request should not arrive without the item -- but `GameUtils::subItemNum` (`0x19e74c0`) is
-                # itself a silent no-op when the bag lacks it (its kind switch just returns) and
-                # `updateEvent` never tests a result, so IF one arrives the client unlocked anyway. Refusing
-                # here would leave OUR board closed while the client's is open -- the silent-revert failure --
-                # so we agree and SAY the cost went uncovered (name what was actually credited).
-                refused.append(f"piece {pid}: opened WITHOUT charging {count} of item "
-                               f"{BEAST_UNLOCK_ITEM_ID} (not held)")
+                refused.append(f"piece {pid}: needs {count} of item {BEAST_UNLOCK_ITEM_ID}")
+                continue
             board = board_set_bit(board, bit)
             opened.append(str(pid))
         if opened:
-            entry["board"] = board
+            entry["board_unlocked"] = board
             self.dirty = True
         return opened, refused
+
+    def reset_beast_board(self, esper_id, possession) -> bool:
+        """ShopUseRequest shop 60: first account reset free, then original ShopMst price.
+
+        Refund the costs of learned pieces to unspent SP, retaining SP from
+        ores and all paid lock openings. Empty-board retries do not charge.
+        """
+        entry = self.beast_entry(esper_id)
+        if entry is None or self.mode == 'frozen':
+            return False
+        learned = str(entry.get('board') or BEAST_BOARD_NONE)
+        spent = sum(int(row.get(BEAST_PIECE_CP_COST, 0) or 0)
+                    for row in board_piece_rows().values()
+                    if str(row.get(BEAST_ID)) == str(entry['esper_id'])
+                    and board_bit(learned, row[BEAST_PIECE_BIT]))
+        if spent <= 0:
+            return True
+        resets = sum(int(beast.get('reset_count', 0) or 0) for beast in self.data.get('beasts', []))
+        shop = shop_mst('60') or {}
+        price = int(shop.get(SHOP_USE_DIA_TOKEN, 0) or 0) if resets else 0
+        if (resets and price <= 0) or str(possession) != str(price):
+            return False
+        if not self.spend_lapis(price):
+            return False
+        status = beast_status(entry['esper_id'], entry['rarity']) or {}
+        entry['cp'] = self._beast_cp_available(entry, status.get(BEAST_CP_KEY, '')) + spent
+        entry['board'] = BEAST_BOARD_NONE
+        entry['reset_count'] = int(entry.get('reset_count', 0) or 0) + 1
+        self.dirty = True
+        return True
 
     def mix_beast(self, esper_id, entries) -> dict:
         """Feed magicite to an esper: `BeastUtil::giveBeastBait` (`0x1a557cc`) then the `beastLvUp` loop
@@ -3727,7 +3789,7 @@ class PlayerState:
                 return []
             rows = [{"kind": int(it.get("item_type", 0) or 0), "id": int(it.get("item_id", 0) or 0),
                      "count": int(it.get("count", 0) or 0),
-                     **{key: it[key] for key in MAIL_UNIT_METADATA if key in it}}
+                     **{key: it[key] for key in MAIL_UNIT_METADATA + MAIL_REWARD_SCALARS if key in it}}
                     for it in m.get("items") or []]
             bad = [r for r in rows if not self._can_credit(r)]
             if bad:
@@ -3901,6 +3963,85 @@ class PlayerState:
         self.unlink_beast(int(eid))
         return len(self.data["beasts"]) != before
 
+    def restore_story_clear_rewards(self) -> bool:
+        """Restore evidenced recipe and story-unit grants after a recorded clear."""
+        if self.mode == 'frozen':
+            return False
+        with open(os.path.join(os.path.dirname(__file__), 'content', 'story_reward_repairs.json'),
+                  encoding='utf8') as fh:
+            definitions = json.load(fh)['rewards']
+        completed = set(map(str, self.data.get('progress', {}).get('cleared_missions', [])))
+        from exvius_rewards import parse
+        before, dirty_before = None, self.dirty
+        changed = False
+        try:
+            for definition in definitions:
+                mission = str(definition['mission'])
+                if mission not in completed and not completed.intersection(map(str, definition.get('alternate_missions', []))):
+                    continue
+                town = definition.get('town')
+                if (town and not self.data.get('progress', {}).get('visited_towns', {}).get(str(town))
+                        and str(definition.get('later_mission')) not in completed):
+                    continue
+                for reward in parse(definition['reward']):
+                    is_story_unit = (reward['kind'] == 10 and reward['count'] == 1
+                                     and str(definition.get('evidence', {}).get('unit')) == str(reward['id']))
+                    if (reward['kind'] != 60 and not is_story_unit) or not self._can_credit(reward):
+                        raise ValueError('unprojectable restored story reward')
+                    book = str(reward['id'])
+                    receipt = f'{mission}:{reward["kind"]}:{book}'
+                    if self.data.get('exvius_story_rewards', {}).get(receipt):
+                        continue
+                    if before is None:
+                        before = copy.deepcopy(self.data)
+                    owned = (any(str(unit_mst(u['master_id']).get('woghJa61')) == book
+                                 for u in self.data.get('roster', [])) if is_story_unit else
+                             self.data.get('exvius_craft', {}).get('books', {}).get(book))
+                    if not is_story_unit and not owned and self.item_count(60, book) > 0:
+                        self.data.setdefault('exvius_craft', {}).setdefault('books', {})[book] = True
+                    elif not owned:
+                        if self._grant_items([reward]) != [reward]:
+                            raise ValueError('incomplete restored story reward grant')
+                    self.data.setdefault('exvius_story_rewards', {})[receipt] = True
+                    self.dirty = True
+                    changed = True
+        except Exception:
+            if before is not None:
+                self.data, self.dirty = before, dirty_before
+            raise
+        return changed
+
+    def deliver_free_event_units(self) -> bool:
+        """Deliver each verified free event unit once, without claiming it."""
+        if self.mode == 'frozen':
+            return False
+        with open(os.path.join(os.path.dirname(__file__), 'content', 'free_event_units.json'), encoding='utf8') as fh:
+            definitions = json.load(fh)['units']
+        roots, mail_ids = set(), set()
+        for row in definitions:
+            master = unit_mst(row['unit'])
+            if (not master or str(master.get('I3SKJ4q0')) == '1'
+                    or str(master.get('woghJa61')) != row['root']
+                    or int(row['mail_id']) <= 0 or row['root'] in roots or row['mail_id'] in mail_ids):
+                raise ValueError('invalid free event unit definition')
+            roots.add(row['root'])
+            mail_ids.add(row['mail_id'])
+        before, dirty_before = copy.deepcopy(self.data), self.dirty
+        changed = False
+        try:
+            for row in definitions:
+                if self.data.get('exvius_free_event_units', {}).get(row['root']):
+                    continue
+                if not self.deliver_mail('Free event unit: ' + row['name'], [(10, int(row['unit']), 1)],
+                                         mail_id=row['mail_id'], message='A free event unit from the original game. Claim this gift to add the unit to your roster.'):
+                    raise ValueError('free event unit mail delivery failed')
+                self.data.setdefault('exvius_free_event_units', {})[row['root']] = True
+                self.dirty = changed = True
+        except Exception:
+            self.data, self.dirty = before, dirty_before
+            raise
+        return changed
+
     def clear_mission(self, mission_id) -> str | None:
         """Record a clear AND grant the mission's own switch(es) (schema §2.3): the flag lives in
         `F_MISSION_MST.dIPkNn61` and its bit is mapped by `F_SWITCH_MST`. **That field is a COMMA LIST** —
@@ -3919,6 +4060,7 @@ class PlayerState:
         mid = str(mission_id)
         if mid not in self.data["progress"]["cleared_missions"]:
             self.data["progress"]["cleared_missions"].append(mid)
+        self.restore_story_clear_rewards()
         sw = mission_open_switch(mid)
         if not sw:
             return None
@@ -4227,9 +4369,10 @@ class PlayerState:
         if ticket_only:
             draws *= ticket_count
         guarantee = step.get("guarantee") or (offer or {}).get("guarantee") or banner.get("guarantee") or {}
-        # An explicit count represents the printed guaranteed slots, not one
-        # fallback award for the entire multi-summon. Validate before charging.
+        # A count or a dedicated pool defines guaranteed slots. A dedicated
+        # pool defaults to one slot even if the normal draw already meets the rarity.
         guaranteed_count = int(guarantee.get('count', 1))
+        has_guaranteed_slots = 'count' in guarantee or guarantee.get('pool') is not None
         if reward_pool and guarantee:
             return None  # Mixed item pools have their own explicit published weights.
         guaranteed_pool = [e for e in pool if int(e.get('rarity') or 0) >= int(guarantee.get('rarity') or 0)]
@@ -4248,7 +4391,7 @@ class PlayerState:
                 return None
             extra_slots.append((count, candidates))
         reserved = sum(count for count, _ in extra_slots)
-        if reserved + (guaranteed_count if 'count' in guarantee else 0) > draws:
+        if reserved + (guaranteed_count if has_guaranteed_slots else 0) > draws:
             return None
         # --- cost -------------------------------------------------------------------------------------
         kind = str(cost.get("kind", "free"))
@@ -4351,14 +4494,14 @@ class PlayerState:
         if g_unit is not None and not any(str(a["unit_id"]) == str(g_unit) for a in awards):
             awards[0] = {"unit_id": str(g_unit),
                          "rarity": (unit_mst(g_unit) or {}).get("9fW0TePj")}
-        elif g_unit is None and g_rarity is not None and 'count' not in guarantee and \
+        elif g_unit is None and g_rarity is not None and not has_guaranteed_slots and \
                 not any(int(a.get("rarity") or 0) >= int(g_rarity) for a in awards):
             # "a guaranteed 5★/NV unit": the slot is drawn from everything at or above the rarity, by rate.
             cand = [e for e in pool if int(e.get("rarity") or 0) >= int(g_rarity)] or pool
             weights = [max(0.0, float(e.get("rate") or 0)) for e in cand]
             idx = min(range(len(awards)), key=lambda i: int(awards[i].get("rarity") or 0))
             awards[idx] = random.choices(cand, weights)[0] if sum(weights) > 0 else random.choice(cand)
-        if g_rarity is not None and 'count' in guarantee:
+        if g_rarity is not None and has_guaranteed_slots:
             cand = guaranteed_pool
             weights = [max(0.0, float(e.get('rate') or 0)) for e in cand]
             for idx in range(draws - reserved - guaranteed_count, draws - reserved):
@@ -4639,7 +4782,7 @@ class PlayerState:
         """
         if str(reply_id) != SHOP_USE_REQUEST:
             return spec
-        shop_id = None
+        shop_id, node = None, {}
         if plaintext:
             try:
                 req = json.JSONDecoder().raw_decode(plaintext)[0]
@@ -4647,10 +4790,13 @@ class PlayerState:
                 req = None
             rows = req.get("L5Nj3cKE") if isinstance(req, dict) else None
             if isinstance(rows, list) and rows and isinstance(rows[0], dict):
-                shop_id = rows[0].get(SHOP_ID_TOKEN)
+                node = rows[0]
+                shop_id = node.get(SHOP_ID_TOKEN)
         if shop_id is None:
             print("    orb recharge: request body named no shop (L5Nj3cKE/gdR2tJI9); no state change",
                   flush=True)
+        elif str(shop_id) == '60':
+            self.reset_beast_board(node.get('Vt2I4RjX'), node.get('Qy5EvcK1'))
         else:
             self.recharge_orb_with_shop(shop_id)
         out = dict(spec) if isinstance(spec, dict) else {}
@@ -4825,6 +4971,25 @@ class PlayerState:
         if not isinstance(spec, dict):
             return spec
         groups = self.groups()
+        if str(reply_id) == '4uCSA3ko':
+            # ClsmVsCpuStartScene links espers before ClsmStartRequest
+            # (original 0x208b5ec). A full UserBeastInfoResponse clears the
+            # objects and their linked unit IDs (0x192e664). Start/resume
+            # changes Coliseum state and orbs, not the live battle party.
+            out = {tag: rows for tag, rows in spec.items() if tag not in groups}
+            out['3oU9Ktb7'] = groups['3oU9Ktb7']
+            return out
+        class_up_tag = {'zf49XKg8': 'sWc7EH69', 'Pf5C8xjJ': '6U5w20zk',
+                        'V8GtMQ2q': '6U5w20zk'}.get(str(reply_id))
+        if class_up_tag and spec.get(class_up_tag):
+            # The original callback reads and removes the consumed source unit.
+            # Mode 2 adds its replacement while preserving that source object
+            # and every unrelated unit until the callback has completed.
+            out = {tag: rows for tag, rows in spec.items() if tag not in groups}
+            out.update((tag, rows) for tag, rows in groups.items() if tag != 'B71MekS8')
+            targets = {str(row['5u7VYNEX']) for row in spec[class_up_tag]}
+            out['6KWVR3Dw'] = [row for row in groups['B71MekS8'] if row['og2GHy49'] in targets]
+            return out
         if str(reply_id) in ('68RQ9GwN', 'HaJp14F6'):
             # The native enhancement screen retains its selected unit while
             # animating. EX bonuses change its bonus lists and fragments, not
@@ -4960,21 +5125,28 @@ class PlayerState:
     def _equip_rows(self, party=None) -> list:
         party = self.data['party'] if party is None else party
         rows = []
-        saved_loadouts = party.get("loadouts") or {}
+        # Normal equipment belongs to roster rows. Separate modes alone use
+        # party overrides, including both Brave Shift forms.
+        saved_loadouts = (party.get("loadouts") or {}) if party is not self.data['party'] else {}
         for u in self.data["roster"]:
             saved = saved_loadouts.get(str(u.get("instance_id"))) or {}
             equip = saved.get("equipment", u.get("equipment")) or {}
-            has_shift = bool(u.get('shift_equipment') or u.get('shift_materia') or u.get('shift_vision_card'))
+            has_shift = bool(saved.get('shift_equipment', u.get('shift_equipment')) or
+                             saved.get('shift_materia', u.get('shift_materia')) or
+                             saved.get('shift_vision_card', u.get('shift_vision_card')))
             slots = "@".join(f"{slot}-{equip.get(str(slot), equip.get(slot, '0'))}"
                              for slot in range(1, 7))
             if has_shift:
                 shift = saved.get("shift_equipment", u.get('shift_equipment')) or {}
                 slots += '|' + '@'.join(f"{n}-{shift.get(str(n), shift.get(n, '0'))}" for n in range(1, 7))
             materia = saved.get("materia", u.get("materia")) or []
-            mat = "@".join(f"{i + 1}-{m}" for i, m in enumerate(materia))
+            mat = "@".join(f"{i + 1}-{materia[i] if i < len(materia) else '0'}"
+                           for i in range(unit_materia_slots(u)))
             if has_shift:
-                shift_materia = saved.get("shift_materia", u.get('shift_materia')) or ['0'] * 4
-                mat += '|' + '@'.join(f'{n + 1}-{m}' for n, m in enumerate(shift_materia))
+                shift_materia = saved.get("shift_materia", u.get('shift_materia')) or []
+                mat += '|' + '@'.join(
+                    f"{i + 1}-{shift_materia[i] if i < len(shift_materia) else '0'}"
+                    for i in range(unit_materia_slots(u, shifted=True)))
             card = saved.get("vision_card", u.get('vision_card')) or \
                 saved.get("shift_vision_card", u.get('shift_vision_card')) or '0-0'
             if not str(card).startswith('0-'):

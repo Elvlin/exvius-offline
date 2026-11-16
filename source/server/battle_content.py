@@ -17,10 +17,10 @@ CHAIN (all first-party)
     F_MONSTER_SKILL_MST      `wJE09yxD`  the in-battle action definitions the parts row references
 
 BREAK (COMMUNITY, not first-party -- labelled as such)
-    harness/break_status_community.json   a part whose `e56NZY42` (MonsterBreakID) is non-zero needs the
+    content/battle/break_status.json   a part whose `e56NZY42` (MonsterBreakID) is non-zero needs the
     `BJ6A0KTt` + `7KCkJd1E` rows or the client NULL-DEREFS. Those two tables were transmitted, never
-    shipped and no corpus has them, so the values come from the community wiki; parts absent from the
-    dataset keep `e56NZY42=0` (mechanic off, crash-safe) and the file's `_provenance` records the gaps.
+    shipped and no corpus has them, so each recovered definition identifies its datamine or guide.
+    Missing definitions are rejected rather than removing the original mechanic.
 
 WHY THE POOL HOP LIVES HERE: the GL client has **no** `BattleLotteryMstList` (`BattleLotteryMstList` = 0 in
 `libgame.so`), so it cannot resolve a pool — the server must, and send a *resolved* group id in the phase's
@@ -57,13 +57,13 @@ REPO = os.path.dirname(WORK)
 DEFAULT_ORACLE = data_paths.ORACLE_DIR
 INDEX_DIR = os.path.join(HERE, "content", "battle")
 DEFAULT_RESPONSES = os.path.join(HERE, "responses.json")
-# The break table lives in the harness tree in a checkout; a frozen bundle ships it beside the
-# engine's own data (built by server_app/build_dist.sh). Prefer whichever exists; env override wins.
+# The canonical dependency asset ships with the battle data. An explicit override wins.
 def _break_status_default() -> str:
     env = os.environ.get("BREAK_STATUS_FILE")
     if env:
         return env
-    for cand in (os.path.join(WORK, "harness", "break_status_community.json"),
+    for cand in (os.path.join(INDEX_DIR, "break_status.json"),
+                 os.path.join(WORK, "harness", "break_status_community.json"),
                  os.path.join(HERE, "break_status_community.json")):
         if os.path.isfile(cand):
             return cand
@@ -169,13 +169,13 @@ BATTLE_TAGS = ("an6TB4WS", "Bi6hVv34", "wbet57nF", "bV34YIJQ", "y35YvQjZ", "Wp39
 # `e56NZY42` (MonsterBreakID) is non-zero makes `MonsterUnit::initialize` (guard 0x1b636e8) fetch BOTH rows
 # and use them UN-null-checked -- the 8960101 crash of 2026-10-10. The break row shares 27 token NAMES with
 # the parts row, so it is built from the served part and only the broken-form stat tokens, the broken-form
-# resists (where they differ) and the description come from `harness/break_status_community.json` -- a community
+# resists (where they differ) and the description come from `content/battle/break_status.json`, a community
 # datamine (aEnigmatic's per-encounter gists), wiki-corroborated, NOT first-party; its `_provenance` lists every
 # corpus that does NOT have these tables. While `MonsterUnit::isBreak()` the stat getters return the dataset's
 # values (0x1b65fbc, +0x40/+0x48/+0x50/+0x58). The ext row is the break gauge: `getMaxBp`
 # (0x1b6c680-0x1b6c6c8) reads `CX5D2V1j`, then -- ONLY once `BattleUnit::getBreakNum() >= 1` -- adds
 # `8HnQR9Wx` when `zW97Bico == 1`, or multiplies by `8HnQR9Wx/100` when it is 2. `zW97Bico = 2` with value 0
-# ZEROES the pool: never emit that. `RHe5r72C`/`EwZ40mt3` (weapon-resist CSVs) are left unsent: no source.
+# ZEROES the pool: never emit that. Both weapon CSVs require sixteen values for the native consumers.
 BREAK_TAG = "BJ6A0KTt"
 EXT_STATUS_TAG = "7KCkJd1E"
 BREAK_TOKENS = ("e56NZY42", "G4L0YIB2", "9NBV1XCS", "Pn5w9dfh", "84FJM3PD", "hn42BL3Q", "D9Nb7jgd",
@@ -207,7 +207,7 @@ INDEX_FIELDS: dict[str, tuple[str, ...] | None] = {
     "F_BATTLE_LOTTERY_MST": ("c2gnh6Jd", "ixDq7yJ8", "2fY1IomW"),
     "F_BATTLE_GROUP_MST": GROUP_TOKENS,
     "F_MONSTER_MST": ("xqartN26", "G4L0YIB2", "V9j8wJcC"),
-    "F_MONSTER_PARTS_MST": tuple(PARTS_TOKENS) + ("9BetM2Ds",),
+    "F_MONSTER_PARTS_MST": tuple(PARTS_TOKENS) + ("9BetM2Ds", "MZn8LC6H", "g4voc2Aw", "Vf5DGw07"),
     "F_MONSTER_SKILL_SET_MST": ("A5x02C6a", "7qxLC5hP"),
     "F_MONSTER_SKILL_MST": None,
     "F_MISSION_MST": ("qo3PECw6", "U9iHsau3"),
@@ -251,9 +251,8 @@ def load_break_status(path: str) -> dict[str, dict]:
     """The community break dataset: part id -> {break_hp, break_hp_after_first, turns, broken{atk,def,mag,spr}}.
 
     NOT first-party data -- see the file's `_provenance` for sources, the blue-span decision and the gaps.
-    A part with a non-zero `e56NZY42` that is MISSING here keeps `e56NZY42=0`: the mechanic is off for it,
-    which is a documented gap, whereas a served-but-wrong row would silently change the fight (and a missing
-    row crashes).
+    A nonzero original BreakID requires both sourced dependency rows. Missing or malformed
+    definitions stop derivation before an incomplete response reaches the native client.
     """
     if not os.path.exists(path):
         return {}
@@ -430,20 +429,23 @@ def derive_mission(mission: int, source: Source | str, break_status: dict[str, d
         if not slot_rows:
             raise SystemExit(f"mission {mission} phase {p['6v7y3QcJ']}: group {group} has no slots")
         group_ids.setdefault(group, slot_rows)
-        drops: list[str] = []
+        drops = {channel: [] for channel in ("9BetM2Ds", "MZn8LC6H", "g4voc2Aw", "Vf5DGw07")}
         for s in slot_rows:
             pid = str(s["xqartN26"])
             part_ids.add(pid)
             # Every part of the monster contributes drops, not just the body (PartsNum 1).
             for pr in parts_all.get(pid, []):
-                for it in (pr.get("9BetM2Ds") or "").split(","):
-                    if it and it not in drops:
-                        drops.append(it)
+                for channel, candidates in drops.items():
+                    for it in (pr.get(channel) or "").split(","):
+                        # Keep each occupied slot's candidates, including the
+                        # original unit level and optional trust metadata.
+                        if it:
+                            candidates.append(it)
         drop_rows.append({
             "qo3PECw6": str(mission), "6v7y3QcJ": p["6v7y3QcJ"], "pIHCrf40": "1", "2fY1IomW": "1",
             "xqartN26": slot_rows[0]["xqartN26"], "Z0EN6jSh": "1", "6Yc4RkdM": "1",
-            "9BetM2Ds": ",".join(drops), "MZn8LC6H": "", "g4voc2Aw": "", "3frn4ILX": "",
-            "IRf10dwx": "", "ATM35pjf": "", "e5xoiC84": "", "Vf5DGw07": "",
+            **{channel: ",".join(candidates) for channel, candidates in drops.items()},
+            "3frn4ILX": "", "IRf10dwx": "", "ATM35pjf": "", "e5xoiC84": "",
         })
 
     if field_groups is not None:
@@ -472,17 +474,12 @@ def derive_mission(mission: int, source: Source | str, break_status: dict[str, d
         # EVERY PartsNum row, in order: one battle unit is created per row.
         for pr in rows:
             row = {tok: pr.get(tok, PARTS_DEFAULTS.get(tok, "")) for tok in PARTS_TOKENS}
-            # MONSTER BREAK. Keep the id only when BOTH rows it will look up can be served; otherwise send 0,
-            # which takes the `cbz w20` branch at 0x1b636e8 and skips both lookups. Zeroing costs the part its
-            # break mechanic; serving a fabricated row would cost the fight's correctness instead.
+            # Preserve the original mechanic and require both dependency rows.
             bid = str(row.get("e56NZY42") or "")
             if bid not in ("", "0"):
-                if pid in break_status:
-                    break_parts.append((pid, row))
-                else:
-                    print(f"    break: mission {mission} part {pid}: MonsterBreakID {bid} -> 0 "
-                          f"(no community entry for it; break stays off)", flush=True)
-                    row["e56NZY42"] = "0"
+                if pid not in break_status:
+                    raise SystemExit(f"mission {mission} part {pid}: Break {bid} has no sourced dependency definition")
+                break_parts.append((pid, row))
             parts_rows.append(row)
 
     # One `BJ6A0KTt` + `7KCkJd1E` pair per part that kept a non-zero MonsterBreakID.
@@ -491,6 +488,20 @@ def derive_mission(mission: int, source: Source | str, break_status: dict[str, d
     for pid, row in break_parts:
         info = break_status[pid]
         bid = str(row["e56NZY42"])
+        try:
+            if int(info["break_hp"]) <= 0 or int(info["turns"]) <= 0:
+                raise ValueError("invalid pool or duration")
+            for name in ("atk", "def", "mag", "spr"):
+                if int(info["broken"][name]) < 0:
+                    raise ValueError("invalid broken " + name)
+            for token in ("RHe5r72C", "EwZ40mt3"):
+                values = str(info[token]).split(',')
+                if len(values) != 16 or any(int(v) < 0 or (token == "EwZ40mt3" and int(v) > 1) for v in values):
+                    raise ValueError("requires sixteen valid values for " + token)
+            if info.get("break_hp_after_first") is not None and int(info["break_hp_after_first"]) <= 0:
+                raise ValueError("invalid pool after first Break")
+        except (KeyError, TypeError, ValueError) as error:
+            raise SystemExit(f"mission {mission} part {pid}: Break {bid} invalid dependency: {error}") from error
         br = {tok: row[tok] for tok in BREAK_TOKENS if tok in row}
         absent = [tok for tok in BREAK_TOKENS if tok not in br]
         if absent != ["6uvHX2JG"]:  # the ONE break-row token the parts table does not carry
@@ -508,6 +519,17 @@ def derive_mission(mission: int, source: Source | str, break_status: dict[str, d
             if tok not in BREAK_TOKENS:
                 raise SystemExit(f"mission {mission} part {pid}: unknown resist token {tok!r}")
             br[tok] = value
+        # Original judgeBadCondition reads both list entries after checking
+        # only that the CSV is nonempty. Preserve the increase and its cap.
+        growth = str(br.get("n0UEb71s") or "").strip()
+        if growth:
+            try:
+                values = growth.split(',')
+                if len(values) != 2:
+                    raise ValueError("requires increase and cap")
+                tuple(int(value) for value in values)
+            except (TypeError, ValueError) as error:
+                raise SystemExit(f"mission {mission} part {pid}: Break {bid} invalid n0UEb71s: {error}") from error
         desc = (info.get("break_description") or "").strip()
         if desc:
             br["6uvHX2JG"] = desc
@@ -581,12 +603,34 @@ def field_mission_bundle(carrier: dict, mission: dict) -> dict:
         with open(path, encoding='utf8') as stream:
             _FIELD_GROUP_BINDINGS = json.load(stream)['missions']
     group_ids.update(_FIELD_GROUP_BINDINGS.get(mid, []))
+    field = event_encounter(mid)
+    explicit_field = bool(field and (field.get('6v0LPiRe') or
+                                     (field.get('rqxw0p9k') and field.get('YjHhvN65'))))
+    if explicit_field:
+        # Supplied field profiles are a dependency source for the original
+        # formations. Derivation must see them before checking missing actors.
+        source = EventSource(source, mid, {'field_bundle': field})
     out = story_mission_bundle(carrier, mission)
+    # Explicitly clear the prior field's native encounter list before loading
+    # any random encounters declared for this mission.
+    out['6v0LPiRe'] = []
     if group_ids:
         bundle = derive_mission(int(mid), source, field_groups=group_ids)
         bundle.pop('an6TB4WS', None)
         bundle.pop('y35YvQjZ', None)
         out.update(bundle)
+    # Global field events can have their own server battle definitions rather
+    # than JP index rows. Load their explicit scenario graph before opcode 71
+    # reads ScenarioBattleGroupMstList, without creating an opening battle.
+    # An explicit encounter channel also identifies random-only field data.
+    if explicit_field:
+        for tag in ('rqxw0p9k', 'YjHhvN65', 'JR7jZci2', '6v0LPiRe',
+                    'Bi6hVv34', 'wbet57nF', 'bV34YIJQ', 'Wp39QX52',
+                    'BJ6A0KTt', '7KCkJd1E'):
+            for row in field.get(tag, []):
+                target = out.setdefault(tag, [])
+                if row not in target:
+                    target.append(row)
     return out
 
 
@@ -703,6 +747,24 @@ def event_binding(mission: str) -> dict | None:
     return _EVENT_BINDINGS.get(str(mission))
 
 
+_PARTY_TURN_TARGETS = None
+
+
+def original_party_turn_targets(mission):
+    """Original Global party references for native content authoring."""
+    global _PARTY_TURN_TARGETS
+    if _PARTY_TURN_TARGETS is None:
+        _PARTY_TURN_TARGETS = {}
+        path = os.path.join(REPO, 'data', 'mst_decoded', 'F_CHALLENGE_MST.ndjson')
+        with open(path, encoding='utf8') as stream:
+            for line in stream:
+                row = json.loads(line)
+                fields = row.get('Pzn5h0Ga', '').split(':')
+                if len(fields) == 3 and fields[0] in ('76', '77'):
+                    _PARTY_TURN_TARGETS.setdefault(row['qo3PECw6'], set()).add(fields[1])
+    return _PARTY_TURN_TARGETS.get(str(mission), set())
+
+
 class EventSource(Source):
     """Retarget a sourced encounter while retaining the Global mission row."""
 
@@ -711,6 +773,20 @@ class EventSource(Source):
 
     def load(self, table):
         rows = self.base.load(table)
+        if 'field_bundle' in self.binding:
+            tag = {'F_MONSTER_MST': 'wbet57nF', 'F_MONSTER_PARTS_MST': 'bV34YIJQ',
+                   'F_MONSTER_SKILL_MST': 'Wp39QX52'}.get(table)
+            supplied = self.binding['field_bundle'].get(tag, []) if tag else []
+            if not supplied:
+                return rows
+            def identity(row):
+                if table == 'F_MONSTER_PARTS_MST':
+                    return row['xqartN26'], row['6Yc4RkdM']
+                return row['6E5u1xrs' if table == 'F_MONSTER_SKILL_MST' else 'xqartN26']
+            replacements = {identity(row): row for row in supplied}
+            existing = {identity(row) for row in rows}
+            return [replacements.get(identity(row), row) for row in rows] + [
+                row for row in supplied if identity(row) not in existing]
         support = event_support(table) if table in ('F_MONSTER_SKILL_MST', 'F_MONSTER_SKILL_SET_MST') else []
         if support:
             token = '6E5u1xrs' if table == 'F_MONSTER_SKILL_MST' else 'A5x02C6a'
@@ -731,6 +807,29 @@ class EventSource(Source):
                          if row.get('qo3PECw6') == self.binding['source'] and
                          row.get('gou39JeI') == '2'), key=lambda r: int(r['6v7y3QcJ']))
         count = self.binding['waves']
+        if 0 < count < len(combat):
+            # Data-generation counterpart of native load_rows. Preserve the
+            # exact originally challenged party when JP inserted a bonus fight
+            # before it; truncating first N rows would omit the real boss.
+            targets = original_party_turn_targets(self.mission)
+            lotteries = self.base.load('F_BATTLE_LOTTERY_MST') if targets else []
+            required = set()
+            for target in targets:
+                for index, row in enumerate(combat):
+                    if row.get('6uIYE15X') == target or any(
+                            member['c2gnh6Jd'] == row.get('6uIYE15X')
+                            and member['2fY1IomW'] == target for member in lotteries):
+                        required.add(index)
+                        break
+            if len(required) > count:
+                required.clear()
+            if required:
+                selected = set(required)
+                for index in range(len(combat)):
+                    if len(selected) >= count:
+                        break
+                    selected.add(index)
+                combat = [combat[index] for index in sorted(selected)]
         return [dict(combat[min(index, len(combat) - 1)], qo3PECw6=self.mission,
                      **{'6v7y3QcJ': str(index + 1)}) for index in range(count)]
 

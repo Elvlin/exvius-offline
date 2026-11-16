@@ -1,0 +1,740 @@
+{
+ "id": "800300",
+ "type": "normal",
+ "name": "Orlandeau, Soleil, Ovelia, Lawrence Featured Summon",
+ "detail_id": "8003001",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "lapis",
+  "amount": 500
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1034,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_5cc8af1b74923548.png",
+  "detail_banner": "Gacha-Final Fantasy Tactics.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": [
+  {
+   "unit_id": "100000315",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "100002103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100002803",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100003703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100003803",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100003903",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004003",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004604",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "100004703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100004903",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100005004",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "100005104",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "100005203",
+   "rarity": 3,
+   "rate": 0.1
+  },
+  {
+   "unit_id": "100005304",
+   "rarity": 4,
+   "rate": 0.0475
+  },
+  {
+   "unit_id": "100005404",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "100005503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "100005805",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "201000104",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "201000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "202000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "202000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "202000303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "202000404",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "202000505",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "203000205",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "203000303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "203000404",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "203000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "203000803",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204000115",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "204000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204000304",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "204000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204001103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "204001403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "205000805",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "206000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000303",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206000703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206001703",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "206001803",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209000203",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209000304",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "209000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209000803",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209000903",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "209001003",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "211000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "212000103",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "212000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "212000603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "213000105",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "213000204",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "213000304",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "213000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "213000504",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "213000603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "215000105",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "253000105",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "253000205",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "253000304",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "253000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "253000504",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "253000603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "253000805",
+   "rarity": 5,
+   "rate": 0.005
+  },
+  {
+   "unit_id": "253001103",
+   "rarity": 3,
+   "rate": 0.1
+  },
+  {
+   "unit_id": "254000105",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "254000205",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  },
+  {
+   "unit_id": "254000304",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "254000403",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "254000503",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "254000603",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "254000704",
+   "rarity": 4,
+   "rate": 0.00890625
+  },
+  {
+   "unit_id": "254001003",
+   "rarity": 3,
+   "rate": 0.00923076923076923
+  },
+  {
+   "unit_id": "302001305",
+   "rarity": 5,
+   "rate": 0.0003846153846153846
+  }
+ ],
+ "provenance": "community",
+ "source": "global-campaign-replacement",
+ "community": {
+  "release": "2017-03-24",
+  "until": "2017-04-05",
+  "limited": false,
+  "units": [
+   "Orlandeau",
+   "Soleil",
+   "Ovelia",
+   "Lawrence"
+  ],
+  "unit_ids": [
+   "100005203",
+   "100005304",
+   "253000805",
+   "253001103"
+  ],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2017-03-24",
+ "campaign_identity": "global:2017-03-24:gacha-final fantasy tactics.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Widget:Summon_Simulator/20170324",
+  "sha256": "631bee1b843395b5d687b611d3c4ffeff030aa1bbfd8147829ca98601cd91685",
+  "scope": "Full unit pools and weights preserved by the contemporary community simulator.",
+  "official_server_table": false,
+  "eligibility_authored": false
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2017",
+   "sha256": "9a652a1a102226b8b4f46e0dc834a9f4f5e2e1a8d2f5f51dbb5794bbd1350053"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/3/33/Gacha-Final_Fantasy_Tactics.png/revision/latest?cb=20170325142004",
+   "sha256": "a8db8650cfbdafc23c52fd02be50537441a313193808fd0b5b6c98128c4dc449"
+  }
+ ],
+ "secondary_offer": {
+  "cost": {
+   "kind": "lapis",
+   "amount": 5000
+  },
+  "draws": 11,
+  "exe_count": 1,
+  "guarantee": {
+   "rarity": 4,
+   "count": 1,
+   "pool": [
+    {
+     "unit_id": "100000315",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "100004604",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "100005004",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "100005104",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "100005304",
+     "rarity": 4,
+     "rate": 0.475
+    },
+    {
+     "unit_id": "100005404",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "100005805",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "201000104",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "202000404",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "202000505",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "203000205",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "203000404",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "204000115",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "204000304",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "205000805",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "209000304",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "213000105",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "213000204",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "213000304",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "213000504",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "215000105",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "253000105",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "253000205",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "253000304",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "253000504",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "253000805",
+     "rarity": 5,
+     "rate": 0.0375
+    },
+    {
+     "unit_id": "254000105",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "254000205",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    },
+    {
+     "unit_id": "254000304",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "254000704",
+     "rarity": 4,
+     "rate": 0.0296875
+    },
+    {
+     "unit_id": "302001305",
+     "rarity": 5,
+     "rate": 0.0009615384615384616
+    }
+   ]
+  },
+  "img_btn": "gacha_btns_gold_11"
+ },
+ "catalogue_replacement": {
+  "campaign_id": "9100034",
+  "assignment": "User-authorized replacement for an unidentifiable reusable server slot."
+ },
+ "state_id": "9100034",
+ "alias_ids": [
+  "9100034"
+ ],
+ "ticket_group_id": 10020,
+ "img_btn_primary": "gacha_btns_gold_1"
+}

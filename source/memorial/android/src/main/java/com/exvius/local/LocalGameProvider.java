@@ -7,6 +7,7 @@ import android.net.Uri;
 
 public final class LocalGameProvider extends ContentProvider {
     @Override public boolean onCreate() {
+        SaveSlots.initialize(getContext().getApplicationContext());
         LocalGameBridge.initialize(getContext().getApplicationContext());
         return true;
     }

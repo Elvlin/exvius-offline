@@ -70,6 +70,9 @@ def reward(value, category, tables, context):
     currency = re.search(r'\{\{Currency\|([^|}]+)\|([\d,]+)\}\}', value, re.I)
     if currency:
         value = currency[1] + ' (' + currency[2] + ')'
+    item_count = re.fullmatch(r'\s*\{\{Item\|([^|}]+)\|([\d,]+)\}\}\s*', value, re.I)
+    if item_count:
+        value = item_count[1] + ' (' + item_count[2] + ')'
     label = plain(value)
     count_match = re.search(r'\s*\(([\d,]+)\)\s*$', label)
     count = int(count_match[1].replace(',', '')) if count_match else 1
@@ -153,8 +156,9 @@ def milestones(text, tables, context):
     return sorted(unique.values(), key=lambda row: row['points']), unresolved
 
 
-def main():
-    source = json.loads(SOURCE.read_text(encoding='utf-8'))
+def build(archived=None, source=None):
+    if source is None:
+        source = json.loads(SOURCE.read_text(encoding='utf-8'))
     pages, redirects = {}, {}
     for batch in source:
         redirects.update({normal(row['from']): normal(row['to']) for row in batch.get('query', {}).get('redirects', [])})
@@ -167,7 +171,8 @@ def main():
     masters = {row['qo3PECw6']: row for row in rows('F_MISSION_MST')}
     tables = name_tables()
     events, gaps = [], []
-    archived = json.loads((ROOT / 'source/server/event_archive.json').read_text(encoding='utf-8'))['events']
+    if archived is None:
+        archived = json.loads((ROOT / 'source/server/event_archive.json').read_text(encoding='utf-8'))['events']
     for area in archived:
         if area['kind'] != 'raid' or area['area'] == '734':
             continue
@@ -233,6 +238,11 @@ def main():
                        'points_per_coin': 10, 'level_bonus_percent': int(rate[1]) if rate else 0,
                        'solo_pacing': {'shared_hp_per_level': 40000000, 'authored': True},
                        'personal_milestones': rewards, 'status': 'Recovered Global event data'})
+    return events, gaps
+
+
+def main():
+    events, gaps = build()
     output = ROOT / 'source/server/raid_archive.json'
     output.write_text(json.dumps({'version': 1, 'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(), 'events': events}, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     (ROOT / 'source/build/raid-archive-gaps-20261026.json').write_text(json.dumps(gaps, ensure_ascii=False, indent=2), encoding='utf-8')

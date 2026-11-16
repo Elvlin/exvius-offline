@@ -1,0 +1,197 @@
+{
+ "id": "9400112",
+ "detail_id": "94001121",
+ "type": "normal",
+ "name": "Assault! Nef-Garmat! Raid Summon",
+ "name_override": true,
+ "exe_type": "primary",
+ "draws": 1,
+ "release": "2016-12-22",
+ "season": "collaborations",
+ "tab": "limited",
+ "schedule": {
+  "disp_order": 940112,
+  "banner_type": 0,
+  "window": {
+   "from": "2016-12-22 00:00:00",
+   "to": "2099-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_cbfb1764e49de719.png",
+  "detail_banner": "mh-20161222-raid-summon-english.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_rare/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "cost": {
+  "kind": "item",
+  "item_id": 106301700,
+  "amount": 100,
+  "is_coin": true
+ },
+ "preview_units": [
+  "100000215",
+  "100000614",
+  "100000713"
+ ],
+ "source": "historical-jp-summon",
+ "provenance": "original-jp-offer",
+ "historical_window": {
+  "from": "2016-12-22",
+  "to": null
+ },
+ "historical_original_server_id": null,
+ "pool_authored": true,
+ "rate_notice": "The original artwork, printed offer features and cited contemporary mechanics are preserved. The complete historical server pool was not recovered. The explicit residual character list, non-NV weights and unspecified guaranteed-slot weights are authored source data, not a recovered JP rate table.",
+ "sources": [
+  "https://www.4gamer.net/games/282/G028200/20161222153/"
+ ],
+ "reconstruction": {
+  "reason": "The original named offer and associated artwork are preserved; the complete original server reply and rate table were not recovered after the recorded original-source search.",
+  "unknown_original_fields": [
+   "Residual eligible roster",
+   "Per-reward rates",
+   "Unprinted purchase terms"
+  ],
+  "runtime_schedule": "Historical event made available without an expired closing date.",
+  "art_role": "Use the faithful English translation of this exact offer artwork. Its source role is recorded; no unrelated event card or invented restoration artwork is substituted.",
+  "explicit_authored_terms": "100 original raid coins per pull;3% total among published raid characters;97% equally among original recovered crafting materials; one item per material draw. These costs, quantities and weights are replacements, not recovered historical values."
+ },
+ "reward_pool": [
+  {
+   "kind": 10,
+   "id": 100000215,
+   "count": 1,
+   "rate": 0.01
+  },
+  {
+   "kind": 10,
+   "id": 100000614,
+   "count": 1,
+   "rate": 0.01
+  },
+  {
+   "kind": 10,
+   "id": 100000713,
+   "count": 1,
+   "rate": 0.01
+  },
+  {
+   "kind": 20,
+   "id": 213000100,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000200,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000300,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000400,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000500,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000600,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000700,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000800,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213000900,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001000,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001100,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001200,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001300,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001400,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001500,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001600,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001700,
+   "count": 1,
+   "rate": 0.05388888888888889
+  },
+  {
+   "kind": 20,
+   "id": 213001800,
+   "count": 1,
+   "rate": 0.05388888888888889
+  }
+ ],
+ "historical_offer_family": "JP-738-RAID-SUMMON",
+ "art_presentation": {
+  "presentation": "translated_original_summon_art",
+  "historical_native_list_presentation_confirmed": false,
+  "evidence_file": "Japan content/Earlier JP crossovers/Sources/original-summon-art-presentation.json",
+  "dedicated_art_absence_proven": false
+ },
+ "img_btn_primary": "gacha_btns_gold_1"
+}

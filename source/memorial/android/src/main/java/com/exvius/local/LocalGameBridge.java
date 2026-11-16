@@ -21,6 +21,11 @@ public final class LocalGameBridge {
 
     private LocalGameBridge() {}
 
+    public static String titleProfiles() { return SaveSlots.titleProfiles(); }
+    public static String titleInsets() { return SaveSlots.titleInsets(); }
+    public static boolean profileAction(String action, String id) { return SaveSlots.profileAction(action, id); }
+    public static boolean openSaveTransfer() { return SaveTransferActivity.openSaveTransfer(); }
+
     static synchronized void initialize(Context value) {
         context = value;
         DataUpdates.initialize(context);
@@ -68,31 +73,7 @@ public final class LocalGameBridge {
 
     /** Decode the original per-line CBC table without rebuilding Cipher per row. */
     public static String decodeGameTable(String path, String password, String iv) throws Exception {
-        byte[] key = new byte[16];
-        byte[] supplied = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
-        System.arraycopy(supplied, 0, key, 0, Math.min(key.length, supplied.length));
-        javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance("AES/CBC/PKCS5Padding");
-        cipher.init(javax.crypto.Cipher.DECRYPT_MODE,
-            new javax.crypto.spec.SecretKeySpec(key, "AES"),
-            new javax.crypto.spec.IvParameterSpec(iv.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
-        File file = new File(path);
-        StringBuilder result = new StringBuilder((int) Math.min(file.length(), Integer.MAX_VALUE - 8));
-        try (java.io.BufferedReader input = new java.io.BufferedReader(new java.io.FileReader(file), 65536)) {
-            String line;
-            boolean first = true;
-            while ((line = input.readLine()) != null) {
-                byte[] plain = cipher.doFinal(android.util.Base64.decode(line, android.util.Base64.DEFAULT));
-                // GL9 stores a second PKCS padding layer inside the CBC payload.
-                // Match LapisJNI::unpaddingWithPKCSX, including its invalid marker.
-                int padding = plain[plain.length - 1];
-                if (padding > 0 && padding != 16 - (plain.length - padding) % 16) plain = new byte[1];
-                else plain = java.util.Arrays.copyOf(plain, plain.length - padding);
-                if (!first) result.append('\n');
-                result.append(new String(plain, java.nio.charset.StandardCharsets.UTF_8));
-                first = false;
-            }
-        }
-        return result.toString();
+        return PreparedGameTables.decodeGameTable(path, password, iv);
     }
 
     public static void setLocalMediaSource(android.media.MediaPlayer player, Context owner,

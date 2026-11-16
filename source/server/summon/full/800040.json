@@ -1,0 +1,236 @@
+{
+ "id": "800040",
+ "type": "limited",
+ "name": "Demon Rain, Dracu Lasswell, White Witch Fina, Black Cat Lid Featured Summon",
+ "detail_id": "8000401",
+ "exe_type": "primary",
+ "cost": {
+  "kind": "lapis",
+  "amount": 500
+ },
+ "draws": 1,
+ "schedule": {
+  "disp_order": 1012,
+  "banner_type": 0,
+  "window": {
+   "from": "2026-01-01 00:00:00",
+   "to": "2030-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_e8b05541fe88b92f.png",
+  "detail_banner": "Gacha-Halloween.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_normal/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "pool": {
+  "tiers": [
+   {
+    "rarity": 5,
+    "rate": 0.01,
+    "units": [
+     "204000115",
+     "213000105",
+     "253000105",
+     "253000205",
+     "401000205",
+     "401000305"
+    ],
+    "featured": [
+     "401000205",
+     "401000305"
+    ],
+    "featured_share": 0.5
+   },
+   {
+    "rarity": 4,
+    "rate": 0.19,
+    "units": [
+     "100004604",
+     "201000104",
+     "204000304",
+     "209000304",
+     "253000304",
+     "253000504",
+     "401000404"
+    ],
+    "featured": [
+     "401000404"
+    ],
+    "featured_share": 0.25
+   },
+   {
+    "rarity": 3,
+    "rate": 0.8,
+    "units": [
+     "100002103",
+     "100002203",
+     "100002303",
+     "100002403",
+     "100002503",
+     "100002603",
+     "100002703",
+     "100002803",
+     "100003703",
+     "100003803",
+     "100003903",
+     "100004003",
+     "100004103",
+     "100004203",
+     "100004303",
+     "100004403",
+     "100004703",
+     "201000203",
+     "202000103",
+     "202000203",
+     "203000803",
+     "204000103",
+     "204000203",
+     "204000403",
+     "204000503",
+     "204001103",
+     "204001403",
+     "205000103",
+     "205000203",
+     "205000303",
+     "205000503",
+     "205000703",
+     "206000103",
+     "206000203",
+     "206000303",
+     "206000403",
+     "206000503",
+     "206000603",
+     "206000703",
+     "206001703",
+     "206001803",
+     "209000103",
+     "209000203",
+     "209000503",
+     "209000803",
+     "209000903",
+     "209001003",
+     "211000103",
+     "212000103",
+     "212000403",
+     "212000603",
+     "253000403",
+     "253000603",
+     "401000503"
+    ],
+    "featured": [
+     "401000503"
+    ],
+    "featured_share": 0.25
+   }
+  ]
+ },
+ "provenance": "community",
+ "source": "global-campaign-replacement",
+ "community": {
+  "release": "2016-10-21",
+  "until": "2016-11-04",
+  "limited": true,
+  "units": [
+   "Demon Rain",
+   "Dracu Lasswell",
+   "White Witch Fina",
+   "Black Cat Lid"
+  ],
+  "unit_ids": [
+   "401000205",
+   "401000305",
+   "401000404",
+   "401000503"
+  ],
+  "survey": null
+ },
+ "name_override": true,
+ "tab": "limited",
+ "release": "2016-10-21",
+ "campaign_identity": "global:2016-10-21:gacha-halloween.png",
+ "rate_source": {
+  "url": "https://exvius.fandom.com/wiki/Summon?oldid=189591",
+  "sha256": "edc91368e634454d2d5c7ce58a03a14e38fa7f1e6c5f171e906545e6f2f994c7",
+  "scope": "Era rarity totals and featured rates, including the separate guaranteed-slot table. Incomplete eligibility uses documented Global releases.",
+  "eligibility_authored": true,
+  "before_first_base_five": false
+ },
+ "sources": [
+  {
+   "url": "https://exvius.fandom.com/wiki/Summon/2016",
+   "sha256": "af6d445ecaf3bccdecbb473cd4f0f563d34320b8381b90f9bab1b5c4a03bda77"
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/exvius_gamepedia_en/images/d/d3/Gacha-Halloween.png/revision/latest?cb=20161021175607",
+   "sha256": "9e471d7973ed64f29c7c49bd0cef4a4f40d4d7ea455a5fdbc02aeed69309dea5"
+  }
+ ],
+ "catalogue_replacement": {
+  "campaign_id": "9100012",
+  "assignment": "User-authorized replacement for an unidentifiable reusable server slot."
+ },
+ "state_id": "9100012",
+ "alias_ids": [
+  "9100012"
+ ],
+ "eligibility_source": {
+  "source": "logs/reference/summons/unit-list-wiki.json",
+  "policy": "Global acquisition eligibility; Collaboration, Seasonal and Yes are limited. Only this banner evidenced limited units are permitted. Known future releases are excluded.",
+  "original_server_pool_recovered": false
+ },
+ "secondary_offer": {
+  "cost": {
+   "kind": "lapis",
+   "amount": 5000
+  },
+  "draws": 11,
+  "exe_count": 1,
+  "guarantee": {
+   "rarity": 4,
+   "count": 1,
+   "pool": {
+    "tiers": [
+     {
+      "rarity": 5,
+      "rate": 0.05,
+      "units": [
+       "204000115",
+       "213000105",
+       "253000105",
+       "253000205",
+       "401000205",
+       "401000305"
+      ],
+      "featured": [
+       "401000205",
+       "401000305"
+      ],
+      "featured_share": 0.7499999999999999
+     },
+     {
+      "rarity": 4,
+      "rate": 0.95,
+      "units": [
+       "100004604",
+       "201000104",
+       "204000304",
+       "209000304",
+       "253000304",
+       "253000504",
+       "401000404"
+      ],
+      "featured": [
+       "401000404"
+      ],
+      "featured_share": 0.5
+     }
+    ]
+   }
+  },
+  "img_btn": "gacha_btns_gold_11"
+ },
+ "img_btn_primary": "gacha_btns_gold_1",
+ "ticket_group_id": 10020
+}

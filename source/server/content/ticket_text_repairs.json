@@ -1,0 +1,25 @@
+{
+  "scope": "Missing English text for the existing 3000 Lapis SP ticket. No summon pool, archive selection, price or item identity changes.",
+  "sources": [
+    "Original F_ITEM_EXPLAIN_MST 106213030 identifies the 5-star/NV SPECIAL summon ticket.",
+    "source/server/global_bundles.json bundle 990000109 sells item 106213030.",
+    "source/server/gacha_named.json banner 9200108 consumes item 106213030 under Season 3, Limited Time."
+  ],
+  "rows": [
+    {
+      "table": "F_TEXT_ITEM_NAME",
+      "key": "MST_ITEM_NAME_106213030",
+      "v": ["5★/NV SP Summon Ticket", "5★/NV SP Summon Ticket"]
+    },
+    {
+      "table": "F_TEXT_ITEM_EXPLAIN_SHORT",
+      "key": "MST_ITEM_SHORTDESCRIPTION_106213030",
+      "v": ["Summons one 5-star or NV unit on the 5★/NV SP Special Summon.", "Summons one 5-star or NV unit on the 5★/NV SP Special Summon."]
+    },
+    {
+      "table": "F_TEXT_ITEM_EXPLAIN_LONG",
+      "key": "MST_ITEM_LONGDESCRIPTION_106213030",
+      "v": ["Use on 5★/NV SP Special Summon.<br>Open Summon Archive, choose Season 3, then the Limited Time tab.", "Use on 5★/NV SP Special Summon.<br>Open Summon Archive, choose Season 3, then the Limited Time tab."]
+    }
+  ]
+}

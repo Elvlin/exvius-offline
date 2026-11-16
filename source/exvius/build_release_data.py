@@ -9,10 +9,24 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT = {'mst', 'en', 'common_lang', 'localized_texts', 'homeMarquee'}
 ASSETS = 'https://github.com/Elvlin/exvius-offline/releases/download'
+RULES_ASSETS = ('gacha_named.json', 'content/field_treasures.json')
 
 
-def client_assets(output, tag):
+def client_assets(output, tag, rules_apk=None):
     """Pack original APK resources for Android's standard resource loader."""
+    approved_rules = []
+    if rules_apk:
+        # Snapshot first so the accepted external archive can also be the input.
+        with zipfile.ZipFile(rules_apk) as approved:
+            for entry in approved.infolist():
+                if not entry.filename.startswith('assets/rules/') or entry.is_dir():
+                    continue
+                if Path(entry.filename).name in {'native_content.zip', 'native_content.json',
+                                                 'save_profile.json', 'testsave.json'}:
+                    raise ValueError('Private fixture or embedded repair archive in approved rules')
+                approved_rules.append((entry, approved.read(entry.filename)))
+        if not approved_rules:
+            raise ValueError('The prepared main client has no approved rules to move into the data pack')
     output.mkdir(parents=True, exist_ok=True)
     source = ROOT / 'repository snapshots/FFBE-Global-v9.0.0-original.apk'
     archive_path = output / 'game-assets.apk'
@@ -28,6 +42,22 @@ def client_assets(output, tag):
             info = zipfile.ZipInfo(name, date_time=(2000, 1, 1, 0, 0, 0))
             info.compress_type = entry.compress_type
             archive.writestr(info, body)
+            count += 1
+        # The downloaded archive is mounted by GameAssets on the same Android
+        # AssetManager that native FileUtils uses for ordinary APK assets.
+        for relative in (() if rules_apk else RULES_ASSETS):
+            source_rule = ROOT / 'source/server' / relative
+            if not source_rule.is_file():
+                continue
+            name = 'assets/rules/' + relative
+            if name in archive.namelist():
+                raise ValueError('Rules asset unexpectedly exists in original APK: ' + name)
+            info = zipfile.ZipInfo(name, date_time=(2000, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(info, source_rule.read_bytes())
+            count += 1
+        for entry, body in approved_rules:
+            archive.writestr(entry, body)
             count += 1
     target = output / 'exvius-client-assets.zip'
     with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_STORED) as pack:
@@ -57,11 +87,14 @@ def inputs():
                 relative = path.relative_to(base)
                 if relative.parts[0] in CONTENT:
                     files['native/' + relative.as_posix()] = path
-    for folder in ('mst_decoded', 'text_decoded', 'cpk_extract', 'gacha_community/art'):
+    for folder in ('mst_decoded', 'text_decoded', 'prepared_tables', 'cpk_extract', 'gacha_community/art'):
         base = ROOT / 'data' / folder
         for path in sorted(base.rglob('*')):
             if path.is_file() and not path.is_symlink():
                 files['static/' + path.relative_to(ROOT / 'data').as_posix()] = path
+    rewards = ROOT / 'source/server/content/omitted_global_mission_rewards.json'
+    if rewards.is_file():
+        files['static/mst_decoded/omitted_global_mission_rewards.json'] = rewards
     version_source = ROOT / 'data/overlay/shared_prefs/gamedata.xml'
     if not version_source.is_file():
         version_source = ROOT / 'data/client/shared_prefs/gamedata.xml'
@@ -77,10 +110,22 @@ def inputs():
             ET.SubElement(clean, 'string', {'name': name}).text = row.text
     files['static/client/shared_prefs/gamedata.xml'] = ET.tostring(clean, encoding='utf-8', xml_declaration=True)
     files['metadata/registry.json'] = json.dumps(registry, sort_keys=True).encode()
+    from native_master_index import (COMPLEX_SCHEMAS, SCHEMAS, build_index,
+                                     client_manifest, validate_release_indexes)
+    for info in client_manifest(ROOT / 'repository snapshots/FFBE-Global-v9.0.0-original.apk').values():
+        if info['table'] not in SCHEMAS and info['table'] not in COMPLEX_SCHEMAS:
+            continue
+        version = registry.get('key' + info['table'])
+        name = 'native/mst/Ver' + str(version) + '_' + info['token'] + '.dat'
+        if name in files:
+            source = files[name]
+            raw = source.read_bytes() if isinstance(source, Path) else source
+            files['native/mst/' + info['token'] + '.i'] = build_index(info['table'], raw, info['key'], version)
+    validate_release_indexes(files, ROOT, registry)
     return files
 
 
-def build(output, tag, revision, limit):
+def build(output, tag, revision, limit, rules_apk=None):
     output.mkdir(parents=True, exist_ok=True)
     files = inputs()
     manifest = {'schema': 1, 'revision': revision, 'version': '2026.10.30.' + str(revision),
@@ -126,7 +171,7 @@ def build(output, tag, revision, limit):
         raw += size
     if archive is not None:
         finish()
-    asset_pack, _ = client_assets(output, tag)
+    asset_pack, _ = client_assets(output, tag, rules_apk)
     manifest['packs'].insert(0, asset_pack)
     manifest['minAppVersionCode'] = 9002
     manifest['downloadBytes'] = sum(p['size'] for p in manifest['packs'])
@@ -138,11 +183,11 @@ def build(output, tag, revision, limit):
     return manifest
 
 
-def add_client_assets(output, tag, revision):
+def add_client_assets(output, tag, revision, rules_apk=None):
     """Add the small resource pack without rebuilding unchanged 14 GB parts."""
     path = ROOT / 'data/latest.json'
     manifest = json.loads(path.read_text(encoding='utf-8'))
-    row, count = client_assets(output, tag)
+    row, count = client_assets(output, tag, rules_apk)
     manifest['packs'] = [row] + [p for p in manifest['packs'] if p['id'] != row['id']]
     manifest.update(revision=revision, version='2026.10.30.' + str(revision), minAppVersionCode=9002)
     manifest['downloadBytes'] = sum(p['size'] for p in manifest['packs'])
@@ -163,8 +208,12 @@ if __name__ == '__main__':
     parser.add_argument('--revision', type=int, default=1)
     parser.add_argument('--pack-mib', type=int, default=1400)
     parser.add_argument('--add-client-assets', action='store_true')
+    parser.add_argument('--rules-apk', type=Path,
+                        help='Matching approved rules archive to deliver as downloaded data, never inside the app APK.')
     args = parser.parse_args()
+    if (ROOT / 'custom-engine/src/edits/ds_tables.cpp').is_file() and args.rules_apk is None:
+        parser.error('The native main build requires --rules-apk with its complete approved rules archive.')
     if args.add_client_assets:
-        add_client_assets(args.output, args.tag, args.revision)
+        add_client_assets(args.output, args.tag, args.revision, args.rules_apk)
     else:
-        build(args.output, args.tag, args.revision, args.pack_mib * 1024 * 1024)
+        build(args.output, args.tag, args.revision, args.pack_mib * 1024 * 1024, args.rules_apk)

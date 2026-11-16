@@ -4,12 +4,56 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 sys.path[:0]=[str(Path(__file__).resolve().parent),str(Path(__file__).resolve().parents[1]/'server')]
 from exvius_events import load_policy,save_policy,apply_availability,event_facts,native_gate_dates
 from preflight import audit
 
 class Events(unittest.TestCase):
+    def test_chronicle_and_ranking_use_release_seasons_without_expiration(self):
+        from event_archive import events, menu
+        rows = {str(row['area']): row for row in events()}
+        chronicles = [row for row in rows.values() if row.get('vortex_tab') == 4]
+        ranking = [row for row in rows.values() if row['name'] in ('Dark Visions', 'Clash of Wills')]
+        self.assertEqual(len(chronicles), 20)
+        self.assertEqual(len(ranking), 67)
+        for row in chronicles + ranking:
+            self.assertTrue(row['release'])
+            self.assertEqual(row['group'], 'season3' if row['release'] < '2021-11-18' else 'season4')
+        self.assertTrue(all(row['availability'] == 'permanent' for row in chronicles))
+        self.assertEqual(rows['7104']['release'], '2021-11-18')
+        self.assertEqual(rows['7150']['release'], '2021-04-15')
+        groups = {row['id']: row for row in menu(None)['groups']}
+        self.assertIn('7150', groups['season3']['ids'])
+        self.assertIn('7104', groups['season4']['ids'])
+        self.assertNotIn('7150', groups['permanent']['ids'])
+        self.assertNotIn('7104', groups['permanent']['ids'])
+        self.assertIn('226', groups['permanent']['ids'])
+
+    def test_native_vortex_categories_preserve_chambers_and_raids(self):
+        from event_archive import events
+        rows = {str(row['area']): row for row in events()}
+        expected = {
+            0: {'722'},
+            1: {'218', '225', '224', '217', '227', '969', '226', '228',
+                '216', '1115', '1038', '219', '221', '818', '1044',
+                '301', '302', '960', '964', '966', '968', '984', '994',
+                '1006', '1009', '1021', '1110', '995', '1020'},
+            2: {'318', '402', '401'},
+            3: {'1199', '9961', '898', '899', '963', '909', '1899'},
+            4: {'7150', '7090', '7110', '7002', '7190', '7191'},
+        }
+        for tab, areas in expected.items():
+            for area in areas:
+                self.assertEqual(rows[area]['vortex_tab'], tab, (area, rows[area]['name']))
+        raids = json.loads((Path(__file__).resolve().parents[1] / 'server/raid_archive.json').read_text(encoding='utf-8'))['events']
+        dungeons = {str(d) for raid in raids if not raid.get('jp_original_scope')
+                    for d in [raid.get('dungeon_id'), *raid.get('dungeon_ids', [])] if d}
+        for row in rows.values():
+            if dungeons.intersection(map(str, row.get('dungeons', []))):
+                self.assertEqual(row['vortex_tab'], 0, row['name'])
+
     def test_archive_groups_duplicate_tiles_without_dropping_stages(self):
         from event_archive import events, listings, menu
         original = {str(row['area']): row for row in events()}
@@ -23,10 +67,31 @@ class Events(unittest.TestCase):
             {mid for row in events() for mid in row['missions']})
         result = menu(None, '')
         all_group = next(row for row in result['groups'] if row['id'] == 'all')
-        self.assertEqual(all_group['count'], len(groups))
+        self.assertEqual(all_group['count'], sum(str(row['area']) not in {'3279', '3282', '3264'}
+                                                for row, _aliases in groups))
         vault = [(row, aliases) for row, aliases in groups if row['name'] == 'Vault of Hidden Treasures']
         self.assertEqual(len(vault), 1)
         self.assertEqual(len(vault[0][1]), 11)
+
+    def test_season_filters_use_run_dates_and_keep_permanent_separate(self):
+        import event_archive
+        rows = [dict(area=str(i), name='Event ' + str(i), release=release, group=category,
+                     dungeons=[], missions=[]) for i, release, category in (
+            (1, '2017-11-15', 'season4'), (2, '2017-11-16', 'season1'),
+            (3, '2020-01-29', 'season4'), (4, '2020-01-30', 'season1'),
+            (5, '2021-11-17', 'season4'), (6, '2021-11-18', 'season1'),
+            (7, '2020-05-01', 'collaborations'), (8, '2024-01-01', 'permanent'),
+            (9, None, 'other'), (3279, '2023-03-23', 'permanent'),
+            (3282, '2024-02-29', 'permanent'), (3264, '2022-03-17', 'permanent'))]
+        with patch.object(event_archive, 'events', return_value=rows):
+            result = event_archive.menu(None)
+        groups = {g['id']: g for g in result['groups']}
+        expected = {'season1': ['1'], 'season2': ['2', '3'], 'season3': ['4', '7', '5'],
+                    'season4': ['6'], 'permanent': ['8'], 'collaborations': ['7'], 'other': ['9']}
+        for key, ids in expected.items():
+            self.assertEqual(groups[key]['ids'], ids)
+            self.assertEqual(groups[key]['count'], len(ids))
+        self.assertTrue({'3279', '3282', '3264'}.isdisjoint(groups['all']['ids']))
 
     def test_selection_survives_reload_and_backup(self):
         with tempfile.TemporaryDirectory() as d:

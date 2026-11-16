@@ -1,0 +1,111 @@
+{
+ "id": "9400114",
+ "detail_id": "94001141",
+ "type": "normal",
+ "name": "Luxendarc Raid Summon",
+ "name_override": true,
+ "exe_type": "primary",
+ "draws": 1,
+ "release": "2017-07-21",
+ "season": "collaborations",
+ "tab": "limited",
+ "schedule": {
+  "disp_order": 940114,
+  "banner_type": 0,
+  "window": {
+   "from": "2017-07-21 00:00:00",
+   "to": "2099-12-31 23:59:59"
+  }
+ },
+ "art": {
+  "banner": "summon_list_a18ffae5181d04aa.png",
+  "detail_banner": "bravely-201707-raid-summon-english.png",
+  "anime_file": "gacha_animation",
+  "anime_name": "gacha_moogle_rare/anime",
+  "img_btn": "gacha_btn_n"
+ },
+ "cost": {
+  "kind": "item",
+  "item_id": 106303700,
+  "amount": 100,
+  "is_coin": true
+ },
+ "preview_units": [
+  "315000104"
+ ],
+ "source": "historical-jp-summon",
+ "provenance": "original-jp-offer",
+ "historical_window": {
+  "from": "2017-07-21",
+  "to": null
+ },
+ "historical_original_server_id": null,
+ "pool_authored": true,
+ "rate_notice": "The original artwork, printed offer features and cited contemporary mechanics are preserved. The complete historical server pool was not recovered. The explicit residual character list, non-NV weights and unspecified guaranteed-slot weights are authored source data, not a recovered JP rate table.",
+ "sources": [
+  "https://gamebiz.jp/news/189451"
+ ],
+ "reconstruction": {
+  "reason": "The original named offer and associated artwork are preserved; the complete original server reply and rate table were not recovered after the recorded original-source search.",
+  "unknown_original_fields": [
+   "Residual eligible roster",
+   "Per-reward rates",
+   "Unprinted purchase terms"
+  ],
+  "runtime_schedule": "Historical event made available without an expired closing date.",
+  "art_role": "Use the faithful English translation of this exact offer artwork. Its source role is recorded; no unrelated event card or invented restoration artwork is substituted.",
+  "explicit_authored_terms": "100 original raid coins per pull;3% total among published raid characters;97% equally among original recovered crafting materials; one item per material draw. These costs, quantities and weights are replacements, not recovered historical values."
+ },
+ "reward_pool": [
+  {
+   "kind": 10,
+   "id": 315000104,
+   "count": 1,
+   "rate": 0.03
+  },
+  {
+   "kind": 20,
+   "id": 218000700,
+   "count": 1,
+   "rate": 0.16166666666666665
+  },
+  {
+   "kind": 20,
+   "id": 218000800,
+   "count": 1,
+   "rate": 0.16166666666666665
+  },
+  {
+   "kind": 20,
+   "id": 218000900,
+   "count": 1,
+   "rate": 0.16166666666666665
+  },
+  {
+   "kind": 20,
+   "id": 218001000,
+   "count": 1,
+   "rate": 0.16166666666666665
+  },
+  {
+   "kind": 20,
+   "id": 218001100,
+   "count": 1,
+   "rate": 0.16166666666666665
+  },
+  {
+   "kind": 20,
+   "id": 218001200,
+   "count": 1,
+   "rate": 0.16166666666666665
+  }
+ ],
+ "historical_offer_family": "JP-771-RAID-SUMMON",
+ "art_presentation": {
+  "presentation": "translated_original_summon_art",
+  "historical_native_list_presentation_confirmed": true,
+  "evidence_file": "Japan content/Earlier JP crossovers/Sources/original-summon-art-presentation.json",
+  "dedicated_art_absence_proven": false
+ },
+ "img_btn_primary": "gacha_btns_gold_1"
+}

@@ -432,6 +432,7 @@ def load_state() -> None:
                    for base in (State.cdn_overlay, State.cdn_root))
     if os.environ.get('SUPPRESS_MISSING', '0') != '1':
         repair_legacy_resource_skips(p, _served_cdn)
+    p.restore_story_clear_rewards()
     # A missing resource must not silently complete a subquest's ignore switch.
     # Retain the old diagnostic escape hatch only when explicitly requested.
     if os.environ.get("SUPPRESS_MISSING", "0") == "1":

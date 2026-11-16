@@ -16,6 +16,7 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
     private ProgressBar progress;
     private Button retry;
     private boolean repairAssets;
+    private volatile int displayAttempt;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -58,8 +59,10 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
         retry.setText("Retry");
         retry.setVisibility(View.GONE);
         retry.setOnClickListener(view -> {
+            displayAttempt++;
             retry.setVisibility(View.GONE);
-            DataUpdates.prepare(this, this, repairAssets);
+            status.setText("Checking for game data...");
+            DataUpdates.retry(this, this, repairAssets);
         });
         page.addView(retry);
         setContentView(page);
@@ -90,18 +93,24 @@ public final class DataDownloadActivity extends Activity implements DataUpdates.
         DataUpdates.installerReturned();
     }
 
-    @Override public void update(String message, long done, long total) {
+    @Override public void update(String message, long done, long total, boolean retryAvailable) {
+        int attempt = displayAttempt;
         runOnUiThread(() -> {
-            if (isFinishing()) return;
+            if (isFinishing() || attempt != displayAttempt) return;
             status.setText(message);
+            retry.setVisibility(retryAvailable ? View.VISIBLE : View.GONE);
             progress.setIndeterminate(total <= 0);
             if (total > 0) progress.setProgress((int) Math.min(1000, done * 1000 / total));
         });
     }
-    @Override public void complete() { runOnUiThread(() -> { if (!isFinishing()) openGame(false); }); }
+    @Override public void complete() {
+        int attempt = displayAttempt;
+        runOnUiThread(() -> { if (!isFinishing() && attempt == displayAttempt) openGame(false); });
+    }
     @Override public void failed(String message) {
+        int attempt = displayAttempt;
         runOnUiThread(() -> {
-            if (isFinishing()) return;
+            if (isFinishing() || attempt != displayAttempt) return;
             status.setText(message);
             progress.setIndeterminate(false);
             retry.setVisibility(View.VISIBLE);

@@ -546,6 +546,17 @@ def archived_store_schedules():
                        'VjJQ51uG': '2020-01-01 00:00:00', 'm8ivD4NX': '2099-12-31 23:59:59',
                        'suR36Jpm': '20:' + str(product['ak2dhKm3']),
                        '89YmCAzo': '', '0euar5mZ': ''})
+    # Original JP stock and merchant bindings survive, but their old server
+    # schedule does not. Only these evidenced stores get permanent windows.
+    from pathlib import Path
+    import json
+    configured = json.loads(Path(__file__).with_name('raid_archive.json').read_text(encoding='utf8'))
+    for row in configured.get('jp_medal_store_schedules', []):
+        iid = str(row['Z20mNDvL'])
+        if iid not in seen and iid in products:
+            if row['suR36Jpm'] != '20:' + str(products[iid]['ak2dhKm3']):
+                raise ValueError('JP merchant currency differs from original native stock')
+            result.append(dict(row)); seen.add(iid)
     return result
 
 

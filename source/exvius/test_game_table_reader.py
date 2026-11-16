@@ -16,9 +16,10 @@ from ffbe_crypto import IV, cbc_decrypt, key16
 
 class GameTableReader(unittest.TestCase):
     def test_large_original_tables_decode_identically(self):
-        source = ROOT / 'source/memorial/android/src/main/java/com/exvius/local/LocalGameBridge.java'
-        method = re.search(r'public static String decodeGameTable\(.*?return result.toString\(\);\n    }',
+        source = ROOT / 'source/memorial/android/src/main/java/com/exvius/local/PreparedGameTables.java'
+        method = re.search(r'private static String decodeEncrypted\(.*?return result.toString\(\);\n    }',
                            source.read_text(), re.S)[0]
+        method = method.replace('private static String decodeEncrypted', 'public static String decodeGameTable')
         # Android's Base64 API and the JDK API accept the same canonical input.
         method = method.replace('android.util.Base64.decode(line, android.util.Base64.DEFAULT)',
                                 'java.util.Base64.getDecoder().decode(line)')

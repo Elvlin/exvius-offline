@@ -26,12 +26,9 @@
 #                   stats are derived from F_BEAST_STATUS_MST at the level asked for, never typed in.
 #                   esper_rarity (default 3) and esper_level (default 60) override the envelope.
 #                   NOTE: for the esper to draw, do not use a rarity/level the tables lack.
-#     vision_card   OPTIONAL, and NOT WORKING YET - the blocker is a missing reply, not a value:
-#                   the card's display path resolves through ReinforcementVisionCardInfoList, which
-#                   is populated by a DIFFERENT reply class (ReinforcementVisionCardInfoResponse,
-#                   tags 2MKHk9cg / 9iW4xAFL) that this server does not serve. Also, the string token
-#                   (nQ1iAGf3) keeps only the text after its first "-" ("0-0" = none), so a bare id
-#                   stores empty. Leave it out until that reply exists.
+#     vision_card   OPTIONAL shipped F_VISION_CARD_MST id. The native engine emits its card row
+#                   in 2MKHk9cg and uses the same dash-free friendId_cardId lookup key there and
+#                   in split component 1 of nQ1iAGf3 (0-friendId_cardId).
 #     abilities     optional; up to 4 ability ids; omitted or 0 = empty slot.
 #     equipment     optional; up to 6 item ids. The wire group is "slot-itemId" pairs joined by "@"
 #                   (party slots would join with "|"). With all-zero slots nothing is drawn, so a
@@ -75,3 +72,2187 @@ friends:
 #      master_id: 206003107
 #      level: 120
 #      esper: 1
+
+# Generated companions: codex-value-fix, seed 20261114.
+  # Lasswell; Azure Knight Lasswell; popularity proxy score 210
+  - display_name: Nordaro80
+    friend_id: 900000003
+    rank: 250
+    emblem_id: 0
+    unit:
+      master_id: 100044927
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Fina; Fina -Esper of Destruction-; popularity proxy score 200
+  - display_name: Fentavi26
+    friend_id: 900000004
+    rank: 227
+    emblem_id: 0
+    unit:
+      master_id: 100043207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Rain; Crimson Knight Rain; popularity proxy score 180
+  - display_name: Velvexa40
+    friend_id: 900000005
+    rank: 210
+    emblem_id: 0
+    unit:
+      master_id: 100044827
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Sakura; Sakura -Dark Lineage-; popularity proxy score 170
+  - display_name: Irilune13
+    friend_id: 900000006
+    rank: 317
+    emblem_id: 0
+    unit:
+      master_id: 100041107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Nichol; Nichol -The Return-; popularity proxy score 160
+  - display_name: Orizari93
+    friend_id: 900000007
+    rank: 297
+    emblem_id: 0
+    unit:
+      master_id: 100038207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lid; Healing Avatar Lid; popularity proxy score 140
+  - display_name: Lunmori60
+    friend_id: 900000008
+    rank: 278
+    emblem_id: 0
+    unit:
+      master_id: 100030007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+
+  # Jake; Flame of Rebirth Jake; popularity proxy score 120
+  - display_name: Keldaro40
+    friend_id: 900000009
+    rank: 216
+    emblem_id: 0
+    unit:
+      master_id: 100030107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Ramza; Unsung Hero Ramza; popularity proxy score 112
+  - display_name: Taltavi82
+    friend_id: 900000010
+    rank: 154
+    emblem_id: 0
+    unit:
+      master_id: 253001807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Raegen; Blades of Black Flame Raegen; popularity proxy score 110
+  - display_name: Zeldaro60
+    friend_id: 900000011
+    rank: 348
+    emblem_id: 0
+    unit:
+      master_id: 100041707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Dark Fina; Dark Fina -Esper of Destruction-; popularity proxy score 100
+  - display_name: Fenriven25
+    friend_id: 900000012
+    rank: 263
+    emblem_id: 0
+    unit:
+      master_id: 100043627
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Cloud; Cloud Strife; popularity proxy score 92
+  - display_name: Talzari55
+    friend_id: 900000013
+    rank: 310
+    emblem_id: 0
+    unit:
+      master_id: 207003107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Terra; Terra -Neo Vision-; popularity proxy score 92
+  - display_name: Talvexa92
+    friend_id: 900000014
+    rank: 329
+    emblem_id: 0
+    unit:
+      master_id: 206002507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Ling; White Dragon Ling; popularity proxy score 90
+  - display_name: Orilune88
+    friend_id: 900000015
+    rank: 118
+    emblem_id: 0
+    unit:
+      master_id: 401011707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Cecil; The Red Wings's Cecil; popularity proxy score 82
+  - display_name: Mirlune24
+    friend_id: 900000016
+    rank: 193
+    emblem_id: 0
+    unit:
+      master_id: 204003207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lightning; Wondrous Flash Lightning; popularity proxy score 82
+  - display_name: Lunlune91
+    friend_id: 900000017
+    rank: 185
+    emblem_id: 0
+    unit:
+      master_id: 213001407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Noctis; True King Noctis; popularity proxy score 82
+  - display_name: Pyrlune66
+    friend_id: 900000018
+    rank: 172
+    emblem_id: 0
+    unit:
+      master_id: 215003107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Chizuru; Samurai Chizuru; popularity proxy score 80
+  - display_name: Tallune58
+    friend_id: 900000019
+    rank: 288
+    emblem_id: 0
+    unit:
+      master_id: 401013407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Kefka; Archmage Kefka; popularity proxy score 72
+  - display_name: Kellune38
+    friend_id: 900000020
+    rank: 146
+    emblem_id: 0
+    unit:
+      master_id: 206002317
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Tidus; New Guardian Tidus; popularity proxy score 72
+  - display_name: Vellune64
+    friend_id: 900000021
+    rank: 222
+    emblem_id: 0
+    unit:
+      master_id: 210002407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Zidane; Thief of Tantalus Zidane; popularity proxy score 72
+  - display_name: Lunmori55
+    friend_id: 900000022
+    rank: 200
+    emblem_id: 0
+    unit:
+      master_id: 209003407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Aileen; Aileen; popularity proxy score 70
+  - display_name: Rallune52
+    friend_id: 900000023
+    rank: 257
+    emblem_id: 0
+    unit:
+      master_id: 100005917
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Charlotte; Charlotte -Esper of Destruction-; popularity proxy score 70
+  - display_name: Zelzari56
+    friend_id: 900000024
+    rank: 300
+    emblem_id: 0
+    unit:
+      master_id: 100043507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Chow; Guardian of the Underworld Chow; popularity proxy score 70
+  - display_name: Lundaro72
+    friend_id: 900000025
+    rank: 226
+    emblem_id: 0
+    unit:
+      master_id: 401015507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Roselia; Santa Roselia; popularity proxy score 70
+  - display_name: Talsuli73
+    friend_id: 900000026
+    rank: 305
+    emblem_id: 0
+    unit:
+      master_id: 100017007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Yun; Yun; popularity proxy score 70
+  - display_name: Nortavi91
+    friend_id: 900000027
+    rank: 291
+    emblem_id: 0
+    unit:
+      master_id: 302000907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Balthier; Fleetfooted Sky Pirate Balthier; popularity proxy score 62
+  - display_name: Fendaro66
+    friend_id: 900000028
+    rank: 232
+    emblem_id: 0
+    unit:
+      master_id: 212002407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Bartz; World Wayfarer Bartz; popularity proxy score 62
+  - display_name: Zelriven36
+    friend_id: 900000029
+    rank: 255
+    emblem_id: 0
+    unit:
+      master_id: 205001807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Rikku; Al Bhed Girl Rikku; popularity proxy score 62
+  - display_name: Ralvexa68
+    friend_id: 900000030
+    rank: 253
+    emblem_id: 0
+    unit:
+      master_id: 210002207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Shantotto; Lady Shantotto; popularity proxy score 62
+  - display_name: Pyrdaro94
+    friend_id: 900000031
+    rank: 107
+    emblem_id: 0
+    unit:
+      master_id: 211001607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Ang; Divine Archer Ang; popularity proxy score 60
+  - display_name: Irimori51
+    friend_id: 900000032
+    rank: 148
+    emblem_id: 0
+    unit:
+      master_id: 401016007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Ayaka; Cheerful Caroler Ayaka; popularity proxy score 60
+  - display_name: Orimori29
+    friend_id: 900000033
+    rank: 331
+    emblem_id: 0
+    unit:
+      master_id: 401014007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Citra; Citra; popularity proxy score 60
+  - display_name: Lunriven78
+    friend_id: 900000034
+    rank: 308
+    emblem_id: 0
+    unit:
+      master_id: 100016917
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Delita; Delita; popularity proxy score 60
+  - display_name: Zelsuli32
+    friend_id: 900000035
+    rank: 296
+    emblem_id: 0
+    unit:
+      master_id: 253000227
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Esther; Blade Breaker Esther; popularity proxy score 60
+  - display_name: Velneth61
+    friend_id: 900000036
+    rank: 348
+    emblem_id: 0
+    unit:
+      master_id: 401016727
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Exdeath; Dark Mage Exdeath; popularity proxy score 60
+  - display_name: Talvexa65
+    friend_id: 900000037
+    rank: 129
+    emblem_id: 0
+    unit:
+      master_id: 205000917
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Fryevia; Frostblade Fryevia; popularity proxy score 60
+  - display_name: Nordaro66
+    friend_id: 900000038
+    rank: 322
+    emblem_id: 0
+    unit:
+      master_id: 401013007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lilith; Elegant Temptress Lilith; popularity proxy score 60
+  - display_name: Taltavi36
+    friend_id: 900000039
+    rank: 289
+    emblem_id: 0
+    unit:
+      master_id: 401013707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lucius; Lucius; popularity proxy score 60
+  - display_name: Taltavi88
+    friend_id: 900000040
+    rank: 318
+    emblem_id: 0
+    unit:
+      master_id: 401006017
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Luka; Sweet Luka; popularity proxy score 60
+  - display_name: Iririven44
+    friend_id: 900000041
+    rank: 215
+    emblem_id: 0
+    unit:
+      master_id: 100024207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Olive; Beach Blaster Olive; popularity proxy score 60
+  - display_name: Norvori13
+    friend_id: 900000042
+    rank: 175
+    emblem_id: 0
+    unit:
+      master_id: 401013507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Rem; Benevolent Beauty Rem; popularity proxy score 60
+  - display_name: Zelneth66
+    friend_id: 900000043
+    rank: 182
+    emblem_id: 0
+    unit:
+      master_id: 254001617
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # White Knight Noel; White Knight Noel; popularity proxy score 60
+  - display_name: Talvori94
+    friend_id: 900000044
+    rank: 320
+    emblem_id: 0
+    unit:
+      master_id: 302000707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Aerith; Cetra Descendant Aerith; popularity proxy score 52
+  - display_name: Talriven15
+    friend_id: 900000045
+    rank: 306
+    emblem_id: 0
+    unit:
+      master_id: 207001507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Edgar; Embracer of Duty Edgar; popularity proxy score 52
+  - display_name: Norvexa67
+    friend_id: 900000046
+    rank: 178
+    emblem_id: 0
+    unit:
+      master_id: 206003207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Kain; Dragoon Kain; popularity proxy score 52
+  - display_name: Pyrvexa47
+    friend_id: 900000047
+    rank: 242
+    emblem_id: 0
+    unit:
+      master_id: 204002907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Kuja; Planet Destroyer Kuja; popularity proxy score 52
+  - display_name: Ralneth65
+    friend_id: 900000048
+    rank: 150
+    emblem_id: 0
+    unit:
+      master_id: 209003207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lenna; Summoner Lenna; popularity proxy score 52
+  - display_name: Zelriven57
+    friend_id: 900000049
+    rank: 280
+    emblem_id: 0
+    unit:
+      master_id: 205001607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Locke; Treasure Hunter Locke; popularity proxy score 52
+  - display_name: Velriven95
+    friend_id: 900000050
+    rank: 242
+    emblem_id: 0
+    unit:
+      master_id: 206003407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Sabin; Embracer of Freedom Sabin; popularity proxy score 52
+  - display_name: Pyrvori82
+    friend_id: 900000051
+    rank: 230
+    emblem_id: 0
+    unit:
+      master_id: 206003307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Sephiroth; Legendary Hero Sephiroth; popularity proxy score 52
+  - display_name: Kelriven30
+    friend_id: 900000052
+    rank: 295
+    emblem_id: 0
+    unit:
+      master_id: 207002407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Squall; Sorceress's Knight Squall; popularity proxy score 52
+  - display_name: Talzari42
+    friend_id: 900000053
+    rank: 160
+    emblem_id: 0
+    unit:
+      master_id: 208002507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Tifa; Avalanche's Tifa; popularity proxy score 52
+  - display_name: Irineth61
+    friend_id: 900000054
+    rank: 107
+    emblem_id: 0
+    unit:
+      master_id: 207002327
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Vivi; Pure-Hearted Vivi; popularity proxy score 52
+  - display_name: Pyrvori83
+    friend_id: 900000055
+    rank: 164
+    emblem_id: 0
+    unit:
+      master_id: 209002907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Yuna; Devoted Summoner Yuna; popularity proxy score 52
+  - display_name: Mirriven14
+    friend_id: 900000056
+    rank: 164
+    emblem_id: 0
+    unit:
+      master_id: 210002907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Ace; Vermilion Class Zero Ace; popularity proxy score 50
+  - display_name: Kelmori77
+    friend_id: 900000057
+    rank: 306
+    emblem_id: 0
+    unit:
+      master_id: 254002307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Barbariccia; Barbariccia; popularity proxy score 50
+  - display_name: Pyrvori31
+    friend_id: 900000058
+    rank: 248
+    emblem_id: 0
+    unit:
+      master_id: 401001417
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Barret; Avalanche's Barret; popularity proxy score 50
+  - display_name: Velsuli57
+    friend_id: 900000059
+    rank: 205
+    emblem_id: 0
+    unit:
+      master_id: 207003207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Christine; Christine; popularity proxy score 50
+  - display_name: Kelriven42
+    friend_id: 900000060
+    rank: 203
+    emblem_id: 0
+    unit:
+      master_id: 401002617
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Elena; Eternal Radiance Elena; popularity proxy score 50
+  - display_name: Pyrzari89
+    friend_id: 900000061
+    rank: 200
+    emblem_id: 0
+    unit:
+      master_id: 401014807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Emperor; Emperor of Palamecia; popularity proxy score 50
+  - display_name: Zellune48
+    friend_id: 900000062
+    rank: 223
+    emblem_id: 0
+    unit:
+      master_id: 202002307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Folka; Folka; popularity proxy score 50
+  - display_name: Luntavi93
+    friend_id: 900000063
+    rank: 219
+    emblem_id: 0
+    unit:
+      master_id: 100018317
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Gladiolus; Chosen King's Shield Gladiolus; popularity proxy score 50
+  - display_name: Orizari31
+    friend_id: 900000064
+    rank: 328
+    emblem_id: 0
+    unit:
+      master_id: 215003207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Godrea; Godrea; popularity proxy score 50
+  - display_name: Fenmori63
+    friend_id: 900000065
+    rank: 126
+    emblem_id: 0
+    unit:
+      master_id: 401008607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Ignacio; Ignacio; popularity proxy score 50
+  - display_name: Taldaro96
+    friend_id: 900000066
+    rank: 260
+    emblem_id: 0
+    unit:
+      master_id: 100018717
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Karten; Full Moon Karten; popularity proxy score 50
+  - display_name: Rallune66
+    friend_id: 900000067
+    rank: 196
+    emblem_id: 0
+    unit:
+      master_id: 401012207
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Kryla; Kryla; popularity proxy score 50
+  - display_name: Irivori88
+    friend_id: 900000068
+    rank: 111
+    emblem_id: 0
+    unit:
+      master_id: 401002717
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Qin; Qin; popularity proxy score 50
+  - display_name: Ralneth67
+    friend_id: 900000069
+    rank: 158
+    emblem_id: 0
+    unit:
+      master_id: 401006607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Queen; Queen; popularity proxy score 50
+  - display_name: Fenneth89
+    friend_id: 900000070
+    rank: 186
+    emblem_id: 0
+    unit:
+      master_id: 254000217
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Reberta; Reberta & Ignitos; popularity proxy score 50
+  - display_name: Mirsuli13
+    friend_id: 900000071
+    rank: 289
+    emblem_id: 0
+    unit:
+      master_id: 401012907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Sieghard; Sieghard; popularity proxy score 50
+  - display_name: Mirneth71
+    friend_id: 900000072
+    rank: 131
+    emblem_id: 0
+    unit:
+      master_id: 100017917
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Sylvie; Paladin Sylvie; popularity proxy score 50
+  - display_name: Mirtavi49
+    friend_id: 900000073
+    rank: 131
+    emblem_id: 0
+    unit:
+      master_id: 401013307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Wakka; Wakka; popularity proxy score 50
+  - display_name: Kelriven43
+    friend_id: 900000074
+    rank: 141
+    emblem_id: 0
+    unit:
+      master_id: 210000317
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Ashe; Princess of Liberty Ashe; popularity proxy score 42
+  - display_name: Orineth22
+    friend_id: 900000075
+    rank: 220
+    emblem_id: 0
+    unit:
+      master_id: 212002907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Auron; Legendary Guardian Auron; popularity proxy score 42
+  - display_name: Fenneth10
+    friend_id: 900000076
+    rank: 204
+    emblem_id: 0
+    unit:
+      master_id: 210002307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Celes; Triumphant General Celes; popularity proxy score 42
+  - display_name: Iririven50
+    friend_id: 900000077
+    rank: 274
+    emblem_id: 0
+    unit:
+      master_id: 206002807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Onion Knight; Onion Knight; popularity proxy score 42
+  - display_name: Norvexa54
+    friend_id: 900000078
+    rank: 287
+    emblem_id: 0
+    unit:
+      master_id: 203000107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+
+  # Orlandeau; Sword Saint Orlandeau; popularity proxy score 42
+  - display_name: Oririven88
+    friend_id: 900000079
+    rank: 221
+    emblem_id: 0
+    unit:
+      master_id: 253001907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Vaan; Youth from Rabanastre Vaan; popularity proxy score 42
+  - display_name: Lunvexa27
+    friend_id: 900000080
+    rank: 146
+    emblem_id: 0
+    unit:
+      master_id: 212002607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Aiden; Doctor Aiden; popularity proxy score 40
+  - display_name: Kelvori39
+    friend_id: 900000081
+    rank: 130
+    emblem_id: 0
+    unit:
+      master_id: 401007907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Akstar; Akstar -The Return-; popularity proxy score 40
+  - display_name: Norneth43
+    friend_id: 900000082
+    rank: 265
+    emblem_id: 0
+    unit:
+      master_id: 100038007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Basch; Basch; popularity proxy score 40
+  - display_name: Nortavi59
+    friend_id: 900000083
+    rank: 315
+    emblem_id: 0
+    unit:
+      master_id: 212000907
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+
+  # Beatrix; Beatrix; popularity proxy score 40
+  - display_name: Talneth35
+    friend_id: 900000084
+    rank: 204
+    emblem_id: 0
+    unit:
+      master_id: 209001117
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Eiko; Little Summoner Eiko; popularity proxy score 40
+  - display_name: Zelneth78
+    friend_id: 900000085
+    rank: 258
+    emblem_id: 0
+    unit:
+      master_id: 209003607
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Elfreeda; Elfreeda; popularity proxy score 40
+  - display_name: Oritavi74
+    friend_id: 900000086
+    rank: 198
+    emblem_id: 0
+    unit:
+      master_id: 100009807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Emperor Foo; Emperor Foo; popularity proxy score 40
+  - display_name: Kelneth17
+    friend_id: 900000087
+    rank: 163
+    emblem_id: 0
+    unit:
+      master_id: 401008707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Felix; Felix; popularity proxy score 40
+  - display_name: Kelneth66
+    friend_id: 900000088
+    rank: 336
+    emblem_id: 0
+    unit:
+      master_id: 401006107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+
+  # Golbez; Black Mage Golbez; popularity proxy score 40
+  - display_name: Norvexa22
+    friend_id: 900000089
+    rank: 304
+    emblem_id: 0
+    unit:
+      master_id: 204001717
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Loren; Loren; popularity proxy score 40
+  - display_name: Orineth68
+    friend_id: 900000090
+    rank: 216
+    emblem_id: 0
+    unit:
+      master_id: 100009117
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Lulu; Bewitching Black Mage Lulu; popularity proxy score 40
+  - display_name: Zelzari50
+    friend_id: 900000091
+    rank: 294
+    emblem_id: 0
+    unit:
+      master_id: 210003007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Mediena; Mediena; popularity proxy score 40
+  - display_name: Pyrdaro72
+    friend_id: 900000092
+    rank: 139
+    emblem_id: 0
+    unit:
+      master_id: 100014017
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Nyx; Nyx; popularity proxy score 40
+  - display_name: Ralsuli86
+    friend_id: 900000093
+    rank: 318
+    emblem_id: 0
+    unit:
+      master_id: 215001117
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Physalis; Magic Markswoman Physalis; popularity proxy score 40
+  - display_name: Pyrlune79
+    friend_id: 900000094
+    rank: 162
+    emblem_id: 0
+    unit:
+      master_id: 100044107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Prishe; Prishe; popularity proxy score 40
+  - display_name: Lunsuli66
+    friend_id: 900000095
+    rank: 289
+    emblem_id: 0
+    unit:
+      master_id: 211000407
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Sol; Red-Eyed Sage Sol; popularity proxy score 40
+  - display_name: Irisuli96
+    friend_id: 900000096
+    rank: 285
+    emblem_id: 0
+    unit:
+      master_id: 100041807
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Tiana; Whimsical Winter Tiana; popularity proxy score 40
+  - display_name: Fenriven90
+    friend_id: 900000097
+    rank: 176
+    emblem_id: 0
+    unit:
+      master_id: 401012507
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Vanille; Denial of Focus Vanille; popularity proxy score 40
+  - display_name: Mirzari94
+    friend_id: 900000098
+    rank: 277
+    emblem_id: 0
+    unit:
+      master_id: 213001707
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Wilhelm; Wilhelm; popularity proxy score 40
+  - display_name: Zelmori94
+    friend_id: 900000099
+    rank: 262
+    emblem_id: 0
+    unit:
+      master_id: 100006107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+
+  # Xon; Phantom Thief Xon; popularity proxy score 40
+  - display_name: Oridaro24
+    friend_id: 900000100
+    rank: 128
+    emblem_id: 0
+    unit:
+      master_id: 401016307
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '0'
+      - '0'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'
+
+  # Zargabaath; Zargabaath; popularity proxy score 40
+  - display_name: Lunlune18
+    friend_id: 900000101
+    rank: 189
+    emblem_id: 0
+    unit:
+      master_id: 401001107
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '0'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+
+  # Ardyn; Vermilion Blade Ardyn; popularity proxy score 32
+  - display_name: Fenmori41
+    friend_id: 900000102
+    rank: 122
+    emblem_id: 0
+    unit:
+      master_id: 215003007
+      level: 120
+      lb_level: 0
+      lb_exp: 0
+      esper: 1
+      esper_rarity: 3
+      esper_level: 60
+      equipment:
+      - '302000100'
+      - '0'
+      - '404000200'
+      - '406000100'
+      - '409000100'
+      - '0'
+      vision_card: '100000101'

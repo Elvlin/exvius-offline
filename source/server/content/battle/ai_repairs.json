@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "tables": {
+    "F_AI_MST": {
+      "identity_fields": [
+        "8a6gAwN9",
+        "w7VR6ypY"
+      ],
+      "rows": [
+        {
+          "8a6gAwN9": "204171001",
+          "w7VR6ypY": "1",
+          "WhQL5ev9": "Tantarian exploration documented physical attacks",
+          "B2FW5Qjq": "0:non:non:non@0:non:non:non@0:non:non:non@0:non:non:non@#non:0@non:0@non:0@non:0@non:0@",
+          "ry3J4UNG": "0",
+          "9Fe2mBtK": "non",
+          "0wEykBj5": "0",
+          "J38o4DRA": "non",
+          "8vTj4XRb": "0",
+          "piK07TV4": "2",
+          "VuUTL8v6": "random:0",
+          "z5hB3P01": "attack@-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,@-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,",
+          "ixDq7yJ8": "100.00"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "mission": "7540101",
+    "scenario_group": "754010113",
+    "monster": "204171001",
+    "source_urls": [
+      "https://exvius.fandom.com/wiki/Escape_from_Alexandria_Castle",
+      "https://exvius.fandom.com/wiki/Tantarian",
+      "https://www.youtube.com/watch?v=nd7ypfez1XU&t=175s",
+      "https://www.youtube.com/watch?v=nd7ypfez1XU&t=280s"
+    ],
+    "observed": "Own-event guide documents up to six physical attacks per turn. Muted2017 own-event footage shows normal physical attacks at175s; the280..292s sequence retains the same enemy near15%HP and returns to command selection without an observed special-skill banner.",
+    "reconstructed": "Missing ownAI204171001 is authored as an unconditional normal attack using original native action grammar. Original parts6,6 determine six actions. This is evidence-constrained behavior reconstruction, not recovered retail AI. No other AI ID is substituted.",
+    "retained": "Original HP5000000, MP10000, ATK650, DEF100, MAG500, SPR80, resistances, six actions and skillset204171001 with170520/162200/170530/170540 remain unchanged. Original optional side boss stays outside random encounter quotas.",
+    "limits": "The preserved skill definitions include Edge, Death, Poison and Paper Storm, but their original event-specific trigger conditions were not recovered. They remain unchanged in the original skill master and skillset; this reconstruction does not claim exact retail activation rules."
+  },
+  "native_overlay": {
+    "files": [
+      {
+        "path": "mst/Ver335_PCm9K3no.dat",
+        "sha256": "eb345edd60cbc56fdbc8ecab87c3a1723232166a5d427a1eeabb82eaf536d310"
+      },
+      {
+        "path": "mst/PCm9K3no.i",
+        "sha256": "745ed1c21c77fa3100d3f51503c5db817d26b77fe207d698bd7b543e6f767511"
+      }
+    ]
+  },
+  "validation": {
+    "original_ciphertext_lines_unchanged": 49944,
+    "own_ai_rules": 1,
+    "original_index_sha256": "05b54f74f935b5323f93372348783665cc7f46a604c112f181da359afe2dfe6d",
+    "pair_key": "8a6gAwN9,w7VR6ypY",
+    "group_key": "8a6gAwN9",
+    "source_master_sha256": "711919b389a7bec2afdddfbd6955a239731935441f4820f51a8087e133750e66",
+    "writer": "apply_jp_unit_tables.patch_native replace_groups with original AI identity",
+    "native_rows": 49945
+  }
+}

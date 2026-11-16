@@ -83,6 +83,8 @@ def catalogue():
         for position, row in enumerate(shop['products']):
             product(940001000 + index * 1000 + position, did, row['reward'], row['price'],
                     row['limit'], (kind, currency), shop['reset_months'])
+            if row.get('label'):
+                products[-1]['6uvHX2JG'] = row['label']
     return details, products, offers
 
 
@@ -105,6 +107,7 @@ def labels():
             row = json.loads(line)
             names[kind, row['key'].rsplit('_', 1)[-1]] = row['v'][0].strip()
     result = {}
+    overrides = {row['jPV7Xc4N']: row['6uvHX2JG'] for row in catalogue()[1] if row.get('6uvHX2JG')}
     for pid, offer in catalogue()[2].items():
         texts = []
         for row in offer['rewards']:
@@ -114,7 +117,7 @@ def labels():
             if row['count'] > 1:
                 name += ' x' + str(row['count'])
             texts.append(name)
-        title = ', '.join(texts)
+        title = overrides.get(pid) or ', '.join(texts)
         result[pid] = {'name': title, 'description': 'Exchange for ' + title + '.'}
     return result
 

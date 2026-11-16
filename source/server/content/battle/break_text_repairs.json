@@ -1,0 +1,41 @@
+{
+  "table": "F_TEXT_MONSTER_PARTS_BREAK_DES",
+  "classification": "Authored English descriptions for eleven referenced keys absent from the checked original text sources. Not recovered retail wording.",
+  "baseline": {
+    "member": "native/localized_texts/en/Ver13_f3uHXanH.dat",
+    "sha256": "8ad7f5e3721331247c2eebe9c83428484da039bfc62dd1a8b4bd81adf1b3f8be",
+    "original_records": 30,
+    "operation": "Append the eleven missing keys. Preserve all original descriptions and the resource version. Update the shared localized-text size and checksum."
+  },
+  "basis": [
+    {
+      "parts": ["407371000", "407371001", "407371002"],
+      "source": "https://altema.jp/ffbe/ikarerukamihiroma",
+      "meaning": "The retained source confirms immobilization during Break. The label does not assert a damage multiplier or defense value."
+    },
+    {
+      "parts": ["303091000", "303091001"],
+      "source": "data/web_sources/global_archive_mst_decoded/F_MONSTER_SKILL_MST.ndjson",
+      "original_skill_ids": ["219708", "219709"],
+      "meaning": "Both original skill sets explicitly announce reduced stats and temporarily reduced paralysis resistance during Break. Skill 219709 carries native effect 140. The authored English description summarizes these original actions without inventing a percentage or claiming recovered retail description wording."
+    },
+    {
+      "parts": ["306251002", "306251003", "306251004", "306251005", "306251006", "306251007"],
+      "source": "Original AI 119, retained with the per-part provenance in break_status.json",
+      "meaning": "The original AI checks Break to suppress the pending Cry Havoc action. The label does not assert numerical weakening."
+    }
+  ],
+  "labels": {
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_407371000": "Unable to act",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_407371001": "Unable to act",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_407371002": "Unable to act",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_303091000": "Stats and paralysis resistance reduced",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_303091001": "Stats and paralysis resistance reduced",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251002": "Attack Pattern Changed",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251003": "Attack Pattern Changed",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251004": "Attack Pattern Changed",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251005": "Attack Pattern Changed",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251006": "Attack Pattern Changed",
+    "MST_MONSTER_PARTS_BREAK_DESCRIPTION_306251007": "Attack Pattern Changed"
+  }
+}

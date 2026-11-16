@@ -93,6 +93,19 @@ export function installHomeCarousel(module, note, retained) {
   const constructString = native('_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc', 'void', ['pointer', 'pointer']);
   const destroyString = native('_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev', 'void', ['pointer']);
   const layers = native('_ZN9GameLayer6sharedEv', 'pointer', []);
+  const getLayer = native('_ZN9GameLayer8getLayerEi', 'pointer', ['pointer', 'int']);
+  const layerButtons = native('_ZNK9ScrlLayer13getButtonListEv', 'pointer', ['pointer']);
+  const buttonRect = native('_ZN12SpriteButton12getTouchRectERN7cocos2d4RectE', 'void', ['pointer', 'pointer']);
+  const mailButtonPosition = native('_ZN12SpriteButton14updatePositionEff', 'void', ['pointer', 'float', 'float']);
+  const mailButtonScale = native('_ZN12SpriteButton8setScaleEff', 'void', ['pointer', 'float', 'float']);
+  const layoutList = native('_ZN15LayoutCacheList6sharedEv', 'pointer', []);
+  const layoutObject = native('_ZN15LayoutCacheList9getObjectERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEb',
+    'pointer', ['pointer', 'pointer', 'bool']);
+  const headerHeight = native('_ZN8UIHeader13getAreaHeightEv', 'int', []);
+  const childCount = native('_ZNK7cocos2d4Node16getChildrenCountEv', 'ulong', ['pointer']);
+  const childAt = native('_ZN7cocos2d4Node13getChildrenAtEl', 'pointer', ['pointer', 'long']);
+  const frameDisplayed = native('_ZNK7cocos2d6Sprite16isFrameDisplayedEPNS_11SpriteFrameE', 'bool', ['pointer', 'pointer']);
+  const mailRect = Memory.alloc(16);
   const addChild = native('_ZN9GameLayer8addChildEiiPN7cocos2d4NodeE', 'void', ['pointer', 'int', 'int', 'pointer']);
   // Reconnect the retained original carousel renderer. The v9 Home scene no
   // longer constructs it. Its pinned constructor writes through +0x44f.
@@ -420,6 +433,71 @@ export function installHomeCarousel(module, note, retained) {
     else nodePosition(t.node, nx, height() - ny);
     nodeOpacity(t.node, alpha);
   }
+  function readButtonRect(button) {
+    mailRect.writeFloat(0); mailRect.add(4).writeFloat(0);
+    mailRect.add(8).writeFloat(0); mailRect.add(12).writeFloat(0);
+    buttonRect(button, mailRect);
+    return [0, 4, 8, 12].map(offset => mailRect.add(offset).readFloat());
+  }
+  function positionMailbox(utils, layerId) {
+    if (layerId !== 10) return;
+    const layer = getLayer(layers(), layerId);
+    const buttons = layer.isNull() ? ptr(0) : layerButtons(layer);
+    const array = buttons.isNull() ? ptr(0) : buttons.add(0x30).readPointer();
+    if (array.isNull()) return;
+    const count = array.readU64().toNumber(), objects = array.add(0x10).readPointer();
+    let mail = null, quests = null;
+    for (let i = 0; !objects.isNull() && i < count; ++i) {
+      const button = objects.add(i * Process.pointerSize).readPointer();
+      if (button.isNull()) continue;
+      const tag = button.add(0x304).readS32();
+      if (tag === 3) mail = button;
+      if (tag === 5) quests = button;
+    }
+    if (!mail || !quests) return;
+    const slot = withString('home_icon_7', key => layoutObject(layoutList(), key, false));
+    if (slot.isNull()) return;
+    const qr = readButtonRect(quests);
+    let mr = readButtonRect(mail);
+    // The disabled MENU master leaves this authored top-row slot beside Quests free.
+    const left = Math.max(slot.add(0x24).readFloat(), qr[0] + qr[2]);
+    const top = Math.max(slot.add(0x28).readFloat(), headerHeight());
+    const right = Math.min(width(), slot.add(0x24).readFloat() + slot.add(0x2c).readFloat());
+    let bottom = slot.add(0x28).readFloat() + slot.add(0x30).readFloat();
+    for (let i = 0; !objects.isNull() && i < count; ++i) {
+      const button = objects.add(i * Process.pointerSize).readPointer();
+      if (button.isNull() || button.equals(mail) || button.equals(quests)) continue;
+      const r = readButtonRect(button);
+      if (r[2] <= 0 || r[3] <= 0 || r[0] >= right || r[0] + r[2] <= left) continue;
+      if (r[1] >= top) bottom = Math.min(bottom, r[1]);
+      else if (r[1] + r[3] > top) return;
+    }
+    if (right <= left || bottom <= top || mr[2] <= 0 || mr[3] <= 0) return;
+    const fit = Math.min(1, (right - left) / mr[2], (bottom - top) / mr[3]);
+    const original = snapshot(mail.add(0x360).readPointer());
+    mailButtonScale(mail, original.sx * fit, original.sy * fit);
+    mr = readButtonRect(mail);
+    const px = left + (right - left - mr[2]) / 2, py = top + (bottom - top - mr[3]) / 2;
+    mailButtonPosition(mail, px, py);
+    // Original setBadgeNumber reads this anchor after createIcons returns.
+    utils.add(9 * 0x68 + 0x54).writeFloat(px + mr[2]);
+    utils.add(9 * 0x68 + 0x58).writeFloat(py);
+    const glowFrame = withString('home_submenu_mail_gold_1.png', key => findFrame(frameCache(), key));
+    if (glowFrame.isNull()) return;
+    const children = childCount(layer);
+    for (let i = 0; i < children; ++i) {
+      const node = childAt(layer, i), t = typed(node);
+      if (t.sprite.isNull() || !frameDisplayed(t.sprite, glowFrame)) continue;
+      const effect = snapshot(node);
+      spriteScale(t.sprite, effect.sx * fit, effect.sy * fit);
+      if (!t.game.isNull()) gamePosition(t.game, px + mr[2] / 2, py + mr[3] / 2);
+      else spritePosition(t.sprite, px + mr[2] / 2, height() - py - mr[3] / 2);
+    }
+  }
+  retained.push(Interceptor.attach(module.getExportByName('_ZN15sgHomeIconUtils11createIconsEiiP9HomeScene'), {
+    onEnter(args) { this.utils = args[0]; this.layerId = args[1].toInt32(); },
+    onLeave() { positionMailbox(this.utils, this.layerId); }
+  }));
   function draw(ui) {
     if (ui.routing) return;
     // Home's initial server response replaces the placeholder artwork after

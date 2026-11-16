@@ -1,0 +1,837 @@
+{
+  "source_type": "Own-tier published Global guide values, original SBB behavior, explicit remaining source gaps",
+  "missions": {
+    "99460101": {
+      "source": {
+        "title": "SBB: Safer Sephiroth",
+        "revision": 375502,
+        "url": "https://exvius.fandom.com/wiki/SBB:_Safer_Sephiroth",
+        "wikitext_sha256": "2a1d4a5c433899f7eb01a74aca82415cdb7e5efc4f190ad866a05557decb59eb",
+        "section": "EXT"
+      },
+      "contract": {
+        "name": "Safer-Sephiroth - EXT",
+        "waves": 1,
+        "energy": 50,
+        "rank_exp": 12000,
+        "difficulty": 400
+      },
+      "waves": [
+        {
+          "name": "Safer-Sephiroth",
+          "donor": "305781000",
+          "local_actor": "1889900001",
+          "original_challenge_group": "994601011",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 15000000000,
+            "mp": 155000,
+            "atk": null,
+            "def": null,
+            "mag": null,
+            "spr": null
+          },
+          "published_innate_stat_bonus": {},
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,0,-50,0,0,0,50,50,30",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,100,0,100,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "2006",
+            "name": "Safer-Sephiroth",
+            "link": "",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "15,000,000,000",
+            "mp": "155,000",
+            "atk": "",
+            "def": "",
+            "mag": "",
+            "spr": "<!-- Resistance -->",
+            "fire": "",
+            "ice": "",
+            "lightning": "-50",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "+50",
+            "dark": "+50",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "+30% non-elemental resistance.<br>Immune to DEF/SPR break. Vulnerable to ATK/MAG break."
+          },
+          "behavior_source": {
+            "ai": "305781000",
+            "skill_set": "305781000",
+            "region": "Global",
+            "source_table": "F_AI_MST and F_MONSTER_SKILL_SET_MST",
+            "scope": "Original Global named FF7 Series Boss behavior; five-turn EXT pattern corroborated by the period player guide, not an EXT wire capture.",
+            "period_source_url": "https://www.reddit.com/r/FFBraveExvius/comments/1eemvbe/the_ultimate_safer_sephiroth_ext_guide/"
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained.",
+            "Safer-Sephiroth EXT ATK/DEF/MAG/SPR are blank in its own guide; retained native SBB values are not claimed exact EXT values."
+          ],
+          "unresolved_published_innate_bonus": {}
+        }
+      ],
+      "reward_totals": {
+        "gil": 9000,
+        "unit_exp": 30000,
+        "rank_exp": 12000,
+        "source": "Own EXT Battle Infobox, stage totals",
+        "projection": "Gil and unit EXP stay on native defeated-enemy carriers. Multi-wave totals are distributed in the original SBB donor reward proportions, final integer remainder on the last boss. Per-wave ownership is reconstructed; totals are published."
+      }
+    },
+    "99570101": {
+      "source": {
+        "title": "SBB: Kefka",
+        "revision": 400948,
+        "url": "https://exvius.fandom.com/wiki/SBB:_Kefka",
+        "wikitext_sha256": "d1b7a4cee1fb2128c72314189efdd461cf10032b8cc332bd6501a28b97c686e5",
+        "section": "EXT"
+      },
+      "contract": {
+        "name": "Kefka - EXT",
+        "waves": 4,
+        "energy": 50,
+        "rank_exp": 12000,
+        "difficulty": 500
+      },
+      "waves": [
+        {
+          "name": "Statue of the Gods (Tier 1)",
+          "donor": "405172000",
+          "local_actor": "1889900002",
+          "original_challenge_group": "995701011",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 10000000000,
+            "mp": 80000,
+            "atk": 10800,
+            "def": 10000000,
+            "mag": 10400,
+            "spr": 12000000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 5400,
+            "def": 5000000,
+            "mag": 5200,
+            "spr": 6000000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "-25,0,0,-25,-25,50,0,0,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1499",
+            "name": "Statue of the Gods (Tier 1)",
+            "link": "",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "10,000,000,000",
+            "mp": "80,000",
+            "atk": "10,800 + 5,400",
+            "def": "10,000,000 + 5,000,000",
+            "mag": "10,400 + 5,200",
+            "spr": "12,000,000 + 6,000,000\n<!-- Resistance -->",
+            "fire": "-25",
+            "ice": "",
+            "lightning": "",
+            "water": "-25",
+            "wind": "-25",
+            "earth": "+50",
+            "light": "",
+            "dark": "",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "405172000",
+            "skill_set": "405172000",
+            "source_url": "https://gist.github.com/aEnigmatic/c9c40735f2815fa4c896784e2d98fb7c",
+            "file": "9091103.gl.py",
+            "sha256": "a2d6ba8250a5319efb6c0e76e2b55133f3a370e0a3241c6a2d41d35de3344025",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained."
+          ],
+          "unresolved_published_innate_bonus": {},
+          "native_published_passive": {
+            "set_id": "1889910002",
+            "skill_id": "1889910002",
+            "effects": "1",
+            "arguments": "50,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        },
+        {
+          "name": "Statue of the Gods (Tier 2)",
+          "donor": "405173000",
+          "local_actor": "1889900003",
+          "original_challenge_group": "995701012",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 10000000000,
+            "mp": 100000,
+            "atk": 10200,
+            "def": 10000000,
+            "mag": 10000,
+            "spr": 12000000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 5100,
+            "def": 5000000,
+            "mag": 5000,
+            "spr": 6000000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,-25,-25,0,0,0,0,-25,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1500",
+            "name": "Statue of the Gods (Tier 2)",
+            "link": "",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "10,000,000,000",
+            "mp": "100,000",
+            "atk": "10,200 + 5,100",
+            "def": "10,000,000 + 5,000,000",
+            "mag": "10,000 + 5,000",
+            "spr": "12,000,000 + 6,000,000\n<!-- Resistance -->",
+            "ice": "-25",
+            "lightning": "-25",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "",
+            "dark": "-25",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "405173000",
+            "skill_set": "405173000",
+            "source_url": "https://gist.github.com/aEnigmatic/c9c40735f2815fa4c896784e2d98fb7c",
+            "file": "9091103.gl.py",
+            "sha256": "a2d6ba8250a5319efb6c0e76e2b55133f3a370e0a3241c6a2d41d35de3344025",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained."
+          ],
+          "unresolved_published_innate_bonus": {},
+          "native_published_passive": {
+            "set_id": "1889910003",
+            "skill_id": "1889910003",
+            "effects": "1",
+            "arguments": "50,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        },
+        {
+          "name": "Statue of the Gods (Tier 3)",
+          "donor": "405174000",
+          "local_actor": "1889900004",
+          "original_challenge_group": "995701013",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 10000000000,
+            "mp": 100000,
+            "atk": 10800,
+            "def": 10000000,
+            "mag": 10600,
+            "spr": 12000000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 5400,
+            "def": 5000000,
+            "mag": 5300,
+            "spr": 6000000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "25,25,25,25,25,25,25,25,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1501",
+            "name": "Statue of the Gods (Tier 3)",
+            "link": "",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "10,000,000,000",
+            "mp": "100,000",
+            "atk": "10,800 + 5,400",
+            "def": "10,000,000 + 5,000,000",
+            "mag": "10,600 + 5,300",
+            "spr": "12,000,000 + 6,000,000\n<!-- Resistance -->",
+            "fire": "+25",
+            "ice": "+25",
+            "lightning": "+25",
+            "water": "+25",
+            "wind": "+25",
+            "earth": "+25",
+            "light": "+25",
+            "dark": "+25",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "405174000",
+            "skill_set": "405174000",
+            "source_url": "https://gist.github.com/aEnigmatic/c9c40735f2815fa4c896784e2d98fb7c",
+            "file": "9091103.gl.py",
+            "sha256": "a2d6ba8250a5319efb6c0e76e2b55133f3a370e0a3241c6a2d41d35de3344025",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained."
+          ],
+          "unresolved_published_innate_bonus": {},
+          "native_published_passive": {
+            "set_id": "1889910004",
+            "skill_id": "1889910004",
+            "effects": "1",
+            "arguments": "50,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        },
+        {
+          "name": "Kefka",
+          "donor": "405171000",
+          "local_actor": "1889900005",
+          "original_challenge_group": "995701014",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 30000000000,
+            "mp": 150000,
+            "atk": 35000,
+            "def": 13500000,
+            "mag": 30000,
+            "spr": 13500000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 17500,
+            "def": 6750000,
+            "mag": 15000,
+            "spr": 6750000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,0,0,0,0,0,0,50,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1502",
+            "name": "Kefka",
+            "link": "Kefka (Trial)",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "30,000,000,000",
+            "mp": "150,000",
+            "atk": "35,000 + 17,500",
+            "def": "13,500,000 + 6,750,000",
+            "mag": "30,000 + 15,000",
+            "spr": "13,500,000 + 6,750,000\n<!-- Resistance -->",
+            "fire": "",
+            "ice": "",
+            "lightning": "",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "",
+            "dark": "+50",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "405171000",
+            "skill_set": "405171000",
+            "source_url": "https://gist.github.com/aEnigmatic/c9c40735f2815fa4c896784e2d98fb7c",
+            "file": "9091103.gl.py",
+            "sha256": "a2d6ba8250a5319efb6c0e76e2b55133f3a370e0a3241c6a2d41d35de3344025",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained."
+          ],
+          "unresolved_published_innate_bonus": {},
+          "native_published_passive": {
+            "set_id": "1889910005",
+            "skill_id": "1889910005",
+            "effects": "1",
+            "arguments": "50,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        }
+      ],
+      "reward_totals": {
+        "gil": 9000,
+        "unit_exp": 30000,
+        "rank_exp": 12000,
+        "source": "Own EXT Battle Infobox, stage totals",
+        "projection": "Gil and unit EXP stay on native defeated-enemy carriers. Multi-wave totals are distributed in the original SBB donor reward proportions, final integer remainder on the last boss. Per-wave ownership is reconstructed; totals are published."
+      }
+    },
+    "99580101": {
+      "source": {
+        "title": "SBB: Neo Exdeath",
+        "revision": 400936,
+        "url": "https://exvius.fandom.com/wiki/SBB:_Neo_Exdeath",
+        "wikitext_sha256": "f9b569dc831b4f670da980c25065b8c67d2f7112792ed399889240d5f2fe5897",
+        "section": "EXT"
+      },
+      "contract": {
+        "name": "Neo Exdeath - EXT",
+        "waves": 2,
+        "energy": 50,
+        "rank_exp": 12000,
+        "difficulty": 500
+      },
+      "waves": [
+        {
+          "name": "Exdeath",
+          "donor": "401151000",
+          "local_actor": "1889900006",
+          "original_challenge_group": "995801011",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 10000000000,
+            "mp": 155000,
+            "atk": 15000,
+            "def": 10000000,
+            "mag": 10000,
+            "spr": 10000000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 7500,
+            "def": 5000000,
+            "mag": 5000,
+            "spr": 5000000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,0,0,0,0,0,0,0,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1443",
+            "name": "Exdeath",
+            "link": "Exdeath (Trial)",
+            "sprite": "",
+            "race": "[[:Category:Humans|Human]], [[:Category:Plants|Plant]]",
+            "level": "99",
+            "hp": "10,000,000,000",
+            "mp": "155,000",
+            "atk": "15,000 + 7,500",
+            "def": "10,000,000 + 5,000,000",
+            "mag": "10,000 + 5,000",
+            "spr": "10,000,000 + 5,000,000\n<!-- Resistance -->",
+            "fire": "",
+            "ice": "",
+            "lightning": "",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "",
+            "dark": "",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "401151000",
+            "skill_set": "401151000",
+            "source_url": "https://gist.github.com/aEnigmatic/8b94491ee5723aedf270e6d8042cb389",
+            "file": "9091101.gl.py",
+            "sha256": "f76bbeaf4284a0607e61d32108456700e8b110b570f6df24e72e7f024b0ffbc2",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained."
+          ],
+          "unresolved_published_innate_bonus": {},
+          "native_published_passive": {
+            "set_id": "1889910006",
+            "skill_id": "1889910006",
+            "effects": "1",
+            "arguments": "50,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        },
+        {
+          "name": "Neo Exdeath",
+          "donor": "401161000",
+          "local_actor": "1889900007",
+          "original_challenge_group": "995801012",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 30000000000,
+            "mp": 155000,
+            "atk": 35000,
+            "def": 13500000,
+            "mag": 30000,
+            "spr": 13500000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 15000,
+            "def": 6750000,
+            "mag": 15000,
+            "spr": 6750000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,0,0,0,0,0,0,0,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1444",
+            "name": "Neo Exdeath",
+            "link": "Neo Exdeath",
+            "sprite": "",
+            "race": "[[:Category:Beasts|Beast]]",
+            "level": "99",
+            "hp": "30,000,000,000",
+            "mp": "155,000",
+            "atk": "35,000 + 15,000",
+            "def": "13,500,000 + 6,750,000",
+            "mag": "30,000 + 15,000",
+            "spr": "13,500,000 + 6,750,000\n<!-- Resistance -->",
+            "fire": "",
+            "ice": "",
+            "lightning": "",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "",
+            "dark": "",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "401161000",
+            "skill_set": "401161000",
+            "source_url": "https://gist.github.com/aEnigmatic/8b94491ee5723aedf270e6d8042cb389",
+            "file": "9091101.gl.py",
+            "sha256": "f76bbeaf4284a0607e61d32108456700e8b110b570f6df24e72e7f024b0ffbc2",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained.",
+            "Published ATK35000+15000 cannot be represented by the recovered single integer50percent passive. Original own EXT passive row/base decomposition is missing; no invented percent/flat combination is supplied."
+          ],
+          "unresolved_published_innate_bonus": {
+            "atk": 15000
+          },
+          "native_published_passive": {
+            "set_id": "1889910007",
+            "skill_id": "1889910007",
+            "effects": "1",
+            "arguments": "0,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        }
+      ],
+      "reward_totals": {
+        "gil": 9000,
+        "unit_exp": 30000,
+        "rank_exp": 12000,
+        "source": "Own EXT Battle Infobox, stage totals",
+        "projection": "Gil and unit EXP stay on native defeated-enemy carriers. Multi-wave totals are distributed in the original SBB donor reward proportions, final integer remainder on the last boss. Per-wave ownership is reconstructed; totals are published."
+      }
+    },
+    "99590101": {
+      "source": {
+        "title": "SBB: Vlad",
+        "revision": 400935,
+        "url": "https://exvius.fandom.com/wiki/SBB:_Vlad",
+        "wikitext_sha256": "5609b5c3946485a38d21d15b01b6354f6998eec7daf5772466b3b53d9f6a884f",
+        "section": "EXT"
+      },
+      "contract": {
+        "name": "Vlad - EXT",
+        "waves": 1,
+        "energy": 50,
+        "rank_exp": 12000,
+        "difficulty": 500
+      },
+      "waves": [
+        {
+          "name": "Vlad",
+          "donor": "404091001",
+          "local_actor": "1889900008",
+          "original_challenge_group": "995901011",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 30000000000,
+            "mp": 155000,
+            "atk": 35000,
+            "def": 13500000,
+            "mag": 30000,
+            "spr": 13500000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 15000,
+            "def": 6750000,
+            "mag": 15000,
+            "spr": 6750000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "25,25,25,25,25,25,25,25,25",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1540",
+            "name": "Vlad",
+            "link": "",
+            "sprite": "",
+            "race": "[[:Category:Demons|Demon]]",
+            "level": "99",
+            "hp": "30,000,000,000",
+            "mp": "155,000",
+            "atk": "35,000 + 15,000",
+            "def": "13,500,000 + 6,750,000",
+            "mag": "30,000 + 15,000",
+            "spr": "13,500,000 + 6,750,000\n<!-- Resistance -->",
+            "fire": "+25",
+            "ice": "+25",
+            "lightning": "+25",
+            "water": "+25",
+            "wind": "+25",
+            "earth": "+25",
+            "light": "+25",
+            "dark": "+25",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "404091001",
+            "skill_set": "404091001",
+            "source_url": "https://gist.github.com/aEnigmatic/3a1bd54846936f0861d8635f5448ce6e",
+            "file": "9091113.jp.py",
+            "sha256": "3b8d0be5617c233af342877d2ad9f23bf4dacfea0a6a56fe7420417186206097",
+            "region": "Japan",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained.",
+            "Non-elemental resistance is not separately published for EXT; retained original SBB native value25 is not claimed exact EXT.",
+            "Published ATK35000+15000 cannot be represented by the recovered single integer50percent passive. Original own EXT passive row/base decomposition is missing; no invented percent/flat combination is supplied."
+          ],
+          "unresolved_published_innate_bonus": {
+            "atk": 15000
+          },
+          "native_published_passive": {
+            "set_id": "1889910008",
+            "skill_id": "1889910008",
+            "effects": "1",
+            "arguments": "0,50,50,50,0,0,0",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        }
+      ],
+      "reward_totals": {
+        "gil": 9000,
+        "unit_exp": 30000,
+        "rank_exp": 12000,
+        "source": "Own EXT Battle Infobox, stage totals",
+        "projection": "Gil and unit EXP stay on native defeated-enemy carriers. Multi-wave totals are distributed in the original SBB donor reward proportions, final integer remainder on the last boss. Per-wave ownership is reconstructed; totals are published."
+      }
+    },
+    "99600101": {
+      "source": {
+        "title": "SBB: Chaotic Darkness",
+        "revision": 400938,
+        "url": "https://exvius.fandom.com/wiki/SBB:_Chaotic_Darkness",
+        "wikitext_sha256": "8d22989a7288d060972933517a841cadc611ea0700b87688952254c877ddf53d",
+        "section": "EXT"
+      },
+      "contract": {
+        "name": "Chaotic Darkness - EXT",
+        "waves": 1,
+        "energy": 50,
+        "rank_exp": 12000,
+        "difficulty": 500
+      },
+      "waves": [
+        {
+          "name": "Chaotic Darkness",
+          "donor": "504021200",
+          "local_actor": "1889900009",
+          "original_challenge_group": "996001011",
+          "published_base_stats": {
+            "level": 99,
+            "hp": 30000000000,
+            "mp": 155000,
+            "atk": 35000,
+            "def": 13500000,
+            "mag": 30000,
+            "spr": 13500000
+          },
+          "published_innate_stat_bonus": {
+            "atk": 15000,
+            "def": 6750000,
+            "mag": 15000,
+            "spr": 6750000
+          },
+          "published_resistance_fields": {
+            "hn42BL3Q": "0,0,0,0,0,0,-25,0,0",
+            "D9Nb7jgd": "100,100,100,100,100,100,100,100",
+            "Rcqa1Zt7": "0,0,0,0,100,100,100"
+          },
+          "guide_fields": {
+            "warning": "",
+            "no": "1473",
+            "name": "Chaotic Darkness",
+            "link": "Chaotic Darkness (Trial)",
+            "sprite": "",
+            "race": "[[:Category:Demons|Demon]], [[:Category:Humans|Human]]",
+            "level": "99",
+            "hp": "30,000,000,000",
+            "mp": "155,000",
+            "atk": "35,000 + 15,000",
+            "def": "13,500,000 + 6,750,000",
+            "mag": "30,000 + 15,000",
+            "spr": "13,500,000 + 6,750,000\n<!-- Resistance -->",
+            "fire": "",
+            "ice": "",
+            "lightning": "",
+            "water": "",
+            "wind": "",
+            "earth": "",
+            "light": "-25",
+            "dark": "absorb",
+            "poison": "null",
+            "blind": "null",
+            "sleep": "null",
+            "silence": "null",
+            "paralyze": "null",
+            "confuse": "null",
+            "disease": "null",
+            "petrify": "null",
+            "other-res": "Vulnerable to ATK/DEF/MAG/SPR break."
+          },
+          "behavior_source": {
+            "ai": "504021002",
+            "skill_set": "504021002",
+            "source_url": "https://gist.github.com/aEnigmatic/988c2aca600f93c7774614ba57607f56",
+            "file": "9091102.gl.py",
+            "sha256": "13679d1eb5f65412b28064edc828cb6e74c562654f9c2f298c42690d09725fc1",
+            "region": "Global",
+            "scope": "Original SBB behavior. The own EXT guide shares its abilities section; exact EXT wire AI binding was not retained."
+          },
+          "remaining_unpublished_fields": [
+            "Original EXT server actor/AI IDs and nonpublished presentation fields have not been recovered; corresponding original SBB donor fields are retained.",
+            "Published ATK35000+15000 cannot be represented by the recovered single integer50percent passive. Original own EXT passive row/base decomposition is missing; no invented percent/flat combination is supplied."
+          ],
+          "unresolved_published_innate_bonus": {
+            "atk": 15000
+          },
+          "native_published_passive": {
+            "set_id": "1889910009",
+            "skill_id": "1889910009",
+            "effects": "1@42@49@50",
+            "arguments": "0,50,50,50,0,0,0@0,0,0,0,0,0,0,1@30,2,215732,1@30,2,215732,1",
+            "source": "Own EXT Boss Infobox bonuses/resists and shared attack-pattern section; native ProcessPassiveTypeMst1/42/49/50 and pinned original consumer semantics.",
+            "encoding_status": "Source facts mapped into original native effect format. These locally scoped IDs do not claim recovered EXT server IDs."
+          }
+        }
+      ],
+      "reward_totals": {
+        "gil": 9000,
+        "unit_exp": 30000,
+        "rank_exp": 12000,
+        "source": "Own EXT Battle Infobox, stage totals",
+        "projection": "Gil and unit EXP stay on native defeated-enemy carriers. Multi-wave totals are distributed in the original SBB donor reward proportions, final integer remainder on the last boss. Per-wave ownership is reconstructed; totals are published."
+      }
+    }
+  }
+}

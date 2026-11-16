@@ -1,0 +1,66 @@
+{
+  "scope": "User-authorized batching of the reviewed one-ticket, one-draw offers, using the original native quantity flow. Fixed multi-unit tickets, steps, selection, limited purchases, EX ticket picker, Arena and raid boxes retain their existing paths. Per-banner historical eligibility is not asserted.",
+  "original_limit": "F_DEFINE_MST GACHA_EX_TICKET_USE_LIMIT=10",
+  "banners": {
+    "9200024": {
+      "kind": "item",
+      "item_id": "1209001717",
+      "limit": 10
+    },
+    "9200025": {
+      "kind": "item",
+      "item_id": "1209001976",
+      "limit": 10
+    },
+    "9200026": {
+      "kind": "item",
+      "item_id": "1209001319",
+      "limit": 10
+    },
+    "9200027": {
+      "kind": "item",
+      "item_id": "1209001473",
+      "limit": 10
+    },
+    "9200029": {
+      "kind": "item",
+      "item_id": "1209001344",
+      "limit": 10
+    },
+    "9200106": {
+      "kind": "item",
+      "item_id": "106213040",
+      "limit": 10
+    },
+    "9200107": {
+      "kind": "item",
+      "item_id": "106213050",
+      "limit": 10
+    },
+    "9200108": {
+      "kind": "item",
+      "item_id": "106213030",
+      "limit": 10
+    },
+    "9200109": {
+      "kind": "item",
+      "item_id": "106213060",
+      "limit": 10
+    },
+    "9200110": {
+      "kind": "item",
+      "item_id": "106213070",
+      "limit": 10
+    },
+    "9200111": {
+      "kind": "item",
+      "item_id": "106213080",
+      "limit": 10
+    },
+    "75": {
+      "kind": "item",
+      "item_id": "1209000967",
+      "limit": 10
+    }
+  }
+}

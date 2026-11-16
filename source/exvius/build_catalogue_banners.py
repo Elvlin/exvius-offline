@@ -285,7 +285,10 @@ def type_offer(banner, filename, roles):
 def rebuild():
     mst = {str(r['3HriTp6B']): r for r in
            map(json.loads, (ROOT / 'data/mst_decoded/F_UNIT_MST.ndjson').read_text(encoding='utf-8').splitlines())}
-    roots = {uid for uid, row in mst.items() if str(row.get('woghJa61')) == uid}
+    shift_owners = {uid: str(mst.get(str(row['JPW8Vs40']), {}).get('woghJa61', row['JPW8Vs40']))
+                    for uid, row in mst.items() if str(row.get('I3SKJ4q0')) == '1'
+                    and row.get('JPW8Vs40') not in (None, '', '0', uid)}
+    roots = {uid for uid, row in mst.items() if str(row.get('woghJa61')) == uid and uid not in shift_owners}
     forms = defaultdict(list)
     for uid, row in mst.items():
         forms[(str(row.get('woghJa61')), int(row.get('9fW0TePj', 0)))].append(uid)
@@ -314,6 +317,7 @@ def rebuild():
         if not icon or len(columns) < 9:
             continue
         uid = str(mst.get(icon[1], {}).get('woghJa61', icon[1]))
+        uid = shift_owners.get(uid, uid)
         if uid in roots:
             roles.setdefault(uid, set()).update(re.findall(r'Icon-([^.|]+)\.png', columns[3]))
             for link in re.findall(r'\[\[([^]]+)\]\]', columns[2]):
@@ -323,7 +327,7 @@ def rebuild():
             continue
         if uid in roots:
             retail.add(uid)
-            if 'Yes' in columns[8]:
+            if columns[8].strip() in ('Yes', 'Collaboration', 'Seasonal'):
                 limited.add(uid)
     releases = {}
     launch = text_of(load(REFERENCES / 'unit-list-launch-wiki.json'))
@@ -431,7 +435,7 @@ def rebuild():
                 banner['purchase_limit'] = 1
             if campaign['daily']:
                 banner['daily_limit'] = 1
-        elif banner.get('type') == 'normal':
+        elif banner.get('type') in ('normal', 'limited'):
             banner['secondary_offer'] = {'cost': {'kind': 'lapis', 'amount': 5000}, 'draws': 11,
                 'exe_count': 1, 'guarantee': {'rarity': 4, 'count': 1,
                     'pool': recovered_guarantee if recovered_guarantee else {'tiers': guaranteed_tiers}}}

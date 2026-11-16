@@ -3119,6 +3119,1548 @@
   ],
   "12511505": [
    "125115059"
+  ],
+  "2110101": [
+   "111020313"
+  ],
+  "2200101": [
+   "112020411"
+  ],
+  "4021015": [
+   "111010101",
+   "121013052"
+  ],
+  "7050104": [
+   "705010106"
+  ],
+  "7450102": [
+   "745010112"
+  ],
+  "7490102": [
+   "749010110"
+  ],
+  "7540102": [
+   "754010112"
+  ],
+  "7900101": [
+   "429201021",
+   "429201022"
+  ],
+  "8600101": [
+   "423401017"
+  ],
+  "8920102": [
+   "892010107"
+  ],
+  "9000001": [
+   "111010306"
+  ],
+  "22010101": [
+   "220101014",
+   "220101015",
+   "220101020"
+  ],
+  "22020101": [
+   "220201011",
+   "220201014",
+   "220201020",
+   "220201021",
+   "220201022"
+  ],
+  "30060101": [
+   "306010101",
+   "306010107"
+  ],
+  "30060102": [
+   "306010201"
+  ],
+  "30210102": [
+   "302101001"
+  ],
+  "30210103": [
+   "302101001"
+  ],
+  "30210104": [
+   "302101001"
+  ],
+  "30210108": [
+   "302101001"
+  ],
+  "30210109": [
+   "302101001"
+  ],
+  "30210110": [
+   "302101001"
+  ],
+  "30210111": [
+   "302101001"
+  ],
+  "30210113": [
+   "302101001"
+  ],
+  "30210114": [
+   "302101001"
+  ],
+  "30210116": [
+   "302101001"
+  ],
+  "30420101": [
+   "304201010",
+   "304201020"
+  ],
+  "30420102": [
+   "304201020"
+  ],
+  "30420103": [
+   "304201020",
+   "304201030"
+  ],
+  "30420104": [
+   "304201020",
+   "304201040"
+  ],
+  "30420105": [
+   "304201020",
+   "304201050"
+  ],
+  "30610101": [
+   "306101101"
+  ],
+  "30610102": [
+   "306101201"
+  ],
+  "30700101": [
+   "307001011"
+  ],
+  "30700102": [
+   "307001021"
+  ],
+  "30870101": [
+   "308701011"
+  ],
+  "30870102": [
+   "308701021"
+  ],
+  "31080101": [
+   "310801011",
+   "310801021"
+  ],
+  "31080102": [
+   "310801011",
+   "310801021"
+  ],
+  "31210101": [
+   "312101011"
+  ],
+  "31210102": [
+   "312101021"
+  ],
+  "31340101": [
+   "313401011"
+  ],
+  "31340102": [
+   "313401021"
+  ],
+  "31510101": [
+   "315101012"
+  ],
+  "31770101": [
+   "317701014"
+  ],
+  "32270101": [
+   "322701010",
+   "322701011",
+   "322701012",
+   "322701013",
+   "322701014"
+  ],
+  "32380101": [
+   "32380100"
+  ],
+  "32480101": [
+   "324801010"
+  ],
+  "32550101": [
+   "32550101"
+  ],
+  "32560101": [
+   "32550101"
+  ],
+  "32570101": [
+   "32550101"
+  ],
+  "32660101": [
+   "32660101"
+  ],
+  "32800101": [
+   "32800101"
+  ],
+  "32850101": [
+   "328501011"
+  ],
+  "40020101": [
+   "400201010"
+  ],
+  "42340101": [
+   "423401017"
+  ],
+  "43120101": [
+   "431201021",
+   "431201022"
+  ],
+  "61520101": [
+   "615201016",
+   "615201017",
+   "615201018"
+  ],
+  "61520102": [
+   "615201026",
+   "615201027",
+   "615201028"
+  ],
+  "61930101": [
+   "709010501",
+   "709010502",
+   "709010503",
+   "709010504",
+   "709010505",
+   "709010506",
+   "709010507",
+   "709010508"
+  ],
+  "62630101": [
+   "306010101",
+   "306010107"
+  ],
+  "62750101": [
+   "854010101",
+   "854010111"
+  ],
+  "62850101": [
+   "628501017"
+  ],
+  "62850102": [
+   "628501020",
+   "628501027",
+   "628501028",
+   "628501029"
+  ],
+  "62850103": [
+   "628501030",
+   "628501037",
+   "628501038",
+   "628501039"
   ]
- }
+ },
+ "typed_scenario_links": {
+  "1210407": [
+   {
+    "scenario": "1210401",
+    "group": "121040512",
+    "resource": "321103111",
+    "cpk": "data/overlay/common_lang/sd/event/33/Ver19_12101030611.cpk",
+    "member": "12101030611_event.bin",
+    "member_sha256": "47fb1f71c8e665a2be35238eb3cca11af1d465a97353b83581bb1c8efa01fb33"
+   }
+  ],
+  "1920101": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920201": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920301": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920401": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920501": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920601": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "1920701": [
+   {
+    "scenario": "1920801",
+    "group": "192080101",
+    "resource": "383108101",
+    "cpk": "data/overlay/common_lang/sd/event/92/Ver32_183030101.cpk",
+    "member": "183030101_event.bin",
+    "member_sha256": "7fc417c32c1b2d5ea9475beda4b565a8cafbef252dd551b4af790e2eb8723587"
+   }
+  ],
+  "2110101": [
+   {
+    "scenario": "1110201",
+    "group": "111020313",
+    "resource": "311102101",
+    "cpk": "data/client/files/common_lang/sd/event/11/Ver35_111010201.cpk",
+    "member": "111010201_event.bin",
+    "member_sha256": "aa3bff7e0c10e6351c98ba7a1791b114533e8f7e5d0b5c3653b5e4151148f8ec"
+   }
+  ],
+  "2200101": [
+   {
+    "scenario": "1120201",
+    "group": "112020411",
+    "resource": "392200101",
+    "cpk": "data/client/files/common_lang/sd/event/SP/Ver20_22001010101.cpk",
+    "member": "22001010101_event.bin",
+    "member_sha256": "41c228fb17746cecc3a7b5c7bbb370ce4bf8bff870d5600e400dd9f3ad2af2b1"
+   }
+  ],
+  "4021015": [
+   {
+    "scenario": "39910101",
+    "group": "111010101",
+    "resource": "394021008",
+    "cpk": "data/overlay/common_lang/sd/event2/chara3/Ver12_402100108.cpk",
+    "member": "402100108_event.bin",
+    "member_sha256": "9c700b57cdaf5211c1308de4ab98eecba9e078ebcf7a09fe186ba39d7f8fc1d9"
+   },
+   {
+    "scenario": "39910102",
+    "group": "121013052",
+    "resource": "394021008",
+    "cpk": "data/overlay/common_lang/sd/event2/chara3/Ver12_402100108.cpk",
+    "member": "402100108_event.bin",
+    "member_sha256": "9c700b57cdaf5211c1308de4ab98eecba9e078ebcf7a09fe186ba39d7f8fc1d9"
+   }
+  ],
+  "7050104": [
+   {
+    "scenario": "7050101",
+    "group": "705010106",
+    "resource": "397050401",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver22_70501010401.cpk",
+    "member": "70501010401_event.bin",
+    "member_sha256": "daf6af3e06c8f2feda72bb8c26da74bf1b1f3ead91eecf5feac732047dacf1bc"
+   }
+  ],
+  "7450102": [
+   {
+    "scenario": "7450104",
+    "group": "745010112",
+    "resource": "397450201",
+    "cpk": "data/overlay/common_lang/sd/event/SP2/Ver26_74501010201.cpk",
+    "member": "74501010201_event.bin",
+    "member_sha256": "d3cc7b1b0a3aa32cc974f5bf86e1e1b354c367e674cd21ba622c252632136c8c"
+   }
+  ],
+  "7490102": [
+   {
+    "scenario": "7490104",
+    "group": "749010110",
+    "resource": "397490201",
+    "cpk": "data/overlay/common_lang/sd/event/SP2/Ver26_74901010201.cpk",
+    "member": "74901010201_event.bin",
+    "member_sha256": "59ff0b65801cf3bf5b3e1d4a99122bbf201d39ba9aa778e9d69bf3c0eeca59a3"
+   }
+  ],
+  "7540102": [
+   {
+    "scenario": "7540104",
+    "group": "754010112",
+    "resource": "397540201",
+    "cpk": "data/overlay/common_lang/sd/event/SP2/Ver26_75401010201.cpk",
+    "member": "75401010201_event.bin",
+    "member_sha256": "63e22bc7228ab18c1b9a5d449c4472f3acd60f491d7638c77efb4569753ed444"
+   }
+  ],
+  "7900101": [
+   {
+    "scenario": "42920101",
+    "group": "429201022",
+    "resource": "397900101",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver18_79001010101.cpk",
+    "member": "79001010101_event.bin",
+    "member_sha256": "d430010b3c69acf36cdb1d76fcaee73a99f8be23f0f57528b951a7b2d179297c"
+   },
+   {
+    "scenario": "42920102",
+    "group": "429201022",
+    "resource": "397900101",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver18_79001010101.cpk",
+    "member": "79001010101_event.bin",
+    "member_sha256": "d430010b3c69acf36cdb1d76fcaee73a99f8be23f0f57528b951a7b2d179297c"
+   },
+   {
+    "scenario": "42920103",
+    "group": "429201022",
+    "resource": "397900101",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver18_79001010101.cpk",
+    "member": "79001010101_event.bin",
+    "member_sha256": "d430010b3c69acf36cdb1d76fcaee73a99f8be23f0f57528b951a7b2d179297c"
+   },
+   {
+    "scenario": "42920104",
+    "group": "429201021",
+    "resource": "397900101",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver18_79001010101.cpk",
+    "member": "79001010101_event.bin",
+    "member_sha256": "d430010b3c69acf36cdb1d76fcaee73a99f8be23f0f57528b951a7b2d179297c"
+   }
+  ],
+  "8600101": [
+   {
+    "scenario": "42340101",
+    "group": "423401017",
+    "resource": "398600101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver18_86001010101.cpk",
+    "member": "86001010101_event.bin",
+    "member_sha256": "fc09a1c7c41d820bf44c248b59662840daf1db0d7e8c09d3a49272de98e7ca24"
+   }
+  ],
+  "8920102": [
+   {
+    "scenario": "8920103",
+    "group": "892010107",
+    "resource": "398920201",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver17_89201010201.cpk",
+    "member": "89201010201_event.bin",
+    "member_sha256": "c9a7f7904136e5d0a847c93f07508a24e60bc73eb9a187995a7cd3b33163fe9c"
+   }
+  ],
+  "9000001": [
+   {
+    "scenario": "1110101",
+    "group": "111010306",
+    "resource": "900000001",
+    "cpk": "data/client/files/common_lang/sd/event/SG/Ver9_900000001.cpk",
+    "member": "900000001_event.bin",
+    "member_sha256": "e5da6f6a5ed5e46f0f8fe7aad9042bab0e199216ecdf2ba797a61f50cf5d8f37"
+   }
+  ],
+  "11425106": [
+   {
+    "scenario": "11425102",
+    "group": "1142510502",
+    "resource": "604108103",
+    "cpk": "data/overlay/common_lang/sd/event2/04/Ver20_550430103.cpk",
+    "member": "550430103_event.bin",
+    "member_sha256": "2295edfb884b3760f165fbe12747d0ecb1e99f8ca2b516e599064154ba0fea8f"
+   }
+  ],
+  "11425107": [
+   {
+    "scenario": "11425103",
+    "group": "1142510503",
+    "resource": "604108104",
+    "cpk": "data/overlay/common_lang/sd/event2/04/Ver14_550430104.cpk",
+    "member": "550430104_event.bin",
+    "member_sha256": "43f0e9ff2771fe1e9f6a29d8319e6ee42a4e43b4d8e5986770195ad10a9e7a9f"
+   }
+  ],
+  "22010101": [
+   {
+    "scenario": "2201011",
+    "group": "220101020",
+    "resource": "39220101",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22010101001.cpk",
+    "member": "22010101001_event.bin",
+    "member_sha256": "e7c226466947435494ba2fa0db74108373c1ead6955be1df84a4e9ba45792e4a"
+   },
+   {
+    "scenario": "2201012",
+    "group": "220101014",
+    "resource": "39220101",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22010101001.cpk",
+    "member": "22010101001_event.bin",
+    "member_sha256": "e7c226466947435494ba2fa0db74108373c1ead6955be1df84a4e9ba45792e4a"
+   },
+   {
+    "scenario": "2201013",
+    "group": "220101015",
+    "resource": "39220101",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22010101001.cpk",
+    "member": "22010101001_event.bin",
+    "member_sha256": "e7c226466947435494ba2fa0db74108373c1ead6955be1df84a4e9ba45792e4a"
+   }
+  ],
+  "22020101": [
+   {
+    "scenario": "22020101",
+    "group": "220201020",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020103",
+    "group": "220201011",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020104",
+    "group": "220201014",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020105",
+    "group": "220201021",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020106",
+    "group": "220201022",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020107",
+    "group": "220201022",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020108",
+    "group": "220201022",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   },
+   {
+    "scenario": "22020109",
+    "group": "220201022",
+    "resource": "39220201",
+    "cpk": "data/overlay/common_lang/sd/event/rtg/Ver0_22020101001.cpk",
+    "member": "22020101001_event.bin",
+    "member_sha256": "1f20b6ac05d0398c7a648ceebd4d3a4be1a942b0706575640a2f068611411853"
+   }
+  ],
+  "30060101": [
+   {
+    "scenario": "30060101",
+    "group": "306010101",
+    "resource": "430060101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver27_300601010101.cpk",
+    "member": "300601010101_event.bin",
+    "member_sha256": "f1887523fa92bbdcc4673e327d825c09436ba8f47e6ed9cc5096fa3a889790ca"
+   },
+   {
+    "scenario": "30060102",
+    "group": "306010107",
+    "resource": "430060101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver27_300601010101.cpk",
+    "member": "300601010101_event.bin",
+    "member_sha256": "f1887523fa92bbdcc4673e327d825c09436ba8f47e6ed9cc5096fa3a889790ca"
+   }
+  ],
+  "30060102": [
+   {
+    "scenario": "30060103",
+    "group": "306010201",
+    "resource": "430060201",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver27_300601010201.cpk",
+    "member": "300601010201_event.bin",
+    "member_sha256": "e7d06fbb033874aba687a2010031b967b628dd42d0105119ead39f714d2cf694"
+   }
+  ],
+  "30210102": [
+   {
+    "scenario": "30210101",
+    "group": "302101001",
+    "resource": "430210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010101.cpk",
+    "member": "302101010101_event.bin",
+    "member_sha256": "c9432a7a1cbc816b1b4742aa3d98a6509478f0798deefe9395374a80fd7aab2e"
+   }
+  ],
+  "30210103": [
+   {
+    "scenario": "30210101",
+    "group": "302101001",
+    "resource": "430210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010101.cpk",
+    "member": "302101010101_event.bin",
+    "member_sha256": "c9432a7a1cbc816b1b4742aa3d98a6509478f0798deefe9395374a80fd7aab2e"
+   }
+  ],
+  "30210104": [
+   {
+    "scenario": "30210101",
+    "group": "302101001",
+    "resource": "430210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010101.cpk",
+    "member": "302101010101_event.bin",
+    "member_sha256": "c9432a7a1cbc816b1b4742aa3d98a6509478f0798deefe9395374a80fd7aab2e"
+   }
+  ],
+  "30210108": [
+   {
+    "scenario": "30210103",
+    "group": "302101001",
+    "resource": "430210301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010301.cpk",
+    "member": "302101010301_event.bin",
+    "member_sha256": "57883fa5606bb7a5916a5c9f6a7f730a9b2c69089291439ac2dc7553bb66c9ef"
+   }
+  ],
+  "30210109": [
+   {
+    "scenario": "30210103",
+    "group": "302101001",
+    "resource": "430210301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010301.cpk",
+    "member": "302101010301_event.bin",
+    "member_sha256": "57883fa5606bb7a5916a5c9f6a7f730a9b2c69089291439ac2dc7553bb66c9ef"
+   }
+  ],
+  "30210110": [
+   {
+    "scenario": "30210103",
+    "group": "302101001",
+    "resource": "430210301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010301.cpk",
+    "member": "302101010301_event.bin",
+    "member_sha256": "57883fa5606bb7a5916a5c9f6a7f730a9b2c69089291439ac2dc7553bb66c9ef"
+   }
+  ],
+  "30210111": [
+   {
+    "scenario": "30210101",
+    "group": "302101001",
+    "resource": "430210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010101.cpk",
+    "member": "302101010101_event.bin",
+    "member_sha256": "c9432a7a1cbc816b1b4742aa3d98a6509478f0798deefe9395374a80fd7aab2e"
+   }
+  ],
+  "30210113": [
+   {
+    "scenario": "30210103",
+    "group": "302101001",
+    "resource": "430210301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010301.cpk",
+    "member": "302101010301_event.bin",
+    "member_sha256": "57883fa5606bb7a5916a5c9f6a7f730a9b2c69089291439ac2dc7553bb66c9ef"
+   }
+  ],
+  "30210114": [
+   {
+    "scenario": "30210101",
+    "group": "302101001",
+    "resource": "430210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010101.cpk",
+    "member": "302101010101_event.bin",
+    "member_sha256": "c9432a7a1cbc816b1b4742aa3d98a6509478f0798deefe9395374a80fd7aab2e"
+   }
+  ],
+  "30210116": [
+   {
+    "scenario": "30210103",
+    "group": "302101001",
+    "resource": "430210301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver16_302101010301.cpk",
+    "member": "302101010301_event.bin",
+    "member_sha256": "57883fa5606bb7a5916a5c9f6a7f730a9b2c69089291439ac2dc7553bb66c9ef"
+   }
+  ],
+  "30420101": [
+   {
+    "scenario": "30420101",
+    "group": "304201010",
+    "resource": "430420101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver17_3042010101.cpk",
+    "member": "3042010101_event.bin",
+    "member_sha256": "aa423fce8ff234c76cd1753594da0eb8e39845962060630b2927cc28c405c09b"
+   },
+   {
+    "scenario": "30420102",
+    "group": "304201020",
+    "resource": "430420101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver17_3042010101.cpk",
+    "member": "3042010101_event.bin",
+    "member_sha256": "aa423fce8ff234c76cd1753594da0eb8e39845962060630b2927cc28c405c09b"
+   }
+  ],
+  "30420102": [
+   {
+    "scenario": "30420102",
+    "group": "304201020",
+    "resource": "430420201",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010201.cpk",
+    "member": "3042010201_event.bin",
+    "member_sha256": "a0a8e0399b53fd6ac62135b186680e41a7a46a593d3ebde9be558dd0b32b328b"
+   }
+  ],
+  "30420103": [
+   {
+    "scenario": "30420102",
+    "group": "304201020",
+    "resource": "430420301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010301.cpk",
+    "member": "3042010301_event.bin",
+    "member_sha256": "75203e25d9eb157c46b3bd8be00c94edc30f127184def2e5229bbe6a7d39aa1a"
+   },
+   {
+    "scenario": "30420103",
+    "group": "304201030",
+    "resource": "430420301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010301.cpk",
+    "member": "3042010301_event.bin",
+    "member_sha256": "75203e25d9eb157c46b3bd8be00c94edc30f127184def2e5229bbe6a7d39aa1a"
+   }
+  ],
+  "30420104": [
+   {
+    "scenario": "30420102",
+    "group": "304201020",
+    "resource": "430420401",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010401.cpk",
+    "member": "3042010401_event.bin",
+    "member_sha256": "747537fa9c4aeb1ddaf602ca9489c91a0db3a0848cfa1e095e4ed511cc63abfe"
+   },
+   {
+    "scenario": "30420104",
+    "group": "304201040",
+    "resource": "430420401",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010401.cpk",
+    "member": "3042010401_event.bin",
+    "member_sha256": "747537fa9c4aeb1ddaf602ca9489c91a0db3a0848cfa1e095e4ed511cc63abfe"
+   }
+  ],
+  "30420105": [
+   {
+    "scenario": "30420102",
+    "group": "304201020",
+    "resource": "430420501",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010501.cpk",
+    "member": "3042010501_event.bin",
+    "member_sha256": "47a7fc3915adade840e38420678b6e1e5567ee1e57877340fae690ca2247bb90"
+   },
+   {
+    "scenario": "30420105",
+    "group": "304201050",
+    "resource": "430420501",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver14_3042010501.cpk",
+    "member": "3042010501_event.bin",
+    "member_sha256": "47a7fc3915adade840e38420678b6e1e5567ee1e57877340fae690ca2247bb90"
+   }
+  ],
+  "30610101": [
+   {
+    "scenario": "30610101",
+    "group": "306101101",
+    "resource": "430610101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver12_306101010101.cpk",
+    "member": "306101010101_event.bin",
+    "member_sha256": "c940c208dd5a3ca356cbdbd64016bad9f062bedcf0d70701db0c494a6353b429"
+   }
+  ],
+  "30610102": [
+   {
+    "scenario": "30610102",
+    "group": "306101201",
+    "resource": "430610201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver13_306101010201.cpk",
+    "member": "306101010201_event.bin",
+    "member_sha256": "7ecafb255212a5b70d5c66199ac578be23757d7d33f55a4768b28e4ceb46c039"
+   },
+   {
+    "scenario": "30610103",
+    "group": "306101201",
+    "resource": "430610201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver13_306101010201.cpk",
+    "member": "306101010201_event.bin",
+    "member_sha256": "7ecafb255212a5b70d5c66199ac578be23757d7d33f55a4768b28e4ceb46c039"
+   }
+  ],
+  "30700101": [
+   {
+    "scenario": "30700101",
+    "group": "307001011",
+    "resource": "430700101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver12_307001010101.cpk",
+    "member": "307001010101_event.bin",
+    "member_sha256": "a2dfc7d18f4ec11966ce0474f9ec4abca476b1d72dd69b1705f6a32371b35765"
+   }
+  ],
+  "30700102": [
+   {
+    "scenario": "30700102",
+    "group": "307001021",
+    "resource": "430700201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver14_307001010201.cpk",
+    "member": "307001010201_event.bin",
+    "member_sha256": "9fecf3ae20838d58db2a72245a65310784c1d4f9900a0c62dd1110c0d46f51a7"
+   }
+  ],
+  "30870101": [
+   {
+    "scenario": "30870101",
+    "group": "308701011",
+    "resource": "430870101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_308701010101.cpk",
+    "member": "308701010101_event.bin",
+    "member_sha256": "4c5d6d2b69b7f5cee918682279dc1a6fbcedd34b60407c7903469dc671a5b55e"
+   }
+  ],
+  "30870102": [
+   {
+    "scenario": "30870102",
+    "group": "308701021",
+    "resource": "430870201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver8_308701010201.cpk",
+    "member": "308701010201_event.bin",
+    "member_sha256": "615d9ad6f03686c0fb023e3ec6a4bb69b42f975d4ee962af6df1abcdcb73d5fa"
+   }
+  ],
+  "31080101": [
+   {
+    "scenario": "31080101",
+    "group": "310801011",
+    "resource": "431080101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_310801010101.cpk",
+    "member": "310801010101_event.bin",
+    "member_sha256": "64fe2cb9a245c4d896a9dff3c99f59968b1a7c84c61c5087273883036cfea051"
+   },
+   {
+    "scenario": "31080102",
+    "group": "310801021",
+    "resource": "431080101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_310801010101.cpk",
+    "member": "310801010101_event.bin",
+    "member_sha256": "64fe2cb9a245c4d896a9dff3c99f59968b1a7c84c61c5087273883036cfea051"
+   }
+  ],
+  "31080102": [
+   {
+    "scenario": "31080101",
+    "group": "310801011",
+    "resource": "431080201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_310801010201.cpk",
+    "member": "310801010201_event.bin",
+    "member_sha256": "09496d3a5648d914e7e287c262963be8614d27b876d96dcc2077462005f98dab"
+   },
+   {
+    "scenario": "31080102",
+    "group": "310801021",
+    "resource": "431080201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_310801010201.cpk",
+    "member": "310801010201_event.bin",
+    "member_sha256": "09496d3a5648d914e7e287c262963be8614d27b876d96dcc2077462005f98dab"
+   }
+  ],
+  "31210101": [
+   {
+    "scenario": "31210101",
+    "group": "312101011",
+    "resource": "431210101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_312101010101.cpk",
+    "member": "312101010101_event.bin",
+    "member_sha256": "618883369a06b1110818fe9de6558d7ab0c00f2da63c7b91d6a9eb531a92511c"
+   }
+  ],
+  "31210102": [
+   {
+    "scenario": "31210102",
+    "group": "312101021",
+    "resource": "431210201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver7_312101010201.cpk",
+    "member": "312101010201_event.bin",
+    "member_sha256": "f0c70825cb13ebd254b9e0b7a8450055ee8e13f2294e6d5e84ad5a349436b111"
+   }
+  ],
+  "31340101": [
+   {
+    "scenario": "31340101",
+    "group": "313401011",
+    "resource": "431340101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver4_313401010101.cpk",
+    "member": "313401010101_event.bin",
+    "member_sha256": "bcda35002dc44a46f80fba2ef90b0bf115287cf8a6aa90083d345d63f54641a0"
+   }
+  ],
+  "31340102": [
+   {
+    "scenario": "31340102",
+    "group": "313401021",
+    "resource": "431340201",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver6_313401010201.cpk",
+    "member": "313401010201_event.bin",
+    "member_sha256": "775df6294b7b7ec938e75fccd99221e355737de1a2d920c319e87bc05aab2a2f"
+   }
+  ],
+  "31510101": [
+   {
+    "scenario": "31510101",
+    "group": "315101012",
+    "resource": "431510101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver4_315101010101.cpk",
+    "member": "315101010101_event.bin",
+    "member_sha256": "8ac364a4a4186bf86658e2786412b4197491e399259dc797d18f72cdb1dc6cfa"
+   }
+  ],
+  "31770101": [
+   {
+    "scenario": "31770101",
+    "group": "317701014",
+    "resource": "431770101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver3_317701010101.cpk",
+    "member": "317701010101_event.bin",
+    "member_sha256": "052c588a15a3b50fda670d9a8d16253bb331f2acb70e8ec175bf9fcf027e7d5a"
+   }
+  ],
+  "32270101": [
+   {
+    "scenario": "32270101",
+    "group": "322701010",
+    "resource": "432270101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver5_322701010101.cpk",
+    "member": "322701010101_event.bin",
+    "member_sha256": "bc11a903033168e325a1c5575945fbbfa3903cf2b90b75b2b4963c3d8390747b"
+   },
+   {
+    "scenario": "32270102",
+    "group": "322701011",
+    "resource": "432270101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver5_322701010101.cpk",
+    "member": "322701010101_event.bin",
+    "member_sha256": "bc11a903033168e325a1c5575945fbbfa3903cf2b90b75b2b4963c3d8390747b"
+   },
+   {
+    "scenario": "32270103",
+    "group": "322701012",
+    "resource": "432270101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver5_322701010101.cpk",
+    "member": "322701010101_event.bin",
+    "member_sha256": "bc11a903033168e325a1c5575945fbbfa3903cf2b90b75b2b4963c3d8390747b"
+   },
+   {
+    "scenario": "32270104",
+    "group": "322701013",
+    "resource": "432270101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver5_322701010101.cpk",
+    "member": "322701010101_event.bin",
+    "member_sha256": "bc11a903033168e325a1c5575945fbbfa3903cf2b90b75b2b4963c3d8390747b"
+   },
+   {
+    "scenario": "32270105",
+    "group": "322701014",
+    "resource": "432270101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver5_322701010101.cpk",
+    "member": "322701010101_event.bin",
+    "member_sha256": "bc11a903033168e325a1c5575945fbbfa3903cf2b90b75b2b4963c3d8390747b"
+   }
+  ],
+  "32380101": [
+   {
+    "scenario": "32380101",
+    "group": "32380100",
+    "resource": "432380101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_323801010101.cpk",
+    "member": "323801010101_event.bin",
+    "member_sha256": "d8f8bb103f207dc4ffcd4a337f8396225ea0bbba7d261516cf22b173ea499ac0"
+   }
+  ],
+  "32480101": [
+   {
+    "scenario": "32480101",
+    "group": "324801010",
+    "resource": "432480101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_324801010101.cpk",
+    "member": "324801010101_event.bin",
+    "member_sha256": "f08fa93f31b56bc322b36ed8727f9c33f0f3b55e8d5f3e933cf39f55fac1f6af"
+   }
+  ],
+  "32550101": [
+   {
+    "scenario": "32550101",
+    "group": "32550101",
+    "resource": "432550101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010101.cpk",
+    "member": "3255010101_event.bin",
+    "member_sha256": "4d2ae7e3070b927898b9de5fbc2c8b2451669491a5bbf421e544f376172e3b22"
+   },
+   {
+    "scenario": "32550102",
+    "group": "32550101",
+    "resource": "432550101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010101.cpk",
+    "member": "3255010101_event.bin",
+    "member_sha256": "4d2ae7e3070b927898b9de5fbc2c8b2451669491a5bbf421e544f376172e3b22"
+   },
+   {
+    "scenario": "32550103",
+    "group": "32550101",
+    "resource": "432550101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010101.cpk",
+    "member": "3255010101_event.bin",
+    "member_sha256": "4d2ae7e3070b927898b9de5fbc2c8b2451669491a5bbf421e544f376172e3b22"
+   }
+  ],
+  "32560101": [
+   {
+    "scenario": "32560101",
+    "group": "32550101",
+    "resource": "432550102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010102.cpk",
+    "member": "3255010102_event.bin",
+    "member_sha256": "b0336492ab360391247d8cb77d06da6a5967ae03890d7997023e3232802f0fc5"
+   },
+   {
+    "scenario": "32560102",
+    "group": "32550101",
+    "resource": "432550102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010102.cpk",
+    "member": "3255010102_event.bin",
+    "member_sha256": "b0336492ab360391247d8cb77d06da6a5967ae03890d7997023e3232802f0fc5"
+   },
+   {
+    "scenario": "32560103",
+    "group": "32550101",
+    "resource": "432550102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010102.cpk",
+    "member": "3255010102_event.bin",
+    "member_sha256": "b0336492ab360391247d8cb77d06da6a5967ae03890d7997023e3232802f0fc5"
+   }
+  ],
+  "32570101": [
+   {
+    "scenario": "32570101",
+    "group": "32550101",
+    "resource": "432550103",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010103.cpk",
+    "member": "3255010103_event.bin",
+    "member_sha256": "689fd5c56dec517d7318f173af8c45e5f3e8516196cb90d80ba13769f0029aab"
+   },
+   {
+    "scenario": "32570102",
+    "group": "32550101",
+    "resource": "432550103",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010103.cpk",
+    "member": "3255010103_event.bin",
+    "member_sha256": "689fd5c56dec517d7318f173af8c45e5f3e8516196cb90d80ba13769f0029aab"
+   },
+   {
+    "scenario": "32570103",
+    "group": "32550101",
+    "resource": "432550103",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_3255010103.cpk",
+    "member": "3255010103_event.bin",
+    "member_sha256": "689fd5c56dec517d7318f173af8c45e5f3e8516196cb90d80ba13769f0029aab"
+   }
+  ],
+  "32660101": [
+   {
+    "scenario": "32660101",
+    "group": "32660101",
+    "resource": "432660101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver0_3266010101.cpk",
+    "member": "3266010101_event.bin",
+    "member_sha256": "172916bf081a7dd086d572bd397e82347e69a319300b8b7c0339b2b9f2cf7c94"
+   },
+   {
+    "scenario": "32660102",
+    "group": "32660101",
+    "resource": "432660101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver0_3266010101.cpk",
+    "member": "3266010101_event.bin",
+    "member_sha256": "172916bf081a7dd086d572bd397e82347e69a319300b8b7c0339b2b9f2cf7c94"
+   },
+   {
+    "scenario": "32660103",
+    "group": "32660101",
+    "resource": "432660101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver0_3266010101.cpk",
+    "member": "3266010101_event.bin",
+    "member_sha256": "172916bf081a7dd086d572bd397e82347e69a319300b8b7c0339b2b9f2cf7c94"
+   }
+  ],
+  "32800101": [
+   {
+    "scenario": "32800101",
+    "group": "32800101",
+    "resource": "432670101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP7/Ver0_3267010101.cpk",
+    "member": "3267010101_event.bin",
+    "member_sha256": "616278f617a259015a7663f44525e7c92103aca05a39929e976fcb3c3dbcd425"
+   },
+   {
+    "scenario": "32800102",
+    "group": "32800101",
+    "resource": "432670101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP7/Ver0_3267010101.cpk",
+    "member": "3267010101_event.bin",
+    "member_sha256": "616278f617a259015a7663f44525e7c92103aca05a39929e976fcb3c3dbcd425"
+   },
+   {
+    "scenario": "32800103",
+    "group": "32800101",
+    "resource": "432670101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP7/Ver0_3267010101.cpk",
+    "member": "3267010101_event.bin",
+    "member_sha256": "616278f617a259015a7663f44525e7c92103aca05a39929e976fcb3c3dbcd425"
+   }
+  ],
+  "32850101": [
+   {
+    "scenario": "32850101",
+    "group": "328501011",
+    "resource": "432680101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP8/Ver0_3268010101.cpk",
+    "member": "3268010101_event.bin",
+    "member_sha256": "2df18bc3f78ae95a6c9f590118c5c7554b2c713768dd5cf8820556d9067c5130"
+   },
+   {
+    "scenario": "32850102",
+    "group": "328501011",
+    "resource": "432680101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP8/Ver0_3268010101.cpk",
+    "member": "3268010101_event.bin",
+    "member_sha256": "2df18bc3f78ae95a6c9f590118c5c7554b2c713768dd5cf8820556d9067c5130"
+   },
+   {
+    "scenario": "32850103",
+    "group": "328501011",
+    "resource": "432680101",
+    "cpk": "data/overlay/common_lang/sd/event4/SP8/Ver0_3268010101.cpk",
+    "member": "3268010101_event.bin",
+    "member_sha256": "2df18bc3f78ae95a6c9f590118c5c7554b2c713768dd5cf8820556d9067c5130"
+   }
+  ],
+  "40020101": [
+   {
+    "scenario": "40020101",
+    "group": "400201010",
+    "resource": "440020101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_400201010101.cpk",
+    "member": "400201010101_event.bin",
+    "member_sha256": "06760a9497e210b61ad9edbba59f3d40fee64e2d6c5aea662d2e9181d3dba95d"
+   }
+  ],
+  "42340101": [
+   {
+    "scenario": "42340101",
+    "group": "423401017",
+    "resource": "398600101",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver18_86001010101.cpk",
+    "member": "86001010101_event.bin",
+    "member_sha256": "fc09a1c7c41d820bf44c248b59662840daf1db0d7e8c09d3a49272de98e7ca24"
+   }
+  ],
+  "43120101": [
+   {
+    "scenario": "43120101",
+    "group": "431201021",
+    "resource": "398110301",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver1_81101010301.cpk",
+    "member": "81101010301_event.bin",
+    "member_sha256": "d624ca834299f9595f43f6b54bc8ecb67a93185d4106883115d95b4dab316733"
+   },
+   {
+    "scenario": "43120102",
+    "group": "431201022",
+    "resource": "398110301",
+    "cpk": "data/overlay/common_lang/sd/event/SP3/Ver1_81101010301.cpk",
+    "member": "81101010301_event.bin",
+    "member_sha256": "d624ca834299f9595f43f6b54bc8ecb67a93185d4106883115d95b4dab316733"
+   }
+  ],
+  "61520101": [
+   {
+    "scenario": "61520101",
+    "group": "615201016",
+    "resource": "470010101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000101.cpk",
+    "member": "5001000101_event.bin",
+    "member_sha256": "baabc0d8cbf5353e4013448ad4a61aa4ac38ddb8ca6e157ba9866090619859ae"
+   },
+   {
+    "scenario": "61520102",
+    "group": "615201017",
+    "resource": "470010101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000101.cpk",
+    "member": "5001000101_event.bin",
+    "member_sha256": "baabc0d8cbf5353e4013448ad4a61aa4ac38ddb8ca6e157ba9866090619859ae"
+   },
+   {
+    "scenario": "61520103",
+    "group": "615201018",
+    "resource": "470010101",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000101.cpk",
+    "member": "5001000101_event.bin",
+    "member_sha256": "baabc0d8cbf5353e4013448ad4a61aa4ac38ddb8ca6e157ba9866090619859ae"
+   }
+  ],
+  "61520102": [
+   {
+    "scenario": "61520201",
+    "group": "615201026",
+    "resource": "470010102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000102.cpk",
+    "member": "5001000102_event.bin",
+    "member_sha256": "9275918babe7b06d553936af2fead0a27593cde9b88801d41faed461fbf65061"
+   },
+   {
+    "scenario": "61520202",
+    "group": "615201027",
+    "resource": "470010102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000102.cpk",
+    "member": "5001000102_event.bin",
+    "member_sha256": "9275918babe7b06d553936af2fead0a27593cde9b88801d41faed461fbf65061"
+   },
+   {
+    "scenario": "61520203",
+    "group": "615201028",
+    "resource": "470010102",
+    "cpk": "data/overlay/common_lang/sd/event/SP5/Ver1_5001000102.cpk",
+    "member": "5001000102_event.bin",
+    "member_sha256": "9275918babe7b06d553936af2fead0a27593cde9b88801d41faed461fbf65061"
+   }
+  ],
+  "61930101": [
+   {
+    "scenario": "7090153",
+    "group": "709010501",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090154",
+    "group": "709010502",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090155",
+    "group": "709010503",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090156",
+    "group": "709010504",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090157",
+    "group": "709010505",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090158",
+    "group": "709010501",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090159",
+    "group": "709010505",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090160",
+    "group": "709010501",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090161",
+    "group": "709010505",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090162",
+    "group": "709010501",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090163",
+    "group": "709010504",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090164",
+    "group": "709010506",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090165",
+    "group": "709010507",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090166",
+    "group": "709010504",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090167",
+    "group": "709010503",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090168",
+    "group": "709010502",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090169",
+    "group": "709010504",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090170",
+    "group": "709010505",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090171",
+    "group": "709010504",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090172",
+    "group": "709010505",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090173",
+    "group": "709010501",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   },
+   {
+    "scenario": "7090174",
+    "group": "709010508",
+    "resource": "397090501",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver17_70901010501.cpk",
+    "member": "70901010501_event.bin",
+    "member_sha256": "ddd498a7c8e89b9f66655e1e597a52bb442d4355713b3ff5c0306095170fee7a"
+   }
+  ],
+  "62630101": [
+   {
+    "scenario": "62630101",
+    "group": "306010101",
+    "resource": "430060301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver5_300601010301.cpk",
+    "member": "300601010301_event.bin",
+    "member_sha256": "efa9885a63e3ca91e449018a8c0ad453fc15ca72a8e0579bf8bb1dc1b565c7d2"
+   },
+   {
+    "scenario": "62630102",
+    "group": "306010107",
+    "resource": "430060301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver5_300601010301.cpk",
+    "member": "300601010301_event.bin",
+    "member_sha256": "efa9885a63e3ca91e449018a8c0ad453fc15ca72a8e0579bf8bb1dc1b565c7d2"
+   }
+  ],
+  "62750101": [
+   {
+    "scenario": "62750101",
+    "group": "854010111",
+    "resource": "398540301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver1_85401010301.cpk",
+    "member": "85401010301_event.bin",
+    "member_sha256": "d93074b1be0b0a1ef59a2bbc55278a628425efdb2810a7c077406e7868b1e055"
+   },
+   {
+    "scenario": "62750102",
+    "group": "854010101",
+    "resource": "398540301",
+    "cpk": "data/overlay/common_lang/sd/event/SP4/Ver1_85401010301.cpk",
+    "member": "85401010301_event.bin",
+    "member_sha256": "d93074b1be0b0a1ef59a2bbc55278a628425efdb2810a7c077406e7868b1e055"
+   }
+  ],
+  "62850101": [
+   {
+    "scenario": "62850101",
+    "group": "628501017",
+    "resource": "397070601",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010601.cpk",
+    "member": "70701010601_event.bin",
+    "member_sha256": "fe32dac60a9ed2543ca01563715b2afc130b2e72ad20dc971e4198cb30b78088"
+   }
+  ],
+  "62850102": [
+   {
+    "scenario": "62850102",
+    "group": "628501027",
+    "resource": "397070701",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010701.cpk",
+    "member": "70701010701_event.bin",
+    "member_sha256": "e2809508d5f16dc70163c5df6d78f173a56789b37ce29eadfae2f2e79140df0d"
+   },
+   {
+    "scenario": "62850201",
+    "group": "628501028",
+    "resource": "397070701",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010701.cpk",
+    "member": "70701010701_event.bin",
+    "member_sha256": "e2809508d5f16dc70163c5df6d78f173a56789b37ce29eadfae2f2e79140df0d"
+   },
+   {
+    "scenario": "62850202",
+    "group": "628501029",
+    "resource": "397070701",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010701.cpk",
+    "member": "70701010701_event.bin",
+    "member_sha256": "e2809508d5f16dc70163c5df6d78f173a56789b37ce29eadfae2f2e79140df0d"
+   },
+   {
+    "scenario": "62850203",
+    "group": "628501020",
+    "resource": "397070701",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010701.cpk",
+    "member": "70701010701_event.bin",
+    "member_sha256": "e2809508d5f16dc70163c5df6d78f173a56789b37ce29eadfae2f2e79140df0d"
+   }
+  ],
+  "62850103": [
+   {
+    "scenario": "62850103",
+    "group": "628501037",
+    "resource": "397070801",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010801.cpk",
+    "member": "70701010801_event.bin",
+    "member_sha256": "47ba084610f490944cb1f005588c50ffff3e279f9f237c794d4ec0c61fb71a3a"
+   },
+   {
+    "scenario": "62850301",
+    "group": "628501038",
+    "resource": "397070801",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010801.cpk",
+    "member": "70701010801_event.bin",
+    "member_sha256": "47ba084610f490944cb1f005588c50ffff3e279f9f237c794d4ec0c61fb71a3a"
+   },
+   {
+    "scenario": "62850302",
+    "group": "628501039",
+    "resource": "397070801",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010801.cpk",
+    "member": "70701010801_event.bin",
+    "member_sha256": "47ba084610f490944cb1f005588c50ffff3e279f9f237c794d4ec0c61fb71a3a"
+   },
+   {
+    "scenario": "62850303",
+    "group": "628501030",
+    "resource": "397070801",
+    "cpk": "data/overlay/common_lang/sd/event/SP/Ver1_70701010801.cpk",
+    "member": "70701010801_event.bin",
+    "member_sha256": "47ba084610f490944cb1f005588c50ffff3e279f9f237c794d4ec0c61fb71a3a"
+   }
+  ]
+ },
+ "typed_scenario_note": "Exact opcode0x47 scenario IDs from each declared original event package own typed member, resolved through the mandatory original MissionStart response scenario-group list. Only groups with complete preserved actor/parts/skill dependencies are projected. Cumulative foreign members, arbitrary integer scans and random allocation guesses are excluded. Page conditions still determine whether a scripted fight is reached."
 }
