@@ -32,8 +32,9 @@ public final class DataUpdates {
     private static final String LATEST = "https://raw.githubusercontent.com/Elvlin/exvius-offline/main/data/latest.json";
     private static final String ASSETS = "https://github.com/Elvlin/exvius-offline/releases/download/";
     private static final int MAX_UPDATE_INFO_BYTES = 524288;
-    // This native app requires the external rules and content introduced in revision 10.
-    private static final long REQUIRED_DATA_REVISION = 10;
+    // This native app requires the external rules and content introduced in revision 13 (weapon enhancement pages).
+    // Raise it whenever the engine needs files from a newer data revision.
+    private static final long REQUIRED_DATA_REVISION = 13;
     private static final AtomicBoolean working = new AtomicBoolean();
     private static volatile Attempt activeAttempt;
     private static boolean retryRequested;

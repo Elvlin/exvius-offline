@@ -38,7 +38,8 @@ public final class DataPack {
             relative = "exvius/data/" + name;
         } else if (name.startsWith("native/")) {
             relative = name.substring(7);
-            if (!relative.matches("(?:mst|localized_texts|common_lang|en|homeMarquee)/.+"))
+            // exvius/equipment-enhancement holds the weapon enhancement event pages (banner, top, rewards).
+            if (!relative.matches("(?:mst|localized_texts|common_lang|en|homeMarquee|exvius/equipment-enhancement)/.+"))
                 throw new IOException("Unsupported game data path");
         } else if (name.equals("metadata/registry.json")) {
             relative = "exvius/data/registry.json";

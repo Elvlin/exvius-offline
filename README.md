@@ -2,7 +2,7 @@
 
 **Play Final Fantasy Brave Exvius offline on Android.**
 
-**[Download the APK (41.3 MB)](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-offline-v0.1.35.apk)**
+**[Download the APK (41.3 MB)](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.36/exvius-offline-v0.1.36.apk)**
 
 This is a fan project built from the original Global game. Download the game data once, then play it offline.
 
@@ -10,9 +10,9 @@ Replay stages to farm Lapis, pick the summon banner you want, and revisit events
 
 This project is still being worked on. It is unofficial and is not affiliated with Square Enix or gumi.
 
-[What changed in v0.1.35](release/notes-v0.1.35.md)
+[What changed in v0.1.36](release/notes-v0.1.36.md)
 
-**v0.1.35, Android build 9075** is available. It includes the engine fix for purchases, equipment and party edits, awakening, fusion and unit selling, plus the earlier battle music, summon artwork and game-data startup corrections. 
+**v0.1.36, Android build 9076** is available. It includes the engine fix for purchases, equipment and party edits, awakening, fusion and unit selling, plus the earlier battle music, summon artwork and game-data startup corrections. 
 Install over the existing app to keep your save.
 
 ## Screenshots
@@ -55,7 +55,7 @@ Daily login rewards use your local save and date.
 
 ## Install
 
-1. [Download the APK](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-offline-v0.1.35.apk) from the [release page](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.35).
+1. [Download the APK](https://github.com/Elvlin/exvius-offline/releases/download/v0.1.36/exvius-offline-v0.1.36.apk) from the [release page](https://github.com/Elvlin/exvius-offline/releases/tag/v0.1.36).
 2. Install it on an **Android 7.0 or newer phone with 64-bit ARM support**.
 3. Open it with an internet connection. The app downloads all the game data automatically, about **17.8 GB**. Allow about **21 GB of free space** for setup.
 4. Once setup is done, you can play offline.

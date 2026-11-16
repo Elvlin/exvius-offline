@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "revision": 12,
-  "version": "2026.11.16.12",
-  "minAppVersionCode": 9075,
+  "revision": 13,
+  "version": "2026.11.16.13",
+  "minAppVersionCode": 9076,
   "packs": [
     {
       "id": "client-assets",
@@ -153,21 +153,28 @@
     },
     {
       "id": "content-003",
-      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-content-003.zip",
-      "size": 942399339,
-      "unpackedSize": 1075502506,
-      "sha256": "2bf24063fe41fc5c815324a454b43db8286a988462e9f97d6441ad01cb7b6342"
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.36/exvius-content-003.zip",
+      "size": 942665918,
+      "unpackedSize": 1075755311,
+      "sha256": "a9afb35563310317cdc7cbc56b3998a279fafcb9cdf7e7dd03753fc3f395fb1f"
+    },
+    {
+      "id": "equipment-enhancement",
+      "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.36/exvius-equipment-enhancement-r13.zip",
+      "size": 5523384,
+      "unpackedSize": 5510018,
+      "sha256": "4d3fe54e15894e07c592aefa97325c5053372e833524aefdc4655cc27aa7617f"
     }
   ],
-  "downloadBytes": 18628390069,
-  "installedBytes": 19046308873,
-  "files": 16299,
+  "downloadBytes": 18634180032,
+  "installedBytes": 19052071696,
+  "files": 16433,
   "app": {
-    "version": "0.1.35",
-    "versionName": "9.0.0-offline.35",
-    "versionCode": 9075,
-    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.35/exvius-offline-v0.1.35.apk",
+    "version": "0.1.36",
+    "versionName": "9.0.0-offline.36",
+    "versionCode": 9076,
+    "url": "https://github.com/Elvlin/exvius-offline/releases/download/v0.1.36/exvius-offline-v0.1.36.apk",
     "size": 41295064,
-    "sha256": "2417710b5e61277a0ad11cdd93dc92c290a70583059044ccce441fb9dd1f56c1"
+    "sha256": "280cd1bc9abae9ecbc3fcb0ba5d1138dbc08511763166e2b120e2be0f41a42a7"
   }
 }
