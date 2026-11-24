@@ -96,10 +96,25 @@ class ApprovedNativeRepairs(unittest.TestCase):
                 self.assertEqual(repairs.sha(index), expected_index)
                 self.assertEqual(struct.unpack_from('<H', index, 8)[0], count)
 
+    def test_nv_fragment_conversion_changes_only_the_ten_remapped_fragment_rewards(self):
+        contract = json.loads(repairs.NV_FRAGMENT_CONTRACT.read_text(encoding='utf8'))
+        key = self.manifest['F_SACRIFICE_MST']['key']
+        rewards = {row['woghJa61']: row['1swM3H4T'] for row in contract['rows']}
+        before = decode(self.baseline(repairs.NV_FRAGMENT_MEMBER), key)[1]
+        after = decode(self.files[repairs.NV_FRAGMENT_MEMBER], key)[1]
+        self.assertEqual(len(before), 1135)
+        self.assertEqual(after, [dict(row, **{'1swM3H4T': rewards.get(row['woghJa61'], row['1swM3H4T'])})
+                                 for row in before])
+        self.assertEqual(sum(old != new for old, new in zip(before, after)), 10)
+        static = [json.loads(r) for r in self.files[repairs.NV_FRAGMENT_STATIC].splitlines() if r.strip()]
+        self.assertEqual(static, after)
+        self.assertEqual(self.files['native/mst/w5JFGPh3.i'],
+                         build_index('F_SACRIFICE_MST', self.files[repairs.NV_FRAGMENT_MEMBER], key, 291))
+
     def test_exact_delivery_scope_excludes_current_overlay_assets_and_extra_content(self):
-        self.assertEqual(len(self.files), 38)
-        self.assertEqual(sum(name.startswith('native/') for name in self.files), 28)
-        self.assertEqual(sum(name.startswith('static/') for name in self.files), 10)
+        self.assertEqual(len(self.files), 41)
+        self.assertEqual(sum(name.startswith('native/') for name in self.files), 30)
+        self.assertEqual(sum(name.startswith('static/') for name in self.files), 11)
         self.assertEqual({name for name in self.files if name.endswith('.cpk')},
                          {'native/' + name for name in
                           repairs.GLOBAL_TOWN_PACKAGES.keys() | repairs.GLOBAL_SCENE_MESSAGE_PACKAGES.keys()})
