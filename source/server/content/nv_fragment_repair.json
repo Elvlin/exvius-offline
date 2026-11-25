@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "table": "F_SACRIFICE_MST",
+  "identity_fields": ["woghJa61"],
+  "operation": "merge_fields",
+  "original": [
+    {
+      "woghJa61": "309000507",
+      "1swM3H4T": "20:250031200:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000107",
+      "1swM3H4T": "20:250016800:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000307",
+      "1swM3H4T": "20:250017000:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000407",
+      "1swM3H4T": "20:250017100:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "348000107",
+      "1swM3H4T": "20:250031000:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "349000107",
+      "1swM3H4T": "20:250031100:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "349000127",
+      "1swM3H4T": "20:250031100:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "350000107",
+      "1swM3H4T": "20:250031300:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "350000127",
+      "1swM3H4T": "20:250031300:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "351000107",
+      "1swM3H4T": "20:250031400:50,20:293000100:1"
+    }
+  ],
+  "rows": [
+    {
+      "woghJa61": "309000507",
+      "1swM3H4T": "20:872000014:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000107",
+      "1swM3H4T": "20:872000006:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000307",
+      "1swM3H4T": "20:872000008:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "346000407",
+      "1swM3H4T": "20:872000009:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "348000107",
+      "1swM3H4T": "20:872000012:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "349000107",
+      "1swM3H4T": "20:872000013:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "349000127",
+      "1swM3H4T": "20:872000013:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "350000107",
+      "1swM3H4T": "20:872000015:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "350000127",
+      "1swM3H4T": "20:872000015:50,20:293000100:1"
+    },
+    {
+      "woghJa61": "351000107",
+      "1swM3H4T": "20:872000016:50,20:293000100:1"
+    }
+  ],
+  "native_member": "native/mst/Ver291_w5JFGPh3.dat",
+  "native_index_member": "native/mst/w5JFGPh3.i",
+  "static_member": "static/mst_decoded/F_SACRIFICE_MST.ndjson",
+  "native_version": 291,
+  "provenance": {
+    "reason": "The earlier JP unit import moved these units' fragments to the 872000006-872000016 item IDs. F_NV_EX_CLASS_UP_MST consumes those IDs, and the banners, shops and raid rewards grant them. F_SACRIFICE_MST still returned the original 2500xxxxx IDs, so converting a duplicate gave fragments its own EX awakening cannot use.",
+    "scope": "Change only the fragment item ID in 1swM3H4T for Ellen, Arus, Yao, Poron, Albert, Rocbouquet, Asellus and Gustave XIII. Preserve the count 50, the Transcension Pearl, MXuR3e9H and every other row and field. Kira 346000207 already returns 872000007.",
+    "static_baseline": {
+      "archive": "source/build/distribution/assets/exvius-data-001.zip",
+      "member": "static/mst_decoded/F_SACRIFICE_MST.ndjson",
+      "bytes": 166410,
+      "sha256": "27153c1397d8a160082eea9b7f29068a03daa395e808f9a04bd2cc90bd2b2ca4"
+    },
+    "native_baseline": {
+      "archive": "source/build/distribution/assets/exvius-nv-fragments-r5.zip",
+      "member": "native/mst/Ver291_w5JFGPh3.dat",
+      "bytes": 263871,
+      "sha256": "94e4e6d6ce14cab8e1884bfaf84aeaa47ff9850d5da24813533d3ee16275bdc1"
+    },
+    "serialization": "Use the established merge_fields writers on the pinned baselines. Rebuild the supported original native sacrifice index at version 291. Raw originals and baseline archives remain unchanged."
+  }
+}

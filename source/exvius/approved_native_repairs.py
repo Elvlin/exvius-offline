@@ -7,6 +7,7 @@ the reviewed holiday recipes and English labels, repairs missing existing unit
 names, then rebuilds the two unit lookup indexes.
 Missing Break descriptions are appended without changing existing labels.
 One classic HARD challenge target is merged without replacing its other fields.
+Ten NV conversion rewards are merged onto the fragment their EX awakening consumes.
 The separately hash-approved quest title participates in shared text metadata.
 No archive is extracted, copied or changed, and no resource version is changed.
 """
@@ -30,6 +31,9 @@ BREAK_TEXT_MEMBER = 'native/localized_texts/en/Ver13_f3uHXanH.dat'
 CLASSIC_CHALLENGE_CONTRACT = ROOT / 'source/server/content/battle/classic_hard_challenge_repair.json'
 CLASSIC_CHALLENGE_MEMBER = 'native/mst/Ver373_GL9t6cMF.dat'
 CLASSIC_CHALLENGE_STATIC = 'static/mst_decoded/F_CHALLENGE_MST.ndjson'
+NV_FRAGMENT_CONTRACT = ROOT / 'source/server/content/nv_fragment_repair.json'
+NV_FRAGMENT_MEMBER = 'native/mst/Ver291_w5JFGPh3.dat'
+NV_FRAGMENT_STATIC = 'static/mst_decoded/F_SACRIFICE_MST.ndjson'
 
 # Memorial changed these scripts without supplying their new dialogue rows.
 # Use the matching original Global script/text packages recovered from the
@@ -59,6 +63,8 @@ GLOBAL_SCENE_MESSAGE_PACKAGES = {
 BASELINES = {
     CLASSIC_CHALLENGE_MEMBER: ('exvius-data-010.zip', '42f0c66de5d4dca59f2c117d5f29998a34faa793523534b1f88a3f3c10d231ad'),
     CLASSIC_CHALLENGE_STATIC: ('exvius-data-001.zip', '2c34c606987a3b096ad72cf02b319e382aa15ac2fbe59a348362da91a8cab412'),
+    NV_FRAGMENT_MEMBER: ('exvius-nv-fragments-r5.zip', '94e4e6d6ce14cab8e1884bfaf84aeaa47ff9850d5da24813533d3ee16275bdc1'),
+    NV_FRAGMENT_STATIC: ('exvius-data-001.zip', '27153c1397d8a160082eea9b7f29068a03daa395e808f9a04bd2cc90bd2b2ca4'),
     BREAK_TEXT_MEMBER: ('exvius-data-010.zip', '8ad7f5e3721331247c2eebe9c83428484da039bfc62dd1a8b4bd81adf1b3f8be'),
     'native/mst/Ver318_yu5rvEI3.dat': ('exvius-data-010.zip', 'b59a766f2ba25d1b5291c15795a649bd15ff61c03f1af043a304328d7455f077'),
     'native/mst/Ver323_27pGMZDm.dat': ('exvius-data-010.zip', '12488b40653b514b31394b8f11f3589e5b26b82ed152e192e86eb38f48d089d9'),
@@ -131,11 +137,56 @@ def _approved_quest_title():
     return raw
 
 
+def _nv_fragment_repair(baseline, manifest):
+    """Return the three sacrifice outputs for the ten remapped JP fragment rewards."""
+    contract = json.loads(NV_FRAGMENT_CONTRACT.read_text(encoding='utf8'))
+    original, rows = contract['original'], contract['rows']
+    if (contract['table'] != 'F_SACRIFICE_MST' or contract['identity_fields'] != ['woghJa61']
+            or contract['operation'] != 'merge_fields'
+            or contract['native_member'] != NV_FRAGMENT_MEMBER
+            or contract['static_member'] != NV_FRAGMENT_STATIC
+            or contract['native_index_member'] != 'native/mst/w5JFGPh3.i'
+            or contract['native_version'] != 291
+            or manifest['F_SACRIFICE_MST']['token'] != 'w5JFGPh3'
+            or manifest['F_SACRIFICE_MST']['key'] != 'J2u0YBPr'
+            or len(rows) != 10 or len({row['woghJa61'] for row in rows}) != 10
+            or any(set(row) != {'woghJa61', '1swM3H4T'} for row in original + rows)
+            or [row['woghJa61'] for row in original] != [row['woghJa61'] for row in rows]):
+        raise ValueError('NV fragment repair escaped its ten conversion reward fields')
+    for before, after in zip(original, rows):
+        # Only the fragment item ID moves to the ID used by the EX awakening.
+        old, new = before['1swM3H4T'].split(','), after['1swM3H4T'].split(',')
+        if (len(old) != 2 or old[1] != '20:293000100:1' or new[1] != old[1]
+                or not re.fullmatch(r'20:250\d{6}:50', old[0])
+                or not re.fullmatch(r'20:8720000\d\d:50', new[0])):
+            raise ValueError('NV fragment repair changed more than the fragment item ID')
+    static_source = baseline(NV_FRAGMENT_STATIC)
+    current = {row['woghJa61']: row for row in map(json.loads, static_source.splitlines())}
+    if any(current[row['woghJa61']]['1swM3H4T'] != row['1swM3H4T'] for row in original):
+        raise ValueError('NV fragment baseline reward changed')
+    guards = [{'identity': {'woghJa61': before['woghJa61']}, 'field': '1swM3H4T',
+               'prior_english': before['1swM3H4T'], 'english': after['1swM3H4T']}
+              for before, after in zip(original, rows)]
+    native_output, native_stats = patch_native(baseline(NV_FRAGMENT_MEMBER),
+        manifest['F_SACRIFICE_MST']['key'], contract['identity_fields'], rows,
+        operation='merge_fields', prior_english_guard=guards)
+    static_output, static_stats = patch_decoded(static_source, contract['identity_fields'], rows,
+        operation='merge_fields', prior_english_guard=guards)
+    if any(stats['replaced_rows'] != 10 or stats['appended_rows'] != 0
+           for stats in (native_stats, static_stats)):
+        raise ValueError('NV fragment repair must merge exactly ten existing rows')
+    return {NV_FRAGMENT_MEMBER: native_output,
+            'native/mst/w5JFGPh3.i': build_index(
+                'F_SACRIFICE_MST', native_output, manifest['F_SACRIFICE_MST']['key'], 291),
+            NV_FRAGMENT_STATIC: static_output}
+
+
 def build_approved_files():
     """Return {DataPack entry path: bytes}, without writing project files.
 
     There are 17 recipe outputs, four original-sized unit master/index outputs,
-    two unit name outputs, one Break text output, three challenge outputs and
+    two unit name outputs, one Break text output, three challenge outputs,
+    three NV fragment conversion outputs and
     nine original Global town and event script/text packages.
     Original item sprites are verified in the
     installed baseline and are not duplicated. The only overlay read is the
@@ -278,6 +329,7 @@ def build_approved_files():
         outputs['native/mst/GL9t6cMF.i'] = build_index(
             'F_CHALLENGE_MST', native_output, manifest['F_CHALLENGE_MST']['key'], 373)
         outputs[CLASSIC_CHALLENGE_STATIC] = static_output
+        outputs.update(_nv_fragment_repair(baseline, manifest))
 
         # Both icons required by the reconstructed recipes are already supplied
         # byte-for-byte by the approved original item CPK. No JP icon import.
@@ -305,7 +357,7 @@ def build_approved_files():
         if not changed:
             raise ValueError('Recovered Global scene message repair was not applied: ' + relative)
         outputs['native/' + relative] = raw
-    if len(outputs) != 38:
+    if len(outputs) != 41:
         raise ValueError('Approved native/static output count changed.')
     return outputs
 
